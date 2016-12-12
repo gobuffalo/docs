@@ -14,6 +14,8 @@ import:
 - package: github.com/markbates/pop
   version: ^3.9.2
 - package: github.com/olekukonko/tablewriter
+- package: github.com/newrelic/go-agent
+  version: ^1.5.0
 testImport:
 - package: github.com/markbates/willie
 - package: github.com/stretchr/testify

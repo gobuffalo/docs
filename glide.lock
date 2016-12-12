@@ -1,5 +1,5 @@
-hash: 0d6805d8ba0b180e5cab7293d26920fb1e1374e7f5a7db591842a836a4dd6d43
-updated: 2016-12-12T12:04:37.547458008-05:00
+hash: a70653da454b699eb02dd1c3edd762f4b1645fc88544e5a858830337ce0bb0a2
+updated: 2016-12-12T12:25:01.306974667-05:00
 imports:
 - name: github.com/aymerick/raymond
   version: 72acac2207479d21dd45898c2a4264246c818148
@@ -105,6 +105,8 @@ imports:
   version: 056f235aa609d5d2a8ba71f4707f2ba138033e9e
 - name: github.com/mitchellh/go-homedir
   version: b8bc1bf767474819792c23f32d8286a45736f1c6
+- name: github.com/newrelic/go-agent
+  version: 7d12ae2201fc160e486197614a6f65afcf3f8170
 - name: github.com/olekukonko/tablewriter
   version: bdcc175572fd7abece6c831e643891b9331bc9e7
 - name: github.com/pkg/errors

@@ -41,8 +41,16 @@ func App() http.Handler {
 	}
 
 	a.Use(middleware.PopTransaction(models.DB))
+	a.Use(func(next buffalo.Handler) buffalo.Handler {
+		return func(c buffalo.Context) error {
+			// TODO: get from the db
+			c.Set("version", "0.4.4")
+			return next(c)
+		}
+	})
 	a.ServeFiles("/assets", assetsPath())
 	a.GET("/", HomeHandler)
+	a.GET("/docs/{name}", Docs)
 
 	return a
 }

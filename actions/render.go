@@ -19,7 +19,7 @@ func init() {
 
 func assetsPath() http.Dir {
 	if ENV == "production" {
-		return http.Dir("/app/templates/assets")
+		return http.Dir("/app/assets")
 	}
 	return http.Dir(fromHere("../assets"))
 }

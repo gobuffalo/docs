@@ -1,6 +1,7 @@
 package actions
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 	"os"
@@ -24,6 +25,7 @@ func App() http.Handler {
 
 	nrkey := os.Getenv("NEW_RELIC_LICENSE_KEY")
 	if nrkey != "" {
+		fmt.Printf("Setting up New Relic %s\n", nrkey)
 		config := newrelic.NewConfig("gobuffalo.io", nrkey)
 		app, err := newrelic.NewApplication(config)
 		if err != nil {

@@ -14,4 +14,4 @@ test:
   host: 127.0.0.1
 
 production:
-  url: {{env "DATABASE_URL"}}
+  url: {{envOr "DATABASE_URL" "postgres://postgres:postgres@127.0.0.1:5432/gobuffalo_production"}}

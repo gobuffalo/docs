@@ -1,0 +1,22 @@
+package: github.com/markbates/gobuffalo
+import:
+- package: github.com/markbates/buffalo
+  version: ^0.4.4
+  subpackages:
+  - middleware
+  - render
+- package: github.com/markbates/going
+  subpackages:
+  - defaults
+- package: github.com/markbates/grift
+  subpackages:
+  - grift
+- package: github.com/markbates/pop
+  version: ^3.9.2
+- package: github.com/olekukonko/tablewriter
+testImport:
+- package: github.com/markbates/willie
+- package: github.com/stretchr/testify
+  version: ^1.1.4
+  subpackages:
+  - require

@@ -8,18 +8,22 @@ import (
 )
 
 var _ = Add("deploy", func(c *Context) error {
-	cmd := exec.Command("git", "push", "heroku")
-	cmd.Stdin = os.Stdin
-	cmd.Stderr = os.Stderr
-	cmd.Stdout = os.Stdout
-	err := cmd.Run()
+	err := run(exec.Command("git", "push", "origin"))
 	if err != nil {
 		return err
 	}
 
-	cmd = exec.Command("heroku", "run", "soda", "migrate")
+	err = run(exec.Command("git", "push", "heroku"))
+	if err != nil {
+		return err
+	}
+
+	return run(exec.Command("heroku", "run", "soda", "migrate"))
+})
+
+func run(cmd *exec.Cmd) error {
 	cmd.Stdin = os.Stdin
 	cmd.Stderr = os.Stderr
 	cmd.Stdout = os.Stdout
 	return cmd.Run()
-})
+}

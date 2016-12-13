@@ -71,12 +71,13 @@ func (s *templateRenderer) source(name string) (*raymond.Template, error) {
 	}
 	if strings.ToLower(filepath.Ext(name)) == ".md" {
 		b = github_flavored_markdown.Markdown(b)
+		// unescape quotes so raymond can parse the file correctly.
 		b = bytes.Replace(b, []byte("&#34;"), []byte("\""), -1)
 	}
 	source := string(b)
 	t, err := raymond.Parse(source)
 	if err != nil {
-		return t, errors.Errorf("Error parsing %s\n%+v", name, errors.WithStack(err))
+		return t, errors.Errorf("Error parsing %s: %+v", name, errors.WithStack(err))
 	}
 	t.RegisterHelpers(s.Helpers)
 	return t, err

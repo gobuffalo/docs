@@ -145,26 +145,26 @@
 		{
 			"checksumSHA1": "a/eCTuR033c/qvu2OCMuWdl/h9g=",
 			"path": "github.com/markbates/buffalo",
-			"revision": "eb306bc56e0ddcdf18fbf478049db1c246c17062",
-			"revisionTime": "2016-12-13T00:38:59Z"
+			"revision": "04fa05400d1a56aa236aed992cf8dbe707e70d67",
+			"revisionTime": "2016-12-13T19:05:53Z"
 		},
 		{
 			"checksumSHA1": "RtARryF6tomi13yuPHKFWwe6tV4=",
 			"path": "github.com/markbates/buffalo/middleware",
-			"revision": "eb306bc56e0ddcdf18fbf478049db1c246c17062",
-			"revisionTime": "2016-12-13T00:38:59Z"
+			"revision": "04fa05400d1a56aa236aed992cf8dbe707e70d67",
+			"revisionTime": "2016-12-13T19:05:53Z"
 		},
 		{
-			"checksumSHA1": "cdQ+Ul/wjWTRLAo6KkRHQlVLmig=",
+			"checksumSHA1": "oOzAFedFsrmaDoWaLPya3R1prKU=",
 			"path": "github.com/markbates/buffalo/render",
-			"revision": "9f27a797180207cb5377121ae1915f725d375744",
-			"revisionTime": "2016-12-13T15:50:56Z"
+			"revision": "04fa05400d1a56aa236aed992cf8dbe707e70d67",
+			"revisionTime": "2016-12-13T19:05:53Z"
 		},
 		{
 			"checksumSHA1": "S/d0kEukUSA+g6E3hGV9IRBrPfQ=",
 			"path": "github.com/markbates/buffalo/render/helpers",
-			"revision": "eb306bc56e0ddcdf18fbf478049db1c246c17062",
-			"revisionTime": "2016-12-13T00:38:59Z"
+			"revision": "04fa05400d1a56aa236aed992cf8dbe707e70d67",
+			"revisionTime": "2016-12-13T19:05:53Z"
 		},
 		{
 			"checksumSHA1": "PDwhNyQEPFOZoqQ25T3S3O7v88Q=",

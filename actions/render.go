@@ -12,8 +12,9 @@ var r *render.Engine
 
 func init() {
 	r = render.New(render.Options{
-		TemplatesPath: templatesPath(),
-		HTMLLayout:    "application.html",
+		TemplatesPath:  templatesPath(),
+		HTMLLayout:     "application.html",
+		CacheTemplates: true,
 	})
 }
 

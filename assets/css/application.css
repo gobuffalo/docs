@@ -89,6 +89,9 @@ body {
   }
 }
 
-.main .page-header {
-  margin-top: 0;
+.main h1 {
+  padding-bottom: 10.5px;
+  margin: 46px 0 23px;
+  border-bottom: 1px solid #eeeeee;
+  margin-top: 0px;
 }

@@ -1,6 +1,8 @@
 $(function() {
   var path = window.location.pathname;
-  $(".nav a[href='"+path+"']").closest("li").addClass("active");
+  $(".nav a[href='" + path + "']").closest("li").addClass("active");
 
-  hljs.initHighlighting();
+  $('.highlight pre').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
 });

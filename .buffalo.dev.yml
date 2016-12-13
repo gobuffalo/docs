@@ -6,6 +6,7 @@ ignored_folders:
 included_extensions:
 - .go
 - .html
+- .md
 build_path: /tmp
 build_delay: 200ns
 binary_name: gobuffalo-build

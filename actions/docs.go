@@ -7,5 +7,5 @@ import (
 )
 
 func Docs(c buffalo.Context) error {
-	return c.Render(200, r.HTML(fmt.Sprintf("docs/%s.html", c.Param("name"))))
+	return c.Render(200, r.HTML(fmt.Sprintf("docs/%s.md", c.Param("name"))))
 }

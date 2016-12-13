@@ -1,0 +1,21 @@
+# Contributing
+
+![We Want You!](/assets/images/uncle_sam.jpg)
+
+The Buffalo team needs, and wants your help! We're doing our best to make the world a better place for Go web development, but we can't do it alone.
+
+### Shoulders of Giants
+
+We are fortunate, as a community, to have so many great packages written by some really great people. Buffalo wraps all of those packages together with a little glue to bring it all together. A great place to start making Buffalo better is to help improve the underlying packages Buffalo relies on.
+
+[https://github.com/markbates/buffalo/blob/master/SHOULDERS.md](https://github.com/markbates/buffalo/blob/master/SHOULDERS.md)
+
+### The Buffalo Project
+
+[https://github.com/markbates/buffalo](https://github.com/markbates/buffalo)
+
+### The Buffalo Docs (http://gobuffalo.io)
+
+Contributing to this documentation site is a great, and easy, way to help make Buffalo better.
+
+[https://github.com/markbates/gobuffalo](https://github.com/markbates/gobuffalo)

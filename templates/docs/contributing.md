@@ -14,7 +14,12 @@ We are fortunate, as a community, to have so many great packages written by some
 
 [https://github.com/markbates/buffalo](https://github.com/markbates/buffalo)
 
-### The Buffalo Docs (http://gobuffalo.io)
+##### Guidelines for Contributing
+
+* When contributing to Buffalo please keep in mind that tests are **100%** required! No PR will be accepted without accompanying tests.
+* CodeClimate is run against all PRs. We recomment you run it locally to save you time and hassle with the PR. [https://github.com/codeclimate/codeclimate](https://github.com/codeclimate/codeclimate)
+
+### The Buffalo Docs
 
 Contributing to this documentation site is a great, and easy, way to help make Buffalo better.
 

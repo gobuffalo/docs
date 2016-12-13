@@ -14,6 +14,8 @@ func Test_HomeHandler(t *testing.T) {
 	w := willie.New(actions.App())
 	res := w.Request("/").Get()
 
-	r.Equal(200, res.Code)
-	r.Contains(res.Body.String(), "Welcome to Buffalo!")
+	r.Equal(301, res.Code)
+	r.Equal("/docs/getting-started", res.Location())
+	// r.Equal(200, res.Code)
+	// r.Contains(res.Body.String(), "Welcome to Buffalo!")
 }

@@ -9,6 +9,10 @@ body {
   padding-top: 50px;
 }
 
+p {
+  font-size: 125%;
+}
+
 
 /*
  * Global add-ons

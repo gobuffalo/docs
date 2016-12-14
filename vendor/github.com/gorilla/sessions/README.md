@@ -64,9 +64,10 @@ Other implementations of the `sessions.Store` interface:
 * [github.com/srinathgs/couchbasestore](https://github.com/srinathgs/couchbasestore) - Couchbase
 * [github.com/denizeren/dynamostore](https://github.com/denizeren/dynamostore) - Dynamodb on AWS
 * [github.com/bradleypeabody/gorilla-sessions-memcache](https://github.com/bradleypeabody/gorilla-sessions-memcache) - Memcache
-* [github.com/hnakamur/gaesessions](https://github.com/hnakamur/gaesessions) - Memcache on GAE
+* [github.com/dsoprea/go-appengine-sessioncascade](https://github.com/dsoprea/go-appengine-sessioncascade) - Memcache/Datastore/Context in AppEngine
 * [github.com/kidstuff/mongostore](https://github.com/kidstuff/mongostore) - MongoDB
 * [github.com/srinathgs/mysqlstore](https://github.com/srinathgs/mysqlstore) - MySQL
+* [github.com/EnumApps/clustersqlstore](https://github.com/EnumApps/clustersqlstore) - MySQL Cluster
 * [github.com/antonlindstrom/pgstore](https://github.com/antonlindstrom/pgstore) - PostgreSQL
 * [github.com/boj/redistore](https://github.com/boj/redistore) - Redis
 * [github.com/boj/rethinkstore](https://github.com/boj/rethinkstore) - RethinkDB

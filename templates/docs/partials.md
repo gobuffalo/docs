@@ -68,7 +68,7 @@ func UsersEdit(c buffalo.Context) error {
 ```
 {{/panel}}
 
-{{#panel title="\"Local\" Context"}}
+{{#panel title="\"Local\" Context" name="local-context"}}
 
 In addition to have the [context](/docs/context) of the parent template, partials can also be sent additional information as "local" variables.
 

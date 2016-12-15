@@ -24,6 +24,10 @@ hr {
   margin: 0px;
 }
 
+.nav-sidebar .indent {
+  margin-left: 20px;
+}
+
 .nav-sidebar .active {
   background-color: #0c84e4;
   color: #fff;

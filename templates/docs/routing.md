@@ -2,7 +2,7 @@
 
 Buffalo uses the wonderful [http://www.gorillatoolkit.org/pkg/mux](http://www.gorillatoolkit.org/pkg/mux) package under the covers to handle routing within Buffalo applications. With that said, Buffalo wraps the `mux` API with it's own. This guide walks you through all you'll need to know about how Buffalo handles routing.
 
-{{#panel title="Creating a new Buffalo App (and router)"}}
+{{#panel title="Creating a new Buffalo App (and router)" name="new-app"}}
 
 Buffalo applications come in two flavors:
 
@@ -121,4 +121,40 @@ In the above example the `/api/v1` group will use both `SomeMiddleware` and `API
 {{/panel}}
 
 {{#panel title="Resources"}}
+
+Often web applications need to build very similiar "CRUD" end-points. To Help reduce the amount of thought and complexity involved in this, Buffalo supports the concept of a "Resource".
+
+```go
+type Resource interface {
+	List(Context) error
+	Show(Context) error
+	New(Context) error
+	Create(Context) error
+	Edit(Context) error
+	Update(Context) error
+	Destroy(Context) error
+}
+```
+
+```go
+type UserResource struct{
+  buffalo.Resource
+}
+
+a.Resource("/users", &UserResource{&buffalo.BaseResource{}})
+```
+
+The above code example would be the equivalent of the following:
+
+```go
+ur := &UserResource{}
+a.GET("/users", ur.List)
+a.GET("/users/new", ur.New)
+a.GET("/users/{id}", ur.Show)
+a.GET("/users/{id}/edit", ur.Edit)
+a.POST("/users", ur.Create)
+a.PUT("/users/{id}", ur.Update)
+a.DELETE("/users/{id}", ur.Destroy)
+```
+
 {{/panel}}

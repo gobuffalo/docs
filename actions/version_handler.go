@@ -34,7 +34,7 @@ func SetVersion(next buffalo.Handler) buffalo.Handler {
 		v := &models.BuffaloVersion{}
 		err := tx.Order("version desc").First(v)
 		if err != nil {
-			v.Version = "0.4.6"
+			v.Version = "0.0.0"
 		}
 		c.Set("version", v.Version)
 		return next(c)

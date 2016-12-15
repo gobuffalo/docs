@@ -6,6 +6,7 @@ import (
 	"runtime"
 
 	"github.com/markbates/buffalo/render"
+	"github.com/markbates/gobuffalo/actions/helpers"
 )
 
 var r *render.Engine
@@ -16,6 +17,7 @@ func init() {
 		HTMLLayout:     "application.html",
 		CacheTemplates: ENV == "production",
 	})
+	r.RegisterHelper("panel", helpers.PanelHelper)
 }
 
 func assetsPath() http.Dir {

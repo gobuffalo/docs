@@ -2,11 +2,9 @@
 
 {{ partial "docs/disclaimer.html" }}
 
-
 Partials are not much different from standard [templates](/docs/templating) in Buffalo. They include all of the same [helpers](/docs/helpers) as well.
 
-### Naming
-
+{{#panel title="Naming"}}
 All partial file names must start with an `_`. For example: `_form.html`. This helps to different partials from other view templates in your application.
 
 **templates/users/new.html**
@@ -31,8 +29,9 @@ All partial file names must start with an `_`. For example: `_form.html`. This h
 <!-- form stuff here  -->
 </form>
 ```
+{{/panel}}
 
-### Context
+{{#panel title="Context"}}
 
 All [rendering context](/docs/rendering) from parent template will automatically pass through to the partial, and any partials that partial may call. (see also [context](/docs/context))
 
@@ -67,8 +66,9 @@ func UsersEdit(c buffalo.Context) error {
 <!-- form stuff here  -->
 </form>
 ```
+{{/panel}}
 
-### "Local" Context
+{{#panel title="\"Local\" Context"}}
 
 In addition to have the [context](/docs/context) of the parent template, partials can also be sent additional information as "local" variables.
 
@@ -99,3 +99,5 @@ In addition to have the [context](/docs/context) of the parent template, partial
   <li>Ringo Starr</li>
 </ul>
 ```
+
+{{/panel}}

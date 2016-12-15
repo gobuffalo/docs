@@ -45,3 +45,4 @@ $ buffalo dev
 ```
 
 The `dev` command will watch your `.go` and `.html` files by default and rebuild, and restart, your binary for you so you don't have to worry about such things. Just run the `dev` command and start coding.
+

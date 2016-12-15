@@ -34,7 +34,7 @@ All partial file names must start with an `_`. For example: `_form.html`. This h
 
 ### Context
 
-All [context](/docs/context) from parent template will automatically pass through to the partial, and any partials that partial may call.
+All [rendering context](/docs/rendering) from parent template will automatically pass through to the partial, and any partials that partial may call. (see also [context](/docs/context))
 
 **actions/users.go**
 ```html

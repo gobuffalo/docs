@@ -4,11 +4,15 @@
 
 The Buffalo team needs, and wants your help! We're doing our best to make the world a better place for Go web development, but we can't do it alone.
 
+---
+
 ### Shoulders of Giants
 
 We are fortunate, as a community, to have so many great packages written by some really great people. Buffalo wraps all of those packages together with a little glue to bring it all together. A great place to start making Buffalo better is to help improve the underlying packages Buffalo relies on.
 
 [https://github.com/markbates/buffalo/blob/master/SHOULDERS.md](https://github.com/markbates/buffalo/blob/master/SHOULDERS.md)
+
+---
 
 ### The Buffalo Project
 
@@ -18,6 +22,8 @@ We are fortunate, as a community, to have so many great packages written by some
 
 * When contributing to Buffalo please keep in mind that tests are **100%** required! No PR will be accepted without accompanying tests.
 * CodeClimate is run against all PRs. We recomment you run it locally to save you time and hassle with the PR. [https://github.com/codeclimate/codeclimate](https://github.com/codeclimate/codeclimate)
+
+---
 
 ### The Buffalo Docs
 

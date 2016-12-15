@@ -2,7 +2,7 @@
 
 {{ partial "docs/disclaimer.html" }}
 
-Partials are not much different from standard [templates](/docs/templating) in Buffalo. They include all of the same [helpers](/docs/helpers) as well.
+{{ partial "topics.html" }}
 
 {{#panel title="Naming"}}
 All partial file names must start with an `_`. For example: `_form.html`. This helps to different partials from other view templates in your application.
@@ -99,5 +99,11 @@ In addition to have the [context](/docs/context) of the parent template, partial
   <li>Ringo Starr</li>
 </ul>
 ```
+
+{{/panel}}
+
+{{#panel title="Helpers"}}
+
+Partials are not much different from standard [templates](/docs/templating) in Buffalo. They include all of the same [helpers](/docs/helpers) as well.
 
 {{/panel}}

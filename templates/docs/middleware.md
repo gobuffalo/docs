@@ -1,1 +1,3 @@
 # Middleware
+
+{{ partial "topics.html" }}

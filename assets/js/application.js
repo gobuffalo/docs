@@ -18,10 +18,11 @@ function buildSideNav() {
   $(".main a[name]").each(function(_, a) {
     a = $(a);
     if (a.data("title")) {
-      items.push('<li class="indent"><a href="' + path +"#" + a.attr("name") + '">' + a.data("title") + '</a></li>');
+      items.push('<li>> <a href="' + path +"#" + a.attr("name") + '">' + a.data("title") + '</a></li>');
     }
   })
-  $(".nav a[href='" + path + "']").closest("li").after(items);
+  $("#topics").addClass("list-unstyled");
+  $("#topics").append(items);
 }
 
 function activateSideNav() {

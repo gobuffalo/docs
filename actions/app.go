@@ -25,7 +25,7 @@ func App() http.Handler {
 	a.Use(func(next buffalo.Handler) buffalo.Handler {
 		return func(c buffalo.Context) error {
 			// TODO: get from the db
-			c.Set("version", "0.4.5")
+			c.Set("version", "0.4.6")
 			return next(c)
 		}
 	})

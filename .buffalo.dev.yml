@@ -2,6 +2,9 @@ app_root: .
 ignored_folders:
 - vendor
 - log
+- logs
+- assets
+- grifts
 - tmp
 included_extensions:
 - .go

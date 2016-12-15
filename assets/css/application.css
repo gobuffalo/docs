@@ -73,3 +73,7 @@ h1 {
   padding: 0px;
   font-size: 24px;
 }
+
+#topics {
+  font-weight: bold;
+}

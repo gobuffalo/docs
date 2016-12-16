@@ -1,5 +1,5 @@
-hash: 364a7d0db585f4d4359ccd15a11773ea3b38b46346363a28555159451a2ebff7
-updated: 2016-12-15T20:42:35.071148426-05:00
+hash: 906d20175fb64ce6c72a92e750647768c5dd710cd32723242143df25773f242c
+updated: 2016-12-15T20:44:26.503566335-05:00
 imports:
 - name: github.com/aymerick/raymond
   version: 72acac2207479d21dd45898c2a4264246c818148
@@ -131,6 +131,8 @@ imports:
   version: f4cad6c6324d3f584e1743d8b3e0e017a5f3a636
 - name: github.com/sourcegraph/syntaxhighlight
   version: c95ac474b7cb9c711f4591b553a2caaa24ea3d37
+- name: github.com/spf13/cobra
+  version: b62566898a99f2db9c68ed0026aa0a052e59678d
 - name: golang.org/x/net
   version: 45e771701b814666a7eb299e6c7a57d0b1799e91
   subpackages:

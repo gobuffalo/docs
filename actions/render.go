@@ -1,7 +1,6 @@
 package actions
 
 import (
-	"fmt"
 	"log"
 	"net/http"
 	"path"
@@ -40,7 +39,6 @@ func templatesPath() string {
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Printf("### p -> %+v\n", p)
 	return p
 }
 

@@ -54,6 +54,7 @@ import:
   subpackages:
   - grift
 - package: github.com/olekukonko/tablewriter
+- package: github.com/spf13/cobra
 testImport:
 - package: github.com/markbates/willie
 - package: github.com/stretchr/testify

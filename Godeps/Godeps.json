@@ -3,7 +3,7 @@
 	"GoVersion": "go1.7",
 	"GodepVersion": "v75",
 	"Packages": [
-		"github.com/markbates/pop/soda"
+		"github.com/markbates/pop/soda/..."
 	],
 	"Deps": [
 		{
@@ -119,7 +119,7 @@
 		},
 		{
 			"ImportPath": "github.com/spf13/cobra",
-			"Rev": "3c49a47b3c4c5c94dc0a65b5593a63d8d7745177"
+			"Rev": "b62566898a99f2db9c68ed0026aa0a052e59678d"
 		},
 		{
 			"ImportPath": "github.com/spf13/pflag",

@@ -89,11 +89,7 @@ func textDecode(parameterStatus *parameterStatus, s []byte, typ oid.Oid) interfa
 	case oid.T_char, oid.T_varchar, oid.T_text:
 		return string(s)
 	case oid.T_bytea:
-		b, err := parseBytea(s)
-		if err != nil {
-			errorf("%s", err)
-		}
-		return b
+		return parseBytea(s)
 	case oid.T_timestamptz:
 		return parseTs(parameterStatus.currentLocation, string(s))
 	case oid.T_timestamp, oid.T_date:
@@ -496,14 +492,14 @@ func FormatTimestamp(t time.Time) []byte {
 
 // Parse a bytea value received from the server.  Both "hex" and the legacy
 // "escape" format are supported.
-func parseBytea(s []byte) (result []byte, err error) {
+func parseBytea(s []byte) (result []byte) {
 	if len(s) >= 2 && bytes.Equal(s[:2], []byte("\\x")) {
 		// bytea_output = hex
 		s = s[2:] // trim off leading "\\x"
 		result = make([]byte, hex.DecodedLen(len(s)))
 		_, err := hex.Decode(result, s)
 		if err != nil {
-			return nil, err
+			errorf("%s", err)
 		}
 	} else {
 		// bytea_output = escape
@@ -518,11 +514,11 @@ func parseBytea(s []byte) (result []byte, err error) {
 
 				// '\\' followed by an octal number
 				if len(s) < 4 {
-					return nil, fmt.Errorf("invalid bytea sequence %v", s)
+					errorf("invalid bytea sequence %v", s)
 				}
 				r, err := strconv.ParseInt(string(s[1:4]), 8, 9)
 				if err != nil {
-					return nil, fmt.Errorf("could not parse bytea value: %s", err.Error())
+					errorf("could not parse bytea value: %s", err.Error())
 				}
 				result = append(result, byte(r))
 				s = s[4:]
@@ -540,7 +536,7 @@ func parseBytea(s []byte) (result []byte, err error) {
 		}
 	}
 
-	return result, nil
+	return result
 }
 
 func encodeBytea(serverVersion int, v []byte) (result []byte) {

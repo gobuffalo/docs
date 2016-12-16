@@ -1,15 +1,19 @@
 package actions
 
 import (
+	"fmt"
+	"log"
 	"net/http"
 	"path"
 	"runtime"
 
 	"github.com/markbates/buffalo/render"
+	"github.com/markbates/buffalo/render/resolvers"
 	"github.com/markbates/gobuffalo/actions/helpers"
 )
 
 var r *render.Engine
+var resolver = &resolvers.GoPathResolver{Path: "github.com/markbates/gobuffalo"}
 
 func init() {
 	r = render.New(render.Options{
@@ -24,14 +28,20 @@ func assetsPath() http.Dir {
 	if ENV == "production" {
 		return http.Dir("/app/assets")
 	}
-	return http.Dir(fromHere("../assets"))
+	p, _ := resolver.Resolve("assets")
+	return http.Dir(p)
 }
 
 func templatesPath() string {
 	if ENV == "production" {
 		return "/app/templates"
 	}
-	return fromHere("../templates")
+	p, err := resolver.Resolve("templates")
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Printf("### p -> %+v\n", p)
+	return p
 }
 
 func fromHere(p string) string {

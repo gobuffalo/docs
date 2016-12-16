@@ -1,0 +1,34 @@
+hash: f8364742e4864128100d50ab738e4e867fb344a2f0340333dd8962853cd6d5b6
+updated: 2016-06-08T11:05:57.783995801-04:00
+imports:
+- name: github.com/ajg/form
+  version: e7b99d6ea9c58e7bb6b2c1059b9ba748cdff22b0
+- name: github.com/labstack/echo
+  version: be5efe5927206c132948c096ad3da6357d922b56
+- name: github.com/labstack/gommon
+  version: 741a209b277dcd5705c8568329c0b6e8864dc1d1
+  subpackages:
+  - log
+  - color
+- name: github.com/markbates/hmax
+  version: b6c7cb2ab5f435e74dfc81cc9efaf3ce85397f56
+- name: github.com/mattn/go-colorable
+  version: 45ce6a6f60010487dd0dbab368b5fbbed1c14ef0
+- name: github.com/mattn/go-isatty
+  version: 56b76bdf51f7708750eac80fa38b952bb9f32639
+- name: github.com/serenize/snaker
+  version: 8824b61eca66d308fcb2d515287d3d7a28dba8d6
+- name: github.com/unrolled/render
+  version: 198ad4d8b8a4612176b804ca10555b222a086b40
+- name: github.com/valyala/fasttemplate
+  version: 3b874956e03f1636d171bda64b130f9135f42cff
+- name: golang.org/x/net
+  version: 96dbb961a39ddccf16860cdd355bfa639c497f23
+  subpackages:
+  - context
+  - websocket
+- name: golang.org/x/sys
+  version: 806cb00533e5af545ce95e84b349404f8e5ff7a8
+  subpackages:
+  - unix
+devImports: []

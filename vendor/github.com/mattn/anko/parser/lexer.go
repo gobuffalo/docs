@@ -521,10 +521,6 @@ func Parse(s *Scanner) ([]ast.Stmt, error) {
 	return l.stmts, l.e
 }
 
-func EnableErrorVerbose() {
-	yyErrorVerbose = true
-}
-
 // ParserSrc provides way to parse the code from source.
 func ParseSrc(src string) ([]ast.Stmt, error) {
 	scanner := &Scanner{

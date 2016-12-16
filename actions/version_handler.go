@@ -10,9 +10,6 @@ import (
 )
 
 func VersionHandler(c buffalo.Context) error {
-	// ensure this is a JSON request
-	c.Request().Header.Set("Content-Type", "application/json")
-
 	v := &models.BuffaloVersion{}
 	err := c.Bind(v)
 	if err != nil {

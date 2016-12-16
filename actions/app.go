@@ -26,7 +26,9 @@ func App() http.Handler {
 	a.ServeFiles("/assets", assetsPath())
 	a.GET("/", HomeHandler)
 	a.GET("/docs/{name}", Docs)
-	a.POST("/version", VersionHandler)
+
+	// ensure this is a JSON request
+	a.POST("/version", middleware.SetContentType("application/json")(VersionHandler))
 
 	return a
 }

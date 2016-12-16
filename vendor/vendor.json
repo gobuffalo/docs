@@ -250,6 +250,18 @@
 			"revisionTime": "2016-12-15T22:43:53Z"
 		},
 		{
+			"checksumSHA1": "TpJwmvpAjthqdFJaPNWxDKqiqsM=",
+			"path": "github.com/markbates/pop/soda/cmd",
+			"revision": "fde1494f8715a5687056d8e37fda92f85d767f3c",
+			"revisionTime": "2016-12-15T22:43:53Z"
+		},
+		{
+			"checksumSHA1": "rJ0FiUz5VpHMN/xdCFni3ibxK0s=",
+			"path": "github.com/markbates/pop/soda/cmd/generate",
+			"revision": "fde1494f8715a5687056d8e37fda92f85d767f3c",
+			"revisionTime": "2016-12-15T22:43:53Z"
+		},
+		{
 			"checksumSHA1": "FAQ0EXLwdVefL5CWFAHAU4/mKRk=",
 			"path": "github.com/markbates/refresh/refresh",
 			"revision": "3213a6d37bdbfcb5541cc06fe41539556019f410",

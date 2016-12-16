@@ -3,6 +3,8 @@ package models
 import (
 	"encoding/json"
 	"time"
+
+	"github.com/markbates/pop"
 )
 
 type BuffaloVersion struct {
@@ -27,4 +29,13 @@ type BuffaloVersions []BuffaloVersion
 func (b BuffaloVersions) String() string {
 	bm, _ := json.Marshal(b)
 	return string(bm)
+}
+
+func CurrentBuffaloVersion(tx *pop.Connection) *BuffaloVersion {
+	v := &BuffaloVersion{}
+	err := tx.Order("version desc").First(v)
+	if err != nil {
+		v.Version = "0.0.0"
+	}
+	return v
 }

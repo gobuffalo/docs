@@ -9,7 +9,22 @@ import (
 	"github.com/markbates/pop"
 )
 
-func VersionHandler(c buffalo.Context) error {
+func VersionList(c buffalo.Context) error {
+	v := []models.BuffaloVersion{}
+	tx := c.Get("tx").(*pop.Connection)
+	err := tx.All(&v)
+	if err != nil {
+		return c.Error(500, err)
+	}
+	return c.Render(200, r.JSON(v))
+}
+
+func VersionCurrent(c buffalo.Context) error {
+	v := models.CurrentBuffaloVersion(c.Get("tx").(*pop.Connection))
+	return c.Render(200, r.JSON(v))
+}
+
+func VersionUpdate(c buffalo.Context) error {
 	v := &models.BuffaloVersion{}
 	err := c.Bind(v)
 	if err != nil {
@@ -30,12 +45,7 @@ func VersionHandler(c buffalo.Context) error {
 
 func SetVersion(next buffalo.Handler) buffalo.Handler {
 	return func(c buffalo.Context) error {
-		tx := c.Get("tx").(*pop.Connection)
-		v := &models.BuffaloVersion{}
-		err := tx.Order("version desc").First(v)
-		if err != nil {
-			v.Version = "0.0.0"
-		}
+		v := models.CurrentBuffaloVersion(c.Get("tx").(*pop.Connection))
 		c.Set("version", v.Version)
 		return next(c)
 	}

@@ -28,7 +28,11 @@ func App() http.Handler {
 	a.GET("/docs/{name}", Docs)
 
 	// ensure this is a JSON request
-	a.POST("/version", middleware.SetContentType("application/json")(VersionHandler))
+	g := a.Group("/version")
+	g.Use(middleware.SetContentType("application/json"))
+	g.GET("/", VersionList)
+	g.GET("/current", VersionCurrent)
+	g.POST("/", VersionUpdate)
 
 	return a
 }

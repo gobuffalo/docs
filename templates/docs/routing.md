@@ -159,4 +159,5 @@ a.PUT("/users/{id}", ur.Update)
 a.DELETE("/users/{id}", ur.Destroy)
 ```
 
+See [Generators](/docs/generators#resources) for information on how to generate new resources.
 {{/panel}}

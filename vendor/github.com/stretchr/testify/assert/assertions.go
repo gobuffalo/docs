@@ -18,10 +18,6 @@ import (
 	"github.com/pmezard/go-difflib/difflib"
 )
 
-func init() {
-	spew.Config.SortKeys = true
-}
-
 // TestingT is an interface wrapper around *testing.T
 type TestingT interface {
 	Errorf(format string, args ...interface{})
@@ -279,8 +275,9 @@ func Equal(t TestingT, expected, actual interface{}, msgAndArgs ...interface{}) 
 	if !ObjectsAreEqual(expected, actual) {
 		diff := diff(expected, actual)
 		expected, actual = formatUnequalValues(expected, actual)
-		return Fail(t, fmt.Sprintf("Not equal: %s (expected)\n"+
-			"        != %s (actual)%s", expected, actual, diff), msgAndArgs...)
+		return Fail(t, fmt.Sprintf("Not equal: \n"+
+			"expected: %s\n"+
+			"received: %s%s", expected, actual, diff), msgAndArgs...)
 	}
 
 	return true
@@ -328,8 +325,11 @@ func isNumericType(t reflect.Type) bool {
 func EqualValues(t TestingT, expected, actual interface{}, msgAndArgs ...interface{}) bool {
 
 	if !ObjectsAreEqualValues(expected, actual) {
-		return Fail(t, fmt.Sprintf("Not equal: %#v (expected)\n"+
-			"        != %#v (actual)", expected, actual), msgAndArgs...)
+		diff := diff(expected, actual)
+		expected, actual = formatUnequalValues(expected, actual)
+		return Fail(t, fmt.Sprintf("Not equal: \n"+
+			"expected: %s\n"+
+			"received: %s%s", expected, actual, diff), msgAndArgs...)
 	}
 
 	return true
@@ -882,7 +882,7 @@ func InEpsilonSlice(t TestingT, expected, actual interface{}, epsilon float64, m
 // Returns whether the assertion was successful (true) or not (false).
 func NoError(t TestingT, err error, msgAndArgs ...interface{}) bool {
 	if err != nil {
-		return Fail(t, fmt.Sprintf("Received unexpected error %+v", err), msgAndArgs...)
+		return Fail(t, fmt.Sprintf("Received unexpected error:\n%+v", err), msgAndArgs...)
 	}
 
 	return true
@@ -913,14 +913,18 @@ func Error(t TestingT, err error, msgAndArgs ...interface{}) bool {
 //
 // Returns whether the assertion was successful (true) or not (false).
 func EqualError(t TestingT, theError error, errString string, msgAndArgs ...interface{}) bool {
-
-	message := messageFromMsgAndArgs(msgAndArgs...)
-	if !NotNil(t, theError, "An error is expected but got nil. %s", message) {
+	if !Error(t, theError, msgAndArgs...) {
 		return false
 	}
-	s := "An error with value \"%s\" is expected but got \"%s\". %s"
-	return Equal(t, errString, theError.Error(),
-		s, errString, theError.Error(), message)
+	expected := errString
+	actual := theError.Error()
+	// don't need to use deep equals here, we know they are both strings
+	if expected != actual {
+		return Fail(t, fmt.Sprintf("Error message not equal:\n"+
+			"expected: %q\n"+
+			"received: %q", expected, actual), msgAndArgs...)
+	}
+	return true
 }
 
 // matchRegexp return true if a specified regexp matches a string.
@@ -1035,8 +1039,8 @@ func diff(expected interface{}, actual interface{}) string {
 		return ""
 	}
 
-	e := spew.Sdump(expected)
-	a := spew.Sdump(actual)
+	e := spewConfig.Sdump(expected)
+	a := spewConfig.Sdump(actual)
 
 	diff, _ := difflib.GetUnifiedDiffString(difflib.UnifiedDiff{
 		A:        difflib.SplitLines(e),
@@ -1049,4 +1053,11 @@ func diff(expected interface{}, actual interface{}) string {
 	})
 
 	return "\n\nDiff:\n" + diff
+}
+
+var spewConfig = spew.ConfigState{
+	Indent:                  " ",
+	DisablePointerAddresses: true,
+	DisableCapacities:       true,
+	SortKeys:                true,
 }

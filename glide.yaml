@@ -45,9 +45,7 @@ import:
 - package: gopkg.in/yaml.v2
   version: a83829b6f1293c91addabc89d0571c246397bbf4
 - package: github.com/aymerick/raymond
-  version: ^2.0.1
 - package: github.com/markbates/buffalo
-  version: ^0.4.6
   subpackages:
   - middleware
   - render
@@ -59,6 +57,5 @@ import:
 testImport:
 - package: github.com/markbates/willie
 - package: github.com/stretchr/testify
-  version: ^1.1.4
   subpackages:
   - require

@@ -1,8 +1,8 @@
-hash: 4903cfef30ce871ca4abfc6aa92f788bab73f0c9cba240995c69e21dfd990677
-updated: 2016-12-15T20:31:37.377073997-05:00
+hash: 364a7d0db585f4d4359ccd15a11773ea3b38b46346363a28555159451a2ebff7
+updated: 2016-12-15T20:42:35.071148426-05:00
 imports:
 - name: github.com/aymerick/raymond
-  version: a2232af10b53ef1ae5a767f5178db3a6c1dab655
+  version: 72acac2207479d21dd45898c2a4264246c818148
   subpackages:
   - ast
   - lexer
@@ -12,9 +12,9 @@ imports:
 - name: github.com/dustin/go-humanize
   version: ef638b6c2e62b857442c6443dace9366a48c0ee2
 - name: github.com/fatih/color
-  version: dea9d3a26a087187530244679c1cfb3a42937794
+  version: bf82308e8c8546dc2b945157173eb8a959ae9505
 - name: github.com/fsnotify/fsnotify
-  version: 629574ca2a5df945712d3079857300b5e4da0236
+  version: fd9ec7deca8bf46ecd2a795baaacf2b3a9be1197
 - name: github.com/GeertJohan/go.rice
   version: 9fdfd46f9806a9228aae341d65ab75c5235c383c
   subpackages:
@@ -30,7 +30,7 @@ imports:
 - name: github.com/gorilla/securecookie
   version: fa5329f913702981df43dcb2a380bac429c810b5
 - name: github.com/gorilla/sessions
-  version: ca9ada44574153444b00d3fd9c8559e4cc95f896
+  version: 52389059572b4736b2b7d899b0242ecc449c8779
 - name: github.com/gorilla/websocket
   version: 0868951cdb8e69bc42df4598bdc6164ff2f1a072
 - name: github.com/inconshreveable/mousetrap
@@ -46,7 +46,7 @@ imports:
   subpackages:
   - oid
 - name: github.com/markbates/buffalo
-  version: 57e43bf87385777461da29ec38622dc25fd60cad
+  version: 7b74611e4604bec52c546718ca3c3c7fd81da37a
   subpackages:
   - middleware
   - render
@@ -146,7 +146,7 @@ testImports:
 - name: github.com/ajg/form
   version: 523a5da1a92f01b01f840b61689c0340a0243532
 - name: github.com/davecgh/go-spew
-  version: 6d212800a42e8ab5c146b8ace3490ee17e5225f9
+  version: 04cdfd42973bb9c8589fd6a731800cf222fde1a9
   subpackages:
   - spew
 - name: github.com/markbates/hmax
@@ -158,7 +158,7 @@ testImports:
   subpackages:
   - difflib
 - name: github.com/stretchr/testify
-  version: 69483b4bd14f5845b5a1e55bca19e954e827f1d0
+  version: 18a02ba4a312f95da08ff4cfc0055750ce50ae9e
   subpackages:
   - assert
   - require

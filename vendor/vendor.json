@@ -1,5 +1,13 @@
 {
   "comment": "",
+  "heroku": {
+    "goVersion": "go1.7.4",
+    "install": [
+      ".",
+      "github.com/markbates/pop/soda",
+      "github.com/markbates/grift"
+    ]
+  },
   "ignore": "test",
   "package": [{
     "path": "appengine/cloudsql",

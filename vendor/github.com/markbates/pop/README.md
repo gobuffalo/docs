@@ -11,7 +11,7 @@ Pop, by default, follows conventions that were defined by the ActiveRecord Ruby 
 * Tables must have an "id" column and a corresponding "ID" field on the `struct` being used.
 * If there is a timestamp column named "created_at", "CreatedAt" on the `struct`, it will be set with the current time when the record is created.
 * If there is a timestamp column named "updated_at", "UpdatedAt" on the `struct`, it will be set with the current time when the record is updated.
-* Default databases are lowercase, underscored versions of the `struct` name. Examples: User{} is "users", FooBar{} is "foo_bars", etc...
+* Default databases are lowercase, plural, and underscored versions of the `struct` name. Examples: User{} is "users", FooBar{} is "foo_bars", etc...
 
 ## Supported Databases
 
@@ -126,7 +126,7 @@ $ soda drop -e development
 
 ### Migrations
 
-The `soda` command supports the creation and running of SQL migrations. Yes, I said SQL! There is no fancy DSL for writing these files, just plain old SQL, which, personally, I think is DSL enough.
+The `soda` command supports the creation and running of migrations.
 
 A full list of commands available for migration can be found by asking for help:
 
@@ -181,3 +181,10 @@ Migrations can also be run reverse to rollback the schema.
 ```bash
 $ soda migrate down
 ```
+
+## Contributors
+
+* Mark Bates
+* Tim Raymond
+* Todd Rafferty
+* Johnny Boursiquot

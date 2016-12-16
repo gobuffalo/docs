@@ -244,6 +244,12 @@
 			"revisionTime": "2016-12-15T22:43:53Z"
 		},
 		{
+			"checksumSHA1": "N/Xw4+A+HwzLY0hetJ5o6lorGPU=",
+			"path": "github.com/markbates/pop/soda",
+			"revision": "fde1494f8715a5687056d8e37fda92f85d767f3c",
+			"revisionTime": "2016-12-15T22:43:53Z"
+		},
+		{
 			"checksumSHA1": "FAQ0EXLwdVefL5CWFAHAU4/mKRk=",
 			"path": "github.com/markbates/refresh/refresh",
 			"revision": "3213a6d37bdbfcb5541cc06fe41539556019f410",

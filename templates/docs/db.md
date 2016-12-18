@@ -2,4 +2,7 @@
 
 {{ partial "topics.html" }}
 
-{{ partial "docs/generators/db.md"}}
+{{ partial "docs/db/list.md"}}
+{{ partial "docs/db/model.md"}}
+{{ partial "docs/db/fizz.md"}}
+{{ partial "docs/db/sql.md"}}

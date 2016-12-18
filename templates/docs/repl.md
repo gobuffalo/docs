@@ -1,5 +1,7 @@
 # Console/REPL
 
+**_Currently only available in `tip` or versions greater than `0.4.6`._**
+
 Buffalo wraps the [https://github.com/motemen/gore](https://github.com/motemen/gore) REPL and pre-loads it with the `actions` and `models` packages from your application, should they exist.
 
 {{#panel title="Installation"}}

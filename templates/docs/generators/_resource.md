@@ -15,8 +15,6 @@ Aliases:
 ```text
 $ buffalo g resource users
 
-Buffalo version 0.4.6
-
 --> actions/users.go
 --> actions/users_test.go
 --> goimports -w .

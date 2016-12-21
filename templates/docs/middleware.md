@@ -4,7 +4,7 @@ Middleware allows for the interjection of code in the request/response cycle. Co
 
 {{ partial "topics.html" }}
 
-{{#panel title="Middleware Interface"}}
+{{#panel title="The Middleware Interface" name="interface"}}
 ```go
 func MyMiddleware(next buffalo.Handler) buffalo.Handler {
   return func(c buffalo.Context) error {

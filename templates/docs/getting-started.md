@@ -44,32 +44,36 @@ That will generate a whole new Buffalo application that is ready to go. It'll ev
 
 ```text
 $ buffalo new coke
-Buffalo version 0.4.6
---> .../coke/main.go
---> .../coke/Procfile
---> .../coke/Procfile.development
---> .../coke/.buffalo.dev.yml
---> .../coke/actions/app.go
---> .../coke/actions/home.go
---> .../coke/actions/home_test.go
---> .../coke/actions/render.go
---> .../coke/grifts/routes.go
---> .../coke/templates/index.html
---> .../coke/templates/application.html
---> .../coke/assets/js/application.js
---> .../coke/assets/css/application.css
---> .../coke/.gitignore
+Buffalo version 0.5.0
+
+--> ../coke/main.go
+--> ../coke/Procfile
+--> ../coke/Procfile.development
+--> ../coke/.buffalo.dev.yml
+--> ../coke/actions/app.go
+--> ../coke/actions/home.go
+--> ../coke/actions/home_test.go
+--> ../coke/actions/render.go
+--> ../coke/grifts/routes.go
+--> ../coke/templates/index.html
+--> ../coke/templates/application.html
+--> ../coke/public/images/logo.svg
+--> ../coke/.gitignore
 --> go get github.com/markbates/refresh/...
 --> go install github.com/markbates/refresh
 --> go get github.com/markbates/grift/...
 --> go install github.com/markbates/grift
---> .../coke/assets/js/jquery.js
---> .../coke/assets/js/jquery.map
---> .../coke/assets/css/bootstrap.css
---> .../coke/assets/js/bootstrap.js
---> .../coke/assets/js/jquery.js
---> .../coke/assets/js/jquery.map
---> .../coke/models/models.go
+--> go get github.com/motemen/gore
+--> go install github.com/motemen/gore
+--> ../coke/public/assets/application.js
+--> ../coke/public/assets/application.css
+--> ../coke/webpack.config.js
+--> ../coke/assets/js/application.js
+--> ../coke/assets/css/application.scss
+--> npm install webpack -g
+--> npm init -y
+--> npm install --save webpack sass-loader css-loader style-loader node-sass babel-loader extract-text-webpack-plugin babel babel-core url-loader file-loader jquery bootstrap path font-awesome npm-install-webpack-plugin jquery-ujs
+--> ../coke/models/models.go
 --> go get github.com/markbates/pop/...
 --> go install github.com/markbates/pop/soda
 --> database.yml

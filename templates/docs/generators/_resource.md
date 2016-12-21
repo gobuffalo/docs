@@ -29,47 +29,49 @@ Buffalo version 0.4.6
 // actions/users.go
 package actions
 
-import (
-	"errors"
+import "github.com/markbates/buffalo"
 
-	"github.com/markbates/buffalo"
-)
+type UsersResource struct {
+	buffalo.Resource
+}
 
-type UsersResource struct{}
+func init() {
+	App().Resource("/users", &UsersResource{&buffalo.BaseResource{}})
+}
 
-// List default implementation. Returns a 404
+// List default implementation.
 func (v *UsersResource) List(c buffalo.Context) error {
-	return c.Error(404, errors.New("resource not implemented"))
+	return c.Render(200, r.String("Users#List"))
 }
 
-// Show default implementation. Returns a 404
+// Show default implementation.
 func (v *UsersResource) Show(c buffalo.Context) error {
-	return c.Error(404, errors.New("resource not implemented"))
+	return c.Render(200, r.String("Users#Show"))
 }
 
-// New default implementation. Returns a 404
+// New default implementation.
 func (v *UsersResource) New(c buffalo.Context) error {
-	return c.Error(404, errors.New("resource not implemented"))
+	return c.Render(200, r.String("Users#New"))
 }
 
-// Create default implementation. Returns a 404
+// Create default implementation.
 func (v *UsersResource) Create(c buffalo.Context) error {
-	return c.Error(404, errors.New("resource not implemented"))
+	return c.Render(200, r.String("Users#Create"))
 }
 
-// Edit default implementation. Returns a 404
+// Edit default implementation.
 func (v *UsersResource) Edit(c buffalo.Context) error {
-	return c.Error(404, errors.New("resource not implemented"))
+	return c.Render(200, r.String("Users#Edit"))
 }
 
-// Update default implementation. Returns a 404
+// Update default implementation.
 func (v *UsersResource) Update(c buffalo.Context) error {
-	return c.Error(404, errors.New("resource not implemented"))
+	return c.Render(200, r.String("Users#Update"))
 }
 
-// Destroy default implementation. Returns a 404
+// Destroy default implementation.
 func (v *UsersResource) Destroy(c buffalo.Context) error {
-	return c.Error(404, errors.New("resource not implemented"))
+	return c.Render(200, r.String("Users#Destroy"))
 }
 ```
 </td>

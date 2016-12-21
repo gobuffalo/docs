@@ -6,3 +6,5 @@
 
 {{ partial "docs/generators/resource.md" }}
 
+{{ partial "docs/generators/goth.md" }}
+

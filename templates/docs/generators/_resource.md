@@ -76,7 +76,6 @@ func (v *UsersResource) Destroy(c buffalo.Context) error {
 <td width="50%" valign="top">
 ```go
 // actions/users_test.go
-
 package actions_test
 
 import (

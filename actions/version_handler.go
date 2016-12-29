@@ -45,8 +45,7 @@ func VersionUpdate(c buffalo.Context) error {
 
 func SetVersion(next buffalo.Handler) buffalo.Handler {
 	return func(c buffalo.Context) error {
-		v := models.CurrentBuffaloVersion(c.Get("tx").(*pop.Connection))
-		c.Set("version", v.Version)
+		c.Set("version", "0.6.0")
 		return next(c)
 	}
 }

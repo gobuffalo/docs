@@ -3,7 +3,7 @@ package actions
 import (
 	"fmt"
 
-	"github.com/markbates/buffalo"
+	"github.com/gobuffalo/buffalo"
 )
 
 func Docs(c buffalo.Context) error {

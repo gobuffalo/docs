@@ -1,6 +1,6 @@
 # Middleware
 
-Middleware allows for the interjection of code in the request/response cycle. Common use cases for middleware are things like logging (which Buffalo already does), authentication requests, etc... Buffalo does ship with a selection of already written middleware, please checkout out [https://godoc.org/github.com/markbates/buffalo/middleware](https://godoc.org/github.com/markbates/buffalo/middleware) for details on those.
+Middleware allows for the interjection of code in the request/response cycle. Common use cases for middleware are things like logging (which Buffalo already does), authentication requests, etc... Buffalo does ship with a selection of already written middleware, please checkout out [https://godoc.org/github.com/gobuffalo/buffalo/middleware](https://godoc.org/github.com/gobuffalo/buffalo/middleware) for details on those.
 
 {{ partial "topics.html" }}
 
@@ -79,7 +79,7 @@ GET /users -> AuthorizeUser -> ListUsers
 GET /users/{id} -> AuthorizeUser -> ShowUser
 ```
 
-See [https://godoc.org/github.com/markbates/buffalo#MiddlewareStack.Skip](https://godoc.org/github.com/markbates/buffalo#MiddlewareStack.Skip) for more details on the `Skip` function.
+See [https://godoc.org/github.com/gobuffalo/buffalo#MiddlewareStack.Skip](https://godoc.org/github.com/gobuffalo/buffalo#MiddlewareStack.Skip) for more details on the `Skip` function.
 {{/panel}}
 
 {{#panel title="Clearing Middleware"}}

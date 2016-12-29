@@ -4,8 +4,8 @@ import (
 	"errors"
 	"os"
 
-	"github.com/markbates/buffalo"
-	"github.com/markbates/gobuffalo/models"
+	"github.com/gobuffalo/buffalo"
+	"github.com/gobuffalo/gobuffalo/models"
 	"github.com/markbates/pop"
 )
 

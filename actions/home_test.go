@@ -3,7 +3,7 @@ package actions_test
 import (
 	"testing"
 
-	"github.com/markbates/gobuffalo/actions"
+	"github.com/gobuffalo/gobuffalo/actions"
 	"github.com/markbates/willie"
 	"github.com/stretchr/testify/require"
 )

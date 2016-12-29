@@ -27,7 +27,7 @@ $ buffalo g resource users
 // actions/users.go
 package actions
 
-import "github.com/markbates/buffalo"
+import "github.com/gobuffalo/buffalo"
 
 type UsersResource struct {
 	buffalo.Resource

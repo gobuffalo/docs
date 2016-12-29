@@ -1,5 +1,5 @@
 {
-	"ImportPath": "github.com/markbates/gobuffalo",
+	"ImportPath": "github.com/gobuffalo/gobuffalo",
 	"GoVersion": "go1.7",
 	"GodepVersion": "v75",
 	"Packages": [
@@ -120,27 +120,27 @@
 			"Rev": "4dd446efc17690bc53e154025146f73203b18309"
 		},
 		{
-			"ImportPath": "github.com/markbates/buffalo",
+			"ImportPath": "github.com/gobuffalo/buffalo",
 			"Comment": "v0.4.6-3-g7b74611",
 			"Rev": "7b74611e4604bec52c546718ca3c3c7fd81da37a"
 		},
 		{
-			"ImportPath": "github.com/markbates/buffalo/middleware",
+			"ImportPath": "github.com/gobuffalo/buffalo/middleware",
 			"Comment": "v0.4.6-3-g7b74611",
 			"Rev": "7b74611e4604bec52c546718ca3c3c7fd81da37a"
 		},
 		{
-			"ImportPath": "github.com/markbates/buffalo/render",
+			"ImportPath": "github.com/gobuffalo/buffalo/render",
 			"Comment": "v0.4.6-3-g7b74611",
 			"Rev": "7b74611e4604bec52c546718ca3c3c7fd81da37a"
 		},
 		{
-			"ImportPath": "github.com/markbates/buffalo/render/helpers",
+			"ImportPath": "github.com/gobuffalo/buffalo/render/helpers",
 			"Comment": "v0.4.6-3-g7b74611",
 			"Rev": "7b74611e4604bec52c546718ca3c3c7fd81da37a"
 		},
 		{
-			"ImportPath": "github.com/markbates/buffalo/render/resolvers",
+			"ImportPath": "github.com/gobuffalo/buffalo/render/resolvers",
 			"Comment": "v0.4.6-3-g7b74611",
 			"Rev": "7b74611e4604bec52c546718ca3c3c7fd81da37a"
 		},

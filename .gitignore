@@ -2,4 +2,3 @@
 **/*.sqlite
 bin/
 node_modules/
-gobuffalo

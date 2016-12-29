@@ -2,24 +2,16 @@ package helpers
 
 import (
 	"encoding/json"
+	"fmt"
 	"html/template"
 	"strings"
 
 	"github.com/aymerick/raymond"
+	"github.com/markbates/inflect"
+	"github.com/shurcooL/github_flavored_markdown"
 )
 
 // Helpers that are automatically injected into templates.
-/*
-yield - renders the content of a template into a layout.
-partial - renders the content of a partial into a template.
-js_escape - escapes a string to be valid in JavaScript.
-html_escape - escapes any HTML characters in a string.
-json - converts the interface to JSON.
-content_for - stores a block of templating code to be re-used later in the template.
-content_of - retrieves a stored block for templating and renders it.
-upcase - strings.ToUpper.
-downcase - strings.ToLower.
-*/
 var Helpers = map[string]interface{}{
 	"js_escape":   template.JSEscapeString,
 	"html_escape": template.HTMLEscapeString,
@@ -28,6 +20,14 @@ var Helpers = map[string]interface{}{
 	"content_of":  ContentOf,
 	"upcase":      strings.ToUpper,
 	"downcase":    strings.ToLower,
+	"markdown":    Markdown,
+	"debug":       Debug,
+}
+
+func init() {
+	for k, v := range inflect.Helpers {
+		Helpers[k] = v
+	}
 }
 
 // ToJSON converts an interface into a string.
@@ -62,4 +62,15 @@ func ContentOf(name string, options *raymond.Options) raymond.SafeString {
 		return s.(raymond.SafeString)
 	}
 	return raymond.SafeString("")
+}
+
+// Markdown converts the string into HTML using GitHub flavored markdown.
+func Markdown(body string) raymond.SafeString {
+	b := github_flavored_markdown.Markdown([]byte(body))
+	return raymond.SafeString(string(b))
+}
+
+// Debug by verbosely printing out using 'pre' tags.
+func Debug(v interface{}) raymond.SafeString {
+	return raymond.SafeString(fmt.Sprintf("<pre>%+v</pre>", v))
 }

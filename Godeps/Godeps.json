@@ -64,6 +64,31 @@
 			"Rev": "0b58b37b664c21f3010e836f1b931e1d0b0b0685"
 		},
 		{
+			"ImportPath": "github.com/gobuffalo/buffalo",
+			"Comment": "v0.6.0-1-geb60cb9",
+			"Rev": "eb60cb9dd38d924b4263a6968414ad5933ed6a49"
+		},
+		{
+			"ImportPath": "github.com/gobuffalo/buffalo/middleware",
+			"Comment": "v0.6.0-1-geb60cb9",
+			"Rev": "eb60cb9dd38d924b4263a6968414ad5933ed6a49"
+		},
+		{
+			"ImportPath": "github.com/gobuffalo/buffalo/render",
+			"Comment": "v0.6.0-1-geb60cb9",
+			"Rev": "eb60cb9dd38d924b4263a6968414ad5933ed6a49"
+		},
+		{
+			"ImportPath": "github.com/gobuffalo/buffalo/render/helpers",
+			"Comment": "v0.6.0-1-geb60cb9",
+			"Rev": "eb60cb9dd38d924b4263a6968414ad5933ed6a49"
+		},
+		{
+			"ImportPath": "github.com/gobuffalo/buffalo/render/resolvers",
+			"Comment": "v0.6.0-1-geb60cb9",
+			"Rev": "eb60cb9dd38d924b4263a6968414ad5933ed6a49"
+		},
+		{
 			"ImportPath": "github.com/gorilla/context",
 			"Comment": "v1.1-7-g08b5f42",
 			"Rev": "08b5f424b9271eedf6f9f0ce86cb9396ed337a42"
@@ -118,31 +143,6 @@
 			"ImportPath": "github.com/lib/pq/oid",
 			"Comment": "go1.0-cutoff-107-g4dd446e",
 			"Rev": "4dd446efc17690bc53e154025146f73203b18309"
-		},
-		{
-			"ImportPath": "github.com/gobuffalo/buffalo",
-			"Comment": "v0.4.6-3-g7b74611",
-			"Rev": "7b74611e4604bec52c546718ca3c3c7fd81da37a"
-		},
-		{
-			"ImportPath": "github.com/gobuffalo/buffalo/middleware",
-			"Comment": "v0.4.6-3-g7b74611",
-			"Rev": "7b74611e4604bec52c546718ca3c3c7fd81da37a"
-		},
-		{
-			"ImportPath": "github.com/gobuffalo/buffalo/render",
-			"Comment": "v0.4.6-3-g7b74611",
-			"Rev": "7b74611e4604bec52c546718ca3c3c7fd81da37a"
-		},
-		{
-			"ImportPath": "github.com/gobuffalo/buffalo/render/helpers",
-			"Comment": "v0.4.6-3-g7b74611",
-			"Rev": "7b74611e4604bec52c546718ca3c3c7fd81da37a"
-		},
-		{
-			"ImportPath": "github.com/gobuffalo/buffalo/render/resolvers",
-			"Comment": "v0.4.6-3-g7b74611",
-			"Rev": "7b74611e4604bec52c546718ca3c3c7fd81da37a"
 		},
 		{
 			"ImportPath": "github.com/markbates/gentronics",

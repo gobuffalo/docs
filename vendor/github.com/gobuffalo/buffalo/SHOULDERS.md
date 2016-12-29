@@ -42,11 +42,11 @@ Thank you to the following **GIANTS**:
 
 * [github.com/kardianos/osext](https://github.com/kardianos/osext)
 
-* [github.com/markbates/buffalo/render](https://github.com/markbates/buffalo/render)
+* [github.com/gobuffalo/buffalo/render](https://github.com/gobuffalo/buffalo/render)
 
-* [github.com/markbates/buffalo/render/helpers](https://github.com/markbates/buffalo/render/helpers)
+* [github.com/gobuffalo/buffalo/render/helpers](https://github.com/gobuffalo/buffalo/render/helpers)
 
-* [github.com/markbates/buffalo/render/resolvers](https://github.com/markbates/buffalo/render/resolvers)
+* [github.com/gobuffalo/buffalo/render/resolvers](https://github.com/gobuffalo/buffalo/render/resolvers)
 
 * [github.com/markbates/going/defaults](https://github.com/markbates/going/defaults)
 
@@ -71,6 +71,8 @@ Thank you to the following **GIANTS**:
 * [github.com/microcosm-cc/bluemonday](https://github.com/microcosm-cc/bluemonday)
 
 * [github.com/mitchellh/go-homedir](https://github.com/mitchellh/go-homedir)
+
+* [github.com/motemen/gore](https://github.com/motemen/gore)
 
 * [github.com/pkg/errors](https://github.com/pkg/errors)
 

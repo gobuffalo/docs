@@ -1,4 +1,4 @@
-# Buffalo [![GoDoc](https://godoc.org/github.com/markbates/buffalo?status.svg)](https://godoc.org/github.com/markbates/buffalo) [![Build Status](https://travis-ci.org/markbates/buffalo.svg?branch=master)](https://travis-ci.org/markbates/buffalo) [![Code Climate](https://codeclimate.com/github/markbates/buffalo/badges/gpa.svg)](https://codeclimate.com/github/markbates/buffalo)
+# Buffalo [![GoDoc](https://godoc.org/github.com/gobuffalo/buffalo?status.svg)](https://godoc.org/github.com/gobuffalo/buffalo) [![Build Status](https://travis-ci.org/gobuffalo/buffalo.svg?branch=master)](https://travis-ci.org/gobuffalo/buffalo) [![Code Climate](https://codeclimate.com/github/gobuffalo/buffalo/badges/gpa.svg)](https://codeclimate.com/github/gobuffalo/buffalo)
 
 Buffalo is Go web framework. Yeah, I hate the word "framework" too! Buffalo is different though. Buffalo doesn't want to re-invent wheels like routing and templating. Buffalo is glue that wraps all of the best packages available and makes them all play nicely together.
 
@@ -8,10 +8,14 @@ If you were to look through the Buffalo code base you'll find little code, just 
 
 > I :heart: web dev in go again - Brian Ketelsen
 
+## Documentation
+
+Please visit [http://gobuffalo.io](http://gobuffalo.io) for the latest documentation, examples, and more.
+
 ## Installation
 
 ```text
-$ go get -u github.com/markbates/buffalo/buffalo
+$ go get -u github.com/gobuffalo/buffalo/buffalo
 ```
 
 ## Generating a new Project

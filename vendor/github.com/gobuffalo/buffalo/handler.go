@@ -18,7 +18,7 @@ import (
 	}
 
 	func (c Context) error {
-		return C.Redirect(301, "http://github.com/markbates/buffalo")
+		return C.Redirect(301, "http://github.com/gobuffalo/buffalo")
 	}
 
 	func (c Context) error {
@@ -42,7 +42,9 @@ func (a *App) handlerToHandler(h Handler) http.Handler {
 			params:   params,
 			logger:   a.Logger,
 			session:  a.getSession(req, ws),
-			data:     map[string]interface{}{},
+			data: map[string]interface{}{
+				"routes": a.Routes(),
+			},
 		}
 
 		err := a.Middleware.handler(h)(c)

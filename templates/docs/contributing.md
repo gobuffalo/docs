@@ -8,13 +8,13 @@ The Buffalo team needs, and wants your help! We're doing our best to make the wo
 
 We are fortunate, as a community, to have so many great packages written by some really great people. Buffalo wraps all of those packages together with a little glue to bring it all together. A great place to start making Buffalo better is to help improve the underlying packages Buffalo relies on.
 
-[https://github.com/gobuffalo/buffalo/blob/master/SHOULDERS.md](https://github.com/gobuffalo/buffalo/blob/master/SHOULDERS.md)
+[https://github.com/markbates/buffalo/blob/master/SHOULDERS.md](https://github.com/markbates/buffalo/blob/master/SHOULDERS.md)
 
 {{/panel}}
 
 {{#panel title="The Buffalo Project"}}
 
-[https://github.com/gobuffalo/buffalo](https://github.com/gobuffalo/buffalo)
+[https://github.com/markbates/buffalo](https://github.com/markbates/buffalo)
 
 ##### Guidelines for Contributing
 
@@ -27,5 +27,5 @@ We are fortunate, as a community, to have so many great packages written by some
 
 Contributing to this documentation site is a great, and easy, way to help make Buffalo better.
 
-[https://github.com/gobuffalo/gobuffalo](https://github.com/gobuffalo/gobuffalo)
+[https://github.com/markbates/gobuffalo](https://github.com/markbates/gobuffalo)
 {{/panel}}

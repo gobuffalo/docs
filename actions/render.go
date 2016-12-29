@@ -6,13 +6,13 @@ import (
 	"path"
 	"runtime"
 
-	"github.com/gobuffalo/buffalo/render"
-	"github.com/gobuffalo/buffalo/render/resolvers"
-	"github.com/gobuffalo/gobuffalo/actions/helpers"
+	"github.com/markbates/buffalo/render"
+	"github.com/markbates/buffalo/render/resolvers"
+	"github.com/markbates/gobuffalo/actions/helpers"
 )
 
 var r *render.Engine
-var resolver = &resolvers.GoPathResolver{Path: "github.com/gobuffalo/gobuffalo"}
+var resolver = &resolvers.GoPathResolver{Path: "github.com/markbates/gobuffalo"}
 
 func init() {
 	r = render.New(render.Options{

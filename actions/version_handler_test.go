@@ -4,8 +4,8 @@ import (
 	"os"
 	"testing"
 
-	"github.com/gobuffalo/gobuffalo/actions"
-	"github.com/gobuffalo/gobuffalo/models"
+	"github.com/markbates/gobuffalo/actions"
+	"github.com/markbates/gobuffalo/models"
 	"github.com/markbates/pop"
 	"github.com/markbates/willie"
 	"github.com/stretchr/testify/require"

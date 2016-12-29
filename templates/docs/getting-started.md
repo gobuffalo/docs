@@ -28,7 +28,7 @@
 {{#panel title="Installation"}}
 
 ```
-$ go get -u github.com/gobuffalo/buffalo/buffalo
+$ go get -u github.com/markbates/buffalo/buffalo
 ```
 {{/panel}}
 

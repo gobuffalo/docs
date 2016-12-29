@@ -1,9 +1,9 @@
 package actions_test
 
 import (
-	"github.com/gobuffalo/buffalo"
-	"github.com/gobuffalo/buffalo/middleware"
-	"github.com/gobuffalo/gobuffalo/models"
+	"github.com/markbates/buffalo"
+	"github.com/markbates/buffalo/middleware"
+	"github.com/markbates/gobuffalo/models"
 	"github.com/markbates/pop"
 )
 

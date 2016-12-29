@@ -3,8 +3,8 @@ package grifts
 import (
 	"os"
 
-	"github.com/gobuffalo/buffalo"
-	"github.com/gobuffalo/gobuffalo/actions"
+	"github.com/markbates/buffalo"
+	"github.com/markbates/gobuffalo/actions"
 	. "github.com/markbates/grift/grift"
 	"github.com/olekukonko/tablewriter"
 )

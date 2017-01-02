@@ -1,4 +1,5 @@
 **/*.log
 **/*.sqlite
 bin/
+public/assets
 node_modules/

@@ -29,6 +29,6 @@ func assetsPath() http.FileSystem {
 		return http.Dir("/app/assets")
 	}
 
-	box := rice.MustFindBox("../assets")
+	box := rice.MustFindBox("../public/assets")
 	return box.HTTPBox()
 }

@@ -1,3 +1,5 @@
+require("bootstrap/dist/js/bootstrap.js");
+
 $(function() {
   activateSideNav();
   $('.highlight pre').each(function(i, block) {
@@ -18,7 +20,7 @@ function buildSideNav() {
   $(".main a[name]").each(function(_, a) {
     a = $(a);
     if (a.data("title")) {
-      items.push('<li>> <a href="' + path +"#" + a.attr("name") + '">' + a.data("title") + '</a></li>');
+      items.push(`<li>> <a href="${path}#${a.attr('name')}">${a.data("title")}</a></li>`);
     }
   })
   $("#topics").addClass("list-unstyled");
@@ -29,6 +31,5 @@ function activateSideNav() {
   loc = window.location;
   var path = loc.pathname;
   $(".nav-sidebar li").removeClass("active")
-  $(".nav a[href='" + path + "']").closest("li").addClass("active");
-  $(".nav a[href='" + path + loc.hash + "']").closest("li").addClass("active");
+  $(`.nav a[href="${path}"]`).closest("li").addClass("active");
 }

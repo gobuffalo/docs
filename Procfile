@@ -1,1 +1,1 @@
-web: gobuffalo
+web: bin/gobuffalo

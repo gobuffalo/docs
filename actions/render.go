@@ -1,48 +1,34 @@
 package actions
 
 import (
-	"log"
 	"net/http"
-	"path"
-	"runtime"
 
+	rice "github.com/GeertJohan/go.rice"
 	"github.com/gobuffalo/buffalo/render"
 	"github.com/gobuffalo/buffalo/render/resolvers"
 	"github.com/gobuffalo/gobuffalo/actions/helpers"
 )
 
 var r *render.Engine
-var resolver = &resolvers.GoPathResolver{Path: "github.com/gobuffalo/gobuffalo"}
 
 func init() {
 	r = render.New(render.Options{
-		TemplatesPath:  templatesPath(),
 		HTMLLayout:     "application.html",
 		CacheTemplates: ENV == "production",
+		Helpers: map[string]interface{}{
+			"panel": helpers.PanelHelper,
+		},
+		FileResolverFunc: func() resolvers.FileResolver {
+			return &resolvers.RiceBox{Box: rice.MustFindBox("../templates")}
+		},
 	})
-	r.RegisterHelper("panel", helpers.PanelHelper)
 }
 
-func assetsPath() http.Dir {
+func assetsPath() http.FileSystem {
 	if ENV == "production" {
 		return http.Dir("/app/assets")
 	}
-	p, _ := resolver.Resolve("assets")
-	return http.Dir(p)
-}
 
-func templatesPath() string {
-	if ENV == "production" {
-		return "/app/templates"
-	}
-	p, err := resolver.Resolve("templates")
-	if err != nil {
-		log.Fatal(err)
-	}
-	return p
-}
-
-func fromHere(p string) string {
-	_, filename, _, _ := runtime.Caller(1)
-	return path.Join(path.Dir(filename), p)
+	box := rice.MustFindBox("../assets")
+	return box.HTTPBox()
 }

@@ -1,41 +1,46 @@
 package helpers
 
 import (
-	"fmt"
 	"html/template"
 
-	"github.com/aymerick/raymond"
+	"github.com/gobuffalo/velvet"
 	"github.com/markbates/inflect"
 )
 
-func PanelHelper(options *raymond.Options) raymond.SafeString {
+func PanelHelper(help velvet.HelperContext) (template.HTML, error) {
 	var err error
 	if panelTemplate == nil {
-		panelTemplate, err = raymond.Parse(panelTemplateHtml)
+		panelTemplate, err = velvet.Parse(panelTemplateHtml)
 		if err != nil {
-			return raymond.SafeString(fmt.Sprintf("<pre><code>%s</pre></code>", err.Error()))
+			return "", err
 		}
-		panelTemplate.RegisterHelper("escape", template.HTMLEscapeString)
 	}
-	data := options.Hash()
-	data["body"] = raymond.SafeString(options.Fn())
-	if _, ok := data["style"]; !ok {
-		data["style"] = "primary"
+
+	body, err := help.Block()
+	if err != nil {
+		return "", err
 	}
-	if _, ok := data["name"]; !ok {
-		data["name"] = inflect.Dasherize(data["title"].(string))
+
+	data := help.Context.New()
+	data.Set("body", template.HTML(body))
+
+	if !data.Has("style") {
+		data.Set("style", "primary")
+	}
+	if !data.Has("name") {
+		data.Set("name", inflect.Dasherize(data.Get("title").(string)))
 	}
 	s, err := panelTemplate.Exec(data)
 	if err != nil {
-		return raymond.SafeString(fmt.Sprintf("<pre><code>%s</pre></code>", err.Error()))
+		return "", err
 	}
-	return raymond.SafeString(s)
+	return template.HTML(s), err
 }
 
-var panelTemplate *raymond.Template
+var panelTemplate *velvet.Template
 
 const panelTemplateHtml = `
-<a name="{{name}}" data-title="{{escape title}}"></a>
+<a name="{{name}}" data-title="{{html_escape title}}"></a>
 <div class="panel panel-{{style}}">
   <div class="panel-heading">
     <h3 class="panel-title">{{title}}</h3>

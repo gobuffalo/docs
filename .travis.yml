@@ -13,9 +13,8 @@ install:
   - go get github.com/Masterminds/glide/...
   - go install github.com/Masterminds/glide/...
   - glide i
-  - go install ./vendor/github.com/gobuffalo/buffalo/buffalo
 
-script: buffalo test
+script: go test -v $(glide novendor)
 
 addons:
   postgresql: "9.3"

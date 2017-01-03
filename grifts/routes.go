@@ -3,14 +3,13 @@ package grifts
 import (
 	"os"
 
-	"github.com/gobuffalo/buffalo"
 	"github.com/gobuffalo/gobuffalo/actions"
 	. "github.com/markbates/grift/grift"
 	"github.com/olekukonko/tablewriter"
 )
 
 var _ = Add("routes", func(c *Context) error {
-	a := actions.App().(*buffalo.App)
+	a := actions.App()
 	routes := a.Routes()
 
 	table := tablewriter.NewWriter(os.Stdout)

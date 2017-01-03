@@ -10,7 +10,9 @@ env:
   GO_ENV: test
 
 install:
- - go get -t -v ./...
+ - go get github.com/Masterminds/glide/...
+ - go install github.com/Masterminds/glide/...
+ - glide i
 
 script: buffalo test
 

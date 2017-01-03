@@ -12,8 +12,8 @@ env:
 install:
   - go get github.com/Masterminds/glide/...
   - go install github.com/Masterminds/glide/...
-  - go install ./vendor/github.com/gobuffalo/buffalo/buffalo
   - glide i
+  - go install ./vendor/github.com/gobuffalo/buffalo/buffalo
 
 script: buffalo test
 

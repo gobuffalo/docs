@@ -6,6 +6,9 @@ go:
   - 1.7
   - tip
 
+env:
+  GO_ENV: test
+
 install:
  - go get -t -v ./...
 

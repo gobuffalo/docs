@@ -25,10 +25,6 @@ func init() {
 }
 
 func assetsPath() http.FileSystem {
-	// if ENV == "production" {
-	// 	return http.Dir("/app/assets")
-	// }
-	//
 	box := rice.MustFindBox("../public/assets")
 	return box.HTTPBox()
 }

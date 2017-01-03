@@ -61,56 +61,30 @@ Custom helper functions can take any type, and any number of arguments. There is
 
 {{/panel}}
 
-{{#panel title="Global Helpers"}}
-
-Custom helpers can be registered in one of two different places; globally and per template.
+{{#panel title="Simple Helpers"}}
 
 ```go
-err := velvet.Helpers.Add("greet", func(name string) string {
-  return fmt.Sprintf("Hi %s!", name)
+r := render.New(render.Options{
+  // ...
+  Helpers: map[string]interface{}{
+    "greet": greet,
+  },
+  // ...
 })
-if err != nil {
-  // handle errors
-}
-```
 
-The `greet` function is now available to all templates that use Velvet.
-
-```go
-s, err := velvet.Render(`<h1>\{{greet "mark"}}</h1>`, velvet.NewContext())
-if err != nil {
-  // handle errors
-}
-fmt.Print(s) // <h1>Hi mark!</h1>
-```
-
-{{/panel}}
-
-{{#panel title="Per Template Helpers"}}
-
-Custom helpers can be registered in one of two different places; globally and per template.
-
-```go
-t, err := velvet.Parse(`<h1>\{{greet "mark"}}</h1>`)
-if err != nil {
-  // handle errors
-}
-t.Helpers.Add("greet", func(name string) string {
+func greet(name string) string {
   return fmt.Sprintf("Hi %s!", name)
-})
-if err != nil {
-  // handle errors
 }
 ```
 
-The `greet` function is now only available to the template it was added to.
+The `greet` function is now available to all templates that use that `render.Engine`.
 
 ```go
-s, err := t.Exec(velvet.NewContext())
-if err != nil {
-  // handle errors
+func Greeter(c buffalo.Context) error {
+  c.Set("name", "Mark")
+  return c.Render(r.String(200, `<h1>\{{greet "mark"}}</h1>`))
 }
-fmt.Print(s) // <h1>Hi mark!</h1>
+// <h1>Hi Mark!</h1>
 ```
 
 {{/panel}}
@@ -120,20 +94,26 @@ fmt.Print(s) // <h1>Hi mark!</h1>
 Like the [`if`](/docs/templating#if) and [`each`](/docs/helpers#each-array) helpers, block helpers take a "block" of text that can be evaluated and potentially rendered, manipulated, or whatever you would like. To write a block helper, you have to take the `velvet.HelperContext` as the last argument to your helper function. This will give you access to the block associated with that call.
 
 ```go
-velvet.Helpers.Add("upblock", func(help velvet.HelperContext) (template.HTML, error) {
+r := render.New(render.Options{
+  // ...
+  Helpers: map[string]interface{}{
+    "upblock": upblock,
+  },
+  // ...
+})
+
+func upblock(help velvet.HelperContext) (template.HTML, error) {
   s, err := help.Block()
   if err != nil {
     return "", err
   }
   return strings.ToUpper(s), nil
-})
-
-input := `\{{#upblock}}hi\{{/upblock}}`
-s, err := velvet.Render(input, velvet.NewContext())
-if err != nil {
-  // handle errors
 }
-fmt.Print(s) // HI
+
+func Upper(c buffalo.Context) error {
+  return c.Render(r.String(200, `\{{#upblock}}hi\{{/upblock}}`))
+}
+// HI
 ```
 
 {{/panel}}

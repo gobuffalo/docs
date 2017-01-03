@@ -89,20 +89,57 @@ $ buffalo help new
 
 {{/panel}}
 
-{{#panel title="Running Your Application" name="running"}}
+{{ partial "docs/dev.md" }}
 
-Buffalo is Go "standards" compliant, that means you can just build your binary and run it. It's that simple.
+{{#panel title="Building Your Application" name="building"}}
+
+Buffalo features a command, `build`, that will build a full binary of your application including, but not limited to; assets, migrations, templates, etc... If you buy into the "Buffalo Way" things just work. It's a wonderful experience. :)
+
+```
+$ buffalo build
+```
+
+```text
+--> running webpack
+Hash: 47a7dc2dd9d5da7eb169
+Version: webpack 1.14.0
+Time: 2961ms
+                                 Asset     Size  Chunks             Chunk Names
+                             .DS_Store  6.15 kB          [emitted]
+  f4769f9bdb7466be65088239c12046d1.eot  20.1 kB          [emitted]
+ fa2772327f55d8198301fdb8bcfc8158.woff  23.4 kB          [emitted]
+  e18bbf611f2a2e43afc071aa2f4e1512.ttf  45.4 kB          [emitted]
+  89889688147bd7575d6327160d64e760.svg   109 kB          [emitted]
+  674f50d287a8c48dc19ba404d20fe713.eot   166 kB          [emitted]
+af7ae505a9eed503f8b8e6982036873e.woff2  77.2 kB          [emitted]
+ fee66e712a8a08eef5805a46892932ad.woff    98 kB          [emitted]
+  b06871f281fee6b241d60582ae9369b9.ttf   166 kB          [emitted]
+  912ec66d7572ff821749319396470bde.svg   444 kB          [emitted]
+                        application.js   372 kB       0  [emitted]  main
+                       application.css   335 kB       0  [emitted]  main
+448c34a56d699c29117adc64c43affeb.woff2    18 kB          [emitted]
+        fonts/fontawesome-webfont.woff    98 kB          [emitted]
+         fonts/fontawesome-webfont.eot   166 kB          [emitted]
+       fonts/fontawesome-webfont.woff2  77.2 kB          [emitted]
+         fonts/fontawesome-webfont.ttf   166 kB          [emitted]
+                 fonts/FontAwesome.otf   135 kB          [emitted]
+                   images/logo_med.png   157 kB          [emitted]
+         fonts/fontawesome-webfont.svg   444 kB          [emitted]
+                  images/uncle_sam.jpg  20.5 kB          [emitted]
+                       images/logo.svg    66 kB          [emitted]
+                       images/logo.png   366 kB          [emitted]
+                       images/repl.gif  7.15 MB          [emitted]
+   [0] multi main 52 bytes {0} [built]
+    + 23 hidden modules
+Child extract-text-webpack-plugin:
+        + 17 hidden modules
+--> built rice box ../github.com/gobuffalo/gobuffalo/rice-box.go
+--> built rice box ../github.com/gobuffalo/gobuffalo/actions/rice-box.go
+--> running go build -v -o bin/gobuffalo -ldflags -X main.version=db92753 -X main.buildTime="2017-01-03T11:20:30-05:00"
+--> cleaning up build
+```
+
+If you deploying to a machine that has `zip` installed, it is recommended that you use the `-z` flag with `buffalo build`, it will result in faster build times, and smaller binaries.
 
 {{/panel}}
 
-{{#panel title="Running Your Application in Development" name="running-in-dev"}}
-
-One of the downsides to Go development is the lack of code "reloading". This means as you change your code you need to manually stop your application, rebuild it, and then restart it. Buffalo finds this is annoying, and wants to make life better for you.
-
-```
-$ buffalo dev
-```
-
-The `dev` command will watch your `.go` and `.html` files by default and rebuild, and restart, your binary for you so you don't have to worry about such things. Just run the `dev` command and start coding.
-
-{{/panel}}

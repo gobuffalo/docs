@@ -3,6 +3,9 @@ require("bootstrap/dist/js/bootstrap.js");
 $(function() {
   activateSideNav();
   $('.highlight pre').each(function(i, block) {
+    var html = block.innerHTML;
+    html = html.replace(/\t/g, "  ");
+    block.innerHTML = html;
     hljs.highlightBlock(block);
   });
 

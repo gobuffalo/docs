@@ -1,4 +1,4 @@
-# Helpers
+# Custom Helpers
 
 {{ partial "docs/disclaimer.html" }}
 
@@ -82,7 +82,7 @@ The `greet` function is now available to all templates that use that `render.Eng
 ```go
 func Greeter(c buffalo.Context) error {
   c.Set("name", "Mark")
-  return c.Render(r.String(200, `<h1>\{{greet "mark"}}</h1>`))
+  return c.Render(200, r.String(`<h1>\{{greet "mark"}}</h1>`))
 }
 // <h1>Hi Mark!</h1>
 ```
@@ -111,7 +111,7 @@ func upblock(help velvet.HelperContext) (template.HTML, error) {
 }
 
 func Upper(c buffalo.Context) error {
-  return c.Render(r.String(200, `\{{#upblock}}hi\{{/upblock}}`))
+  return c.Render(200, r.String(`\{{#upblock}}hi\{{/upblock}}`))
 }
 // HI
 ```

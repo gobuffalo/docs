@@ -48,3 +48,36 @@ func init() {
 ```
 
 {{/panel}}
+
+{{#panel title="Markdown"}}
+
+Files passed into the `render.HTML` or `render.Template` functions, that have an extension of `.md`, will be converted from Markdown (using GitHub flavored Markdown) to HTML before being run through the templating engine. This makes for incredibly easy templating for simplier pages.
+
+```markdown
+<!-- beatles.md -->
+# The Beatles
+
+\{{#each names as |name|}}
+* \{{name}}
+\{{/each}}
+```
+
+```go
+func Beatles(c buffalo.Context) error {
+  c.Set("names", []string{"John", "Paul", "George", "Ringo"})
+  return c.Render(200, r.HTML("beatles.md"))
+}
+```
+
+```html
+<h1>The Beatles</h1>
+
+<ul>
+  <li>John</li>
+  <li>Paul</li>
+  <li>George</li>
+  <li>Ringo</li>
+</ul>
+```
+
+{{/panel}}

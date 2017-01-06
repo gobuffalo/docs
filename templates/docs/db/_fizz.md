@@ -1,11 +1,15 @@
-{{#panel title="Generating Migrations (SQL)" name="generating-sql"}}
+{{#panel title="Generating Migrations (fizz)" name="generating-fizz"}}
 ```text
-$ buffalo db g sql --help
+$ buffalo db g migration --help
 
-Generates Up/Down migrations for your database using SQL.
+Generates Up/Down migrations for your database using fizz.
 
 Usage:
-  buffalo soda generate sql [name] [flags]
+  buffalo soda generate fizz [name] [flags]
+
+Aliases:
+  fizz, migration
+
 
 Global Flags:
   -c, --config string   The configuration file you would like to use.

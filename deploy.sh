@@ -1,11 +1,12 @@
 #!/bin/bash
-set +x
+
+set -ex
 
 git checkout -b build
-GOOS=linux buffalo build -z
+GOOS=linux buffalo build
 git add .
 git commit -a -m "binary commit"
-git push heroku build:master
+git push heroku build:master --force
 git checkout master
-git branch -d build
+git branch -D build
 rm -rf bin/

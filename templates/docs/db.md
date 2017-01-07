@@ -84,7 +84,7 @@ Aliases:
 
 
 Available Commands:
-  create      [DEPRACTION WARNING] This command is deprecated. Please use `soda generate fizz` or `soda generate sql` instead.
+  create      [DEPRECATION WARNING] This command is deprecated. Please use `soda generate fizz` or `soda generate sql` instead.
   down        Apply all of the 'down' migrations.
   reset       The equivalent of running `migrate down` and then `migrate up`
   up          Apply all of the 'up' migrations.

@@ -1,6 +1,6 @@
 # Routing
 
-Buffalo uses the wonderful [http://www.gorillatoolkit.org/pkg/mux](http://www.gorillatoolkit.org/pkg/mux) package under the covers to handle routing within Buffalo applications. With that said, Buffalo wraps the `mux` API with it's own. This guide walks you through all you'll need to know about how Buffalo handles routing.
+Buffalo uses the wonderful [http://www.gorillatoolkit.org/pkg/mux](http://www.gorillatoolkit.org/pkg/mux) package under the covers to handle routing within Buffalo applications. With that said, Buffalo wraps the `mux` API with its own. This guide walks you through all you'll need to know about how Buffalo handles routing.
 
 {{ partial "topics.html" }}
 
@@ -110,7 +110,7 @@ g.GET("/users", func (c buffalo.Context) error {
 })
 ```
 
-By default a group will inherit any middleware from it's parent app.
+By default a group will inherit any middleware from its parent app.
 
 ```go
 a.Use(SomeMiddleware)

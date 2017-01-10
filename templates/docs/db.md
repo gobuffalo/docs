@@ -1,6 +1,6 @@
 # Database
 
-Buffalo uses [github.com/markbates/pop](https://github.com/markbates/pop) as it's default database package for migrations, transactions, basic ORM functionality, and more.
+Buffalo uses [github.com/markbates/pop](https://github.com/markbates/pop) as its default database package for migrations, transactions, basic ORM functionality, and more.
 
 {{ partial "topics.html" }}
 

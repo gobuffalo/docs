@@ -12,7 +12,7 @@
         </p>
 
         <p>
-        Buffalo is "idiomatic", for whatever that is worth. The purpose of a framework is not to bend you to it's will, but to rather get out of your way and make your job of building your application easy. That is the goal of Buffalo.
+        Buffalo is "idiomatic", for whatever that is worth. The purpose of a framework is not to bend you to its will, but to rather get out of your way and make your job of building your application easy. That is the goal of Buffalo.
         </p>
 
         <p>
@@ -81,7 +81,7 @@ Buffalo version 0.5.0
 --> goimports -w .
 ```
 
-To see a list of available flags for the `new` command, just check out it's help.
+To see a list of available flags for the `new` command, just check out its help.
 
 ```
 $ buffalo help new

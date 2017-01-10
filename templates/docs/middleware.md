@@ -84,7 +84,7 @@ See [https://godoc.org/github.com/gobuffalo/buffalo#MiddlewareStack.Skip](https:
 
 {{#panel title="Clearing Middleware"}}
 
-Since middleware is [inherited](#using-middleware) from it's parent, there maybe times when it is necessary to start with a "blank" set of middleware.
+Since middleware is [inherited](#using-middleware) from its parent, there maybe times when it is necessary to start with a "blank" set of middleware.
 
 ```go
 a := buffalo.Automatic(buffalo.Options{})

@@ -3,7 +3,7 @@
 set -ex
 
 git checkout -b build
-GOOS=linux buffalo build
+GOOS=linux buffalo build -z
 git add .
 git commit -a -m "binary commit"
 git push heroku build:master --force

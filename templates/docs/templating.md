@@ -18,6 +18,8 @@ Let's assume you have a template (a string of some kind):
     <li>\{{ @value }}</li>
   \{{/each}}
 </ul>
+
+\{{! "this is a comment and won't get printed" }}
 ```
 
 Given that string, you can render the template like such:

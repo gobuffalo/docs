@@ -19,7 +19,7 @@ We are fortunate, as a community, to have so many great packages written by some
 ##### Guidelines for Contributing
 
 * When contributing to Buffalo please keep in mind that tests are **100%** required! No PR will be accepted without accompanying tests.
-* CodeClimate is run against all PRs. We recomment you run it locally to save you time and hassle with the PR. [https://github.com/codeclimate/codeclimate](https://github.com/codeclimate/codeclimate)
+* CodeClimate is run against all PRs. We recommend you run it locally to save you time and hassle with the PR. [https://github.com/codeclimate/codeclimate](https://github.com/codeclimate/codeclimate)
 
 {{/panel}}
 

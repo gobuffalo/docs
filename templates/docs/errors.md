@@ -41,7 +41,7 @@ In "production" mode (`GO_ENV=production`), Buffalo, will not generate pages tha
 
 {{#panel title="Custom Error Handling"}}
 
-While Buffalo, out of the box, will handle errors for you, it can be useful to handle errors in a custom way. To accomplish this, Buffalo, allows for the mapping of HTTP status codes to specific handlers, so the error can be dealt with in a custom fasion.
+While Buffalo, out of the box, will handle errors for you, it can be useful to handle errors in a custom way. To accomplish this, Buffalo, allows for the mapping of HTTP status codes to specific handlers, so the error can be dealt with in a custom fashion.
 
 ```go
 app = buffalo.Automatic(buffalo.Options{

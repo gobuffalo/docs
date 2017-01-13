@@ -13,6 +13,7 @@ Aliases:
 
 
 Available Commands:
+  action      Generates new action(s)
   goth        Generates a actions/goth.go file configured to the specified providers.
   resource    Generates a new actions/resource file
   webpack     Generates a webpack asset pipeline.

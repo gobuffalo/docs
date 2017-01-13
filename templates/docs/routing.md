@@ -74,7 +74,7 @@ Given the above code sample, if we make a request with `GET /users?name=ringo`, 
 
 {{#panel title="Named Parameters"}}
 
-Since Buffalo is the [http://www.gorillatoolkit.org/pkg/mux](http://www.gorillatoolkit.org/pkg/mux) under the covers, it means we can get access to some of the goodness it provides, in this case, the ability to create sudo-regular expression patterns in the mapped path that will get converted into parameters that can be accessed from a [`buffalo.Context`](/docs/context).
+Since Buffalo is the [http://www.gorillatoolkit.org/pkg/mux](http://www.gorillatoolkit.org/pkg/mux) under the covers, it means we can get access to some of the goodness it provides, in this case, the ability to create pseudo-regular expression patterns in the mapped path that will get converted into parameters that can be accessed from a [`buffalo.Context`](/docs/context).
 
 ```go
 a.GET("/users/{name}", func (c buffalo.Context) error {

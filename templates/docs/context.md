@@ -33,7 +33,7 @@ type Context interface {
 
 {{#panel title="Context and Rendering"}}
 
-As part of the context interface is a `Render` function that takes a type of `render.Renderer`, see [rendering](/docs/rendering) for more information.
+As part of the context interface, there is a `Render` function that takes a type of `render.Renderer`. See [rendering](/docs/rendering) for more information.
 
 Any values that are "set" on the context will automatically be available to the `render.Renderer` that is passed into the `Render` function.
 

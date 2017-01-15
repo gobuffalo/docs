@@ -20,7 +20,7 @@ a := buffalo.Automatic(buffalo.Options{})
 a := buffalo.New(buffalo.Options{})
 ```
 
-It is highly recommend to use `buffalo.Automatic` to create your application. The `Automatic` command will configure your new application with a variety of settings and functionality that we believe we be useful to 90% of all web applications. If you want "complete" control over your application, then just create a `New` Buffalo app.
+It is highly recommended to use `buffalo.Automatic` to create your application. The `Automatic` command will configure your new application with a variety of settings and functionality that we believe are useful to 90% of all web applications. If you want "complete" control over your application, then just create a `New` Buffalo app.
 {{/panel}}
 
 {{#panel title="Mapping Handlers"}}

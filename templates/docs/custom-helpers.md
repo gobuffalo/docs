@@ -8,7 +8,7 @@ No templating package would be complete without allowing for you to build your o
 
 {{#panel title="Return Values"}}
 
-The first thing to understand about building custom helper functions is their are a few "valid" return values:
+The first thing to understand about building custom helper functions is there are a few "valid" return values:
 
 #### `string`
 
@@ -57,7 +57,7 @@ func() ( template.HTML, error ) {
 
 {{#panel title="Input Values"}}
 
-Custom helper functions can take any type, and any number of arguments. There is an option last argument, [`velvet.HelperContext`](https://godoc.org/github.com/gobuffalo/velvet#HelperContext), that can be received. It's quite useful, and I would recommend taking it, as it provides you access to things like the context of the call, the block associated with the helper, etc...
+Custom helper functions can take any type, and any number of arguments. There is an optional last argument, [`velvet.HelperContext`](https://godoc.org/github.com/gobuffalo/velvet#HelperContext), that can be received. It's quite useful, and I would recommend taking it, as it provides you access to things like the context of the call, the block associated with the helper, etc...
 
 {{/panel}}
 

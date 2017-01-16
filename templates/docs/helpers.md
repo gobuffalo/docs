@@ -7,7 +7,7 @@
 
 {{#panel title="Each Statements (Array)" name="each-array"}}
 
-When looping through `arrays` or `slices`, the block being looped through will be access to the "global" context, as well as have four new variables available within that block:
+When looping through `arrays` or `slices`, the block being looped through will have access to the "global" context, as well as have four new variables available within that block:
 
 * `@first` [`bool`] - is this the first pass through the iteration?
 * `@last` [`bool`] - is this the last pass through the iteration?

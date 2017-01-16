@@ -27,7 +27,7 @@ Thankfully the [https://github.com/gobuffalo/buffalo/render](https://github.com/
 
 {{#panel title="Creating a Render Engine"}}
 
-A render engine is used to store information about configuration needed for rendering. Examples include: [helpers](/docs/helpers), [layouts](/docs/layouts), etc... Multiple engines can be initialized. For example one engine for the "main" site, and another for the "admin" portion.
+A render engine is used to store information about configuration needed for rendering. Examples include: [helpers](/docs/helpers), [layouts](/docs/layouts), etc. Multiple engines can be initialized. For example one engine for the "main" site, and another for the "admin" portion.
 
 By default an initial render engine is created for the application during application generation:
 
@@ -51,7 +51,7 @@ func init() {
 
 {{#panel title="Markdown"}}
 
-Files passed into the `render.HTML` or `render.Template` functions, that have an extension of `.md`, will be converted from Markdown (using GitHub flavored Markdown) to HTML before being run through the templating engine. This makes for incredibly easy templating for simplier pages.
+Files passed into the `render.HTML` or `render.Template` functions, that have an extension of `.md`, will be converted from Markdown (using GitHub flavored Markdown) to HTML before being run through the templating engine. This makes for incredibly easy templating for simpler pages.
 
 ```markdown
 <!-- beatles.md -->

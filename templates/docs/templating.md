@@ -47,7 +47,7 @@ Which would result in the following output:
 
 {{#panel title="If Statements" name="if"}}
 
-What to do? Should you render the content, or not? Using Velvet's built in `if`, `else`, and `unless` helpers, let you figure it out for yourself.
+What to do? Should you render the content, or not? Using Velvet's built in `if`, `else`, and `unless` helpers let you figure it out for yourself.
 
 ```handlebars
 \{{#if true }}

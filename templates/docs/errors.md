@@ -23,7 +23,7 @@ func MyHandler(c buffalo.Context) error {
 
 {{#panel title="Default Error Handling (Development)" name="dev-error-handling"}}
 
-In "development" mode (`GO_ENV=development`), Buffalo, will generate some helpful errors pages for you.
+In "development" mode (`GO_ENV=development`), Buffalo will generate some helpful errors pages for you.
 
 <table width="100%">
 <tr>
@@ -36,12 +36,12 @@ In "development" mode (`GO_ENV=development`), Buffalo, will generate some helpfu
 </tr>
 </table>
 
-In "production" mode (`GO_ENV=production`), Buffalo, will not generate pages that have developer style information, instead the pages are simpler.
+In "production" mode (`GO_ENV=production`), Buffalo will not generate pages that have developer style information. Instead the pages are simpler.
 {{/panel}}
 
 {{#panel title="Custom Error Handling"}}
 
-While Buffalo, out of the box, will handle errors for you, it can be useful to handle errors in a custom way. To accomplish this, Buffalo, allows for the mapping of HTTP status codes to specific handlers, so the error can be dealt with in a custom fashion.
+While Buffalo will handle errors for you out of the box, it can be useful to handle errors in a custom way. To accomplish this, Buffalo allows for the mapping of HTTP status codes to specific handlers. This means the error can be dealt with in a custom fashion.
 
 ```go
 app = buffalo.Automatic(buffalo.Options{
@@ -62,6 +62,6 @@ func MyHandler(c buffalo.Context) error {
 }
 ```
 
-In the above example any error from you application that returns a status of `422` will be caught by the custom handler and will be dealt with accordingly.
+In the above example any error from your application that returns a status of `422` will be caught by the custom handler and will be dealt with accordingly.
 
 {{/panel}}

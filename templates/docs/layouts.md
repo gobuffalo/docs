@@ -6,7 +6,7 @@
 
 {{#panel title="Using a Standard Layout" name="standard"}}
 
-It is quite common to want to use the same layout across most, if not, all of an application. When creating a new `render.Engine` the `HTMLLayout` property can be set to a file that will automatically be used by the `render.HTML` function.
+It is quite common to want to use the same layout across most, if not all of an application. When creating a new `render.Engine` the `HTMLLayout` property can be set to a file that will automatically be used by the `render.HTML` function.
 
 ```go
 var r *render.Engine

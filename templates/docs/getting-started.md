@@ -146,7 +146,7 @@ Child extract-text-webpack-plugin:
 --> cleaning up build
 ```
 
-If you deploying to a machine that has `zip` installed, it is recommended that you use the `-z` flag with `buffalo build`, it will result in faster build times, and smaller binaries.
+If you are deploying to a machine that has `zip` installed, it is recommended that you use the `-z` flag with `buffalo build`, it will result in faster build times, and smaller binaries.
 
 {{/panel}}
 

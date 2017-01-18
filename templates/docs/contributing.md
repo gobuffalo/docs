@@ -4,6 +4,16 @@
 
 The Buffalo team needs, and wants your help! We're doing our best to make the world a better place for Go web development, but we can't do it alone.
 
+{{#panel title="Funding"}}
+
+If you like, or love, Buffalo, please consider funding its development.
+
+[https://patreon.com/buffalo](https://patreon.com/buffalo)
+
+With funding I will be able to focus on Buffalo development full-time. This means faster turn around times on bugs, issues, and features. It also means more time spend on documentation and learning materials such as blog posts, videos, and possibly a book.
+
+{{/panel}}
+
 {{#panel title="Shoulders of Giants"}}
 
 We are fortunate, as a community, to have so many great packages written by some really great people. Buffalo wraps all of those packages together with a little glue to bring it all together. A great place to start making Buffalo better is to help improve the underlying packages Buffalo relies on.

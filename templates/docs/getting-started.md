@@ -8,16 +8,17 @@
     <td>
       <div class="jumbotron">
         <p>
-        Buffalo is a Go web framework. Yeah, I hate the word "framework" too! Buffalo is different though. Buffalo doesn't want to re-invent wheels like routing and templating. Buffalo is glue that wraps all of the best packages available and makes them all play nicely together.
+        Buffalo is a Go web development eco-system. Designed to make the life of a Go web developer easier.
         </p>
 
         <p>
-        Buffalo is "idiomatic", for whatever that is worth. The purpose of a framework is not to bend you to its will, but to rather get out of your way and make your job of building your application easy. That is the goal of Buffalo.
+        Buffalo starts by generating a web project for you that already has everything from front-end (JavaScript, SCSS, etc...) to back-end (Database, Routing, etc...) already hooked up and ready to run. From there it provides easy APIs to build your web application quickly in Go.
         </p>
 
         <p>
-        If you were to look through the Buffalo code base you'll find little code, just enough to assemble the amazing packages that other's have written into one coherent system.
+          Buffalo isn't just a framework, it's a hollistic web development environment and project structure that let's developers get straight to the business of, well, building their business.
         </p>
+
 
       </div>
     </td>

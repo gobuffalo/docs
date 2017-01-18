@@ -41,7 +41,7 @@ Buffalo aims to make building new web applications in Go as simple as possible, 
 $ buffalo new <name>
 ```
 
-That will generate a whole new Buffalo application that is ready to go. It'll even run `go get` for you to make sure you have all of the necessary dependencies needed to run your application.
+That will generate a whole new Buffalo application that is ready to go. It'll even run `go get` for you to make sure you have all of the necessary dependencies needed to run your application. 
 
 ```text
 $ buffalo new coke
@@ -86,6 +86,12 @@ To see a list of available flags for the `new` command, just check out its help.
 
 ```
 $ buffalo help new
+```
+
+Note: by default, Buffalo generates a database.yml targeted for postgres. If you wish to change this behavior, you can pass in a `--db-type` flag into the `new` command.
+
+```
+$ buffalo new coke --db-type sqlite3
 ```
 
 {{/panel}}

@@ -16,7 +16,7 @@
         </p>
 
         <p>
-          Buffalo isn't just a framework, it's a hollistic web development environment and project structure that let's developers get straight to the business of, well, building their business.
+          Buffalo isn't just a framework, it's a holistic web development environment and project structure that let's developers get straight to the business of, well, building their business.
         </p>
 
 
@@ -41,7 +41,7 @@ Buffalo aims to make building new web applications in Go as simple as possible, 
 $ buffalo new <name>
 ```
 
-That will generate a whole new Buffalo application that is ready to go. It'll even run `go get` for you to make sure you have all of the necessary dependencies needed to run your application. 
+That will generate a whole new Buffalo application that is ready to go. It'll even run `go get` for you to make sure you have all of the necessary dependencies needed to run your application.
 
 ```text
 $ buffalo new coke

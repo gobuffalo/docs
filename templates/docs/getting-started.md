@@ -35,9 +35,10 @@ $ go get -u github.com/gobuffalo/buffalo/buffalo
 
 {{#panel title="Generating a New Project" name="new-project"}}
 
-Buffalo aims to make building new web applications in Go as simple as possible, and what could be more simple that a new application generator?
+Buffalo aims to make building new web applications in Go as quick and simple as possible, and what could be more simple than a *new application* generator? Start by going to your `$GOPATH` and create your new application!
 
 ```
+$ cd $GOPATH/src/github.com/$USER/
 $ buffalo new <name>
 ```
 

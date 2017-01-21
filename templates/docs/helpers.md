@@ -92,6 +92,8 @@ To change both the key and the value name you can pass two "block parameters"; t
 * `downcase` - lower cases the entire string passed to it.
 * `markdown` - converts markdown to HTML.
 * `eq` - works like the `if` helper, but compares to values
+* `neq` - the opposite of `eq` (not equal)
+* `len` - returns the length of a value
 
 Velvet also imports all of the helpers found [https://github.com/markbates/inflect/blob/master/helpers.go](https://github.com/markbates/inflect/blob/master/helpers.go)
 

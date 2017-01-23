@@ -20,3 +20,4 @@ When starting `$ buffalo dev`, and you encounter this error:
 This may be due to your system missing NodeJS/NPM, Ensure that Node/NPM is installed and is in your `$PATH`. If  Node/NPM are indeed in your `$PATH`, try renaming webpack.config.js. 
 
 If you are still having issues after attempting the steps above, please reach out to the community in the #buffalo channel on Gophers Slack.
+{{/panel}}

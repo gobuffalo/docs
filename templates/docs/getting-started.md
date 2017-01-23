@@ -46,7 +46,7 @@ That will generate a whole new Buffalo application that is ready to go. It'll ev
 
 ```text
 $ buffalo new coke
-Buffalo version 0.5.0
+Buffalo version {{version}}
 
 --> ../coke/main.go
 --> ../coke/Procfile

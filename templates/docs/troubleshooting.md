@@ -11,7 +11,7 @@ $ go get -u github.com/motemen/gore
 For information see [https://github.com/gobuffalo/buffalo/issues/108](https://github.com/gobuffalo/buffalo/issues/108) and [https://github.com/motemen/gore/issues/63](https://github.com/motemen/gore/issues/63).
 {{/panel}}
 
-{{#panel name="buffalo dev fails to start"}}
+{{#panel name="dev-fails" title="buffalo dev fails to start"}}
 
 When starting `$ buffalo dev`, and you encounter this error:
 

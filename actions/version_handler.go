@@ -11,7 +11,7 @@ import (
 
 func VersionList(c buffalo.Context) error {
 	v := []models.BuffaloVersion{}
-	tx := c.Get("tx").(*pop.Connection)
+	tx := c.Value("tx").(*pop.Connection)
 	err := tx.All(&v)
 	if err != nil {
 		return c.Error(500, err)
@@ -20,7 +20,7 @@ func VersionList(c buffalo.Context) error {
 }
 
 func VersionCurrent(c buffalo.Context) error {
-	v := models.CurrentBuffaloVersion(c.Get("tx").(*pop.Connection))
+	v := models.CurrentBuffaloVersion(c.Value("tx").(*pop.Connection))
 	return c.Render(200, r.JSON(v))
 }
 
@@ -35,7 +35,7 @@ func VersionUpdate(c buffalo.Context) error {
 		return c.Error(422, errors.New("bad token!"))
 	}
 
-	tx := c.Get("tx").(*pop.Connection)
+	tx := c.Value("tx").(*pop.Connection)
 	err = tx.Create(v)
 	if err != nil {
 		return err

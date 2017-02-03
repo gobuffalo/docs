@@ -12,7 +12,7 @@ Buffalo supports [PostgreSQL](https://www.postgresql.org/) (default), [MySQL](ht
 
 {{#panel title="database.yml" name="configuring"}}
 
-When you first generate a Buffalo application a `database.yml` file will be generated for, based on the type of database that was selected with the `--db-type` flag, with PostgreSQL being the default.
+When you first generate a Buffalo application a `database.yml` file will be generated for you, based on the type of database that was selected with the `--db-type` flag, with PostgreSQL being the default.
 
 ```text
 development:

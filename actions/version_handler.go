@@ -45,7 +45,7 @@ func VersionUpdate(c buffalo.Context) error {
 
 func SetVersion(next buffalo.Handler) buffalo.Handler {
 	return func(c buffalo.Context) error {
-		c.Set("version", "0.7.1")
+		c.Set("version", "0.7.2")
 		return next(c)
 	}
 }

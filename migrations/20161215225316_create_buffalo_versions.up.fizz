@@ -1,4 +1,0 @@
-create_table("buffalo_versions", func(t) {
-	t.Column("version", "string", {})
-	t.Column("pre_release", "bool", {})
-})

@@ -4,8 +4,6 @@ import (
 	"os"
 
 	"github.com/gobuffalo/buffalo"
-	"github.com/gobuffalo/buffalo/middleware"
-	"github.com/gobuffalo/gobuffalo/models"
 	"github.com/markbates/going/defaults"
 )
 
@@ -22,18 +20,14 @@ func App() *buffalo.App {
 			Env: ENV,
 		})
 
-		app.Use(middleware.NewRelic(os.Getenv("NEW_RELIC_LICENSE_KEY"), "gobuffalo.io"))
-		app.Use(middleware.PopTransaction(models.DB))
-		app.Use(SetVersion)
+		app.Use(func(next buffalo.Handler) buffalo.Handler {
+			return func(c buffalo.Context) error {
+				c.Set("version", "0.7.3")
+				return next(c)
+			}
+		})
 		app.GET("/", HomeHandler)
 		app.GET("/docs/{name}", Docs)
-
-		// ensure this is a JSON request
-		g := app.Group("/version")
-		g.Use(middleware.SetContentType("application/json"))
-		g.GET("/", VersionList)
-		g.GET("/current", VersionCurrent)
-		g.POST("/", VersionUpdate)
 
 		app.ServeFiles("/assets", assetsPath())
 	}

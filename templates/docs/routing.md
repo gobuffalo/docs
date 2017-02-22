@@ -78,7 +78,7 @@ Since Buffalo is the [http://www.gorillatoolkit.org/pkg/mux](http://www.gorillat
 
 ```go
 a.GET("/users/{name}", func (c buffalo.Context) error {
-  return c.Render(200, render.String(c.Params("name")))
+  return c.Render(200, render.String(c.Param("name")))
 })
 // etc...
 ```
@@ -90,7 +90,7 @@ a.GET("/users/new", func (c buffalo.Context) error {
   return c.Render(200, render.String("new"))
 })
 a.GET("/users/{name}", func (c buffalo.Context) error {
-  return c.Render(200, render.String(c.Params("name")))
+  return c.Render(200, render.String(c.Param("name")))
 })
 // etc...
 ```

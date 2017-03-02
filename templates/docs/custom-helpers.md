@@ -1,12 +1,12 @@
 # Custom Helpers
 
-{{ partial "docs/disclaimer.html" }}
+<%= partial("docs/disclaimer.html") %>
 
 No templating package would be complete without allowing for you to build your own, custom, helper functions.
 
-{{ partial "topics.html" }}
+<%= partial("topics.html") %>
 
-{{#panel title="Return Values"}}
+<%= panel("Return Values", {}) { %>
 
 The first thing to understand about building custom helper functions is there are a few "valid" return values:
 
@@ -55,15 +55,15 @@ func() ( template.HTML, error ) {
 }
 ```
 
-{{/panel}}
+<% } %>
 
-{{#panel title="Input Values"}}
+<%= panel("Input Values", {}) { %>
 
 Custom helper functions can take any type, and any number of arguments. There is an optional last argument, [`velvet.HelperContext`](https://godoc.org/github.com/gobuffalo/velvet#HelperContext), that can be received. It's quite useful, and I would recommend taking it, as it provides you access to things like the context of the call, the block associated with the helper, etc...
 
-{{/panel}}
+<% } %>
 
-{{#panel title="Simple Helpers"}}
+<%= panel("Simple Helpers", {}) { %>
 
 ```go
 r := render.New(render.Options{
@@ -89,9 +89,9 @@ func Greeter(c buffalo.Context) error {
 // <h1>Hi Mark!</h1>
 ```
 
-{{/panel}}
+<% } %>
 
-{{#panel title="Block Helpers"}}
+<%= panel("Block Helpers", {}) { %>
 
 Like the [`if`](/docs/templating#if) and [`each`](/docs/helpers#each-array) helpers, block helpers take a "block" of text that can be evaluated and potentially rendered, manipulated, or whatever you would like. To write a block helper, you have to take the `velvet.HelperContext` as the last argument to your helper function. This will give you access to the block associated with that call.
 
@@ -118,4 +118,4 @@ func Upper(c buffalo.Context) error {
 // HI
 ```
 
-{{/panel}}
+<% } %>

@@ -2,9 +2,9 @@
 
 Middleware allows for the interjection of code in the request/response cycle. Common use cases for middleware are things like logging (which Buffalo already does), authentication requests, etc. Buffalo ships with some common middleware, so please checkout out [https://godoc.org/github.com/gobuffalo/buffalo/middleware](https://godoc.org/github.com/gobuffalo/buffalo/middleware) for details on those.
 
-{{ partial "topics.html" }}
+<%= partial("topics.html") %>
 
-{{#panel title="The Middleware Interface" name="interface"}}
+<%= panel("The Middleware Interface", {name: "interface"}) { %>
 ```go
 func MyMiddleware(next buffalo.Handler) buffalo.Handler {
   return func(c buffalo.Context) error {
@@ -15,9 +15,9 @@ func MyMiddleware(next buffalo.Handler) buffalo.Handler {
   }
 }
 ```
-{{/panel}}
+<% } %>
 
-{{#panel title="Using Middleware"}}
+<%= panel("Using Middleware", {}) { %>
 
 ```go
 a := buffalo.Automatic(buffalo.Options{})
@@ -29,9 +29,9 @@ In the above example all requests will first go through the `MyMiddleware` middl
 
 _NOTE: Middleware defined on an application is automatically inherited by all routes and groups in that application._
 
-{{/panel}}
+<% } %>
 
-{{#panel title="Group Middleware"}}
+<%= panel("Group Middleware", {}) { %>
 
 ```go
 a := buffalo.Automatic(buffalo.Options{})
@@ -53,9 +53,9 @@ GET /foo -> MyMiddleware -> AnotherPieceOfMiddleware -> FooHandler
 GET /api/users -> MyMiddleware -> AnotherPieceOfMiddleware -> AuthorizeAPIMiddleware -> UsersHandler
 ```
 
-{{/panel}}
+<% } %>
 
-{{#panel title="Skipping Middleware"}}
+<%= panel("Skipping Middleware", {}) { %>
 
 There are times when, in an application, you want to add middleware to the entire application, or a group, but not call that middleware on a few individual handlers. Buffalo allows you to create these sorts of mappings.
 
@@ -80,9 +80,9 @@ GET /users/{id} -> AuthorizeUser -> ShowUser
 ```
 
 See [https://godoc.org/github.com/gobuffalo/buffalo#MiddlewareStack.Skip](https://godoc.org/github.com/gobuffalo/buffalo#MiddlewareStack.Skip) for more details on the `Skip` function.
-{{/panel}}
+<% } %>
 
-{{#panel title="Clearing Middleware"}}
+<%= panel("Clearing Middleware", {}) { %>
 
 Since middleware is [inherited](#using-middleware) from its parent, there maybe times when it is necessary to start with a "blank" set of middleware.
 
@@ -103,4 +103,4 @@ a.GET("/foo", FooHandler)
 GET /foo -> MyMiddleware -> AnotherPieceOfMiddleware -> FooHandler
 GET /api/users -> AuthorizeAPIMiddleware -> UsersHandler
 ```
-{{/panel}}
+<% } %>

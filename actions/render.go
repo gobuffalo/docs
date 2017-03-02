@@ -7,6 +7,7 @@ import (
 	"github.com/gobuffalo/buffalo/render"
 	"github.com/gobuffalo/buffalo/render/resolvers"
 	"github.com/gobuffalo/gobuffalo/actions/helpers"
+	"github.com/gobuffalo/plush"
 )
 
 var r *render.Engine
@@ -14,7 +15,7 @@ var r *render.Engine
 func init() {
 	r = render.New(render.Options{
 		HTMLLayout:     "application.html",
-		CacheTemplates: ENV == "production",
+		TemplateEngine: plush.BuffaloRenderer,
 		Helpers: map[string]interface{}{
 			"panel": helpers.PanelHelper,
 		},

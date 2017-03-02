@@ -74,9 +74,13 @@ h1 {
   vertical-align: text-top;
 }
 
-.panel-title {
-  padding: 0px;
-  font-size: 24px;
+.panel-heading {
+  h3 {
+    color: #fff;
+    padding: 0px;
+    margin: 0px;
+    font-size: 24px;
+  }
 }
 
 #topics {

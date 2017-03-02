@@ -1,4 +1,4 @@
-{{#panel title="Database Generators" name="generators"}}
+<%= panel("Database Generators", {name: "generators"}) { %>
 
 ```text
 $ buffalo db g --help
@@ -24,4 +24,5 @@ Global Flags:
 
 Use "buffalo soda generate [command] --help" for more information about a command.
 ```
-{{/panel}}
+
+<% } %>

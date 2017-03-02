@@ -2,9 +2,9 @@
 
 At the heart of every Buffalo request handler is the `Context`. This context gives handlers a simple, and clean, function definition, while being immensely powerful.
 
-{{ partial "topics.html" }}
+<%= partial("topics.html") %>
 
-{{#panel title="The Context Interface" name="interface"}}
+<%= panel("The Context Interface", {name:"interface"}) { %>
 
 The `buffalo.Context` interface supports `context.Context` so it can be passed around and used as a "standard" Go Context.
 
@@ -34,9 +34,9 @@ type Context interface {
 
 
 
-{{/panel}}
+<% } %>
 
-{{#panel title="Context and Rendering"}}
+<%= panel("Context and Rendering", {}) { %>
 
 As part of the context interface, there is a `Render` function that takes a type of `render.Renderer`. See [rendering](/docs/rendering) for more information.
 
@@ -50,9 +50,9 @@ func Hello(c buffalo.Context) error {
 // Hi Mark
 ```
 
-{{/panel}}
+<% } %>
 
-{{#panel title="Implementing the Interface" name="implementing"}}
+<%= panel("Implementing the Interface", {name:"implementing"}) { %>
 
 The `buffalo.Context` is never meant to be "fully" implemented. Instead it is recommended that you use composition and implement only the functions that you want to provide custom implementations of.
 
@@ -90,4 +90,4 @@ func App() *buffalo.App {
 // ...
 ```
 
-{{/panel}}
+<% } %>

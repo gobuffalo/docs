@@ -1,4 +1,4 @@
-{{#panel title="Resources"}}
+<%= panel("Resources", {}) { %>
 
 ```text
 $ buffalo g resource --help
@@ -122,4 +122,5 @@ func Test_UsersResource_Destroy(t *testing.T) {
 </td>
 </tr>
 </table>
-{{/panel}}
+
+<% } %>

@@ -1,4 +1,5 @@
-{{#panel title="Generating Migrations (SQL)" name="generating-sql"}}
+<%= panel("Generating Migrations (SQL)", {name: "generating-sql"}) { %>
+
 ```text
 $ buffalo db g sql --help
 
@@ -13,4 +14,5 @@ Global Flags:
   -e, --env string      The environment you want to run migrations against. Will use $GO_ENV if set. (default "development")
   -p, --path string     Path to the migrations folder (default "./migrations")
 ```
-{{/panel}}
+
+<% } %>

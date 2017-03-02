@@ -1,4 +1,4 @@
-{{#panel title="Actions"}}
+<%= panel("Actions", {}) { %>
 
 ```text
 $ buffalo g action --help
@@ -24,4 +24,4 @@ $ buffalo g a users show index create
 --> goimports -w .
 ```
 
-{{/panel}}
+<% } %>

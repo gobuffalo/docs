@@ -1,10 +1,10 @@
 # Layouts
 
-{{ partial "docs/disclaimer.html" }}
+<%= partial("docs/disclaimer.html") %>
 
-{{ partial "topics.html" }}
+<%= partial("topics.html") %>
 
-{{#panel title="Using a Standard Layout" name="standard"}}
+<%= panel("Using a Standard Layout", {name: "standard"}) { %>
 
 It is quite common to want to use the same layout across most, if not all of an application. When creating a new `render.Engine` the `HTMLLayout` property can be set to a file that will automatically be used by the `render.HTML` function.
 
@@ -28,7 +28,7 @@ func init() {
   </head>
   <body>
     <div id="main">
-      \{{ yield }}
+      {{ yield }}
     </div>
   </body>
 </html>
@@ -59,9 +59,9 @@ func Hello(c buffalo.Context) error {
 </html>
 ```
 
-{{/panel}}
+<% } %>
 
-{{#panel title="Using a Custom Layout" name="custom"}}
+<%= panel("Using a Custom Layout", {name: "custom"}) { %>
 
 Sometimes, on certain requests, a different layout is needed. This alternate layout can be passed in as the second parameter to `render.HTML`.
 
@@ -85,7 +85,7 @@ func init() {
   </head>
   <body>
     <div id="main">
-      \{{ yield }}
+      {{ yield }}
     </div>
   </body>
 </html>
@@ -116,4 +116,4 @@ func Hello(c buffalo.Context) error {
 </html>
 ```
 
-{{/panel}}
+<% } %>

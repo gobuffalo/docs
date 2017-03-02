@@ -1,4 +1,4 @@
-{{#panel title="Built-in Generators" name="built-in"}}
+<%= panel("Built-in Generators", {name: "built-in"}) { %>
 
 ```text
 $ buffalo g --help
@@ -22,4 +22,5 @@ Use "buffalo generate [command] --help" for more information about a command.
 ```
 
 See also [/docs/db#generators](/docs/db#generators) for a list of database related generators.
-{{/panel}}
+
+<% } %>

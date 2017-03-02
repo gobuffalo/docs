@@ -1,4 +1,4 @@
-{{#panel title="Generating Migrations (fizz)" name="generating-fizz"}}
+<%= panel("Generating Migrations (fizz)", {name:"generating-fizz"}) { %>
 ```text
 $ buffalo db g migration --help
 
@@ -17,4 +17,4 @@ Global Flags:
   -e, --env string      The environment you want to run migrations against. Will use $GO_ENV if set. (default "development")
   -p, --path string     Path to the migrations folder (default "./migrations")
 ```
-{{/panel}}
+<% } %>

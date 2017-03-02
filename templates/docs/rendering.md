@@ -1,10 +1,10 @@
 # Rendering
 
-{{ partial "docs/disclaimer.html" }}
+<%= partial("docs/disclaimer.html") %>
 
-{{ partial "topics.html" }}
+<%= partial("topics.html") %>
 
-{{#panel title="Renderer Interface" name="interface"}}
+<%= panel("Renderer Interface", {name: "interface"}) { %>
 
 In order for a renderer to be able to be used with [`Context#Render`](/docs/context) it must implement the following interface:
 
@@ -23,9 +23,9 @@ type Data map[string]interface{}
 
 Thankfully the [https://github.com/gobuffalo/buffalo/render](https://github.com/gobuffalo/buffalo/tree/master/render) [[godoc]](https://godoc.org/github.com/gobuffalo/buffalo/render) package implements that interface, and has a collection of useful render types already defined. It is recommended that you use this package, but feel free and write your own renderers!
 
-{{/panel}}
+<% } %>
 
-{{#panel title="Creating a Render Engine"}}
+<%= panel("Creating a Render Engine", {}) { %>
 
 A render engine is used to store information about configuration needed for rendering. Examples include: [helpers](/docs/helpers), [layouts](/docs/layouts), etc. Multiple engines can be initialized. For example one engine for the "main" site, and another for the "admin" portion.
 
@@ -47,9 +47,9 @@ func init() {
 }
 ```
 
-{{/panel}}
+<% } %>
 
-{{#panel title="Markdown"}}
+<%= panel("Markdown", {}) { %>
 
 Files passed into the `render.HTML` or `render.Template` functions, that have an extension of `.md`, will be converted from Markdown (using GitHub flavored Markdown) to HTML before being run through the templating engine. This makes for incredibly easy templating for simpler pages.
 
@@ -57,9 +57,9 @@ Files passed into the `render.HTML` or `render.Template` functions, that have an
 <!-- beatles.md -->
 # The Beatles
 
-\{{#each names as |name|}}
-* \{{name}}
-\{{/each}}
+{{#each names as |name|}}
+* {{name}}
+{{/each}}
 ```
 
 ```go
@@ -80,4 +80,4 @@ func Beatles(c buffalo.Context) error {
 </ul>
 ```
 
-{{/panel}}
+<% } %>

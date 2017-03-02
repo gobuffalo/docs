@@ -25,15 +25,14 @@
   </tr>
 </table>
 
-
-{{#panel title="Installation"}}
+<%= panel("Installation", {}) { %>
 
 ```
 $ go get -u github.com/gobuffalo/buffalo/buffalo
 ```
-{{/panel}}
+<% } %>
 
-{{#panel title="Generating a New Project" name="new-project"}}
+<%= panel("Generating a New Project", {name: "new-project"}) { %>
 
 Buffalo aims to make building new web applications in Go as quick and simple as possible, and what could be more simple than a *new application* generator? Start by going to your `$GOPATH` and create your new application!
 
@@ -46,7 +45,7 @@ That will generate a whole new Buffalo application that is ready to go. It'll ev
 
 ```text
 $ buffalo new coke
-Buffalo version {{version}}
+Buffalo version <%= version %>
 
 --> ../coke/main.go
 --> ../coke/Procfile
@@ -95,11 +94,11 @@ Note: by default, Buffalo generates a database.yml targeted for postgres. If you
 $ buffalo new coke --db-type sqlite3
 ```
 
-{{/panel}}
+<% } %>
 
-{{ partial "docs/dev.md" }}
+<%= partial("docs/dev.md") %>
 
-{{#panel title="Building Your Application" name="building"}}
+<%= panel("Building Your Application", {name: "building"}) { %>
 
 Buffalo features a command, `build`, that will build a full binary of your application including, but not limited to; assets, migrations, templates, etc... If you buy into the "Buffalo Way" things just work. It's a wonderful experience. :)
 
@@ -149,5 +148,5 @@ Child extract-text-webpack-plugin:
 
 If you are deploying to a machine that has `zip` installed, it is recommended that you use the `-z` flag with `buffalo build`, it will result in faster build times, and smaller binaries.
 
-{{/panel}}
+<% } %>
 

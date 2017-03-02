@@ -1,10 +1,10 @@
 # Templating
 
-{{ partial "docs/disclaimer.html" }}
+<%= partial("docs/disclaimer.html") %>
 
-{{ partial "topics.html" }}
+<%= partial("topics.html") %>
 
-{{#panel title="General Usage" name="general"}}
+<%= panel("General Usage", {name: "general"}) { %>
 
 If you know handlebars, you basically know how to use [Velvet](https://github.com/gobuffalo/velvet).
 
@@ -12,14 +12,14 @@ Let's assume you have a template (a string of some kind):
 
 ```handlebars
 <!-- templates/index.html -->
-<h1>\{{ name }}</h1>
+<h1>{{ name }}</h1>
 <ul>
-  \{{#each names}}
-    <li>\{{ @value }}</li>
-  \{{/each}}
+  {{#each names}}
+    <li>{{ @value }}</li>
+  {{/each}}
 </ul>
 
-\{{! "this is a comment and won't get printed" }}
+{{! "this is a comment and won't get printed" }}
 ```
 
 Given that string, you can render the template like such:
@@ -43,38 +43,38 @@ Which would result in the following output:
 </ul>
 ```
 
-{{/panel}}
+<% } %>
 
-{{#panel title="If Statements" name="if"}}
+<%= panel("If Statements", {name: "if"}) { %>
 
 What to do? Should you render the content, or not? Using Velvet's built in `if`, `else`, and `unless` helpers let you figure it out for yourself.
 
 ```handlebars
-\{{#if true }}
+{{#if true }}
   render this
-\{{/if}}
+{{/if}}
 ```
 
-{{/panel}}
+<% } %>
 
-{{#panel title="Else Statements" name="else"}}
+<%= panel("Else Statements", {name: "else"}) { %>
 
 ```handlebars
-\{{#if false }}
+{{#if false }}
   won't render this
-\{{ else }}
+{{ else }}
   render this
-\{{/if}}
+{{/if}}
 ```
 
-{{/panel}}
+<% } %>
 
-{{#panel title="Unless Statements" name="unless"}}
+<%= panel("Unless Statements", {name: "unless"}) { %>
 
 ```handlebars
-\{{#unless true }}
+{{#unless true }}
   won't render this
-\{{/unless}}
+{{/unless}}
 ```
 
-{{/panel}}
+<% } %>

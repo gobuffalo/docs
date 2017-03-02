@@ -1,17 +1,17 @@
 # Partials
 
-{{ partial "docs/disclaimer.html" }}
+<%= partial("docs/disclaimer.html") %>
 
-{{ partial "topics.html" }}
+<%= partial("topics.html") %>
 
-{{#panel title="Naming"}}
+<%= panel("Naming", {}) { %>
 All partial file names must start with an `_`. For example: `_form.html`. This helps to differentiate partials from other view templates in your application.
 
 **templates/users/new.html**
 ```html
 <h1>Create New User</h1>
 
-\{{ partial "users/form.html" }}
+{{ partial "users/form.html" }}
 ```
 
 **templates/users/_form.html**
@@ -29,9 +29,9 @@ All partial file names must start with an `_`. For example: `_form.html`. This h
 <!-- form stuff here  -->
 </form>
 ```
-{{/panel}}
+<% } %>
 
-{{#panel title="Context"}}
+<%= panel("Context", {}) { %>
 
 All [rendering context](/docs/rendering) from the parent template will automatically pass through to the partial, and any partials that partial may call. (see also [context](/docs/context))
 
@@ -46,14 +46,14 @@ func UsersEdit(c buffalo.Context) error {
 
 **templates/users/edit.html**
 ```html
-<h1>Edit \{{user.Name}} (\{{user.ID}})</h1>
+<h1>Edit {{user.Name}} ({{user.ID}})</h1>
 
-\{{ partial "users/form.html" }}
+{{ partial "users/form.html" }}
 ```
 
 **templates/users/_form.html**
 ```html
-<form action="/users/\{{user.ID}}">
+<form action="/users/{{user.ID}}">
 <!-- form stuff here  -->
 </form>
 ```
@@ -66,9 +66,9 @@ func UsersEdit(c buffalo.Context) error {
 <!-- form stuff here  -->
 </form>
 ```
-{{/panel}}
+<% } %>
 
-{{#panel title="\"Local\" Context" name="local-context"}}
+<%= panel("Local Context", {name: "local-context"}) { %>
 
 In addition to have the [context](/docs/context) of the parent template, partials can also be sent additional information as "local" variables.
 
@@ -77,15 +77,15 @@ In addition to have the [context](/docs/context) of the parent template, partial
 <h1>All Users</h1>
 
 <ul>
-  \{{#each users as |user|}}
-    \{{ partial "users/user.html" user=user }}
-  \{{/each}}
+  {{#each users as |user|}}
+    {{ partial "users/user.html" user=user }}
+  {{/each}}
 </ul>
 ```
 
 **templates/users/_user.html**
 ```html
-<li>\{{user.Name}}</li>
+<li>{{user.Name}}</li>
 ```
 
 **outputs**
@@ -100,10 +100,10 @@ In addition to have the [context](/docs/context) of the parent template, partial
 </ul>
 ```
 
-{{/panel}}
+<% } %>
 
-{{#panel title="Helpers"}}
+<%= panel("Helpers", {}) { %>
 
 Partials are not much different from standard [templates](/docs/templating) in Buffalo. They include all of the same [helpers](/docs/helpers) as well.
 
-{{/panel}}
+<% } %>

@@ -1,4 +1,4 @@
-{{#panel title="Goth"}}
+<%= panel("Goth", {}) { %>
 
 [Goth](https://github.com/markbates/goth) provides a simple, clean, and idiomatic way to write authentication packages for Go web applications.
 
@@ -51,4 +51,4 @@ func AuthCallback(c buffalo.Context) error {
 }
 ```
 
-{{/panel}}
+<% } %>

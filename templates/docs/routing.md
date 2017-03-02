@@ -2,9 +2,9 @@
 
 Buffalo uses the wonderful [http://www.gorillatoolkit.org/pkg/mux](http://www.gorillatoolkit.org/pkg/mux) package under the covers to handle routing within Buffalo applications. With that said, Buffalo wraps the `mux` API with its own. This guide walks you through all you'll need to know about how Buffalo handles routing.
 
-{{ partial "topics.html" }}
+<%= partial("topics.html") %>
 
-{{#panel title="Creating a new Buffalo App (and router)" name="new-app"}}
+<%= panel("Creating a new Buffalo App (and router)", {name: "new-app"}) { %>
 
 Buffalo applications come in two flavors:
 
@@ -21,9 +21,9 @@ a := buffalo.New(buffalo.Options{})
 ```
 
 It is highly recommended to use `buffalo.Automatic` to create your application. The `Automatic` command will configure your new application with a variety of settings and functionality that we believe are useful to 90% of all web applications. If you want "complete" control over your application, then just create a `New` Buffalo app.
-{{/panel}}
+<% } %>
 
-{{#panel title="Mapping Handlers"}}
+<%= panel("Mapping Handlers", {}) { %>
 
 All routing in Buffalo results in the calling of a `buffalo.Handler` function. The signature for a `buffalo.Handler` looks like this:
 
@@ -56,9 +56,9 @@ a.POST("/some/path", func (c buffalo.Context) error {
 })
 // etc...
 ```
-{{/panel}}
+<% } %>
 
-{{#panel title="Parameters"}}
+<%= panel("Parameters", {}) { %>
 
 Query string and other parameters are available from the [`buffalo.Context`](/docs/context) that is passed into the `buffalo.Handler`.
 
@@ -70,9 +70,9 @@ a.GET("/users", func (c buffalo.Context) error {
 ```
 
 Given the above code sample, if we make a request with `GET /users?name=ringo`, the response should should be `200: ringo`.
-{{/panel}}
+<% } %>
 
-{{#panel title="Named Parameters"}}
+<%= panel("Named Parameters", {}) { %>
 
 Since Buffalo is the [http://www.gorillatoolkit.org/pkg/mux](http://www.gorillatoolkit.org/pkg/mux) under the covers, it means we can get access to some of the goodness it provides, in this case, the ability to create pseudo-regular expression patterns in the mapped path that will get converted into parameters that can be accessed from a [`buffalo.Context`](/docs/context).
 
@@ -96,9 +96,9 @@ a.GET("/users/{name}", func (c buffalo.Context) error {
 ```
 
 You may map seemingly similar paths, like `/users/new` and `/users/{name}` without any issues. The router will make sure they get to the same place.
-{{/panel}}
+<% } %>
 
-{{#panel title="Groups"}}
+<%= panel("Groups", {}) { %>
 
 Buffalo apps allow for the grouping of end-points. This allows for common functionality, such as [middleware](/docs/middleware) to be collected together. A great example of this would be an API end-point.
 
@@ -120,9 +120,9 @@ g.Use(APIAuthorizer)
 
 In the above example the `/api/v1` group will use both `SomeMiddleware` and `APIAuthorizer`. See [middleware](/docs/middleware) for more information about using, skipping, and clearing middleware.
 
-{{/panel}}
+<% } %>
 
-{{#panel title="Resources"}}
+<%= panel("Resources", {}) { %>
 
 Often web applications need to build very similiar "CRUD" end-points. To Help reduce the amount of thought and complexity involved in this, Buffalo supports the concept of a "Resource".
 
@@ -160,4 +160,4 @@ a.DELETE("/users/{id}", ur.Destroy)
 ```
 
 See [Generators](/docs/generators#resources) for information on how to generate new resources.
-{{/panel}}
+<% } %>

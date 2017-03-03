@@ -22,7 +22,7 @@ func App() *buffalo.App {
 
 		app.Use(func(next buffalo.Handler) buffalo.Handler {
 			return func(c buffalo.Context) error {
-				c.Set("version", "0.7.3")
+				c.Set("version", "0.7.4")
 				return next(c)
 			}
 		})

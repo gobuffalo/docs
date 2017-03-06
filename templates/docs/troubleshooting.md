@@ -21,3 +21,13 @@ This may be due to your system missing NodeJS/NPM, Ensure that Node/NPM is insta
 
 If you are still having issues after attempting the steps above, please reach out to the community in the #buffalo channel on Gophers Slack.
 <% } %>
+
+<%= panel("package context: unrecognized import path \"context\" (import path does not begin with hostname)", {name: "unrecognized-context"}) { %>
+
+When trying to install Buffalo `go get` returns this error:
+
+`package context: unrecognized import path "context" (import path does not begin with hostname)`
+
+This is due to an outdated version of Go. Buffalo requires Go 1.7 or higher. Please check your installation of Go and ensure you running the latest version.
+
+<% } %>

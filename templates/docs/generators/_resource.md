@@ -20,9 +20,6 @@ $ buffalo g resource users
 --> goimports -w .
 ```
 
-<table width="100%">
-<tr>
-<td width="50%" valign="top">
 ```go
 // actions/users.go
 package actions
@@ -72,8 +69,7 @@ func (v *UsersResource) Destroy(c buffalo.Context) error {
 	return c.Render(200, r.String("Users#Destroy"))
 }
 ```
-</td>
-<td width="50%" valign="top">
+
 ```go
 // actions/users_test.go
 package actions_test
@@ -119,8 +115,5 @@ func Test_UsersResource_Destroy(t *testing.T) {
 	r.Fail("Not Implemented!")
 }
 ```
-</td>
-</tr>
-</table>
 
 <% } %>

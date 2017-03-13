@@ -10,7 +10,7 @@ $ buffalo g goth twitter facebook linkedin github
 ```
 
 ```go
-// actions/goth.go
+// actions/auth.go
 package actions
 
 import (
@@ -35,10 +35,6 @@ func init() {
 		linkedin.New(os.Getenv("LINKEDIN_KEY"), os.Getenv("LINKEDIN_SECRET"), fmt.Sprintf("%s%s", App().Host, "/auth/linkedin/callback")),
 		github.New(os.Getenv("GITHUB_KEY"), os.Getenv("GITHUB_SECRET"), fmt.Sprintf("%s%s", App().Host, "/auth/github/callback")),
 	)
-
-	app := App().Group("/auth")
-	app.GET("/{provider}", buffalo.WrapHandlerFunc(gothic.BeginAuthHandler))
-	app.GET("/{provider}/callback", AuthCallback)
 }
 
 func AuthCallback(c buffalo.Context) error {
@@ -49,6 +45,19 @@ func AuthCallback(c buffalo.Context) error {
 	// Do something with the user, maybe register them/sign them in
 	return c.Render(200, r.JSON(user))
 }
+```
+
+```go
+// actions/app.go
+// ...
+func App() *buffalo.App {
+// ...
+		auth := app.Group("/auth")
+		auth.GET("/{provider}", buffalo.WrapHandlerFunc(gothic.BeginAuthHandler))
+		auth.GET("/{provider}/callback", AuthCallback)
+// ...
+}
+// ...
 ```
 
 <% } %>

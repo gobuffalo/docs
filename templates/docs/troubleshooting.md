@@ -31,3 +31,21 @@ When trying to install Buffalo `go get` returns this error:
 This is due to an outdated version of Go. Buffalo requires Go 1.7 or higher. Please check your installation of Go and ensure you running the latest version.
 
 <% } %>
+
+<%= panel("error \"unexpected directory layout:\" during \"go get\"", {}) { %>
+
+Occasionally when running `go get` on Buffalo you will get the following error:
+
+```
+unexpected directory layout:
+    import path: github.com/mattn/go-colorable
+    dir: /go/src/github.com/fatih/color/vendor/github.com/mattn/go-colorable
+    expand dir: /go/src/github.com/fatih/color/vendor/github.com/mattn/go-colorable
+    separator: /
+```
+
+This issue has been reported previously the Go team, [https://github.com/golang/go/issues/17597](https://github.com/golang/go/issues/17597).
+
+The best way to solve this problem is to run `go get` again, and it seems to fix itself.
+
+<% } %>

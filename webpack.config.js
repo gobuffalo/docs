@@ -29,31 +29,42 @@ module.exports = {
     })
   ],
   module: {
-    loaders: [{
+    rules: [{
       test: /\.jsx?$/,
-      loader: "babel",
+      loader: "babel-loader",
       exclude: /node_modules/
     }, {
       test: /\.scss$/,
-      loader: ExtractTextPlugin.extract(
-        "style",
-        "css?sourceMap!sass?sourceMap"
-      )
+      use: ExtractTextPlugin.extract({
+        fallback: "style-loader",
+        use:
+        [{
+          loader: "css-loader",
+          options: { sourceMap: true }
+      	},
+        {
+          loader: "sass-loader",
+          options: { sourceMap: true }
+        }]
+      })
     }, {
       test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
-      loader: "url?limit=10000&mimetype=application/font-woff"
+      use: "url-loader?limit=10000&mimetype=application/font-woff"
     }, {
       test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
-      loader: "url?limit=10000&mimetype=application/font-woff"
+      use: "url-loader?limit=10000&mimetype=application/font-woff"
     }, {
       test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-      loader: "url?limit=10000&mimetype=application/octet-stream"
+      use: "url-loader?limit=10000&mimetype=application/octet-stream"
     }, {
       test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-      loader: "file"
+      use: "file-loader"
     }, {
       test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-      loader: "url?limit=10000&mimetype=image/svg+xml"
+      use: "url-loader?limit=10000&mimetype=image/svg+xml"
+    }, {
+      test: require.resolve('jquery'),
+      use: 'expose-loader?jQuery!expose-loader?$'
     }]
   }
 };

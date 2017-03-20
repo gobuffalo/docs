@@ -1,3 +1,4 @@
+require('expose-loader?$!expose-loader?jQuery!jquery');
 require("bootstrap/dist/js/bootstrap.js");
 
 $(function() {
@@ -22,8 +23,8 @@ function buildSideNav() {
   var items = [];
   $(".main a[name]").each(function(_, a) {
     a = $(a);
-    if (a.data("title")) {
-      items.push(`<li>> <a href="${path}#${a.attr('name')}">${a.data("title")}</a></li>`);
+    if (a.attr("title")) {
+      items.push(`<li>> <a href="${path}#${a.attr('name')}">${a.attr("title")}</a></li>`);
     }
   })
   $("#topics").addClass("list-unstyled");

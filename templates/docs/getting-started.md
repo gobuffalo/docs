@@ -28,7 +28,7 @@
 <%= panel("Installation", {}) { %>
 
 ```
-$ go get -u github.com/gobuffalo/buffalo/buffalo
+$ go get -u github.com/gobuffalo/buffalo/...
 ```
 <% } %>
 
@@ -47,39 +47,44 @@ That will generate a whole new Buffalo application that is ready to go. It'll ev
 $ buffalo new coke
 Buffalo version <%= version %>
 
---> ../coke/main.go
---> ../coke/Procfile
---> ../coke/Procfile.development
---> ../coke/.buffalo.dev.yml
---> ../coke/actions/app.go
---> ../coke/actions/home.go
---> ../coke/actions/home_test.go
---> ../coke/actions/render.go
---> ../coke/grifts/routes.go
---> ../coke/templates/index.html
---> ../coke/templates/application.html
---> ../coke/public/images/logo.svg
---> ../coke/.gitignore
+--> .../coke/README.md
+--> .../coke/actions/actions_test.go
+--> .../coke/actions/app.go
+--> .../coke/actions/home.go
+--> .../coke/actions/home_test.go
+--> .../coke/actions/render.go
+--> .../coke/.codeclimate.yml
+--> .../coke/.gitignore
+--> .../coke/grifts/routes.go
+--> .../coke/main.go
+--> .../coke/templates/application.html
+--> .../coke/templates/index.html
+--> .../coke/.buffalo.dev.yml
 --> go get github.com/markbates/refresh/...
 --> go install github.com/markbates/refresh
 --> go get github.com/markbates/grift/...
 --> go install github.com/markbates/grift
 --> go get github.com/motemen/gore
 --> go install github.com/motemen/gore
---> ../coke/public/assets/application.js
---> ../coke/public/assets/application.css
---> ../coke/webpack.config.js
---> ../coke/assets/js/application.js
---> ../coke/assets/css/application.scss
---> npm install webpack -g
+--> .../coke/assets/images/logo.svg
+--> .../coke/assets/css/application.scss
+--> .../coke/assets/js/application.js
+--> .../coke/public/assets/.gitignore
+--> .../coke/webpack.config.js
 --> npm init -y
---> npm install --save webpack sass-loader css-loader style-loader node-sass babel-loader extract-text-webpack-plugin babel babel-core url-loader file-loader jquery bootstrap path font-awesome npm-install-webpack-plugin jquery-ujs
---> ../coke/models/models.go
+--> .../coke/models/models.go
+--> .../coke/models/models_test.go
 --> go get github.com/markbates/pop/...
 --> go install github.com/markbates/pop/soda
 --> database.yml
 --> go get -t ./...
 --> goimports -w .
+Congratulations! Your application, coke, has been successfully built!
+
+You can find your new application at:
+.../coke
+
+Please read the README.md file in your new application for next steps on running your application.
 ```
 
 To see a list of available flags for the `new` command, just check out its help.
@@ -107,46 +112,20 @@ $ buffalo build
 ```
 
 ```text
---> running webpack
-Hash: 47a7dc2dd9d5da7eb169
-Version: webpack 1.14.0
-Time: 2961ms
-                                 Asset     Size  Chunks             Chunk Names
-                             .DS_Store  6.15 kB          [emitted]
-  f4769f9bdb7466be65088239c12046d1.eot  20.1 kB          [emitted]
- fa2772327f55d8198301fdb8bcfc8158.woff  23.4 kB          [emitted]
-  e18bbf611f2a2e43afc071aa2f4e1512.ttf  45.4 kB          [emitted]
-  89889688147bd7575d6327160d64e760.svg   109 kB          [emitted]
-  674f50d287a8c48dc19ba404d20fe713.eot   166 kB          [emitted]
-af7ae505a9eed503f8b8e6982036873e.woff2  77.2 kB          [emitted]
- fee66e712a8a08eef5805a46892932ad.woff    98 kB          [emitted]
-  b06871f281fee6b241d60582ae9369b9.ttf   166 kB          [emitted]
-  912ec66d7572ff821749319396470bde.svg   444 kB          [emitted]
-                        application.js   372 kB       0  [emitted]  main
-                       application.css   335 kB       0  [emitted]  main
-448c34a56d699c29117adc64c43affeb.woff2    18 kB          [emitted]
-        fonts/fontawesome-webfont.woff    98 kB          [emitted]
-         fonts/fontawesome-webfont.eot   166 kB          [emitted]
-       fonts/fontawesome-webfont.woff2  77.2 kB          [emitted]
-         fonts/fontawesome-webfont.ttf   166 kB          [emitted]
-                 fonts/FontAwesome.otf   135 kB          [emitted]
-                   images/logo_med.png   157 kB          [emitted]
-         fonts/fontawesome-webfont.svg   444 kB          [emitted]
-                  images/uncle_sam.jpg  20.5 kB          [emitted]
-                       images/logo.svg    66 kB          [emitted]
-                       images/logo.png   366 kB          [emitted]
-                       images/repl.gif  7.15 MB          [emitted]
-   [0] multi main 52 bytes {0} [built]
-    + 23 hidden modules
-Child extract-text-webpack-plugin:
-        + 17 hidden modules
---> built rice box ../github.com/gobuffalo/gobuffalo/rice-box.go
---> built rice box ../github.com/gobuffalo/gobuffalo/actions/rice-box.go
---> running go build -v -o bin/gobuffalo -ldflags -X main.version=db92753 -X main.buildTime="2017-01-03T11:20:30-05:00"
---> cleaning up build
-```
+Buffalo version 0.8.0.dev
 
-If you are deploying to a machine that has `zip` installed, it is recommended that you use the `-z` flag with `buffalo build`, it will result in faster build times, and smaller binaries.
+--> cleaning up target dir
+--> running node_modules/.bin/webpack
+--> packing .../coke/actions/actions-packr.go
+--> running go build -v -o bin/gobuffalo -ldflags -X main.version=b5dffda -X main.buildTime="2017-03-20T11:05:23-04:00"
+--> cleaning up build
+----> cleaning up buffalo_build_main.go
+----> cleaning up a
+----> cleaning up a/a.go
+----> cleaning up a/database.go
+----> cleaning up buffalo_build_main.go
+----> cleaning up ...coke/actions/actions-packr.go
+```
 
 <% } %>
 

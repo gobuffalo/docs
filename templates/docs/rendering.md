@@ -12,8 +12,8 @@ In order for a renderer to be able to be used with [`Context#Render`](/docs/cont
 // Renderer interface that must be satisified to be used with
 // buffalo.Context.Render
 type Renderer interface {
-	ContentType() string
-	Render(io.Writer, Data) error
+  ContentType() string
+  Render(io.Writer, Data) error
 }
 
 // Data type to be provided to the Render function on the
@@ -35,15 +35,16 @@ By default an initial render engine is created for the application during applic
 var r *render.Engine
 
 func init() {
-	r = render.New(render.Options{
-		HTMLLayout:     "application.html",
-		CacheTemplates: ENV == "production",
-		FileResolverFunc: func() resolvers.FileResolver {
-			return &resolvers.RiceBox{
-				Box: rice.MustFindBox("../templates"),
-			}
-		},
-	})
+  r = render.New(render.Options{
+    // HTML layout to be used for all HTML requests:
+    HTMLLayout: "application.html",
+
+    // Box containing all of the templates:
+    TemplatesBox: packr.NewBox("../templates"),
+
+    // Add template helpers here:
+    Helpers: render.Helpers{},
+  })
 }
 ```
 
@@ -57,9 +58,9 @@ Files passed into the `render.HTML` or `render.Template` functions, that have an
 <!-- beatles.md -->
 # The Beatles
 
-{{#each names as |name|}}
-* {{name}}
-{{/each}}
+\<%= for (name) in names { %>
+* \<%= name %>
+\<% } %>
 ```
 
 ```go

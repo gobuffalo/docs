@@ -41,7 +41,7 @@ func PanelHelper(title string, opts map[string]interface{}, help plush.HelperCon
 var panelTemplate *plush.Template
 
 const panelTemplateHtml = `
-<a name="<%= name %>" data-title="<%= htmlEscape(title) %>"></a>
+<a name="<%= name %>" title="<%= htmlEscape(title) %>"></a>
 <div class="panel panel-<%= style %>">
   <div class="panel-heading">
     <h3><%= title %></h3>

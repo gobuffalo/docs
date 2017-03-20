@@ -6,20 +6,20 @@
 
 <%= panel("General Usage", {name: "general"}) { %>
 
-If you know handlebars, you basically know how to use [Velvet](https://github.com/gobuffalo/velvet).
+Buffalo defaults to using [plush](https://github.com/gobuffalo/plush) as its template engine.
 
 Let's assume you have a template (a string of some kind):
 
-```handlebars
+```erb
 <!-- templates/index.html -->
-<h1>{{ name }}</h1>
+<h1>\<%= name %></h1>
 <ul>
-  {{#each names}}
-    <li>{{ @value }}</li>
-  {{/each}}
+  \<%= for (name) in names { %>
+    <li>\<%= name %></li>
+  \<% } %>
 </ul>
 
-{{! "this is a comment and won't get printed" }}
+\<%# "this is a comment and won't get printed" %>
 ```
 
 Given that string, you can render the template like such:
@@ -47,34 +47,24 @@ Which would result in the following output:
 
 <%= panel("If Statements", {name: "if"}) { %>
 
-What to do? Should you render the content, or not? Using Velvet's built in `if`, `else`, and `unless` helpers let you figure it out for yourself.
+What to do? Should you render the content, or not? Using plush's built in `if`, `else`, and `unless` helpers let you figure it out for yourself.
 
-```handlebars
-{{#if true }}
-  render this
-{{/if}}
+```erb
+\<%= if (true) { %>
+  <!-- render this -->
+\<% } %>
 ```
 
 <% } %>
 
 <%= panel("Else Statements", {name: "else"}) { %>
 
-```handlebars
-{{#if false }}
-  won't render this
-{{ else }}
-  render this
-{{/if}}
-```
-
-<% } %>
-
-<%= panel("Unless Statements", {name: "unless"}) { %>
-
-```handlebars
-{{#unless true }}
-  won't render this
-{{/unless}}
+```erb
+\<%= if (false) { %>
+  <!-- won't render this -->
+\<% } else { %>
+  <!-- render this -->
+\<% } %>
 ```
 
 <% } %>

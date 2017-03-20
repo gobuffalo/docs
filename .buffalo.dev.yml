@@ -11,10 +11,6 @@ ignored_folders:
 - .sass-cache
 included_extensions:
 - .go
-- .html
-- .md
-- .js
-- .tmpl
 build_path: /tmp
 build_delay: 200ns
 binary_name: gobuffalo-build

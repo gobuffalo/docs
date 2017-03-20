@@ -1,14 +1,12 @@
 package actions
 
 import (
-	"os"
-
 	"github.com/gobuffalo/buffalo"
-	"github.com/markbates/going/defaults"
+	"github.com/gobuffalo/envy"
+	"github.com/gobuffalo/packr"
 )
 
-var ENV = defaults.String(os.Getenv("GO_ENV"), "development")
-
+var ENV = envy.Get("GO_ENV", "development")
 var app *buffalo.App
 
 // App is where all routes and middleware for buffalo
@@ -22,14 +20,14 @@ func App() *buffalo.App {
 
 		app.Use(func(next buffalo.Handler) buffalo.Handler {
 			return func(c buffalo.Context) error {
-				c.Set("version", "0.7.4")
+				c.Set("version", "0.8.0")
 				return next(c)
 			}
 		})
 		app.GET("/", HomeHandler)
 		app.GET("/docs/{name}", Docs)
 
-		app.ServeFiles("/assets", assetsPath())
+		app.ServeFiles("/assets", packr.NewBox("../public/assets"))
 	}
 	return app
 }

@@ -12,11 +12,11 @@ It is quite common to want to use the same layout across most, if not all of an 
 var r *render.Engine
 
 func init() {
-	r = render.New(render.Options{
-		// ...
-		HTMLLayout:     "application.html",
-		// ...
-	})
+  r = render.New(render.Options{
+    // ...
+    HTMLLayout:     "application.html",
+    // ...
+  })
 }
 ```
 
@@ -28,7 +28,7 @@ func init() {
   </head>
   <body>
     <div id="main">
-      {{ yield }}
+      \<%= yield %>
     </div>
   </body>
 </html>
@@ -69,11 +69,11 @@ Sometimes, on certain requests, a different layout is needed. This alternate lay
 var r *render.Engine
 
 func init() {
-	r = render.New(render.Options{
-		// ...
-		HTMLLayout:     "application.html",
-		// ...
-	})
+  r = render.New(render.Options{
+    // ...
+    HTMLLayout:     "application.html",
+    // ...
+  })
 }
 ```
 
@@ -85,7 +85,7 @@ func init() {
   </head>
   <body>
     <div id="main">
-      {{ yield }}
+      \<%= yield %>
     </div>
   </body>
 </html>

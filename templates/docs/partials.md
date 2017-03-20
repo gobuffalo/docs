@@ -11,7 +11,7 @@ All partial file names must start with an `_`. For example: `_form.html`. This h
 ```html
 <h1>Create New User</h1>
 
-{{ partial "users/form.html" }}
+\<%= partial("users/form.html") %>
 ```
 
 **templates/users/_form.html**
@@ -46,14 +46,14 @@ func UsersEdit(c buffalo.Context) error {
 
 **templates/users/edit.html**
 ```html
-<h1>Edit {{user.Name}} ({{user.ID}})</h1>
+<h1>Edit \<%= user.Name %> (\<%= user.ID %>)</h1>
 
-{{ partial "users/form.html" }}
+\<%= partial("users/form.html") %>
 ```
 
 **templates/users/_form.html**
 ```html
-<form action="/users/{{user.ID}}">
+<form action="/users/\<%= user.ID %>">
 <!-- form stuff here  -->
 </form>
 ```
@@ -77,15 +77,15 @@ In addition to have the [context](/docs/context) of the parent template, partial
 <h1>All Users</h1>
 
 <ul>
-  {{#each users as |user|}}
-    {{ partial "users/user.html" user=user }}
-  {{/each}}
+  \<%= for (user) in users { %>
+    \<%= partial("users/user.html", {user: user}) %>
+  \<% } %>
 </ul>
 ```
 
 **templates/users/_user.html**
 ```html
-<li>{{user.Name}}</li>
+<li>\<%= user.Name %></li>
 ```
 
 **outputs**

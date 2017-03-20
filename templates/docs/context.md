@@ -13,22 +13,22 @@ Since `buffalo.Context` is an interface it is possible to create an application 
 ```go
 type Context interface {
   context.Context
-	Response() http.ResponseWriter
-	Request() *http.Request
-	Session() *Session
-	Params() ParamValues
-	Param(string) string
-	ParamInt(string) (int, error)
-	Set(string, interface{})
-	LogField(string, interface{})
-	LogFields(map[string]interface{})
-	Logger() Logger
-	Bind(interface{}) error
-	Render(int, render.Renderer) error
-	Error(int, error) error
-	Websocket() (*websocket.Conn, error)
-	Redirect(int, string, ...interface{}) error
-	Data() map[string]interface{}
+  Response() http.ResponseWriter
+  Request() *http.Request
+  Session() *Session
+  Params() ParamValues
+  Param(string) string
+  ParamInt(string) (int, error)
+  Set(string, interface{})
+  LogField(string, interface{})
+  LogFields(map[string]interface{})
+  Logger() Logger
+  Bind(interface{}) error
+  Render(int, render.Renderer) error
+  Error(int, error) error
+  Websocket() (*websocket.Conn, error)
+  Redirect(int, string, ...interface{}) error
+  Data() map[string]interface{}
 }
 ```
 
@@ -45,7 +45,7 @@ Any values that are "set" on the context will automatically be available to the 
 ```go
 func Hello(c buffalo.Context) error {
   c.Set("name", "Mark")
-  return c.Render(200, render.String("Hi {{name}}"))
+  return c.Render(200, render.String("Hi \<%= name %>"))
 }
 // Hi Mark
 ```

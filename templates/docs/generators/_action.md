@@ -1,4 +1,4 @@
-<%= panel("Actions", {}) { %>
+<%= title("Actions") %>
 
 ```text
 $ buffalo g action --help
@@ -10,7 +10,6 @@ Usage:
 
 Aliases:
   action, a, actions
-
 ```
 
 ```text
@@ -23,5 +22,3 @@ $ buffalo g a users show index create
 --> actions/users_test.go
 --> goimports -w .
 ```
-
-<% } %>

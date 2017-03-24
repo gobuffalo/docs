@@ -1,39 +1,45 @@
-require('expose-loader?$!expose-loader?jQuery!jquery');
+require("expose-loader?$!expose-loader?jQuery!jquery");
 require("bootstrap/dist/js/bootstrap.js");
+require("./vendor/prism.js");
+require("./theme.js");
+require("expose-loader?Clipboard!./vendor/clipboard.min.js");
 
-$(function() {
+let buildSideNav = () => {
+  let loc = window.location;
+  let path = loc.pathname;
+  let items = [];
+  $(".main-content a[name]").each((_, a) => {
+    let $a = $(a);
+    if ($a.attr("title")) {
+      let name = $a.attr("name");
+      let title = $a.attr("title");
+      items.push(`<li><a href="${path}#${name}">${title}</a></li>`);
+    }
+  });
+  let sb = $(`a[href="${path}"]`);
+  let ul = $("<ul class='sub-nav'>").append(items);
+  sb.append(ul);
+  sb.addClass("active");
+  sb.addClass("has-child");
+  sb.addClass("open");
+};
+
+let activateSideNav = () => {
+  let loc = window.location;
+  let path = loc.pathname;
+  $(".sidebar li").removeClass("active");
+  let item = $(`.sidebar a[href="${path}"]`);
+  item.closest("li").addClass("active");
+};
+
+$(() => {
+
   activateSideNav();
-  $('.highlight pre').each(function(i, block) {
-    var html = block.innerHTML;
-    html = html.replace(/\t/g, "  ");
-    block.innerHTML = html;
-    hljs.highlightBlock(block);
+  buildSideNav();
+
+  $(".code-tabs .window-content").each((_, wc) => {
+    $(wc).find("pre").first().show();
   });
 
-  $("img[alt='Buffalo Logo']").closest("p").css("text-align", "center");
-
-  $(window).on("hashchange", activateSideNav);
-
-  buildSideNav();
+  $("img[title=screenshot]").addClass("img-shadow img-responsive center-block img-rounded");
 });
-
-function buildSideNav() {
-  loc = window.location;
-  var path = loc.pathname;
-  var items = [];
-  $(".main a[name]").each(function(_, a) {
-    a = $(a);
-    if (a.attr("title")) {
-      items.push(`<li>> <a href="${path}#${a.attr('name')}">${a.attr("title")}</a></li>`);
-    }
-  })
-  $("#topics").addClass("list-unstyled");
-  $("#topics").append(items);
-}
-
-function activateSideNav() {
-  loc = window.location;
-  var path = loc.pathname;
-  $(".nav-sidebar li").removeClass("active")
-  $(`.nav a[href="${path}"]`).closest("li").addClass("active");
-}

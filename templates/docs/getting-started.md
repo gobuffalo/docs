@@ -1,49 +1,23 @@
 # Getting Started
 
-<table>
-  <tr>
-    <td width="30%">
-      <img src="/assets/images/logo.svg">
-    </td>
-    <td>
-      <div class="jumbotron">
-        <p>
-        Buffalo is a Go web development eco-system. Designed to make the life of a Go web developer easier.
-        </p>
+<%= title("Installation", {}) %>
 
-        <p>
-        Buffalo starts by generating a web project for you that already has everything from front-end (JavaScript, SCSS, etc...) to back-end (Database, Routing, etc...) already hooked up and ready to run. From there it provides easy APIs to build your web application quickly in Go.
-        </p>
-
-        <p>
-          Buffalo isn't just a framework, it's a holistic web development environment and project structure that let's developers get straight to the business of, well, building their business.
-        </p>
-
-
-      </div>
-    </td>
-  </tr>
-</table>
-
-<%= panel("Installation", {}) { %>
-
-```
+<%= code("text") { %>
 $ go get -u github.com/gobuffalo/buffalo/...
-```
 <% } %>
 
-<%= panel("Generating a New Project", {name: "new-project"}) { %>
+<%= title("Generating a New Project", {name: "new-project"}) %>
 
 Buffalo aims to make building new web applications in Go as quick and simple as possible, and what could be more simple than a *new application* generator? Start by going to your `$GOPATH` and create your new application!
 
-```
+<%= code("text") { %>
 $ cd $GOPATH/src/github.com/$USER/
 $ buffalo new <name>
-```
+<% } %>
 
 That will generate a whole new Buffalo application that is ready to go. It'll even run `go get` for you to make sure you have all of the necessary dependencies needed to run your application.
 
-```text
+<%= code("text") { %>
 $ buffalo new coke
 Buffalo version <%= version %>
 
@@ -85,33 +59,31 @@ You can find your new application at:
 .../coke
 
 Please read the README.md file in your new application for next steps on running your application.
-```
+<% } %>
 
 To see a list of available flags for the `new` command, just check out its help.
 
-```
+<%= code("text") { %>
 $ buffalo help new
-```
+<% } %>
 
 Note: by default, Buffalo generates a database.yml targeted for postgres. If you wish to change this behavior, you can pass in a `--db-type` flag into the `new` command.
 
-```
+<%= code("text") { %>
 $ buffalo new coke --db-type sqlite3
-```
-
 <% } %>
 
 <%= partial("docs/dev.md") %>
 
-<%= panel("Building Your Application", {name: "building"}) { %>
+<%= title("Building Your Application", {name: "building"}) %>
 
 Buffalo features a command, `build`, that will build a full binary of your application including, but not limited to; assets, migrations, templates, etc... If you buy into the "Buffalo Way" things just work. It's a wonderful experience. :)
 
-```
+<%= code("text") { %>
 $ buffalo build
-```
+<% } %>
 
-```text
+<%= code("text") { %>
 Buffalo version 0.8.0.dev
 
 --> cleaning up target dir
@@ -125,7 +97,5 @@ Buffalo version 0.8.0.dev
 ----> cleaning up a/database.go
 ----> cleaning up buffalo_build_main.go
 ----> cleaning up ...coke/actions/actions-packr.go
-```
 
 <% } %>
-

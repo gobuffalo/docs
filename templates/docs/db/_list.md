@@ -1,10 +1,10 @@
-<%= panel("Database Generators", {name: "generators"}) { %>
+<%= title("Database Generators", {name: "generators"}) %>
 
 ```text
 $ buffalo db g --help
 
 Usage:
-  buffalo soda generate [command]
+  buffalo db generate [command]
 
 Aliases:
   generate, g
@@ -22,7 +22,5 @@ Global Flags:
   -e, --env string      The environment you want to run migrations against. Will use $GO_ENV if set. (default "development")
   -p, --path string     Path to the migrations folder (default "./migrations")
 
-Use "buffalo soda generate [command] --help" for more information about a command.
+Use "buffalo db generate [command] --help" for more information about a command.
 ```
-
-<% } %>

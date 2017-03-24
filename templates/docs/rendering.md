@@ -2,13 +2,11 @@
 
 <%= partial("docs/disclaimer.html") %>
 
-<%= partial("topics.html") %>
-
-<%= panel("Renderer Interface", {name: "interface"}) { %>
+<%= title("Renderer Interface", {name: "interface"}) %>
 
 In order for a renderer to be able to be used with [`Context#Render`](/docs/context) it must implement the following interface:
 
-```go
+<%= code("go") { %>
 // Renderer interface that must be satisified to be used with
 // buffalo.Context.Render
 type Renderer interface {
@@ -18,59 +16,52 @@ type Renderer interface {
 
 // Data type to be provided to the Render function on the
 // Renderer interface.
+
 type Data map[string]interface{}
-```
+<% } %>
 
 Thankfully the [https://github.com/gobuffalo/buffalo/render](https://github.com/gobuffalo/buffalo/tree/master/render) [[godoc]](https://godoc.org/github.com/gobuffalo/buffalo/render) package implements that interface, and has a collection of useful render types already defined. It is recommended that you use this package, but feel free and write your own renderers!
 
-<% } %>
-
-<%= panel("Creating a Render Engine", {}) { %>
+<%= title("Creating a Render Engine", {}) %>
 
 A render engine is used to store information about configuration needed for rendering. Examples include: [helpers](/docs/helpers), [layouts](/docs/layouts), etc. Multiple engines can be initialized. For example one engine for the "main" site, and another for the "admin" portion.
 
 By default an initial render engine is created for the application during application generation:
 
-```go
+<%= code("go") { %>
 var r *render.Engine
 
 func init() {
   r = render.New(render.Options{
-    // HTML layout to be used for all HTML requests:
     HTMLLayout: "application.html",
-
-    // Box containing all of the templates:
     TemplatesBox: packr.NewBox("../templates"),
-
-    // Add template helpers here:
     Helpers: render.Helpers{},
   })
-}
-```
 
+}
 <% } %>
 
-<%= panel("Markdown", {}) { %>
+<%= title("Markdown", {}) %>
 
 Files passed into the `render.HTML` or `render.Template` functions, that have an extension of `.md`, will be converted from Markdown (using GitHub flavored Markdown) to HTML before being run through the templating engine. This makes for incredibly easy templating for simpler pages.
 
-```markdown
-<!-- beatles.md -->
+<div class="code-tabs">
+<%= code("markdown", {file: "beatles.md"}) { %>
 # The Beatles
 
 \<%= for (name) in names { %>
 * \<%= name %>
 \<% } %>
-```
+<% } %>
 
-```go
+<%= code("go") { %>
 func Beatles(c buffalo.Context) error {
   c.Set("names", []string{"John", "Paul", "George", "Ringo"})
   return c.Render(200, r.HTML("beatles.md"))
 }
-```
+<% } %>
 
-```html
+<%= code("markup", {file: "output"}) { %>
 <h1>The Beatles</h1>
 
 <ul>
@@ -79,6 +70,5 @@ func Beatles(c buffalo.Context) error {
   <li>George</li>
   <li>Ringo</li>
 </ul>
-```
-
 <% } %>
+</div>

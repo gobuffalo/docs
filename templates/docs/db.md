@@ -1,20 +1,16 @@
-# Database [![GoDoc](https://godoc.org/github.com/markbates/pop?status.svg)](https://godoc.org/github.com/markbates/pop)
+# Database
 
 Buffalo uses [github.com/markbates/pop](https://github.com/markbates/pop) as its default database package for migrations, transactions, basic ORM functionality, and more.
 
-<%= partial("topics.html") %>
-
-<%= panel("Getting Started", {}) { %>
+<%= title("Getting Started") %>
 
 Buffalo supports [PostgreSQL](https://www.postgresql.org/) (default), [MySQL](https://www.mysql.com/), and [SQLite3](https://sqlite.org/). When you generate a new Buffalo application you can change this with the `--db-type` flag. It is also possible to skip generation of all database components with the `--skip-pop` flag.
 
-<% } %>
-
-<%= panel("database.yml", {name: "configuring"}) { %>
+<%= title("database.yml", {name: "configuring"}) %>
 
 When you first generate a Buffalo application a `database.yml` file will be generated for you, based on the type of database that was selected with the `--db-type` flag, with PostgreSQL being the default.
 
-```text
+<%= code("yaml", {file: "database.yml"}) { %>
 development:
   dialect: postgres
   database: myapp_development
@@ -32,7 +28,7 @@ test:
 
 production:
   url: {{envOr "DATABASE_URL" "postgres://postgres:postgres@127.0.0.1:5432/myapp_production"}}
-```
+<% } %>
 
 **CONFIGURE THIS FILE!**
 
@@ -40,9 +36,7 @@ Make sure to set up the appropriate usernames, passwords, hosts, etc... that are
 
 In the generated `database.yml` file there is a template helper, `envOr`, that will attempt to find the the ENV var with that name, in this case `DATABASE_URL`, if that ENV does not exist, it will load the "default" string.
 
-<% } %>
-
-<%= panel("Creating Databases", {}) { %>
+<%= title("Creating Databases") %>
 
 Once the `database.yml` has been configured with the appropriate settings, and the database server is running, Buffalo can create all of the databases in the `database.yml` file with a simple command:
 
@@ -50,14 +44,32 @@ Once the `database.yml` has been configured with the appropriate settings, and t
 $ buffalo db create -a
 ```
 
-<% } %>
+You can also create just one of the configured databases by using the `-e` flag and the name of the database:
+
+```text
+$ buffalo db create -e test
+```
+
+<%= title("Dropping Databases") %>
+
+Buffalo can drop all of your databases, should you want to, with one command:
+
+```text
+$ buffalo db drop -a
+```
+
+You can also drop just one of the configured databases by using the `-e` flag and the name of the database:
+
+```text
+$ buffalo db drop -e test
+```
 
 <%= partial("docs/db/list.md") %>
 <%= partial("docs/db/model.md") %>
 <%= partial("docs/db/fizz.md") %>
 <%= partial("docs/db/sql.md") %>
 
-<%= panel("Running Migrations", {}) { %>
+<%= title("Running Migrations") %>
 
 Once migrations have been created they can be run with either of the following commands:
 
@@ -84,7 +96,6 @@ Aliases:
 
 
 Available Commands:
-  create      [DEPRECATION WARNING] This command is deprecated. Please use `soda generate fizz` or `soda generate sql` instead.
   down        Apply all of the 'down' migrations.
   reset       The equivalent of running `migrate down` and then `migrate up`
   up          Apply all of the 'up' migrations.
@@ -97,6 +108,3 @@ Global Flags:
 
 Use "buffalo db migrate [command] --help" for more information about a command.
 ```
-
-<% } %>
-

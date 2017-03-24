@@ -1,16 +1,61 @@
-<%= panel("Goth", {}) { %>
+<%= title("Goth") %>
 
 [Goth](https://github.com/markbates/goth) provides a simple, clean, and idiomatic way to write authentication packages for Go web applications.
 
-```text
+<div class="code-tabs">
+<%= code("text", {file: "command"}) { %>
 $ buffalo g goth twitter facebook linkedin github
 
---> actions/goth.go
+--> actions/auth.go
+--> go get github.com/markbates/goth/...
 --> goimports -w .
-```
+<% } %>
 
-```go
-// actions/auth.go
+<%= code("go", {file: "actions/app.go", "data-line": "35-37"}) { %>
+package actions
+
+import (
+	"github.com/gobuffalo/buffalo"
+
+	"github.com/gobuffalo/buffalo/middleware"
+	"github.com/markbates/coke/models"
+
+	"github.com/gobuffalo/envy"
+	"github.com/gobuffalo/packr"
+
+	"github.com/markbates/goth/gothic"
+)
+
+// ENV is used to help switch settings based on where the
+// application is being run. Default is "development".
+var ENV = envy.Get("GO_ENV", "development")
+var app *buffalo.App
+
+// App is where all routes and middleware for buffalo
+// should be defined. This is the nerve center of your
+// application.
+func App() *buffalo.App {
+	if app == nil {
+		app = buffalo.Automatic(buffalo.Options{
+			Env:         ENV,
+			SessionName: "_coke_session",
+		})
+
+		app.Use(middleware.PopTransaction(models.DB))
+
+		app.GET("/", HomeHandler)
+
+		app.ServeFiles("/assets", packr.NewBox("../public/assets"))
+		auth := app.Group("/auth")
+		auth.GET("/{provider}", buffalo.WrapHandlerFunc(gothic.BeginAuthHandler))
+		auth.GET("/{provider}/callback", AuthCallback)
+	}
+
+	return app
+}
+<% } %>
+
+<%= code("go", {file: "actions/auth.go"}) { %>
 package actions
 
 import (
@@ -45,19 +90,5 @@ func AuthCallback(c buffalo.Context) error {
 	// Do something with the user, maybe register them/sign them in
 	return c.Render(200, r.JSON(user))
 }
-```
-
-```go
-// actions/app.go
-// ...
-func App() *buffalo.App {
-// ...
-		auth := app.Group("/auth")
-		auth.GET("/{provider}", buffalo.WrapHandlerFunc(gothic.BeginAuthHandler))
-		auth.GET("/{provider}/callback", AuthCallback)
-// ...
-}
-// ...
-```
-
 <% } %>
+</div>

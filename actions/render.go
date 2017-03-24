@@ -12,7 +12,8 @@ func init() {
 	r = render.New(render.Options{
 		HTMLLayout: "application.html",
 		Helpers: render.Helpers{
-			"panel": helpers.PanelHelper,
+			"title": helpers.SectionTitle,
+			"code":  helpers.CodeHelper,
 		},
 		TemplatesBox: packr.NewBox("../templates"),
 	})

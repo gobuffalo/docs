@@ -1,39 +1,32 @@
-# Templating
+<h1>Templating</h1>
 
 <%= partial("docs/disclaimer.html") %>
 
-<%= partial("topics.html") %>
-
-<%= panel("General Usage", {name: "general"}) { %>
-
 Buffalo defaults to using [plush](https://github.com/gobuffalo/plush) as its template engine.
 
-Let's assume you have a template (a string of some kind):
+<div class="video">
+<iframe src="https://player.vimeo.com/video/207200621?portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+</div>
 
-```erb
-<!-- templates/index.html -->
+<%= title("General Usage", {name: "general"}) %>
+
+<div class="code-tabs">
+<%= code("html", {file: "templates/index.html"}) { %>
 <h1>\<%= name %></h1>
 <ul>
   \<%= for (name) in names { %>
     <li>\<%= name %></li>
   \<% } %>
 </ul>
-
-\<%# "this is a comment and won't get printed" %>
-```
-
-Given that string, you can render the template like such:
-
-```go
+<% } %>
+<%= code("go", {file: "actions/index.go"}) { %>
 func IndexHandler(c buffalo.Context) error {
   c.Set("names", []string{"John", "Paul", "George", "Ringo"})
   return c.Render(200, r.HTML("index.html"))
 }
-```
+<% } %>
 
-Which would result in the following output:
-
-```html
+<%= code("html", {file: "output"}) { %>
 <h1>Mark</h1>
 <ul>
   <li>John</li>
@@ -41,30 +34,25 @@ Which would result in the following output:
   <li>George</li>
   <li>Ringo</li>
 </ul>
-```
+<% } %>
+</div>
 
+<%= title("If Statements", {name: "if"}) %>
+
+<%= code("html") { %>
+\\<%= if (true) { %>
+  \<!-- render this -->
+\\<% } %>
 <% } %>
 
-<%= panel("If Statements", {name: "if"}) { %>
 
-What to do? Should you render the content, or not? Using plush's built in `if`, `else`, and `unless` helpers let you figure it out for yourself.
 
-```erb
-\<%= if (true) { %>
-  <!-- render this -->
-\<% } %>
-```
+<%= title("Else Statements", {name: "else"}) %>
 
-<% } %>
-
-<%= panel("Else Statements", {name: "else"}) { %>
-
-```erb
-\<%= if (false) { %>
-  <!-- won't render this -->
-\<% } else { %>
-  <!-- render this -->
-\<% } %>
-```
-
+<%= code("html") { %>
+\\<%= if (false) { %>
+  \<!-- won't render this -->
+\\<% } else { %>
+  \<!-- render this -->
+\\<% } %>
 <% } %>

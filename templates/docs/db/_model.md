@@ -1,4 +1,4 @@
-<%= panel("Generating Models", {}) { %>
+<%= title("Generating Models") %>
 
 ```text
 $ buffalo db g model --help
@@ -6,7 +6,7 @@ $ buffalo db g model --help
 Generates a model for your database
 
 Usage:
-  buffalo soda generate model [name] [flags]
+  buffalo db generate model [name] [flags]
 
 Aliases:
   model, m
@@ -21,5 +21,3 @@ Global Flags:
   -e, --env string      The environment you want to run migrations against. Will use $GO_ENV if set. (default "development")
   -p, --path string     Path to the migrations folder (default "./migrations")
 ```
-
-<% } %>

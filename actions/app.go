@@ -1,6 +1,8 @@
 package actions
 
 import (
+	"time"
+
 	"github.com/gobuffalo/buffalo"
 	"github.com/gobuffalo/envy"
 	"github.com/gobuffalo/packr"
@@ -21,13 +23,16 @@ func App() *buffalo.App {
 		app.Use(func(next buffalo.Handler) buffalo.Handler {
 			return func(c buffalo.Context) error {
 				c.Set("version", "0.8.0")
+				c.Set("year", time.Now().Year())
+				c.Set("trainingURL", "mailto:mark+buffalo@markbates.com")
 				return next(c)
 			}
 		})
-		app.GET("/", HomeHandler)
+
 		app.GET("/docs/{name}", Docs)
 
 		app.ServeFiles("/assets", packr.NewBox("../public/assets"))
+		app.Redirect(302, "/", "/docs/getting-started")
 	}
 	return app
 }

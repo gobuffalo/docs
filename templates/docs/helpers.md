@@ -4,6 +4,8 @@
 
 <%= title("Builtin Helpers") %>
 
+Listed below are a few of the helpers that ship with Plush. Please see the Plush [documentation](https://github.com/gobuffalo/plush) for more information on it's helpers.
+
 * `json` - returns a JSON marshaled string of the value passed to it.
 * `jsEscape` - safely escapes a string to be used in a JavaScript bit of code.
 * `htmlEscape` - safely escapes a string to be used in an HTML bit of code.
@@ -24,7 +26,7 @@ The `contentFor` helper takes a block of HTML and holds on to using the given na
 
 <%= code("html") { %>
 \\<% contentFor("buttons") { %>
-&lt;button>Save&lt;/button>&lt;button>Cancel&lt;/button>
+  &lt;button>Save&lt;/button>&lt;button>Cancel&lt;/button>
 \\<% } %>
 <% } %>
 

@@ -12,6 +12,7 @@ Buffalo aims to make building new web applications in Go as quick and simple as 
 
 <%= code("text") { %>
 $ cd $GOPATH/src/github.com/$USER/
+$ # Make sure $GOPATH/bin is in your $PATH, then:
 $ buffalo new <name>
 <% } %>
 

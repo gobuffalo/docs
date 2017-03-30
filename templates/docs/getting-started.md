@@ -73,6 +73,12 @@ Note: by default, Buffalo generates a database.yml targeted for postgres. If you
 $ buffalo new coke --db-type sqlite3
 <% } %>
 
+If your app doesn't need a database, or if you want to handle it by yourself, you can use the `--skip-pop` flag.
+
+<%= code("text") { %>
+$ buffalo new coke --skip-pop
+<% } %>
+
 <%= partial("docs/dev.md") %>
 
 <%= title("Building Your Application", {name: "building"}) %>

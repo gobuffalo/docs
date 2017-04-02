@@ -106,3 +106,5 @@ Buffalo version 0.8.0.dev
 ----> cleaning up ...coke/actions/actions-packr.go
 
 <% } %>
+
+See [Building](/docs/building) for more options on the `build` command.

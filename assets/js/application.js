@@ -42,4 +42,7 @@ $(() => {
   });
 
   $("img[title=screenshot]").addClass("img-shadow img-responsive center-block img-rounded");
+
+  $("p:empty").remove();
+  $("code:empty").remove();
 });

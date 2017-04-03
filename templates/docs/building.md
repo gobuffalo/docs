@@ -7,8 +7,6 @@ $ buffalo build
 <% } %>
 
 <%= code("text") { %>
-Buffalo version 0.8.0
-
 --> cleaning up target dir
 --> running node_modules/.bin/webpack
 --> packing .../coke/actions/actions-packr.go
@@ -20,10 +18,11 @@ Buffalo version 0.8.0
 ----> cleaning up a/database.go
 ----> cleaning up buffalo_build_main.go
 ----> cleaning up ...coke/actions/actions-packr.go
-
 <% } %>
 
-<%= title("Define a custom binary name", {name: "custom-bin-name"}) %>
+Binaries contain, by default, all of the assets, templates, and migrations used by your application. Binaries will also have the time and the git commit SHA burnt in, thus making the binaries "versioned".
+
+<%= title("Define a Custom Binary Name", {name: "custom-bin-name"}) %>
 
 By default, your application will be built in the `bin` directory of your project, and the name of the executable will be the name you used to create the project with the `new` command.
 
@@ -34,8 +33,6 @@ $ buffalo build -o bin/cookies
 <% } %>
 
 <%= code("text") { %>
-Buffalo version 0.8.0
-
 --> cleaning up target dir
 --> running node_modules/.bin/webpack
 --> packing .../coke/actions/actions-packr.go
@@ -47,7 +44,6 @@ Buffalo version 0.8.0
 ----> cleaning up a/database.go
 ----> cleaning up buffalo_build_main.go
 ----> cleaning up ...coke/actions/actions-packr.go
-
 <% } %>
 
 In fact, you can change the target directory too:
@@ -58,8 +54,6 @@ $ buffalo build -o ~/coke
 <% } %>
 
 <%= code("text") { %>
-Buffalo version 0.8.0
-
 --> cleaning up target dir
 --> running node_modules/.bin/webpack
 --> packing .../coke/actions/actions-packr.go
@@ -71,22 +65,19 @@ Buffalo version 0.8.0
 ----> cleaning up a/database.go
 ----> cleaning up buffalo_build_main.go
 ----> cleaning up ...coke/actions/actions-packr.go
-
 <% } %>
 
-<%= title("Extract assets in a zip file", {name: "extract-assets"}) %>
+<%= title("Extract Assets in a Zip File", {name: "extract-assets"}) %>
 
 By default, your whole app is packed into a single executable, assets included. In production setups, you may want to serve these assets with a proxy server (like Apache or NGINX), to lower the app load. You may even use a *CDN* to handle your assets.
 
 Buffalo provides a way to extract compiled app assets into a single archive, using the `-e` or `-extract-assets` flag:
 
- <%= code("text") { %>
+<%= code("text") { %>
 $ buffalo build -e
 <% } %>
 
 <%= code("text") { %>
-Buffalo version 0.8.0
-
 --> cleaning up target dir
 --> running node_modules/.bin/webpack
 --> build assets archive
@@ -99,9 +90,58 @@ Buffalo version 0.8.0
 ----> cleaning up a/database.go
 ----> cleaning up buffalo_build_main.go
 ----> cleaning up ...coke/actions/actions-packr.go
-
 <% } %>
 
 Please note this will disable the internal assets handling too, so the final executable is lighter.
 
 By default, the assets archive is put in the *bin* directory, but if you change the executable output directory with the `-o` flag, the assets will be put in the same directory.
+
+<%= code("text") { %>
+$ ls -la bin
+<% } %>
+
+<%= code("text") { %>
+total 36280
+drwxr-xr--@  4 markbates  staff   136B Apr  3 10:10 ./
+drwxr-xr-x@ 20 markbates  staff   680B Apr  3 10:10 ../
+-rwxr-xr-x@  1 markbates  staff    17M Apr  3 10:10 coke*
+-rw-r--r--@  1 markbates  staff   691K Apr  3 10:10 coke-assets.zip
+<% } %>
+
+<%= title("Binary Commands") %>
+
+Binaries, by default, run in `development` mode, which means all of the sub-commands will run in that mode as well. To change the mode, you must use the `GO_ENV` environment variable.
+
+<%= code("text") { %>
+$ GO_ENV=production ./coke
+<% } %>
+
+Once a binary has been built there are several sub-commands that can be run on that binary.
+
+### Default
+
+The default command, if you just run the binary, will start the application.
+
+### migrate
+
+The `migrate` sub-command will run the migrations for the application.
+
+### version
+
+The `version` sub-command will output the version information for the binary, including the name, the git commit SHA used to build the binary, and the time the binary was built.
+
+<%= code("text") { %>
+$ ./coke version
+coke version 69b6a8b ("2017-04-03T10:19:46-04:00")
+<% } %>
+
+### task
+
+The `task` sub-command runs tasks.
+
+<%= code("text") { %>
+$ ./coke task greet
+
+Hello World!
+<% } %>
+

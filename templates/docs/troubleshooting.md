@@ -43,3 +43,7 @@ unexpected directory layout:
 This issue has been reported previously the Go team, [https://github.com/golang/go/issues/17597](https://github.com/golang/go/issues/17597).
 
 The best way to solve this problem is to run `go get` again, and it seems to fix itself.
+
+<%= title("ERROR in application.js from UglifyJs") %>
+
+If you get this error when running `buffalo build` you need to update your `webpack.config.js` to work with [https://github.com/gobuffalo/buffalo/pull/350/files](https://github.com/gobuffalo/buffalo/pull/350/files).

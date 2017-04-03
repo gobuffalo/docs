@@ -32,19 +32,24 @@ module.exports = {
     rules: [{
       test: /\.jsx?$/,
       loader: "babel-loader",
+      options: {
+        presets: ['env']
+      },
       exclude: /node_modules/
     }, {
       test: /\.scss$/,
       use: ExtractTextPlugin.extract({
         fallback: "style-loader",
-        use:
-        [{
+        use: [{
           loader: "css-loader",
-          options: { sourceMap: true }
-      	},
-        {
+          options: {
+            sourceMap: true
+          }
+        }, {
           loader: "sass-loader",
-          options: { sourceMap: true }
+          options: {
+            sourceMap: true
+          }
         }]
       })
     }, {

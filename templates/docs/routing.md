@@ -129,7 +129,6 @@ type Resource interface {
 
 
 ...
-<i>Italic text</i>
 <%= code("go") { %>
 type UserResource struct{
   buffalo.Resource

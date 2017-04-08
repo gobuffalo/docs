@@ -7,6 +7,9 @@ require("expose-loader?Clipboard!./vendor/clipboard.min.js");
 let buildSideNav = () => {
   let loc = window.location;
   let path = loc.pathname;
+  let sb = $(`a[href="${path}"]`);
+  sb.closest("ul.sidenav").addClass("open");
+
   let items = [];
   $(".main-content a[name]").each((_, a) => {
     let $a = $(a);
@@ -16,13 +19,13 @@ let buildSideNav = () => {
       items.push(`<li><a href="${path}#${name}">${title}</a></li>`);
     }
   });
-  let sb = $(`a[href="${path}"]`);
-  let ul = $("<ul class='sub-nav'>").append(items);
-  sb.closest("ul.sidenav").addClass("open");
-  sb.append(ul);
-  sb.addClass("active");
-  sb.addClass("has-child");
-  sb.addClass("open");
+  if (items.length > 0) {
+    let ul = $("<ul class='sub-nav'>").append(items);
+    sb.append(ul);
+    sb.addClass("active");
+    sb.addClass("has-child");
+    sb.addClass("open");
+  }
 };
 
 let activateSideNav = () => {

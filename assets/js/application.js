@@ -18,6 +18,7 @@ let buildSideNav = () => {
   });
   let sb = $(`a[href="${path}"]`);
   let ul = $("<ul class='sub-nav'>").append(items);
+  sb.closest("ul.sidenav").addClass("open");
   sb.append(ul);
   sb.addClass("active");
   sb.addClass("has-child");

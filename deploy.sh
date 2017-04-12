@@ -2,6 +2,7 @@
 
 set -ex
 
+rm -rfv public/assets
 git checkout -b build
 GOOS=linux buffalo build -z
 git add .

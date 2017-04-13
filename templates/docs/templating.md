@@ -1,12 +1,10 @@
-<h1>Templating</h1>
+# Templating
 
 <%= partial("docs/disclaimer.html") %>
 
 Buffalo defaults to using [plush](https://github.com/gobuffalo/plush) as its template engine.
 
-<div class="video">
-<iframe src="https://player.vimeo.com/video/207200621?portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-</div>
+<%= vimeo("207200621") %>
 
 <%= title("General Usage", {name: "general"}) %>
 

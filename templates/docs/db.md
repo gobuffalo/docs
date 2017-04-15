@@ -104,3 +104,5 @@ Global Flags:
 
 Use "buffalo db migrate [command] --help" for more information about a command.
 ```
+
+<%= partial("docs/db/relationships.md") %>

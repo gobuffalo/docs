@@ -1,6 +1,6 @@
-<%= title("Generating Models") %>
+<%= title("Models") %>
 
-```text
+<%= code("text") { %>
 $ buffalo db g model --help
 
 Generates a model for your database
@@ -20,4 +20,5 @@ Global Flags:
   -d, --debug           Use debug/verbose mode
   -e, --env string      The environment you want to run migrations against. Will use $GO_ENV if set. (default "development")
   -p, --path string     Path to the migrations folder (default "./migrations")
-```
+
+<% } %>

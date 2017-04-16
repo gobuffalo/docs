@@ -50,7 +50,7 @@ This is due to an outdated version of Go. Buffalo requires Go 1.7 or higher. Ple
       </div>
     </li>
     <li>
-      <h6>error <code>unexpected directory layout:</code> during <code>go get</code></h6>
+      <h6>Error: <code>unexpected directory layout:</code> during <code>go get</code></h6>
       <div>
         <%= markdown("") { %>
 Occasionally when running `go get` on Buffalo you will get the following error:
@@ -71,10 +71,20 @@ The best way to solve this problem is to run `go get` again, and it seems to fix
       </div>
     </li>
     <li>
-      <h6>ERROR in <code>application.js</code> from UglifyJs</h6>
+      <h6>Error: in <code>application.js</code> from UglifyJs</h6>
       <div>
         <%= markdown("") { %>
 If you get this error when running `buffalo build` you need to update your `webpack.config.js` to work with [https://github.com/gobuffalo/buffalo/pull/350/files](https://github.com/gobuffalo/buffalo/pull/350/files).
+        <% } %>
+      </div>
+    </li>
+    <li>
+      <h6>Error: <code>Killed 9</code> when running <code>buffalo</code> on Mac OS X with Go 1.8.0</h6>
+      <div>
+        <%= markdown("") { %>
+This is a known issue with Go, <a href="https://github.com/golang/go/issues/19734" target="_blank">https://github.com/golang/go/issues/19734</a>, not with Buffalo.
+
+The best solution is to upgrade to Go 1.8.1 and rebuild your Go binaries.
         <% } %>
       </div>
     </li>

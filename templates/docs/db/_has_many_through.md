@@ -1,4 +1,4 @@
-### Has Many Through
+<%= title("Has Many Through") %>
 
 <div class="code-tabs">
 

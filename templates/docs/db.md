@@ -10,7 +10,7 @@ Buffalo supports [PostgreSQL](https://www.postgresql.org/) (default), [MySQL](ht
 
 When you first generate a Buffalo application a `database.yml` file will be generated for you, based on the type of database that was selected with the `--db-type` flag, with PostgreSQL being the default.
 
-<%= code("yaml", {file: "database.yml"}) { %>
+<%= code("yaml") { %>
 development:
   dialect: postgres
   database: myapp_development
@@ -24,6 +24,7 @@ test:
 
 production:
   url: {{envOr "DATABASE_URL" "postgres://postgres:postgres@127.0.0.1:5432/myapp_production"}}
+
 <% } %>
 
 **CONFIGURE THIS FILE!**
@@ -36,73 +37,27 @@ In the generated `database.yml` file there is a template helper, `envOr`, that w
 
 Once the `database.yml` has been configured with the appropriate settings, and the database server is running, Buffalo can create all of the databases in the `database.yml` file with a simple command:
 
-```text
+<%= code("text") { %>
 $ buffalo db create -a
-```
+<% } %>
 
 You can also create just one of the configured databases by using the `-e` flag and the name of the database:
 
-```text
+<%= code("text") { %>
 $ buffalo db create -e test
-```
+<% } %>
 
 <%= title("Dropping Databases") %>
 
 Buffalo can drop all of your databases, should you want to, with one command:
 
-```text
+<%= code("text") { %>
 $ buffalo db drop -a
-```
+<% } %>
 
 You can also drop just one of the configured databases by using the `-e` flag and the name of the database:
 
-```text
+<%= code("text") { %>
 $ buffalo db drop -e test
-```
+<% } %>
 
-<%= partial("docs/db/list.md") %>
-<%= partial("docs/db/model.md") %>
-<%= partial("docs/db/fizz.md") %>
-<%= partial("docs/db/sql.md") %>
-
-<%= title("Running Migrations") %>
-
-Once migrations have been created they can be run with either of the following commands:
-
-```text
-$ buffalo db migrate
-$ buffalo db migrate up
-```
-
-Both commands are identical, one is shorter to type!
-
-More information about the migration command be found by running:
-
-```text
-$ buffalo db migrate --help
-
-Runs migrations against your database.
-
-Usage:
-  buffalo db migrate [flags]
-  buffalo db migrate [command]
-
-Aliases:
-  migrate, m
-
-
-Available Commands:
-  down        Apply all of the 'down' migrations.
-  reset       The equivalent of running `migrate down` and then `migrate up`
-  up          Apply all of the 'up' migrations.
-
-Global Flags:
-  -c, --config string   The configuration file you would like to use.
-  -d, --debug           Use debug/verbose mode
-  -e, --env string      The environment you want to run migrations against. Will use $GO_ENV if set. (default "development")
-  -p, --path string     Path to the migrations folder (default "./migrations")
-
-Use "buffalo db migrate [command] --help" for more information about a command.
-```
-
-<%= partial("docs/db/relationships.md") %>

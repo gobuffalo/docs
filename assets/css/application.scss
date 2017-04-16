@@ -8,3 +8,11 @@
 .main-content {
   padding-top: 0px;
 }
+
+.sidebar-boxed .sidenav ul ul {
+  padding-left: 0px;
+}
+
+.sidebar-boxed .sidenav ul ul a {
+  padding-left: 24px !important;
+}

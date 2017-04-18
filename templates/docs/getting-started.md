@@ -3,7 +3,7 @@
 <%= title("Installation", {}) %>
 
 <%= code("text") { %>
-$ go get -u github.com/gobuffalo/buffalo/...
+$ go get -u github.com/gobuffalo/buffalo/buffalo
 <% } %>
 
 <%= title("Generating a New Project", {name: "new-project"}) %>

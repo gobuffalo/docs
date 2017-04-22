@@ -2,9 +2,29 @@
 
 <%= title("Installation", {}) %>
 
+Before installing make sure you have the required dependecies installed:
+ - gcc for [mattn/go-sqlite3](https://github.com/mattn/go-sqlite3).
+ - [node](https://github.com/nodejs/node) and [npm](https://github.com/npm/npm) for the [asset pipeline](/docs/assets) built upon [webpack](https://github.com/webpack/webpack).
+
+Buffalo uses *go-sqlite3* by default wich requires gcc to be built.
+Either install gcc from source/package manager or run before installing Buffalo: 
+
+<%= code("text") { %>
+    $ go install github.com/mattn/go-sqlite3
+<% } %>
+
+You can now install buffalo with:
+
 <%= code("text") { %>
 $ go get -u github.com/gobuffalo/buffalo/buffalo
 <% } %>
+
+For a verbose output use the -v flag instead:
+
+<%= code("text") { %>
+$ go get -u -v github.com/gobuffalo/buffalo/buffalo
+<% } %>
+
 
 <%= title("Generating a New Project", {name: "new-project"}) %>
 

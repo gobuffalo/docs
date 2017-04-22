@@ -1,32 +1,28 @@
 # Getting Started
 
-<%= title("Installation", {}) %>
+<%= title("Installation") %>
 
-Before installing make sure you have the required dependecies installed:
- - gcc for [mattn/go-sqlite3](https://github.com/mattn/go-sqlite3).
- - [node](https://github.com/nodejs/node) and [npm](https://github.com/npm/npm) for the [asset pipeline](/docs/assets) built upon [webpack](https://github.com/webpack/webpack).
+Before installing make sure you have the required dependencies installed:
 
-Buffalo uses *go-sqlite3* by default wich requires gcc to be built.
-Either install gcc from source/package manager or run before installing Buffalo: 
+* [Go](https://golang.org) version `1.7` or greater.
+* GCC, or equivalent C compiler for [mattn/go-sqlite3](https://github.com/mattn/go-sqlite3).
+* [OPTIONAL] [node](https://github.com/nodejs/node) and [npm](https://github.com/npm/npm) for the [asset pipeline](/docs/assets) built upon [webpack](https://github.com/webpack/webpack).
 
-<%= code("text") { %>
-    $ go install github.com/mattn/go-sqlite3
-<% } %>
-
-You can now install buffalo with:
-
-<%= code("text") { %>
-$ go get -u github.com/gobuffalo/buffalo/buffalo
-<% } %>
-
-For a verbose output use the -v flag instead:
+### Basic Installation:
 
 <%= code("text") { %>
 $ go get -u -v github.com/gobuffalo/buffalo/buffalo
 <% } %>
 
+### SQLite3 Support:
 
-<%= title("Generating a New Project", {name: "new-project"}) %>
+Buffalo includes support for *go-sqlite3* which requires a C compiler to be built. Either install a compiler, for example GCC, from source/package manager or build Buffalo *without* support for SQLite3:
+
+<%= code("text") { %>
+$ go get -v -u -tags nosqlite github.com/gobuffalo/buffalo/buffalo
+<% } %>
+
+<%= title("Generating a New Project") %>
 
 Buffalo aims to make building new web applications in Go as quick and simple as possible, and what could be more simple than a *new application* generator? Start by going to your `$GOPATH` and create your new application!
 

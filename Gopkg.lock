@@ -1,0 +1,262 @@
+memo = "4dd5aea896eb3b3000eadb0242ee1d2cc363571a2c3fee607116eef69c05a4f4"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/Sirupsen/logrus"
+  packages = ["."]
+  revision = "10f801ebc38b33738c9d17d50860f484a0988ff5"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/ajg/form"
+  packages = ["."]
+  revision = "523a5da1a92f01b01f840b61689c0340a0243532"
+
+[[projects]]
+  name = "github.com/davecgh/go-spew"
+  packages = ["spew"]
+  revision = "5215b55f46b2b919f50a1df0eaa5886afe4e3b3d"
+
+[[projects]]
+  name = "github.com/dustin/go-humanize"
+  packages = ["."]
+  revision = "bd88f87ad3a420f7bcf05e90566fd1ceb351fa7f"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/fatih/color"
+  packages = ["."]
+  revision = "9131ab34cf20d2f6d83fdc67168a5430d1c7dc23"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/fsnotify/fsnotify"
+  packages = ["."]
+  revision = "4da3e2cfbabc9f751898f250b49f2439785783a1"
+
+[[projects]]
+  branch = "deprecations"
+  name = "github.com/gobuffalo/buffalo"
+  packages = [".","render"]
+  revision = "59ebc11804bf30c6aed2e0916c966bc5727719b4"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/gobuffalo/envy"
+  packages = ["."]
+  revision = "f9545cd7564a92b306df0be590567ff5bae5750c"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/gobuffalo/packr"
+  packages = ["."]
+  revision = "760f97d097df93c63911e8fe90f13377ef7b2661"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/gobuffalo/plush"
+  packages = [".","ast","lexer","parser","token"]
+  revision = "90c6f4cddf2d6d7f07688b0e5af37bd079861518"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/gobuffalo/tags"
+  packages = [".","form","form/bootstrap"]
+  revision = "08c041b366e46ab28452c74c62493942b1d594cc"
+
+[[projects]]
+  name = "github.com/gorilla/context"
+  packages = ["."]
+  revision = "08b5f424b9271eedf6f9f0ce86cb9396ed337a42"
+
+[[projects]]
+  name = "github.com/gorilla/mux"
+  packages = ["."]
+  revision = "757bef944d0f21880861c2dd9c871ca543023cba"
+
+[[projects]]
+  name = "github.com/gorilla/schema"
+  packages = ["."]
+  revision = "0164a00ab4cd01d814d8cd5bf63fd9fcea30e23b"
+
+[[projects]]
+  name = "github.com/gorilla/securecookie"
+  packages = ["."]
+  revision = "ff356348f74133a59d3e93aa24b5b4551b6fe90d"
+
+[[projects]]
+  name = "github.com/gorilla/sessions"
+  packages = ["."]
+  revision = "56ba4b0a11da87516629a57408a5f7e4c8ea7b0b"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/gorilla/websocket"
+  packages = ["."]
+  revision = "a91eba7f97777409bc2c443f5534d41dd20c5720"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/markbates/going"
+  packages = ["defaults","randx","wait"]
+  revision = "0576708c56cea02331f864fe6e157ac7841923e4"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/markbates/grift"
+  packages = ["grift"]
+  revision = "f323c1aa4ec50bd856c80430c03c28de71aa8e0c"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/markbates/hmax"
+  packages = ["."]
+  revision = "800e180dcd16937a4cc134c6aa8c8407e62ce880"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/markbates/inflect"
+  packages = ["."]
+  revision = "6cacb66d100482ef7cc366289ccb156020e57e76"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/markbates/pop"
+  packages = ["nulls"]
+  revision = "f47576d2cb88c7f9315d89b7d36499557d548bfa"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/markbates/refresh"
+  packages = ["refresh","refresh/web"]
+  revision = "f66cdea4aaf2ab497fd7e5b6bc065e967668c03f"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/markbates/validate"
+  packages = [".","validators"]
+  revision = "7fd1b3d59622893fa298ec4d2e02520befbeb040"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/markbates/willie"
+  packages = ["."]
+  revision = "cf7c4a7c06ea6a65b79294bbfb4ae18b580f6ecc"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/mattn/go-colorable"
+  packages = ["."]
+  revision = "ded68f7a9561c023e790de24279db7ebf473ea80"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/mattn/go-isatty"
+  packages = ["."]
+  revision = "fc9e8d8ef48496124e79ae0df75490096eccf6fe"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/mattn/go-runewidth"
+  packages = ["."]
+  revision = "14207d285c6c197daabb5c9793d63e7af9ab2d50"
+
+[[projects]]
+  name = "github.com/microcosm-cc/bluemonday"
+  packages = ["."]
+  revision = "e79763773ab6222ca1d5a7cbd9d62d83c1f77081"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/mitchellh/go-homedir"
+  packages = ["."]
+  revision = "b8bc1bf767474819792c23f32d8286a45736f1c6"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/olekukonko/tablewriter"
+  packages = ["."]
+  revision = "febf2d34b54a69ce7530036c7503b1c9fbfdf0bb"
+
+[[projects]]
+  name = "github.com/pkg/errors"
+  packages = ["."]
+  revision = "248dadf4e9068a0b3e79f02ed0a610d935de5302"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/pmezard/go-difflib"
+  packages = ["difflib"]
+  revision = "792786c7400a136282c1664665ae0a8db921c6c2"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/russross/blackfriday"
+  packages = ["."]
+  revision = "5f33e7b7878355cd2b7e6b8eefc48a5472c69f70"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/serenize/snaker"
+  packages = ["."]
+  revision = "fbc3d0dfdb6fa3b5256ca37fb02042323c4ebe8b"
+
+[[projects]]
+  name = "github.com/sergi/go-diff"
+  packages = ["diffmatchpatch"]
+  revision = "83532ca1c1caa393179c677b6facf48e61f4ca5d"
+
+[[projects]]
+  name = "github.com/shurcooL/github_flavored_markdown"
+  packages = ["."]
+  revision = "7bcab912380835dc7e26c88ca09acaf97941c87f"
+
+[[projects]]
+  name = "github.com/shurcooL/highlight_diff"
+  packages = ["."]
+  revision = "d3b292edd8c8311b9d264e3adc26cdf39695fe9b"
+
+[[projects]]
+  name = "github.com/shurcooL/highlight_go"
+  packages = ["."]
+  revision = "7867c2dec5d03326c952ca98eda2abf907ddfcf3"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/shurcooL/sanitized_anchor_name"
+  packages = ["."]
+  revision = "1dba4b3954bc059efc3991ec364f9f9a35f597d2"
+
+[[projects]]
+  name = "github.com/sourcegraph/annotate"
+  packages = ["."]
+  revision = "f4cad6c6324d3f584e1743d8b3e0e017a5f3a636"
+
+[[projects]]
+  name = "github.com/sourcegraph/syntaxhighlight"
+  packages = ["."]
+  revision = "c95ac474b7cb9c711f4591b553a2caaa24ea3d37"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/stretchr/testify"
+  packages = ["assert","require"]
+  revision = "2402e8e7a02fc811447d11f881aa9746cdc57983"
+
+[[projects]]
+  branch = "master"
+  name = "golang.org/x/net"
+  packages = ["html","html/atom"]
+  revision = "0b588ed7a0cd59c271d128ec8c429c1c1607e8ab"
+
+[[projects]]
+  branch = "master"
+  name = "golang.org/x/sys"
+  packages = ["unix"]
+  revision = "ea9bcade75cb975a0b9738936568ab388b845617"
+
+[[projects]]
+  branch = "master"
+  name = "gopkg.in/yaml.v2"
+  packages = ["."]
+  revision = "cd8b52f8269e0feb286dfeef29f8fe4d5b397e0b"

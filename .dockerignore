@@ -1,0 +1,13 @@
+# Ignore .git folder
+.git*
+
+# Ignore all Windows, Linux and OSX special files
+# https://www.gitignore.io/api/windows,linux,osx,vim
+# Ignore all your language-specific build folders
+
+build/
+target/
+node_modules/
+.bundler/
+*.log
+bin/

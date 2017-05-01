@@ -1,0 +1,44 @@
+
+[[dependencies]]
+  branch = "deprecations"
+  name = "github.com/gobuffalo/buffalo"
+
+[[dependencies]]
+  branch = "master"
+  name = "github.com/gobuffalo/envy"
+
+[[dependencies]]
+  branch = "master"
+  name = "github.com/gobuffalo/packr"
+
+[[dependencies]]
+  branch = "master"
+  name = "github.com/gobuffalo/plush"
+
+[[dependencies]]
+  branch = "master"
+  name = "github.com/gobuffalo/tags"
+
+[[dependencies]]
+  branch = "master"
+  name = "github.com/markbates/grift"
+
+[[dependencies]]
+  branch = "master"
+  name = "github.com/markbates/inflect"
+
+[[dependencies]]
+  branch = "master"
+  name = "github.com/markbates/willie"
+
+[[dependencies]]
+  branch = "master"
+  name = "github.com/olekukonko/tablewriter"
+
+[[dependencies]]
+  name = "github.com/pkg/errors"
+  revision = "248dadf4e9068a0b3e79f02ed0a610d935de5302"
+
+[[dependencies]]
+  branch = "master"
+  name = "github.com/stretchr/testify"

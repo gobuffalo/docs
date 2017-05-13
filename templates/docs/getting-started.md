@@ -107,7 +107,7 @@ $ buffalo build
 <% } %>
 
 <%= code("text") { %>
-Buffalo version 0.8.0.dev
+Buffalo version <%= version %>
 
 --> cleaning up target dir
 --> running node_modules/.bin/webpack

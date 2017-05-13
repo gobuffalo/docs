@@ -145,3 +145,10 @@ $ ./coke task greet
 Hello World!
 <% } %>
 
+<%= title("Build Tags") %>
+
+When building a Buffalo binary using the `buffalo build` command you can pass `--tags` and `--ldflags` to the built binary, just as you normally would when using the `go build` tools.
+
+```bash
+$ buffalo build --tags="mytag" --ldflags="-X foo.Bar=baz"
+```

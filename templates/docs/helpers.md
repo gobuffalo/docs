@@ -15,7 +15,7 @@ Listed below are a few of the helpers that ship with Plush. Please see the Plush
 * `contentOf` - retrieves a block of HTML previously stored with `contentFor`
 * `markdown` - converts the string from Markdown into HTML
 * `len` - returns the length of the interface
-* `debug` - returns the `%+v` of the interface wrapped in `<pre>` tags.
+* `debug` - returns the `%+v` of the interface wrapped in `%lt;pre%gt;` tags.
 * `inspect` - returns the `%+v` of the interface
 * `range` - interate between, and including two numbers
 * `between` - iterate between, but not including, two numbers

@@ -1,6 +1,6 @@
 
 [[dependencies]]
-  branch = "deprecations"
+  branch = "development"
   name = "github.com/gobuffalo/buffalo"
 
 [[dependencies]]
@@ -36,8 +36,8 @@
   name = "github.com/olekukonko/tablewriter"
 
 [[dependencies]]
+  branch = "master"
   name = "github.com/pkg/errors"
-  revision = "248dadf4e9068a0b3e79f02ed0a610d935de5302"
 
 [[dependencies]]
   branch = "master"

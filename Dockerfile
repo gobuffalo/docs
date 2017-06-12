@@ -4,8 +4,11 @@ ENV BP=$GOPATH/src/github.com/gobuffalo/gobuffalo
 
 RUN mkdir -p $BP
 WORKDIR $BP
-ADD . .
+
+ADD package.json .
 RUN npm install
+
+ADD . .
 
 RUN buffalo build --static -o /bin/app
 

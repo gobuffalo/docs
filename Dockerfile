@@ -1,5 +1,5 @@
 # https://devcenter.heroku.com/articles/container-registry-and-runtime
-FROM gobuffalo/buffalo:development
+FROM gobuffalo/buffalo:development as builder
 ENV BP=$GOPATH/src/github.com/gobuffalo/gobuffalo
 
 RUN mkdir -p $BP
@@ -7,6 +7,15 @@ WORKDIR $BP
 ADD . .
 RUN npm install
 
-RUN buffalo build -o bin/gobuffalo
+RUN buffalo build --ldflags '-linkmode external -extldflags "-static"' -o /bin/app
 
-CMD ./bin/gobuffalo
+FROM alpine
+RUN apk add --no-cache bash
+
+WORKDIR /bin/
+
+COPY --from=builder /bin/app .
+
+EXPOSE 3000
+
+CMD /bin/app

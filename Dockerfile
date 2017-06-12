@@ -7,7 +7,7 @@ WORKDIR $BP
 ADD . .
 RUN npm install
 
-RUN buffalo build --ldflags '-linkmode external -extldflags "-static"' -o /bin/app
+RUN buffalo build --static -o /bin/app
 
 FROM alpine
 RUN apk add --no-cache bash

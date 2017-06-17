@@ -1,7 +1,7 @@
 
 [[dependencies]]
+  branch = "development"
   name = "github.com/gobuffalo/buffalo"
-  revision = "bf85fe453cb6281f9167156656b380feeeb91715"
 
 [[dependencies]]
   branch = "master"

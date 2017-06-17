@@ -17,12 +17,13 @@ var app *buffalo.App
 func App() *buffalo.App {
 	if app == nil {
 		app = buffalo.Automatic(buffalo.Options{
-			Env: ENV,
+			SessionName: "_gobuffalo_session",
+			Env:         ENV,
 		})
 
 		app.Use(func(next buffalo.Handler) buffalo.Handler {
 			return func(c buffalo.Context) error {
-				c.Set("version", "0.8.2")
+				c.Set("version", "0.9.0")
 				c.Set("year", time.Now().Year())
 				c.Set("trainingURL", "http://www.gopherguides.com")
 				return next(c)

@@ -100,7 +100,7 @@ By default, the assets archive is put in the *bin* directory, but if you change 
 $ ls -la bin
 <% } %>
 
-<%= code("text") { %>
+<%= code("bash") { %>
 total 36280
 drwxr-xr--@  4 markbates  staff   136B Apr  3 10:10 ./
 drwxr-xr-x@ 20 markbates  staff   680B Apr  3 10:10 ../
@@ -108,11 +108,15 @@ drwxr-xr-x@ 20 markbates  staff   680B Apr  3 10:10 ../
 -rw-r--r--@  1 markbates  staff   691K Apr  3 10:10 coke-assets.zip
 <% } %>
 
+<%= title("Building \"Static\"/CGO Binaries") %>
+
+Building statically linked binaries that contain CGO, think SQLite3, can be tricky. By using the `--static` flag with `buffalo build` the flags `--ldflags '-linkmode external -extldflags "-static"'` will be added to the `go build` command.
+
 <%= title("Binary Commands") %>
 
 Binaries, by default, run in `development` mode, which means all of the sub-commands will run in that mode as well. To change the mode, you must use the `GO_ENV` environment variable.
 
-<%= code("text") { %>
+<%= code("bash") { %>
 $ GO_ENV=production ./coke
 <% } %>
 

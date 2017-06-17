@@ -88,5 +88,23 @@ The best solution is to upgrade to Go 1.8.1 and rebuild your Go binaries.
         <% } %>
       </div>
     </li>
+    <li>
+      <h6>Mac OS X: <code>Too many open files in system</code> error</h6>
+      <div>
+        <%= markdown("") { %>
+If you get this error when running `buffalo dev` that means you are "watching" too many files, either `.go` files or asset files. To correct this you can [change](http://blog.mact.me/2014/10/22/yosemite-upgrade-changes-open-file-limit) the maximum number of open files on your system.
+        <% } %>
+      </div>
+    </li>
+    <li>
+      <h6>Error: <code>Killed 9</code> when running <code>buffalo</code> on Mac OS X with Go 1.8.0</h6>
+      <div>
+        <%= markdown("") { %>
+This is a known issue with Go, <a href="https://github.com/golang/go/issues/19734" target="_blank">https://github.com/golang/go/issues/19734</a>, not with Buffalo.
+
+The best solution is to upgrade to Go 1.8.1 and rebuild your Go binaries.
+        <% } %>
+      </div>
+    </li>
   </ul>
 </div>

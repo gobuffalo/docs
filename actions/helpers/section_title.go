@@ -1,11 +1,18 @@
 package helpers
 
 import (
+	"fmt"
+	"html"
 	"html/template"
 
 	"github.com/gobuffalo/plush"
 	"github.com/markbates/inflect"
 )
+
+func H1(title string, help plush.HelperContext) template.HTML {
+	help.Context.Set("pageTitle", title)
+	return template.HTML(fmt.Sprintf("<h1>%s</h1>", title))
+}
 
 func SectionTitle(title string, opts map[string]interface{}, help plush.HelperContext) (template.HTML, error) {
 	var err error
@@ -17,7 +24,7 @@ func SectionTitle(title string, opts map[string]interface{}, help plush.HelperCo
 	}
 
 	if _, ok := opts["name"]; !ok {
-		opts["name"] = inflect.Dasherize(title)
+		opts["name"] = html.EscapeString(inflect.Dasherize(title))
 	}
 
 	opts["title"] = title

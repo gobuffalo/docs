@@ -28,7 +28,7 @@ func CodeHelper(lang string, opts tags.Options, help plush.HelperContext) (templ
 	if lang == "html" {
 		s = html.EscapeString(s)
 	}
-	code.Append(s)
+	code.Append(strings.TrimSpace(s))
 	pre.Append(code)
 	return pre.HTML(), nil
 }

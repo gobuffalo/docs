@@ -1,9 +1,7 @@
 package main
 
 import (
-	"fmt"
 	"log"
-	"net/http"
 
 	"github.com/gobuffalo/envy"
 	"github.com/gobuffalo/gobuffalo/actions"
@@ -11,5 +9,5 @@ import (
 
 func main() {
 	port := envy.Get("PORT", "3000")
-	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%s", port), actions.App()))
+	log.Fatal(actions.App().Start(port))
 }

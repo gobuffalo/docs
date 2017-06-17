@@ -1,6 +1,6 @@
 <%= title("Actions") %>
 
-```text
+<%= code("text") { %>
 $ buffalo g action --help
 
 Generates new action(s)
@@ -10,9 +10,9 @@ Usage:
 
 Aliases:
   action, a, actions
-```
+<% } %>
 
-```text
+<%= code("text") { %>
 $ buffalo g a users show index create
 
 --> templates/users/show.html
@@ -21,4 +21,5 @@ $ buffalo g a users show index create
 --> actions/users.go
 --> actions/users_test.go
 --> goimports -w .
-```
+
+<% } %>

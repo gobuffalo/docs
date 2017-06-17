@@ -24,13 +24,6 @@ func MyHandler(c buffalo.Context) error {
 In "development" mode (`GO_ENV=development`), Buffalo will generate some helpful errors pages for you.
 
 <figure>
-  <img src="/assets/images/404_example.png" title="screenshot">
-  <figcaption>An example of a `404` error in development mode.</figcaption>
-</figure>
-
----
-
-<figure>
   <img src="/assets/images/500_example.png" title="screenshot">
   <figcaption>An example of a `500` error in development mode.</figcaption>
 </figure>

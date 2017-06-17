@@ -1,10 +1,11 @@
-# Getting Started
+<%= h1("Getting Started") %>
 
 <%= title("Installation") %>
 
 Before installing make sure you have the required dependencies installed:
 
-* [Go](https://golang.org) version `1.7` or greater.
+* [Guide to Setting a Go Developer Environment](http://gopherguides.com/before-you-come-to-class)
+* [Go](https://golang.org) version `1.8.1` or greater.
 * GCC, or equivalent C compiler for [mattn/go-sqlite3](https://github.com/mattn/go-sqlite3).
 * [OPTIONAL] [node](https://github.com/nodejs/node) and [npm](https://github.com/npm/npm) for the [asset pipeline](/docs/assets) built upon [webpack](https://github.com/webpack/webpack).
 
@@ -34,54 +35,30 @@ $ buffalo new <name>
 
 That will generate a whole new Buffalo application that is ready to go. It'll even run `go get` for you to make sure you have all of the necessary dependencies needed to run your application.
 
-<%= code("text") { %>
-$ buffalo new coke
-Buffalo version <%= version %>
-
---> .../coke/README.md
---> .../coke/actions/actions_test.go
---> .../coke/actions/app.go
---> .../coke/actions/home.go
---> .../coke/actions/home_test.go
---> .../coke/actions/render.go
---> .../coke/.codeclimate.yml
---> .../coke/.gitignore
---> .../coke/grifts/routes.go
---> .../coke/main.go
---> .../coke/templates/application.html
---> .../coke/templates/index.html
---> .../coke/.buffalo.dev.yml
---> go get github.com/markbates/refresh/...
---> go install github.com/markbates/refresh
---> go get github.com/markbates/grift/...
---> go install github.com/markbates/grift
---> go get github.com/motemen/gore
---> go install github.com/motemen/gore
---> .../coke/assets/images/logo.svg
---> .../coke/assets/css/application.scss
---> .../coke/assets/js/application.js
---> .../coke/public/assets/.gitignore
---> .../coke/webpack.config.js
---> npm init -y
---> .../coke/models/models.go
---> .../coke/models/models_test.go
---> go get github.com/markbates/pop/...
---> go install github.com/markbates/pop/soda
---> database.yml
---> go get -t ./...
---> goimports -w .
-Congratulations! Your application, coke, has been successfully built!
-
-You can find your new application at:
-.../coke
-
-Please read the README.md file in your new application for next steps on running your application.
-<% } %>
+<%= partial("docs/getting-started/new.md") %>
 
 To see a list of available flags for the `new` command, just check out its help.
 
 <%= code("text") { %>
 $ buffalo help new
+Creates a new Buffalo application
+
+Usage:
+  buffalo new [name] [flags]
+
+Flags:
+      --api                  skip all front-end code and configure for an API server
+      --ci-provider string   specify the type of ci file you would like buffalo to generate \[none, travis, gitlab-ci] (default "none")
+      --db-type string       specify the type of database you want to use \[postgres, mysql, sqlite3] (default "postgres")
+      --docker string        specify the type of Docker file to generate \[none, multi, standard] (default "multi")
+  -f, --force                delete and remake if the app already exists
+  -h, --help                 help for new
+      --skip-dep             skips adding github.com/golang/dep to your app
+      --skip-pop             skips adding pop/soda to your app
+      --skip-webpack         skips adding Webpack to your app
+  -v, --verbose              verbosely print out the go get/install commands
+      --with-yarn            allows the use of yarn instead of npm as dependency manager
+
 <% } %>
 
 Note: by default, Buffalo generates a database.yml targeted for postgres. If you wish to change this behavior, you can pass in a `--db-type` flag into the `new` command.

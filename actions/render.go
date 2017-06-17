@@ -15,6 +15,7 @@ func init() {
 	r = render.New(render.Options{
 		HTMLLayout: "application.html",
 		Helpers: render.Helpers{
+			"h1":    helpers.H1,
 			"title": helpers.SectionTitle,
 			"code":  helpers.CodeHelper,
 			"vimeo": func(code string) template.HTML {

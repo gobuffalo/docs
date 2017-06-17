@@ -61,7 +61,7 @@ func Beatles(c buffalo.Context) error {
 }
 <% } %>
 
-<%= code("markup", {file: "output"}) { %>
+<%= code("html", {file: "output"}) { %>
 <h1>The Beatles</h1>
 
 <ul>

@@ -37,9 +37,10 @@ memo = ""
   revision = "4da3e2cfbabc9f751898f250b49f2439785783a1"
 
 [[projects]]
+  branch = "development"
   name = "github.com/gobuffalo/buffalo"
   packages = [".","render"]
-  revision = "bf85fe453cb6281f9167156656b380feeeb91715"
+  revision = "72b74026c11f03114d172075f27cadc8cdeeda17"
 
 [[projects]]
   branch = "master"
@@ -119,7 +120,7 @@ memo = ""
   branch = "master"
   name = "github.com/markbates/pop"
   packages = ["nulls"]
-  revision = "0a4f72f4653e89c211fb5cc785618d9b049470c3"
+  revision = "b4aec3ade0b24d702fcd12ed6cea5b9b39e10881"
 
 [[projects]]
   branch = "master"

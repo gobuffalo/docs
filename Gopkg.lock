@@ -120,7 +120,7 @@ memo = ""
   branch = "master"
   name = "github.com/markbates/pop"
   packages = ["nulls"]
-  revision = "b4aec3ade0b24d702fcd12ed6cea5b9b39e10881"
+  revision = "7ec8a9f82d003f80e85822408c00c8fc35412342"
 
 [[projects]]
   branch = "master"
@@ -250,13 +250,13 @@ memo = ""
   branch = "master"
   name = "golang.org/x/net"
   packages = ["html"]
-  revision = "1a68b1313cf4ad7778376e82641197b60c02f65c"
+  revision = "973f3f3bbd50e92b13faa6c53ec16f49b45e851c"
 
 [[projects]]
   branch = "master"
   name = "golang.org/x/sys"
   packages = ["unix"]
-  revision = "ea9bcade75cb975a0b9738936568ab388b845617"
+  revision = "fb4cac33e3196ff7f507ab9b2d2a44b0142f5b5a"
 
 [[projects]]
   branch = "master"

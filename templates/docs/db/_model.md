@@ -22,3 +22,15 @@ Global Flags:
   -p, --path string     Path to the migrations folder (default "./migrations")
 
 <% } %>
+
+You can remove generated model by running:
+
+<%= code("text") { %>
+$ buffalo db destroy model [name]
+<% } %>
+
+Or in short form:
+
+<%= code("text") { %>
+$ buffalo d m [name]
+<% } %>

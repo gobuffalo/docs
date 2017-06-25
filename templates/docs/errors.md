@@ -55,7 +55,7 @@ func MyHandler(c buffalo.Context) error {
 <% } %>
 
 <%= code("output") { %>
-  GET /oops -> [422] On no!
+  GET /oops -> [422] Oh no!
 <% } %>
 </div>
 

@@ -60,16 +60,6 @@ func() string {
 }
 <% } %>
 
-#### `string, error`
-
-Return a `string` and an error. The `string` will be HTML escaped, and deemed "not"-safe.
-
-<%= code("go") { %>
-func() (string, error) {
-  return "", nil
-}
-<% } %>
-
 ---
 
 #### `template.HTML`
@@ -81,16 +71,6 @@ Return a `template.HTML` string. The `template.HTML` will **not** be HTML escape
 <%= code("go") { %>
 func() template.HTML {
   return template.HTML("")
-}
-<% } %>
-
-#### `template.HTML, error`
-
-Return a `template.HTML` string and an error. The `template.HTML` will **not** be HTML escaped, and will be deemed safe.
-
-<%= code("go") { %>
-func() (template.HTML, error) {
-  return template.HTML(""), error
 }
 <% } %>
 
@@ -167,5 +147,43 @@ func Upper(c buffalo.Context) error {
 
 <%= code("html", {file: "output"}) { %>
 HELLO WORLD
+<% } %>
+</div>
+
+<%= title("Getting Values From the Context") %>
+
+<div class="code-tabs">
+
+<%= code("go", {file: "actions/render.go"}) { %>
+r := render.New(render.Options{
+  // ...
+  Helpers: render.Helpers{
+    "is_logged_in": isLoggedIn,
+  },
+  // ...
+})
+<% } %>
+
+<%= code("go", {file: "helper"}) { %>
+func isLoggedIn(help plush.HelperContext) bool {
+  return help.Value("current_user") != nil
+}
+<% } %>
+
+<%= code("go", {file: "actions/users.go"}) { %>
+func Show(c buffalo.Context) error {
+  c.Set("current_user", models.User{Name: "Ringo"})
+  return c.Render(200, r.HTML("users/show.html"))
+}
+<% } %>
+
+<%= code("html", {file: "templates/users/show.html"}) { %>
+\<%= if (is_logged_in()) { %>
+  Hello \<%= current_user.Name %>
+\<% } %>
+<% } %>
+
+<%= code("html", {file: "output"}) { %>
+  Hello Ringo
 <% } %>
 </div>

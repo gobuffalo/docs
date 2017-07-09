@@ -18,7 +18,7 @@ func MyHandler(c buffalo.Context) error {
 
 <%= code("go") { %>
 func MyHandler(c buffalo.Context) error {
-  cookie, err := r.Cookie("user_id")
+  cookie, err := c.Request().Cookie("user_id")
   if err != nil {
     return err
   }

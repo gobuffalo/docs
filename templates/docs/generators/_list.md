@@ -1,8 +1,6 @@
 <%= title("Built-in Generators", {name: "built-in"}) %>
 
 <%= code("text") { %>
-$ buffalo generate --help
-
 A collection of generators to make life easier
 
 Usage:
@@ -16,6 +14,7 @@ Available Commands:
   docker      Generates a Dockerfile
   goth        Generates a actions/goth.go file configured to the specified providers.
   resource    Generates a new actions/resource file
+  task        Generates a grift task
   webpack     Generates a webpack asset pipeline.
 
 Flags:

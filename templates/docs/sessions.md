@@ -20,6 +20,8 @@ type Session
   func (s *Session) Delete(name interface{})
   // Get a value from the session
   func (s *Session) Get(name interface{}) interface{}
+  // GetOnce gets a value from the current session and then deletes it.
+  func (s *Session) GetOnce(name interface{}) interface{}
   // Save a session
   func (s *Session) Save() error
   // Set a value on the session
@@ -73,4 +75,10 @@ func MyHandler(c buffalo.Context) error {
   }
   // ...
 }
+<% } %>
+
+Alternatively you can use the `middleware.SessionSaver` middleware to automatically save sessions at the end of every request.
+
+<%= code("go") { %>
+app.Use(middleware.SessionSaver)
 <% } %>

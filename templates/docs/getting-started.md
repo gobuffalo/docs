@@ -15,14 +15,6 @@ Before installing make sure you have the required dependencies installed:
 $ go get -u -v github.com/gobuffalo/buffalo/buffalo
 <% } %>
 
-### SQLite3 Support:
-
-Buffalo includes support for *go-sqlite3* which requires a C compiler to be built. Either install a compiler, for example GCC, from source/package manager or build Buffalo *without* support for SQLite3:
-
-<%= code("text") { %>
-$ go get -v -u -tags nosqlite github.com/gobuffalo/buffalo/buffalo
-<% } %>
-
 <%= title("Generating a New Project") %>
 
 Buffalo aims to make building new web applications in Go as quick and simple as possible, and what could be more simple than a *new application* generator? Start by going to your `$GOPATH` and create your new application!

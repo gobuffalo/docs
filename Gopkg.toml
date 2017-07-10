@@ -1,44 +1,58 @@
 
-[[dependencies]]
-  branch = "development"
-  name = "github.com/gobuffalo/buffalo"
+# Gopkg.toml example
+#
+# Refer to https://github.com/golang/dep/blob/master/docs/Gopkg.toml.md
+# for detailed Gopkg.toml documentation.
+#
+# required = ["github.com/user/thing/cmd/thing"]
+# ignored = ["github.com/user/project/pkgX", "bitbucket.org/user/project/pkgA/pkgY"]
+#
+# [[constraint]]
+#   name = "github.com/user/project"
+#   version = "1.0.0"
+#
+# [[constraint]]
+#   name = "github.com/user/project2"
+#   branch = "dev"
+#   source = "github.com/myfork/project2"
+#
+# [[override]]
+#  name = "github.com/x/y"
+#  version = "2.4.0"
 
-[[dependencies]]
+
+[[constraint]]
+  name = "github.com/gobuffalo/buffalo"
+  version = "0.9.1"
+
+[[constraint]]
   branch = "master"
   name = "github.com/gobuffalo/envy"
 
-[[dependencies]]
+[[constraint]]
   branch = "master"
   name = "github.com/gobuffalo/packr"
 
-[[dependencies]]
+[[constraint]]
   branch = "master"
   name = "github.com/gobuffalo/plush"
 
-[[dependencies]]
+[[constraint]]
   branch = "master"
   name = "github.com/gobuffalo/tags"
 
-[[dependencies]]
-  branch = "master"
-  name = "github.com/markbates/grift"
-
-[[dependencies]]
+[[constraint]]
   branch = "master"
   name = "github.com/markbates/inflect"
 
-[[dependencies]]
+[[constraint]]
   branch = "master"
   name = "github.com/markbates/willie"
 
-[[dependencies]]
+[[constraint]]
   branch = "master"
   name = "github.com/olekukonko/tablewriter"
 
-[[dependencies]]
-  branch = "master"
+[[constraint]]
   name = "github.com/pkg/errors"
-
-[[dependencies]]
-  branch = "master"
-  name = "github.com/stretchr/testify"
+  version = "0.8.0"

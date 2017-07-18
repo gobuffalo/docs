@@ -4,3 +4,4 @@ public/assets
 node_modules/
 vendor/
 bin/
+.idea/

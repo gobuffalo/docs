@@ -13,18 +13,18 @@ the test:
 <%= title("Test Example") %>
 
 <%= code("go") { %>
-func (as *ActionSuite) Test_PostsResource_Create() {
-  // setup a Post model
-  p := &models.Post{Title: "My Post", Body: "The Body"} // make a POST /posts request
-  res := as.HTML("/posts").Post(p)
+func (as *ActionSuite) Test_WidgetsResource_Create() {
+  // setup a Widget model
+  w := &models.Widget{Name: "My Widget"} // make a POST /widgets request
+  res := as.HTML("/widgets").Post(w)
   // assert that the response status code was 302 as.Equal(302, res.Code)
-  // retreive the first Post from the database
-  err := as.DB.First(p)
+  // retreive the first Widget from the database
+  err := as.DB.First(w)
   as.NoError(err)
-  as.NotZero(p.ID)
-  // assert the Post title was saved correctly
-  as.Equal("My Post", p.Title)
+  as.NotZero(w.ID)
+  // assert the Widget title was saved correctly
+  as.Equal("My Widget", w.Name)
   // assert the redirect was sent to the place expected
-  as.Equal(fmt.Sprintf("/posts/%s", p.ID), res.Location())
+  as.Equal(fmt.Sprintf("/widgets/%s", w.ID), res.Location())
 }
 <% } %>

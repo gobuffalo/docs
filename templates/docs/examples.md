@@ -21,7 +21,15 @@ This video will demonstrates the following:
 
 Built using Buffalo `v0.9.0` this open source application allows people to post their favorite Go related stories.
 
+[http://golangflow.io](http://golangflow.io)
 [https://github.com/bscott/golangflow](https://github.com/bscott/golangflow)
+
+<%= title("Gobular.com") %>
+
+Built using Buffalo `v0.9.2` this open source application allows people to test their Go regular expressions.
+
+[http://gobular.com](http://gobular.com)
+[https://github.com/markbates/gobular](https://github.com/markbates/gobular)
 
 <%= title("Toodo") %>
 

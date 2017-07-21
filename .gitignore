@@ -5,3 +5,4 @@ node_modules/
 vendor/
 bin/
 .idea/
+.vscode

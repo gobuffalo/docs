@@ -47,7 +47,7 @@
   branch = "development"
   name = "github.com/gobuffalo/buffalo"
   packages = [".","binding","render","worker"]
-  revision = "d4ff76d8f4e0b9aabaf1b65bd508050b6547d48c"
+  revision = "dfd24196a3bc07fa871c2aa4a05f5af6081c8254"
 
 [[projects]]
   branch = "master"
@@ -142,20 +142,20 @@
 [[projects]]
   name = "github.com/markbates/pop"
   packages = [".","columns","fizz","fizz/translators","nulls"]
-  revision = "7f9beae0b7cf44cb51ebfccc315f4cedfcb0c8ac"
-  version = "v3.25.3"
+  revision = "54293cc8ebf0db258ed7872c462119dbd89867dd"
+  version = "v3.27.1"
 
 [[projects]]
   name = "github.com/markbates/refresh"
   packages = ["refresh","refresh/web"]
-  revision = "3b31d64dec02d89d735e1f60c05ed41a43c5207e"
-  version = "1.2.0"
+  revision = "ea691f3d039a952f2a7f1456bcbf6a6e49cea7a6"
+  version = "v1.3.2"
 
 [[projects]]
   branch = "master"
   name = "github.com/markbates/validate"
   packages = [".","validators"]
-  revision = "a493a25ad6300ad101d9f490fe31f48bfd808ba9"
+  revision = "6f9272d17796274946724fde5ac4c06b1b7d44d3"
 
 [[projects]]
   branch = "master"
@@ -215,7 +215,7 @@
   branch = "master"
   name = "github.com/olekukonko/tablewriter"
   packages = ["."]
-  revision = "be7a31354aeea3f9f5efbc5c74d0a67ce132de6f"
+  revision = "be5337e7b39e64e5f91445ce7e721888dbab7387"
 
 [[projects]]
   name = "github.com/pkg/errors"
@@ -263,7 +263,7 @@
   branch = "master"
   name = "github.com/shurcooL/go"
   packages = ["parserutil","printerutil","reflectfind","reflectsource"]
-  revision = "b9e5dad7a86793a33644af3080d4c61798749c3a"
+  revision = "5924e6132c2f184e262d4bc779e5745fa297d093"
 
 [[projects]]
   branch = "master"
@@ -323,25 +323,25 @@
   branch = "master"
   name = "golang.org/x/crypto"
   packages = ["bcrypt","blowfish"]
-  revision = "7f7c0c2d75ebb4e32a21396ce36e87b6dadc91c9"
+  revision = "6914964337150723782436d56b3f21610a74ce7b"
 
 [[projects]]
   branch = "master"
   name = "golang.org/x/net"
   packages = ["context","html","html/atom"]
-  revision = "b3756b4b77d7b13260a0a2ec658753cf48922eac"
+  revision = "ab5485076ff3407ad2d02db054635913f017b0ed"
 
 [[projects]]
   branch = "master"
   name = "golang.org/x/sys"
   packages = ["unix"]
-  revision = "4cd6d1a821c7175768725b55ca82f14683a29ea4"
+  revision = "c4489faa6e5ab84c0ef40d6ee878f7a030281f0f"
 
 [[projects]]
   branch = "v2"
   name = "gopkg.in/yaml.v2"
   packages = ["."]
-  revision = "3b4ad1db5b2a649883ff3782f5f9f6fb52be71af"
+  revision = "25c4ec802a7d637f88d584ab26798e94ad14c13b"
 
 [solve-meta]
   analyzer-name = "dep"

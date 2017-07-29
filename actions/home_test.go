@@ -14,5 +14,5 @@ func Test_HomeHandler(t *testing.T) {
 	w := willie.New(actions.App())
 	res := w.Request("/").Get()
 
-	r.Equal(200, res.Code)
+	r.Equal(302, res.Code)
 }

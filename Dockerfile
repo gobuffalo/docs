@@ -6,7 +6,7 @@ RUN mkdir -p $BP
 WORKDIR $BP
 
 ADD package.json .
-RUN npm install
+RUN yarn install
 
 ADD . .
 

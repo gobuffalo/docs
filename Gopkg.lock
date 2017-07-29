@@ -57,6 +57,12 @@
 
 [[projects]]
   branch = "master"
+  name = "github.com/gobuffalo/gobuffalo"
+  packages = ["actions","actions/helpers"]
+  revision = "c42035e390d76e52c55c4a9df03d06829ea45e3a"
+
+[[projects]]
+  branch = "master"
   name = "github.com/gobuffalo/packr"
   packages = ["."]
   revision = "9d3b78bfcb56d490ba2cae05965890154f04f6f1"
@@ -346,6 +352,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "ec869b9d44ce87026b93ba8e42355e74f9cb1b484b9a18d28c0936d92c1bc641"
+  inputs-digest = "25b42bea69185c9a37a65fc027517d35ec0f6e64e703a9d1f1607602ae37dc7b"
   solver-name = "gps-cdcl"
   solver-version = 1

@@ -96,5 +96,46 @@ If you get this error when running `buffalo dev` that means you are "watching" t
         <% } %>
       </div>
     </li>
+    <li>
+      <h6>Mac OS X: <code>Too many open files in system</code> error</h6>
+      <div>
+        <%= markdown("") { %>
+If you get this error when running `buffalo dev` that means you are "watching" too many files, either `.go` files or asset files. To correct this you can [change](http://blog.mact.me/2014/10/22/yosemite-upgrade-changes-open-file-limit) the maximum number of open files on your system.
+        <% } %>
+      </div>       
+    </li>
+    <li>
+      <h6><code>buffalo new</code> fails trying to run <code>goimports</code></h6>
+      <div>
+        <%= markdown("") { %>
+The full error may appear something like the following, and seems to be the result of outdated go tools. To resolve run `rm -r $GOPATH/src/golang.org/`, then run `go get` again.
+```
+$ buffalo new code
+Buffalo version v0.9.2
+
+--> go get -u golang.org/x/tools/cmd/goimports
+package golang.org/x/tools/cmd/goimports: golang.org/x/tools is a custom import path for https://go.googlesource.com/tools, but /Users/dkinder/go/src/golang.org/x/tools is checked out from https://code.google.com/p/go.tools
+--> goimports -w .
+Usage:
+  buffalo new [name] [flags]
+
+Flags:
+      --api                  skip all front-end code and configure for an API server
+      --ci-provider string   specify the type of ci file you would like buffalo to generate [none, travis, gitlab-ci] (default "none")
+      --db-type string       specify the type of database you want to use [postgres, mysql, sqlite3] (default "postgres")
+      --docker string        specify the type of Docker file to generate [none, multi, standard] (default "multi")
+  -f, --force                delete and remake if the app already exists
+  -h, --help                 help for new
+      --skip-dep             skips adding github.com/golang/dep to your app
+      --skip-pop             skips adding pop/soda to your app
+      --skip-webpack         skips adding Webpack to your app
+  -v, --verbose              verbosely print out the go get/install commands
+      --with-yarn            allows the use of yarn instead of npm as dependency manager
+
+Error: exit status 1
+```
+        <% } %>
+      </div>
+    </li>
   </ul>
 </div>

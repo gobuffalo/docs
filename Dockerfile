@@ -6,6 +6,7 @@ RUN mkdir -p $BP
 WORKDIR $BP
 
 ADD package.json .
+ADD yarn.lock .
 RUN yarn install
 
 ADD . .

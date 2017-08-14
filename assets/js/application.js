@@ -1,6 +1,5 @@
 require("expose-loader?$!expose-loader?jQuery!jquery");
 require("bootstrap/dist/js/bootstrap.js");
-require("./prism.js");
 require("./theme.js");
 require("expose-loader?Clipboard!./clipboard.min.js");
 
@@ -48,6 +47,6 @@ $(() => {
     "img-shadow img-responsive center-block img-rounded"
   );
 
-  $("p:empty").remove();
-  $("code:empty").remove();
+  //$("p:empty").remove();
+  //$("code:empty").remove();
 });

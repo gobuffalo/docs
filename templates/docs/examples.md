@@ -37,6 +37,10 @@ This obligatory todo application shows a simple app and is a good introduction f
 
 [https://github.com/gobuffalo/toodo](https://github.com/gobuffalo/toodo)
 
+<%= title("Business-card in GoBuffalo - Part 1") %>
+
+[http://mycodesmells.com/post/business-card-in-gobuffalo---part-1](http://mycodesmells.com/post/business-card-in-gobuffalo---part-1)
+
 <%= title("More on the Blog") %>
 
 New videos, tutorials, etc... are always being published to the official Buffalo blog, [http://blog.gobuffalo.io](http://blog.gobuffalo.io). Please subscribe check out all of the great content that is being published there.

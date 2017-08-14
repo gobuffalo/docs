@@ -8,49 +8,51 @@ Buffalo defaults to using [plush](https://github.com/gobuffalo/plush) as its tem
 
 <%= title("General Usage", {name: "general"}) %>
 
-<div class="code-tabs">
-<%= code("html", {file: "templates/index.html"}) { %>
-<h1>\<%= name %></h1>
-<ul>
+```html
+// templates/index.html
+&lt;h1>\<%= name %></h1>
+&lt;ul>
   \<%= for (name) in names { %>
-    <li>\<%= name %></li>
+    &lt;li>\<%= name %></li>
   \<% } %>
-</ul>
-<% } %>
-<%= code("go", {file: "actions/index.go"}) { %>
+&lt;/ul>
+```
+
+```go
+// actions/index.go
 func IndexHandler(c buffalo.Context) error {
   c.Set("names", []string{"John", "Paul", "George", "Ringo"})
   return c.Render(200, r.HTML("index.html"))
 }
-<% } %>
+```
 
-<%= code("html", {file: "output"}) { %>
-<h1>Mark</h1>
-<ul>
-  <li>John</li>
-  <li>Paul</li>
-  <li>George</li>
-  <li>Ringo</li>
-</ul>
-<% } %>
-</div>
+```html
+// output
+&lt;h1>Mark</h1>
+&lt;ul>
+  &lt;li>John</li>
+  &lt;li>Paul</li>
+  &lt;li>George</li>
+  &lt;li>Ringo</li>
+&lt;/ul>
+```
 
 <%= title("If Statements", {name: "if"}) %>
 
-<%= code("html") { %>
-\\<%= if (true) { %>
-  \<!-- render this -->
-\\<% } %>
-<% } %>
+```html
+\<%= if (true) { %>
+  &lt;!-- render this -->
+\<% } %>
+```
 
 
 
 <%= title("Else Statements", {name: "else"}) %>
 
-<%= code("html") { %>
-\\<%= if (false) { %>
-  \<!-- won't render this -->
-\\<% } else { %>
-  \<!-- render this -->
-\\<% } %>
-<% } %>
+```html
+\<%= if (false) { %>
+  &lt;!-- won't render this -->
+\<% } else { %>
+  &lt;!-- render this -->
+\<% } %>
+```

@@ -1,6 +1,6 @@
 <%= title("Built-in Generators", {name: "built-in"}) %>
 
-<%= code("text") { %>
+```bash
 A collection of generators to make life easier
 
 Usage:
@@ -21,6 +21,6 @@ Flags:
   -h, --help   help for generate
 
 Use "buffalo generate [command] --help" for more information about a command.
-<% } %>
+```
 
 See also [/docs/db#generators](/docs/db#generators) for a list of database related generators.

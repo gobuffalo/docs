@@ -12,7 +12,7 @@ the test:
 
 <%= title("Test Example") %>
 
-<%= code("go") { %>
+```go
 func (as *ActionSuite) Test_WidgetsResource_Create() {
   // setup a Widget model
   w := &models.Widget{Name: "My Widget"} // make a POST /widgets request
@@ -27,4 +27,4 @@ func (as *ActionSuite) Test_WidgetsResource_Create() {
   // assert the redirect was sent to the place expected
   as.Equal(fmt.Sprintf("/widgets/%s", w.ID), res.Location())
 }
-<% } %>
+```

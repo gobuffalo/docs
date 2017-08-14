@@ -4,6 +4,8 @@
 
 No templating package would be complete without allowing for you to build your own, custom, helper functions.
 
+<%= vimeo("229572343") %>
+
 <%= title("Registering Helpers") %>
 
 Helper functions can be registered in two different places, depending on how they are to be used.
@@ -13,7 +15,7 @@ Helper functions can be registered in two different places, depending on how the
 _Most_ helpers will be global helpers, meaning that they should be included in every template. The types of
 helpers can can be set in `actions/render.go`:
 
-<%= code("go", {file: "actions/render.go", "data-line": "4-8"}) { %>
+```go
 func init() {
   r = render.New(render.Options{
     // ...
@@ -25,20 +27,21 @@ func init() {
     // ...
   })
 }
-<% } %>
+```
 
 ### Per Request Helpers
 
 Other helpers, that are specific to a certain request can be added to the `buffalo.Context` for that request.
 
-<%= code("go", {file: "actions/home.go", "data-line": "2-4"}) { %>
+```go
 func HomeHandler(c buffalo.Context) error {
+  // ...
   c.Set("myHelper", func() string {
     return "hello"
   })
   // ...
 }
-<% } %>
+```
 
 <%= title("Return Values") %>
 
@@ -54,11 +57,11 @@ If the last return value is an `error`, Plush will handle that error.
 
 Return just a `string`. The `string` will be HTML escaped, and deemed "not"-safe.
 
-<%= code("go") { %>
+```go
 func() string {
   return ""
 }
-<% } %>
+```
 
 ---
 
@@ -68,11 +71,11 @@ func() string {
 
 Return a `template.HTML` string. The `template.HTML` will **not** be HTML escaped, and will be deemed safe.
 
-<%= code("go") { %>
+```go
 func() template.HTML {
   return template.HTML("")
 }
-<% } %>
+```
 
 <%= title("Input Values") %>
 
@@ -80,7 +83,7 @@ Custom helper functions can take any type, and any number of arguments. There is
 
 <%= title("Simple Helpers") %>
 
-<%= code("go", {"data-line": "4-6"}) { %>
+```go
 r := render.New(render.Options{
   // ...
   Helpers: render.Helpers{
@@ -90,30 +93,30 @@ r := render.New(render.Options{
   },
   // ...
 })
-<% } %>
+```
 
 The `greet` function is now available to all templates that use that `render.Engine`.
 
-<div class="code-tabs">
-<%= code("go", {file: "actions/greet.go"}) { %>
+```go
+// actions/greet.go
 func Greeter(c buffalo.Context) error {
   c.Set("name", "Mark")
-  return c.Render(200, r.String(`<h1>\<%= greet(name) %></h1>`))
+  return c.Render(200, r.String("&lt;h1>\<%= greet(name) %></h1>"))
 }
-<% } %>
+```
 
-<%= code("html", {file: "output"}) { %>
+```go
+// output
 &lt;h1>Hi Mark!&lt;/h1>
-<% } %>
-</div>
+```
 
 <%= title("Block Helpers") %>
 
 Like the `if` or `for` statements, block helpers take a "block" of text that can be evaluated and potentially rendered, manipulated, or whatever you would like. To write a block helper, you have to take the `plush.HelperContext` as the last argument to your helper function. This will give you access to the block associated with that call.
 
-<div class="code-tabs">
 
-<%= code("go", {file: "actions/render.go"}) { %>
+```go
+// actions/render.go
 r := render.New(render.Options{
   // ...
   Helpers: render.Helpers{
@@ -121,9 +124,10 @@ r := render.New(render.Options{
   },
   // ...
 })
-<% } %>
+```
 
-<%= code("go", {file: "helper"}) { %>
+```go
+// helper
 func upblock(help plush.HelperContext) (template.HTML, error) {
   s, err := help.Block()
   if err != nil {
@@ -131,30 +135,31 @@ func upblock(help plush.HelperContext) (template.HTML, error) {
   }
   return strings.ToUpper(s), nil
 }
-<% } %>
+```
 
-<%= code("go", {file: "actions/upper.go"}) { %>
+```go
+// actions/upper.go
 func Upper(c buffalo.Context) error {
   return c.Render(200, r.HTML("up.html"))
 }
-<% } %>
+```
 
-<%= code("html", {file: "templates/up.html"}) { %>
+```html
+// templates/up.html
 \<%= upblock() { %>
   hello world
 \<% } %>
-<% } %>
+```
 
-<%= code("html", {file: "output"}) { %>
+```html
+// output
 HELLO WORLD
-<% } %>
-</div>
+```
 
 <%= title("Getting Values From the Context") %>
 
-<div class="code-tabs">
-
-<%= code("go", {file: "actions/render.go"}) { %>
+```go
+// actions/render.go
 r := render.New(render.Options{
   // ...
   Helpers: render.Helpers{
@@ -162,28 +167,31 @@ r := render.New(render.Options{
   },
   // ...
 })
-<% } %>
+```
 
-<%= code("go", {file: "helper"}) { %>
+```go
+// helper
 func isLoggedIn(help plush.HelperContext) bool {
   return help.Value("current_user") != nil
 }
-<% } %>
+```
 
-<%= code("go", {file: "actions/users.go"}) { %>
+```go
+// actions/users.go
 func Show(c buffalo.Context) error {
   c.Set("current_user", models.User{Name: "Ringo"})
   return c.Render(200, r.HTML("users/show.html"))
 }
-<% } %>
+```
 
-<%= code("html", {file: "templates/users/show.html"}) { %>
+```html
+// templates/users/show.html
 \<%= if (is_logged_in()) { %>
   Hello \<%= current_user.Name %>
 \<% } %>
-<% } %>
+```
 
-<%= code("html", {file: "output"}) { %>
-  Hello Ringo
-<% } %>
-</div>
+```html
+// output
+Hello Ringo
+```

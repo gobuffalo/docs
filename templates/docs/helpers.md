@@ -36,16 +36,16 @@ Plush ships with two complimentary helpers that let you create dynamic HTML snip
 
 The `contentFor` helper takes a block of HTML and holds on to using the given name. Take the following example. We want to set up a group of buttons to be displayed at the top and bottom of a form. Using the `contentFor` helper we can store that HTML in the template under the name `buttons`.
 
-<%= code("html") { %>
-\\<% contentFor("buttons") { %>
+```html
+\<% contentFor("buttons") { %>
   &lt;button>Save&lt;/button>&lt;button>Cancel&lt;/button>
-\\<% } %>
-<% } %>
+\<% } %>
+```
 
 ### The `contentOf` Helper
 
 To retrieve the content stored as `buttons`, we can use the `contentOf` helper:
 
-<%= code("html") { %>
-\\<%= contentOf("buttons") %>
-<% } %>
+```html
+\<%= contentOf("buttons") %>
+```

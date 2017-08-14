@@ -1,4 +1,4 @@
-<%= code("text") { %>
+```bash
 $ buffalo db g --help
 
 Usage:
@@ -21,4 +21,4 @@ Global Flags:
   -p, --path string     Path to the migrations folder (default "./migrations")
 
 Use "buffalo db generate [command] --help" for more information about a command.
-<% } %>
+```

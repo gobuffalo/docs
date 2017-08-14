@@ -6,8 +6,8 @@
 
 It is quite common to want to use the same layout across most, if not all of an application. When creating a new `render.Engine` the `HTMLLayout` property can be set to a file that will automatically be used by the `render.HTML` function.
 
-<div class="code-tabs">
-<%= code("go", {file: "actions/render.go"}) { %>
+```go
+// actions/render.go
 var r *render.Engine
 
 func init() {
@@ -17,34 +17,38 @@ func init() {
     // ...
   })
 }
-<% } %>
+```
 
-<%= code("html", {file: "templates/application.html"}) { %>
+```html
+// templates/application.html
 &lt;html>
   &lt;head>
     &lt;title>My App</title>
   &lt;/head>
   &lt;body>
-    <div id="main">
+    &lt;div id="main">
       \<%= yield %>
-    </div>
+    &lt;/div>
   &lt;/body>
 &lt;/html>
-<% } %>
+```
 
-<%= code("html", {file: "templates/hello.html"}) { %>
-<h1>Hello!!</h1>
-<% } %>
+```html
+// templates/hello.html
+&lt;h1>Hello!!</h1>
+```
 
-<%= code("go", {file: "actions/hello.go"}) { %>
+```go
+// actions/hello.go
 package actions
 
 func Hello(c buffalo.Context) error {
   return c.Render(200, r.HTML("hello.html"))
 }
-<% } %>
+```
 
-<%= code("html", {file: "output"}) { %>
+```html
+// output
 &lt;html>
   &lt;head>
     &lt;title>My App</title>
@@ -55,17 +59,16 @@ func Hello(c buffalo.Context) error {
     &lt;/div>
   &lt;/body>
 &lt;/html>
-<% } %>
-</div>
+```
 
 
 <%= title("Using a Custom Layout", {name: "custom"})  %>
 
 Sometimes, on certain requests, a different layout is needed. This alternate layout can be passed in as the second parameter to `render.HTML`.
 
-<div class="code-tabs">
 
-<%= code("go", {file: "actions/render.go"}) { %>
+```go
+// actions/render.go
 var r *render.Engine
 
 func init() {
@@ -75,9 +78,10 @@ func init() {
     // ...
   })
 }
-<% } %>
+```
 
-<%= code("html", {file: "templates/custom.html"}) { %>
+```html
+// templates/custom.html
 &lt;html>
   &lt;head>
     &lt;title>My Custom Layout&lt;/title>
@@ -88,21 +92,24 @@ func init() {
     &lt;/div>
   &lt;/body>
 &lt;/html>
-<% } %>
+```
 
-<%= code("html", {file: "templates/hello.html"}) { %>
-<h1>Hello!!</h1>
-<% } %>
+```html
+// templates/hello.html
+&lt;h1>Hello!!&lt;/h1>
+```
 
-<%= code("go", {file: "actions/hello.go"}) { %>
+```go
+// actions/hello.go
 package actions
 
 func Hello(c buffalo.Context) error {
   return c.Render(200, r.HTML("hello.html", "custom.html"))
 }
-<% } %>
+```
 
-<%= code("html", {file: "output"}) { %>
+```html
+// output
 &lt;html>
   &lt;head>
     &lt;title>My Custom Layout&lt;/title>
@@ -113,5 +120,4 @@ func Hello(c buffalo.Context) error {
     &lt;/div>
   &lt;/body>
 &lt;/html>
-<% } %>
-</div>
+```

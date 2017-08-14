@@ -13,22 +13,22 @@ Before installing make sure you have the required dependencies installed:
 
 These instructions can also be used for upgrading to a newer version of Buffalo.
 
-<%= code("text") { %>
-\# download the libraries
+```bash
+# download the libraries
 $ go get -u -v github.com/gobuffalo/buffalo/...
-\# install the binary
+# install the binary
 $ go install -v github.com/gobuffalo/buffalo/buffalo
-<% } %>
+```
 
 <%= title("Generating a New Project") %>
 
 Buffalo aims to make building new web applications in Go as quick and simple as possible, and what could be more simple than a *new application* generator? Start by going to your `$GOPATH` and create your new application!
 
-<%= code("text") { %>
+```bash
 $ cd $GOPATH/src/github.com/$USER/
 $ # Make sure $GOPATH/bin is in your $PATH, then:
 $ buffalo new <name>
-<% } %>
+```
 
 That will generate a whole new Buffalo application that is ready to go. It'll even run `go get` for you to make sure you have all of the necessary dependencies needed to run your application.
 
@@ -36,7 +36,7 @@ That will generate a whole new Buffalo application that is ready to go. It'll ev
 
 To see a list of available flags for the `new` command, just check out its help.
 
-<%= code("text") { %>
+```bash
 $ buffalo help new
 Creates a new Buffalo application
 
@@ -45,30 +45,29 @@ Usage:
 
 Flags:
       --api                  skip all front-end code and configure for an API server
-      --ci-provider string   specify the type of ci file you would like buffalo to generate \[none, travis, gitlab-ci] (default "none")
-      --db-type string       specify the type of database you want to use \[postgres, mysql, sqlite3] (default "postgres")
-      --docker string        specify the type of Docker file to generate \[none, multi, standard] (default "multi")
+      --ci-provider string   specify the type of ci file you would like buffalo to generate [none, travis, gitlab-ci] (default "none")
+      --db-type string       specify the type of database you want to use [postgres, mysql, sqlite3] (default "postgres")
+      --docker string        specify the type of Docker file to generate [none, multi, standard] (default "multi")
   -f, --force                delete and remake if the app already exists
   -h, --help                 help for new
-      --skip-dep             skips adding github.com/golang/dep to your app
       --skip-pop             skips adding pop/soda to your app
       --skip-webpack         skips adding Webpack to your app
+      --skip-yarn            skip to use npm as the asset package manager
   -v, --verbose              verbosely print out the go get/install commands
-      --with-yarn            allows the use of yarn instead of npm as dependency manager
+      --with-dep             adds github.com/golang/dep to your app
+```
 
-<% } %>
+Note: by default, Buffalo generates a database.yml targeted for PostgreSQL. If you wish to change this behavior, you can pass in a `--db-type` flag into the `new` command.
 
-Note: by default, Buffalo generates a database.yml targeted for postgres. If you wish to change this behavior, you can pass in a `--db-type` flag into the `new` command.
-
-<%= code("text") { %>
+```bash
 $ buffalo new coke --db-type sqlite3
-<% } %>
+```
 
 If your app doesn't need a database, or if you want to handle it by yourself, you can use the `--skip-pop` flag.
 
-<%= code("text") { %>
+```bash
 $ buffalo new coke --skip-pop
-<% } %>
+```
 
 <%= partial("docs/dev.md") %>
 
@@ -76,11 +75,11 @@ $ buffalo new coke --skip-pop
 
 Buffalo features a command, `build`, that will build a full binary of your application including, but not limited to; assets, migrations, templates, etc... If you buy into the "Buffalo Way" things just work. It's a wonderful experience. :)
 
-<%= code("text") { %>
+```bash
 $ buffalo build
-<% } %>
+```
 
-<%= code("text") { %>
+```bash
 Buffalo version <%= version %>
 
 --> cleaning up target dir
@@ -94,7 +93,6 @@ Buffalo version <%= version %>
 ----> cleaning up a/database.go
 ----> cleaning up buffalo_build_main.go
 ----> cleaning up ...coke/actions/actions-packr.go
-
-<% } %>
+```
 
 See [Building](/docs/building) for more options on the `build` command.

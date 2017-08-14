@@ -25,9 +25,9 @@ For information see [https://github.com/gobuffalo/buffalo/issues/108](https://gi
         <%= markdown("") { %>
 When starting `$ buffalo dev`, and you encounter this error:
 
-<%= code("text") { %>
+```text
 There was a problem starting the dev server: Unknown, Please review the troubleshooting docs.
-<% } %>
+```
 
 This may be due to your system missing NodeJS/NPM, Ensure that Node/NPM is installed and is in your `$PATH`. If  Node/NPM are indeed in your `$PATH`, try renaming webpack.config.js.
 
@@ -41,9 +41,9 @@ If you are still having issues after attempting the steps above, please reach ou
         <%= markdown("") { %>
 When trying to install Buffalo `go get` returns this error:
 
-<%= code("text") { %>
+```text
 package context: unrecognized import path "context" (import path does not begin with hostname)
-<% } %>
+```
 
 This is due to an outdated version of Go. Buffalo requires Go 1.7 or higher. Please check your installation of Go and ensure you running the latest version.
         <% } %>
@@ -55,7 +55,7 @@ This is due to an outdated version of Go. Buffalo requires Go 1.7 or higher. Ple
         <%= markdown("") { %>
 Occasionally when running `go get` on Buffalo you will get the following error:
 
-```
+```text
 unexpected directory layout:
 import path: github.com/mattn/go-colorable
 dir: /go/src/github.com/fatih/color/vendor/github.com/mattn/go-colorable
@@ -101,7 +101,7 @@ If you get this error when running `buffalo dev` that means you are "watching" t
       <div>
         <%= markdown("") { %>
 The full error may appear something like the following, and seems to be the result of outdated go tools. To resolve run `rm -r $GOPATH/src/golang.org/`, then run `go get` again.
-```
+```bash
 $ buffalo new code
 Buffalo version v0.9.2
 

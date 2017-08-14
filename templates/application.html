@@ -97,6 +97,14 @@
       ga('create', 'UA-89100352-1', 'auto');
       ga('send', 'pageview');
     </script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>
+$(document).ready(function() {
+  $('.highlight pre').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+</script>
 </body>
 
 </html>

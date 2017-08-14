@@ -10,7 +10,7 @@ Buffalo supports [PostgreSQL](https://www.postgresql.org/) (default), [MySQL](ht
 
 When you first generate a Buffalo application a `database.yml` file will be generated for you, based on the type of database that was selected with the `--db-type` flag, with PostgreSQL being the default.
 
-<%= code("yaml") { %>
+```yaml
 development:
   dialect: postgres
   database: myapp_development
@@ -24,8 +24,7 @@ test:
 
 production:
   url: {{envOr "DATABASE_URL" "postgres://postgres:postgres@127.0.0.1:5432/myapp_production"}}
-
-<% } %>
+```
 
 **CONFIGURE THIS FILE!**
 
@@ -37,27 +36,27 @@ In the generated `database.yml` file there is a template helper, `envOr`, that w
 
 Once the `database.yml` has been configured with the appropriate settings, and the database server is running, Buffalo can create all of the databases in the `database.yml` file with a simple command:
 
-<%= code("text") { %>
+```bash
 $ buffalo db create -a
-<% } %>
+```
 
 You can also create just one of the configured databases by using the `-e` flag and the name of the database:
 
-<%= code("text") { %>
+```bash
 $ buffalo db create -e test
-<% } %>
+```
 
 <%= title("Dropping Databases") %>
 
 Buffalo can drop all of your databases, should you want to, with one command:
 
-<%= code("text") { %>
+```bash
 $ buffalo db drop -a
-<% } %>
+```
 
 You can also drop just one of the configured databases by using the `-e` flag and the name of the database:
 
-<%= code("text") { %>
+```bash
 $ buffalo db drop -e test
-<% } %>
+```
 

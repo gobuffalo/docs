@@ -17,7 +17,6 @@ func init() {
 		Helpers: render.Helpers{
 			"h1":    helpers.H1,
 			"title": helpers.SectionTitle,
-			"code":  helpers.CodeHelper,
 			"vimeo": func(code string) template.HTML {
 				return template.HTML(fmt.Sprintf(vimeo, code))
 			},

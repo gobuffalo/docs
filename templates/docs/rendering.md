@@ -6,7 +6,7 @@
 
 In order for a renderer to be able to be used with [`Context#Render`](/docs/context) it must implement the following interface:
 
-<%= code("go") { %>
+```go
 // Renderer interface that must be satisified to be used with
 // buffalo.Context.Render
 type Renderer interface {
@@ -18,7 +18,7 @@ type Renderer interface {
 // Renderer interface.
 
 type Data map[string]interface{}
-<% } %>
+```
 
 Thankfully the [https://github.com/gobuffalo/buffalo/render](https://github.com/gobuffalo/buffalo/tree/master/render) [[godoc]](https://godoc.org/github.com/gobuffalo/buffalo/render) package implements that interface, and has a collection of useful render types already defined. It is recommended that you use this package, but feel free and write your own renderers!
 
@@ -28,7 +28,7 @@ A render engine is used to store information about configuration needed for rend
 
 By default an initial render engine is created for the application during application generation:
 
-<%= code("go") { %>
+```go
 var r *render.Engine
 
 func init() {
@@ -39,36 +39,37 @@ func init() {
   })
 
 }
-<% } %>
+```
 
 <%= title("Markdown", {}) %>
 
 Files passed into the `render.HTML` or `render.Template` functions, that have an extension of `.md`, will be converted from Markdown (using GitHub flavored Markdown) to HTML before being run through the templating engine. This makes for incredibly easy templating for simpler pages.
 
-<div class="code-tabs">
-<%= code("markdown", {file: "beatles.md"}) { %>
+```md
+// beatles.md
 # The Beatles
 
 \<%= for (name) in names { %>
 * \<%= name %>
 \<% } %>
-<% } %>
+```
 
-<%= code("go") { %>
+```go
+// actions/beatles.go
 func Beatles(c buffalo.Context) error {
   c.Set("names", []string{"John", "Paul", "George", "Ringo"})
   return c.Render(200, r.HTML("beatles.md"))
 }
-<% } %>
+```
 
-<%= code("html", {file: "output"}) { %>
-<h1>The Beatles</h1>
+```html
+// output
+&lt;h1>The Beatles</h1>
 
-<ul>
-  <li>John</li>
-  <li>Paul</li>
-  <li>George</li>
-  <li>Ringo</li>
-</ul>
-<% } %>
-</div>
+&lt;ul>
+  &lt;li>John</li>
+  &lt;li>Paul</li>
+  &lt;li>George</li>
+  &lt;li>Ringo</li>
+&lt;/ul>
+```

@@ -63,27 +63,6 @@
   }
 }
 
-.prism-languages {
-  list-style: none;
-  padding: 0;
-  margin: 20px 0
-}
-
-.prism-languages li {
-  width: 33.3333%;
-  float: left
-}
-
-.prism-languages li code {
-  margin-left: 8px
-}
-
-@media (max-width:991px) {
-  .prism-languages li {
-    width: 50%
-  }
-}
-
 .window-content .btn {
   margin-bottom: 6px
 }

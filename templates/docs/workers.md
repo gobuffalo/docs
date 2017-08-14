@@ -6,7 +6,7 @@ When building complex applications it is often nice to be able to run things in 
 
 In order to use background jobs, the `worker.Worker` interface must first be satisfied.
 
-<%= code("go") { %>
+```go
 type Worker interface {
   // Start the worker with the given context
   Start(context.Context) error
@@ -21,7 +21,7 @@ type Worker interface {
   // Register a Handler
   Register(string, Handler) error
 }
-<% } %>
+```
 
 Current there are two implementations of this interface. The first is `worker.Simple`. This uses Goroutines to implement the interface. This is great for simple applications, but since the queues are not persisted any jobs enqueued will be lost if the server was to be shut down. This implementation is turned on by default.
 
@@ -31,7 +31,7 @@ The other implementation is the [`github.com/gobuffalo/gocraft-work-adapter`](ht
 
 When setting up your application you can assign a worker implementation to the `Worker` option.
 
-<%= code("go") { %>
+```go
 import "github.com/gobuffalo/gocraft-work-adapter"
 import "github.com/garyburd/redigo/redis"
 
@@ -51,12 +51,11 @@ buffalo.Automatic(buffalo.Options{
   }),
   // ...
 })
-
-<% } %>
+```
 
 <%= title("The Job type") %>
 
-<%= code("go") { %>
+```go
 // Args are the arguments passed into a job
 type Args map[string]interface{}
 
@@ -69,20 +68,19 @@ type Job struct {
   // Handler that will be run by the worker
   Handler string
 }
-
-<% } %>
+```
 
 <%= title("Registering a Worker Handler") %>
 
 Handler are functions that will be run to process jobs in the queue. These handlers have to be first registered with the worker that will be running them.
 
-<%= code("go") { %>
+```go
 // Handler function that will be run by the worker and given
 // a slice of arguments
 type Handler func(Args) error
-<% } %>
+```
 
-<%= code("go") { %>
+```go
 import "github.com/gobuffalo/buffalo/worker"
 
 var w worker.Worker
@@ -94,8 +92,7 @@ func init() {
     return nil
   })
 }
-
-<% } %>
+```
 
 <%= title("Enqueueing a Job") %>
 
@@ -105,7 +102,7 @@ It is recommended to only use basic types when enqueueing a job. For example, us
 
 The `Perform` method should enqueue the job and the worker should try and run the job as soon as possible, based on the implementation of the worker itself.
 
-<%= code("go") { %>
+```go
 func doWork() {
   w.Perform(worker.Job{
     Queue: "default",
@@ -115,13 +112,13 @@ func doWork() {
     },
   })
 }
-<% } %>
+```
 
 ### `worker.PerformIn`
 
 The `PerformIn` method should enqueue the job and the worker should try and run the job after the duration has passed, based on the implementation of the worker itself.
 
-<%= code("go") { %>
+```go
 func doWork() {
   w.PerformIn(worker.Job{
     Queue: "default",
@@ -131,13 +128,13 @@ func doWork() {
     },
   }, 5 * time.Second)
 }
-<% } %>
+```
 
 ### `worker.PerformAt`
 
 The `PerformIn` method should enqueue the job and the worker should try and run the job at (or near) the time specified, based on the implementation of the worker itself.
 
-<%= code("go") { %>
+```go
 func doWork() {
   w.PerformIn(worker.Job{
     Queue: "default",
@@ -147,20 +144,19 @@ func doWork() {
     },
   }, time.Now().Add(5 * time.Second))
 }
-<% } %>
+```
 
 <%= title("Starting and Stopping Workers") %>
 
 By default all Buffalo applications created with `0.9.0` or above will have a `main.go` that looks something like this:
 
-<%= code("go") { %>
+```go
 func main() {
   port := envy.Get("PORT", "3000")
   app := actions.App()
   log.Fatal(app.Start(port))
 }
-
-<% } %>
+```
 
 The `App#Start` method will, by default, call the `Worker#Start` method for the registered worker. This will also call the `Worker#Stop` method when the application is shut down. This is the **recommended** approached for applications.
 

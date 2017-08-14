@@ -1,27 +1,46 @@
 # Cookies
 
-Buffalo does not currently have any wrappers around working with cookies. See [https://golang.org/pkg/net/http/#Cookie](https://golang.org/pkg/net/http/#Cookie) for more information on cookies in Go.
+See [https://golang.org/pkg/net/http/#Cookie](https://golang.org/pkg/net/http/#Cookie) for more information on cookies in Go.
 
 <%= title("Setting a Cookie") %>
 
-<%= code("go") { %>
+```go
+func MyHandler(c buffalo.Context) error {
+  // ...
+  c.Cookies().Set("user_id", user.ID, 30 * 24 * time.Hour)
+  // ...
+}
+```
+
+<%= title("Setting a Cookie with Expiration") %>
+
+```go
 func MyHandler(c buffalo.Context) error {
   // ...
   exp := time.Now().Add(365 * 24 * time.Hour) // expire in 1 year
-  cookie := http.Cookie{Name: "user_id", Value: user.ID, Expires: exp}
-  http.SetCookie(c.Response(), &cookie)
+  c.Cookies().SetWithExpirationTime("user_id", user.ID, exp)
   // ...
 }
-<%  }%>
+```
 
 <%= title("Getting a Cookie") %>
 
-<%= code("go") { %>
+```go
 func MyHandler(c buffalo.Context) error {
-  cookie, err := c.Request().Cookie("user_id")
+  value, err := c.Cookies().Get("user_id")
   if err != nil {
     return err
   }
-  return c.Render(200, r.String(cookie.Value))
+  return c.Render(200, r.String(value))
 }
-<%  }%>
+```
+
+<%= title("Deleting a Cookie") %>
+
+
+```go
+func MyHandler(c buffalo.Context) error {
+  c.Cookies().Delete("user_id")
+  // ...
+}
+```

@@ -4,7 +4,8 @@ Middleware allows for the interjection of code in the request/response cycle. Co
 
 
 <%= title("The Middleware Interface", {name: "interface"}) %>
-<%= code("go") { %>
+
+```go
 func MyMiddleware(next buffalo.Handler) buffalo.Handler {
   return func(c buffalo.Context) error {
     // do some work before calling the next handler
@@ -13,15 +14,15 @@ func MyMiddleware(next buffalo.Handler) buffalo.Handler {
     return err
   }
 }
-<% } %>
+```
 
 <%= title("Using Middleware", {}) %>
 
-<%= code("go") { %>
+```go
 a := buffalo.Automatic(buffalo.Options{})
 a.Use(MyMiddleware)
 a.Use(AnotherPieceOfMiddleware)
-<% } %>
+```
 
 In the above example all requests will first go through the `MyMiddleware` middleware, and then through the `AnotherPieceOfMiddleware` middleware before first getting to their final handler.
 
@@ -29,7 +30,7 @@ _NOTE: Middleware defined on an application is automatically inherited by all ro
 
 <%= title("Group Middleware", {}) %>
 
-<%= code("go") { %>
+```go
 a := buffalo.Automatic(buffalo.Options{})
 a.Use(MyMiddleware)
 a.Use(AnotherPieceOfMiddleware)
@@ -40,21 +41,20 @@ g.Use(AuthorizeAPIMiddleware)
 g.GET("/users", UsersHandler)
 
 a.GET("/foo", FooHandler)
-<% } %>
+```
 
 In the above example the `MyMiddleware` and `AnotherPieceOfMiddleware` middlewares will be called on _all_ requests, but the `AuthorizeAPIMiddleware` middleware will only be called on the `/api/*` routes.
 
-<% } %>
+```text
 GET /foo -> MyMiddleware -> AnotherPieceOfMiddleware -> FooHandler
 GET /api/users -> MyMiddleware -> AnotherPieceOfMiddleware -> AuthorizeAPIMiddleware -> UsersHandler
-<% } %>
+```
 
 <%= title("Skipping Middleware", {}) %>
 
 There are times when, in an application, you want to add middleware to the entire application, or a group, but not call that middleware on a few individual handlers. Buffalo allows you to create these sorts of mappings.
 
-<div class="code-tabs">
-<%= code("go") { %>
+```go
 a := buffalo.Automatic(buffalo.Options{})
 a.Use(AuthorizeUser)
 
@@ -65,15 +65,14 @@ a.GET("/users/new", NewUser)
 a.POST("/users", CreateUser)
 a.GET("/users", ListUsers)
 a.GET("/users/{id}", ShowUser)
-<% } %>
+```
 
-<%= code("text") { %>
+```text
 GET /users/new -> NewUser
 POST /users -> CreateUser
 GET /users -> AuthorizeUser -> ListUsers
 GET /users/{id} -> AuthorizeUser -> ShowUser
-<% } %>
-</div>
+```
 
 See [https://godoc.org/github.com/gobuffalo/buffalo#MiddlewareStack.Skip](https://godoc.org/github.com/gobuffalo/buffalo#MiddlewareStack.Skip) for more details on the `Skip` function.
 
@@ -81,8 +80,7 @@ See [https://godoc.org/github.com/gobuffalo/buffalo#MiddlewareStack.Skip](https:
 
 Since middleware is [inherited](#using-middleware) from its parent, there maybe times when it is necessary to start with a "blank" set of middleware.
 
-<div class="code-tabs">
-<%= code("go") { %>
+```go
 a := buffalo.Automatic(buffalo.Options{})
 a.Use(MyMiddleware)
 a.Use(AnotherPieceOfMiddleware)
@@ -94,10 +92,9 @@ g.Use(AuthorizeAPIMiddleware)
 g.GET("/users", UsersHandler)
 
 a.GET("/foo", FooHandler)
-<% } %>
+```
 
-<%= code("text") { %>
+```text
 GET /foo -> MyMiddleware -> AnotherPieceOfMiddleware -> FooHandler
 GET /api/users -> AuthorizeAPIMiddleware -> UsersHandler
-<% } %>
-</div>
+```

@@ -18,13 +18,13 @@ Being able to set these messages in a Buffalo handler and then pass them down to
 
 Creating flash messages can easily be done by using the `c.Flash()` function provided on the [`buffalo.Context`](/docs/context).
 
-<%= code("go") { %>
+```go
 func WidgetsCreate(c buffalo.Context) error {
   // do some work
-	c.Flash().Add("success", "Widget was successfully created!")
+  c.Flash().Add("success", "Widget was successfully created!")
   // do more work and return
 }
-<% } %>
+```
 
 The names of the "keys", in this example, "success", are left up to your application to use as is appropriate. There are no "special" or "pre-defined" keys.
 
@@ -32,32 +32,32 @@ The names of the "keys", in this example, "success", are left up to your applica
 
 ### Looping Over all Flash Messages
 
-<%= code("html") { %>
-<div class="row">
-  <div class="col-md-12">
-    \\<%= for (k, messages) in flash { %>
-      \\<%= for (msg) in messages { %>
+```html
+&lt;div class="row">
+  &lt;div class="col-md-12">
+    \<%= for (k, messages) in flash { %>
+      \<%= for (msg) in messages { %>
         &lt;div class="alert alert-\\<%= k %>" role="alert">
           &lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          \\<%= msg %>
-        </div>
-      \\<% } %>
-    \\<% } %>
-  </div>
-</div>
-<% } %>
+          \<%= msg %>
+        &lt;/div>
+      \<% } %>
+    \<% } %>
+  &lt;/div>
+&lt;/div>
+```
 
 ### Looping Over a Specific Flash Message Key
 
-<%= code("html") { %>
-<div class="row">
-  <div class="col-md-12">
-    \\<%= for (message) in flash["success"] { %>
+```html
+&lt;div class="row">
+  &lt;div class="col-md-12">
+    \<%= for (message) in flash["success"] { %>
       &lt;div class="alert alert-success" role="alert">
-        &lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        \\<%= message %>
-      </div>
-    \\<% } %>
-  </div>
-</div>
-<% } %>
+        &lt;button type="button" class="close" data-dismiss="alert" aria-label="Close">&lt;span aria-hidden="true">&times;</span></button>
+        \<%= message %>
+      &lt;/div>
+    \<% } %>
+  &lt;/div>
+&lt;/div>
+```

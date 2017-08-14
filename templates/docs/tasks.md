@@ -11,27 +11,27 @@ Tasks are small scripts that are often needed when writing an application. These
 
 Tasks must all be in the `grifts` package. A simple task would look like following:
 
-<%= code("go") { %>
+```go
 var _ = grift.Add("hello", func(c *grift.Context) error {
   fmt.Println("Hello!")
   return nil
 })
-<% } %>
+```
 
 <%= title("Listing Available Tasks") %>
 
-<div class="code-tabs">
-<%= code("text") { %>
+```bash
 $ buffalo task list
-<% } %>
-<%= code("text", {file: "output"}) { %>
+```
+
+```text
+// output
 buffalo task db:seed
 buffalo task db:seed:pets
 buffalo task db:seed:users
 buffalo task hello
 buffalo task routes
-<% } %>
-</div>
+```
 
 <%= title("Running Tasks") %>
 
@@ -39,14 +39,14 @@ buffalo task routes
 
 Tasks can be run in development using the `buffalo task` command.
 
-<%= code("text") { %>
+```bash
 $ buffalo task hello
-<% } %>
+```
 
 ### From a Built Binary
 
 After a binary has been [built](/docs/building) the tasks can be run with the `task` subcommand:
 
-<%= code("text") { %>
+```bash
 $ myapp task hello
-<% } %>
+```

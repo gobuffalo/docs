@@ -2,15 +2,14 @@
 
 Easily generate new [https://github.com/markbates/grift](https://github.com/markbates/grift) tasks.
 
-<div class="code-tabs">
-
-<%= code("bash", {file: "command"}) { %>
+```bash
 $ buffalo g task foo:bar
 
 --> grifts/bar.go
-<% } %>
+```
 
-<%= code("go", {file: "grifts/bar.go"}) { %>
+```go
+// grifts/bar.go
 package grifts
 
 import (
@@ -25,6 +24,4 @@ var _ = Namespace("foo", func() {
   })
 
 })
-<% } %>
-
-</div>
+```

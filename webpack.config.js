@@ -1,75 +1,93 @@
 var webpack = require("webpack");
-var CopyWebpackPlugin = require('copy-webpack-plugin');
+var CopyWebpackPlugin = require("copy-webpack-plugin");
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
   entry: [
     "./assets/js/application.js",
     "./assets/css/application.scss",
-    "./node_modules/jquery-ujs/src/rails.js"
+    "./node_modules/jquery-ujs/src/rails.js",
+    "./node_modules/highlightjs/highlight.pack.min.js"
   ],
   output: {
     filename: "application.js",
-    path: __dirname + "/public/assets"
+    path: `${__dirname}/public/assets`
   },
   plugins: [
+    new webpack.ProvidePlugin({
+      hljs: "hljs"
+    }),
     new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery"
     }),
     new ExtractTextPlugin("application.css"),
-    new CopyWebpackPlugin([{
-      from: "./assets",
-      to: ""
-    }], {
-      ignore: [
-        "css/*",
-        "js/*",
-      ]
-    })
+    new CopyWebpackPlugin(
+      [
+        {
+          from: "./assets",
+          to: ""
+        }
+      ],
+      {
+        ignore: ["css/*", "js/*"]
+      }
+    )
   ],
   module: {
-    rules: [{
-      test: /\.jsx?$/,
-      loader: "babel-loader",
-      options: {
-        presets: ['env']
+    rules: [
+      {
+        test: /\.jsx?$/,
+        loader: "babel-loader",
+        options: {
+          presets: ["env"]
+        },
+        exclude: /node_modules/
       },
-      exclude: /node_modules/
-    }, {
-      test: /\.scss$/,
-      use: ExtractTextPlugin.extract({
-        fallback: "style-loader",
-        use: [{
-          loader: "css-loader",
-          options: {
-            sourceMap: true
-          }
-        }, {
-          loader: "sass-loader",
-          options: {
-            sourceMap: true
-          }
-        }]
-      })
-    }, {
-      test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
-      use: "url-loader?limit=10000&mimetype=application/font-woff"
-    }, {
-      test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
-      use: "url-loader?limit=10000&mimetype=application/font-woff"
-    }, {
-      test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-      use: "url-loader?limit=10000&mimetype=application/octet-stream"
-    }, {
-      test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-      use: "file-loader"
-    }, {
-      test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-      use: "url-loader?limit=10000&mimetype=image/svg+xml"
-    }, {
-      test: require.resolve('jquery'),
-      use: 'expose-loader?jQuery!expose-loader?$'
-    }]
+      {
+        test: /\.scss$/,
+        use: ExtractTextPlugin.extract({
+          fallback: "style-loader",
+          use: [
+            {
+              loader: "css-loader",
+              options: {
+                sourceMap: true
+              }
+            },
+            {
+              loader: "sass-loader",
+              options: {
+                sourceMap: true
+              }
+            }
+          ]
+        })
+      },
+      {
+        test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
+        use: "url-loader?limit=10000&mimetype=application/font-woff"
+      },
+      {
+        test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
+        use: "url-loader?limit=10000&mimetype=application/font-woff"
+      },
+      {
+        test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+        use: "url-loader?limit=10000&mimetype=application/octet-stream"
+      },
+      {
+        test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
+        use: "file-loader"
+      },
+      {
+        test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+        use: "url-loader?limit=10000&mimetype=image/svg+xml"
+      },
+      {
+        test: require.resolve("jquery"),
+        use: "expose-loader?jQuery!expose-loader?$"
+      }
+    ]
   }
 };

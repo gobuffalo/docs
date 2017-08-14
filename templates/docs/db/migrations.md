@@ -7,16 +7,16 @@
 
 Once migrations have been created they can be run with either of the following commands:
 
-<%= code("text") { %>
+```bash
 $ buffalo db migrate
 $ buffalo db migrate up
-<% } %>
+```
 
 Both commands are identical, one is shorter to type!
 
 More information about the migration command be found by running:
 
-<%= code("text") { %>
+```bash
 $ buffalo db migrate --help
 
 Runs migrations against your database.
@@ -41,4 +41,4 @@ Global Flags:
   -p, --path string     Path to the migrations folder (default "./migrations")
 
 Use "buffalo db migrate [command] --help" for more information about a command.
-<% } %>
+```

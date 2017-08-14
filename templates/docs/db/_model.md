@@ -1,6 +1,6 @@
 <%= title("Models") %>
 
-<%= code("text") { %>
+```bash
 $ buffalo db g model --help
 
 Generates a model for your database
@@ -20,17 +20,16 @@ Global Flags:
   -d, --debug           Use debug/verbose mode
   -e, --env string      The environment you want to run migrations against. Will use $GO_ENV if set. (default "development")
   -p, --path string     Path to the migrations folder (default "./migrations")
-
-<% } %>
+```
 
 You can remove generated model by running:
 
-<%= code("text") { %>
+```bash
 $ buffalo db destroy model [name]
-<% } %>
+```
 
 Or in short form:
 
-<%= code("text") { %>
+```bash
 $ buffalo d m [name]
-<% } %>
+```

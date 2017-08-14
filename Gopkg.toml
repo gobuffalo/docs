@@ -1,35 +1,3 @@
 [[constraint]]
   branch = "development"
   name = "github.com/gobuffalo/buffalo"
-
-[[constraint]]
-  branch = "master"
-  name = "github.com/gobuffalo/envy"
-
-[[constraint]]
-  branch = "master"
-  name = "github.com/gobuffalo/packr"
-
-[[constraint]]
-  branch = "master"
-  name = "github.com/gobuffalo/plush"
-
-[[constraint]]
-  branch = "master"
-  name = "github.com/gobuffalo/tags"
-
-[[constraint]]
-  branch = "master"
-  name = "github.com/markbates/inflect"
-
-[[constraint]]
-  branch = "master"
-  name = "github.com/markbates/willie"
-
-[[constraint]]
-  branch = "master"
-  name = "github.com/olekukonko/tablewriter"
-
-[[constraint]]
-  name = "github.com/pkg/errors"
-  version = "0.8.0"

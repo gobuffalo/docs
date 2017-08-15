@@ -3,11 +3,8 @@ $ buffalo new coke
 Buffalo version <%= version %>
 
 --> go get -u golang.org/x/tools/cmd/goimports
---> go install golang.org/x/tools/cmd/goimports
 --> go get -u github.com/golang/dep/cmd/dep
---> go install github.com/golang/dep/cmd/dep
 --> go get -u github.com/motemen/gore
---> go install github.com/motemen/gore
 --> /Users/markbates/Dropbox/development/gocode/src/github.com/markbates/coke/README.md
 --> /Users/markbates/Dropbox/development/gocode/src/github.com/markbates/coke/actions/actions_test.go
 --> /Users/markbates/Dropbox/development/gocode/src/github.com/markbates/coke/actions/app.go
@@ -34,7 +31,6 @@ Buffalo version <%= version %>
 --> /Users/markbates/Dropbox/development/gocode/src/github.com/markbates/coke/models/models_test.go
 --> /Users/markbates/Dropbox/development/gocode/src/github.com/markbates/coke/grifts/db.go
 --> go get github.com/markbates/pop/...
---> go install github.com/markbates/pop/soda
 --> database.yml
 --> /Users/markbates/Dropbox/development/gocode/src/github.com/markbates/coke/Dockerfile
 --> /Users/markbates/Dropbox/development/gocode/src/github.com/markbates/coke/.dockerignore

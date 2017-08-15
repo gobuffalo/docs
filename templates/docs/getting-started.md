@@ -14,10 +14,7 @@ Before installing make sure you have the required dependencies installed:
 These instructions can also be used for upgrading to a newer version of Buffalo.
 
 ```bash
-# download the libraries
 $ go get -u -v github.com/gobuffalo/buffalo/...
-# install the binary
-$ go install -v github.com/gobuffalo/buffalo/buffalo
 ```
 
 <%= title("Generating a New Project") %>

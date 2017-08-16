@@ -78,7 +78,7 @@ In addition to have the [context](/docs/context) of the parent template, partial
 // actions/users.go
 func UsersIndex(c buffalo.Context) error {
   c.Set("users", []string{"John Lennon", "Paul McCartney", "George Harrison", "Ringo Starr"})
-  return c.Render(r.HTML("users/index.html"))
+  return c.Render(200, r.HTML("users/index.html"))
 }
 ```
 

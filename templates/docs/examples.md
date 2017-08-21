@@ -37,9 +37,11 @@ This obligatory todo application shows a simple app and is a good introduction f
 
 [https://github.com/gobuffalo/toodo](https://github.com/gobuffalo/toodo)
 
-<%= title("Business-card in GoBuffalo - Part 1") %>
+<%= title("Business-card in GoBuffalo") %>
 
-[http://mycodesmells.com/post/business-card-in-gobuffalo---part-1](http://mycodesmells.com/post/business-card-in-gobuffalo---part-1)
+[Part 1 - templates, navigation](http://mycodesmells.com/post/business-card-in-gobuffalo---part-1)
+
+[Part 2 - i18n](http://mycodesmells.com/post/business-card-in-go-buffalo---part-2---i18n)
 
 <%= title("More on the Blog") %>
 

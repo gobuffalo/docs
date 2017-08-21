@@ -1,5 +1,6 @@
 <%= title("Has Many Through") %>
 
+<%= codeTabs() { %>
 ```go
 // models/person.go
 type Person struct {
@@ -57,7 +58,7 @@ create_table("pet_owners", func(t) {
 ```
 
 ```go
-// some seed code to insert a few records
+// seed a few records
 models.DB.Transaction(func(tx *pop.Connection) error {
   person := &models.Person{Name: "Mark"}
   err := tx.Create(person)
@@ -75,7 +76,7 @@ models.DB.Transaction(func(tx *pop.Connection) error {
 ```
 
 ```go
-// some code to find pets for a person through pet_owners
+// find pets for a person through pet_owners
 models.DB.Transaction(func(tx *pop.Connection) error {
   person := &models.Person{}
   err := tx.First(person)
@@ -97,3 +98,4 @@ models.DB.Transaction(func(tx *pop.Connection) error {
 SELECT people.created_at, people.id, people.name, people.updated_at FROM people AS people LIMIT 1
 SELECT pets.created_at, pets.id, pets.name, pets.updated_at FROM pets AS pets, pet_owners AS pet_owners WHERE pet_owners.person_id = $1 AND pets.id = pet_owners.pet_id
 ```
+<% } %>

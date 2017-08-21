@@ -114,7 +114,7 @@ func Greeter(c buffalo.Context) error {
 
 Like the `if` or `for` statements, block helpers take a "block" of text that can be evaluated and potentially rendered, manipulated, or whatever you would like. To write a block helper, you have to take the `plush.HelperContext` as the last argument to your helper function. This will give you access to the block associated with that call.
 
-
+<%= codeTabs() { %>
 ```go
 // actions/render.go
 r := render.New(render.Options{
@@ -155,9 +155,12 @@ func Upper(c buffalo.Context) error {
 // output
 HELLO WORLD
 ```
+<% } %>
+
 
 <%= title("Getting Values From the Context") %>
 
+<%= codeTabs() { %>
 ```go
 // actions/render.go
 r := render.New(render.Options{
@@ -195,3 +198,4 @@ func Show(c buffalo.Context) error {
 // output
 Hello Ringo
 ```
+<% } %>

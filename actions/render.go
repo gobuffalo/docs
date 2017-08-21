@@ -20,6 +20,7 @@ func init() {
 			"vimeo": func(code string) template.HTML {
 				return template.HTML(fmt.Sprintf(vimeo, code))
 			},
+			"codeTabs": helpers.CodeTabs,
 		},
 		TemplatesBox: packr.NewBox("../templates"),
 	})

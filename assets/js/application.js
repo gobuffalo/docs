@@ -46,7 +46,34 @@ $(() => {
   $("img[title=screenshot]").addClass(
     "img-shadow img-responsive center-block img-rounded"
   );
+});
 
-  //$("p:empty").remove();
-  //$("code:empty").remove();
+$(() => {
+  $(".codetabs").each((_, ct) => {
+    let el = $(ct);
+    let ul = el.find(".nav-tabs");
+    let tc = el.find(".tab-content");
+    let id = el.attr("id");
+    let blocks = el.find(".tab-content .highlight");
+    blocks.each((i, b) => {
+      let lid = `${id}-${i}`;
+      let block = $(b);
+      let name = block.text().split("\n")[0];
+      name = name.replace("Copy// ", "");
+
+      let act = "";
+      if (i === 0) {
+        act = "active";
+      }
+      ul.append(
+        `<li role="presentation" class="${act}"><a href="#${lid}" role="tab" data-toggle="tab">${name}</a></li>`
+      );
+      tc.append(
+        $(
+          `<div role="tabpanel" class="tab-pane ${act}" id="${lid}"></div>`
+        ).append(block)
+      );
+      blocks.remove(block);
+    });
+  });
 });

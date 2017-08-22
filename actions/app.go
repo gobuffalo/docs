@@ -4,8 +4,10 @@ import (
 	"time"
 
 	"github.com/gobuffalo/buffalo"
+	"github.com/gobuffalo/buffalo/middleware/ssl"
 	"github.com/gobuffalo/envy"
 	"github.com/gobuffalo/packr"
+	"github.com/unrolled/secure"
 )
 
 var ENV = envy.Get("GO_ENV", "development")
@@ -20,6 +22,10 @@ func App() *buffalo.App {
 			SessionName: "_gobuffalo_session",
 			Env:         ENV,
 		})
+		app.Use(ssl.ForceSSL(secure.Options{
+			SSLRedirect:     ENV == "production",
+			SSLProxyHeaders: map[string]string{"X-Forwarded-Proto": "https"},
+		}))
 
 		app.Use(func(next buffalo.Handler) buffalo.Handler {
 			return func(c buffalo.Context) error {

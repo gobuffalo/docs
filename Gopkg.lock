@@ -52,8 +52,8 @@
 [[projects]]
   branch = "development"
   name = "github.com/gobuffalo/buffalo"
-  packages = [".","binding","render","worker"]
-  revision = "1a99077d82e292aca28a5d62a987292f87f2437f"
+  packages = [".","binding","middleware/ssl","render","worker"]
+  revision = "6972e5e09c974b5e612910389e2c347bc004705d"
 
 [[projects]]
   branch = "master"
@@ -156,6 +156,12 @@
   packages = ["refresh","refresh/web"]
   revision = "31a58af168f3788ce36d49f66aca4b439f64c7d4"
   version = "v1.3.3"
+
+[[projects]]
+  name = "github.com/markbates/sigtx"
+  packages = ["."]
+  revision = "daa2e5f08161c569ca3d938d70750ccd038daf16"
+  version = "v1.0.0"
 
 [[projects]]
   branch = "master"
@@ -315,6 +321,12 @@
 
 [[projects]]
   branch = "master"
+  name = "github.com/unrolled/secure"
+  packages = ["."]
+  revision = "a80c09da9c7bd84aaf622507fd339a9281b8acd1"
+
+[[projects]]
+  branch = "master"
   name = "golang.org/x/crypto"
   packages = ["bcrypt","blowfish","ssh/terminal"]
   revision = "b176d7def5d71bdd214203491f89843ed217f420"
@@ -340,6 +352,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "6e6cb7685cc8260e59b03c9f2dbda6bfac02569a4485239ba92b90a6988af2c5"
+  inputs-digest = "55b3b56b4d87c598fa0e3f9b3f0634b70bfa537ef7523b4ea22027eb9210e406"
   solver-name = "gps-cdcl"
   solver-version = 1

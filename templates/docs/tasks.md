@@ -22,15 +22,12 @@ var _ = grift.Add("hello", func(c *grift.Context) error {
 
 ```bash
 $ buffalo task list
-```
 
-```text
-// output
-buffalo task db:seed
-buffalo task db:seed:pets
-buffalo task db:seed:users
-buffalo task hello
-buffalo task routes
+Available grifts
+================
+buffalo task middleware    # Prints out your middleware stack
+buffalo task routes        # Print out all defined routes
+buffalo task secret        # Generate a cryptographically secure secret key
 ```
 
 <%= title("Running Tasks") %>

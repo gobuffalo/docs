@@ -36,6 +36,7 @@ func App() *buffalo.App {
 			}
 		})
 
+		app.Redirect(302, "/docs/test-suites", "/docs/testing")
 		app.GET("/docs/{name:.+}", Docs)
 
 		app.ServeFiles("/assets", packr.NewBox("../public/assets"))

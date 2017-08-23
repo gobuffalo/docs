@@ -15,7 +15,9 @@ This video will demonstrates the following:
 
 <%= vimeo("223666374") %>
 
-<small>Built using Buffalo `v0.9.1`</small>
+<%= title("Using Password Authentication with Buffalo") %>
+
+[https://github.com/gobuffalo/authrecipe](https://github.com/gobuffalo/authrecipe)
 
 <%= title("GolangFlow.io") %>
 

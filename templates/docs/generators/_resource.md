@@ -365,9 +365,9 @@ create_table("users", func(t) {
         &lt;td&gt;&lt;%= user.Email %&gt;&lt;/td&gt;
         &lt;td&gt;
           &lt;div class="pull-right"&gt;
-            &amp;lt;a href="&lt;%= userPath({ user_id: user.ID }) %&gt;" class="btn btn-info"&gt;View&lt;/a&gt;
-            &amp;lt;a href="&lt;%= editUserPath({ user_id: user.ID }) %&gt;" class="btn btn-warning"&gt;Edit&lt;/a&gt;
-            &amp;lt;a href="&lt;%= userPath({ user_id: user.ID }) %&gt;" data-method="DELETE" data-confirm="Are you sure?" class="btn btn-danger"&gt;Destroy&lt;/a&gt;
+            &lt;a href="&lt;%= userPath({ user_id: user.ID }) %&gt;" class="btn btn-info"&gt;View&lt;/a&gt;
+            &lt;a href="&lt;%= editUserPath({ user_id: user.ID }) %&gt;" class="btn btn-warning"&gt;Edit&lt;/a&gt;
+            &lt;a href="&lt;%= userPath({ user_id: user.ID }) %&gt;" data-method="DELETE" data-confirm="Are you sure?" class="btn btn-danger"&gt;Destroy&lt;/a&gt;
           &lt;/div&gt;
         &lt;/td&gt;
       &lt;/tr&gt;
@@ -381,9 +381,9 @@ create_table("users", func(t) {
 &lt;h1&gt;Users#Show&lt;/h1&gt;
 
 &lt;ul class="list-unstyled list-inline"&gt;
-  &lt;li&gt;&amp;lt;a href="&lt;%= usersPath() %&gt;" class="btn btn-info"&gt;Back to all Users&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&amp;lt;a href="&lt;%= editUserPath({ user_id: user.ID })%&gt;" class="btn btn-warning"&gt;Edit&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&amp;lt;a href="&lt;%= userPath({ user_id: user.ID })%&gt;" data-method="DELETE" data-confirm="Are you sure?" class="btn btn-danger"&gt;Destroy&lt;/a&gt;
+  &lt;li&gt;&lt;a href="&lt;%= usersPath() %&gt;" class="btn btn-info"&gt;Back to all Users&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="&lt;%= editUserPath({ user_id: user.ID })%&gt;" class="btn btn-warning"&gt;Edit&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="&lt;%= userPath({ user_id: user.ID })%&gt;" data-method="DELETE" data-confirm="Are you sure?" class="btn btn-danger"&gt;Destroy&lt;/a&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;

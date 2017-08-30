@@ -6,6 +6,21 @@
   <input class="faq-search" type="text" placeholder="Type to search...">
   <ul>
     <li>
+      <h6><code>buffalo new</code> fails with <code>import path does not begin with hostname</code></h6>
+      <div>
+        <%= markdown("") { %>
+This is caused by a mismatched `$GOPATH` and file system.
+
+```
+GOPATH: /Users/foobar/Documents/Programming/Go
+ACTUAL: /Users/foobar/Documents/programming/go
+```
+
+Those are not the same and cause problems with a lot of Go tools. Correct the `$GOPATH` to match the file system and retry.
+      <% } %>
+      </div>
+    </li>
+    <li>
       <h6><code>buffalo new</code> fails looking for <code>golang.org/x/tools/go/gcimporter</code></h6>
       <div>
         <%= markdown("") { %>

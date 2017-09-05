@@ -7,6 +7,7 @@ import (
 	"github.com/gobuffalo/buffalo/middleware/ssl"
 	"github.com/gobuffalo/envy"
 	"github.com/gobuffalo/packr"
+	"github.com/gobuffalo/x/sessions"
 	"github.com/unrolled/secure"
 )
 
@@ -19,8 +20,9 @@ var app *buffalo.App
 func App() *buffalo.App {
 	if app == nil {
 		app = buffalo.Automatic(buffalo.Options{
-			SessionName: "_gobuffalo_session",
-			Env:         ENV,
+			SessionName:  "_gobuffalo_session",
+			Env:          ENV,
+			SessionStore: sessions.Null{},
 		})
 		app.Use(ssl.ForceSSL(secure.Options{
 			SSLRedirect:     ENV == "production",

@@ -80,6 +80,12 @@
   version = "v1.0.0"
 
 [[projects]]
+  branch = "master"
+  name = "github.com/gobuffalo/x"
+  packages = ["sessions"]
+  revision = "7df1005e4b98c05141b5e21d79eac995618b801c"
+
+[[projects]]
   name = "github.com/gorilla/context"
   packages = ["."]
   revision = "1ea25387ff6f684839d82767c1733ff4d4d15d0a"
@@ -358,6 +364,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "55b3b56b4d87c598fa0e3f9b3f0634b70bfa537ef7523b4ea22027eb9210e406"
+  inputs-digest = "56d0297649997825d5146f768aeb3403a3274f47791a076ce32deb58874c6c21"
   solver-name = "gps-cdcl"
   solver-version = 1

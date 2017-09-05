@@ -1,6 +1,14 @@
 <%= title("Goth") %>
 
-[Goth](https://github.com/markbates/goth) provides a simple, clean, and idiomatic way to write authentication packages for Go web applications.
+[Goth](https://github.com/markbates/goth) provides a simple, clean, and idiomatic way to write authentication packages for Go web applications. In Buffalo version, `v0.9.4`, the Goth generator was moved into it's own plugin, [https://github.com/gobuffalo/buffalo-goth](https://github.com/gobuffalo/buffalo-goth)
+
+### Installation
+
+```bash
+$ go get -u github.com/gobuffalo/buffalo-goth
+```
+
+### Usage
 
 ```bash
 $ buffalo g goth twitter facebook linkedin github

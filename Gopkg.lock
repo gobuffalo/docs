@@ -23,7 +23,7 @@
   branch = "master"
   name = "github.com/dustin/go-humanize"
   packages = ["."]
-  revision = "259d2a102b871d17f30e3cd9881a642961a1e486"
+  revision = "79e699ccd02f240a1f1fbbdcee7e64c1c12e41aa"
 
 [[projects]]
   name = "github.com/fatih/color"
@@ -53,31 +53,31 @@
   branch = "development"
   name = "github.com/gobuffalo/buffalo"
   packages = [".","binding","middleware/ssl","render","worker"]
-  revision = "6972e5e09c974b5e612910389e2c347bc004705d"
+  revision = "11300a9014ddfb43d57133478f3a62194e8c3094"
 
 [[projects]]
-  branch = "master"
   name = "github.com/gobuffalo/envy"
   packages = ["."]
-  revision = "a901aeb76c2647ce52acf7f3bac64c4def49a899"
+  revision = "45f72f3354744cdffc3102233f6640b4ffbeb21f"
+  version = "v1.1.0"
 
 [[projects]]
-  branch = "master"
   name = "github.com/gobuffalo/packr"
   packages = ["."]
   revision = "e9ca0e599847cf656d6c8d6c0680b561129cc3f3"
+  version = "v1.0.0"
 
 [[projects]]
-  branch = "master"
   name = "github.com/gobuffalo/plush"
   packages = [".","ast","lexer","parser","token"]
-  revision = "ebd415deccf447d115026810e2b08aeeab87ca6d"
+  revision = "25f3d421c89d570f7f92b9fec3cd371f2927e2bb"
+  version = "v2.1.0"
 
 [[projects]]
-  branch = "master"
   name = "github.com/gobuffalo/tags"
   packages = [".","form","form/bootstrap"]
   revision = "c6f054f107d94b330d38a824866fdcd94bd616eb"
+  version = "v1.0.0"
 
 [[projects]]
   name = "github.com/gorilla/context"
@@ -116,6 +116,12 @@
   revision = "d9bd385d68c068f1fabb5057e3dedcbcbb039d0f"
 
 [[projects]]
+  name = "github.com/joho/godotenv"
+  packages = ["."]
+  revision = "726cc8b906e3d31c70a9671c90a13716a8d3f50d"
+  version = "v1.1"
+
+[[projects]]
   branch = "master"
   name = "github.com/lib/pq"
   packages = [".","oid"]
@@ -148,8 +154,8 @@
 [[projects]]
   name = "github.com/markbates/pop"
   packages = [".","columns","fizz","fizz/translators","nulls"]
-  revision = "f5ac4bbf44cc4accd00109c1c45f9e99a7bdfe1f"
-  version = "v3.30.1"
+  revision = "909d06b9a7ca95e57c260b8b0a08fb820d1caebb"
+  version = "v3.33.0"
 
 [[projects]]
   name = "github.com/markbates/refresh"
@@ -203,7 +209,7 @@
   branch = "master"
   name = "github.com/microcosm-cc/bluemonday"
   packages = ["."]
-  revision = "f0d1606e9e60cb2428f85ddcbfcccfeb6b507586"
+  revision = "68fecaef60268522d2ac3f0123cec9d3bcab7b6e"
 
 [[projects]]
   branch = "master"
@@ -230,10 +236,10 @@
   version = "v1.0.0"
 
 [[projects]]
-  branch = "master"
   name = "github.com/russross/blackfriday"
   packages = ["."]
   revision = "4048872b16cc0fc2c5fd9eacf0ed2c2fedaa0c8c"
+  version = "v1.5"
 
 [[projects]]
   name = "github.com/satori/go.uuid"
@@ -263,7 +269,7 @@
   branch = "master"
   name = "github.com/shurcooL/go"
   packages = ["parserutil","printerutil","reflectfind","reflectsource"]
-  revision = "b2ea7b593ffddfdfb43ab719c308c25cb2054db0"
+  revision = "85cf7b32989cc33f64afac4bc0e1ef4020b43669"
 
 [[projects]]
   branch = "master"
@@ -298,8 +304,8 @@
 [[projects]]
   name = "github.com/sirupsen/logrus"
   packages = ["."]
-  revision = "a3f95b5c423586578a4e099b11a46c2479628cac"
-  version = "1.0.2"
+  revision = "f006c2ac4710855cf0f916dd6b77acf6b048dc6e"
+  version = "v1.0.3"
 
 [[projects]]
   branch = "master"
@@ -323,25 +329,25 @@
   branch = "master"
   name = "github.com/unrolled/secure"
   packages = ["."]
-  revision = "a80c09da9c7bd84aaf622507fd339a9281b8acd1"
+  revision = "19a872c81779b0456e9ee495a8162fb60c57b0c0"
 
 [[projects]]
   branch = "master"
   name = "golang.org/x/crypto"
   packages = ["bcrypt","blowfish","ssh/terminal"]
-  revision = "b176d7def5d71bdd214203491f89843ed217f420"
+  revision = "81e90905daefcd6fd217b62423c0908922eadb30"
 
 [[projects]]
   branch = "master"
   name = "golang.org/x/net"
   packages = ["context","html","html/atom"]
-  revision = "1c05540f6879653db88113bc4a2b70aec4bd491f"
+  revision = "66aacef3dd8a676686c7ae3716979581e8b03c47"
 
 [[projects]]
   branch = "master"
   name = "golang.org/x/sys"
   packages = ["unix","windows"]
-  revision = "2d3e384235de683634e9080b58f757466840aa48"
+  revision = "7ddbeae9ae08c6a06a59597f0c9edbc5ff2444ce"
 
 [[projects]]
   branch = "v2"

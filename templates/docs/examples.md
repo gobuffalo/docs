@@ -45,6 +45,10 @@ This obligatory todo application shows a simple app and is a good introduction f
 
 [Part 2 - i18n](http://mycodesmells.com/post/business-card-in-go-buffalo---part-2---i18n)
 
+[Part 3 - database](http://mycodesmells.com/post/business-card-in-go-buffalo---part-3---database)
+
+[Part 4 - resources](http://mycodesmells.com/post/business-card-in-go-buffalo---part-4---resources)
+
 <%= title("More on the Blog") %>
 
 New videos, tutorials, etc... are always being published to the official Buffalo blog, [http://blog.gobuffalo.io](http://blog.gobuffalo.io). Please subscribe check out all of the great content that is being published there.

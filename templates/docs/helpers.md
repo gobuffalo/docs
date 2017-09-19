@@ -4,7 +4,7 @@
 
 <%= title("Builtin Helpers") %>
 
-Listed below are a few of the helpers that ship with Plush. Please see the Plush [documentation](https://github.com/gobuffalo/plush) for more information on it's helpers.
+Listed below are a few of the helpers that ship with Plush. Please see the Plush [documentation](https://github.com/gobuffalo/plush) for more information on its helpers.
 
 * `json` - converts the interface to a JSON object
 * `jsEscape` - escapes the interface to be JavaScript safe

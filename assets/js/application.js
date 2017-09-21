@@ -36,6 +36,16 @@ let activateSideNav = () => {
 };
 
 $(() => {
+  $("a").each((_, a) => {
+    let $a = $(a);
+    let href = $a.attr("href");
+    if (href.startsWith("http")) {
+      $a.attr("target", "_blank");
+    }
+  });
+});
+
+$(() => {
   activateSideNav();
   buildSideNav();
 

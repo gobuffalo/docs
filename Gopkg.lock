@@ -59,7 +59,7 @@
   branch = "development"
   name = "github.com/gobuffalo/buffalo"
   packages = [".","binding","middleware/ssl","render","worker"]
-  revision = "743e0e033c8dcbe507931a2be4dcd8037079f085"
+  revision = "d8ac96a212cc565ffe81c36569d0d7b637916c4d"
 
 [[projects]]
   name = "github.com/gobuffalo/envy"
@@ -70,8 +70,8 @@
 [[projects]]
   name = "github.com/gobuffalo/packr"
   packages = ["."]
-  revision = "49c666e5153ab8e79eb778d913ac6c17efa1b62a"
-  version = "v1.2.0"
+  revision = "7420a2f1d429f60af43e3061183e162f0aaf9d10"
+  version = "v1.3.0"
 
 [[projects]]
   name = "github.com/gobuffalo/plush"
@@ -82,8 +82,8 @@
 [[projects]]
   name = "github.com/gobuffalo/tags"
   packages = [".","form","form/bootstrap"]
-  revision = "239a16256c0548b49db3bd89d544aba5728c4a86"
-  version = "v1.1.0"
+  revision = "89ea35a9524f8f13edfe1aeaae0353b612c411fd"
+  version = "v1.3.0"
 
 [[projects]]
   branch = "master"
@@ -137,7 +137,7 @@
   branch = "master"
   name = "github.com/lib/pq"
   packages = [".","oid"]
-  revision = "23da1db4f16d9658a86ae9b717c245fc078f10f1"
+  revision = "b77235e3890a962fe8a6f8c4c7198679ca7814e7"
 
 [[projects]]
   branch = "master"
@@ -166,8 +166,8 @@
 [[projects]]
   name = "github.com/markbates/pop"
   packages = [".","columns","fizz","fizz/translators","nulls"]
-  revision = "016f7b14685f0d265b465e6dfcd8e2e598fbcebe"
-  version = "v3.36.0"
+  revision = "bf1a6e02c6eebd0256975358cb4d639feec85f67"
+  version = "v3.37.0"
 
 [[projects]]
   name = "github.com/markbates/refresh"
@@ -208,8 +208,8 @@
 [[projects]]
   name = "github.com/mattn/go-isatty"
   packages = ["."]
-  revision = "fc9e8d8ef48496124e79ae0df75490096eccf6fe"
-  version = "v0.0.2"
+  revision = "0360b2af4f38e8d38c7fce2a9f4e702702d73a39"
+  version = "v0.0.3"
 
 [[projects]]
   name = "github.com/mattn/go-sqlite3"
@@ -263,7 +263,7 @@
   branch = "master"
   name = "github.com/serenize/snaker"
   packages = ["."]
-  revision = "1c7f65329f6524115af8ca01ab604c00cddf5558"
+  revision = "de5293a32fd929048775e277fa6dd163bdeac7b3"
 
 [[projects]]
   branch = "master"
@@ -287,7 +287,7 @@
   branch = "master"
   name = "github.com/shurcooL/go-goon"
   packages = ["."]
-  revision = "a0792a0a8f8fa9a233843e67079b051b571e609c"
+  revision = "37c2f522c041b74919a9e5e3a6c5c47eb34730a5"
 
 [[projects]]
   branch = "master"
@@ -353,19 +353,19 @@
   branch = "master"
   name = "golang.org/x/crypto"
   packages = ["bcrypt","blowfish","ssh/terminal"]
-  revision = "7d9177d70076375b9a59c8fde23d52d9c4a7ecd5"
+  revision = "847319b7fc94cab682988f93da778204da164588"
 
 [[projects]]
   branch = "master"
   name = "golang.org/x/net"
   packages = ["context","html","html/atom"]
-  revision = "b60f3a92103dfd93dfcb900ec77c6d0643510868"
+  revision = "0744d001aa8470aaa53df28d32e5ceeb8af9bd70"
 
 [[projects]]
   branch = "master"
   name = "golang.org/x/sys"
   packages = ["unix","windows"]
-  revision = "b6e1ae21643682ce023deb8d152024597b0e9bb4"
+  revision = "429f518978ab01db8bb6f44b66785088e7fba58b"
 
 [[projects]]
   branch = "v2"

@@ -15,6 +15,7 @@ These instructions can also be used for upgrading to a newer version of Buffalo.
 
 ```bash
 $ go get -u -v github.com/gobuffalo/buffalo/...
+$ go install -v github.com/gobuffalo/buffalo/buffalo
 ```
 
 <%= title("Generating a New Project") %>

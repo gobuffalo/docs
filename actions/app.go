@@ -6,7 +6,6 @@ import (
 	"github.com/gobuffalo/buffalo"
 	"github.com/gobuffalo/buffalo/middleware/ssl"
 	"github.com/gobuffalo/envy"
-	"github.com/gobuffalo/packr"
 	"github.com/gobuffalo/x/sessions"
 	"github.com/unrolled/secure"
 )
@@ -41,7 +40,7 @@ func App() *buffalo.App {
 		app.Redirect(302, "/docs/test-suites", "/docs/testing")
 		app.GET("/docs/{name:.+}", Docs)
 
-		app.ServeFiles("/assets", packr.NewBox("../public/assets"))
+		app.ServeFiles("/assets", assetBox)
 		app.Redirect(302, "/", "/docs/getting-started")
 	}
 	return app

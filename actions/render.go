@@ -10,6 +10,7 @@ import (
 )
 
 var r *render.Engine
+var assetBox = packr.NewBox("../public/assets")
 
 func init() {
 	r = render.New(render.Options{
@@ -23,6 +24,7 @@ func init() {
 			"codeTabs": helpers.CodeTabs,
 		},
 		TemplatesBox: packr.NewBox("../templates"),
+		AssetsBox:    assetBox,
 	})
 }
 

@@ -33,6 +33,18 @@ None of the installed packages are required, and may be removed. They are includ
 
 Any assets placed in the `/assets` folder will be copied to the "distribution" automatically, and can be found at `/assets/path/to/asset`.
 
+<%= title("Asset Fingerprinting") %>
+
+In `v0.9.5` asset fingerprinting was introduced to the default Webpack configuration for new applications. Asset fingerprinting works by generating a hash of the file contents and appending it to the name of the file. So, for example, `application.js` might be come `application.a8adff90f4c6d47529c4.js`. The benefit of this is that it allows for assets to be cached but still allow for that cache to be broken when a change has been made to the contents of this file.
+
+By default new applications are setup to fingerprint only JavaScript and CSS files.
+
+<%= title("Asset Helpers") %>
+
+With the introduction of asset fingerprinting in `v0.9.5` it became difficult to find asset files because the name of the file kept changing. To help with this, three new helpers were introduced.
+
+1. `assetPath` - This helper will return the
+
 <%= title("Building Assets in Development") %>
 
 The `buffalo dev` command, in addition to watching and rebuilding the application's Go binary, will watch, and rebuild the asset pipeline as well. Nothing special needs to be run.

@@ -37,13 +37,17 @@ Any assets placed in the `/assets` folder will be copied to the "distribution" a
 
 In `v0.9.5` asset fingerprinting was introduced to the default Webpack configuration for new applications. Asset fingerprinting works by generating a hash of the file contents and appending it to the name of the file. So, for example, `application.js` might be come `application.a8adff90f4c6d47529c4.js`. The benefit of this is that it allows for assets to be cached but still allow for that cache to be broken when a change has been made to the contents of this file.
 
+**NOTE:** Applications written before `v0.9.5` may need to set an `AssetsBox` in their `actions/render.go` file in the `render.Options`, if assets are not rendering properly. It is recommended to move the one from the `actions/app.go` file into there instead. This will not setup asset finger printing, but will make sure the assets render correctly. See changes [https://github.com/gobuffalo/gobuffalo/commit/00673ab3446a9a7209bbd243e4594bd679c81a69#diff-c1ebdbddf205da1687721a8acd29043cR43](https://github.com/gobuffalo/gobuffalo/commit/00673ab3446a9a7209bbd243e4594bd679c81a69#diff-c1ebdbddf205da1687721a8acd29043cR43) and [https://github.com/gobuffalo/gobuffalo/commit/00673ab3446a9a7209bbd243e4594bd679c81a69#diff-25015af78e14806bd828e39a29a403fbR13](https://github.com/gobuffalo/gobuffalo/commit/00673ab3446a9a7209bbd243e4594bd679c81a69#diff-25015af78e14806bd828e39a29a403fbR13) for examples.
+
 By default new applications are setup to fingerprint only JavaScript and CSS files.
 
 <%= title("Asset Helpers") %>
 
 With the introduction of asset fingerprinting in `v0.9.5` it became difficult to find asset files because the name of the file kept changing. To help with this, three new helpers were introduced.
 
-1. `assetPath` - This helper will return the
+1. `assetPath` - This helper will return the path of the requested asset. For example, `&lt;%= assetPath("application.js") %>` would return something like `/assets/application.a8adff90f4c6d47529c4.js`.
+1. `javscriptTag` - This helper will generate a `&lt;script src="xxx">&lt;/script>` style tag for the requested JavaScript file. Example: `&lt;%= javscriptTag("application.js") %>` would return something like `&lt;script src="/assets/application.bd76587ded82386f388f.js" type="text/javascript">&lt;/script>`
+1. `stylesheetTag` - This helper will generate a `&lt;link href="xxx">` style tag for the requested CSS file. Example: `&lt;%= stylesheetTag("application.css") %>` would return something like `&lt;link href="/assets/application.bd76587ded82386f388f.css" media="screen" rel="stylesheet" />`
 
 <%= title("Building Assets in Development") %>
 

@@ -1,5 +1,5 @@
 require("expose-loader?$!expose-loader?jQuery!jquery");
-require("bootstrap/dist/js/bootstrap.js");
+require("bootstrap-sass/assets/javascripts/bootstrap.js");
 require("./theme.js");
 require("expose-loader?Clipboard!./clipboard.min.js");
 
@@ -36,7 +36,7 @@ let activateSideNav = () => {
 };
 
 $(() => {
-  $("a").each((_, a) => {
+  $("a[href]").each((_, a) => {
     let $a = $(a);
     let href = $a.attr("href");
     if (href.startsWith("http")) {

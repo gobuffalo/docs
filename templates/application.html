@@ -11,7 +11,7 @@
   <title>Buffalo - Rapid Web Development in Go <%= if (pageTitle) { %> - <%= pageTitle %> <% } %></title>
 
   <!-- Styles -->
-  <link href="/assets/application.css" rel="stylesheet">
+  <%= stylesheetTag("application.css") %>
 
   <!-- Fonts -->
   <link href='http://fonts.googleapis.com/css?family=Raleway:100,300,400,500%7CLato:300,400' rel='stylesheet' type='text/css'>
@@ -79,7 +79,7 @@
 
 
     <!-- Scripts -->
-    <script src="/assets/application.js"></script>
+    <%= javascriptTag("application.js") %>
 
     <script>
       (function(i, s, o, g, r, a, m) {

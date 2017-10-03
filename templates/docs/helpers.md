@@ -23,6 +23,7 @@ Listed below are a few of the helpers that ship with Plush. Please see the Plush
 * `groupBy` - splits a slice or array into `n` groups
 * `env` - returns the ENV variable for the specified key
 * `truncate` - truncates a string to a specified length
+* `raw` - converts a string to `template.HTML`
 * `form` - support for the [github.com/gobuffalo/tags/form](https://github.com/gobuffalo/tags/tree/master/form) package (Bootstrap version)
 * `form_for` - support for the [github.com/gobuffalo/tags/form](https://github.com/gobuffalo/tags/tree/master/form) package (Bootstrap version) to build a form for a model
 

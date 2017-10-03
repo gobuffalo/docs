@@ -1,27 +1,26 @@
 var webpack = require("webpack");
 var CopyWebpackPlugin = require("copy-webpack-plugin");
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var ManifestPlugin = require("webpack-manifest-plugin");
 
 module.exports = {
-  entry: [
-    "./assets/js/application.js",
-    "./assets/css/application.scss",
-    "./node_modules/jquery-ujs/src/rails.js",
-    "./node_modules/highlightjs/highlight.pack.min.js"
-  ],
+  entry: {
+    application: [
+      "./assets/js/application.js",
+      "./node_modules/jquery-ujs/src/rails.js",
+      "./assets/css/application.scss"
+    ]
+  },
   output: {
-    filename: "application.js",
+    filename: "[name].[hash].js",
     path: `${__dirname}/public/assets`
   },
   plugins: [
     new webpack.ProvidePlugin({
-      hljs: "hljs"
-    }),
-    new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery"
     }),
-    new ExtractTextPlugin("application.css"),
+    new ExtractTextPlugin("[name].[hash].css"),
     new CopyWebpackPlugin(
       [
         {
@@ -32,16 +31,20 @@ module.exports = {
       {
         ignore: ["css/*", "js/*"]
       }
-    )
+    ),
+    new webpack.LoaderOptionsPlugin({
+      minimize: true,
+      debug: false
+    }),
+    new ManifestPlugin({
+      fileName: "manifest.json"
+    })
   ],
   module: {
     rules: [
       {
         test: /\.jsx?$/,
         loader: "babel-loader",
-        options: {
-          presets: ["env"]
-        },
         exclude: /node_modules/
       },
       {
@@ -51,15 +54,11 @@ module.exports = {
           use: [
             {
               loader: "css-loader",
-              options: {
-                sourceMap: true
-              }
+              options: {sourceMap: true}
             },
             {
               loader: "sass-loader",
-              options: {
-                sourceMap: true
-              }
+              options: {sourceMap: true}
             }
           ]
         })

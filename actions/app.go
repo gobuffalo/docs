@@ -18,7 +18,7 @@ var app *buffalo.App
 // application.
 func App() *buffalo.App {
 	if app == nil {
-		app = buffalo.Automatic(buffalo.Options{
+		app = buffalo.New(buffalo.Options{
 			SessionName:  "_gobuffalo_session",
 			Env:          ENV,
 			SessionStore: sessions.Null{},

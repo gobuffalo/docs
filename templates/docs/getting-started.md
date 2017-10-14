@@ -1,7 +1,5 @@
 <%= h1("Getting Started") %>
 
-<%= partial("docs/youtube.html") %>
-
 <%= title("Installation") %>
 
 Before installing make sure you have the required dependencies installed:

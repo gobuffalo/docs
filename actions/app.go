@@ -41,7 +41,7 @@ func App() *buffalo.App {
 		app.GET("/docs/{name:.+}", Docs)
 
 		app.ServeFiles("/assets", assetBox)
-		app.Redirect(302, "/", "/docs/getting-started")
+		app.Redirect(302, "/", "/docs/overview")
 	}
 	return app
 }

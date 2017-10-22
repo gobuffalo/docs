@@ -22,3 +22,11 @@ h2 {
   line-height: 48px;
 }
 
+.info {
+	@extend .alert;
+	@extend .alert-info;
+
+	i.fa {
+		margin-right: 1em;
+	}
+}

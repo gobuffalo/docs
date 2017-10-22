@@ -1,6 +1,6 @@
 # Building
 
-As explained in the [Getting started](/docs/getting-started) section, you can use the `build` command to build a full binary of your application:
+As explained in the [Generating a New Project](/docs/new-project) section, you can use the `build` command to build a full binary of your application:
 
 ```bash
 $ buffalo build

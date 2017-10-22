@@ -1,24 +1,6 @@
-<%= h1("Getting Started") %>
+<%= h1("Generating a New Project") %>
 
-<%= title("Installation") %>
-
-Before installing make sure you have the required dependencies installed:
-
-* [Guide to Setting a Go Developer Environment](http://gopherguides.com/before-you-come-to-class)
-* [Go](https://golang.org) version `1.8.1` or greater.
-* GCC, or equivalent C compiler for [mattn/go-sqlite3](https://github.com/mattn/go-sqlite3).
-* [OPTIONAL] [node](https://github.com/nodejs/node) and [npm](https://github.com/npm/npm) for the [asset pipeline](/docs/assets) built upon [webpack](https://github.com/webpack/webpack).
-
-### Basic Installation:
-
-These instructions can also be used for upgrading to a newer version of Buffalo.
-
-```bash
-$ go get -u -v github.com/gobuffalo/buffalo/...
-$ go install -v github.com/gobuffalo/buffalo/buffalo
-```
-
-<%= title("Generating a New Project") %>
+<%= title("Create a new project") %>
 
 Buffalo aims to make building new web applications in Go as quick and simple as possible, and what could be more simple than a *new application* generator? Start by going to your `$GOPATH` and create your new application!
 
@@ -30,7 +12,7 @@ $ buffalo new <name>
 
 That will generate a whole new Buffalo application that is ready to go. It'll even run `go get` for you to make sure you have all of the necessary dependencies needed to run your application.
 
-<%= partial("docs/getting-started/new.md") %>
+<%= partial("docs/new-project/new.md") %>
 
 To see a list of available flags for the `new` command, just check out its help.
 

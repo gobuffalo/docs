@@ -33,4 +33,6 @@ Then, install the `buffalo` tool:
 $ go install -v github.com/gobuffalo/buffalo/buffalo
 ```
 
-<%= note("These instructions can also be used for upgrading to a newer version of Buffalo.") %>
+<%= note() { %>
+These instructions can also be used for upgrading to a newer version of Buffalo.
+<% } %>

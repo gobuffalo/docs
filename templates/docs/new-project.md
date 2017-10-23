@@ -1,23 +1,41 @@
 <%= h1("Generating a New Project") %>
 
+You now have a working Buffalo installation. In this section, you will learn how to create **a brand new web application**, using the `buffalo` command. 
+
 <%= title("Create a new project") %>
 
-Buffalo aims to make building new web applications in Go as quick and simple as possible, and what could be more simple than a *new application* generator? Start by going to your `$GOPATH` and create your new application!
+Buffalo aims to make building new web applications in Go as **quick and simple** as possible. What could be more simple than a *new application* generator?
+
+Start by going to your `$GOPATH` and create your new application!
 
 ```bash
 $ cd $GOPATH/src/github.com/$USER/
-$ # Make sure $GOPATH/bin is in your $PATH, then:
-$ buffalo new <name>
 ```
 
-That will generate a whole new Buffalo application that is ready to go. It'll even run `go get` for you to make sure you have all of the necessary dependencies needed to run your application.
+Make sure $GOPATH/bin is in your $PATH, then:
+
+```bash
+$ buffalo new coke
+```
+
+That will generate a whole new Buffalo application called **coke**, all ready to go:
+* the **buffalo framework layout** and default configuration ([pop/soda](https://github.com/markbates/pop) with PostgreSQL support),
+* all necessary **Go dependencies** needed to run the current application,
+* **frontend dependencies** and working setup with [webpack](https://webpack.js.org/)
+* and an initial **Git repository**.
 
 <%= partial("docs/new-project/new.md") %>
 
-To see a list of available flags for the `new` command, just check out its help.
+<%= title("Create a customized app") %>
+
+The default setup is great, but maybe it doesn't fit you. Buffalo provides several options as flags for the `new` command.
+
+You can get the available flags list using the `help` command: 
 
 ```bash
 $ buffalo help new
+Buffalo version v0.9.5
+
 Creates a new Buffalo application
 
 Usage:
@@ -33,21 +51,11 @@ Flags:
       --skip-pop             skips adding pop/soda to your app
       --skip-webpack         skips adding Webpack to your app
       --skip-yarn            skip to use npm as the asset package manager
-  -v, --verbose              verbosely print out the go get/install commands
+  -v, --verbose              verbosely print out the go get commands
       --with-dep             adds github.com/golang/dep to your app
 ```
 
-Note: by default, Buffalo generates a database.yml targeted for PostgreSQL. If you wish to change this behavior, you can pass in a `--db-type` flag into the `new` command.
-
-```bash
-$ buffalo new coke --db-type sqlite3
-```
-
-If your app doesn't need a database, or if you want to handle it by yourself, you can use the `--skip-pop` flag.
-
-```bash
-$ buffalo new coke --skip-pop
-```
+You can choose to generate an API application, skipping the frontend stuff. Maybe you want to setup a CI to build your app on your favourite system? Or even use your own package to handle the database? Just use the flags!
 
 <%= partial("docs/dev.md") %>
 

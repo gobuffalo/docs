@@ -18,9 +18,7 @@ func init() {
 		Helpers: render.Helpers{
 			"h1":    helpers.H1,
 			"title": helpers.SectionTitle,
-			"note":  func(contents string) template.HTML {
-				return template.HTML(fmt.Sprintf(note, contents))
-			},
+			"note":  helpers.Note,
 			"vimeo": func(code string) template.HTML {
 				return template.HTML(fmt.Sprintf(vimeo, code))
 			},
@@ -34,5 +32,3 @@ func init() {
 const vimeo = `<div class="video">
 <iframe src="https://player.vimeo.com/video/%s?portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 </div>`
-
-const note = `<div class="info"><i class="fa fa-info-circle" aria-hidden="true"></i>%s</h1>`

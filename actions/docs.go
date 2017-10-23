@@ -7,6 +7,7 @@ import (
 	"github.com/pkg/errors"
 )
 
+// Docs serves documentation pages
 func Docs(c buffalo.Context) error {
 	for _, ext := range []string{"md", "html"} {
 		f := fmt.Sprintf("docs/%s.%s", c.Param("name"), ext)

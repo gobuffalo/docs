@@ -58,29 +58,3 @@ Flags:
 You can choose to generate an API application, skipping the frontend stuff. Maybe you want to setup a CI to build your app on your favourite system? Or even use your own package to handle the database? Just use the flags!
 
 <%= partial("docs/dev.md") %>
-
-<%= title("Building Your Application", {name: "building"}) %>
-
-Buffalo features a command, `build`, that will build a full binary of your application including, but not limited to; assets, migrations, templates, etc... If you buy into the "Buffalo Way" things just work. It's a wonderful experience. :)
-
-```bash
-$ buffalo build
-```
-
-```bash
-Buffalo version <%= version %>
-
---> cleaning up target dir
---> running node_modules/.bin/webpack
---> packing .../coke/actions/actions-packr.go
---> running go build -v -o bin/gobuffalo -ldflags -X main.version=b5dffda -X main.buildTime="2017-03-20T11:05:23-04:00"
---> cleaning up build
-----> cleaning up buffalo_build_main.go
-----> cleaning up a
-----> cleaning up a/a.go
-----> cleaning up a/database.go
-----> cleaning up buffalo_build_main.go
-----> cleaning up ...coke/actions/actions-packr.go
-```
-
-See [Building](/docs/building) for more options on the `build` command.

@@ -1,12 +1,18 @@
-# Building
+<%= h1("Building Your App") %>
 
-As explained in the [Generating a New Project](/docs/new-project) section, you can use the `build` command to build a full binary of your application:
+Now, your project is ready to be deployed. In this section, you will learn how to package a version of your app to deploy it on a server.
+
+<%= title("The build command") %>
+
+Buffalo features a command, `build`, that will build a **full binary** of your application including, but not limited to; assets, migrations, templates, etc. If you buy into the “Buffalo Way”, things just work. It's a wonderful experience. :)
 
 ```bash
 $ buffalo build
 ```
 
 ```bash
+Buffalo version <%= version %>
+
 --> cleaning up target dir
 --> running node_modules/.bin/webpack
 --> packing .../coke/actions/actions-packr.go
@@ -20,9 +26,38 @@ $ buffalo build
 ----> cleaning up ...coke/actions/actions-packr.go
 ```
 
-Binaries contain, by default, all of the assets, templates, and migrations used by your application. Binaries will also have the time and the git commit SHA burnt in, thus making the binaries "versioned".
+When the build finish, you have a fresh baked binary in the `bin` folder. It will also have the **compilation time** and the **git commit SHA** burnt in, thus making the binaries “versioned”.
 
-<%= title("Define a Custom Binary Name", {name: "custom-bin-name"}) %>
+<%= title("Customize the build") %>
+
+To get the list of available options, use the help command:
+
+```bash
+$ buffalo help build
+```
+
+```bash
+Buffalo version v0.9.5
+
+Builds a Buffalo binary, including bundling of assets (packr & webpack)
+
+Usage:
+  buffalo build [flags]
+
+Aliases:
+  build, b, bill
+
+Flags:
+  -c, --compress         compress static files in the binary (default true)
+  -e, --extract-assets   extract the assets and put them in a distinct archive
+  -h, --help             help for build
+      --ldflags string   set any ldflags to be passed to the go build
+  -o, --output string    set the name of the binary (default "bin/coke")
+  -s, --static           build a static binary using  --ldflags '-linkmode external -extldflags "-static"' (USE FOR CGO)
+  -t, --tags string      compile with specific build tags
+```
+
+### Binary name / location
 
 By default, your application will be built in the `bin` directory of your project, and the name of the executable will be the name you used to create the project with the `new` command.
 
@@ -67,7 +102,7 @@ $ buffalo build -o ~/coke
 ----> cleaning up ...coke/actions/actions-packr.go
 ```
 
-<%= title("Extract Assets in a Zip File", {name: "extract-assets"}) %>
+### Extract Assets in a Zip File
 
 By default, your whole app is packed into a single executable, assets included. In production setups, you may want to serve these assets with a proxy server (like Apache or NGINX), to lower the app load. You may even use a *CDN* to handle your assets.
 
@@ -108,29 +143,42 @@ drwxr-xr-x@ 20 markbates  staff   680B Apr  3 10:10 ../
 -rw-r--r--@  1 markbates  staff   691K Apr  3 10:10 coke-assets.zip
 ```
 
-<%= title("Building \"Static\"/CGO Binaries") %>
+<%= title("Advanced Options") %>
 
-Building statically linked binaries that contain CGO, think SQLite3, can be tricky. By using the `--static` flag with `buffalo build` the flags `--ldflags '-linkmode external -extldflags "-static"'` will be added to the `go build` command.
+### Building “Static”/CGO Binaries
+
+Building statically linked binaries that contain CGO, think SQLite3, can be tricky. By using the `--static` flag with `buffalo build`, the flags `--ldflags '-linkmode external -extldflags "-static"'` will be added to the `go build` command.
+
+### Build Tags
+
+When building a Buffalo binary using the `buffalo build` command, you can pass `--tags` and `--ldflags` to the built binary; just as you normally would when using the `go build` tools.
+
+```bash
+$ buffalo build --tags="mytag" --ldflags="-X foo.Bar=baz"
+```
 
 <%= title("Binary Commands") %>
 
+### Modes
 Binaries, by default, run in `development` mode, which means all of the sub-commands will run in that mode as well. To change the mode, you must use the `GO_ENV` environment variable.
 
 ```bash
 $ GO_ENV=production ./coke
 ```
 
-Once a binary has been built there are several sub-commands that can be run on that binary.
+### Available commands
 
-### Default
+Once a binary has been built, there are several sub-commands that can be run on that binary:
+
+#### Default
 
 The default command, if you just run the binary, will start the application.
 
-### migrate
+#### migrate
 
 The `migrate` sub-command will run the migrations for the application.
 
-### version
+#### version
 
 The `version` sub-command will output the version information for the binary, including the name, the git commit SHA used to build the binary, and the time the binary was built.
 
@@ -139,7 +187,7 @@ $ ./coke version
 coke version 69b6a8b ("2017-04-03T10:19:46-04:00")
 ```
 
-### task
+#### task
 
 The `task` sub-command runs tasks.
 
@@ -147,12 +195,4 @@ The `task` sub-command runs tasks.
 $ ./coke task greet
 
 Hello World!
-```
-
-<%= title("Build Tags") %>
-
-When building a Buffalo binary using the `buffalo build` command you can pass `--tags` and `--ldflags` to the built binary, just as you normally would when using the `go build` tools.
-
-```bash
-$ buffalo build --tags="mytag" --ldflags="-X foo.Bar=baz"
 ```

@@ -29,7 +29,7 @@
   branch = "master"
   name = "github.com/dustin/go-humanize"
   packages = ["."]
-  revision = "79e699ccd02f240a1f1fbbdcee7e64c1c12e41aa"
+  revision = "77ed807830b4df581417e7f89eb81d4872832b72"
 
 [[projects]]
   name = "github.com/fatih/color"
@@ -59,31 +59,31 @@
   branch = "development"
   name = "github.com/gobuffalo/buffalo"
   packages = [".","binding","middleware/ssl","render","worker"]
-  revision = "a613344492c0c766213df368faaf7071c08184a7"
+  revision = "9065e3b09a50ab7f4578cefcb86e25c8bf82dc5c"
 
 [[projects]]
   name = "github.com/gobuffalo/envy"
   packages = ["."]
-  revision = "45f72f3354744cdffc3102233f6640b4ffbeb21f"
-  version = "v1.1.0"
+  revision = "e613c80275b86293880eddeb27417c9a7c670ff3"
+  version = "v1.3.0"
 
 [[projects]]
   name = "github.com/gobuffalo/packr"
   packages = ["."]
-  revision = "c85ed0408ef17eb9f3e7a2f31959f7b7f8ea7801"
-  version = "v1.6.0"
+  revision = "65f7ad7a577d5fa0bf13be7ccf3cb143fef7bf9c"
+  version = "v1.8.0"
 
 [[projects]]
   name = "github.com/gobuffalo/plush"
   packages = [".","ast","lexer","parser","token"]
-  revision = "25f3d421c89d570f7f92b9fec3cd371f2927e2bb"
-  version = "v2.1.0"
+  revision = "5b3235c7eea93d6457153183f20892677d20f319"
+  version = "v2.3.0"
 
 [[projects]]
   name = "github.com/gobuffalo/tags"
   packages = [".","form","form/bootstrap"]
-  revision = "89ea35a9524f8f13edfe1aeaae0353b612c411fd"
-  version = "v1.3.0"
+  revision = "6755de03970f68812cfb0cb1162a66e60bcc1106"
+  version = "v1.4.0"
 
 [[projects]]
   branch = "master"
@@ -125,7 +125,7 @@
   branch = "master"
   name = "github.com/jmoiron/sqlx"
   packages = [".","reflectx"]
-  revision = "d9bd385d68c068f1fabb5057e3dedcbcbb039d0f"
+  revision = "3379e5993990b1f927fc8db926485e6f6becf2d2"
 
 [[projects]]
   name = "github.com/joho/godotenv"
@@ -137,7 +137,7 @@
   branch = "master"
   name = "github.com/lib/pq"
   packages = [".","oid"]
-  revision = "b77235e3890a962fe8a6f8c4c7198679ca7814e7"
+  revision = "b609790bd85edf8e9ab7e0f8912750a786177bcf"
 
 [[projects]]
   branch = "master"
@@ -166,8 +166,8 @@
 [[projects]]
   name = "github.com/markbates/pop"
   packages = [".","columns","fizz","fizz/translators","nulls"]
-  revision = "7f9ebc575b48af40163fd7b4e7ae4006bc672d01"
-  version = "v3.38.0"
+  revision = "9f77e19c929eda4c13f525296fe751a90de86619"
+  version = "v3.39.4"
 
 [[projects]]
   name = "github.com/markbates/refresh"
@@ -197,7 +197,7 @@
   branch = "master"
   name = "github.com/mattn/anko"
   packages = ["ast","builtins","builtins/encoding/json","builtins/errors","builtins/flag","builtins/fmt","builtins/github.com/daviddengcn/go-colortext","builtins/io","builtins/io/ioutil","builtins/math","builtins/math/big","builtins/math/rand","builtins/net","builtins/net/http","builtins/net/url","builtins/os","builtins/os/exec","builtins/os/signal","builtins/path","builtins/path/filepath","builtins/regexp","builtins/runtime","builtins/sort","builtins/strings","builtins/time","parser","vm"]
-  revision = "a3969c63681391ec413427cae813d6d59d6031f1"
+  revision = "bf712b6e107a9b753831362cb5c68f116dbe578a"
 
 [[projects]]
   name = "github.com/mattn/go-colorable"
@@ -214,8 +214,8 @@
 [[projects]]
   name = "github.com/mattn/go-sqlite3"
   packages = ["."]
-  revision = "ca5e3819723d8eeaf170ad510e7da1d6d2e94a08"
-  version = "v1.2.0"
+  revision = "5160b48509cf5c877bc22c11c373f8c7738cdb38"
+  version = "v1.3.0"
 
 [[projects]]
   branch = "master"
@@ -248,10 +248,10 @@
   version = "v1.0.0"
 
 [[projects]]
+  branch = "master"
   name = "github.com/russross/blackfriday"
   packages = ["."]
-  revision = "4048872b16cc0fc2c5fd9eacf0ed2c2fedaa0c8c"
-  version = "v1.5"
+  revision = "6d1ef893fcb01b4f50cb6e57ed7df3e2e627b6b2"
 
 [[projects]]
   name = "github.com/satori/go.uuid"
@@ -353,13 +353,13 @@
   branch = "master"
   name = "golang.org/x/crypto"
   packages = ["bcrypt","blowfish","ssh/terminal"]
-  revision = "9419663f5a44be8b34ca85f08abc5fe1be11f8a3"
+  revision = "2509b142fb2b797aa7587dad548f113b2c0f20ce"
 
 [[projects]]
   branch = "master"
   name = "golang.org/x/net"
   packages = ["context","html","html/atom"]
-  revision = "0a9397675ba34b2845f758fe3cd68828369c6517"
+  revision = "4b14673ba32bee7f5ac0f990a48f033919fd418b"
 
 [[projects]]
   branch = "master"
@@ -371,7 +371,7 @@
   branch = "master"
   name = "golang.org/x/sys"
   packages = ["unix","windows"]
-  revision = "314a259e304ff91bd6985da2a7149bbf91237993"
+  revision = "92ac112afc6efd90284acda2b046fc0e351228f6"
 
 [[projects]]
   branch = "v2"

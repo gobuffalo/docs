@@ -18,7 +18,7 @@ This directory handles the **Controller** part of the MVC pattern. It contains t
 ### assets
 
 <%= note() { %>
-This directory is optional. If don't need to use a frontend setup (API only, for instance), it can be removed.
+This directory is optional. If you don't need to use a frontend setup (API only, for instance), it can be removed.
 <% } %>
 
 This directory contains **raw** assets which will be compiled/compressed & put in the [`public`](#public) directory.
@@ -46,7 +46,7 @@ If you use pop/soda with the integrated generator, it will generate the model fi
 <% } %>
 
 <%= note() { %>
-This directory is optional. If don't need to use a database, it can be removed.
+This directory is optional. If you don't need to use a database, it can be removed.
 <% } %>
 
 This directory handles the **Model** part of the MVC pattern. It contains the models.go file to initialize the datasource connection, and the model files to refect objects from the datasource.
@@ -62,7 +62,7 @@ This directory contains the public (compiled/compressed) assets. If you use webp
 ### templates
 
 <%= note() { %>
-This directory is optional. If don't need to use a frontend setup (API only, for instance), it can be removed.
+This directory is optional. If you don't need to use a frontend setup (API only, for instance), it can be removed.
 <% } %>
 
 This directory handles the **View** part of the MVC pattern. It contains the project templates, used to render the views.
@@ -78,7 +78,7 @@ This directory is used by the `buffalo dev` command to rebuild your project on e
 ### database.yml
 
 <%= note() { %>
-This file is optional. If don't need a database, or if you want to handle the database without pop/soda, you can remove it.
+This file is optional. If you don't need a database, or if you want to handle the database without pop/soda, you can remove it.
 <% } %>
 
 This file contains the database configuration for [pop/soda](https://github.com/markbates/pop).

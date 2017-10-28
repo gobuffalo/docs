@@ -64,9 +64,9 @@ You can use `T` from within actions:
 func MyActionHandler(c buffalo.Context) error {
   msg, err := T.Translate(c, "greetings")
   if err != nil {
-	  return err
-	}
-	c.Flash().Add("info", msg)
-	return c.Render(200, r.HTML("action.html"))
+    return err
+  }
+  c.Flash().Add("info", msg)
+  return c.Render(200, r.HTML("action.html"))
 }
 ```

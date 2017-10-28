@@ -54,3 +54,19 @@ app.Use(T.Middleware())
 ```
 
 Changing `"en-US"` to another language code will change the default language.
+
+
+<%= title("Translate strings in actions") %>
+
+You can use `T` from within actions:
+
+```go
+func MyActionHandler(c buffalo.Context) error {
+  msg, err := T.Translate(c, "greetings")
+  if err != nil {
+    return err
+  }
+  c.Flash().Add("info", msg)
+  return c.Render(200, r.HTML("action.html"))
+}
+```

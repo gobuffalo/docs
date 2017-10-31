@@ -28,9 +28,33 @@ production:
 
 **CONFIGURE THIS FILE!**
 
-Make sure to set up the appropriate usernames, passwords, hosts, etc... that are appropriate for the environment that will be running the application. Buffalo **does not** create these databases, or start up any services for you.
+Make sure to set up the appropriate usernames, passwords, hosts, etc... that are appropriate for the environment that will be running the application. Buffalo **does not** install these databases, or start up any services for you. If the database is running on a different port, you can add it to the default configuration file as `port: [port]`.
 
-In the generated `database.yml` file there is a template helper, `envOr`, that will attempt to find the the ENV var with that name, in this case `DATABASE_URL`, if that ENV does not exist, it will load the "default" string.
+For example, if the development database is running on Docker using a random port `32768`, the configuration would be as follows: 
+
+```yaml
+development:
+  dialect: postgres
+  database: myapp_development
+  user: postgres
+  password: postgres
+  host: 127.0.0.1
+  port: 32768
+  pool: 5
+
+test:
+  url: {{envOr "TEST_DATABASE_URL" "postgres://postgres:postgres@127.0.0.1:5432/myapp_test"}}
+
+production:
+  url: {{envOr "DATABASE_URL" "postgres://postgres:postgres@127.0.0.1:5432/myapp_production"}}
+```
+
+Note that the `database.yml` file is also a Go template, so you can use Go template syntax. There are two special functions that are included, `env` and `envOr`.
+
+The generated `database.yml` file contains a template helper, `envOr`, used to define the URL for the test and production databases. It will attempt to find the corresponding ENV var, for example `DATABASE_URL` for production, if that ENV var does not exist, it will load the "default" string.
+
+For additional details, check the documentation for [github.com/markbates/pop](https://github.com/markbates/pop).
+
 
 <%= title("Creating Databases") %>
 

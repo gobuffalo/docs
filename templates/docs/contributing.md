@@ -2,6 +2,8 @@
 
 The Buffalo team needs, and wants your help! We're doing our best to make the world a better place for Go web development, but we can't do it alone.
 
+If you want to contribute, please read this article first: [Contributing to Open Source Git Repositories in Go](https://splice.com/blog/contributing-open-source-git-repositories-go/). It shows how to configure your `git` environment to avoid common pitfalls. This article is recommended to all those who are looking to contribute to any Go projects.
+
 <%= title("The Buffalo Project") %>
 
 [https://github.com/gobuffalo/buffalo](https://github.com/gobuffalo/buffalo)

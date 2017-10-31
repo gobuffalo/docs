@@ -31,5 +31,5 @@ $ buffalo db destroy model [name]
 Or in short form:
 
 ```bash
-$ buffalo d m [name]
+$ buffalo db d m [name]
 ```

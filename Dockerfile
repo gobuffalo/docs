@@ -1,18 +1,25 @@
-FROM gobuffalo/buffalo:development
+# https://devcenter.heroku.com/articles/container-registry-and-runtime
+FROM gobuffalo/buffalo:development as builder
+ENV BP=$GOPATH/src/github.com/gobuffalo/gobuffalo
 
-RUN mkdir -p $GOPATH/src/github.com/gobuffalo/gobuffalo
-WORKDIR $GOPATH/src/github.com/gobuffalo/gobuffalo
+RUN mkdir -p $BP
+WORKDIR $BP
 
-# this will cache the npm install step, unless package.json changes
 ADD package.json .
 ADD yarn.lock .
-RUN yarn install --no-progress
+RUN yarn install
+
 ADD . .
-RUN dep ensure -v
+
 RUN buffalo build --static -o /bin/app
+
+FROM alpine
+RUN apk add --no-cache bash
+
+WORKDIR /bin/
+
+COPY --from=builder /bin/app .
 
 EXPOSE 3000
 
-# Comment out to run the migrations before running the binary:
-# CMD /bin/app migrate; /bin/app
-CMD exec /bin/app
+CMD /bin/app

@@ -7,17 +7,18 @@ Before installing make sure you have the required dependencies installed:
 * [Guide to Setting a Go Developer Environment](http://gopherguides.com/before-you-come-to-class)
 * [Go](https://golang.org) version `1.8.1` or greater.
 
-##### Frontend requirements
+##### Frontend Requirements
 
 * [node](https://github.com/nodejs/node) and [npm](https://github.com/npm/npm) for the [asset pipeline](/docs/assets) built upon [webpack](https://github.com/webpack/webpack).
 
-##### Database specific requirements
+##### Database Specific Requirements
 
 * **SQLite 3**: GCC, or equivalent C compiler for [mattn/go-sqlite3](https://github.com/mattn/go-sqlite3).
 
 <%= title("Basic Installation") %>
 
 Buffalo provides **two major components**:
+
 * The `buffalo` tool, a powerful toolbox to help you develop in a fast and efficient way.
 * The buffalo framework, a collection of pieces to construct your app.
 

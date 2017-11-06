@@ -11,11 +11,11 @@ Before installing make sure you have the required dependencies installed:
 * [Guide to Setting a Go Developer Environment](http://gopherguides.com/before-you-come-to-class)
 * [Go](https://golang.org) version `<%= goMinVersion %>` or greater.
 
-##### Frontend requirements
+##### Frontend Requirements
 
 * [node](https://github.com/nodejs/node) and [npm](https://github.com/npm/npm) for the [asset pipeline](/docs/assets) built upon [webpack](https://github.com/webpack/webpack).
 
-##### Database specific requirements
+##### Database Specific Requirements
 
 * **SQLite 3**: GCC, or equivalent C compiler for [mattn/go-sqlite3](https://github.com/mattn/go-sqlite3).
 

@@ -1,0 +1,17 @@
+sudo: required
+
+services:
+  - docker
+
+install: false
+
+go:
+  - 1.8
+
+script:
+  - docker build .
+
+deploy:
+  - docker login --username=_ --password=$HEROKU_TOKEN registry.heroku.com
+  - docker build -t registry.heroku.com/getbuffalo/web .
+  - docker push registry.heroku.com/getbuffalo/web

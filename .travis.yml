@@ -15,9 +15,13 @@ go:
 script:
   - docker build .
 
+# after_success:
+#   - if [ "$TRAVIS_BRANCH" == "master" ]; then
+#       docker login --username=_ --password=$HEROKU_TOKEN registry.heroku.com
+#       docker build -t registry.heroku.com/getbuffalo/web .
+#       docker push registry.heroku.com/getbuffalo/web
+#     fi
 after_success:
-  - if [ "$TRAVIS_BRANCH" == "master" ]; then
-      docker login --username=_ --password=$HEROKU_TOKEN registry.heroku.com
-      docker build -t registry.heroku.com/getbuffalo/web .
-      docker push registry.heroku.com/getbuffalo/web
-    fi
+  - docker login --username=_ --password=$HEROKU_TOKEN registry.heroku.com
+  - docker build -t registry.heroku.com/getbuffalo/web .
+  - docker push registry.heroku.com/getbuffalo/web

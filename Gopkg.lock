@@ -29,7 +29,7 @@
   branch = "master"
   name = "github.com/dustin/go-humanize"
   packages = ["."]
-  revision = "77ed807830b4df581417e7f89eb81d4872832b72"
+  revision = "6d15c0ae71e55ed645c21ac4945aaadbc0e9a590"
 
 [[projects]]
   name = "github.com/fatih/color"
@@ -59,7 +59,7 @@
   branch = "development"
   name = "github.com/gobuffalo/buffalo"
   packages = [".","binding","middleware/ssl","render","worker"]
-  revision = "9065e3b09a50ab7f4578cefcb86e25c8bf82dc5c"
+  revision = "83e26bb6b2422abfdf2b5e2b9829c17bedae0605"
 
 [[projects]]
   name = "github.com/gobuffalo/envy"
@@ -70,14 +70,14 @@
 [[projects]]
   name = "github.com/gobuffalo/packr"
   packages = ["."]
-  revision = "65f7ad7a577d5fa0bf13be7ccf3cb143fef7bf9c"
-  version = "v1.8.0"
+  revision = "aa752c1e501ca862dbb5720ff7c58b9289e68683"
+  version = "v1.9.0"
 
 [[projects]]
   name = "github.com/gobuffalo/plush"
   packages = [".","ast","lexer","parser","token"]
-  revision = "5b3235c7eea93d6457153183f20892677d20f319"
-  version = "v2.3.0"
+  revision = "7df6c6624e74b78e595d9500ab1acf810cdf7af1"
+  version = "v3.0.4"
 
 [[projects]]
   name = "github.com/gobuffalo/tags"
@@ -161,13 +161,13 @@
   branch = "master"
   name = "github.com/markbates/inflect"
   packages = ["."]
-  revision = "ea17041f342f81e8849284b87bc3db1a6fc596bb"
+  revision = "58d1522c71c1cd3676efba74a2922da9b92c2bcc"
 
 [[projects]]
   name = "github.com/markbates/pop"
   packages = [".","columns","fizz","fizz/translators","nulls"]
-  revision = "9f77e19c929eda4c13f525296fe751a90de86619"
-  version = "v3.39.4"
+  revision = "f74995fdffa4ed212d13f3ebe280a58393f14fb5"
+  version = "v3.40.1"
 
 [[projects]]
   name = "github.com/markbates/refresh"
@@ -185,7 +185,7 @@
   branch = "master"
   name = "github.com/markbates/validate"
   packages = [".","validators"]
-  revision = "ce7531eb72ff88cb3c3a5834c77fef853991283d"
+  revision = "cd8cc34c703420d6b084fbbfd5085e8e71c5b830"
 
 [[projects]]
   branch = "master"
@@ -197,7 +197,7 @@
   branch = "master"
   name = "github.com/mattn/anko"
   packages = ["ast","builtins","builtins/encoding/json","builtins/errors","builtins/flag","builtins/fmt","builtins/github.com/daviddengcn/go-colortext","builtins/io","builtins/io/ioutil","builtins/math","builtins/math/big","builtins/math/rand","builtins/net","builtins/net/http","builtins/net/url","builtins/os","builtins/os/exec","builtins/os/signal","builtins/path","builtins/path/filepath","builtins/regexp","builtins/runtime","builtins/sort","builtins/strings","builtins/time","parser","vm"]
-  revision = "bf712b6e107a9b753831362cb5c68f116dbe578a"
+  revision = "2ea08628d71d5d19cc35812d2f2a2df897c17623"
 
 [[projects]]
   name = "github.com/mattn/go-colorable"
@@ -269,7 +269,7 @@
   branch = "master"
   name = "github.com/sergi/go-diff"
   packages = ["diffmatchpatch"]
-  revision = "feef008d51ad2b3778f85d387ccf91735543008d"
+  revision = "2fc9cd33b5f86077aa3e0f442fa0476a9fa9a1dc"
 
 [[projects]]
   branch = "master"
@@ -293,7 +293,7 @@
   branch = "master"
   name = "github.com/shurcooL/graphql"
   packages = ["ident"]
-  revision = "d1a3e018e03c4a6b00bc8641eb272872fff371dd"
+  revision = "cf6db17b893acfad0ca1929ba6be45bf854790ed"
 
 [[projects]]
   branch = "master"
@@ -347,31 +347,31 @@
   branch = "master"
   name = "github.com/unrolled/secure"
   packages = ["."]
-  revision = "19a872c81779b0456e9ee495a8162fb60c57b0c0"
+  revision = "0f73fc7feba662a2ad5ff887fe203af08f8f8716"
 
 [[projects]]
   branch = "master"
   name = "golang.org/x/crypto"
   packages = ["bcrypt","blowfish","ssh/terminal"]
-  revision = "2509b142fb2b797aa7587dad548f113b2c0f20ce"
+  revision = "687d4b818545e443c8ba223cbef20b1721afd4db"
 
 [[projects]]
   branch = "master"
   name = "golang.org/x/net"
   packages = ["context","html","html/atom"]
-  revision = "4b14673ba32bee7f5ac0f990a48f033919fd418b"
+  revision = "01c190206fbdffa42f334f4b2bf2220f50e64920"
 
 [[projects]]
   branch = "master"
   name = "golang.org/x/sync"
   packages = ["errgroup"]
-  revision = "8e0aa688b654ef28caa72506fa5ec8dba9fc7690"
+  revision = "fd80eb99c8f653c847d294a001bdf2a3a6f768f5"
 
 [[projects]]
   branch = "master"
   name = "golang.org/x/sys"
   packages = ["unix","windows"]
-  revision = "92ac112afc6efd90284acda2b046fc0e351228f6"
+  revision = "d4266bc12aae0b4128952c889b769442fce5d2f1"
 
 [[projects]]
   branch = "v2"

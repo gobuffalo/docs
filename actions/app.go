@@ -30,7 +30,7 @@ func App() *buffalo.App {
 
 		app.Use(func(next buffalo.Handler) buffalo.Handler {
 			return func(c buffalo.Context) error {
-				c.Set("version", "0.9.5")
+				c.Set("version", "0.10.0")
 				c.Set("year", time.Now().Year())
 				c.Set("trainingURL", "http://www.gopherguides.com")
 				return next(c)

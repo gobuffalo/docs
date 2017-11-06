@@ -127,8 +127,6 @@ $ buffalo build -e
 ----> cleaning up ...coke/actions/actions-packr.go
 ```
 
-Please note this will disable the internal assets handling too, so the final executable is lighter.
-
 By default, the assets archive is put in the *bin* directory, but if you change the executable output directory with the `-o` flag, the assets will be put in the same directory.
 
 ```bash

@@ -21,16 +21,8 @@ Buffalo provides **two major components**:
 * The `buffalo` tool, a powerful toolbox to help you develop in a fast and efficient way.
 * The buffalo framework, a collection of pieces to construct your app.
 
-Let's get the source first, with its dependencies:
-
 ```bash
-$ go get -u -v github.com/gobuffalo/buffalo
-```
-
-Then, install the `buffalo` tool:
-
-```bash
-$ go install -v github.com/gobuffalo/buffalo/buffalo
+$ go get -u -v github.com/gobuffalo/buffalo/buffalo
 ```
 
 <%= note() { %>

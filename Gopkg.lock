@@ -59,7 +59,7 @@
   branch = "development"
   name = "github.com/gobuffalo/buffalo"
   packages = [".","binding","middleware/ssl","render","worker"]
-  revision = "83e26bb6b2422abfdf2b5e2b9829c17bedae0605"
+  revision = "5a1c36398020947ac7218bf7c93a1cd9c5f9cead"
 
 [[projects]]
   name = "github.com/gobuffalo/envy"
@@ -89,7 +89,7 @@
   branch = "master"
   name = "github.com/gobuffalo/x"
   packages = ["httpx","sessions"]
-  revision = "3af38e8e2648503125fca81851ca7142b7498ce3"
+  revision = "8c45ada8d8b1e11da75c6f39a4ca72c6bf87044f"
 
 [[projects]]
   name = "github.com/gorilla/context"
@@ -100,8 +100,8 @@
 [[projects]]
   name = "github.com/gorilla/mux"
   packages = ["."]
-  revision = "24fca303ac6da784b9e8269f724ddeb0b2eea5e7"
-  version = "v1.5.0"
+  revision = "7f08801859139f86dfafd1c296e2cba9a80d292e"
+  version = "v1.6.0"
 
 [[projects]]
   name = "github.com/gorilla/securecookie"
@@ -161,7 +161,7 @@
   branch = "master"
   name = "github.com/markbates/inflect"
   packages = ["."]
-  revision = "58d1522c71c1cd3676efba74a2922da9b92c2bcc"
+  revision = "b32533d044574b17faf5615eefb6c912e2099bd4"
 
 [[projects]]
   name = "github.com/markbates/pop"
@@ -197,7 +197,7 @@
   branch = "master"
   name = "github.com/mattn/anko"
   packages = ["ast","builtins","builtins/encoding/json","builtins/errors","builtins/flag","builtins/fmt","builtins/github.com/daviddengcn/go-colortext","builtins/io","builtins/io/ioutil","builtins/math","builtins/math/big","builtins/math/rand","builtins/net","builtins/net/http","builtins/net/url","builtins/os","builtins/os/exec","builtins/os/signal","builtins/path","builtins/path/filepath","builtins/regexp","builtins/runtime","builtins/sort","builtins/strings","builtins/time","parser","vm"]
-  revision = "2ea08628d71d5d19cc35812d2f2a2df897c17623"
+  revision = "2835104a087c32ce3d02bccd870e70e982b17583"
 
 [[projects]]
   name = "github.com/mattn/go-colorable"
@@ -269,13 +269,13 @@
   branch = "master"
   name = "github.com/sergi/go-diff"
   packages = ["diffmatchpatch"]
-  revision = "2fc9cd33b5f86077aa3e0f442fa0476a9fa9a1dc"
+  revision = "1744e2970ca51c86172c8190fadad617561ed6e7"
 
 [[projects]]
   branch = "master"
   name = "github.com/shurcooL/github_flavored_markdown"
   packages = ["."]
-  revision = "cccd3ce4f8e394ae9f87de0bd8b37e00625913d9"
+  revision = "8071c74461cb0a1a6e8a677e868cbb79138510c9"
 
 [[projects]]
   branch = "master"
@@ -353,13 +353,13 @@
   branch = "master"
   name = "golang.org/x/crypto"
   packages = ["bcrypt","blowfish","ssh/terminal"]
-  revision = "687d4b818545e443c8ba223cbef20b1721afd4db"
+  revision = "6a293f2d4b14b8e6d3f0539e383f6d0d30fce3fd"
 
 [[projects]]
   branch = "master"
   name = "golang.org/x/net"
   packages = ["context","html","html/atom"]
-  revision = "01c190206fbdffa42f334f4b2bf2220f50e64920"
+  revision = "a337091b0525af65de94df2eb7e98bd9962dcbe2"
 
 [[projects]]
   branch = "master"
@@ -371,7 +371,7 @@
   branch = "master"
   name = "golang.org/x/sys"
   packages = ["unix","windows"]
-  revision = "d4266bc12aae0b4128952c889b769442fce5d2f1"
+  revision = "1e2299c37cc91a509f1b12369872d27be0ce98a6"
 
 [[projects]]
   branch = "v2"

@@ -46,7 +46,6 @@
         <!-- Top navbar -->
         <div id="navbar" class="navbar-collapse collapse" aria-expanded="true" role="banner">
           <ul class="nav navbar-nav navbar-right">
-            <li<%= if (current_path != "/docs/examples") { %> class="active"<% } %>><a href="/">Documentation</a></li>
             <li<%= if (current_path == "/docs/examples") { %> class="active"<% } %>><a href="/docs/examples">Examples &amp; Tutorials</a></li>
             <li><a href="https://godoc.org/github.com/gobuffalo/buffalo" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i> Go Docs</a></li>
             <li><a href="https://blog.gobuffalo.io" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i> Blog</a></li>

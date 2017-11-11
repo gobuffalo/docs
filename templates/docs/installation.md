@@ -5,7 +5,7 @@
 Before installing make sure you have the required dependencies installed:
 
 * [Guide to Setting a Go Developer Environment](http://gopherguides.com/before-you-come-to-class)
-* [Go](https://golang.org) version `1.8.1` or greater.
+* [Go](https://golang.org) version `<%= goMinVersion %>` or greater.
 
 ##### Frontend requirements
 

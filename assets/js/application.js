@@ -6,7 +6,7 @@ require("expose-loader?Clipboard!./clipboard.min.js");
 let buildSideNav = () => {
   let loc = window.location;
   let path = loc.pathname;
-  let sb = $(`a[href="${path}"]`);
+  let sb = $(`aside a[href="${path}"]`);
   sb.closest("ul.sidenav").addClass("open");
 
   let items = [];
@@ -29,7 +29,7 @@ let buildSideNav = () => {
 
 let activateSideNav = () => {
   let loc = window.location;
-  let path = loc.pathname;
+  let path = loc.pathname === '/' ? '/docs/overview' : loc.pathname;
   $(".sidebar li").removeClass("active");
   let item = $(`.sidebar a[href="${path}"]`);
   item.closest("li").addClass("active");

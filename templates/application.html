@@ -30,27 +30,28 @@
         <!-- Toggle buttons and brand -->
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
-              <span class="glyphicon glyphicon-option-vertical"></span>
-            </button>
+            <i class="fa fa-ellipsis-v"></i>
+          </button>
 
           <button type="button" class="navbar-toggle for-sidebar" data-toggle="offcanvas">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
 
-          <a class="navbar-brand" href="/"><img src="/assets/images/logo_med.png" alt="logo"> Buffalo &ndash; Rapid Web Development in Go</a>
+          <a class="navbar-brand" href="/"><img src="/assets/images/logo_med.png" alt="logo"> Buffalo<span class="hidden-xs"> &ndash; Rapid Web Development in Go</span></a>
         </div>
         <!-- END Toggle buttons and brand -->
 
         <!-- Top navbar -->
         <div id="navbar" class="navbar-collapse collapse" aria-expanded="true" role="banner">
           <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="/">Documentation</a></li>
-            <li><a href="https://blog.gobuffalo.io" target="_blank">Blog</a></li>
-            <li><a href="https://godoc.org/github.com/gobuffalo/buffalo" target="_blank">Go Docs</a></li>
-            <li><a href="https://github.com/gobuffalo" target="_blank">GitHub</a></li>
-            <li class="hero"><a href="http://patreon.com/buffalo">Become a Patreon</a></li>
+            <li<%= if (current_path != "/docs/examples") { %> class="active"<% } %>><a href="/">Documentation</a></li>
+            <li<%= if (current_path == "/docs/examples") { %> class="active"<% } %>><a href="/docs/examples">Examples &amp; Tutorials</a></li>
+            <li><a href="https://godoc.org/github.com/gobuffalo/buffalo" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i> Go Docs</a></li>
+            <li><a href="https://blog.gobuffalo.io" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i> Blog</a></li>
+            <li><a href="https://github.com/gobuffalo" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i> GitHub</a></li>
+            <li class="hero"><a href="http://patreon.com/buffalo" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i> Become a Patreon</a></li>
           </ul>
         </div>
         <!-- END Top navbar -->

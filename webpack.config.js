@@ -37,6 +37,7 @@ module.exports = {
         }
       ],
       {
+        copyUnmodified: true,
         ignore: ["css/*", "js/*"]
       }
     ),

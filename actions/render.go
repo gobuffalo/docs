@@ -26,6 +26,7 @@ func init() {
 				return template.HTML(fmt.Sprintf(vimeo, code))
 			},
 			"codeTabs": helpers.CodeTabs,
+			"faq":      helpers.Faq,
 		},
 		TemplatesBox: packr.NewBox("../templates"),
 		AssetsBox:    assetBox,

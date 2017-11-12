@@ -23,15 +23,23 @@ h2 {
 }
 
 .info {
-	@extend .alert;
-	@extend .alert-info;
+  @extend .alert;
+  @extend .alert-info;
 
-	i.fa {
-		margin-right: 1em;
-	}
+  i.fa {
+    margin-right: 1em;
+  }
 }
 
 .get-started-btn {
-	@extend .text-center;
-	margin-top: 1em;
+  @extend .text-center;
+  margin-top: 1em;
+}
+
+.faq {
+  h6 {
+    p {
+      display: inline;
+    }
+  }
 }

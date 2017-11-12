@@ -6,22 +6,26 @@
   <input class="faq-search" type="text" placeholder="Type to search...">
   <ul>
 
-    <li>
-      <h6><code>buffalo new</code> fails with NPM permissions issues.</h6>
-      <div>
-        This is caused by incorrectly setup Node/NPM installation. See <a href="https://docs.npmjs.com/getting-started/fixing-npm-permissions" target="_blank">https://docs.npmjs.com/getting-started/fixing-npm-permissions</a> for information on how to fix this issue.
-      </div>
-    </li>
-    <li>
-      <h6><code>buffalo dev</code> auto rebuild doesn't work with NFS.</h6>
-      <div>
-        This is caused by the `fsnotify` package not supporting NFS. See <a href="https://github.com/gobuffalo/buffalo/issues/620" target="_blank">https://github.com/gobuffalo/buffalo/issues/620</a> for more details and a workaround.
-      </div>
-    </li>
-    <li>
-      <h6><code>buffalo new</code> fails with <code>import path does not begin with hostname</code></h6>
-      <div>
-        <%= markdown("") { %>
+    <%= faq("`buffalo new` fails to generate a complete project.") { %>
+This happens because the `buffalo new` command cannot find the templates it needs to generate a new application.
+
+There are a couple of things that could cause this issue.
+
+* Using multiple `$GOPATH`s. This can happen when you install Buffalo to one `$GOPATH` and then create a new, temporary, `$GOPATH` and try to create a new application there. Because the templates are in the first, original `$GOPATH`, the installer does not find them, and subsequently generates an incomplete application. To fix this, use just one `$GOPATH`.
+* Using a single `$GOPATH`. If you aren't using multiple `$GOPATH`s and are still seeing this issue, it is most likely caused by a bad installation. Run `$ go get -u -v github.com/gobuffalo/buffalo/buffalo` again, and it should, hopefully, repair the installation for you.
+
+The original ticket for this issue can be found at [https://github.com/gobuffalo/buffalo/issues/629](https://github.com/gobuffalo/buffalo/issues/629).
+    <% } %>
+
+    <%= faq("`buffalo new` fails with NPM permissions issues.") { %>
+This is caused by incorrectly setup Node/NPM installation. See <a href="https://docs.npmjs.com/getting-started/fixing-npm-permissions" target="_blank">https://docs.npmjs.com/getting-started/fixing-npm-permissions</a> for information on how to fix this issue.
+    <% } %>
+
+    <%= faq("`buffalo dev` auto rebuild doesn't work with NFS.") { %>
+This is caused by the `fsnotify` package not supporting NFS. See <a href="https://github.com/gobuffalo/buffalo/issues/620" target="_blank">https://github.com/gobuffalo/buffalo/issues/620</a> for more details and a workaround.
+    <% } %>
+
+    <%= faq("`buffalo new` fails with `import path does not begin with hostname`") { %>
 This is caused by a mismatched `$GOPATH` and file system.
 
 ```
@@ -30,13 +34,9 @@ ACTUAL: /Users/foobar/Documents/programming/go
 ```
 
 Those are not the same and cause problems with a lot of Go tools. Correct the `$GOPATH` to match the file system and retry.
-      <% } %>
-      </div>
-    </li>
-    <li>
-      <h6><code>buffalo new</code> fails looking for <code>golang.org/x/tools/go/gcimporter</code></h6>
-      <div>
-        <%= markdown("") { %>
+    <% } %>
+
+    <%= faq("`buffalo new` fails looking for `golang.org/x/tools/go/gcimporter`") { %>
 This is caused by an outdated copy of the `github.com/motemen/gore` package. To fix simply update `gore`:
 
 ```text
@@ -44,13 +44,9 @@ $ go get -u github.com/motemen/gore
 ```
 
 For information see [https://github.com/gobuffalo/buffalo/issues/108](https://github.com/gobuffalo/buffalo/issues/108) and [https://github.com/motemen/gore/issues/63](https://github.com/motemen/gore/issues/63).
-      <% } %>
-      </div>
-    </li>
-    <li>
-      <h6><code>buffalo dev</code> fails to start with <code>Unknown</code></h6>
-      <div>
-        <%= markdown("") { %>
+    <% } %>
+
+    <%= faq("`buffalo dev` fails to start with `Unknown`") { %>
 When starting `$ buffalo dev`, and you encounter this error:
 
 ```text
@@ -60,13 +56,9 @@ There was a problem starting the dev server: Unknown, Please review the troubles
 This may be due to your system missing NodeJS/NPM, Ensure that Node/NPM is installed and is in your `$PATH`. If  Node/NPM are indeed in your `$PATH`, try renaming webpack.config.js.
 
 If you are still having issues after attempting the steps above, please reach out to the community in the #buffalo channel on Gophers Slack.
-        <% } %>
-</div>
-    </li>
-    <li>
-      <h6><code>package context: unrecognized import path "context" (import path does not begin with hostname)</code></h6>
-      <div>
-        <%= markdown("") { %>
+    <% } %>
+
+    <%= faq("`package context: unrecognized import path \"context\" (import path does not begin with hostname)`") { %>
 When trying to install Buffalo `go get` returns this error:
 
 ```text
@@ -74,13 +66,9 @@ package context: unrecognized import path "context" (import path does not begin 
 ```
 
 This is due to an outdated version of Go. Buffalo requires Go 1.7 or higher. Please check your installation of Go and ensure you running the latest version.
-        <% } %>
-      </div>
-    </li>
-    <li>
-      <h6>Error: <code>unexpected directory layout:</code> during <code>go get</code></h6>
-      <div>
-        <%= markdown("") { %>
+    <% } %>
+
+    <%= faq("Error: `unexpected directory layout:` during `go get`") { %>
 Occasionally when running `go get` on Buffalo you will get the following error:
 
 ```text
@@ -94,40 +82,23 @@ separator: /
 This issue has been reported previously the Go team, [https://github.com/golang/go/issues/17597](https://github.com/golang/go/issues/17597).
 
 The best way to solve this problem is to run `go get` again, and it seems to fix itself.
+    <% } %>
 
-        <% } %>
-      </div>
-    </li>
-    <li>
-      <h6>Error: in <code>application.js</code> from UglifyJs</h6>
-      <div>
-        <%= markdown("") { %>
+    <%= faq("Error: in `application.js` from UglifyJs") { %>
 If you get this error when running `buffalo build` you need to update your `webpack.config.js` to work with [https://github.com/gobuffalo/buffalo/pull/350/files](https://github.com/gobuffalo/buffalo/pull/350/files).
-        <% } %>
-      </div>
-    </li>
-    <li>
-      <h6>Error: <code>Killed 9</code> when running <code>buffalo</code> on Mac OS X with Go 1.8.0</h6>
-      <div>
-        <%= markdown("") { %>
+    <% } %>
+
+    <%= faq("Error: `Killed 9` when running `buffalo` on Mac OS X with Go 1.8.0") { %>
 This is a known issue with Go, <a href="https://github.com/golang/go/issues/19734" target="_blank">https://github.com/golang/go/issues/19734</a>, not with Buffalo.
 
-The best solution is to upgrade to Go 1.8.1 and rebuild your Go binaries.
-        <% } %>
-      </div>
-    </li>
-    <li>
-      <h6>Mac OS X: <code>Too many open files in system</code> error</h6>
-      <div>
-        <%= markdown("") { %>
+The best solution is to upgrade to Go 1.8.1, or greater, and rebuild your Go binaries.
+    <% } %>
+
+    <%= faq("Mac OS X: `Too many open files in system` error") { %>
 If you get this error when running `buffalo dev` that means you are "watching" too many files, either `.go` files or asset files. To correct this you can [change](http://blog.mact.me/2014/10/22/yosemite-upgrade-changes-open-file-limit) the maximum number of open files on your system.
-        <% } %>
-      </div>
-    </li>
-    <li>
-      <h6><code>buffalo new</code> fails trying to run <code>goimports</code></h6>
-      <div>
-        <%= markdown("") { %>
+    <% } %>
+
+    <%= faq("`buffalo new` fails trying to run `goimports`") { %>
 The full error may appear something like the following, and seems to be the result of outdated go tools. To resolve run `rm -r $GOPATH/src/golang.org/`, then run `go get` again.
 ```bash
 $ buffalo new myapp
@@ -137,8 +108,6 @@ package golang.org/x/tools/cmd/goimports: golang.org/x/tools is a custom import 
 
 Error: exit status 1
 ```
-        <% } %>
-      </div>
-    </li>
+    <% } %>
   </ul>
 </div>

@@ -24,6 +24,7 @@ h2 {
 
 .info {
   @extend .alert;
+
   @extend .alert-info;
 
   i.fa {
@@ -33,6 +34,7 @@ h2 {
 
 .get-started-btn {
   @extend .text-center;
+
   margin-top: 1em;
 }
 
@@ -44,12 +46,6 @@ h2 {
   }
 }
 
-.site-footer {
-  position: absolute;
-  // right: 0px;
-}
-
 footer {
   background-color: #f5f5f5;
-  padding: 10px;
 }

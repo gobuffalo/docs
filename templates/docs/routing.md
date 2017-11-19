@@ -4,21 +4,16 @@ Buffalo uses the wonderful [http://www.gorillatoolkit.org/pkg/mux](http://www.go
 
 <%= title("Creating a new Buffalo App (and router)", {name: "new-app"}) %>
 
-Buffalo applications come in two flavors:
-
-#### Automatic (_recommended_)
+The app configuration is located in the `app.go` file. 
 
 ```go
-a := buffalo.Automatic(buffalo.Options{})
+a := buffalo.New(buffalo.Options{
+  Env:         ENV,
+  SessionName: "_coke_session",  
+})
 ```
 
-#### Standard
-
-```go
-a := buffalo.New(buffalo.Options{})
-```
-
-It is highly recommended to use `buffalo.Automatic` to create your application. The `Automatic` command will configure your new application with a variety of settings and functionality that we believe are useful to 90% of all web applications. If you want "complete" control over your application, then just create a `New` Buffalo app.
+The default setup should handle most of your needs, but you are free to customize it to fit your use case.
 
 <%= title("Mapping Handlers", {}) %>
 

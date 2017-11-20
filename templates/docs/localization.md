@@ -1,6 +1,6 @@
 <%= h1("Localization") %>
 
-Translating your app is an effective way to **make it understandable to the many people** around the globe! Buffalo uses the [go-i18n](github.com/nicksnyder/go-i18n) project to provide the <abbr title="internationalization">i18n</abbr> (providing default text, often in english) and <abbr title="localization">l10n</abbr> (providing translation for the other supported languages) of your app.
+Translating your app is an effective way to **make it understandable to the many people** around the globe! Buffalo uses the [go-i18n](https://github.com/nicksnyder/go-i18n) project to provide the <abbr title="internationalization">i18n</abbr> (providing default text, often in english) and <abbr title="localization">l10n</abbr> (providing translation for the other supported languages) of your app.
 
 <%= title("Markup the translatable strings") %>
 

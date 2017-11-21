@@ -21,6 +21,10 @@ Both types of form helpers have the following features in common:
 
 <%= title("FAQs") %>
 
+### How Do I Map a Form to a Model/Struct?
+
+See the [Request Binding](/docs/bind) page for more information on request binding.
+
 ### Can I Change the Name of the `f` Variable in My Template?
 
 By default the form value inside the block is given the name `f`, however this can be changed when creating the form and passing the `var` option.

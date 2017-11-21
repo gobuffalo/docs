@@ -35,7 +35,7 @@ By default Buffalo will setup a session store using [`sessions.CookieStore`](htt
 This can be changed when setting up a new Buffalo application.
 
 ```go
-app = buffalo.Automatic(buffalo.Options{
+app = buffalo.New(buffalo.Options{
   Env:         ENV,
   SessionName: "_coke_session",
   SessionStore: sessions.NewCookieStore([]byte("some session secret")),

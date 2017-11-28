@@ -79,7 +79,7 @@ func() template.HTML {
 
 <%= title("Input Values") %>
 
-Custom helper functions can take any type, and any number of arguments. There is an optional last argument, [`plush.HelperContext`](https://godoc.org/github.com/gobuffalo/plush#HelperContext), that can be received. It's quite useful, and I would recommend taking it, as it provides you access to things like the context of the call, the block associated with the helper, etc...
+Custom helper functions can take any type, and any number of arguments. You can even use variadic functions. There is an optional last argument, [`plush.HelperContext`](https://godoc.org/github.com/gobuffalo/plush#HelperContext), that can be received. It's quite useful, and I would recommend taking it, as it provides you access to things like the context of the call, the block associated with the helper, etc...
 
 <%= title("Simple Helpers") %>
 

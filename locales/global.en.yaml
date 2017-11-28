@@ -1,0 +1,39 @@
+##########################################################
+# English translations
+##########################################################
+
+- id: head.title
+  translation: Buffalo &ndash; Rapid Web Development in Go
+
+# Top
+- id: top.title
+  translation: 'Buffalo<span class="hidden-xs"> &ndash; Rapid Web Development in Go</span>'
+
+- id: top.examples-tutorials
+  translation: Examples & Tutorials
+
+- id: top.go-docs
+  translation: Go Docs
+
+- id: top.blog
+  translation: Blog
+
+- id: top.become-a-patreon
+  translation: Become a Patreon
+
+# Footer
+- id: footer.copyright
+  translation: Copyright &copy; {{ .year }} Buffalo. All rights reserved.
+
+- id: footer.gopher
+  translation: Buffalo Gopher designed by <a href="https://twitter.com/ashleymcnamara" target="_blank" rel="noopener noreferrer">Ashley McNamara</a> &mdash; Original Gopher designed by Renee French.
+
+# Menu
+- id: menu.overview
+  translation: Overview
+
+- id: menu.getting-started
+  translation: Getting Started
+
+- id: menu.installation
+  translation: Installation

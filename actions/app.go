@@ -8,10 +8,15 @@ import (
 	"github.com/gobuffalo/envy"
 	"github.com/gobuffalo/x/sessions"
 	"github.com/unrolled/secure"
+	"github.com/gobuffalo/packr"
+	"github.com/gobuffalo/buffalo/middleware/i18n"
 )
 
 var ENV = envy.Get("GO_ENV", "development")
 var app *buffalo.App
+
+// T is used to provide translations
+var T *i18n.Translator
 
 // App is where all routes and middleware for buffalo
 // should be defined. This is the nerve center of your
@@ -30,13 +35,20 @@ func App() *buffalo.App {
 
 		app.Use(func(next buffalo.Handler) buffalo.Handler {
 			return func(c buffalo.Context) error {
-				c.Set("version", "0.10.1")
+				c.Set("version", "0.10.2")
 				c.Set("goMinVersion", "1.8.1")
 				c.Set("year", time.Now().Year())
 				c.Set("trainingURL", "http://www.gopherguides.com")
 				return next(c)
 			}
 		})
+
+		// Setup and use translations:
+		var err error
+		if T, err = i18n.New(packr.NewBox("../locales"), "en"); err != nil {
+			app.Stop(err)
+		}
+		app.Use(T.Middleware())
 
 		app.Redirect(302, "/docs/getting-started", "/")
 		app.Redirect(302, "/docs/test-suites", "/docs/testing")

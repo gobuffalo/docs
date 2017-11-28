@@ -1,0 +1,100 @@
+<div class="jumbotron">
+	<div class="row">
+		<div class="col-md-9 col-xs-12">
+			<h1>Buffalo</h1>
+			<p>
+				Un écosystème pour le <strong>développement Web en Go</strong>, conçu pour rendre la vie des développeurs plus facile.
+			</p>
+			<p>
+				Dernière version&nbsp;: <a href="https://github.com/gobuffalo/buffalo/releases" target="_blank"><strong><%= version %></strong></a><br />
+				Nécessite Go <strong><%= goMinVersion %>+</strong>
+			</p>
+		</div>
+		<div class="col-md-1 hidden-xs">
+			<img src="/assets/images/buffalo.svg" alt="buffalo" width="230" />
+		</div>
+	</div>
+</div>
+
+<hr style="clear: both;" />
+
+<%= partial("docs/youtube.html") %>
+
+<hr />
+
+<h2>Fonctionnalités</h2>
+
+<div class="row">
+	<div class="col-xs-12 col-md-6">
+		<h4>Routage</h4>
+
+		<p>
+			Buffalo utilise la boîte à outils <a href="https://github.com/gorilla" target="_blank">Gorilla</a> pour gérer les routes, sessions, cookies, etc. Il existe sans doute des routeurs plus rapides, mais celui-ci est le plus puissant&nbsp;!
+		</p>
+	</div>
+
+	<div class="col-xs-12 col-md-6">
+		<h4>Gabarits</h4>
+		<p>
+			Composez vos vues avec <a href="https://github.com/gobuffalo/plush" target="_blank">Plush</a>, en utilisant une syntaxe proche de celle de Ruby on Rails. Étendez ses possiblités en créant vos propres fonctions.<br />Si vous ne l'aimez pas, vous pouvez utiliser le standard <code>html/template</code> ou même votre propre moteur ! 
+		</p>
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-12 col-md-6">
+		<h4>Boîte à outils Buffalo</h4>
+		<p>
+			Développer un module pour une application Web débute toujours par les mêmes tâches. Buffalo fournit une boîte à outils simple, la commande <code>buffalo</code>, pour générer de nombreuses parties de votre application et exécuter des tâches courantes.
+		</p>
+		<p>
+			Vous pouvez même lui ajouter des plugins, en utilisant le langage de votre choix&nbsp;!
+		</p>
+	</div>
+	<div class="col-xs-12 col-md-6">
+		<h4>Tests</h4>
+		<p>
+			Tester peut être une tâche ennuyeuse&nbsp;: Buffalo vous aide à définir des scénarios de test. Les générateurs d'action, de resource, ou de modèles créent des gabarits prêts à remplir pour vos tests.
+		</p>
+		<p>
+			Vous pouvez exécuter tous vos tests à l'aide d'une simple commande de la boîte à outils.
+		</p>
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-12 col-md-6">
+		<h4>Rechargement à chaud du code</h4>
+		<p>
+			Codez, sauvegardez, rafraîchissez la page. Utilisez la commande <code>buffalo dev</code> pour reconstruire votre application, du cœur logique à l'interface utilisateur, et constatez les changements en direct&nbsp;!
+		</p>
+	</div>
+	<div class="col-xs-12 col-md-6">
+		<h4>Pipeline frontend <span class="label label-default">Optionnel</span></h4>
+		<p>
+			Utilisez la configuration Webpack pré-générée pour compiler vos composants graphiques&nbsp;: optimisez votre application de fond en comble&nbsp;!
+		</p>
+	</div>
+</div>
+<div class="row">
+	<div class="col-xs-12 col-md-6">
+		<h4>Modèles / ORM <span class="label label-default">Optionnel</span></h4>
+		<p>
+			Une intégration forte avec <a href="https://github.com/markbates/pop" target="_blank">pop</a> permet de gérer les bases de données simplement, ainsi que les tâches courantes associées.
+		</p>
+		<p>
+			Bases de données supportées&nbsp;: MySQL/ MariaDB, PostgreSQL, SQLite.
+		</p>
+	</div>
+	<div class="col-xs-12 col-md-6">
+		<h4>Tâches / Tâches de fond <span class="label label-default">Optionnel</span></h4>
+		<p>
+			Si vous êtes famillier des tâches Rake en Ruby, vous vous sentirez comme chez vous en utilisant <a href="https://github.com/markbates/grift" target="_blank">Grift</a>. Populer une base de données, lancer une tâche de nettoyage sont maintenant à portée de main&nbsp;!
+		</p>
+		<p>
+			Vous pouvez également faire tourner des tâches de fond, avec la même simplicité.
+		</p>
+	</div>
+</div>
+
+<p class="get-started-btn">
+	<a href="/docs/installation" class="btn btn-primary btn-lg"><strong>Démarrer</strong> avec Buffalo</a>
+</p>

@@ -105,4 +105,19 @@ Then, create a new suffixed version for each language you want to support:
 &lt;p&gt;This is my fr-FR version.&lt;/p&gt;
 ```
 
-The middleware will detect the user language and choose the right template for you! It also works with guest users, using the `Accept-Language` HTTP header. 
+The middleware will detect the user language and choose the right template for you! It also works with guest users, using the `Accept-Language` HTTP header.
+
+<%= title("Use i18n in actions") %>
+
+You'll need to use the i18n features in actions, for instance, to translate flash messages. Here is the way to use it:
+
+``` go
+func Login(c buffalo.Context) error {
+	// [...]
+	// Set a translated flash message
+	c.Flash().Add("success", T.Translate(c, "users.login-success"))
+	return c.Redirect(303, "/users/signin")
+}
+```
+
+`T.Translate` takes the `buffalo.Context` as first argument, then the following args are the same as the `t` helper ones (`t` calls `T.Translate` with the context, behind the scene).

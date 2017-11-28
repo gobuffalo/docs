@@ -47,7 +47,7 @@ var T *i18n.Translator
 // application.
 func App() *buffalo.App {
   if app == nil {
-    app = buffalo.Automatic(buffalo.Options{
+    app = buffalo.New(buffalo.Options{
       Env:         ENV,
       SessionName: "_coke_session",
     })

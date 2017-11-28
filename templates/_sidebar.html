@@ -3,22 +3,19 @@
 
   <ul class="sidenav dropable ">
     <li>
-      <a href="/docs/overview">Overview</a>
+      <a href="/docs/overview"><%= t("menu.overview") %></a>
     </li>
     <li>
-      <a href="#">Getting Started</a>
+      <a href="#"><%= t("menu.getting-started") %></a>
       <ul class="sidenav dropable">
         <li>
-          <a href="/docs/installation">Installation</a>
+          <a href="/docs/installation"><%= t("menu.installation") %></a>
         </li>
         <li>
           <a href="/docs/new-project">Generating a New Project</a>
         </li>
         <li>
           <a href="/docs/directory-structure">Directory structure</a>
-        </li>
-        <li>
-          <a href="/docs/building">Building/Binaries</a>
         </li>
       </ul>
     </li>
@@ -31,11 +28,15 @@
         </li>
 
         <li>
-          <a href="/docs/middleware">Middleware</a>
+          <a href="/docs/context">Context</a>
         </li>
 
         <li>
-          <a href="/docs/context">Context</a>
+          <a href="/docs/bind">Request Binding</a>
+        </li>
+
+        <li>
+          <a href="/docs/middleware">Middleware</a>
         </li>
 
         <li>
@@ -128,7 +129,7 @@
           <a href="/docs/db/callbacks">Callbacks</a>
         </li>
         <li>
-          <a href="/docs/db/skip_field">Skipping Model Fields</a>
+          <a href="/docs/db/fields">Managing Model Fields</a>
         </li>
       </ul>
     </li>
@@ -157,6 +158,15 @@
 
     <li>
       <a href="https://blog.gobuffalo.io/buffalo-docker-images-ff3938dcaa53" target="_blank">Docker Images</a>
+    </li>
+
+    <li>
+      <a href="#">Deploy</a>
+      <ul class="sidenav dropable">
+        <li>
+          <a href="/docs/building">Building/Binaries</a>
+        </li>
+      </ul>
     </li>
 
     <li>

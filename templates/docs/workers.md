@@ -35,7 +35,7 @@ When setting up your application you can assign a worker implementation to the `
 import "github.com/gobuffalo/gocraft-work-adapter"
 import "github.com/garyburd/redigo/redis"
 
-buffalo.Automatic(buffalo.Options{
+buffalo.New(buffalo.Options{
   // ...
   Worker: gwa.New(gwa.Options{
     Pool: &redis.Pool{

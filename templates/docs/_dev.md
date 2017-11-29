@@ -1,27 +1,27 @@
-<%= title("Lancer votre application en mode développement", {name: "running-in-dev"}) %>
+<%= title("Running Your Application in Development", {name: "running-in-dev"}) %>
 
 <%= note() { %>
-Avant de démarrer Buffalo pour la première fois, veuillez consulter la documentation sur les [bases de données](/docs/db) pour paramétrer votre application correctement.
+Before starting Buffalo for the first time, please head over to the [Database](/docs/db) docs and read a little bit about setting up your databases.
 <% } %>
 
-L'un des inconvénients du développement en Go est l'absence de «&nbsp;rechargement&nbsp;» de code. Cela signifie qu'à chaque fois que vous modifiez votre code, **vous devez stopper manuellement** votre application, la recompiler et enfin la redémarrer. Buffalo trouve cela ennuyeux, et veut vous faciliter la vie.
+One of the downsides to Go development is the lack of code “reloading”. This means as you change your code **you need to manually stop** your application, rebuild it, then restart it. Buffalo finds this is annoying, and wants to make life better for you.
 
 ```bash
 $ buffalo dev
 ```
 
-La commande `dev` surveille les fichiers `.go`, `.html` et le dossier des [ressources graphiques](/docs/assets) par défaut. Elle se charge de **recompiler et redémarrer votre application** automatiquement, pour que vous n'ayez pas à vous en soucier.
+The `dev` command will watch your `.go` and `.html` files and the [asset](/docs/assets) folder by default. It will **rebuild and restart your binary for you** automatically, so you don't have to worry about such things.
 
-Lancez la commande `buffalo dev` et affichez la page [localhost:3000/](http://localhost:3000/) pour voir tous vos changements en direct&nbsp;!
+Just run the `buffalo dev` command and go to [localhost:3000/](http://localhost:3000/) to see all changes live!
 
 <figure>
-  <img src="/assets/images/new-coke.png" title="Capture d'écran">
-  <figcaption>La toute nouvelle application Coke.</figcaption>
+  <img src="/assets/images/new-coke.png" title="screenshot">
+  <figcaption>The brand new Coke app.</figcaption>
 </figure>
 
-#### Lancer le serveur de développement sur un port personnalisé
+#### Run the dev server on a custom port
 
-Il arrive souvent que vous ayez déjà une application utilisant le port 3000. Vous pouvez configurer le port utilisé par le serveur de développement en utilisant la variable d'environnement `PORT`&nbsp;:
+Sometimes you will already have an app working on the 3000 port. You can configure the dev server port by providing the `PORT` environment variable:
 
 ```bash
 $ PORT=3001 buffalo dev

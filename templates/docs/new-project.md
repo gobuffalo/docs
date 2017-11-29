@@ -12,14 +12,14 @@ Start by going to your `$GOPATH` and create your new application!
 $ cd $GOPATH/src/github.com/$USER/
 ```
 
-Make sure $GOPATH/bin is in your $PATH, then:
+Make sure `$GOPATH/bin` is in your `$PATH`, then:
 
 ```bash
 $ buffalo new coke
 ```
 
 That will generate a whole new Buffalo application called **coke**, all ready to go:
-* the **buffalo framework layout** and default configuration ([pop/soda](https://github.com/markbates/pop) with PostgreSQL support),
+* the **Buffalo framework layout** and default configuration ([pop/soda](https://github.com/markbates/pop) with PostgreSQL support),
 * all necessary **Go dependencies** needed to run the current application,
 * **frontend dependencies** and working setup with [webpack](https://webpack.js.org/)
 * and an initial **Git repository**.
@@ -34,8 +34,6 @@ You can get the available flags list using the `help` command:
 
 ```bash
 $ buffalo help new
-Buffalo version v0.9.5
-
 Creates a new Buffalo application
 
 Usage:
@@ -50,7 +48,8 @@ Flags:
   -h, --help                 help for new
       --skip-pop             skips adding pop/soda to your app
       --skip-webpack         skips adding Webpack to your app
-      --skip-yarn            skip to use npm as the asset package manager
+      --skip-yarn            use npm instead of yarn for frontend dependencies management
+      --vcs string           specify the Version control system you would like to use [none, git, bzr] (default "git")
   -v, --verbose              verbosely print out the go get commands
       --with-dep             adds github.com/golang/dep to your app
 ```

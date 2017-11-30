@@ -22,6 +22,15 @@ ok  	github.com/gobuffalo/authrecipe/actions	0.640s
 ok  	github.com/gobuffalo/authrecipe/models	0.327s
 ```
 
+### Execute a single test
+<%= sinceVersion("0.10.2") %>
+
+Debugging a specific test is a difficult task, if you must execute all existing tests. You can use the `-m` flag to execute a single test method:
+
+```bash
+$ buffalo test -m "FooMethod"
+```
+
 <%= title("Test Suites") %>
 
 Buffalo uses the [`github.com/gobuffalo/suite`](https://github.com/gobuffalo/suite) package to create test suites.

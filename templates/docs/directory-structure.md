@@ -4,7 +4,7 @@
 
 Buffalo provides you **a minimal directory structure** to work on your project. This structure **keeps the project clean**, and allow the [generators](/docs/generators) to work. Don't try to reinvent the wheel, and **let Buffalo buy you more time** to do the interesting part of your app! :)
 
-Now that you have a minimal new project, let's see its contents.
+Now that you have a minimal new project, let's go through its contents.
 
 <%= title("The root directory") %>
 
@@ -34,7 +34,7 @@ This directory contains the [tasks](/docs/tasks) powered by [grift](https://gith
 ### locales
 
 <%= note() { %>
-This directory is optional. If you use only one language, you can remove it and the i18n module from the `app.go` file in the `actions` dir.
+This directory is optional. If you use only one language, you can remove it and the i18n module from the `app.go` file in the `actions` directory.
 <% } %>
 
 This directory is used by the <abbr title="internationalization">i18n</abbr> system. It will fetch the translation strings from here.
@@ -57,7 +57,7 @@ This directory handles the **Model** part of the MVC pattern. It contains the mo
 The contents of this directory are auto-generated.
 <% } %>
 
-This directory contains the public (compiled/compressed) assets. If you use webpack, it will use this directory to put its assets.
+This directory contains the public (compiled/compressed) assets. If you use webpack, it will put its assets in this directory.
 
 ### templates
 
@@ -73,7 +73,7 @@ This directory handles the **View** part of the MVC pattern. It contains the pro
 The contents of this directory are auto-generated.
 <% } %>
 
-This directory is used by the `buffalo dev` command to rebuild your project on every change. Here are put the temporary files Buffalo works with.
+This directory is used by the `buffalo dev` command to rebuild your project on every change. The temporary files that Buffalo works with are put here.
 
 ### database.yml
 

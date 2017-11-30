@@ -37,7 +37,7 @@ $ buffalo help build
 ```
 
 ```bash
-Buffalo version v0.9.5
+Buffalo version <%= version %>
 
 Builds a Buffalo binary, including bundling of assets (packr & webpack)
 

@@ -23,13 +23,13 @@
   branch = "master"
   name = "github.com/daviddengcn/go-colortext"
   packages = ["."]
-  revision = "805cee6e0d43c72ba1d4e3275965ff41e0da068a"
+  revision = "17e75f6184bc9e727756cd0d82e0af58b1fc7191"
 
 [[projects]]
   branch = "master"
   name = "github.com/dustin/go-humanize"
   packages = ["."]
-  revision = "6d15c0ae71e55ed645c21ac4945aaadbc0e9a590"
+  revision = "bb3d318650d48840a39aa21a027c6630e198e626"
 
 [[projects]]
   name = "github.com/fatih/color"
@@ -59,7 +59,7 @@
   branch = "development"
   name = "github.com/gobuffalo/buffalo"
   packages = [".","binding","middleware/ssl","render","worker"]
-  revision = "5a1c36398020947ac7218bf7c93a1cd9c5f9cead"
+  revision = "d007eb610dbdacdc5af40a2a12bc46d47034fd30"
 
 [[projects]]
   name = "github.com/gobuffalo/envy"
@@ -76,14 +76,14 @@
 [[projects]]
   name = "github.com/gobuffalo/plush"
   packages = [".","ast","lexer","parser","token"]
-  revision = "7df6c6624e74b78e595d9500ab1acf810cdf7af1"
-  version = "v3.0.4"
+  revision = "07945e716c6e71b7faa5f63b8c433cae4612514f"
+  version = "v3.0.6"
 
 [[projects]]
   name = "github.com/gobuffalo/tags"
   packages = [".","form","form/bootstrap"]
-  revision = "6755de03970f68812cfb0cb1162a66e60bcc1106"
-  version = "v1.4.0"
+  revision = "496f2d070b93cbab8d3802318292f6f804e8d9c2"
+  version = "v1.5.0"
 
 [[projects]]
   branch = "master"
@@ -125,7 +125,7 @@
   branch = "master"
   name = "github.com/jmoiron/sqlx"
   packages = [".","reflectx"]
-  revision = "3379e5993990b1f927fc8db926485e6f6becf2d2"
+  revision = "99f3ad6d85ae53d0fecf788ab62d0e9734b3c117"
 
 [[projects]]
   name = "github.com/joho/godotenv"
@@ -137,7 +137,7 @@
   branch = "master"
   name = "github.com/lib/pq"
   packages = [".","oid"]
-  revision = "b609790bd85edf8e9ab7e0f8912750a786177bcf"
+  revision = "83612a56d3dd153a94a629cd64925371c9adad78"
 
 [[projects]]
   branch = "master"
@@ -149,7 +149,7 @@
   branch = "master"
   name = "github.com/markbates/grift"
   packages = ["grift"]
-  revision = "8e706d9b1370e074ed48f3e56b5d29c8b01dd635"
+  revision = "00c5a41d8f71f72709c0b90f8da447758f18faa9"
 
 [[projects]]
   branch = "master"
@@ -161,13 +161,13 @@
   branch = "master"
   name = "github.com/markbates/inflect"
   packages = ["."]
-  revision = "b32533d044574b17faf5615eefb6c912e2099bd4"
+  revision = "8656ca7f45f5ed737dbe42c370dc31d1f583b7f5"
 
 [[projects]]
   name = "github.com/markbates/pop"
   packages = [".","columns","fizz","fizz/translators","nulls"]
-  revision = "f74995fdffa4ed212d13f3ebe280a58393f14fb5"
-  version = "v3.40.1"
+  revision = "fd3f5a10dad89bbd5d257fef56de9ac2cacba860"
+  version = "v3.41.1"
 
 [[projects]]
   name = "github.com/markbates/refresh"
@@ -197,7 +197,7 @@
   branch = "master"
   name = "github.com/mattn/anko"
   packages = ["ast","builtins","builtins/encoding/json","builtins/errors","builtins/flag","builtins/fmt","builtins/github.com/daviddengcn/go-colortext","builtins/io","builtins/io/ioutil","builtins/math","builtins/math/big","builtins/math/rand","builtins/net","builtins/net/http","builtins/net/url","builtins/os","builtins/os/exec","builtins/os/signal","builtins/path","builtins/path/filepath","builtins/regexp","builtins/runtime","builtins/sort","builtins/strings","builtins/time","parser","vm"]
-  revision = "2835104a087c32ce3d02bccd870e70e982b17583"
+  revision = "777b355ab2dcffcd2f7dee2ec224282b16932b20"
 
 [[projects]]
   name = "github.com/mattn/go-colorable"
@@ -214,8 +214,8 @@
 [[projects]]
   name = "github.com/mattn/go-sqlite3"
   packages = ["."]
-  revision = "5160b48509cf5c877bc22c11c373f8c7738cdb38"
-  version = "v1.3.0"
+  revision = "ed69081a91fd053f17672236b0dd52ba7485e1a3"
+  version = "v1.4.0"
 
 [[projects]]
   branch = "master"
@@ -275,13 +275,13 @@
   branch = "master"
   name = "github.com/shurcooL/github_flavored_markdown"
   packages = ["."]
-  revision = "8071c74461cb0a1a6e8a677e868cbb79138510c9"
+  revision = "28433ea3fc83827d77424782fefdcd94703366cc"
 
 [[projects]]
   branch = "master"
   name = "github.com/shurcooL/go"
   packages = ["parserutil","printerutil","reflectfind","reflectsource"]
-  revision = "c661e953e604ba4a84a3c4e458462a481bd6ce72"
+  revision = "004faa6b0118cf52635363b72b51cdcc297800a2"
 
 [[projects]]
   branch = "master"
@@ -293,7 +293,7 @@
   branch = "master"
   name = "github.com/shurcooL/graphql"
   packages = ["ident"]
-  revision = "cf6db17b893acfad0ca1929ba6be45bf854790ed"
+  revision = "671b933639ae10534edc12900803e2c1d7dfb9b5"
 
 [[projects]]
   branch = "master"
@@ -311,7 +311,7 @@
   branch = "master"
   name = "github.com/shurcooL/octiconssvg"
   packages = ["."]
-  revision = "8c9861b86a08c72d14e0285d0dc313bb6df52295"
+  revision = "38b02129bb6460858e11f90798a3832da1e502bd"
 
 [[projects]]
   branch = "master"
@@ -353,13 +353,13 @@
   branch = "master"
   name = "golang.org/x/crypto"
   packages = ["bcrypt","blowfish","ssh/terminal"]
-  revision = "6a293f2d4b14b8e6d3f0539e383f6d0d30fce3fd"
+  revision = "94eea52f7b742c7cbe0b03b22f0c4c8631ece122"
 
 [[projects]]
   branch = "master"
   name = "golang.org/x/net"
   packages = ["context","html","html/atom"]
-  revision = "a337091b0525af65de94df2eb7e98bd9962dcbe2"
+  revision = "a8b9294777976932365dabb6640cf1468d95c70f"
 
 [[projects]]
   branch = "master"
@@ -371,13 +371,13 @@
   branch = "master"
   name = "golang.org/x/sys"
   packages = ["unix","windows"]
-  revision = "1e2299c37cc91a509f1b12369872d27be0ce98a6"
+  revision = "13fcbd661c8ececa8807a29b48407d674b1d8ed8"
 
 [[projects]]
   branch = "v2"
   name = "gopkg.in/yaml.v2"
   packages = ["."]
-  revision = "eb3733d160e74a9c7e442f435eb3bea458e1d19f"
+  revision = "287cf08546ab5e7e37d55a84f7ed3fd1db036de5"
 
 [solve-meta]
   analyzer-name = "dep"

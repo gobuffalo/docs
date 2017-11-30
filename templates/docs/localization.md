@@ -121,3 +121,17 @@ func Login(c buffalo.Context) error {
 ```
 
 `T.Translate` takes the `buffalo.Context` as first argument, then the following args are the same as the `t` helper ones (`t` calls `T.Translate` with the context, behind the scene).
+
+<%= title("Customize generated names") %>
+<%= sinceVersion("0.10.2") %>
+
+Many Buffalo generators use [markbates/inflect](https://github.com/markbates/inflect) to generate a normalized version of a name. For example, when you want to generate a new model, the name you give to the command line is normalized in plural, capitalized, and so on forms.
+
+Sometimes, the rules used by **inflect** are not correct (in this case, feel free to open a PR on the repo!). Sometimes a rule is not correct for your use case, but it's still correct in a general rule. In this case, you can provide custom rules using the `inflections.json` file at the root of your project.
+
+**inflections.json:**
+```json
+{
+  "singular form": "plural form"
+}
+```

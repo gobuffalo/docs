@@ -40,3 +40,6 @@
 
 - id: menu.new-project
   translation: Générer un nouveau projet
+
+- id: menu.directory-structure
+  translation: Structure d'un projet

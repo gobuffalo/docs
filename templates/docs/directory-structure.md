@@ -49,7 +49,7 @@ If you use pop/soda with the integrated generator, it will generate the model fi
 This directory is optional. If you don't need to use a database, it can be removed.
 <% } %>
 
-This directory handles the **Model** part of the MVC pattern. It contains the models.go file to initialize the datasource connection, and the model files to refect objects from the datasource.
+This directory handles the **Model** part of the MVC pattern. It contains the `models.go` file to initialize the datasource connection, and the model files to refect objects from the datasource.
 
 ### public
 

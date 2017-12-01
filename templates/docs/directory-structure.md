@@ -8,6 +8,22 @@ Now that you have a minimal new project, let's see its contents.
 
 <%= title("The root directory") %>
 
+Here is the strcture of a Buffalo project:
+
+* `go/` &mdash; GOPATH root.
+	* `src/` &mdash; Go sources directory
+		* `github.com/username/myapp/` &mdash; your app root
+			* `actions/`
+			* `assets/`
+			* `grifts/`
+			* `locales/`
+			* `models/`
+			* `public/`
+			* `templates/`
+			* `tmp/`
+			* `database.yml`
+			* `main.go`
+
 ### actions
 
 This directory handles the **Controller** part of the MVC pattern. It contains the handlers for your URLs, plus:

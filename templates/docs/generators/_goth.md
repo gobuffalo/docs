@@ -8,8 +8,7 @@
 $ go get -u github.com/gobuffalo/buffalo-goth
 ```
 
-### Usage
-
+## Generator
 ```bash
 $ buffalo g goth twitter facebook linkedin github
 
@@ -18,6 +17,7 @@ $ buffalo g goth twitter facebook linkedin github
 --> goimports -w .
 ```
 
+## Example Usage
 ```go
 // actions/app.go
 package actions

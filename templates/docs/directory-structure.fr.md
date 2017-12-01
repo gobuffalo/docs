@@ -8,6 +8,22 @@ Maintenant que vous disposez d'un projet minimal, voyons sa composition.
 
 <%= title("Le répertoire racine") %>
 
+Voici la structure d'un projet Buffalo&nbsp;:
+
+* `go/` &mdash; racine GOPATH.
+	* `src/` &mdash; répertoire des sources Go
+		* `github.com/username/myapp/` &mdash; racine de votre application
+			* `actions/`
+			* `assets/`
+			* `grifts/`
+			* `locales/`
+			* `models/`
+			* `public/`
+			* `templates/`
+			* `tmp/`
+			* `database.yml`
+			* `main.go`
+
 ### actions
 
 Ce dossier contient la partie **Contrôleur** du design-pattern MVC. Il comporte les traitements de vos URLs, ainsi que&nbsp;:

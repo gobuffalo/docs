@@ -5,3 +5,4 @@
 <%= partial("docs/generators/resource.md") %>
 <%= partial("docs/generators/tasks.md") %>
 <%= partial("docs/generators/goth.md") %>
+<%= partial("docs/generators/mail.md") %>

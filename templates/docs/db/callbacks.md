@@ -9,7 +9,7 @@ type User struct {
   Password string
 }
 
-func (u *User) BeforeSave(tx *pop.Connection) error {
+func (u *User) BeforeCreate(tx *pop.Connection) error {
   hash, err := bcrypt.GenerateFromPassword([]byte(u.Password), bcrypt.DefaultCost)
   if err != nil {
     return errors.WithStack(err)
@@ -21,7 +21,7 @@ func (u *User) BeforeSave(tx *pop.Connection) error {
 }
 ```
 
-In the above example, when the connection's `Save` method is called with a `User`, the `BeforeSave` method
+In the above example, when the connection's `Save` method is called with a `User`, the `BeforeCreate` method
 will be called before writing to the database. The available callbacks include:
 
 * BeforeSave

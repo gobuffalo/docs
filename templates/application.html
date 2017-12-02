@@ -5,10 +5,10 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Put the fun back in writing Go web applications using the Buffalo framework. A Ruby on Rails inspired, idiomatic, web framework written in Go. Fun, Fast, and easy!">
+  <meta name="description" content="Put the fun back in writing Go web applications using the Buffalo framework. A Ruby on Rails inspired, idiomatic, web framework written in Go.">
   <meta name="keywords" content="go, golang, web, buffalo, framework, html, javascript, ruby, rails, fast, easy">
 
-  <title>Buffalo - Rapid Web Development in Go <%= if (pageTitle) { %> - <%= pageTitle %> <% } %></title>
+  <title><%= raw(t("head.title")) %> <%= if (pageTitle) { %> - <%= pageTitle %> <% } %></title>
 
   <!-- Styles -->
   <%= stylesheetTag("application.css") %>
@@ -39,18 +39,18 @@
             <span class="icon-bar"></span>
           </button>
 
-          <a class="navbar-brand" href="/"><img src="/assets/images/logo_med.png" alt="logo"> Buffalo<span class="hidden-xs"> &ndash; Rapid Web Development in Go</span></a>
+          <a class="navbar-brand" href="/"><img src="/assets/images/logo_med.png" alt="logo"> <%= raw(t("top.title")) %></a>
         </div>
         <!-- END Toggle buttons and brand -->
 
         <!-- Top navbar -->
         <div id="navbar" class="navbar-collapse collapse" aria-expanded="true" role="banner">
           <ul class="nav navbar-nav navbar-right">
-            <li<%= if (current_path == "/docs/examples") { %> class="active"<% } %>><a href="/docs/examples">Examples &amp; Tutorials</a></li>
-            <li><a href="https://godoc.org/github.com/gobuffalo/buffalo" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i> Go Docs</a></li>
-            <li><a href="https://blog.gobuffalo.io" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i> Blog</a></li>
-            <li><a href="https://github.com/gobuffalo" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i> GitHub</a></li>
-            <li class="hero"><a href="http://patreon.com/buffalo" target="_blank"><i class="fa fa-external-link" aria-hidden="true"></i> Become a Patreon</a></li>
+            <li<%= if (current_path == "/docs/examples") { %> class="active"<% } %>><a href="/docs/examples"><%= t("top.examples-tutorials") %></a></li>
+            <li><a href="https://godoc.org/github.com/gobuffalo/buffalo" target="_blank" rel="noopener noreferrer"><i class="fa fa-external-link" aria-hidden="true"></i> <%= t("top.go-docs") %></a></li>
+            <li><a href="https://blog.gobuffalo.io" target="_blank" rel="noopener noreferrer"><i class="fa fa-external-link" aria-hidden="true"></i> <%= t("top.blog") %></a></li>
+            <li><a href="https://github.com/gobuffalo" target="_blank" rel="noopener noreferrer"><i class="fa fa-external-link" aria-hidden="true"></i> GitHub</a></li>
+            <li class="hero"><a href="http://patreon.com/buffalo" target="_blank" rel="noopener noreferrer"><i class="fa fa-external-link" aria-hidden="true"></i> <%= t("top.become-a-patreon") %></a></li>
           </ul>
         </div>
         <!-- END Top navbar -->

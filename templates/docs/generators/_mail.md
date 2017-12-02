@@ -1,14 +1,10 @@
 <%= title("Mails") %>
 
-The `mail` package is intended to allow easy Email sending with Buffalo, it allows you to define your custom `mail.Sender` for the provider you would like to use.
-
-## Installation
-
-```bash
-go get -u github.com/gobuffalo/buffalo/mail
-```
+The [`mail`](https://godoc.org/github.com/gobuffalo/buffalo/mail) package is intended to allow easy Email sending with Buffalo, it allows you to define your custom `mail.Sender` for the provider you would like to use.
 
 ## Generator
+
+When the generator is run for the first time it will bootstrap a new `mailers` package and a new `templates/mail` directory.
 
 ```bash
 $ buffalo generate mailer welcome_email
@@ -17,19 +13,19 @@ $ buffalo generate mailer welcome_email
 ## Example Usage
 
 ```go
-//actions/mail.go
+// mailers/mail.go
 package x
 
 import (
-	"log"
+  "log"
 
-	"github.com/gobuffalo/buffalo/render"
-	"github.com/gobuffalo/envy"
-	"github.com/gobuffalo/packr"
-	"github.com/gobuffalo/plush"
-	"github.com/gobuffalo/buffalo/mail"
-	"github.com/pkg/errors"
-	"gitlab.com/wawandco/app/models"
+  "github.com/gobuffalo/buffalo/render"
+  "github.com/gobuffalo/envy"
+  "github.com/gobuffalo/packr"
+  "github.com/gobuffalo/plush"
+  "github.com/gobuffalo/buffalo/mail"
+  "github.com/pkg/errors"
+  "gitlab.com/wawandco/app/models"
 )
 
 var smtp mail.Sender
@@ -37,69 +33,69 @@ var r *render.Engine
 
 func init() {
 
-	//Pulling config from the env.
-	port := envy.Get("SMTP_PORT", "1025")
-	host := envy.Get("SMTP_HOST", "localhost")
-	user := envy.Get("SMTP_USER", "")
-	password := envy.Get("SMTP_PASSWORD", "")
+  // Pulling config from the env.
+  port := envy.Get("SMTP_PORT", "1025")
+  host := envy.Get("SMTP_HOST", "localhost")
+  user := envy.Get("SMTP_USER", "")
+  password := envy.Get("SMTP_PASSWORD", "")
 
-	var err error
-	smtp, err = mail.NewSMTPSender(host, port, user, password)
+  var err error
+  smtp, err = mail.NewSMTPSender(host, port, user, password)
 
-	if err != nil {
-		log.Fatal(err)
-	}
+  if err != nil {
+    log.Fatal(err)
+  }
 
-	//The rendering engine, this is usually generated inside actions/render.go in your buffalo app.
-	r = render.New(render.Options{
-		TemplatesBox:   packr.NewBox("../templates"),
-	})
+  // The rendering engine, this is usually generated inside actions/render.go in your buffalo app.
+  r = render.New(render.Options{
+    TemplatesBox:   packr.NewBox("../templates"),
+  })
 }
 
-//SendContactMessage Sends contact message to contact@myapp.com
+// SendContactMessage Sends contact message to contact@myapp.com
 func SendContactMessage(c *models.Contact) error {
 
-	//Creates a new message
-	m := mail.NewMessage()
-	m.From = "sender@myapp.com"
-	m.Subject = "New Contact"
-	m.To = []string{"contact@myapp.com"}
+  // Creates a new message
+  m := mail.NewMessage()
+  m.From = "sender@myapp.com"
+  m.Subject = "New Contact"
+  m.To = []string{"contact@myapp.com"}
 
-	// Data that will be used inside the templates when rendering.
-	data := map[string]interface{}{
-		"contact": c,
-	}
+  // Data that will be used inside the templates when rendering.
+  data := map[string]interface{}{
+    "contact": c,
+  }
 
-	// You can add multiple bodies to the message you're creating to have content-types alternatives.
-	err := m.AddBodies(data, r.HTML("mail/contact.html"), r.Plain("mail/contact.txt"))
+  // You can add multiple bodies to the message you're creating to have content-types alternatives.
+  err := m.AddBodies(data, r.HTML("mail/contact.html"), r.Plain("mail/contact.txt"))
 
-	if err != nil {
-		return errors.WithStack(err)
-	}
+  if err != nil {
+    return errors.WithStack(err)
+  }
 
-	err = smtp.Send(m)
-	if err != nil {
-		return errors.WithStack(err)
-	}
+  err = smtp.Send(m)
+  if err != nil {
+    return errors.WithStack(err)
+  }
 
-	return nil
+  return nil
 }
 
 ```
 
-This `SendContactMessage` could be called by one of your actions, p.e. the action that handles your contact form submission.
+This `SendContactMessage` could be called by one of your actions, i.e. the action that handles your contact form submission.
 
 ```go
-//actions/contact.go
+// actions/contact.go
 ...
 
 func ContactFormHandler(c buffalo.Context) error {
-    contact := &models.Contact{}
-    c.Bind(contact)
+  contact := &models.Contact{}
+  c.Bind(contact)
 
-    //Calling to send the message
-    SendContactMessage(contact)
-    return c.Redirect(302, "contact/thanks")
+  // Calling to send the message
+  SendContactMessage(contact)
+  return c.Redirect(302, "contact/thanks")
 }
 ...
 ```
@@ -111,21 +107,21 @@ If you're using Gmail or need to configure your SMTP connection you can use the 
 var smtp mail.Sender
 
 func init() {
-    port := envy.Get("SMTP_PORT", "465")
-    // or 587 with TLS
+  port := envy.Get("SMTP_PORT", "465")
+  // or 587 with TLS
 
-	host := envy.Get("SMTP_HOST", "smtp.gmail.com")
-	user := envy.Get("SMTP_USER", "your@email.com")
-	password := envy.Get("SMTP_PASSWORD", "yourp4ssw0rd")
+  host := envy.Get("SMTP_HOST", "smtp.gmail.com")
+  user := envy.Get("SMTP_USER", "your@email.com")
+  password := envy.Get("SMTP_PASSWORD", "yourp4ssw0rd")
 
-	var err error
-	sender, err := mail.NewSMTPSender(host, port, user, password)
-	sender.Dialer.SSL = true
+  var err error
+  sender, err := mail.NewSMTPSender(host, port, user, password)
+  sender.Dialer.SSL = true
 
-    //or if TLS
-    sender.Dialer.TLSConfig = &tls.Config{...}
+  //or if TLS
+  sender.Dialer.TLSConfig = &tls.Config{...}
 
-    smtp = sender
+  smtp = sender
 }
 ...
 ```

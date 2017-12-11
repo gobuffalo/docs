@@ -27,7 +27,12 @@ func SectionTitle(title string, opts map[string]interface{}, help plush.HelperCo
 		opts["name"] = html.EscapeString(inflect.Dasherize(title))
 	}
 
-	opts["title"] = title
+	if _, ok := opts["title"]; !ok {
+		opts["title"] = title
+	}
+
+	opts["text"] = title
+
 	s, err := sectionTitleTemplate.Exec(plush.NewContextWith(opts))
 	if err != nil {
 		return "", err
@@ -39,6 +44,6 @@ var sectionTitleTemplate *plush.Template
 
 const sectionTitleTemplateHtml = `
 <h2>
-<a name="<%= name %>" title="<%= htmlEscape(title) %>" href="#<%= name %>"><%= title %></a>
+<a name="<%= name %>" title="<%= htmlEscape(title) %>" href="#<%= name %>"><%= raw(text) %></a>
 </h2>
 `

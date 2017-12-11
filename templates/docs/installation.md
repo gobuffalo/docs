@@ -1,5 +1,9 @@
 <%= h1("Installation") %>
 
+Buffalo provides **two major components**:
+* The `buffalo` tool, a powerful toolbox to help you develop in a fast and efficient way.
+* The buffalo framework, a collection of pieces to construct your app.
+
 <%= title("Requirements") %>
 
 Before installing make sure you have the required dependencies installed:
@@ -15,11 +19,9 @@ Before installing make sure you have the required dependencies installed:
 
 * **SQLite 3**: GCC, or equivalent C compiler for [mattn/go-sqlite3](https://github.com/mattn/go-sqlite3).
 
-<%= title("Basic Installation") %>
+<%= title("Installation **with** SQLite3 Support", {name: "with-SQLite3", title: "Installation with SQLite3 Support"}) %>
 
-Buffalo provides **two major components**:
-* The `buffalo` tool, a powerful toolbox to help you develop in a fast and efficient way.
-* The buffalo framework, a collection of pieces to construct your app.
+**SQLite 3** requires a GCC, or equivalent C compiler for [mattn/go-sqlite3](https://github.com/mattn/go-sqlite3) to compile. You **must** have a GCC installed **first** before installing Buffalo.
 
 To install Buffalo, ensure your `GOPATH` is defined, then:
 
@@ -27,10 +29,18 @@ To install Buffalo, ensure your `GOPATH` is defined, then:
 $ go get -u -v github.com/gobuffalo/buffalo/buffalo
 ```
 
+**Windows Users**: Follow the installation guide at [https://blog.gobuffalo.io/install-buffalo-on-windows-10-e08b3aa304a3](https://blog.gobuffalo.io/install-buffalo-on-windows-10-e08b3aa304a3) to install a GCC for Windows 10.
+
 <%= note() { %>
 These instructions can also be used for upgrading to a newer version of Buffalo.
 <% } %>
 
+<%= title("Installation **without** SQLite3 Support", {name: "without-SQLite3", title: "Installation without SQLite3 Support"}) %>
+
+```bash
+$ go get -u -v -tags nosqlite github.com/gobuffalo/buffalo/buffalo
+```
+
 <%= note() { %>
-If you're using **Windows**, you'll probably face an error because `Pop`, the default Buffalo database handler, needs a specific extension to be compiled using GCC. You can follow the instructions here to get out from the hole: https://blog.gobuffalo.io/install-buffalo-on-windows-10-e08b3aa304a3.
+These instructions can also be used for upgrading to a newer version of Buffalo.
 <% } %>

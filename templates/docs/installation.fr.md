@@ -21,10 +21,16 @@ Buffalo fournit **deux composants majeurs** :
 * La commande `buffalo`, une puissante boîte à outils pour vous aider à développer d'une manière rapide et efficace.
 * Le *framework* buffalo, un ensemble de pièces pour construire votre application.
 
+Pour installer Buffalo, assurez-vous que votre `GOPATH` est bien défini, puis&nbsp;:
+
 ```bash
 $ go get -u -v github.com/gobuffalo/buffalo/buffalo
 ```
 
 <%= note() { %>
 Ces instructions peuvent également être utilisées pour mettre à jour votre version de Buffalo.
+<% } %>
+
+<%= note() { %>
+Si vous utilisez **Windows**, vous rencontrerez sans doute une erreur&nbsp;: `Pop`, le gestionnaire de base de données par défaut de Buffalo, utilise une extension spécifique qui nécessite d'être compilée avec GCC. Vous pouvez suivre les instructions suivantes pour vous sortir de la situation&nbsp;: https://blog.gobuffalo.io/install-buffalo-on-windows-10-e08b3aa304a3 (EN).
 <% } %>

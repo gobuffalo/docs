@@ -4,12 +4,12 @@ import (
 	"time"
 
 	"github.com/gobuffalo/buffalo"
+	"github.com/gobuffalo/buffalo/middleware/i18n"
 	"github.com/gobuffalo/buffalo/middleware/ssl"
 	"github.com/gobuffalo/envy"
+	"github.com/gobuffalo/packr"
 	"github.com/gobuffalo/x/sessions"
 	"github.com/unrolled/secure"
-	"github.com/gobuffalo/packr"
-	"github.com/gobuffalo/buffalo/middleware/i18n"
 )
 
 var ENV = envy.Get("GO_ENV", "development")

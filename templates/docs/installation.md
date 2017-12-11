@@ -23,6 +23,8 @@ Before installing make sure you have the required dependencies installed:
 
 **SQLite 3** requires a GCC, or equivalent C compiler for [mattn/go-sqlite3](https://github.com/mattn/go-sqlite3) to compile. You **must** have a GCC installed **first** before installing Buffalo.
 
+To install Buffalo, ensure your `GOPATH` is defined, then:
+
 ```bash
 $ go get -u -v github.com/gobuffalo/buffalo/buffalo
 ```
@@ -42,4 +44,3 @@ $ go get -u -v -tags nosqlite github.com/gobuffalo/buffalo/buffalo
 <%= note() { %>
 These instructions can also be used for upgrading to a newer version of Buffalo.
 <% } %>
-

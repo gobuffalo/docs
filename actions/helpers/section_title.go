@@ -39,6 +39,6 @@ var sectionTitleTemplate *plush.Template
 
 const sectionTitleTemplateHtml = `
 <h2>
-<a name="<%= name %>" title="<%= htmlEscape(title) %>" href="#<%= name %>"><%= title %></a>
+<a name="<%= name %>" title="<%= htmlEscape(title) %>" href="#<%= name %>"><%= raw(title) %></a>
 </h2>
 `

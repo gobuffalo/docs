@@ -49,4 +49,24 @@ h2 {
 
 footer {
   background-color: #f5f5f5;
+  @extend .navbar;
+  @extend .navbar-fixed-bottom;
+  @extend .hidden-xs;
+
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+
+  @media (min-width: $screen-sm-min) {
+    margin-left: 240px;
+  }
+
+  @media (min-width: $screen-md-min) {
+    margin-left: 280px;
+  }
+}
+
+.feature {
+  @extend .col-xs-12;
+  @extend .col-md-6;
+  margin-bottom: 1em;
 }

@@ -37,7 +37,7 @@ Plush ships with two complimentary helpers that let you create dynamic HTML snip
 
 The `contentFor` helper takes a block of HTML and holds on to it using the given name. This block can then be used elsewhere in a template file, even when the content defined in a `contentFor` block is in a yielded-to template and is expanded into a `contentOf` block in a `yield`-calling template. The default `templates/application.html` calls `yield` like this.
 
-Take the following example. Suppose we have a `templates/application.html` that fully specifies everything in `<head>` and the outermost contents of `<body>`. This template yields to other subtemplates, like `templates/users/show.html`, to fill `<body>`. However, if we want to add or override something in the `<head>` from a subtemplate, we'll need to use `contentFor`. In this example, we'll add a way for subtemplates to add an extra chunk of CSS to the `<head>` of `application.html`:
+Take the following example. Suppose we have a `templates/application.html` that fully specifies everything in `&lt;head>` and the outermost contents of `&lt;body>`. This template yields to other subtemplates, like `templates/users/show.html`, to fill `&lt;body>`. However, if we want to add or override something in the `&lt;head>` from a subtemplate, we'll need to use `contentFor`. In this example, we'll add a way for subtemplates to add an extra chunk of CSS to the `&lt;head>` of `application.html`:
 
 ```html
 &lt;!DOCTYPE html>
@@ -89,6 +89,7 @@ As it turns out, our `users/index.html` template could use a little page-wide st
 \<% } %>
 ```
 
-The styling for the `online` and `offline` classes then appears at the end of `<head>` in `/users`. In other pages, nothing is added.
+The styling for the `online` and `offline` classes then appears at the end of `&lt;head>` in `/users`. In other pages, nothing is added.
 
-Of course, if you'd rather do extensive processing on what goes into a chunk that goes on a webpage, you may want to do your processing in Go code instead of in templates. In that case, call, say, `c.Set("moonPhase", mp)` where `c` is a `buffalo.Context` in a function in an action like in `actions/users.go`, and `mp` is some string or object. Then, in your templates, refer to `<%= moonPhase %>` to display your expertly-calculated phase of the moon.
+Of course, if you'd rather do extensive processing on what goes into a chunk that goes on a webpage, you may want to do your processing in Go code instead of in templates. In that case, call, say, `c.Set("moonPhase", mp)` where `c` is a `buffalo.Context` in a function in an action like in `actions/users.go`, and `mp` is some string or object. Then, in your templates, refer to `\<%= moonPhase %>` to display your expertly-calculated phase of the moon.
+

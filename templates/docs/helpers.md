@@ -74,18 +74,18 @@ As it turns out, our `users/index.html` template could use a little page-wide st
   &lt;/tbody>
 &lt;/table>
 
-\<% contentFor("extraStyle") %>
-&lt;style>
+\<% contentFor("extraStyle") { %>
+  &lt;style>
     .online {
-        color: limegreen;
-        background: black;
+      color: limegreen;
+      background: black;
     }
-    
+
     .offline {
-        color: lightgray;
-        background: darkgray;
+      color: lightgray;
+      background: darkgray;
     }
-&lt;/style>
+  &lt;/style>
 \<% } %>
 ```
 

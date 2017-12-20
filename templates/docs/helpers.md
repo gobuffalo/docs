@@ -31,13 +31,13 @@ Plush also imports all of the helpers found [https://github.com/markbates/inflec
 
 <%= title("Content Helpers") %>
 
-Plush ships with two complimentary helpers that let you create dynamic HTML snippets and re-use them later in the template.
+Plush ships with two complementary helpers that let you create dynamic HTML snippets and re-use them later in the template.
 
 ### The `contentFor` and `contentOf` Helpers
 
 The `contentFor` helper takes a block of HTML and holds on to it using the given name. This block can then be used elsewhere in a template file, even when the content defined in a `contentFor` block is in a yielded-to template and is expanded into a `contentOf` block in a `yield`-calling template. The default `templates/application.html` calls `yield` like this.
 
-Take the following example. Suppose we have a `templates/application.html` that fully specifies everything in `&lt;head>` and the outermost contents of `&lt;body>`. This template yields to other subtemplates, like `templates/users/show.html`, to fill `&lt;body>`. However, if we want to add or override something in the `&lt;head>` from a subtemplate, we'll need to use `contentFor`. In this example, we'll add a way for subtemplates to add an extra chunk of CSS to the `&lt;head>` of `application.html`:
+Take the following example: suppose we have a `templates/application.html` that fully specifies everything in `&lt;head>` and the outermost contents of `&lt;body>`. This template yields to other subtemplates, like `templates/users/show.html`, to fill `&lt;body>`. However, if we want to add or override something in the `&lt;head>` from a subtemplate, we'll need to use `contentFor`. In this example, we'll add a way for subtemplates to add an extra chunk of CSS to the `&lt;head>` of `application.html`:
 
 ```html
 &lt;!DOCTYPE html>

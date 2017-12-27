@@ -15,8 +15,6 @@ All partial file names must start with an `_`. For example: `_form.html`. This h
 
 ```html
 // templates/users/_form.html
-&lt;h1>Create New User&lt;/h1>
-
 &lt;form action="/users">
 &lt;!-- form stuff here  -->
 &lt;form>

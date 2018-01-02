@@ -31,6 +31,12 @@
   <div class="col-md-6">
     <%= partial("docs/examples/bizcards.md") %>
   </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <%= partial("docs/examples/blog_app.md") %>
+  </div>
+</div>
 <div class="row">
   <div class="col-md-12">
     <%= partial("docs/examples/articles.md") %>

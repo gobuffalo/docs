@@ -43,3 +43,6 @@
 
 - id: menu.directory-structure
   translation: Directory structure
+
+- id: menu.contributing
+  translation: Contributing

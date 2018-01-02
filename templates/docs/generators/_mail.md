@@ -1,8 +1,4 @@
-<%= title("Mails") %>
-
-The [`mail`](https://godoc.org/github.com/gobuffalo/buffalo/mail) package is intended to allow easy Email sending with Buffalo, it allows you to define your custom `mail.Sender` for the provider you would like to use.
-
-## Generator
+<%= title("Generator") %>
 
 When the generator is run for the first time it will bootstrap a new `mailers` package and a new `templates/mail` directory.
 
@@ -10,7 +6,7 @@ When the generator is run for the first time it will bootstrap a new `mailers` p
 $ buffalo generate mailer welcome_email
 ```
 
-## Example Usage
+<%= title("Example Usage") %>
 
 ```go
 // mailers/mail.go
@@ -125,3 +121,5 @@ func init() {
 }
 ...
 ```
+
+

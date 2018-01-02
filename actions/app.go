@@ -51,10 +51,13 @@ func App() *buffalo.App {
 		app.Use(T.Middleware())
 
 		app.Redirect(302, "/docs/getting-started", "/")
-		app.Redirect(302, "/docs/test-suites", "/docs/testing")
-		app.GET("/docs/{name:.+}", Docs)
+		app.Redirect(302, "/docs/test-suites", "/testing")
+		app.GET("/docs/{name:.+}", func(c buffalo.Context) error {
+			return c.Redirect(302, "/"+c.Param("name"))
+		})
 
 		app.ServeFiles("/assets", assetBox)
+		app.GET("/{name:.+}", Docs)
 		app.GET("/", HomeHandler)
 	}
 	return app

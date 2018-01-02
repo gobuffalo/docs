@@ -1,124 +1,124 @@
 <div class="jumbotron">
-	<div class="row">
-		<div class="col-md-9 col-xs-12">
-			<h1>Buffalo</h1>
-			<p>
-				Un écosystème pour le <strong>développement Web en Go</strong>, conçu pour rendre la vie des développeurs plus facile.
-			</p>
-			<p>
-				Dernière version&nbsp;: <a href="https://github.com/gobuffalo/buffalo/releases" target="_blank"><strong><%= version %></strong></a><br />
-				Nécessite Go <strong><%= goMinVersion %>+</strong>
-			</p>
-		</div>
-		<div class="col-md-1 hidden-xs">
-			<img src="/assets/images/buffalo.svg" alt="buffalo" width="230" />
-		</div>
-	</div>
+  <div class="row">
+    <div class="col-md-9 col-xs-12">
+      <h1>Buffalo</h1>
+      <p>
+        Un écosystème pour le <strong>développement Web en Go</strong>, conçu pour rendre la vie des développeurs plus facile.
+      </p>
+      <p>
+        Dernière version&nbsp;: <a href="https://github.com/gobuffalo/buffalo/releases" target="_blank"><strong><%= version %></strong></a><br />
+        Nécessite Go <strong><%= goMinVersion %>+</strong>
+      </p>
+    </div>
+    <div class="col-md-1 hidden-xs">
+      <img src="/assets/images/buffalo.svg" alt="buffalo" width="230" />
+    </div>
+  </div>
 </div>
 
 <hr style="clear: both;" />
 
-<%= partial("docs/youtube.html") %>
-
-<hr />
-
 <h2>Fonctionnalités</h2>
 
 <div class="row">
-	<div class="feature">
-		<h4>
-			<i class="fa fa-cube" aria-hidden="true"></i>
- 			Routage
-		</h4>
+  <div class="feature">
+    <h4>
+      <i class="fa fa-cube" aria-hidden="true"></i>
+      Routage
+    </h4>
 
-		<p>
-			Buffalo utilise la boîte à outils <a href="https://github.com/gorilla" target="_blank">Gorilla</a> pour gérer les routes, sessions, cookies, etc. Il existe sans doute des routeurs plus rapides, mais celui-ci est le plus puissant&nbsp;!
-		</p>
-	</div>
+    <p>
+      Buffalo utilise la boîte à outils <a href="https://github.com/gorilla" target="_blank">Gorilla</a> pour gérer les routes, sessions, cookies, etc. Il existe sans doute des routeurs plus rapides, mais celui-ci est le plus puissant&nbsp;!
+    </p>
+  </div>
 
-	<div class="feature">
-		<h4>
-			<i class="fa fa-cube" aria-hidden="true"></i>
-			Gabarits
-		</h4>
-		<p>
-			Composez vos vues avec <a href="https://github.com/gobuffalo/plush" target="_blank">Plush</a>, en utilisant une syntaxe similaire à Ruby on Rails. Étendez ses possiblités en créant vos propres fonctions.<br />Si vous ne l'aimez pas, vous pouvez utiliser le standard <code>html/template</code> ou même votre propre moteur ! 
-		</p>
-	</div>
+  <div class="feature">
+    <h4>
+      <i class="fa fa-cube" aria-hidden="true"></i>
+      Gabarits
+    </h4>
+    <p>
+      Composez vos vues avec <a href="https://github.com/gobuffalo/plush" target="_blank">Plush</a>, en utilisant une syntaxe similaire à Ruby on Rails. Étendez ses possiblités en créant vos propres fonctions.<br />Si vous ne l'aimez pas, vous pouvez utiliser le standard <code>html/template</code> ou même votre propre moteur !
+    </p>
+  </div>
 </div>
 <div class="row">
-	<div class="feature">
-		<h4>
-			<i class="fa fa-cube" aria-hidden="true"></i>
-			Boîte à outils Buffalo
-		</h4>
-		<p>
-			Développer un module pour une application Web débute <strong>toujours par les mêmes tâches</strong>. Buffalo fournit <strong>une boîte à outils simple</strong>, la commande <code>buffalo</code>, pour générer de nombreuses parties de votre application et exécuter des tâches courantes.
-		</p>
-		<p>
-			Vous pouvez même lui ajouter des plugins, en utilisant le langage de votre choix&nbsp;!
-		</p>
-	</div>
-	<div class="feature">
-		<h4>
-			<i class="fa fa-cube" aria-hidden="true"></i>
-			Tests
-		</h4>
-		<p>
-			<strong>Tester peut être une tâche ennuyeuse&nbsp;</strong>: Buffalo vous aide à <strong>définir des scénarios de test</strong>. Les générateurs d'action, de resource, ou de modèles créent des gabarits prêts à remplir pour vos tests.
-		</p>
-		<p>
-			Vous pouvez exécuter tous vos tests à l'aide d'une simple commande de la boîte à outils.
-		</p>
-	</div>
+  <div class="feature">
+    <h4>
+      <i class="fa fa-cube" aria-hidden="true"></i>
+      Boîte à outils Buffalo
+    </h4>
+    <p>
+      Développer un module pour une application Web débute <strong>toujours par les mêmes tâches</strong>. Buffalo fournit <strong>une boîte à outils simple</strong>, la commande <code>buffalo</code>, pour générer de nombreuses parties de votre application et exécuter des tâches courantes.
+    </p>
+    <p>
+      Vous pouvez même lui ajouter des plugins, en utilisant le langage de votre choix&nbsp;!
+    </p>
+  </div>
+  <div class="feature">
+    <h4>
+      <i class="fa fa-cube" aria-hidden="true"></i>
+      Tests
+    </h4>
+    <p>
+      <strong>Tester peut être une tâche ennuyeuse&nbsp;</strong>: Buffalo vous aide à <strong>définir des scénarios de test</strong>. Les générateurs d'action, de resource, ou de modèles créent des gabarits prêts à remplir pour vos tests.
+    </p>
+    <p>
+      Vous pouvez exécuter tous vos tests à l'aide d'une simple commande de la boîte à outils.
+    </p>
+  </div>
 </div>
 <div class="row">
-	<div class="feature">
-		<h4>
-			<i class="fa fa-cube" aria-hidden="true"></i>
-			Rechargement à chaud du code
-		</h4>
-		<p>
-			Codez, sauvegardez, rafraîchissez la page. Utilisez la commande <code>buffalo dev</code> pour reconstruire votre application, du cœur logique à l'interface utilisateur, et constatez les changements en direct&nbsp;!
-		</p>
-	</div>
-	<div class="feature">
-		<h4>
-			<i class="fa fa-cube" aria-hidden="true"></i>
-			Pipeline frontend <span class="label label-default">Optionnel</span>
-		</h4>
-		<p>
-			Utilisez la configuration Webpack pré-générée pour compiler vos composants graphiques&nbsp;: optimisez votre application de fond en comble&nbsp;!
-		</p>
-	</div>
+  <div class="feature">
+    <h4>
+      <i class="fa fa-cube" aria-hidden="true"></i>
+      Rechargement à chaud du code
+    </h4>
+    <p>
+      Codez, sauvegardez, rafraîchissez la page. Utilisez la commande <code>buffalo dev</code> pour reconstruire votre application, du cœur logique à l'interface utilisateur, et constatez les changements en direct&nbsp;!
+    </p>
+  </div>
+  <div class="feature">
+    <h4>
+      <i class="fa fa-cube" aria-hidden="true"></i>
+      Pipeline frontend <span class="label label-default">Optionnel</span>
+    </h4>
+    <p>
+      Utilisez la configuration Webpack pré-générée pour compiler vos composants graphiques&nbsp;: optimisez votre application de fond en comble&nbsp;!
+    </p>
+  </div>
 </div>
 <div class="row">
-	<div class="feature">
-		<h4>
-			<i class="fa fa-cube" aria-hidden="true"></i>
-			Modèles / ORM <span class="label label-default">Optionnel</span>
-		</h4>
-		<p>
-			Une intégration forte avec <a href="https://github.com/markbates/pop" target="_blank">pop</a> permet de gérer les bases de données simplement, ainsi que les tâches courantes associées.
-		</p>
-		<p>
-			Bases de données supportées&nbsp;: MySQL/ MariaDB, PostgreSQL, SQLite.
-		</p>
-	</div>
-	<div class="feature">
-		<h4>
-			<i class="fa fa-cube" aria-hidden="true"></i>
-			Tâches / Tâches de fond <span class="label label-default">Optionnel</span>
-		</h4>
-		<p>
-			Si vous êtes famillier des tâches Rake en Ruby, vous vous sentirez comme chez vous en utilisant <a href="https://github.com/markbates/grift" target="_blank">Grift</a>. Populer une base de données, lancer une tâche de nettoyage sont maintenant à portée de main&nbsp;!
-		</p>
-		<p>
-			Vous pouvez également faire tourner des tâches de fond, avec la même simplicité.
-		</p>
-	</div>
+  <div class="feature">
+    <h4>
+      <i class="fa fa-cube" aria-hidden="true"></i>
+      Modèles / ORM <span class="label label-default">Optionnel</span>
+    </h4>
+    <p>
+      Une intégration forte avec <a href="https://github.com/markbates/pop" target="_blank">pop</a> permet de gérer les bases de données simplement, ainsi que les tâches courantes associées.
+    </p>
+    <p>
+      Bases de données supportées&nbsp;: MySQL/ MariaDB, PostgreSQL, SQLite.
+    </p>
+  </div>
+  <div class="feature">
+    <h4>
+      <i class="fa fa-cube" aria-hidden="true"></i>
+      Tâches / Tâches de fond <span class="label label-default">Optionnel</span>
+    </h4>
+    <p>
+      Si vous êtes famillier des tâches Rake en Ruby, vous vous sentirez comme chez vous en utilisant <a href="https://github.com/markbates/grift" target="_blank">Grift</a>. Populer une base de données, lancer une tâche de nettoyage sont maintenant à portée de main&nbsp;!
+    </p>
+    <p>
+      Vous pouvez également faire tourner des tâches de fond, avec la même simplicité.
+    </p>
+  </div>
 </div>
 
 <p class="get-started-btn">
-	<a href="/docs/installation" class="btn btn-primary btn-lg"><strong>Démarrer</strong> avec Buffalo</a>
+  <a href="/docs/installation" class="btn btn-primary btn-lg"><strong>Démarrer</strong> avec Buffalo</a>
 </p>
+
+<hr>
+
+<%= partial("docs/youtube.html") %>

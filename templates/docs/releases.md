@@ -4,7 +4,7 @@
 | Date                  | Version         | Blog                                                            | GitHub |
 |------                 |---------        |------                                                           |--------|
 | December 2nd, 2017    | v0.10.2         | https://blog.gobuffalo.io/buffalo-v0-10-2-released-9427d0d5eec4 | https://github.com/gobuffalo/buffalo/releases/tag/v0.10.2 |
-| November 6th, 2017    | v0.10.0/v0.10.1 | https://blog.gobuffalo.io/buffalo-v0-10-0-released-510e90b7c11  | https://github.com/gobuffalo/buffalo/releases/tag/v0.10.1 |
+| November 6th, 2017    | v0.10.0/v0.10.1 | https://blog.gobuffalo.io/buffalo-v0-10-0-released-510e90b7c114 | https://github.com/gobuffalo/buffalo/releases/tag/v0.10.1 |
 | October 2nd, 2017     | v0.9.5          | https://blog.gobuffalo.io/buffalo-v0-9-5-released-f82bfd42ce90  | https://github.com/gobuffalo/buffalo/releases/tag/v0.9.5  |
 | September 5th, 2017   | v0.9.4          | https://blog.gobuffalo.io/buffalo-v0-9-4-released-5d2327a4742e  | https://github.com/gobuffalo/buffalo/releases/tag/v0.9.4  |
 | August 14th, 2017     | v0.9.3          | https://blog.gobuffalo.io/buffalo-v0-9-3-released-60e3b1427cf7  | https://github.com/gobuffalo/buffalo/releases/tag/v0.9.3  |

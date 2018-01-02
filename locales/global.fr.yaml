@@ -43,3 +43,6 @@
 
 - id: menu.directory-structure
   translation: Structure d'un projet
+
+- id: menu.contributing
+  translation: Contribuer

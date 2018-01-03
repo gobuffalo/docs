@@ -4,6 +4,7 @@ import (
 	"time"
 
 	"github.com/gobuffalo/buffalo"
+	"github.com/gobuffalo/buffalo/middleware"
 	"github.com/gobuffalo/buffalo/middleware/i18n"
 	"github.com/gobuffalo/buffalo/middleware/ssl"
 	"github.com/gobuffalo/envy"
@@ -33,12 +34,20 @@ func App() *buffalo.App {
 			SSLProxyHeaders: map[string]string{"X-Forwarded-Proto": "https"},
 		}))
 
+		if ENV == "development" {
+			app.Use(middleware.ParameterLogger)
+		}
+
 		app.Use(func(next buffalo.Handler) buffalo.Handler {
 			return func(c buffalo.Context) error {
 				c.Set("version", "0.10.2")
 				c.Set("goMinVersion", "1.8.1")
 				c.Set("year", time.Now().Year())
 				c.Set("trainingURL", "http://www.gopherguides.com")
+				c.Set("lang", "en")
+				if lang, err := c.Cookies().Get("lang"); err == nil {
+					c.Set("lang", lang)
+				}
 				return next(c)
 			}
 		})
@@ -55,6 +64,7 @@ func App() *buffalo.App {
 		app.GET("/docs/{name:.+}", Docs)
 
 		app.ServeFiles("/assets", assetBox)
+		app.POST("/lang", ChangeLanguage)
 		app.GET("/", HomeHandler)
 	}
 	return app

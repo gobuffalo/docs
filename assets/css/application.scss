@@ -78,4 +78,16 @@ footer {
 
 .language-selector {
   padding: 2px 20px !important;
+
+  border-bottom: solid 1px #3c4c5f;
+
+  label {
+    color: #aaa;
+  }
+
+  select.form-control {
+    background-color: #5b728f;
+    border-color: #222;
+    color: #eee;
+  }
 }

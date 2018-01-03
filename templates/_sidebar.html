@@ -3,13 +3,11 @@
 
   <ul class="sidenav dropable ">
 
-    <li>
-      <div class="language-selector">
-        <%= form({action: "/lang"}) { %>
-          <%= f.InputTag({type: "hidden", value: current_path, name: "url"}) %>
-          <%= f.SelectTag({name: "language", options: {"English": "en", "French": "fr"}, id: "language", value: lang, label: t("menu.language")}) %>
-        <% } %>
-      </div>
+    <li class="language-selector">
+      <%= form({action: "/lang"}) { %>
+        <%= f.SelectTag({name: "language", options: {"English": "en", "Français": "fr"}, id: "language", value: lang, label: t("menu.language")}) %>
+        <%= f.InputTag({type: "hidden", value: current_path, name: "url"}) %>
+      <% } %>
     </li>
 
     <li>

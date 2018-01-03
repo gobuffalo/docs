@@ -46,3 +46,22 @@
 
 - id: menu.contributing
   translation: Contribuer
+
+- id: menu.releases
+  translation: Versions publiées
+
+# Releases page
+- id: releases.title
+  translation: Versions publiées
+
+- id: releases.date
+  translation: Date
+
+- id: releases.version
+  translation: Version
+
+- id: releases.blog
+  translation: Blog
+
+- id: releases.github
+  translation: GitHub

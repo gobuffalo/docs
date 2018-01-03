@@ -2,6 +2,14 @@
 <aside class="col-md-3 col-sm-3 sidebar sidebar-boxed sidebar-dark">
 
   <ul class="sidenav dropable ">
+
+    <li class="language-selector">
+      <%= form({action: "/lang"}) { %>
+        <%= f.SelectTag({name: "language", options: {"English": "en", "Français": "fr"}, id: "language", value: lang, label: t("menu.language")}) %>
+        <%= f.InputTag({type: "hidden", value: current_path, name: "url"}) %>
+      <% } %>
+    </li>
+
     <li>
       <a href="/docs/overview"><%= t("menu.overview") %></a>
     </li>

@@ -49,8 +49,11 @@ h2 {
 
 footer {
   background-color: #f5f5f5;
+
   @extend .navbar;
+
   @extend .navbar-fixed-bottom;
+
   @extend .hidden-xs;
 
   padding-top: 0.5em;
@@ -67,6 +70,24 @@ footer {
 
 .feature {
   @extend .col-xs-12;
+
   @extend .col-md-6;
+
   margin-bottom: 1em;
+}
+
+.language-selector {
+  padding: 2px 20px !important;
+
+  border-bottom: solid 1px #3c4c5f;
+
+  label {
+    color: #aaa;
+  }
+
+  select.form-control {
+    background-color: #5b728f;
+    border-color: #222;
+    color: #eee;
+  }
 }

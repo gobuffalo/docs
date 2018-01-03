@@ -87,3 +87,9 @@ $(() => {
     });
   });
 });
+
+$(() => {
+  $("#language").on("change", (e) => {
+    $(e.target).closest("form").submit();
+  });
+});

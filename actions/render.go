@@ -27,6 +27,9 @@ func init() {
 			},
 			"codeTabs": helpers.CodeTabs,
 			"faq":      helpers.Faq,
+			"githubRelease": func(version string) template.HTML {
+				return template.HTML(fmt.Sprintf(githubRelease, version, version))
+			},
 		},
 		TemplatesBox: packr.NewBox("../templates"),
 		AssetsBox:    assetBox,
@@ -38,3 +41,5 @@ const vimeo = `<div class="video">
 </div>`
 
 const sinceVersion = `<span class="label label-primary">since <strong>v%s</strong></span>`
+
+const githubRelease = `<a href="https://github.com/gobuffalo/buffalo/releases/tag/%s" target="_blank" rel="noopener noreferrer">releases/tag/%s</a>`

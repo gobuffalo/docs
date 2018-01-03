@@ -144,3 +144,18 @@ a.DELETE("/users/{id}", ur.Destroy)
 ```
 
 See [Generators](/docs/generators#resources) for information on how to generate new resources.
+
+<%= title("Loose Slash", {}) %>
+
+<%= sinceVersion("0.10.3") %>
+
+By default, the configured routes for your app **match strictly** the pattern you defined: if the pattern ends with a slash, the URL won't be accessible without a slash. Conversely, a pattern without an ending slash won't match an URL with an ending slash.
+
+To allow your routes to ignore the ending slash, you can use the `LooseSlash` option:
+
+```go
+a := buffalo.New(buffalo.Options{
+  Env:         ENV,
+  LooseSlash:  true,  
+})
+```

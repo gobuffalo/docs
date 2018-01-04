@@ -21,7 +21,7 @@ NGINX allows two ways to be configured with your app:
 
 #### Single backend app on same host
 
-**app env config**
+**app env config:**
 ```bash
 ADDR=127.0.0.1
 PORT=3000
@@ -47,19 +47,19 @@ server {
 
 Using different ports just for the example:
 
-**app1 env config**
+**app1 env config:**
 ```bash
 ADDR=0.0.0.0 
 PORT=3000
 ```
 
-**app2 env config**
+**app2 env config:**
 ```bash
 ADDR=0.0.0.0 
 PORT=3001
 ```
 
-**app3 env config**
+**app3 env config:**
 ```bash
 ADDR=0.0.0.0 
 PORT=3002
@@ -87,7 +87,7 @@ server {
 
 <%= sinceVersion("0.10.3") %>
 
-**app env config**
+**app env config:**
 ```bash
 ADDR=unix:/tmp/buffalo.sock
 ```

@@ -1,6 +1,6 @@
 <%= title("Binding to a Struct") %>
 
-The [`c.Bind`](https://godoc.org/github.com/gobuffalo/buffalo#Context) allows form elements to be bound to a struct. The `c.Bind` function can also bind uploaded files to the struct. To do this the type of the struct attribute **must** be a `binding.File` type.
+The [`c.Bind`](https://godoc.org/github.com/gobuffalo/buffalo#Context) allows form elements to be bound to a struct, but it can also attach uploaded files to the struct. To do this, the type of the struct attribute **must** be a `binding.File` type.
 
 In the example below you can see a model, which is configured to have a `MyFile` attribute that is of type `binding.File`. There is an `AfterCreate` callback on this example model that saves the file to disk after the model has been successfully saved to the database.
 

@@ -1,7 +1,7 @@
 # File Uploads
 <%= sinceVersion("0.10.3") %>
 
-Buffalo allows for the easily handling of files uploaded from a form. Storing those files, such as to disk or S3, is up to you the end developer, Buffalo just gives you easy access to the file from the request.
+Buffalo allows for the easily handling of files uploaded from a form. Storing those files, such as to disk or S3, is up to you the end developer: Buffalo just gives you easy access to the file from the request.
 
 <%= title("Configuring the Form") %>
 

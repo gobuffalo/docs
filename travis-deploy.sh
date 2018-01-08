@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo $HEROKU_API_KEY
+
 set -e # Abort script at first error
 set -u # Disallow unset variables
 
@@ -11,7 +13,7 @@ then
 fi
 
 # Install the toolbelt, and the required plugin.
-wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+npm install -g heroku-cli
 heroku plugins:install heroku-container-registry
 
 # Build and release the application.

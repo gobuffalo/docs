@@ -5,8 +5,8 @@ ENV BP=$GOPATH/src/github.com/gobuffalo/gobuffalo
 RUN mkdir -p $BP
 WORKDIR $BP
 
-ADD Gokpg.toml .
-ADD Gokpg.lock .
+ADD Gopkg.toml .
+ADD Gopkg.lock .
 RUN dep ensure
 
 ADD package.json .

@@ -21,7 +21,15 @@ script:
 #       docker build -t registry.heroku.com/getbuffalo/web .
 #       docker push registry.heroku.com/getbuffalo/web
 #     fi
+# after_success:
+#   - docker build -t registry.heroku.com/getbuffalo/web .
+#   - docker login --username=_ --password=$HEROKU_TOKEN registry.heroku.com
+#   - docker push registry.heroku.com/getbuffalo/web
+
 after_success:
-  - docker build -t registry.heroku.com/getbuffalo/web .
-  - docker login --username=_ --password=$HEROKU_TOKEN registry.heroku.com
-  - docker push registry.heroku.com/getbuffalo/web
+  - ./travis-deploy.sh
+
+# Don't build every commit - only PRs and when new code lands in Master
+branches:
+  only:
+      - auto-deploy

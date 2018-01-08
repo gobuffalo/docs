@@ -13,7 +13,7 @@ go:
   - 1.9
 
 script:
-  - echo "hi"
+  - echo $HEROKU_TOKEN
 
 # after_success:
 #   - if [ "$TRAVIS_BRANCH" == "master" ]; then

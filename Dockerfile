@@ -5,6 +5,7 @@ ENV BP=$GOPATH/src/github.com/gobuffalo/gobuffalo
 RUN mkdir -p $BP
 WORKDIR $BP
 
+RUN dep ensure
 ADD package.json .
 ADD yarn.lock .
 RUN yarn install

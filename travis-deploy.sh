@@ -12,9 +12,9 @@ fi
 
 # Install the toolbelt, and the required plugin.
 wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
-heroku plugins:install heroku-docker
+heroku plugins:install heroku-container-registry
 
 # Build and release the application.
 # To give access to your Heroku apps, you
 # need to set the HEROKU_API_KEY environment variable.
-heroku container:push web
+heroku container:push web --app getbuffalo

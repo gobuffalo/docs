@@ -14,7 +14,7 @@ fi
 
 # Install the toolbelt, and the required plugin.
 npm install -g heroku-cli
-heroku plugins:install heroku-container-registry
+heroku plugins:install heroku-container-registry --force
 
 # Build and release the application.
 # To give access to your Heroku apps, you

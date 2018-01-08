@@ -13,10 +13,14 @@ The asset pipeline is initially configured to support ES6 JavaScript files, with
 The following are automatically installed and configured during setup of the asset pipeline:
 
 * [jQuery](https://jquery.com)
-* [Bootstrap](http://getbootstrap.com)
+* [Bootstrap 3](http://getbootstrap.com)
 * [jQuery UJS](https://github.com/rails/jquery-ujs)
 
 None of the installed packages are required, and may be removed. They are included for convenience.
+
+<%= sinceVersion("0.10.3") %>
+
+The default generated version uses Bootstrap 3. You can use the `--bootstrap` flag on the `buffalo new` command to use Bootstrap 4 instead.
 
 <%= title("CSS") %>
 
@@ -24,10 +28,14 @@ By default the asset pipeline is configured to use [.scss](http://sass-lang.com)
 
 The following are automatically installed and configured during setup of the asset pipeline:
 
-* [Bootstrap](http://getbootstrap.com)
+* [Bootstrap 3](http://getbootstrap.com)
 * [Font Awesome](http://fontawesome.io)
 
 None of the installed packages are required, and may be removed. They are included for convenience.
+
+<%= sinceVersion("0.10.3") %>
+
+The default generated version uses Bootstrap 3. You can use the `--bootstrap` flag on the `buffalo new` command to use Bootstrap 4 instead.
 
 <%= title("Other Assets") %>
 

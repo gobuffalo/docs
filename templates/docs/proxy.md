@@ -27,7 +27,7 @@ ADDR=127.0.0.1
 PORT=3000
 ```
 
-**nginx config:**
+**NGINX config:**
 ```nginx
 upstream buffalo_app {
     server 127.0.0.1:3000;
@@ -65,7 +65,7 @@ ADDR=0.0.0.0
 PORT=3002
 ```
 
-**nginx config:**
+**NGINX config:**
 ```nginx
 upstream buffalo_app_hosts {
     server host1.example.com:3000;
@@ -87,12 +87,16 @@ server {
 
 <%= sinceVersion("0.10.3") %>
 
+[UNIX sockets](https://en.wikipedia.org/wiki/Unix_domain_socket) are a common way to do inter-process communication (IPC) on UNIX systems. This means a program **A** can talk to a program **B**, using a file descriptor, just like they do using the TCP stack.
+
+In our case, this allows you to have an instance of Buffalo running behind the proxy, without having to handle the full TCP stack between Buffalo and the proxy. This way, your app will answer faster!
+
 **app env config:**
 ```bash
 ADDR=unix:/tmp/buffalo.sock
 ```
 
-**nginx config:**
+**NGINX config:**
 ```nginx
 upstream buffalo_app {
     server server unix:/tmp/buffalo.sock;
@@ -106,4 +110,27 @@ server {
         proxy_pass http://buffalo_app;
     }
 }
+```
+
+<%= title("Apache 2") %>
+
+### Using an IP address
+
+**app env config:**
+```bash
+ADDR=127.0.0.1
+PORT=3000
+```
+
+**Apache 2 config:**
+```apache
+&lt;VirtualHost *:80&gt;
+    ProxyPreserveHost On
+
+    # Proxy requests to Buffalo
+    ProxyPass / http://0.0.0.0:3000/
+    ProxyPassReverse / http://0.0.0.0:3000/
+
+    ServerName example.com
+&lt;/VirtualHost&gt;
 ```

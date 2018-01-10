@@ -4,7 +4,7 @@ Vous disposez maintenant d'une installation de Buffalo fonctionnelle. Dans cette
 
 <%= title("Créer un nouveau projet") %>
 
-Le but de Buffalo est de pouvoir construire de nouvelles applications Web en Go, aussi **vite et simplement** que possible. Peut-on faire plus simple qu'un générateur d'application ?
+Le but de Buffalo est de pouvoir construire de nouvelles applications Web en Go, aussi **vite et simplement** que possible. Peut-on faire plus simple qu'un *générateur d'application* ?
 
 Commencez par vous placer dans votre `$GOPATH` et créez votre nouvelle application !
 
@@ -30,7 +30,7 @@ Cette commande va vous générer une nouvelle application Buffalo dénommée **c
 
 Les options par défaut sont suffisantes, mais ne peuvent pas convenir à tout le monde. Buffalo vous permet donc de changer cette configuration via des *flags* à passer à la commande `new`.
 
-Vous pouvez lister les *flags* disponibles en utilisant la commande `help` : 
+Vous pouvez lister les *flags* disponibles en utilisant la commande `help` :
 
 <%= partial("docs/new-project/help.md") %>
 

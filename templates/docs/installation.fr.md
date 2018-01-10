@@ -11,7 +11,7 @@ Avant d'installer Buffalo, assurez-vous d'avoir installé les dépendances suiva
 * [Guide de configuration d'un environnement de développement Go (EN)](http://gopherguides.com/before-you-come-to-class).
 * [Go](https://golang.org) version `<%= goMinVersion %>` ou supérieure.
 
-##### Prérequis pour la partie frontale
+##### Prérequis pour le frontend
 
 * [node](https://github.com/nodejs/node) et [npm](https://github.com/npm/npm) pour la [gestion des ressources](/docs/assets) avec [webpack](https://github.com/webpack/webpack).
 

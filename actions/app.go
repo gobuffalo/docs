@@ -59,7 +59,7 @@ func App() *buffalo.App {
 		}
 		app.Use(T.Middleware())
 
-		app.Redirect(302, "/docs/getting-started", "/")
+		app.Redirect(302, "/docs/overview", "/")
 		app.Redirect(302, "/docs/test-suites", "/docs/testing")
 		app.GET("/docs/{name:.+}", Docs)
 

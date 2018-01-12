@@ -7,7 +7,9 @@ let buildSideNav = () => {
   let loc = window.location;
   let path = loc.pathname;
   let sb = $(`aside a[href="${path}"]`);
-  sb.closest("ul.sidenav").addClass("open");
+  let sn = sb.closest("ul.sidenav");
+  sn.addClass("open");
+  sn.prev().addClass("open");
 
   let items = [];
   $(".main-content a[name]").each((_, a) => {
@@ -19,11 +21,9 @@ let buildSideNav = () => {
     }
   });
   if (items.length > 0) {
-    let ul = $("<ul class='sub-nav'>").append(items);
-    sb.append(ul);
+    let ul = $('<ul class="summary">').append(items);
+    $('.main-content h1').after(ul);
     sb.addClass("active");
-    sb.addClass("has-child");
-    sb.addClass("open");
   }
 };
 
@@ -88,6 +88,7 @@ $(() => {
   });
 });
 
+// Handle language switch
 $(() => {
   $("#language").on("change", (e) => {
     $(e.target).closest("form").submit();

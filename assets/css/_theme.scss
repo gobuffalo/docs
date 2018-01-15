@@ -5,29 +5,34 @@ body[data-spy] {
 .main-content {
   padding: 50px 50px 50px 0;
   font-size: 16px;
-  line-height: 27px
-}
+  line-height: 27px;
 
-.main-content.col-md-12 {
-  padding-right: 0
-}
+  &.col-md-12 {
+    padding-right: 0
+  }
 
-.main-content>header {
-  margin-bottom: 20px;
-  border-bottom: 1px solid #f1f1f1
-}
+  &>header {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #f1f1f1;
 
-.main-content>header>p:last-child {
-  margin-bottom: 30px
+    &>p:last-child {
+      margin-bottom: 30px
+    }
+  }
+
+  &>section {
+    padding-bottom: 50px
+  }
+
+  .summary {
+    border-bottom: solid 1px #dfdfdf;
+    padding-bottom: 3em;
+  }
 }
 
 .main-content>h1,
 .main-content>header h1 {
   margin-top: 0
-}
-
-.main-content>section {
-  padding-bottom: 50px
 }
 
 .main-content>section:last-child {

@@ -65,7 +65,7 @@
   branch = "development"
   name = "github.com/gobuffalo/buffalo"
   packages = [".","binding","middleware","middleware/i18n","middleware/ssl","render","worker"]
-  revision = "4ddc0a123881f8c5548893fa12b7f4233c360402"
+  revision = "e12a1300593e35d1d1f0be3a0e80a2d500d711cc"
 
 [[projects]]
   name = "github.com/gobuffalo/envy"
@@ -82,8 +82,8 @@
 [[projects]]
   name = "github.com/gobuffalo/plush"
   packages = [".","ast","lexer","parser","token"]
-  revision = "66309e4b499e15fbb9470366129f03b2f24e4515"
-  version = "v3.6.3"
+  revision = "1055991b9c268d080cb3470460a2f9d98ac09985"
+  version = "v3.6.4"
 
 [[projects]]
   name = "github.com/gobuffalo/tags"
@@ -220,8 +220,8 @@
 [[projects]]
   name = "github.com/mattn/go-sqlite3"
   packages = ["."]
-  revision = "ed69081a91fd053f17672236b0dd52ba7485e1a3"
-  version = "v1.4.0"
+  revision = "6c771bb9887719704b210e87e934f08be014bdb1"
+  version = "v1.6.0"
 
 [[projects]]
   branch = "master"
@@ -370,7 +370,7 @@
   branch = "master"
   name = "golang.org/x/crypto"
   packages = ["bcrypt","blowfish","ssh/terminal"]
-  revision = "5f55bce93ad2c89f411e009659bb1fd83da36e7b"
+  revision = "13931e22f9e72ea58bb73048bc752b48c6d4d4ac"
 
 [[projects]]
   branch = "master"

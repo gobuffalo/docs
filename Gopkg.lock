@@ -58,15 +58,7 @@
 [[projects]]
   branch = "development"
   name = "github.com/gobuffalo/buffalo"
-  packages = [
-    ".",
-    "binding",
-    "middleware",
-    "middleware/i18n",
-    "middleware/ssl",
-    "render",
-    "worker"
-  ]
+  packages = [".","binding","middleware","middleware/i18n","middleware/ssl","render","worker"]
   revision = "3613f7bf5aacc92186242a3dc13dba4dd87d5c0b"
 
 [[projects]]
@@ -83,33 +75,20 @@
 
 [[projects]]
   name = "github.com/gobuffalo/plush"
-  packages = [
-    ".",
-    "ast",
-    "lexer",
-    "parser",
-    "token"
-  ]
+  packages = [".","ast","lexer","parser","token"]
   revision = "f15814743c4d25c1bc5371e75d1ef51c9afdddba"
   version = "v3.6.0"
 
 [[projects]]
   name = "github.com/gobuffalo/tags"
-  packages = [
-    ".",
-    "form",
-    "form/bootstrap"
-  ]
+  packages = [".","form","form/bootstrap"]
   revision = "fd130d3e089cc2ae7285f7b4f3e45fd3f1aa3482"
   version = "v1.9.0"
 
 [[projects]]
   branch = "master"
   name = "github.com/gobuffalo/x"
-  packages = [
-    "httpx",
-    "sessions"
-  ]
+  packages = ["httpx","sessions"]
   revision = "a0001ffdf4068b86245fb2ca6e187449b75b2371"
 
 [[projects]]
@@ -145,10 +124,7 @@
 [[projects]]
   branch = "master"
   name = "github.com/jmoiron/sqlx"
-  packages = [
-    ".",
-    "reflectx"
-  ]
+  packages = [".","reflectx"]
   revision = "de8647470aafe4854c976707c431dbe1eb2822c6"
 
 [[projects]]
@@ -160,20 +136,13 @@
 [[projects]]
   branch = "master"
   name = "github.com/lib/pq"
-  packages = [
-    ".",
-    "oid"
-  ]
+  packages = [".","oid"]
   revision = "83612a56d3dd153a94a629cd64925371c9adad78"
 
 [[projects]]
   branch = "master"
   name = "github.com/markbates/going"
-  packages = [
-    "defaults",
-    "randx",
-    "wait"
-  ]
+  packages = ["defaults","randx","wait"]
   revision = "0576708c56cea02331f864fe6e157ac7841923e4"
 
 [[projects]]
@@ -196,22 +165,13 @@
 
 [[projects]]
   name = "github.com/markbates/pop"
-  packages = [
-    ".",
-    "columns",
-    "fizz",
-    "fizz/translators",
-    "nulls"
-  ]
+  packages = [".","columns","fizz","fizz/translators","nulls"]
   revision = "e09fcaa48442f8d2116a2144daa684c90bed76e0"
   version = "3.41.9"
 
 [[projects]]
   name = "github.com/markbates/refresh"
-  packages = [
-    "refresh",
-    "refresh/web"
-  ]
+  packages = ["refresh","refresh/web"]
   revision = "31a58af168f3788ce36d49f66aca4b439f64c7d4"
   version = "v1.3.3"
 
@@ -224,10 +184,7 @@
 [[projects]]
   branch = "master"
   name = "github.com/markbates/validate"
-  packages = [
-    ".",
-    "validators"
-  ]
+  packages = [".","validators"]
   revision = "cd8cc34c703420d6b084fbbfd5085e8e71c5b830"
 
 [[projects]]
@@ -239,36 +196,7 @@
 [[projects]]
   branch = "master"
   name = "github.com/mattn/anko"
-  packages = [
-    "ast",
-    "builtins",
-    "builtins/encoding/json",
-    "builtins/errors",
-    "builtins/flag",
-    "builtins/fmt",
-    "builtins/github.com/daviddengcn/go-colortext",
-    "builtins/io",
-    "builtins/io/ioutil",
-    "builtins/math",
-    "builtins/math/big",
-    "builtins/math/rand",
-    "builtins/net",
-    "builtins/net/http",
-    "builtins/net/url",
-    "builtins/os",
-    "builtins/os/exec",
-    "builtins/os/signal",
-    "builtins/path",
-    "builtins/path/filepath",
-    "builtins/regexp",
-    "builtins/runtime",
-    "builtins/sort",
-    "builtins/strconv",
-    "builtins/strings",
-    "builtins/time",
-    "parser",
-    "vm"
-  ]
+  packages = ["ast","builtins","builtins/encoding/json","builtins/errors","builtins/flag","builtins/fmt","builtins/github.com/daviddengcn/go-colortext","builtins/io","builtins/io/ioutil","builtins/math","builtins/math/big","builtins/math/rand","builtins/net","builtins/net/http","builtins/net/url","builtins/os","builtins/os/exec","builtins/os/signal","builtins/path","builtins/path/filepath","builtins/regexp","builtins/runtime","builtins/sort","builtins/strconv","builtins/strings","builtins/time","parser","vm"]
   revision = "c58a8226f5b4374c7710c1e1ce4c4bf4dfd83987"
 
 [[projects]]
@@ -309,12 +237,7 @@
 
 [[projects]]
   name = "github.com/nicksnyder/go-i18n"
-  packages = [
-    "i18n",
-    "i18n/bundle",
-    "i18n/language",
-    "i18n/translation"
-  ]
+  packages = ["i18n","i18n/bundle","i18n/language","i18n/translation"]
   revision = "0dc1626d56435e9d605a29875701721c54bc9bbd"
   version = "v1.10.0"
 
@@ -369,12 +292,7 @@
 [[projects]]
   branch = "master"
   name = "github.com/shurcooL/go"
-  packages = [
-    "parserutil",
-    "printerutil",
-    "reflectfind",
-    "reflectsource"
-  ]
+  packages = ["parserutil","printerutil","reflectfind","reflectsource"]
   revision = "004faa6b0118cf52635363b72b51cdcc297800a2"
 
 [[projects]]
@@ -433,10 +351,7 @@
 
 [[projects]]
   name = "github.com/stretchr/testify"
-  packages = [
-    "assert",
-    "require"
-  ]
+  packages = ["assert","require"]
   revision = "b91bfb9ebec76498946beb6af7c0230c7cc7ba6c"
   version = "v1.2.0"
 
@@ -449,21 +364,13 @@
 [[projects]]
   branch = "master"
   name = "golang.org/x/crypto"
-  packages = [
-    "bcrypt",
-    "blowfish",
-    "ssh/terminal"
-  ]
+  packages = ["bcrypt","blowfish","ssh/terminal"]
   revision = "0fcca4842a8d74bfddc2c96a073bd2a4d2a7a2e8"
 
 [[projects]]
   branch = "master"
   name = "golang.org/x/net"
-  packages = [
-    "context",
-    "html",
-    "html/atom"
-  ]
+  packages = ["context","html","html/atom"]
   revision = "d866cfc389cec985d6fda2859936a575a55a3ab6"
 
 [[projects]]
@@ -475,10 +382,7 @@
 [[projects]]
   branch = "master"
   name = "golang.org/x/sys"
-  packages = [
-    "unix",
-    "windows"
-  ]
+  packages = ["unix","windows"]
   revision = "28a7276518d399b9634904daad79e18b44d481bc"
 
 [[projects]]

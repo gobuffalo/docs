@@ -38,26 +38,36 @@ func App() *buffalo.App {
 			app.Use(middleware.ParameterLogger)
 		}
 
-		app.Use(func(next buffalo.Handler) buffalo.Handler {
-			return func(c buffalo.Context) error {
-				c.Set("version", "0.10.3")
-				c.Set("goMinVersion", "1.8.1")
-				c.Set("year", time.Now().Year())
-				c.Set("trainingURL", "http://www.gopherguides.com")
-				c.Set("lang", "en")
-				if lang, err := c.Cookies().Get("lang"); err == nil {
-					c.Set("lang", lang)
-				}
-				return next(c)
-			}
-		})
-
 		// Setup and use translations:
 		var err error
 		if T, err = i18n.New(packr.NewBox("../locales"), "en"); err != nil {
 			app.Stop(err)
 		}
 		app.Use(T.Middleware())
+
+		app.Use(func(next buffalo.Handler) buffalo.Handler {
+			return func(c buffalo.Context) error {
+				c.Set("version", "0.10.3")
+				c.Set("goMinVersion", "1.8.1")
+				c.Set("year", time.Now().Year())
+				c.Set("trainingURL", "http://www.gopherguides.com")
+
+				c.Set("lang", "en")
+				if lang, err := c.Cookies().Get("lang"); err == nil {
+					c.Set("lang", lang)
+				} else {
+					// Ensure the correct language is set, even without the cookie
+					langs := c.Value("languages").([]string)
+					for _, l := range langs {
+						if l == "fr" || l == "en" {
+							c.Set("lang", l)
+							break
+						}
+					}
+				}
+				return next(c)
+			}
+		})
 
 		app.Redirect(302, "/docs/overview", "/")
 		app.Redirect(302, "/docs/test-suites", "/docs/testing")

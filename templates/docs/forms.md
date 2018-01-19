@@ -18,6 +18,7 @@ Both types of form helpers have the following features in common:
 <%= partial("docs/forms/select_tag.md") %>
 <%= partial("docs/forms/checkbox.md") %>
 <%= partial("docs/forms/errors.md") %>
+<%= partial("docs/forms/non_bootstrap.md") %>
 
 <%= title("FAQs") %>
 
@@ -43,6 +44,6 @@ By default the form value inside the block is given the name `f`, however this c
 ```
 
 ```html
-&lt;form enctype="multipart/form-data" errors="&lt;no value&gt;" method="POST"&gt;
+&lt;form enctype="multipart/form-data" method="POST"&gt;
 &lt;/form&gt;
 ```

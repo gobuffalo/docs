@@ -8,11 +8,9 @@ The first difference is that the `form_for` takes a "model" as a first argument.
 
 The second difference is in the tag calls themselves. These tags, such as `InputTag`, take the name of the attribute on the model you want to build a field for, then they take an optional set of options as the second argument.
 
-### Example
-
-Given this `Talk` model:
-
+<%= codeTabs() { %>
 ```go
+// models/talk.go
 type Talk struct {
   ID            int          `json:"id" db:"id"`
   CreatedAt     time.Time    `json:"created_at" db:"created_at"`
@@ -29,9 +27,8 @@ type Talk struct {
 }
 ```
 
-and this template:
-
 ```erb
+// templates/talks/edit.html
 &lt;%= form_for( talk, {action: talkPath({id: 3}), method: "PUT"}) { %&gt;
   &lt;div class="row"&gt;
     &lt;div class="col-md-12"&gt;
@@ -58,9 +55,8 @@ and this template:
 &lt;% } %&gt;
 ```
 
-you will get output similar to this:
-
 ```html
+// OUTPUT
 &lt;form action="/talks/3" id="talk-form" method="POST"&gt;
   &lt;input name="authenticity_token" type="hidden" value="cd998be98a99b452481c43fd3e4715e4e85333a45b982ac999"&gt;
   &lt;input name="_method" type="hidden" value="PUT"&gt;
@@ -114,3 +110,5 @@ you will get output similar to this:
   &lt;/div&gt;
 &lt;/form&gt;
 ```
+<% } %>
+

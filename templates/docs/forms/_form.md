@@ -2,9 +2,9 @@
 
 The `form` helper can be used to generate HTML forms. Since this type of form isn't attached to any particular "model" all information must be passed as options to the form and it's methods.
 
-So given this template:
-
+<%= codeTabs() { %>
 ```erb
+// templates/talks/edit.html
 &lt;%= form({action: talkPath({id: 3}), method: "PUT"}) { %&gt;
   &lt;div class="row"&gt;
     &lt;div class="col-md-12"&gt;
@@ -31,9 +31,8 @@ So given this template:
 &lt;% } %&gt;
 ```
 
-you will get output similar to this:
-
 ```html
+// OUTPUT
 &lt;form action="/talks/3" method="POST"&gt;
   &lt;input name="authenticity_token" type="hidden" value="e0c536b7a1a7d752066727b771f1e5d02220ceff5143f6c77b"&gt;
   &lt;input name="_method" type="hidden" value="PUT"&gt;
@@ -82,4 +81,5 @@ you will get output similar to this:
   &lt;/div&gt;
 &lt;/form&gt;
 ```
+<% } %>
 

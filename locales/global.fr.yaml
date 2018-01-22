@@ -53,6 +53,9 @@
 - id: menu.releases
   translation: Versions publiées
 
+- id: menu.sponsors
+  translation: Sponsors
+
 # Releases page
 - id: releases.title
   translation: Versions publiées
@@ -68,3 +71,10 @@
 
 - id: releases.github
   translation: GitHub
+
+# Sponsors
+- id: sponsors.platinum-title
+  translation: Sponsors Platine
+
+- id: sponsors.your-company-here
+  translation: Votre entreprise ici

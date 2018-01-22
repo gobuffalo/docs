@@ -78,7 +78,6 @@ footer {
 
 .language-selector {
   padding: 2px 20px !important;
-
   border-bottom: solid 1px #3c4c5f;
 
   label {
@@ -89,5 +88,26 @@ footer {
     background-color: #5b728f;
     border-color: #222;
     color: #eee;
+  }
+}
+
+.jumbotron {
+  h1 {
+    margin: 10px;
+    margin-left: 0px;
+  }
+}
+
+#platinum-sponsors {
+  text-align: center;
+
+  .logo {
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  img {
+    width: 120px;
   }
 }

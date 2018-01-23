@@ -53,6 +53,9 @@
 - id: menu.releases
   translation: Releases
 
+- id: menu.sponsors
+  translation: Sponsors
+
 # Releases page
 - id: releases.title
   translation: Releases
@@ -68,3 +71,10 @@
 
 - id: releases.github
   translation: GitHub
+
+# Sponsors
+- id: sponsors.platinum-title
+  translation: Platinum Sponsors
+
+- id: sponsors.your-company-here
+  translation: Your Company Here

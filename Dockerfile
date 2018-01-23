@@ -18,8 +18,9 @@ RUN apk add --no-cache bash
 
 WORKDIR /bin/
 
+ENV GO_ENV=production
 COPY --from=builder /bin/app .
-
+ENV ADDR=0.0.0.0
 EXPOSE 3000
 
 CMD /bin/app

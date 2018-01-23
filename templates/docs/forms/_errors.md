@@ -4,6 +4,7 @@ Both `form` and `form_for` helpers have support for handling errors from the [`g
 
 In an action simply set a value of type `*validate.Errors` on the context as `errors` and the form helpers will pick it up and add error messages to the appropriate form tags.
 
+<%= codeTabs() { %>
 ```go
 // actions/widgets.go
 func (v WidgetsResource) Create(c buffalo.Context) error {
@@ -31,7 +32,7 @@ func (v WidgetsResource) Create(c buffalo.Context) error {
 ```html
 // templates/widgets/new.html
 &lt;%= form_for(widget, {action: widgetsPath(), method: "POST"}) { %&gt;
-  &lt;%= f.InputTag("Widget") %&gt;
+  &lt;%= f.InputTag("Name") %&gt;
   &lt;button class="btn btn-success" role="submit"&gt;Save&lt;/button&gt;
   &lt;a href="&lt;%= widgetsPath() %&gt;" class="btn btn-warning" data-confirm="Are you sure?"&gt;Cancel&lt;/a&gt;
 &lt;% } %&gt;
@@ -50,3 +51,5 @@ func (v WidgetsResource) Create(c buffalo.Context) error {
   &lt;a href="/widgets" class="btn btn-warning" data-confirm="Are you sure?"&gt;Cancel&lt;/a&gt;
 &lt;/form&gt;
 ```
+<% } %>
+

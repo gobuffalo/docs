@@ -2,6 +2,14 @@
 <aside class="col-md-3 col-sm-3 sidebar sidebar-boxed sidebar-dark">
 
   <ul class="sidenav dropable ">
+
+    <li class="language-selector">
+      <%= form({action: "/lang"}) { %>
+        <%= f.SelectTag({name: "language", options: {"English": "en", "Français": "fr"}, id: "language", value: lang, label: t("menu.language")}) %>
+        <%= f.InputTag({type: "hidden", value: current_path, name: "url"}) %>
+      <% } %>
+    </li>
+
     <li>
       <a href="/docs/overview"><%= t("menu.overview") %></a>
     </li>
@@ -131,12 +139,18 @@
         <li>
           <a href="/docs/db/fields">Managing Model Fields</a>
         </li>
+        <li>
+          <a href="https://andrew-sledge.gitbooks.io/the-unofficial-pop-book/content/" target="_blank">The Unofficial Pop Book</a>
+        </li>
       </ul>
     </li>
 
     <li>
       <a href="#">Advanced Usage</a>
       <ul class="sidenav dropable">
+        <li>
+          <a href="/docs/file-uploads">File Uploads</a>
+        </li>
         <li>
           <a href="/docs/tasks">Tasks</a>
         </li>
@@ -155,6 +169,9 @@
         <li>
           <a href="/docs/template-engines">Template Engines</a>
         </li>
+        <li>
+          <a href="/docs/dot-env">.env Support</a>
+        </li>
       </ul>
     </li>
 
@@ -171,6 +188,9 @@
       <ul class="sidenav dropable">
         <li>
           <a href="/docs/building">Building/Binaries</a>
+        </li>
+        <li>
+          <a href="/docs/proxy">Using a proxy</a>
         </li>
       </ul>
     </li>
@@ -192,6 +212,10 @@
 
     <li>
       <a href="/docs/contributing"><%= t("menu.contributing") %></a>
+    </li>
+
+    <li>
+      <a href="/sponsors"><%= t("menu.sponsors") %></a>
     </li>
 
     <li>

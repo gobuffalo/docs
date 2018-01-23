@@ -29,6 +29,9 @@
   translation: Gopher Buffalo conçu par <a href="https://twitter.com/ashleymcnamara" target="_blank" rel="noopener noreferrer">Ashley McNamara</a> &mdash; Gopher originel conçu par Renee French.
 
 # Menu
+- id: menu.language
+  translation: Langue
+
 - id: menu.overview
   translation: Présentation
 
@@ -50,6 +53,9 @@
 - id: menu.releases
   translation: Versions publiées
 
+- id: menu.sponsors
+  translation: Sponsors
+
 # Releases page
 - id: releases.title
   translation: Versions publiées
@@ -65,3 +71,10 @@
 
 - id: releases.github
   translation: GitHub
+
+# Sponsors
+- id: sponsors.platinum-title
+  translation: Sponsors Platine
+
+- id: sponsors.your-company-here
+  translation: Votre entreprise ici

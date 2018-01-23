@@ -30,7 +30,7 @@ production:
 
 Make sure to set up the appropriate usernames, passwords, hosts, etc... that are appropriate for the environment that will be running the application. Buffalo **does not** install these databases, or start up any services for you. If the database is running on a different port, you can add it to the default configuration file as `port: [port]`.
 
-For example, if the development database is running on Docker using a random port `32768`, the configuration would be as follows: 
+For example, if the development database is running on Docker using a random port `32768`, the configuration would be as follows:
 
 ```yaml
 development:

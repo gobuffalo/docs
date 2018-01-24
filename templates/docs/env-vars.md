@@ -19,7 +19,7 @@ Environment variables are a good way to separate environment specific values, or
 
 <%= sinceVersion("0.10.3") %>
 
-Buffalo ships with `.env` support (**since buffalo >= 0.10.3**), meaning buffalo will load `.env` files into environment variables once the application starts, to do it, Buffalo uses [`envy.Load`](https://github.com/gobuffalo/envy/blob/e613c80275b86293880eddeb27417c9a7c670ff3/envy.go#L53) which will look for `.env` file at the root of your app.
+Buffalo ships with `.env` support (**since buffalo >= 0.10.3**), meaning buffalo will load `.env` files into environment variables once the application starts. To do it, Buffalo uses [`envy.Load`](https://github.com/gobuffalo/envy/blob/e613c80275b86293880eddeb27417c9a7c670ff3/envy.go#L53) which will look for `.env` file at the root of your app.
 
 If you're not familiar with how a `.env` file looks, here is an example:
 
@@ -32,7 +32,7 @@ APP_LOG_LEVEL=debug
 APP_URL=https://myapp.com
 ```
 
-Generated apps (**with buffalo >= 0.10.3**) will also create a default `.env` file in your application root, this file will be watched by Buffalo for changes, but will be ignored by git (added in the `.gitignore`).
+Generated apps (**with buffalo >= 0.10.3**) will also create a default `.env` file in your application root. This file will be watched by Buffalo for changes, but will be ignored by git (added in the `.gitignore`).
 
 <% contentFor("style") { %>
 .main-content table {

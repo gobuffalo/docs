@@ -73,7 +73,7 @@
     "render",
     "worker"
   ]
-  revision = "4ddc0a123881f8c5548893fa12b7f4233c360402"
+  revision = "5e5c9a6f4cd01af5691033b2aa3a4a5f298264fb"
 
 [[projects]]
   name = "github.com/gobuffalo/envy"
@@ -96,8 +96,8 @@
     "parser",
     "token"
   ]
-  revision = "66309e4b499e15fbb9470366129f03b2f24e4515"
-  version = "v3.6.3"
+  revision = "ea63b975b95e49b7af0dc7ec2369ac8c5e056548"
+  version = "v3.6.10"
 
 [[projects]]
   name = "github.com/gobuffalo/tags"
@@ -106,8 +106,8 @@
     "form",
     "form/bootstrap"
   ]
-  revision = "fd130d3e089cc2ae7285f7b4f3e45fd3f1aa3482"
-  version = "v1.9.0"
+  revision = "9b6ec41f9a06859c977841df7a5328bd089e9615"
+  version = "v1.9.2"
 
 [[projects]]
   branch = "master"
@@ -116,7 +116,7 @@
     "httpx",
     "sessions"
   ]
-  revision = "a0001ffdf4068b86245fb2ca6e187449b75b2371"
+  revision = "11ca13c05abd73167c56ed10f8874c7c7497f759"
 
 [[projects]]
   name = "github.com/gorilla/context"
@@ -127,8 +127,8 @@
 [[projects]]
   name = "github.com/gorilla/mux"
   packages = ["."]
-  revision = "7f08801859139f86dfafd1c296e2cba9a80d292e"
-  version = "v1.6.0"
+  revision = "53c1911da2b537f792e7cafcb446b05ffe33b996"
+  version = "v1.6.1"
 
 [[projects]]
   name = "github.com/gorilla/securecookie"
@@ -182,7 +182,7 @@
     ".",
     "oid"
   ]
-  revision = "83612a56d3dd153a94a629cd64925371c9adad78"
+  revision = "19c8e9ad00952ce0c64489b60e8df88bb16dd514"
 
 [[projects]]
   branch = "master"
@@ -221,8 +221,8 @@
     "fizz/translators",
     "nulls"
   ]
-  revision = "eeb02e2bb55bc6f9f64fefd3f611dc9b69796600"
-  version = "3.51.0"
+  revision = "00570ee9e436f66a8de394beeb5110489c728b87"
+  version = "3.51.1"
 
 [[projects]]
   name = "github.com/markbates/refresh"
@@ -287,7 +287,7 @@
     "parser",
     "vm"
   ]
-  revision = "2b087a66e312c02195bcf188647f44321cbbf2aa"
+  revision = "02ff8d4bfeacd39952eb7b8ccf7c0372d0fe4048"
 
 [[projects]]
   name = "github.com/mattn/go-colorable"
@@ -304,8 +304,8 @@
 [[projects]]
   name = "github.com/mattn/go-sqlite3"
   packages = ["."]
-  revision = "ed69081a91fd053f17672236b0dd52ba7485e1a3"
-  version = "v1.4.0"
+  revision = "6c771bb9887719704b210e87e934f08be014bdb1"
+  version = "v1.6.0"
 
 [[projects]]
   branch = "master"
@@ -339,8 +339,8 @@
 [[projects]]
   name = "github.com/pelletier/go-toml"
   packages = ["."]
-  revision = "16398bac157da96aa88f98a2df640c7f32af1da2"
-  version = "v1.0.1"
+  revision = "acdc4509485b587f5e675510c4f2c63e90ff68a8"
+  version = "v1.1.0"
 
 [[projects]]
   name = "github.com/pkg/errors"
@@ -471,7 +471,7 @@
     "blowfish",
     "ssh/terminal"
   ]
-  revision = "5f55bce93ad2c89f411e009659bb1fd83da36e7b"
+  revision = "3d37316aaa6bd9929127ac9a527abf408178ea7b"
 
 [[projects]]
   branch = "master"
@@ -481,7 +481,7 @@
     "html",
     "html/atom"
   ]
-  revision = "5ccada7d0a7ba9aeb5d3aca8d3501b4c2a509fec"
+  revision = "0ed95abb35c445290478a5348a7b38bb154135fd"
 
 [[projects]]
   branch = "master"
@@ -496,7 +496,7 @@
     "unix",
     "windows"
   ]
-  revision = "810d7000345868fc619eb81f46307107118f4ae1"
+  revision = "af50095a40f9041b3b38960738837185c26e9419"
 
 [[projects]]
   branch = "v2"

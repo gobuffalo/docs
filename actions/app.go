@@ -27,7 +27,6 @@ func App() *buffalo.App {
 		app = buffalo.New(buffalo.Options{
 			SessionName:  "_gobuffalo_session",
 			Env:          ENV,
-			Addr:         "0.0.0.0:3000",
 			SessionStore: sessions.Null{},
 		})
 		app.Use(ssl.ForceSSL(secure.Options{

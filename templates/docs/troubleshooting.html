@@ -108,6 +108,27 @@ package golang.org/x/tools/cmd/goimports: golang.org/x/tools is a custom import 
 
 Error: exit status 1
 ```
+    <% } 
+
+    <%= faq("`buffalo g goth` fails to generate `auth.go`") { %>
+You might see errors similar to this when you build:
+```bash
+buffalo: 2018/01/19 20:58:47 === Error! ===
+buffalo: 2018/01/19 20:58:47 === exit status 2
+path/path/models
+path/path/actions
+# path/path/actions
+actions/app.go:17:2: gothic redeclared as imported package name
+    previous declaration at actions/app.go:15:2
+actions/app.go:66:36: undefined: AuthCallback
+actions/app.go:67:11: undefined: SetCurrentUser
+actions/app.go:68:11: undefined: Authorize
+actions/app.go:69:23: undefined: Authorize
+```
+
+This could be because the `goth` plugin isn't able to find the templates for the different providers. This can happen when the `goth` plugin is available in `$PATH`, but the project isn't in your current `$GOPATH`.
+
+To fix it, you can either `go get -u github.com/gobuffalo/buffalo-goth` in your project's `$GOPATH` or use `dep`.
     <% } %>
   </ul>
 </div>

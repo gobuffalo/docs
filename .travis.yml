@@ -1,0 +1,35 @@
+sudo: required
+
+services:
+  - docker
+
+before_install:
+  - sudo apt-get update
+  - sudo apt-get -y -o Dpkg::Options::="--force-confnew" install docker-ce
+
+install: false
+
+go:
+  - 1.9
+
+script:
+  - echo $HEROKU_TOKEN
+
+# after_success:
+#   - if [ "$TRAVIS_BRANCH" == "master" ]; then
+#       docker login --username=_ --password=$HEROKU_TOKEN registry.heroku.com
+#       docker build -t registry.heroku.com/getbuffalo/web .
+#       docker push registry.heroku.com/getbuffalo/web
+#     fi
+# after_success:
+#   - docker build -t registry.heroku.com/getbuffalo/web .
+#   - docker login --username=_ --password=$HEROKU_TOKEN registry.heroku.com
+#   - docker push registry.heroku.com/getbuffalo/web
+
+after_success:
+  - ./travis-deploy.sh
+
+# Don't build every commit - only PRs and when new code lands in Master
+branches:
+  only:
+      - auto-deploy

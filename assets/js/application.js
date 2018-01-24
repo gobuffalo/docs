@@ -3,7 +3,7 @@ require("bootstrap-sass/assets/javascripts/bootstrap.js");
 require("./theme.js");
 require("expose-loader?Clipboard!./clipboard.min.js");
 
-let buildSideNav = () => {
+var buildSideNav = () => {
   let loc = window.location;
   let path = loc.pathname;
   let sb = $(`aside a[href="${path}"]`);
@@ -27,7 +27,7 @@ let buildSideNav = () => {
   }
 };
 
-let activateSideNav = () => {
+var activateSideNav = () => {
   let loc = window.location;
   let path = loc.pathname === '/' ? '/docs/overview' : loc.pathname;
   $(".sidebar li").removeClass("active");

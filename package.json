@@ -1,5 +1,5 @@
 {
-  "name": "gobuffalo.io",
+  "name": "buffalo",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -16,6 +16,8 @@
     "extract-text-webpack-plugin": "2.1.2",
     "file-loader": "~0.11.2",
     "font-awesome": "~4.7.0",
+    "gopherjs-loader": "^0.0.1",
+    "highlightjs": "^9.10.0",
     "jquery": "~3.2.1",
     "jquery-ujs": "~1.2.2",
     "node-sass": "~4.5.3",
@@ -26,7 +28,6 @@
     "uglifyjs-webpack-plugin": "~0.4.6",
     "url-loader": "~0.5.9",
     "webpack": "~2.3.0",
-    "webpack-manifest-plugin": "~1.2.1",
-    "highlightjs": "^9.10.0"
+    "webpack-manifest-plugin": "~1.2.1"
   }
 }

@@ -62,7 +62,6 @@
   version = "v1.3"
 
 [[projects]]
-  branch = "development"
   name = "github.com/gobuffalo/buffalo"
   packages = [
     ".",
@@ -73,7 +72,8 @@
     "render",
     "worker"
   ]
-  revision = "5e5c9a6f4cd01af5691033b2aa3a4a5f298264fb"
+  revision = "bfa77a8652f7c8ec0bede640656c8add3cb230c2"
+  version = "v0.10.3"
 
 [[projects]]
   name = "github.com/gobuffalo/envy"
@@ -162,18 +162,6 @@
   packages = ["."]
   revision = "a79fa1e548e2c689c241d10173efd51e5d689d5b"
   version = "v1.2.0"
-
-[[projects]]
-  branch = "master"
-  name = "github.com/kr/pretty"
-  packages = ["."]
-  revision = "cfb55aafdaf3ec08f0db22699ab822c50091b1c4"
-
-[[projects]]
-  branch = "master"
-  name = "github.com/kr/text"
-  packages = ["."]
-  revision = "7cafcd837844e784b526369c9bce262804aebc60"
 
 [[projects]]
   branch = "master"
@@ -461,7 +449,7 @@
   branch = "master"
   name = "github.com/unrolled/secure"
   packages = ["."]
-  revision = "d6ff8660e1a61e887970a917ee2b9be0cfad6d40"
+  revision = "5b5ec9db37417c8cb346915cee5fe8dcbc739a95"
 
 [[projects]]
   branch = "master"
@@ -507,6 +495,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "c288e3d71f7afd9a02649a7e5825e1b19714e48cd043a61f027d03d1903f057a"
+  inputs-digest = "3eb246539dc5ddb0c92554cab82ff6f9ef00068eb1e3f20e5aedf6b444f75c2e"
   solver-name = "gps-cdcl"
   solver-version = 1

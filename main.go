@@ -1,11 +1,17 @@
 package main
 
 import (
+	"fmt"
 	"log"
+	"os"
 
 	"github.com/gobuffalo/gobuffalo/actions"
 )
 
 func main() {
-	log.Fatal(actions.App().Serve())
+	fmt.Println("PORT", os.Getenv("PORT"))
+	app := actions.App()
+	if err := app.Serve(); err != nil {
+		log.Fatal(err)
+	}
 }

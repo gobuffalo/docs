@@ -11,7 +11,7 @@ RUN yarn install
 
 ADD . .
 
-RUN buffalo build --static -o /bin/app
+RUN buffalo build --static -o /bin/app -d --environment=produciton
 
 FROM alpine
 RUN apk add --no-cache bash

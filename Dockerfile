@@ -1,18 +1,17 @@
-# https://devcenter.heroku.com/articles/container-registry-and-runtime
+# This is a multi-stage Dockerfile and requires >= Docker 17.05
+# https://docs.docker.com/engine/userguide/eng-image/multistage-build/
 FROM gobuffalo/buffalo:development as builder
-ENV BP=$GOPATH/src/github.com/gobuffalo/gobuffalo
 
-RUN mkdir -p $BP
-WORKDIR $BP
+RUN mkdir -p $GOPATH/src/github.com/gobuffalo/gobuffalo
+WORKDIR $GOPATH/src/github.com/gobuffalo/gobuffalo
 
+# this will cache the npm install step, unless package.json changes
 ADD package.json .
 ADD yarn.lock .
-RUN yarn install
-
+RUN yarn install --no-progress
 ADD . .
 RUN dep ensure
-
-RUN buffalo build --static -o /bin/app --environment=production -d
+RUN buffalo build --static -o /bin/app
 
 FROM alpine
 RUN apk add --no-cache bash

@@ -1,14 +1,17 @@
 package main
 
 import (
+	"fmt"
 	"log"
+	"os"
 
 	"github.com/gobuffalo/gobuffalo/actions"
-	"github.com/kr/pretty"
 )
 
 func main() {
-	a := actions.App()
-	pretty.Println("### a.Options ->", a.Options)
-	log.Fatal(a.Serve())
+	fmt.Println("PORT", os.Getenv("PORT"))
+	app := actions.App()
+	if err := app.Serve(); err != nil {
+		log.Fatal(err)
+	}
 }

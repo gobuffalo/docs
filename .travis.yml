@@ -32,4 +32,4 @@ after_success:
 # Don't build every commit - only PRs and when new code lands in Master
 branches:
   only:
-      - auto-deploy
+      - master

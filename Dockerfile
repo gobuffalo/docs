@@ -10,7 +10,7 @@ ADD package.json .
 ADD yarn.lock .
 RUN yarn install --no-progress
 ADD . .
-RUN dep ensure
+RUN dep ensure -v
 RUN buffalo build --static -o /bin/app -d --environment=production
 
 FROM alpine

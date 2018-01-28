@@ -78,7 +78,7 @@
   branch = "master"
   name = "github.com/unrolled/secure"
 
-[[constraint]]
+[[override]]
   branch = "master"
   name = "github.com/satori/go.uuid"
 

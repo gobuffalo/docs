@@ -14,12 +14,6 @@
   version = "v1.5"
 
 [[projects]]
-  branch = "master"
-  name = "github.com/cockroachdb/cockroach-go"
-  packages = ["crdb"]
-  revision = "0d8b4682f140f0fe486ef7e3d2f70665f3066906"
-
-[[projects]]
   name = "github.com/davecgh/go-spew"
   packages = ["spew"]
   revision = "346938d642f2ec3594ed81d874461961cd0faa76"
@@ -72,8 +66,7 @@
     "render",
     "worker"
   ]
-  revision = "bfa77a8652f7c8ec0bede640656c8add3cb230c2"
-  version = "v0.10.3"
+  revision = "0fdf5a8fa270d2792f2afacfbb3054e7dfeb37bc"
 
 [[projects]]
   name = "github.com/gobuffalo/envy"
@@ -84,8 +77,8 @@
 [[projects]]
   name = "github.com/gobuffalo/packr"
   packages = ["."]
-  revision = "e75b84227ebcc6713f8bfd1a4d154a1c005ded1c"
-  version = "v1.10.1"
+  revision = "b3669dfbd647a0beb9854464c825f7838aba1866"
+  version = "v1.11.0"
 
 [[projects]]
   name = "github.com/gobuffalo/plush"
@@ -106,8 +99,8 @@
     "form",
     "form/bootstrap"
   ]
-  revision = "9b6ec41f9a06859c977841df7a5328bd089e9615"
-  version = "v1.9.2"
+  revision = "77cf9494ea2d039c420e13e4a3ca45a9cd9c59dd"
+  version = "v1.9.5"
 
 [[projects]]
   branch = "master"
@@ -155,7 +148,7 @@
     ".",
     "reflectx"
   ]
-  revision = "de8647470aafe4854c976707c431dbe1eb2822c6"
+  revision = "05cef0741ade10ca668982355b3f3f0bcf0ff0a8"
 
 [[projects]]
   name = "github.com/joho/godotenv"
@@ -209,8 +202,8 @@
     "fizz/translators",
     "nulls"
   ]
-  revision = "00570ee9e436f66a8de394beeb5110489c728b87"
-  version = "3.51.1"
+  revision = "b4656b41fc8dbd16e86737e066370f3272746a1d"
+  version = "3.42.0"
 
 [[projects]]
   name = "github.com/markbates/refresh"
@@ -351,7 +344,8 @@
 [[projects]]
   name = "github.com/satori/go.uuid"
   packages = ["."]
-  revision = "36e9d2ebbde5e3f13ab2e25625fd453271d6522e"
+  revision = "f58768cc1a7a7e77a3bd49e98cdd21419399b6a3"
+  version = "v1.2.0"
 
 [[projects]]
   branch = "master"
@@ -360,10 +354,10 @@
   revision = "a683aaf2d516deecd70cad0c72e3ca773ecfcef0"
 
 [[projects]]
-  branch = "master"
   name = "github.com/sergi/go-diff"
   packages = ["diffmatchpatch"]
   revision = "1744e2970ca51c86172c8190fadad617561ed6e7"
+  version = "v1.0.0"
 
 [[projects]]
   branch = "master"
@@ -459,7 +453,7 @@
     "blowfish",
     "ssh/terminal"
   ]
-  revision = "3d37316aaa6bd9929127ac9a527abf408178ea7b"
+  revision = "1875d0a70c90e57f11972aefd42276df65e895b9"
 
 [[projects]]
   branch = "master"
@@ -484,7 +478,7 @@
     "unix",
     "windows"
   ]
-  revision = "af50095a40f9041b3b38960738837185c26e9419"
+  revision = "ff2a66f350cefa5c93a634eadb5d25bb60c85a9c"
 
 [[projects]]
   branch = "v2"
@@ -495,6 +489,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "3eb246539dc5ddb0c92554cab82ff6f9ef00068eb1e3f20e5aedf6b444f75c2e"
+  inputs-digest = "3829b1434a18c3f7bf074fb1f692243526851a4bbbb380fc1b63518b43fb40ea"
   solver-name = "gps-cdcl"
   solver-version = 1

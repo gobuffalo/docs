@@ -27,7 +27,8 @@
 
 [[constraint]]
   name = "github.com/gobuffalo/buffalo"
-  version = "0.10.3"
+  # branch = "development"
+  revision = "0fdf5a8fa270d2792f2afacfbb3054e7dfeb37bc"
 
 [[constraint]]
   name = "github.com/gobuffalo/envy"
@@ -35,7 +36,7 @@
 
 [[constraint]]
   name = "github.com/gobuffalo/packr"
-  version = "1.10.1"
+  version = "1.11.0"
 
 [[constraint]]
   name = "github.com/gobuffalo/plush"

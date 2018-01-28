@@ -56,7 +56,6 @@
   version = "v1.3"
 
 [[projects]]
-  branch = "development"
   name = "github.com/gobuffalo/buffalo"
   packages = [
     ".",
@@ -67,7 +66,8 @@
     "render",
     "worker"
   ]
-  revision = "44bde5be78f1c1dbc8abdb162273fb2d10a38b8d"
+  revision = "bfa77a8652f7c8ec0bede640656c8add3cb230c2"
+  version = "v0.10.3"
 
 [[projects]]
   name = "github.com/gobuffalo/envy"
@@ -490,6 +490,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "fe3d75b4424c18815e0292bb3f4a269742a901ea32de0bf654d3f75bc6528074"
+  inputs-digest = "b3dac64919238618ebba576eacbe527e1d63a40ee86803190efcd03963304211"
   solver-name = "gps-cdcl"
   solver-version = 1

@@ -14,6 +14,12 @@
   version = "v1.5"
 
 [[projects]]
+  branch = "master"
+  name = "github.com/cockroachdb/cockroach-go"
+  packages = ["crdb"]
+  revision = "0d8b4682f140f0fe486ef7e3d2f70665f3066906"
+
+[[projects]]
   name = "github.com/davecgh/go-spew"
   packages = ["spew"]
   revision = "346938d642f2ec3594ed81d874461961cd0faa76"
@@ -56,6 +62,7 @@
   version = "v1.3"
 
 [[projects]]
+  branch = "development"
   name = "github.com/gobuffalo/buffalo"
   packages = [
     ".",
@@ -66,8 +73,7 @@
     "render",
     "worker"
   ]
-  revision = "bfa77a8652f7c8ec0bede640656c8add3cb230c2"
-  version = "v0.10.3"
+  revision = "44bde5be78f1c1dbc8abdb162273fb2d10a38b8d"
 
 [[projects]]
   name = "github.com/gobuffalo/envy"
@@ -203,8 +209,8 @@
     "fizz/translators",
     "nulls"
   ]
-  revision = "b4656b41fc8dbd16e86737e066370f3272746a1d"
-  version = "3.42.0"
+  revision = "8fe55efdc73bd3773a5872609d21d1d3829d1dbe"
+  version = "3.51.2"
 
 [[projects]]
   name = "github.com/markbates/refresh"
@@ -490,6 +496,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "b3dac64919238618ebba576eacbe527e1d63a40ee86803190efcd03963304211"
+  inputs-digest = "fe3d75b4424c18815e0292bb3f4a269742a901ea32de0bf654d3f75bc6528074"
   solver-name = "gps-cdcl"
   solver-version = 1

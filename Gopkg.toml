@@ -27,9 +27,7 @@
 
 [[constraint]]
   name = "github.com/gobuffalo/buffalo"
-  # branch = "development"
-  version = "0.10.3"
-  # revision = "0fdf5a8fa270d2792f2afacfbb3054e7dfeb37bc"
+  branch = "development"
 
 [[constraint]]
   name = "github.com/gobuffalo/envy"

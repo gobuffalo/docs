@@ -111,3 +111,18 @@ footer {
     width: 120px;
   }
 }
+
+.main-content table {
+  width: 100%;
+}
+
+a {
+  code {
+    text-decoration: underline;
+    text-decoration-color: #62a8ea;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

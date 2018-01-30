@@ -93,3 +93,23 @@ func HomeHandler(c buffalo.Context) error {
   return c.Render(200, r.HTML("index.html"))
 }
 ```
+
+<%= title("What's in the Context") %>
+
+Buffalo stuffs the context of each request with a lot of information that could be useful in your application, such as the `current_route` or the `session`. Below is a list of what Buffalo adds to the context on each request that you can access from in your actions or templates.
+
+| Key             | Type                                                                                 | Usage                                                                                                                                   |
+| ---             | ---                                                                                  | ---                                                                                                                                     |
+| `app`           | [`*buffalo.App`](https://godoc.org/github.com/gobuffalo/buffalo#App)                | The current Buffalo application that's running.                                                                                         |
+| `env`           | `string`                                                                             | The current environment the app is running in. Example: `development` or `production`                                                   |
+| `routes`        | [`buffalo.RouteList`](https://godoc.org/github.com/gobuffalo/buffalo#RouteList)     | A list of all of the routes mapped on the application.                                                                                  |
+| `current_route` | [`buffalo.RouteInfo`](https://godoc.org/github.com/gobuffalo/buffalo#RouteInfo)     | The current route that is being accessed.                                                                                               |
+| `current_path`  | `string`                                                                             | The current path being requested. Example: `/users/1/edit`                                                                              |
+| `*Path`         | [`RouteHelperFunc`](https://godoc.org/github.com/gobuffalo/buffalo#RouteHelperFunc) | Helpers to create paths based off of mapped routes. Example: `editUserPath`. Run `buffalo task routes` to see a full list for your app. |
+| `params`        | `map[string]string`                                                                  | Query parameters for the requested page.                                                                                                |
+| `flash`         | `map[string][]string`                                                                | A map of messages set using `buffalo.Context#Flash`.                                                                                    |
+| `session`       | [`*buffalo.Session`](https://godoc.org/github.com/gobuffalo/buffalo#Session)        | The current user's session.                                                                                                             |
+| `request`       | [`*http.Request`](https://godoc.org/net/http#Request)                               | The current request.                                                                                                                    |
+| `tx`            | [`*pop.Connection`](https://godoc.org/github.com/markbates/pop#Connection)          | Only set if using the `github.com/gobuffalo/buffalo/middleware.PopTransaction` middleware (on by default).                              |
+
+See [Helpers](/docs/helpers#builtin-helpers/docs/helpers#builtin-helpers) for a list of built-in helper functions available inside of templates.

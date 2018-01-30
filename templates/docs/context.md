@@ -94,7 +94,7 @@ func HomeHandler(c buffalo.Context) error {
 }
 ```
 
-<%= title("What's in the Context") %>
+<%= title("What's in the Context", {name:"whats-in-the-context"}) %>
 
 Buffalo stuffs the context of each request with a lot of information that could be useful in your application, such as the `current_route` or the `session`. Below is a list of what Buffalo adds to the context on each request that you can access from in your actions or templates.
 

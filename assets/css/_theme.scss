@@ -27,6 +27,20 @@ body[data-spy] {
   .summary {
     border-bottom: solid 1px #dfdfdf;
     padding-bottom: 3em;
+
+    list-style: none;
+    margin-left: 0;
+    padding-left: 1.2em;
+    text-indent: -1.2em;
+
+    // Custom list item for the summary
+    li:before {
+      content: "#";
+      display: block;
+      float: left;
+      width: 1.2em;
+      color: #c7254e;
+    }
   }
 }
 

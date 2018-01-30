@@ -16,9 +16,3 @@
 | April 10th, 2017          | v0.8.1                       | https://blog.gobuffalo.io/buffalo-v0-8-1-released-6499df49eba3    | <%= githubRelease("v0.8.1") %>    |
 | March 27th, 2017          | v0.8.0                       | https://blog.gobuffalo.io/buffalo-v0-8-0-released-33f1786eadf     | <%= githubRelease("v0.8.0") %>    |
 | March 3rd, 2017           | v0.7.4                       | https://blog.gobuffalo.io/buffalo-0-7-4-released-b1f697163f2a     | <%= githubRelease("v0.7.4") %>    |
-
-<% contentFor("style") { %>
-.main-content table {
-  width: 100%;
-}
-<% } %>

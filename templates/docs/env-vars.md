@@ -33,9 +33,3 @@ APP_URL=https://myapp.com
 ```
 
 Generated apps (**with buffalo >= 0.10.3**) will also create a default `.env` file in your application root. This file will be watched by Buffalo for changes, but will be ignored by git (added in the `.gitignore`).
-
-<% contentFor("style") { %>
-.main-content table {
-  width: 100%;
-}
-<% } %>

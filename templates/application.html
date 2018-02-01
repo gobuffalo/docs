@@ -5,10 +5,10 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Put the fun back in writing Go web applications using the Buffalo framework. A Ruby on Rails inspired, idiomatic, web framework written in Go.">
-  <meta name="keywords" content="go, golang, web, buffalo, framework, html, javascript, ruby, rails, fast, easy">
+  <meta name="description" content="<%= if(metaDescription) { %><%= metaDescription %><% } else { %>Put the fun back in writing Go web applications using the Buffalo framework. A Ruby on Rails inspired, idiomatic, web framework written in Go.<% } %>">
+  <meta name="keywords" content="<%= if(metaKeywords) { %><%= metaKeywords %><% } else { %>go, golang, web, buffalo, framework, html, javascript, ruby, rails, fast, easy<% } %>">
 
-  <title><%= raw(t("head.title")) %> <%= if (pageTitle) { %> - <%= pageTitle %> <% } %></title>
+  <title><%= if (pageTitle) { %><%= pageTitle %> &#183; <% } %><%= raw(t("head.title")) %></title>
 
   <!-- Styles -->
   <%= stylesheetTag("application.css") %>

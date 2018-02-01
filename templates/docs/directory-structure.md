@@ -1,3 +1,6 @@
+<% seoDescription("Buffalo project directory structure") %>
+<% seoKeywords(["buffalo", "go", "golang", "structure", "directory", "framework", "web"]) %>
+
 <%= h1("Directory structure") %>
 
 <%= title("Introduction") %>

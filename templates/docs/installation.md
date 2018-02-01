@@ -1,3 +1,6 @@
+<% seoDescription("How to install the Buffalo framework") %>
+<% seoKeywords(["buffalo", "go", "golang", "installation", "framework", "web"]) %>
+
 <%= h1("Installation") %>
 
 Buffalo provides **two major components**:

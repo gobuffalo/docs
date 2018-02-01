@@ -1,4 +1,7 @@
-# <%= t("releases.title") %>
+<% seoDescription("Buffalo releases") %>
+<% seoKeywords(["buffalo", "go", "golang", "releases", "github", "blog", "version", "framework", "web"]) %>
+
+<%= h1(t("releases.title")) %>
 
 
 | <%= t("releases.date") %> | <%= t("releases.version") %> | <%= t("releases.blog") %>                                         | <%= t("releases.github") %>       |

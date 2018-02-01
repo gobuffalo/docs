@@ -1,3 +1,6 @@
+<% seoDescription("Generate a new Buffalo project") %>
+<% seoKeywords(["buffalo", "go", "golang", "new project", "generator", "framework", "web"]) %>
+
 <%= h1("Generating a New Project") %>
 
 You now have a working Buffalo installation. In this section, you will learn how to create **a brand new web application**, using the `buffalo` command. 

@@ -3,10 +3,12 @@ package actions
 import (
 	"fmt"
 	"html/template"
+	"strings"
 
 	"github.com/gobuffalo/buffalo/render"
 	"github.com/gobuffalo/gobuffalo/actions/helpers"
 	"github.com/gobuffalo/packr"
+	"github.com/gobuffalo/plush"
 )
 
 var r *render.Engine
@@ -29,6 +31,16 @@ func init() {
 			"faq":      helpers.Faq,
 			"githubRelease": func(version string) template.HTML {
 				return template.HTML(fmt.Sprintf(githubRelease, version, version))
+			},
+			"seoDescription": func(description string, help plush.HelperContext) {
+				help.Context.Set("metaDescription", description)
+			},
+			"seoKeywords": func(keywords []interface{}, help plush.HelperContext) {
+				kl := make([]string, 0)
+				for _, k := range keywords {
+					kl = append(kl, k.(string))
+				}
+				help.Context.Set("metaKeywords", strings.Join(kl, ","))
 			},
 		},
 		TemplatesBox: packr.NewBox("../templates"),

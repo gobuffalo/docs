@@ -1,6 +1,4 @@
-<%= title("Tasks") %>
-
-Easily generate new [https://github.com/markbates/grift](https://github.com/markbates/grift) tasks.
+<%= title("Tasks Generator") %>
 
 ```bash
 $ buffalo g task foo:bar

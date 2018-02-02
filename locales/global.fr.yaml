@@ -59,6 +59,15 @@
 - id: menu.sponsors
   translation: Sponsors
 
+- id: menu.help
+  translation: Aide
+
+- id: menu.troubleshooting
+  translation: Problèmes fréquents
+
+- id: menu.training-and-consulting
+  translation: Formation et consulting
+
 # Releases page
 - id: releases.title
   translation: Versions publiées

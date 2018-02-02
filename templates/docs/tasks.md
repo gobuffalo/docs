@@ -18,6 +18,8 @@ var _ = grift.Add("hello", func(c *grift.Context) error {
 })
 ```
 
+<%= partial("docs/generators/tasks.md") %>
+
 <%= title("Listing Available Tasks") %>
 
 ```bash
@@ -42,7 +44,7 @@ $ buffalo task hello
 
 ### From a Built Binary
 
-After a binary has been [built](/docs/building) the tasks can be run with the `task` subcommand:
+After a binary has been [built](/docs/building), the tasks can be run with the `task` subcommand:
 
 ```bash
 $ myapp task hello

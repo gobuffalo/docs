@@ -26,3 +26,5 @@ Il arrive souvent que vous ayez déjà une application utilisant le port 3000. V
 ```bash
 $ PORT=3001 buffalo dev
 ```
+
+Vous pouvez également consulter le chapitre sur les [variables d'environnement](/docs/env-vars) pour plus d'informations sur la configuration de Buffalo.

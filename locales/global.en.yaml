@@ -21,6 +21,9 @@
 - id: top.become-a-patreon
   translation: Become a Patreon
 
+- id: top.store
+  translation: Store
+
 # Footer
 - id: footer.copyright
   translation: Copyright &copy; {{ .year }} Buffalo. All rights reserved.

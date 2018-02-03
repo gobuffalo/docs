@@ -71,6 +71,7 @@ func App() *buffalo.App {
 
 		app.Redirect(302, "/docs/overview", "/")
 		app.Redirect(302, "/docs/test-suites", "/docs/testing")
+		app.Redirect(302, "/docs/env-vars", "/docs/config-vars")
 		app.GET("/docs/{name:.+}", Docs)
 
 		app.ServeFiles("/assets", assetBox)

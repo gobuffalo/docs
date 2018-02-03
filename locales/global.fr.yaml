@@ -50,8 +50,8 @@
 - id: menu.directory-structure
   translation: Structure d'un projet
 
-- id: menu.env-variables
-  translation: Variables d'environnement
+- id: menu.config-variables
+  translation: Configuration
 
 - id: menu.contributing
   translation: Contribuer

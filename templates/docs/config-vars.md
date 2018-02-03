@@ -1,7 +1,7 @@
 <% seoDescription("Handle configuration with Buffalo") %>
 <% seoKeywords(["buffalo", "go", "golang", "configuration", "env", "framework", "web"]) %>
 
-<%= h1("Environment Variables") %>
+<%= h1("Configuration") %>
 
 In this chapter, you'll learn how to manage configuration with Buffalo.
 

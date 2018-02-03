@@ -1,4 +1,4 @@
-# Using a proxy
+<%= h1("Using a proxy") %>
 
 Buffalo can be used raw to handle queries. You just need to start your app and listen on a given address and port:
 

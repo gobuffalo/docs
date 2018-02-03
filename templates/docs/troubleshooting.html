@@ -16,11 +16,11 @@ The original ticket for this issue can be found at [https://github.com/gobuffalo
     <% } %>
 
     <%= faq("`buffalo new` fails with NPM permissions issues.") { %>
-This is caused by incorrectly setup Node/NPM installation. See <a href="https://docs.npmjs.com/getting-started/fixing-npm-permissions" target="_blank">https://docs.npmjs.com/getting-started/fixing-npm-permissions</a> for information on how to fix this issue.
+This is caused by incorrectly setup Node/NPM installation. See <a href="https://docs.npmjs.com/getting-started/fixing-npm-permissions" target="_blank">docs.npmjs.com/getting-started/fixing-npm-permissions</a> for information on how to fix this issue.
     <% } %>
 
     <%= faq("`buffalo dev` auto rebuild doesn't work with NFS.") { %>
-This is caused by the `fsnotify` package not supporting NFS. See <a href="https://github.com/gobuffalo/buffalo/issues/620" target="_blank">https://github.com/gobuffalo/buffalo/issues/620</a> for more details and a workaround.
+This is caused by the `fsnotify` package not supporting NFS. See <a href="https://github.com/gobuffalo/buffalo/issues/620" target="_blank">github.com/gobuffalo/buffalo/issues/620</a> for more details and a workaround.
     <% } %>
 
     <%= faq("`buffalo new` fails with `import path does not begin with hostname`") { %>
@@ -77,7 +77,7 @@ expand dir: /go/src/github.com/fatih/color/vendor/github.com/mattn/go-colorable
 separator: /
 ```
 
-This issue has been reported previously the Go team, [https://github.com/golang/go/issues/17597](https://github.com/golang/go/issues/17597).
+This issue has been reported previously the Go team, [github.com/golang/go/issues/17597](https://github.com/golang/go/issues/17597).
 
 The best way to solve this problem is to run `go get` again, and it seems to fix itself.
     <% } %>
@@ -87,7 +87,7 @@ If you get this error when running `buffalo build` you need to update your `webp
     <% } %>
 
     <%= faq("Error: `Killed 9` when running `buffalo` on Mac OS X with Go 1.8.0") { %>
-This is a known issue with Go, <a href="https://github.com/golang/go/issues/19734" target="_blank">https://github.com/golang/go/issues/19734</a>, not with Buffalo.
+This is a known issue with Go, <a href="https://github.com/golang/go/issues/19734" target="_blank">github.com/golang/go/issues/19734</a>, not with Buffalo.
 
 The best solution is to upgrade to Go 1.8.1, or greater, and rebuild your Go binaries.
     <% } %>

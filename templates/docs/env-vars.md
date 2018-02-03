@@ -1,8 +1,15 @@
-# Environment Variables
+<% seoDescription("Handle configuration with Buffalo") %>
+<% seoKeywords(["buffalo", "go", "golang", "configuration", "env", "framework", "web"]) %>
 
-Environment variables are a good way to separate environment specific values, or secrets, from your application code base ([as described in The Twelve Factor app](https://12factor.net/config)). It can help define behavior that is based on the context of the app and isolate secrets from your code base so all developers don't have to know the productions keys to sensitive services, such as a bank API, and they can use local development API keys.
+<%= h1("Environment Variables") %>
+
+In this chapter, you'll learn how to manage configuration with Buffalo.
+
+Environment variables are a good way to separate environment specific values, or secrets, from your application code base ([as described in The Twelve Factor app](https://12factor.net/config)). It can help define behavior that is based on the context of the app (as requiring SSL on production) and isolate secrets from your code base. This way, all developers don't have to know the productions keys to sensitive services, such as a bank API, and they can use sandbox API keys.
 
 <%= title("Available Environment Variables") %>
+
+The following variables are used by Buffalo:
 
 | Variable              | Default                  | Usage                                                      |
 | ---                   | ---                      | ---                                                        |
@@ -14,6 +21,21 @@ Environment variables are a good way to separate environment specific values, or
 | `HOST`                | `http://127.0.0.1:$PORT` | The "URL" of the application (i.e. what end users type in) |
 | `SESSION_SECRET`      | `""`                     | A salt used for securing sessions                          |
 
+<%= title("Custom Configuration") %>
+
+You still can provide your own variables, and retrieve them from within your application. The [envy](https://github.com/gobuffalo/envy) package makes it easy!
+
+```go
+import "github.com/gobuffalo/envy"
+
+// [...]
+
+// Get MYSECRET env variable, default to empty string if it's not set
+var MYSECRET = envy.Get("MYSECRET", "")
+
+// Get REQUIREDSECRET env variable, return an error if it's not set
+REQUIREDSECRET, err := envy.MustGet("REQUIREDSECRET")
+```
 
 <%= title("Support for .env Files") %>
 
@@ -32,4 +54,4 @@ APP_LOG_LEVEL=debug
 APP_URL=https://myapp.com
 ```
 
-Generated apps (**with buffalo >= 0.10.3**) will also create a default `.env` file in your application root. This file will be watched by Buffalo for changes, but will be ignored by git (added in the `.gitignore`).
+Generated apps (**with buffalo >= 0.10.3**) will also create a default `.env` file in your application root. This file will be watched by Buffalo for changes, but will be ignored by git (added in the `.gitignore`). This is a good way to prevent developers to push credentials by mistake.

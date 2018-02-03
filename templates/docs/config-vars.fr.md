@@ -1,4 +1,4 @@
-<%= h1("Variables d'environnement") %>
+<%= h1("Configuration") %>
 
 Dans ce chapitre, vous allez apprendre comment gérer la configuration de votre application avec Buffalo.
 

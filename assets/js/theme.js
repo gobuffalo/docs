@@ -7222,12 +7222,6 @@ $(function() {
     $('.site-header').css('padding-top', $('.site-header > .navbar').height() + 30);
   }
 
-  // Add .force-middle if navbar-brand contains image
-  if ('.navbar-brand > img') {
-    $('.navbar-brand').prepend('<span class="force-middle"></span>');
-  }
-
-
   //
   // Sidebar
   //

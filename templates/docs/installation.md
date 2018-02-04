@@ -12,7 +12,7 @@ Buffalo provides **two major components**:
 Before installing make sure you have the required dependencies installed:
 
 * [Guide to Setting a Go Developer Environment](http://gopherguides.com/before-you-come-to-class)
-* [A configured `$PATH` environment variable that includes `$GOPATH/bin`.](https://www.evernote.com/l/ABHVit2ba8xGnpmkDZNwmBJ4bcpNwpKeZg4)
+* [A configured `$PATH` environment variable that includes `$GOPATH/bin`.](https://golang.org/doc/code.html#GOPATH)
 * [Go](https://golang.org) version `<%= goMinVersion %>` or greater.
 
 ##### Frontend Requirements

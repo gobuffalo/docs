@@ -9,6 +9,7 @@ Buffalo fournit **deux composants majeurs** :
 Avant d'installer Buffalo, assurez-vous d'avoir installé les dépendances suivantes :
 
 * [Guide de configuration d'un environnement de développement Go (EN)](http://gopherguides.com/before-you-come-to-class).
+* [Une variable d'environnement `$PATH` correctement configurée, incluant `$GOPATH/bin`](https://golang.org/doc/code.html#GOPATH).
 * [Go](https://golang.org) version `<%= goMinVersion %>` ou supérieure.
 
 ##### Prérequis pour le frontend

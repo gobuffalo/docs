@@ -47,7 +47,7 @@
             <span class="icon-bar"></span>
           </button>
 
-          <a class="navbar-brand" href="/"><img src="/assets/images/logo_med.png" alt="logo"> <%= raw(t("top.title")) %></a>
+          <a class="navbar-brand" href="/" id="logo"><span class="force-middle"></span><img src="/assets/images/logo_top.png" alt="logo"> <%= raw(t("top.title")) %></a>
         </div>
         <!-- END Toggle buttons and brand -->
 
@@ -74,15 +74,13 @@
 
     <main class="container-fluid">
       <div class="row">
-
-
         <!-- Main content -->
         <article class="main-content" role="main">
           <%= yield %>
-          <%= partial("footer.html") %>
         </article>
         <!-- END Main content -->
       </div>
+      <%= partial("footer.html") %>
     </main>
 
 

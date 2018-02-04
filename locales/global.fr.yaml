@@ -7,7 +7,7 @@
 
 # Top
 - id: top.title
-  translation: 'Buffalo<span class="hidden-xs"> &ndash; Développement Web rapide en Go</span>'
+  translation: Buffalo
 
 - id: top.examples-tutorials
   translation: Exemples & tutoriels

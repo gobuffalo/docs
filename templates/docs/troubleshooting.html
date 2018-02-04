@@ -3,6 +3,9 @@
 <div class="faq">
   <input class="faq-search" type="text" placeholder="Type to search...">
   <ul>
+    <%= faq("Can't find `buffalo` binary.") { %>
+If you can't find the `buffalo` binary after a successful installation, this is problably caused because `$GOPATH/bin`, or `%GOPATH\bin` (Windows), isn't in your `$PATH` variable. When a Go binary is installed it is placed in `$GOPATH/bin`. Adding this to your global `$PATH` will allow you to find **any** Go binary everywhere in your system. See [https://golang.org/doc/code.html#GOPATH](https://golang.org/doc/code.html#GOPATH) for more details.
+    <% } %>
 
     <%= faq("`buffalo new` fails to generate a complete project.") { %>
 This happens because the `buffalo new` command cannot find the templates it needs to generate a new application.
@@ -106,7 +109,7 @@ package golang.org/x/tools/cmd/goimports: golang.org/x/tools is a custom import 
 
 Error: exit status 1
 ```
-    <% } 
+    <% }
 
     <%= faq("`buffalo g goth` fails to generate `auth.go`") { %>
 You might see errors similar to this when you build:

@@ -159,6 +159,6 @@ func main() {
 }
 ```
 
-The [`buffalo.App#Serve`](https://godoc.org/github.com/gobuffalo/buffalo#App.Serve) method will, by default, call the [`worker.Worker#Start`](https://godoc.org/github.com/gobuffalo/buffalo/worker#Worker) method for the registered worker. This will also call the [`worker.Worker#Stop`](https://godoc.org/github.com/gobuffalo/buffalo/worker#Worker) method when the application is shut down. This is the **recommended** approached for applications.
+The [`buffalo.App#Serve`](https://godoc.org/github.com/gobuffalo/buffalo#App.Serve) method will, by default, call the [`worker.Worker#Start`](https://godoc.org/github.com/gobuffalo/buffalo/worker#Worker) method for the registered worker. This will also call the [`worker.Worker#Stop`](https://godoc.org/github.com/gobuffalo/buffalo/worker#Worker) method when the application is shut down. This is the **recommended** approach for applications.
 
 If you don't want your workers to start automatically, you can set the option [`buffalo.Options#WorkerOff`](https://godoc.org/github.com/gobuffalo/buffalo#Options) to `true` when setting up your application.

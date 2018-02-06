@@ -148,16 +148,17 @@ func doWork() {
 
 <%= title("Starting and Stopping Workers") %>
 
-By default all Buffalo applications created with `0.9.0` or above will have a `main.go` that looks something like this:
+By default all Buffalo applications created will have a `main.go` that looks something like this:
 
 ```go
 func main() {
-  port := envy.Get("PORT", "3000")
   app := actions.App()
-  log.Fatal(app.Start(port))
+  if err := app.Serve(); err != nil {
+    log.Fatal(err)
+  }
 }
 ```
 
-The `App#Start` method will, by default, call the `Worker#Start` method for the registered worker. This will also call the `Worker#Stop` method when the application is shut down. This is the **recommended** approached for applications.
+The [`buffalo.App#Serve`](https://godoc.org/github.com/gobuffalo/buffalo#App.Serve) method will, by default, call the [`worker.Worker#Start`](https://godoc.org/github.com/gobuffalo/buffalo/worker#Worker) method for the registered worker. This will also call the [`worker.Worker#Stop`](https://godoc.org/github.com/gobuffalo/buffalo/worker#Worker) method when the application is shut down. This is the **recommended** approached for applications.
 
-If you don't want your workers to start automatically, you can set the option `WorkerOff` to `true` when setting up your application.
+If you don't want your workers to start automatically, you can set the option [`buffalo.Options#WorkerOff`](https://godoc.org/github.com/gobuffalo/buffalo#Options) to `true` when setting up your application.

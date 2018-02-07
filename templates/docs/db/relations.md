@@ -43,17 +43,12 @@ type Addresses []Address
 
 Using the above [example](#example) code below is a list of available struct tags and how to use them.
 
-`has_many`: Will load all records from the `books` table that have a column named `user_id`, or the column specified with `fk_id` that matches the `User.ID` value.
-
-`belongs_to`: Will load a record from `users` table that have a column named `id` that matches with `Book.UserID` value.
-
-`has_one`: Will load a record from the `songs` table that have a column named `user_id`, or the column specified with `fk_id` that matches the `User.ID` value.
-
-`many_to_many`: Will load all records from the `addresses` table through the table `users_addresses`. Table `users_addresses` **MUST** define `address_id` and `user_id` columns to match `User.ID` and `Address.ID` values. You can also define a `fk_id` tag that will be used in the target association i.e. `addresses` table.
-
-`fk_id`: Defines the column name in the target association that matches model ID. In the example above `Song` has a column named `u_id` that represents id of `users` table. When loading `FavoriteSong`, `u_id` will be used instead of `user_id`.
-
-`order_by`: Used in `has_many` and `many_to_many` to indicate the order for the association when loading. The format to use is `order_by:"&lt;column_name> &lt;asc | desc>"`
+* `has_many`: Will load all records from the `books` table that have a column named `user_id`, or the column specified with `fk_id` that matches the `User.ID` value.
+* `belongs_to`: Will load a record from `users` table that have a column named `id` that matches with `Book.UserID` value.
+* `has_one`: Will load a record from the `songs` table that have a column named `user_id`, or the column specified with `fk_id` that matches the `User.ID` value.
+* `many_to_many`: Will load all records from the `addresses` table through the table `users_addresses`. Table `users_addresses` **MUST** define `address_id` and `user_id` columns to match `User.ID` and `Address.ID` values. You can also define a `fk_id` tag that will be used in the target association i.e. `addresses` table.
+* `fk_id`: Defines the column name in the target association that matches model ID. In the example above `Song` has a column named `u_id` that represents id of `users` table. When loading `FavoriteSong`, `u_id` will be used instead of `user_id`.
+* `order_by`: Used in `has_many` and `many_to_many` to indicate the order for the association when loading. The format to use is `order_by:"&lt;column_name> &lt;asc | desc>"`
 
 <%= title("Eager Loading Associations") %>
 

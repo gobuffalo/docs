@@ -2,6 +2,8 @@
 
 Pop allows you to perform an eager loading for associations defined in a model. By using [`pop.Connection.Eager()`](https://godoc.org/github.com/markbates/pop#Connection.Eager) method plus some struct field tags predefined in your model you can extract associated data from a model.
 
+<%= vimeo("253683926") %>
+
 <%= title("Example") %>
 
 ```go

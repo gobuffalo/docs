@@ -135,3 +135,9 @@ a {
     }
   }
 }
+
+.since-version {
+  @extend .label;
+  @extend .label-primary;
+  font-family: Arial, Helvetica, sans-serif;
+}

@@ -52,6 +52,6 @@ const vimeo = `<div class="video">
 <iframe src="https://player.vimeo.com/video/%s?portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 </div>`
 
-const sinceVersion = `<span class="label label-primary">since <strong>v%s</strong></span>`
+const sinceVersion = `<span class="since-version">since <strong>v%s</strong></span>`
 
 const githubRelease = `<a href="https://github.com/gobuffalo/buffalo/releases/tag/%s" target="_blank" rel="noopener noreferrer">releases/tag/%s</a>`

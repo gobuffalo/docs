@@ -1074,7 +1074,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Raleway, "Helvetica Neue", Helvetica, Arial, sans-serif
+  font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
 }
 
 h1 a,
@@ -3800,4 +3800,16 @@ figcaption {
 
 .comment-form textarea {
   height: 140px !important
+}
+
+article.main-content {
+  font-family: Georgia,Cambria,"Times New Roman",Times,serif;
+}
+
+article.main-content .jumbotron {
+  font-family: Lato,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+article.main-content .btn {
+  font-family: Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Arial,sans-serif;
 }

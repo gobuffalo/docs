@@ -62,14 +62,23 @@
 - id: menu.sponsors
   translation: Sponsors
 
-- id: menu.help
-  translation: Help
-
 - id: menu.troubleshooting
   translation: Trouble Shooting
 
 - id: menu.training-and-consulting
   translation: Training and Consulting
+
+- id: menu.deploy
+  translation: Deploy
+
+- id: menu.building-binaries
+  translation: Building/Binaries
+
+- id: menu.using-proxy
+  translation: Using a proxy
+
+- id: menu.systemd-service
+  translation: Systemd service
 
 # Releases page
 - id: releases.title

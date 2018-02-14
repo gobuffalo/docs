@@ -47,6 +47,7 @@ type User struct {
   &lt;input type="text" value="ringo" name="name"/&gt;
   &lt;input type="text" value="ringo@beatles.com" name="Email"/&gt;
   &lt;input type="text" value="starr" name="Password"/&gt;
+  &lt;input type="submit"/&gt;
 &lt;/form&gt;
 ```
 

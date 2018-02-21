@@ -1,31 +1,31 @@
 <%= h1("Systemd service") %>
 
-Dans ce chapitre, nous allons voir comment installer une app Buffalo comme un service Systemd. Systemd est le nouveau standard de beaucoup de distributions GNU/Linux, pour éxecuter les services systèmes.
+Dans ce chapitre, nous allons voir comment installer une app Buffalo comme un service Systemd. Systemd est le nouveau standard de beaucoup de distributions GNU/Linux, pour exécuter les services systèmes.
 
-Il vous permet de configurer votre application d'une manière standard, et de gérer son cylcle de vie avec les commandes `systemctl`.
+Il vous permet de configurer votre application d'une manière standard, et de gérer son cycle de vie avec les commandes `systemctl`.
 
-<%= title("Installez votre app Buffalo") %>
+<%= title("Installer votre app Buffalo") %>
 
-La première étape est de placer votre application dans le bon dossier: sur Debian, la place habituel pour les applications installées à la main est `/usr/local/bin`. C'est là que nous allons installé l'application.
+La première étape est de placer votre application dans le bon dossier&nbsp;: sur Debian, l'emplacement habituel pour les applications installées à la main est `/usr/local/bin`. C'est donc ici que nous allons installer l'application.
 
 ```bash
 $ sudo mv myapp /usr/local/bin
 ```
 
-Assurez vous que les droits sont mis correctements, and donnez les droits à l'utilisateur que vous voulez utilisez. Ici, je vais utilisé le compte `root`.
+Assurez-vous que les droits soient correctement configurés, et donnez les droits à l'utilisateur que vous voulez utiliser. Ici, je vais utiliser le compte `root`.
 
 ```bash
 $ sudo chown root: /usr/local/bin/myapp
 $ sudo chmod +x /user/local/bin/myapp
 ```
 
-<%= title("Créez un fichier de config systemd") %>
+<%= title("Créer un fichier de config systemd") %>
 
-Les fichiers de services systemd sont situés dans `/lib/systemd/system/`, nous allons créer un nouveau fichier `myapp.service` pour notre app.
+Les fichiers de services systemd sont situés dans `/lib/systemd/system/`. Nous allons créer un nouveau fichier `myapp.service` pour notre app.
 
 ```ini
 [Unit]
-Description=My super app
+Description=Ma super app
 
 [Service]
 ExecStart=/usr/local/bin/myapp
@@ -37,13 +37,13 @@ UMask=007
 WantedBy=multi-user.target
 ```
 
-Ici nous créons a nouveau service qui a pour nom lisible "My super app". C'est un service simple, ce qui va créer un nouveau processus décrit avec `ExecStart`: le chemin absolu de notre application. The processus va être éxecuter en tant que `root:root`, avec un `UMask` qui va donner les droits seulement au propriétaire du processus(root).
+Ici nous créons un nouveau service qui a pour nom «&nbsp;Ma super app&nbsp;». C'est un service simple, ce qui va créer le nouveau processus décrit avec `ExecStart`&nbsp;: le chemin absolu de notre application. Ce processus va être exécuté en tant que `root:root`, avec un `UMask` qui va donner les droits seulement au propriétaire du processus (root).
 
-Dans la secition `Install`, nous allons juste dire à Systemd d'attendre que le système soit prêt. Si vous avez d'autres exigences, vous pouvez demandez à Systemd d'attendre pour une base de données, par exemple:
+Dans la section `Install`, nous allons juste dire à Systemd d'attendre que le système soit prêt. Si vous avez d'autres exigences, vous pouvez demander à Systemd d'attendre qu'une base de données soit prête, par exemple&nbsp;:
 
 ```ini
 [Unit]
-Description=My super app
+Description=Ma super app
 After=mysql.service
 
 [Service]
@@ -58,9 +58,9 @@ WantedBy=multi-user.target
 
 <%= title("Déclarer les variables d'environment") %>
 
-La manière officielle de gérer la configuration avec Buffalo est à travers les [variables d'environment](/docs/env-vars). En utilisant Systemd, vous pouvez les définir avec un fichier de remplacement.
+La manière officielle de gérer la configuration avec Buffalo est à travers les [variables d'environment](/docs/env-vars). En utilisant Systemd, vous pouvez les définir avec un fichier de surcharge.
 
-Notre fichier de remplacement est situé dans  `/etc/systemd/system/myapp.service.d/`, et est appelé `override.conf`.
+Notre fichier de surcharge est situé dans  `/etc/systemd/system/myapp.service.d/`, et se nomme `override.conf`.
 
 ```ini
 [Service]
@@ -71,31 +71,31 @@ Environment="SESSION_SECRET=kqdjmlkajdùméa]$"
 
 Chaque ligne `Environment` définit une variable d'environment dans votre app.
 
-<%= title("Jouez avec le service") %>
+<%= title("Jouer avec le service") %>
 
-Le service systemd est maintenant prêt, vous pouvez le tester avec les commandes systemctl and journalctl:
+Le service systemd est maintenant prêt, vous pouvez le tester avec les commandes `systemctl` and `journalctl`&nbsp;:
 
 ```bash
 $ sudo systemctl start myapp.service
 ```
 
-Pour démarrer le service, and vérifier que tout fonctionne normallement.
+Pour démarrer le service, et vérifier que tout fonctionne normalement.
 
 ```bash
 $ journalctl -u myapp.service -f
 ```
 
-La lecture des logs depuis la sortie standard (-u pour définir le nom du service, -f pour suivre les logs).
+La lecture des logs depuis la sortie standard (`-u` pour définir le nom du service, `-f` pour suivre les logs).
 
 ```bash
 $ sudo systemctl stop myapp.service
 ```
 
-Pour stoper le service, pour éffectuer une maintenance (par example).
+Pour stopper le service, pour effectuer une maintenance (par example).
 
-<%= title("Activez le service au démarrage") %>
+<%= title("Activer le service au démarrage") %>
 
-Une fois que le service fonctionne comme vous les voulez, vous pouvez l'activer au démarrage. De cette manière, si le serveur doit redémarrer, votre app va redémarrer aussi.
+Une fois que le service fonctionne comme vous le souhaitez, vous pouvez l'activer au démarrage. De cette manière, si le serveur doit redémarrer, votre app va redémarrer aussi.
 
 ```bash
 $ sudo systemctl enable myapp.service

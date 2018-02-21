@@ -73,7 +73,7 @@ Each `Environment` line define an environment variable for your app.
 
 <%= title("Play with the service") %>
 
-The systemd service is now ready, you can test it with the systemctl and journalctl commands:
+The systemd service is now ready, you can test it with the `systemctl` and `journalctl` commands:
 
 ```bash
 $ sudo systemctl start myapp.service
@@ -85,7 +85,7 @@ To start the service, and check if everything is running fine.
 $ journalctl -u myapp.service -f
 ```
 
-To read the logs from the standard output (-u to set the service name, -f to follow the logs).
+To read the logs from the standard output (`-u` to set the service name, `-f` to follow the logs).
 
 ```bash
 $ sudo systemctl stop myapp.service

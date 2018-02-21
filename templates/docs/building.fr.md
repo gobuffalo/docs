@@ -1,155 +1,54 @@
 <%= h1("Building Your App") %>
 
-Maintenant, votre projet est prêt à être déployé. Dans cette section vous allez apprendre comment "packager" une version de votre application et la déployée sur un serveur.
+Votre projet est désormais prêt à être déployé. Dans cette section, vous allez apprendre comment «&nbsp;packager&nbsp;» une version de votre application et la déployer sur un serveur.
 
 <%= title("La commande build") %>
 
-Buffalo contient une command `build`, qui va construire un **éxecutable complet** de votre application, comprenant mais pas seulement; fichiers statiques(i.e ressources graphiques), migrations, templates, etc. Si vous adhérez à la "Manière Buffalo", les choses fonctionnent simplement. C'est une expérience incroyable. :)
+Buffalo contient une commande `build`. Celle-ci permet de construire un **exécutable complet** de votre application, comprenant (mais pas seulement) les fichiers statiques (c'est-à-dire les ressources graphiques), migrations, templates, etc. Si vous adhérez à la «&nbsp;façon de faire Buffalo&nbsp;», les choses fonctionnent simplement. C'est une expérience incroyable. :)
 
-```bash
-$ buffalo build
-```
+<%= partial("docs/building/build_trace.md") %>
 
-```bash
-Buffalo version <%= version %>
+Lorsque le build est terminé, vous obtenez un binaire tout frais dans le dossier `bin`. Il contient également **l'heure de compilation** et le **hash SHA du commit git** intégrés&nbsp;: cela permet de «&nbsp;versionner&nbsp;» vos binaires.
 
---> cleaning up target dir
---> running node_modules/.bin/webpack
---> packing .../coke/actions/actions-packr.go
---> running go build -v -o bin/coke -ldflags -X main.version=b5dffda -X main.buildTime="2017-03-20T11:05:23-04:00"
---> cleaning up build
-----> cleaning up buffalo_build_main.go
-----> cleaning up a
-----> cleaning up a/a.go
-----> cleaning up a/database.go
-----> cleaning up buffalo_build_main.go
-----> cleaning up ...coke/actions/actions-packr.go
-```
+<%= title("Personnaliser le binaire") %>
 
-Quand le build est fini, vous avez un binaire tout frais dans le dossier `bin`. Il contiendra aussi **l'heure de compilation** and le **git commit SHA** ancrée, celà permet d'avoir des binaires "versionnés".
+Pour lister les options disponibles, utilisez la commande help&nbsp;:
 
-<%= title("Personaliser le binaire") %>
+<%= partial("docs/building/build_options.md") %>
 
-Pour avoir la liste des options disponibles, utilsez la commande help:
+### Nom du binaire / emplacement
 
-```bash
-$ buffalo help build
-```
+Par défaut, votre application compilée sera placée dans le dossier `bin` de votre projet, et le nom de l'exécutable sera basé sur celui que vous avez utilisé pour créer le projet à l'aide de la commande `new`.
 
-```bash
-Buffalo version <%= version %>
+Vous pouvez changer ce nom en utilisant le flag `-o` ou `-output`&nbsp;:
 
-Builds a Buffalo binary, including bundling of assets (packr & webpack)
+<%= partial("docs/building/output_flag.md") %>
 
-Usage:
-  buffalo build [flags]
+En réalité, vous pouvez aussi changer le dossier de destination&nsbp;:
 
-Aliases:
-  build, b, bill
+<%= partial("docs/building/output_dir.md") %>
 
-Flags:
-  -c, --compress         compress static files in the binary (default true)
-  -e, --extract-assets   extract the assets and put them in a distinct archive
-  -h, --help             help for build
-      --ldflags string   set any ldflags to be passed to the go build
-  -o, --output string    set the name of the binary (default "bin/coke")
-  -s, --static           build a static binary using  --ldflags '-linkmode external -extldflags "-static"' (USE FOR CGO)
-  -t, --tags string      compile with specific build tags
-```
+### Extraire les fichiers statiques dans un fichier zip
 
-### Nom du binaire / location
+Par défault, toute l'application est contenue dans un seul exécutable, les fichiers statiques inclus. Dans un système en production&nsbp;; vous voudrez peut-être servir ces fichiers statiques avec un serveur proxy (comme Apache ou NGINX), pour réduire la charge de votre application. Vous voudrez peut-être même utiliser un *CDN* pour gérer vos fichiers statiques.
 
-Par défaut, votre application aura le binaire dans le dossier `bin` de votre projet, et le nom de l'éxecutable serra le nom que vous avez utilisez pour créez le projet avec la commande `new`.
+Buffalo fournit un moyen d'extraire les fichiers statiques compilés dans une unique archive, en utilisant le flag `-e` ou `-extract-assets`&nbsp;:
 
-Vous pouvez changez ce nom par défaut en utilisant le flag `-o` ou `-output`:
-
-```bash
-$ buffalo build -o bin/cookies
-```
-
-```bash
---> cleaning up target dir
---> running node_modules/.bin/webpack
---> packing .../coke/actions/actions-packr.go
---> running go build -v -o bin/cookies -ldflags -X main.version="2017-04-02T08:32:28+02:00" -X main.buildTime="2017-04-02T08:32:28+02:00"
---> cleaning up build
-----> cleaning up buffalo_build_main.go
-----> cleaning up a
-----> cleaning up a/a.go
-----> cleaning up a/database.go
-----> cleaning up buffalo_build_main.go
-----> cleaning up ...coke/actions/actions-packr.go
-```
-
-En fait, vous pouvez aussi changer le dossier de destination:
-
-```bash
-$ # Put the app in my home directory, as "coke"
-$ buffalo build -o ~/coke
-```
-
-```bash
---> cleaning up target dir
---> running node_modules/.bin/webpack
---> packing .../coke/actions/actions-packr.go
---> running go build -v -o ~/coke -ldflags -X main.version="2017-04-02T08:32:28+02:00" -X main.buildTime="2017-04-02T08:32:28+02:00"
---> cleaning up build
-----> cleaning up buffalo_build_main.go
-----> cleaning up a
-----> cleaning up a/a.go
-----> cleaning up a/database.go
-----> cleaning up buffalo_build_main.go
-----> cleaning up ...coke/actions/actions-packr.go
-```
-
-### Extraire les fichiers statiques dans un fichier Zip.
-
-Par défault, toute l'application est contenue dans un seul exécutable, les fichiers statiques inclus. Dans un système en production, vous voulez peut-être servir ces fichiers statiques avec un serveur proxy (comme Apache ou NGINX), pour réduire la charge de votre application. Vous voudriez peut-être même udiliser un *CDN* pour gérer vos fichiers statiques.
-
-Buffalo fournit un moyen d'extraction des fichiers statiques compilés dans une unique archive, en utilisant le flag `-e` or `-extract-assets`.
-
-```bash
-$ buffalo build -e
-```
-
-```bash
---> cleaning up target dir
---> running node_modules/.bin/webpack
---> build assets archive
---> disable self assets handling
---> running go build -v -o bin/coke -ldflags -X main.version="2017-04-02T08:45:58+02:00" -X main.buildTime="2017-04-02T08:45:58+02:00"
---> cleaning up build
-----> cleaning up buffalo_build_main.go
-----> cleaning up a
-----> cleaning up a/a.go
-----> cleaning up a/database.go
-----> cleaning up buffalo_build_main.go
-----> cleaning up ...coke/actions/actions-packr.go
-```
+<%= partial("docs/building/extract_assets.md") %>
 
 Par défault, l'archive des fichiers statiques est place dans le répertoire *bin*, mais si vous changez le dossier de destination de l'exécutable avec le flag `-o`, les fichiers statiques seront livrés dans le même répertoire.
 
-```bash
-$ ls -la bin
-```
-
-```bash
-total 36280
-drwxr-xr--@  4 markbates  staff   136B Apr  3 10:10 ./
-drwxr-xr-x@ 20 markbates  staff   680B Apr  3 10:10 ../
--rwxr-xr-x@  1 markbates  staff    17M Apr  3 10:10 coke*
--rw-r--r--@  1 markbates  staff   691K Apr  3 10:10 coke-assets.zip
-```
+<%= partial("docs/building/extract_assets_layout.md") %>
 
 <%= title("Options avancées") %>
 
-### Construire des binaires "statiques" avec CGO
+### Construire des binaires « statiques » avec CGO
 
-La création de binaire lié statisquement qui contienent CGO, pensez à SQLite3, peut être délicat. En utilisant le flag `--static` avec `buffalo build`, les flags `--ldflags '-linkmode external -extldflags "-static"'` seront ajoutés à la comande `go build`.
+La création de binaire lié statiquement (ceux qui utilisent CGO, comme avec SQLite3) peut être délicat. En utilisant le flag `--static` avec `buffalo build`, les flags `--ldflags '-linkmode external -extldflags "-static"'` seront ajoutés à la commande `go build`.
 
 ### Build Tags
 
-Quand vous construisez un binnaire Buffalo en utilisant la commande `buffalo build`, vous pouvez passé les flags `--tags` and `--ldflags` pour coustruire le binaire; comme vous le feriez normallement quand vous utilisez l'outils `go build`.
+Quand vous construisez un binaire Buffalo en utilisant la commande `buffalo build`, vous pouvez passer les flags `--tags` et `--ldflags` pour construire le binaire&nbsp;; comme vous le feriez normalement avec l'outil `go build`.
 
 ```bash
 $ buffalo build --tags="mytag" --ldflags="-X foo.Bar=baz"
@@ -158,7 +57,7 @@ $ buffalo build --tags="mytag" --ldflags="-X foo.Bar=baz"
 <%= title("Commandes binaires") %>
 
 ### Modes
-Le binaire fonctionne par défaut en mode `développement`, ce qui signifie que toutes les sous-commandes seront executées aussi dans ce mode. Pour changer le mode utilisez la variable d'environment `GO_ENV`
+Le binaire fonctionne par défaut en mode `développement`, ce qui signifie que toutes les sous-commandes seront executées aussi dans ce mode. Pour changer le mode, utilisez la variable d'environment `GO_ENV`&nbsp;:
 
 ```bash
 $ GO_ENV=production ./coke
@@ -166,19 +65,19 @@ $ GO_ENV=production ./coke
 
 ### Commandes disponibles
 
-Une fois que le binaire a été construit, il y a plusieurs sous-commandes que vous pouvez éxecuter sur ce binaire:
+Une fois que le binaire a été construit, il y a plusieurs sous-commandes que vous pouvez exécuter sur celui-ci&nbsp;:
 
 #### Défault
 
-La commande par défaut, si vous éxecutez simplement le binaire, va démarrer l'application.
+La commande par défaut, si vous exécutez simplement le binaire, va démarrer l'application.
 
 #### migrate
 
-La sous-commande `migrate` va éxecuter les commandes de migrations pour l'application.
+La sous-commande `migrate` va exécuter les commandes de migration (de base de données) pour l'application.
 
 #### version
 
-La sous-commande `version` va afficher la version du binaire, en y incluant le nom, le SHA du commit git utilisé pour construire le binaire et le moment ou le binaire a été construit.
+La sous-commande `version` va afficher la version du binaire, en y incluant le nom, le SHA du commit git utilisé pour construire le binaire et la date et heure de construction de celui-ci.
 
 ```bash
 $ ./coke version
@@ -187,7 +86,7 @@ coke version 69b6a8b ("2017-04-03T10:19:46-04:00")
 
 #### task
 
-La sous-commande `task` éxecute les tâches.
+La sous-commande `task` exécute les tâches.
 
 ```bash
 $ ./coke task greet

@@ -72,10 +72,10 @@
   translation: Formation et consulting
 
 - id: menu.deploy
-  translation: Déployé
+  translation: Déploiement
 
 - id: menu.building-binaries
-  translation: Build/Binaire
+  translation: Compilation / Binaire
 
 - id: menu.using-proxy
   translation: Utilisation d'un proxy

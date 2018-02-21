@@ -1,6 +1,6 @@
-<%= h1("Using a proxy") %>
+<%= h1("Utilisation d'un mandataire (proxy)") %>
 
-Buffalo peut-être utilisé pour écouté les requêtes clientes. Vous devez just démarrer votre application et écouté sur cette adresse et ce port:
+Buffalo peut-être utilisé pour écouter les requêtes clientes. Vous devez juste démarrer votre application et écouter sur une adresse et un port précis&nbsp;:
 
 ```bash
 # Env config
@@ -11,23 +11,23 @@ PORT=80
 ./myapp &
 ```
 
-Mais dans la plus part des cas, vous allez utilisé un proxy pour distribué les requêtes à un cluser, gérer les cas ou votre application n'est pas démarrée, etc.
+Mais dans la plupart des cas, vous allez utiliser un proxy pour distribuer les requêtes à un cluster, gérer les cas où votre application n'est pas démarrée, etc.
 
 <%= title("NGINX") %>
 
-NGINX peut-être utilisée de deux manière avec votre app:
+NGINX peut-être utilisé de deux manières avec votre app&nbsp;:
 
-### Utilisation de l'adresse IP
+### Utilisation avec une adresse IP
 
 #### Une seule application backend sur le même serveur
 
-**app env config:**
+**Configuration des variables d'environnement :**
 ```bash
 ADDR=127.0.0.1
 PORT=3000
 ```
 
-**NGINX config:**
+**Config NGINX :**
 ```nginx
 upstream buffalo_app {
     server 127.0.0.1:3000;
@@ -54,27 +54,27 @@ server {
 
 #### Plusieurs applications backend
 
-Utilsation de plusieurs ports juste par exemple:
+Utilisation de ports différents, juste pour l'exemple:
 
-**app1 env config:**
+**Configuration des variables d'environnement de l'app 1 :**
 ```bash
 ADDR=0.0.0.0
 PORT=3000
 ```
 
-**app2 env config:**
+**Configuration des variables d'environnement de l'app 2 :**
 ```bash
 ADDR=0.0.0.0
 PORT=3001
 ```
 
-**app3 env config:**
+**Configuration des variables d'environnement de l'app 3 :**
 ```bash
 ADDR=0.0.0.0
 PORT=3002
 ```
 
-**NGINX config:**
+**Config NGINX :**
 ```nginx
 upstream buffalo_app_hosts {
     server host1.example.com:3000;
@@ -104,19 +104,23 @@ server {
 
 <%= sinceVersion("0.10.3") %>
 
-Les [sockets UNIX](https://fr.wikipedia.org/wiki/Berkeley_sockets#Socket_unix) sont un moyen habituel de faire des communications entre processus (IPC) sur les systèmes UNIX. Celà veut dire qu'un probramme **A** peut parler avec un programme **B** en utilisant un  descripteur de fichier, juste comme c'est fait sur le stack TCP.
+Les [sockets UNIX](https://fr.wikipedia.org/wiki/Berkeley_sockets#Socket_unix) sont un moyen habituel de faire communiquer des processus entre eux (IPC) sur les systèmes UNIX. Cela veut dire qu'un programme **A** peut parler avec un programme **B** en utilisant un descripteur de fichier, avec la même interface que la stack TCP.
 
-Dans notre cas, celà permet à l'instance de Buffalo de fonctionner derrière un proxy, sans avoir à gérer tout le stack TCP entre Buffalo et le proxy. De cette manière votre application sera plus rapide!
+Dans notre cas, cela permet à l'instance de Buffalo de fonctionner derrière un proxy, sans avoir à gérer toute la stack TCP entre Buffalo et le proxy. De cette manière votre application sera plus rapide&nbsp;!
 
-**app env config:**
+Il a cependant quelques points à noter à propos des sockets UNIX. Puisqu'un socket UNIX est un fichier, les permissions inhérantes aux fichiers UNIX s'appliquent. Cela veut donc dire que l'utilisateur propriétaire des processus NGINX (typiquement `nginx`) doit être en mesure de lire et d'écrire sur le socket. **Appliquer un `chmod 777` sur le fichier socket peut fonctionner, mais c'est en général une très mauvaise idée !** Puisque, par défaut, les groupes ont les pleins accès en lecture et écriture sur les sockets créés par Buffalo, une solution plus simple et sécurisée serait d'ajouter l'utilisateur NGINX au groupe utilisateur à qui appartient l'application. La commande permettant de le faire, ressemble à quelque chose de ce genre&nbsp;: `usermod -aG buffalo nginx`.
+
+Les descripteurs de fichiers socket sont typiquement créés sous le répertoire `/tmp` comme dans la configuration exposée ci-dessous. Néanmoins, sur certaines distributions Linux récentes&nbsp;; en particulier pour distributions de la [famille RedHat (EN)](http://fedoraproject.org/wiki/Features/ServicesPrivateTmp), les répertoires `/tmp` et `/var/tmp` sont cloisonnés, de sorte à ce que seul l'utilisateur qui a créé le fichier soit en mesure d'en voir ne serait-ce que l'existance. Sur ces distributions, vous devrez sans doute changer l'adresse du socket en quelque chose comme `unix:/var/sock/buffalo.sock`, à la place de l'adresse d'exemple donnée ci-dessous.
+
+**Configuration des variables d'environnement :**
 ```bash
 ADDR=unix:/tmp/buffalo.sock
 ```
 
-**NGINX config:**
+**Config NGINX :**
 ```nginx
 upstream buffalo_app {
-    server server unix:/tmp/buffalo.sock;
+    server unix:/tmp/buffalo.sock;
 }
 
 server {
@@ -139,7 +143,7 @@ server {
 
 <%= title("Apache 2") %>
 
-### Utilisation de l'adresse IP
+### Utilisation avec une adresse IP
 
 **app env config:**
 ```bash

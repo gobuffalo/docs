@@ -62,6 +62,9 @@
 - id: menu.sponsors
   translation: Sponsors
 
+- id: menu.help
+  translation: Help
+
 - id: menu.troubleshooting
   translation: Trouble Shooting
 

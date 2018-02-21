@@ -71,6 +71,18 @@
 - id: menu.training-and-consulting
   translation: Formation et consulting
 
+- id: menu.deploy
+  translation: Déploiement
+
+- id: menu.building-binaries
+  translation: Compilation / Binaire
+
+- id: menu.using-proxy
+  translation: Utilisation d'un proxy
+
+- id: menu.systemd-service
+  translation: Service Systemd
+
 # Releases page
 - id: releases.title
   translation: Versions publiées

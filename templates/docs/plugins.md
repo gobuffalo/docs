@@ -2,6 +2,17 @@
 
 Plugins, introducted in `v0.9.1`, allow for 3rd party code to extend the `buffalo` command as well as it's sub-commands.
 
+<%= title("Plugins list") %>
+
+Here is a list of plugins made by the Buffalo community:
+
+* [buffalo-goth](https://github.com/gobuffalo/buffalo-goth), a generator to use with the [Goth](https://github.com/markbates/goth) package. **Author**: [@markbates](https://github.com/markbates)
+* [buffalo-bootstrap](https://github.com/markbates/buffalo-bootstrap), a plugin for generating Bootstrap stuff. **Author**: [@markbates](https://github.com/markbates)
+* [buffalo-heroku](https://github.com/markbates/buffalo-heroku), a plugin for deploying docker to heroku. **Author**: [@markbates](https://github.com/markbates)
+* [buffalo-ocean](https://github.com/wolves/buffalo-ocean), a plugin for deploying docker to DigitalOcean. **Author**: [@wolves](https://github.com/wolves)
+
+A plugin is missing from this list? Open [a PR](https://github.com/gobuffalo/gobuffalo/pulls) to add it!
+
 <%= title("Writing a Plugin") %>
 
 There are only a few details to know when implementing a plugin for Buffalo.

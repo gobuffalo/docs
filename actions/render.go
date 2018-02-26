@@ -12,7 +12,7 @@ import (
 )
 
 var r *render.Engine
-var assetBox = packr.NewBox("../public/assets")
+var assetBox = packr.NewBox("../public")
 
 func init() {
 	r = render.New(render.Options{

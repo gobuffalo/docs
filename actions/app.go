@@ -75,12 +75,12 @@ func App() *buffalo.App {
 		app.Redirect(302, "/docs/env-vars", "/docs/config-vars")
 		app.GET("/docs/{name:.+}", Docs)
 
-		app.ServeFiles("/assets", assetBox)
 		app.POST("/lang", ChangeLanguage)
 		app.GET("/sponsors", func(c buffalo.Context) error {
 			return c.Render(200, r.HTML("sponsors.html"))
 		})
 		app.GET("/", HomeHandler)
+		app.ServeFiles("/", assetBox)
 	}
 	return app
 }

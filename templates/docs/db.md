@@ -4,7 +4,7 @@ Buffalo uses [github.com/markbates/pop](https://github.com/markbates/pop) as its
 
 <%= title("Getting Started") %>
 
-Buffalo supports [PostgreSQL](https://www.postgresql.org/) (default), [MySQL](https://www.mysql.com/), and [SQLite3](https://sqlite.org/). When you generate a new Buffalo application you can change this with the `--db-type` flag. It is also possible to skip generation of all database components with the `--skip-pop` flag.
+Buffalo supports [PostgreSQL](https://www.postgresql.org/) (default), [CockroachDB](https://www.cockroachlabs.com/), [MySQL](https://www.mysql.com/), and [SQLite3](https://sqlite.org/). When you generate a new Buffalo application you can change this with the `--db-type` flag. It is also possible to skip generation of all database components with the `--skip-pop` flag.
 
 <%= title("database.yml", {name: "configuring"}) %>
 

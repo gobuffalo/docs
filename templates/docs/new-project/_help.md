@@ -9,7 +9,7 @@ Flags:
       --api                  skip all front-end code and configure for an API server
       --bootstrap int        specify version for Bootstrap [3, 4] (default 3)
       --ci-provider string   specify the type of ci file you would like buffalo to generate [none, travis, gitlab-ci] (default "none")
-      --db-type string       specify the type of database you want to use [postgres, mysql, sqlite3] (default "postgres")
+      --db-type string       specify the type of database you want to use [postgres, mysql, sqlite3, cockroach] (default "postgres")
       --docker string        specify the type of Docker file to generate [none, multi, standard] (default "multi")
   -f, --force                delete and remake if the app already exists
   -h, --help                 help for new

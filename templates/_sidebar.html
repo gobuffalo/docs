@@ -3,7 +3,14 @@
 
   <ul class="sidenav dropable ">
 
-    <li class="language-selector">
+    <li class="sidebar-form">
+
+  <%= form({action: "/search", method: "GET"}) { %>
+      <%= f.InputTag({name: "query", placeholder: "enter search query here", value: params["query"]}) %>
+  <% } %>
+
+    </li>
+    <li class="sidebar-form">
       <%= form({action: "/lang"}) { %>
         <%= f.SelectTag({name: "language", options: {"English": "en", "Français": "fr"}, id: "language", value: lang, label: t("menu.language")}) %>
         <%= f.InputTag({type: "hidden", value: current_path, name: "url"}) %>

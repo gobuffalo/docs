@@ -6,3 +6,4 @@ vendor/
 bin/
 .idea/
 .vscode
+gobuffalo.search/

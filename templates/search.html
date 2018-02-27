@@ -1,0 +1,28 @@
+<h1>Search</h1>
+
+<div class="row">
+  <%= form({action: "/search", method: "GET"}) { %>
+    <div class="col-md-3">
+      <%= f.InputTag({name: "query", placeholder: "enter search query here", value: params["query"]}) %>
+    </div>
+    <div class="col-md-1">
+      <button class="btn btn-primary">Search</button>
+    </div>
+  <% } %>
+</div>
+
+<%= if (results) { %>
+
+<h2><%= results.Total %> <%= pluralize_uint("match", results.Total) %>, showing <%= results.Request.From+1 %> through <%= results.Request.From+len(results.Hits) %>, took <%= results.Took %></h2>
+
+<ol>
+  <%= for (hit) in results.Hits { %>
+  <li>
+    <a href="<%= hit.ID %>"><%= hit.ID %></a> (<%= score(hit.Score) %>)
+    <%= for (body) in hit.Fragments["Body"] { %>
+      <%= debug(body) %>
+    <% } %>
+  </li>
+  <% } %>
+</ol>
+<% } %>

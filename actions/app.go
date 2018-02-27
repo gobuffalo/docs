@@ -69,6 +69,7 @@ func App() *buffalo.App {
 			}
 		})
 
+		app.GET("/search", Search)
 		app.Redirect(302, "/docs/overview", "/")
 		app.Redirect(302, "/docs/repl", "/")
 		app.Redirect(302, "/docs/test-suites", "/docs/testing")
@@ -81,6 +82,7 @@ func App() *buffalo.App {
 			return c.Render(200, r.HTML("sponsors.html"))
 		})
 		app.GET("/", HomeHandler)
+		indexDocs(app)
 	}
 	return app
 }

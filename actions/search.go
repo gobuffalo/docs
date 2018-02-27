@@ -76,8 +76,10 @@ func indexDocs(app *buffalo.App) {
 		}
 
 		body := strip.StripTags(res.Body.String())
-		r := strings.NewReplacer("  ", " ", "\n", " ")
-		body = r.Replace(body)
+		for strings.Index(body, "  ") > 0 || strings.Index(body, "\n\n") > 0 {
+			r := strings.NewReplacer("  ", " ", "\n", " ", "\t", " ")
+			body = r.Replace(body)
+		}
 		doc := struct {
 			URL  string
 			Body string

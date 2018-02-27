@@ -9,6 +9,7 @@ import (
 	"github.com/gobuffalo/gobuffalo/actions/helpers"
 	"github.com/gobuffalo/packr"
 	"github.com/gobuffalo/plush"
+	"github.com/markbates/inflect"
 )
 
 var r *render.Engine
@@ -44,6 +45,12 @@ func init() {
 					kl = append(kl, k.(string))
 				}
 				help.Context.Set("metaKeywords", strings.Join(kl, ","))
+			},
+			"pluralize_uint": func(s string, i uint64) string {
+				return inflect.PluralizeWithSize(s, int(i))
+			},
+			"score": func(f float64) string {
+				return fmt.Sprintf("%.2f%%", f*100)
 			},
 		},
 		TemplatesBox: packr.NewBox("../templates"),

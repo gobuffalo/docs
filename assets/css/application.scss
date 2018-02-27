@@ -49,10 +49,8 @@ h2 {
 
 #global-footer {
   background-color: #f5f5f5;
-
   padding-top: 0.8em;
   padding-bottom: 0.8em;
-
   border-radius: 0;
   margin-bottom: 0;
   margin-left: -15px;
@@ -67,7 +65,7 @@ h2 {
   margin-bottom: 1em;
 }
 
-.language-selector {
+.sidebar-form {
   padding: 2px 20px !important;
   border-bottom: solid 1px #3c4c5f;
 
@@ -84,6 +82,7 @@ h2 {
 
 .jumbotron {
   background-color: #FFF3CA;
+
   h1 {
     margin: 10px;
     margin-left: 0px;
@@ -91,6 +90,7 @@ h2 {
 
   .logo-presentation {
     @extend .pull-right;
+
     width: 100%;
     min-width: 150px;
     max-width: 280px;
@@ -139,6 +139,8 @@ a {
 
 .since-version {
   @extend .label;
+
   @extend .label-primary;
+
   font-family: Arial, Helvetica, sans-serif;
 }

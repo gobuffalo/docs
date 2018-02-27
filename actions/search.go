@@ -33,6 +33,11 @@ func init() {
 }
 
 func indexDocs(app *buffalo.App) {
+	hl := r.HTMLLayout
+	// set a blank layout until we finish indexing
+	r.HTMLLayout = ""
+	defer func() { r.HTMLLayout = hl }()
+
 	box := r.TemplatesBox
 	err := box.Walk(func(path string, file packr.File) error {
 		fi, err := file.FileInfo()
@@ -60,12 +65,13 @@ func indexDocs(app *buffalo.App) {
 		}
 
 		req := httptest.NewRequest("GET", u, nil)
-		req.Header.Set("User-Agent", "indexer")
+		req.Header.Set("X-Forwarded-Proto", "https")
 		res := httptest.NewRecorder()
 
 		app.ServeHTTP(res, req)
 		if res.Code != 200 {
 			fmt.Printf("could not index %s\n", u)
+			fmt.Println(res.Body.String())
 			return nil
 		}
 

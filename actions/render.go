@@ -13,7 +13,7 @@ import (
 )
 
 var r *render.Engine
-var assetBox = packr.NewBox("../public/assets")
+var assetBox = packr.NewBox("../public")
 
 func init() {
 	r = render.New(render.Options{
@@ -22,8 +22,11 @@ func init() {
 			"h1":    helpers.H1,
 			"title": helpers.SectionTitle,
 			"note":  helpers.Note,
-			"sinceVersion": func(version string) template.HTML {
-				return template.HTML(fmt.Sprintf(sinceVersion, version))
+			"sinceVersion": func(version string, help plush.HelperContext) (template.HTML, error) {
+				ctx := help.Context.New()
+				ctx.Set("version", version)
+				s, err := plush.Render(sinceVersion, ctx)
+				return template.HTML(s), err
 			},
 			"vimeo": func(code string) template.HTML {
 				return template.HTML(fmt.Sprintf(vimeo, code))
@@ -59,6 +62,6 @@ const vimeo = `<div class="video">
 <iframe src="https://player.vimeo.com/video/%s?portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 </div>`
 
-const sinceVersion = `<span class="since-version">since <strong>v%s</strong></span>`
+const sinceVersion = `<span class="since-version"><%= raw(t("helpers.since", {"version": version})) %></span>`
 
 const githubRelease = `<a href="https://github.com/gobuffalo/buffalo/releases/tag/%s" target="_blank" rel="noopener noreferrer">releases/tag/%s</a>`

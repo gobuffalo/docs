@@ -47,7 +47,7 @@ func App() *buffalo.App {
 
 		app.Use(func(next buffalo.Handler) buffalo.Handler {
 			return func(c buffalo.Context) error {
-				c.Set("version", "0.10.3")
+				c.Set("version", "0.11.0")
 				c.Set("goMinVersion", "1.8.1")
 				c.Set("year", time.Now().Year())
 				c.Set("trainingURL", "http://www.gopherguides.com")
@@ -76,12 +76,13 @@ func App() *buffalo.App {
 		app.Redirect(302, "/docs/env-vars", "/docs/config-vars")
 		app.GET("/docs/{name:.+}", Docs)
 
-		app.ServeFiles("/assets", assetBox)
 		app.POST("/lang", ChangeLanguage)
 		app.GET("/sponsors", func(c buffalo.Context) error {
 			return c.Render(200, r.HTML("sponsors.html"))
 		})
 		app.GET("/", HomeHandler)
+		app.ServeFiles("/", assetBox)
+
 		indexDocs(app)
 	}
 	return app

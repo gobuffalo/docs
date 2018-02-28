@@ -2859,11 +2859,16 @@ div.prism-show-language>div.prism-show-language-label {
   }
 }
 
-figure img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto
+figure
+{
+  margin: 1em 40px;
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto
+  }
 }
 
 figcaption {

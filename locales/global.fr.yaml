@@ -5,6 +5,10 @@
 - id: head.title
   translation: Buffalo &ndash; Développement Web rapide en Go
 
+# Helpers
+- id: helpers.since
+  translation: depuis <strong>v{{.version}}</strong>
+
 # Top
 - id: top.title
   translation: Buffalo

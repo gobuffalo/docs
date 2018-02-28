@@ -1,6 +1,6 @@
 <%= title("Fizz Migrations", {name:"generating-fizz"}) %>
 
-Buffalo uses [Fizz](https://github.com/markbates/pop/blob/master/fizz%2FREADME.md) to generate migrations that are both easy to work with and work across multiple types of databases.
+Buffalo uses [Fizz](https://github.com/gobuffalo/pop/blob/master/fizz%2FREADME.md) to generate migrations that are both easy to work with and work across multiple types of databases.
 
 ```bash
 $ buffalo db g migration --help

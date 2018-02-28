@@ -12,9 +12,6 @@ func Docs(c buffalo.Context) error {
 	for _, ext := range []string{"md", "html"} {
 		f := fmt.Sprintf("docs/%s.%s", c.Param("name"), ext)
 		if r.TemplatesBox.Has(f) {
-			if c.Request().Header.Get("User-Agent") == "indexer" {
-				return c.Render(200, r.HTML(f, "search-layout.html"))
-			}
 			return c.Render(200, r.HTML(f))
 		}
 	}

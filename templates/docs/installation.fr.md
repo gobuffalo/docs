@@ -43,7 +43,7 @@ $ sudo mv buffalo-no-sqlite /usr/local/bin/buffalo
 Pour installer Buffalo, assurez-vous que le `GOPATH` est défini, puis&nbsp;:
 
 ```bash
-$ go get -u -v github.com/gobuffalo/buffalo/buffalo
+$ go get -u -v -tags sqlite github.com/gobuffalo/buffalo/buffalo
 ```
 
 **Utilisateurs de Windows**&nbsp;: Suivez le guide d'installation [https://blog.gobuffalo.io/install-buffalo-on-windows-10-e08b3aa304a3 (EN)](https://blog.gobuffalo.io/install-buffalo-on-windows-10-e08b3aa304a3) pour installer GCC sur Windows 10.
@@ -55,7 +55,7 @@ Ces instructions peuvent également être utilisées pour mettre à jour votre v
 <%= title("Installation personnalisée **sans** support pour SQLite3", {name: "sans-SQLite3", title: "Installation sans support pour SQLite3"}) %>
 
 ```bash
-$ go get -u -v -tags nosqlite github.com/gobuffalo/buffalo/buffalo
+$ go get -u -v github.com/gobuffalo/buffalo/buffalo
 ```
 
 <%= note() { %>

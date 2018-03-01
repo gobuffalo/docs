@@ -21,7 +21,7 @@ See https://gobuffalo.io/docs/localization for further info about this two tools
 
 ## Hack the code
 
-This website is powered by [Buffalo](https://github.com/gobuffalo/buffalo), so if your read this docs, you'll be able to run it and make the changes you want! (if you can't, the docs are not good enough, and are waiting for a [PR](https://github.com/gobuffalo/gobuffalo/pulls)! ;)
+This website is powered by [Buffalo](https://github.com/gobuffalo/buffalo), so if your read this docs, you'll be able to run it and make the changes you want! (if you can't, the docs are not good enough, and are waiting for a [PR](https://github.com/gobuffalo/gobuffalo/pulls)! ;))
 
 ### Requirements
 

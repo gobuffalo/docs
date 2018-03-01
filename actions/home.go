@@ -10,7 +10,7 @@ import (
 // HomeHandler is a default handler to serve up
 // a home page.
 func HomeHandler(c buffalo.Context) error {
-	return c.Render(200, r.HTML("docs/overview.html"))
+	return c.Render(200, r.HTML("overview.html"))
 }
 
 func ChangeLanguage(c buffalo.Context) error {

@@ -1,6 +1,6 @@
 # gobuffalo.io
 
-<p><img src="gobuffalo-io.png" alt="gobuffalo.io"></p>
+<p><img src="gobuffalo-io.png" alt="gobuffalo.io" width="1000px;"></p>
 
 This is the repository for https://www.gobuffalo.io, the official website of the [Buffalo ecosystem](https://github.com/gobuffalo).
 

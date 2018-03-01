@@ -23,7 +23,23 @@ Before installing make sure you have the required dependencies installed:
 
 * **SQLite 3**: GCC, or equivalent C compiler for [mattn/go-sqlite3](https://github.com/mattn/go-sqlite3).
 
-<%= title("Installation **with** SQLite3 Support", {name: "with-SQLite3", title: "Installation with SQLite3 Support"}) %>
+<%= title("Installation from a release archive - 64 bits", {name: "from-release-archive", title: "Installation from a release archive"}) %>
+
+<%= note() { %>
+The release packages contain Buffalo without SQLite support.
+<% } %>
+
+Since `v0.10.3`, pre-compiled archives are provided with each release. If you don't need the latest cutting-edge version, you'll probably prefer to install this version.
+
+### GNU / Linux
+
+```bash
+$ wget  https://github.com/gobuffalo/buffalo/releases/download/v<%= version %>/buffalo_<%= version %>_linux_amd64.tar.gz
+$ tar -xvzf buffalo_<%= version %>_linux_amd64.tar.gz
+$ sudo mv buffalo-no-sqlite /usr/local/bin/buffalo
+```
+
+<%= title("Custom installation **with** SQLite3 Support", {name: "with-SQLite3", title: "Installation with SQLite3 Support"}) %>
 
 **SQLite 3** requires a GCC, or equivalent C compiler for [mattn/go-sqlite3](https://github.com/mattn/go-sqlite3) to compile. You **must** have a GCC installed **first** before installing Buffalo.
 
@@ -39,7 +55,7 @@ $ go get -u -v github.com/gobuffalo/buffalo/buffalo
 These instructions can also be used for upgrading to a newer version of Buffalo.
 <% } %>
 
-<%= title("Installation **without** SQLite3 Support", {name: "without-SQLite3", title: "Installation without SQLite3 Support"}) %>
+<%= title("Custom installation **without** SQLite3 Support", {name: "without-SQLite3", title: "Installation without SQLite3 Support"}) %>
 
 ```bash
 $ go get -u -v -tags nosqlite github.com/gobuffalo/buffalo/buffalo

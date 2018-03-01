@@ -18,3 +18,21 @@ Internationalization (or i18n) is the way to mark software parts as translatable
 * The Localized views are used to handle most of the documentation pages: this allows people to provide customized versions for the different supported languages, and it's a more efficient way to proceed, since the whole page needs to be translated.
 
 See https://gobuffalo.io/docs/localization for further info about this two tools.
+
+## Hack the code
+
+This website is powered by [Buffalo](https://github.com/gobuffalo/buffalo), so if your read this docs, you'll be able to run it and make the changes you want! (if you can't, the docs are not good enough, and are waiting for a [PR](https://github.com/gobuffalo/gobuffalo/pulls)! ;)
+
+### Requirements
+
+* `npm` & `yarn` for the frontend pipeline.
+* A working go (1.8.1 or greater) setup.
+
+### Run the website for dev
+```bash
+$ go get github.com/gobuffalo/gobuffalo
+$ cd $GOPATH/github.com/gobuffalo/gobuffalo
+$ buffalo dev
+```
+
+And that's it!

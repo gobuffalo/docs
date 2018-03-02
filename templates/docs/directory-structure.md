@@ -3,8 +3,6 @@
 
 <%= h1("Directory structure") %>
 
-<%= title("Introduction") %>
-
 Buffalo provides you **a minimal directory structure** to work on your project. This structure **keeps the project clean**, and allow the [generators](/docs/generators) to work. Don't try to reinvent the wheel, and **let Buffalo buy you more time** to do the interesting part of your app! :)
 
 Now that you have a minimal new project, let's go through its contents.

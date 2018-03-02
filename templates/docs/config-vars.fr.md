@@ -20,7 +20,7 @@ Les variables suivantes sont utilisées par Buffalo :
 
 <%= title("Configuration personnalisée") %>
 
-Vous pouvez toujours fournir vos propres variables, et en récupérer les valeurs depuis votre application. Le paquet [envy](https://github.com/gobuffalo/envy) rend cela très facile !
+Vous pouvez toujours fournir vos propres variables, et en récupérer les valeurs depuis votre application. Le paquet [envy](https://github.com/gobuffalo/envy) rend cela très facile&nbsp;!
 
 ```go
 import "github.com/gobuffalo/envy"

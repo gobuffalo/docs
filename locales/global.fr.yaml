@@ -113,3 +113,7 @@
 
 - id: search.button
   translation: Rechercher
+
+# Docs
+- id: docs.improve-page-button
+  translation: Améliorer cette page

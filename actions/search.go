@@ -48,7 +48,7 @@ func indexDocs(app *buffalo.App) {
 			return nil
 		}
 
-		if !strings.HasPrefix(path, "docs") {
+		if !strings.HasPrefix(path, "docs/") {
 			return nil
 		}
 

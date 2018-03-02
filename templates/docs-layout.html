@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="<%= if(metaDescription) { %><%= metaDescription %><% } else { %>Put the fun back in writing Go web applications using the Buffalo framework. A Ruby on Rails inspired, idiomatic, web framework written in Go.<% } %>">
+    <meta name="keywords" content="<%= if(metaKeywords) { %><%= metaKeywords %><% } else { %>go, golang, web, buffalo, framework, html, javascript, ruby, rails, fast, easy<% } %>">
+    <meta name="robots" content="index,follow">
+
+    <meta property=og:site_name content="Buffalo Go web framework" />
+    <meta property=og:image content="https://gobuffalo.io/assets/images/buffalo.png" />
+    <meta property=og:type content="website" />
+    <meta property=og:url content="https://gobuffalo.io" />
+
+    <meta name=twitter:card content="summary" />
+    <meta name=twitter:site content="@gobuffalo_io" />
+    <meta name=twitter:creator content="Mark Bates" />
+    <meta name=twitter:url content="https://gobuffalo.io/" />
+    <meta name=twitter:image content="https://gobuffalo.io/assets/images/buffalo.png" />
+
+    <title>
+        <%= if (pageTitle) { %>
+            <%= pageTitle %> &#183;
+        <% } %>
+        <%= raw(t("head.title")) %>
+    </title>
+
+    <!-- Styles -->
+    <%= stylesheetTag("application.css") %>
+
+    <!-- Fonts -->
+    <link href='//fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+
+    <!-- Favicons -->
+    <link rel="icon" href="/assets/images/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/assets/images/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/images/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/assets/images/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/assets/images/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="/assets/images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/assets/images/favicon-16x16.png" sizes="16x16" />
+</head>
+
+<body>
+    <header class="site-header sticky">
+        <!-- Top navbar & branding -->
+        <nav class="navbar navbar-default">
+        <div class="container-fluid">
+
+            <!-- Toggle buttons and brand -->
+            <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
+                <i class="fa fa-ellipsis-v"></i>
+            </button>
+
+            <button type="button" class="navbar-toggle for-sidebar" data-toggle="offcanvas">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <a class="navbar-brand" href="/" id="logo"><span class="force-middle"></span><img src="/assets/images/logo_top.png" alt="logo"> <%= raw(t("top.title")) %></a>
+            </div>
+            <!-- END Toggle buttons and brand -->
+
+            <!-- Top navbar -->
+            <div id="navbar" class="navbar-collapse collapse" aria-expanded="true" role="banner">
+            <ul class="nav navbar-nav navbar-right">
+                <li<%= if (current_path == "/docs/examples") { %> class="active"<% } %>><a href="/docs/examples"><%= t("top.examples-tutorials") %></a></li>
+                <li><a href="https://godoc.org/github.com/gobuffalo/buffalo" target="_blank" rel="noopener noreferrer"><i class="fa fa-external-link" aria-hidden="true"></i> <%= t("top.go-docs") %></a></li>
+                <li><a href="https://blog.gobuffalo.io" target="_blank" rel="noopener noreferrer"><i class="fa fa-external-link" aria-hidden="true"></i> <%= t("top.blog") %></a></li>
+                <li><a href="https://github.com/gobuffalo" target="_blank" rel="noopener noreferrer"><i class="fa fa-external-link" aria-hidden="true"></i> GitHub</a></li>
+                <li><a href="http://store.gobuffalo.io" target="_blank" rel="noopener noreferrer"><i class="fa fa-external-link" aria-hidden="true"></i> <%= t("top.store") %></a></li>
+                <li class="hero"><a href="http://patreon.com/buffalo" target="_blank" rel="noopener noreferrer"><i class="fa fa-external-link" aria-hidden="true"></i> <%= t("top.become-a-patreon") %></a></li>
+            </ul>
+            </div>
+            <!-- END Top navbar -->
+
+        </div>
+        </nav>
+        <!-- END Top navbar & branding -->
+    </header>
+
+    <%= partial("sidebar.html") %>
+
+    <main class="container-fluid">
+        <div class="row">
+            <!-- Main content -->
+            <article class="main-content" role="main">
+                <p class="pull-right">
+                    <a href="<%= sourcePath %>" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                        <i class="fa fa-pencil"></i> <%= t("docs.improve-page-button") %>
+                    </a>
+                </p>
+                <%= yield %>
+            </article>
+            <!-- END Main content -->
+        </div>
+        <%= partial("footer.html") %>
+    </main>
+
+
+    <!-- Scripts -->
+    <%= javascriptTag("application.js") %>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-89100352-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.highlight pre').each(function (i, block) {
+                hljs.highlightBlock(block);
+            });
+        });
+    </script>
+
+    <style type="text/css" media="screen">
+        <%=contentOf("style") %>
+    </style>
+</body>
+
+</html>

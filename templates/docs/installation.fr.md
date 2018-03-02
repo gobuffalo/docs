@@ -20,14 +20,30 @@ Avant d'installer Buffalo, assurez-vous d'avoir installé les dépendances suiva
 
 * **SQLite 3**: GCC, ou compilateur équivalent pour [mattn/go-sqlite3](https://github.com/mattn/go-sqlite3).
 
-<%= title("Installation **avec** support pour SQLite3", {name: "avec-SQLite3", title: "Installation avec support pour SQLite3"}) %>
+<%= title("Installation depuis une archive pré-compilée - 64 bits", {name: "from-release-archive", title: "Installation depuis une archive pré-compilée"}) %>
+
+<%= note() { %>
+Ces archives sont fournies sans support pour SQLite.
+<% } %>
+
+Depuis la version `v0.10.3`, des archives contenant une version pré-compilée de Buffalo sont fournies à chaque publication officielle. Si vous n'avez pas besoin de la toute dernière version de développement et que vous souhaitez une version stable, vous préférerez sans-doute cette version. 
+
+### GNU / Linux
+
+```bash
+$ wget  https://github.com/gobuffalo/buffalo/releases/download/v<%= version %>/buffalo_<%= version %>_linux_amd64.tar.gz
+$ tar -xvzf buffalo_<%= version %>_linux_amd64.tar.gz
+$ sudo mv buffalo-no-sqlite /usr/local/bin/buffalo
+```
+
+<%= title("Installation personnalisée **avec** support pour SQLite3", {name: "avec-SQLite3", title: "Installation avec support pour SQLite3"}) %>
 
 **SQLite 3** nécessite GCC, ou un compilateur C équivalent pour compiler [mattn/go-sqlite3](https://github.com/mattn/go-sqlite3). Vous **devez** avoir installé GCC **avant** d'installer Buffalo.
 
 Pour installer Buffalo, assurez-vous que le `GOPATH` est défini, puis&nbsp;:
 
 ```bash
-$ go get -u -v github.com/gobuffalo/buffalo/buffalo
+$ go get -u -v -tags sqlite github.com/gobuffalo/buffalo/buffalo
 ```
 
 **Utilisateurs de Windows**&nbsp;: Suivez le guide d'installation [https://blog.gobuffalo.io/install-buffalo-on-windows-10-e08b3aa304a3 (EN)](https://blog.gobuffalo.io/install-buffalo-on-windows-10-e08b3aa304a3) pour installer GCC sur Windows 10.
@@ -36,10 +52,10 @@ $ go get -u -v github.com/gobuffalo/buffalo/buffalo
 Ces instructions peuvent également être utilisées pour mettre à jour votre version de Buffalo.
 <% } %>
 
-<%= title("Installation **sans** support pour SQLite3", {name: "sans-SQLite3", title: "Installation sans support pour SQLite3"}) %>
+<%= title("Installation personnalisée **sans** support pour SQLite3", {name: "sans-SQLite3", title: "Installation sans support pour SQLite3"}) %>
 
 ```bash
-$ go get -u -v -tags nosqlite github.com/gobuffalo/buffalo/buffalo
+$ go get -u -v github.com/gobuffalo/buffalo/buffalo
 ```
 
 <%= note() { %>

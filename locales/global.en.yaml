@@ -39,9 +39,6 @@
 - id: menu.language
   translation: Language
 
-- id: menu.overview
-  translation: Overview
-
 - id: menu.getting-started
   translation: Getting Started
 
@@ -109,3 +106,10 @@
 
 - id: sponsors.your-company-here
   translation: Your Company Here
+
+# Search
+- id: search.title
+  translation: Search
+
+- id: search.button
+  translation: Search

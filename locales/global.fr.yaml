@@ -39,9 +39,6 @@
 - id: menu.language
   translation: Langue
 
-- id: menu.overview
-  translation: Présentation
-
 - id: menu.getting-started
   translation: Prise en main
 
@@ -109,3 +106,10 @@
 
 - id: sponsors.your-company-here
   translation: Votre entreprise ici
+
+# Search
+- id: search.title
+  translation: Recherche
+
+- id: search.button
+  translation: Rechercher

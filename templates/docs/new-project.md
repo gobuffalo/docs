@@ -22,7 +22,7 @@ $ buffalo new coke
 ```
 
 That will generate a whole new Buffalo application called **coke**, all ready to go:
-* the **Buffalo framework layout** and default configuration ([pop/soda](https://github.com/markbates/pop) with PostgreSQL support),
+* the **Buffalo framework layout** and default configuration ([pop/soda](https://github.com/gobuffalo/pop) with PostgreSQL support),
 * all necessary **Go dependencies** needed to run the current application,
 * **frontend dependencies** and working setup with [webpack](https://webpack.js.org/)
 * and an initial **Git repository**.

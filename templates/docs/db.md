@@ -1,6 +1,6 @@
 # Database
 
-Buffalo uses [github.com/markbates/pop](https://github.com/markbates/pop) as its default database package for migrations, transactions, basic ORM functionality, and more.
+Buffalo uses [github.com/gobuffalo/pop](https://github.com/gobuffalo/pop) as its default database package for migrations, transactions, basic ORM functionality, and more.
 
 <%= title("Getting Started") %>
 
@@ -53,7 +53,7 @@ Note that the `database.yml` file is also a Go template, so you can use Go templ
 
 The generated `database.yml` file contains a template helper, `envOr`, used to define the URL for the test and production databases. It will attempt to find the corresponding ENV var, for example `DATABASE_URL` for production, if that ENV var does not exist, it will load the "default" string.
 
-For additional details, check the documentation for [github.com/markbates/pop](https://github.com/markbates/pop).
+For additional details, check the documentation for [github.com/gobuffalo/pop](https://github.com/gobuffalo/pop).
 
 
 <%= title("Creating Databases") %>

@@ -98,7 +98,7 @@ This directory is used by the `buffalo dev` command to rebuild your project on e
 This file is optional. If you don't need a database, or if you want to handle the database without pop/soda, you can remove it.
 <% } %>
 
-This file contains the database configuration for [pop/soda](https://github.com/markbates/pop).
+This file contains the database configuration for [pop/soda](https://github.com/gobuffalo/pop).
 
 ### main.go
 

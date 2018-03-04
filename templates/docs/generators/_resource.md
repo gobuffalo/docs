@@ -103,7 +103,7 @@ package actions
 import (
   "github.com/gobuffalo/buffalo"
   "github.com/markbates/coke/models"
-  "github.com/markbates/pop"
+  "github.com/gobuffalo/pop"
   "github.com/pkg/errors"
 )
 
@@ -281,8 +281,8 @@ import (
   "encoding/json"
   "time"
 
-  "github.com/markbates/pop"
-  "github.com/markbates/pop/nulls"
+  "github.com/gobuffalo/pop"
+  "github.com/gobuffalo/pop/nulls"
   "github.com/markbates/validate"
   "github.com/markbates/validate/validators"
   "github.com/satori/go.uuid"

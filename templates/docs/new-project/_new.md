@@ -23,7 +23,7 @@ Done in 11.71s.
       create  models/models.go
       create  models/models_test.go
       create  grifts/db.go
-         run  go get github.com/markbates/pop/...
+         run  go get github.com/gobuffalo/pop/...
       create  ./database.yml
          run  goimports -w coke/grifts/db.go coke/models/models.go coke/models/models_test.go
       create  Dockerfile

@@ -19,7 +19,7 @@ $ buffalo new coke
 ```
 
 Cette commande va vous générer une nouvelle application Buffalo dénommée **coke**, avec le minimum syndical&nbsp;:
-* la **structure du framework Buffalo** et la configuration par défaut ([pop/soda](https://github.com/markbates/pop) avec support pour PostgreSQL),
+* la **structure du framework Buffalo** et la configuration par défaut ([pop/soda](https://github.com/gobuffalo/pop) avec support pour PostgreSQL),
 * toutes les **dépendances Go** nécessaires pour exécuter votre application,
 * les **dépendances frontend** et une configuration fonctionnelle pour [webpack](https://webpack.js.org/)
 * et un **dépôt Git** initial.

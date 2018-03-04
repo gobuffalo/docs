@@ -1,6 +1,6 @@
 # Assocations and Relationships
 
-Pop allows you to perform an eager loading for associations defined in a model. By using [`pop.Connection.Eager()`](https://godoc.org/github.com/markbates/pop#Connection.Eager) method plus some struct field tags predefined in your model you can extract associated data from a model.
+Pop allows you to perform an eager loading for associations defined in a model. By using [`pop.Connection.Eager()`](https://godoc.org/github.com/gobuffalo/pop#Connection.Eager) method plus some struct field tags predefined in your model you can extract associated data from a model.
 
 <%= vimeo("253683926") %>
 
@@ -52,7 +52,7 @@ Using the above [example](#example) code below is a list of available struct tag
 
 <%= title("Eager Loading Associations") %>
 
-The [`pop.Connection.Eager()`](https://godoc.org/github.com/markbates/pop#Connection.Eager) method tells Pop to load the associations for a model when that model is loaded from the database.
+The [`pop.Connection.Eager()`](https://godoc.org/github.com/gobuffalo/pop#Connection.Eager) method tells Pop to load the associations for a model when that model is loaded from the database.
 
 ```go
 u := Users{}
@@ -67,7 +67,7 @@ err  = tx.Eager("Books").Where("name = 'Mark'").All(&u) // preload only Books as
 
 <%= title("Loading Associations for an Existing Model", {name: "existing-model"}) %>
 
-The [`pop.Connection.Load()`](https://godoc.org/github.com/markbates/pop#Connection.Load) method takes a model struct, that has already been populated from the database, and an optional list of associations to load.
+The [`pop.Connection.Load()`](https://godoc.org/github.com/gobuffalo/pop#Connection.Load) method takes a model struct, that has already been populated from the database, and an optional list of associations to load.
 
 ```go
 tx.Load(u) // load all associations for user, i.e Books, Houses and FavoriteSong

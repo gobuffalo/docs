@@ -95,7 +95,7 @@ Ce dossier est utilisé par la commande `buffalo dev` pour reconstruire votre pr
 Ce répertoire est facultatif. Si vous n'avez pas besoin d'utiliser une base de données, vous pouvez le supprimer.
 <% } %>
 
-Ce fichier contient la configuration des bases de données utilisées par [pop/soda](https://github.com/markbates/pop).
+Ce fichier contient la configuration des bases de données utilisées par [pop/soda](https://github.com/gobuffalo/pop).
 
 ### main.go
 

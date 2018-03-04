@@ -110,6 +110,6 @@ Buffalo stuffs the context of each request with a lot of information that could 
 | `flash`         | `map[string][]string`                                                                | A map of messages set using `buffalo.Context#Flash`.                                                                                    |
 | `session`       | [`*buffalo.Session`](https://godoc.org/github.com/gobuffalo/buffalo#Session)        | The current user's session.                                                                                                             |
 | `request`       | [`*http.Request`](https://godoc.org/net/http#Request)                               | The current request.                                                                                                                    |
-| `tx`            | [`*pop.Connection`](https://godoc.org/github.com/markbates/pop#Connection)          | Only set if using the `github.com/gobuffalo/buffalo/middleware.PopTransaction` middleware (on by default).                              |
+| `tx`            | [`*pop.Connection`](https://godoc.org/github.com/gobuffalo/pop#Connection)          | Only set if using the `github.com/gobuffalo/buffalo/middleware.PopTransaction` middleware (on by default).                              |
 
 See [Helpers](/docs/helpers#builtin-helpers/docs/helpers#builtin-helpers) for a list of built-in helper functions available inside of templates.

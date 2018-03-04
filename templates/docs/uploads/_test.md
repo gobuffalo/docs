@@ -107,7 +107,7 @@ import (
   "time"
 
   "github.com/gobuffalo/buffalo/binding"
-  "github.com/markbates/pop"
+  "github.com/gobuffalo/pop"
   "github.com/markbates/validate"
   "github.com/markbates/validate/validators"
   "github.com/pkg/errors"

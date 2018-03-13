@@ -33,6 +33,16 @@ h2 {
   }
 }
 
+.warning {
+  @extend .alert;
+
+  @extend .alert-warning;
+
+  i.fa {
+    margin-right: 1em;
+  }
+}
+
 .get-started-btn {
   @extend .text-center;
 

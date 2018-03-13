@@ -57,7 +57,7 @@ func indexDocs(app *buffalo.App) {
 			return nil
 		}
 
-		u := "/" + path
+		u := "/en/" + path
 		ext := filepath.Ext(u)
 		for ext != "" {
 			u = strings.TrimSuffix(u, ext)

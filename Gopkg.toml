@@ -1,6 +1,6 @@
 [[constraint]]
   name = "github.com/gobuffalo/buffalo"
-  branch = "development"
+  branch = "refactor-i18n-language-finders"
 
 [prune]
   go-tests = true

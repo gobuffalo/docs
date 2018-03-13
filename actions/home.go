@@ -1,7 +1,8 @@
 package actions
 
 import (
-	"time"
+	"fmt"
+	"strings"
 
 	"github.com/gobuffalo/buffalo"
 	"github.com/pkg/errors"
@@ -13,15 +14,27 @@ func HomeHandler(c buffalo.Context) error {
 	return c.Render(200, r.HTML("overview.html"))
 }
 
+func Sponsors(c buffalo.Context) error {
+	return c.Render(200, r.HTML("sponsors.html"))
+}
+
 func ChangeLanguage(c buffalo.Context) error {
 	f := struct {
-		Language string `form:"language"`
-		URL      string `form:"url"`
+		OldLanguage string `form:"oldLanguage"`
+		Language    string `form:"language"`
+		URL         string `form:"url"`
 	}{}
 	if err := c.Bind(&f); err != nil {
 		return errors.WithStack(err)
 	}
-	c.Cookies().Set("lang", f.Language, (time.Hour * 24 * 265))
 
-	return c.Redirect(302, f.URL)
+	// Set new language prefix
+	if f.URL == fmt.Sprintf("/%s", f.OldLanguage) {
+		f.URL = ""
+	} else {
+		p := fmt.Sprintf("/%s/", f.OldLanguage)
+		f.URL = strings.TrimPrefix(f.URL, p)
+	}
+
+	return c.Redirect(302, fmt.Sprintf("/%s/%s", f.Language, f.URL))
 }

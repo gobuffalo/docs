@@ -5,7 +5,7 @@
 
     <li class="sidebar-form">
 
-  <%= form({action: "/search", method: "GET"}) { %>
+  <%= form({action: searchPath({lang: lang}), method: "GET"}) { %>
       <%= f.InputTag({name: "query", placeholder: "enter search query here", value: params["query"]}) %>
   <% } %>
 
@@ -14,6 +14,7 @@
       <%= form({action: "/lang"}) { %>
         <%= f.SelectTag({name: "language", options: {"English": "en", "Français": "fr"}, id: "language", value: lang, label: t("menu.language")}) %>
         <%= f.InputTag({type: "hidden", value: current_path, name: "url"}) %>
+        <%= f.InputTag({type: "hidden", value: lang, name: "oldLanguage"}) %>
       <% } %>
     </li>
 
@@ -21,16 +22,16 @@
       <a href="#"><%= t("menu.getting-started") %></a>
       <ul class="sidenav dropable">
         <li>
-          <a href="/docs/installation"><%= t("menu.installation") %></a>
+          <a href="<%= docPath({name: "installation", lang: lang}) %>"><%= t("menu.installation") %></a>
         </li>
         <li>
-          <a href="/docs/new-project"><%= t("menu.new-project") %></a>
+          <a href="<%= docPath({name: "new-project", lang: lang}) %>"><%= t("menu.new-project") %></a>
         </li>
         <li>
-          <a href="/docs/directory-structure"><%= t("menu.directory-structure") %></a>
+          <a href="<%= docPath({name: "directory-structure", lang: lang}) %>"><%= t("menu.directory-structure") %></a>
         </li>
         <li>
-          <a href="/docs/config-vars"><%= t("menu.config-variables") %></a>
+          <a href="<%= docPath({name: "config-vars", lang: lang}) %>"><%= t("menu.config-variables") %></a>
         </li>
       </ul>
     </li>
@@ -39,30 +40,30 @@
       <a href="#">Request Handling</a>
       <ul class="sidenav dropable">
         <li>
-          <a href="/docs/routing">Routing</a>
+          <a href="/en/docs/routing">Routing</a>
         </li>
 
         <li>
-          <a href="/docs/context">Context</a>
+          <a href="/en/docs/context">Context</a>
         </li>
 
         <li>
-          <a href="/docs/bind">Request Binding</a>
+          <a href="/en/docs/bind">Request Binding</a>
         </li>
 
         <li>
-          <a href="/docs/middleware">Middleware</a>
+          <a href="/en/docs/middleware">Middleware</a>
         </li>
 
         <li>
-          <a href="/docs/errors">Error Handling</a>
+          <a href="/en/docs/errors">Error Handling</a>
         </li>
 
         <li>
-          <a href="/docs/sessions">Sessions</a>
+          <a href="/en/docs/sessions">Sessions</a>
         </li>
         <li>
-          <a href="/docs/cookies">Cookies</a>
+          <a href="/en/docs/cookies">Cookies</a>
         </li>
       </ul>
     </li>
@@ -73,48 +74,48 @@
 
       <ul class="sidenav dropable">
         <li>
-          <a href="/docs/rendering">Rendering</a>
+          <a href="/en/docs/rendering">Rendering</a>
         </li>
         <li>
-          <a href="/docs/templating">Templating</a>
-        </li>
-
-        <li>
-          <a href="/docs/layouts">Layouts</a>
+          <a href="/en/docs/templating">Templating</a>
         </li>
 
         <li>
-          <a href="/docs/iterating">Iterating</a>
+          <a href="/en/docs/layouts">Layouts</a>
         </li>
 
         <li>
-          <a href="/docs/partials">Partials</a>
+          <a href="/en/docs/iterating">Iterating</a>
         </li>
 
         <li>
-          <a href="/docs/helpers">Helpers</a>
+          <a href="/en/docs/partials">Partials</a>
         </li>
 
         <li>
-          <a href="/docs/custom-helpers">Custom Helpers</a>
+          <a href="/en/docs/helpers">Helpers</a>
         </li>
 
         <li>
-          <a href="/docs/flash-messages">Flash Messages</a>
+          <a href="/en/docs/custom-helpers">Custom Helpers</a>
         </li>
 
         <li>
-          <a href="/docs/forms">Forms</a>
+          <a href="/en/docs/flash-messages">Flash Messages</a>
         </li>
 
         <li>
-          <a href="/docs/assets">Asset Pipeline</a>
+          <a href="/en/docs/forms">Forms</a>
+        </li>
+
+        <li>
+          <a href="/en/docs/assets">Asset Pipeline</a>
         </li>
       </ul>
     </li>
 
     <li>
-      <a href="/docs/generators">Generators</a>
+      <a href="/en/docs/generators">Generators</a>
     </li>
 
     <li>
@@ -122,25 +123,25 @@
 
       <ul class="sidenav dropable">
         <li>
-          <a href="/docs/db">Getting Started</a>
+          <a href="/en/docs/db">Getting Started</a>
         </li>
         <li>
-          <a href="/docs/db/generators">Generators</a>
+          <a href="/en/docs/db/generators">Generators</a>
         </li>
         <li>
-          <a href="/docs/db/migrations">Migrations</a>
+          <a href="/en/docs/db/migrations">Migrations</a>
         </li>
         <li>
           <a href="https://github.com/gobuffalo/pop/tree/master/fizz#fizz" target="_blank">Fizz</a>
         </li>
         <li>
-          <a href="/docs/db/relations">Associations and Relationships</a>
+          <a href="/en/docs/db/relations">Associations and Relationships</a>
         </li>
         <li>
-          <a href="/docs/db/callbacks">Callbacks</a>
+          <a href="/en/docs/db/callbacks">Callbacks</a>
         </li>
         <li>
-          <a href="/docs/db/fields">Managing Model Fields</a>
+          <a href="/en/docs/db/fields">Managing Model Fields</a>
         </li>
         <li>
           <a href="https://andrew-sledge.gitbooks.io/the-unofficial-pop-book/content/" target="_blank">The Unofficial Pop Book</a>
@@ -155,28 +156,28 @@
           <a href="https://blog.gobuffalo.io/buffalo-docker-images-ff3938dcaa53" target="_blank">Docker Images</a>
         </li>
         <li>
-          <a href="/docs/file-uploads">File Uploads</a>
+          <a href="/en/docs/file-uploads">File Uploads</a>
         </li>
         <li>
-          <a href="/docs/tasks">Tasks</a>
+          <a href="/en/docs/tasks">Tasks</a>
         </li>
         <li>
-          <a href="/docs/workers">Background Workers</a>
+          <a href="/en/docs/workers">Background Workers</a>
         </li>
         <li>
-          <a href="/docs/mail">Mailers</a>
+          <a href="/en/docs/mail">Mailers</a>
         </li>
         <li>
-          <a href="/docs/plugins">Plugins</a>
+          <a href="/en/docs/plugins">Plugins</a>
         </li>
         <li>
-          <a href="/docs/template-engines">Template Engines</a>
+          <a href="/en/docs/template-engines">Template Engines</a>
         </li>
         <li>
-          <a href="/docs/localization">Localization</a>
+          <a href="/en/docs/localization">Localization</a>
         </li>
         <li>
-          <a href="/docs/testing">Testing</a>
+          <a href="/en/docs/testing">Testing</a>
         </li>
       </ul>
     </li>
@@ -185,13 +186,13 @@
       <a href="#"><%= t("menu.deploy") %></a>
       <ul class="sidenav dropable">
         <li>
-          <a href="/docs/building"><%= t("menu.building-binaries") %></a>
+          <a href="<%= docPath({name: "building", lang: lang}) %>"><%= t("menu.building-binaries") %></a>
         </li>
         <li>
-          <a href="/docs/proxy"><%= t("menu.using-proxy") %></a>
+          <a href="<%= docPath({name: "proxy", lang: lang}) %>"><%= t("menu.using-proxy") %></a>
         </li>
         <li>
-          <a href="/docs/systemd"><%= t("menu.systemd-service") %></a>
+          <a href="<%= docPath({name: "systemd", lang: lang}) %>"><%= t("menu.systemd-service") %></a>
         </li>
       </ul>
     </li>
@@ -200,27 +201,27 @@
       <a href="#"><%= t("menu.help") %></a>
       <ul class="sidenav dropable">
         <li>
-          <a href="/docs/troubleshooting"><%= t("menu.troubleshooting") %></a>
+          <a href="<%= docPath({name: "troubleshooting", lang: lang}) %>"><%= t("menu.troubleshooting") %></a>
         </li>
         <li>
           <a href="<%= trainingURL %>" target="_blank" rel="noopener noreferrer"><%= t("menu.training-and-consulting") %></a>
         </li>
         <li>
-          <a href="/docs/slack">#Buffalo/Slack</a>
+          <a href="<%= docPath({name: "slack", lang: lang}) %>">#Buffalo/Slack</a>
         </li>
       </ul>
     </li>
 
     <li>
-      <a href="/docs/contributing"><%= t("menu.contributing") %></a>
+      <a href="<%= docPath({name: "contributing", lang: lang}) %>"><%= t("menu.contributing") %></a>
     </li>
 
     <li>
-      <a href="/sponsors"><%= t("menu.sponsors") %></a>
+      <a href="<%= sponsorsPath({lang: lang}) %>"><%= t("menu.sponsors") %></a>
     </li>
 
     <li>
-      <a href="/docs/releases"><%= t("menu.releases") %></a>
+      <a href="<%= docPath({name: "releases", lang: lang}) %>"><%= t("menu.releases") %></a>
     </li>
 
   </ul>

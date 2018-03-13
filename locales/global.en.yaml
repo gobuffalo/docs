@@ -117,3 +117,6 @@
 # Docs
 - id: docs.improve-page-button
   translation: Improve this page
+
+- id: docs.page-not-available-in-your-language
+  translation: This page is not available in your language yet, you'll find the original english version instead.

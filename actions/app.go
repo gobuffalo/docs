@@ -1,6 +1,7 @@
 package actions
 
 import (
+	"fmt"
 	"time"
 
 	"github.com/gobuffalo/buffalo"
@@ -43,6 +44,12 @@ func App() *buffalo.App {
 		if T, err = i18n.New(packr.NewBox("../locales"), "en"); err != nil {
 			app.Stop(err)
 		}
+
+		T.LanguageExtractors = []i18n.LanguageExtractor{
+			i18n.URLPrefixLanguageExtractor,
+			i18n.HeaderLanguageExtractor,
+		}
+
 		app.Use(T.Middleware())
 
 		app.Use(func(next buffalo.Handler) buffalo.Handler {
@@ -53,34 +60,41 @@ func App() *buffalo.App {
 				c.Set("trainingURL", "http://www.gopherguides.com")
 
 				c.Set("lang", "en")
-				if lang, err := c.Cookies().Get("lang"); err == nil {
-					c.Set("lang", lang)
-				} else {
-					// Ensure the correct language is set, even without the cookie
-					langs := c.Value("languages").([]string)
-					for _, l := range langs {
-						if l == "fr" || l == "en" {
-							c.Set("lang", l)
-							break
-						}
+				langs := c.Value("languages").([]string)
+				for _, l := range langs {
+					if l == "fr" || l == "en" {
+						c.Set("lang", l)
+						break
 					}
 				}
 				return next(c)
 			}
 		})
 
-		app.GET("/search", Search)
 		app.Redirect(302, "/docs/overview", "/")
 		app.Redirect(302, "/docs/repl", "/")
 		app.Redirect(302, "/docs/test-suites", "/docs/testing")
 		app.Redirect(302, "/docs/env-vars", "/docs/config-vars")
-		app.GET("/docs/{name:.+}", Docs)
+		app.GET("/search", func(c buffalo.Context) error {
+			return c.Redirect(302, fmt.Sprintf("/%s/search", c.Value("lang").(string)))
+		})
+		app.GET("/sponsors", func(c buffalo.Context) error {
+			return c.Redirect(302, fmt.Sprintf("/%s/sponsors", c.Value("lang").(string)))
+		})
+		app.GET("/docs/{name:.+}", func(c buffalo.Context) error {
+			return c.Redirect(302, fmt.Sprintf("/%s/docs/%s", c.Value("lang").(string), c.Param("name")))
+		})
+		app.GET("/", func(c buffalo.Context) error {
+			return c.Redirect(302, fmt.Sprintf("/%s", c.Value("lang").(string)))
+		})
+
+		app.GET("/{lang:fr|en}/search", Search)
+		app.GET("/{lang:fr|en}/docs/{name:.+}", Docs)
 
 		app.POST("/lang", ChangeLanguage)
-		app.GET("/sponsors", func(c buffalo.Context) error {
-			return c.Render(200, r.HTML("sponsors.html"))
-		})
-		app.GET("/", HomeHandler)
+		app.GET("/{lang:fr|en}/sponsors", Sponsors)
+		app.GET("/{lang:fr|en}/", HomeHandler)
+
 		app.ServeFiles("/", assetBox)
 
 		indexDocs(app)

@@ -1,3 +1,6 @@
+<% seoDescription("Gestion de la configuration avec Buffalo") %>
+<% seoKeywords(["buffalo", "go", "golang", "configuration", "env", "framework", "web"]) %>
+
 <%= h1("Configuration") %>
 
 Dans ce chapitre, vous allez apprendre comment gérer la configuration de votre application avec Buffalo.

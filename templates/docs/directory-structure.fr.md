@@ -1,3 +1,6 @@
+<% seoDescription("Structure d'un projet Buffalo") %>
+<% seoKeywords(["buffalo", "go", "golang", "structure", "dossiers", "framework", "web"]) %>
+
 <%= h1("Structure d'un projet") %>
 
 Buffalo utilise **une structure minimale de dossiers**  pour travailler sur votre projet. Cette structure permet de **ranger le projet proprement**, et est intimement liée aux [générateurs](/docs/generators). N'essayez pas de réinventer la roue, et **laissez Buffalo vous faire gagner du temps** pour travailler sur la partie la plus intéressante&nbsp;! :)

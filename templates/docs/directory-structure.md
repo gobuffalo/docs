@@ -9,7 +9,7 @@ Now that you have a minimal new project, let's go through its contents.
 
 <%= title("The root directory") %>
 
-Here is the strcture of a Buffalo project:
+Here is the structure of a Buffalo project:
 
 * `go/` &mdash; GOPATH root.
 	* `src/` &mdash; Go sources directory

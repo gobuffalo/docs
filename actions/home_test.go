@@ -8,11 +8,21 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-func Test_HomeHandler(t *testing.T) {
+func Test_RawHomeHandler(t *testing.T) {
 	r := require.New(t)
 
 	w := willie.New(actions.App())
 	res := w.Request("/").Get()
 
 	r.Equal(302, res.Code)
+	r.Equal("/en", res.Location())
+}
+
+func Test_HomeHandler(t *testing.T) {
+	r := require.New(t)
+
+	w := willie.New(actions.App())
+	res := w.Request("/en").Get()
+
+	r.Equal(200, res.Code)
 }

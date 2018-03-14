@@ -3,7 +3,7 @@ var glob = require("glob");
 var CopyWebpackPlugin = require("copy-webpack-plugin");
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var ManifestPlugin = require("webpack-manifest-plugin");
-var PROD = process.env.NODE_ENV || "development";
+var ENV = process.env.NODE_ENV || "development";
 var CleanWebpackPlugin = require("clean-webpack-plugin");
 
 var entries = {

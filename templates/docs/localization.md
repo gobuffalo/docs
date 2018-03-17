@@ -50,7 +50,7 @@ Translations are stored in the `locales` folder. By default, they are stored in 
 
 You can provide translations for another language by providing a new file `all.my-language-code.yaml`. If you want to split your strings into logical modules, you can even create multiples files, e.g. `users.en-us.yaml` for the user-related stuff, and `all.en-us.yaml` for the global stuff.
 
-The localization format used by [go-i18n](github.com/nicksnyder/go-i18n) is the following:
+The localization format used by [go-i18n](https://github.com/nicksnyder/go-i18n) is the following:
 
 ```yaml
 - id: greetings

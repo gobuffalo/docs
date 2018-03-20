@@ -38,6 +38,12 @@ $ wget  https://github.com/gobuffalo/buffalo/releases/download/v<%= version %>/b
 $ tar -xvzf buffalo_<%= version %>_linux_amd64.tar.gz
 $ sudo mv buffalo-no-sqlite /usr/local/bin/buffalo
 ```
+### Windows
+Buffalo can be installed using the [Scoop](http://scoop.sh/) package manager:
+
+```powershell
+PS C:\> scoop install buffalo
+```
 
 <%= title("Custom installation **with** SQLite3 Support", {name: "with-SQLite3", title: "Installation with SQLite3 Support"}) %>
 
@@ -49,7 +55,11 @@ To install Buffalo, ensure your `GOPATH` is defined, then:
 $ go get -u -v -tags sqlite github.com/gobuffalo/buffalo/buffalo
 ```
 
-**Windows Users**: Follow the installation guide at [https://blog.gobuffalo.io/install-buffalo-on-windows-10-e08b3aa304a3](https://blog.gobuffalo.io/install-buffalo-on-windows-10-e08b3aa304a3) to install a GCC for Windows 10.
+**Windows Users**: Follow the installation guide at [https://blog.gobuffalo.io/install-buffalo-on-windows-10-e08b3aa304a3](https://blog.gobuffalo.io/install-buffalo-on-windows-10-e08b3aa304a3) to install a GCC for Windows 10. Alternatively, GCC can be installed with the [Scoop](http://scoop.sh/) package manager:
+
+```powershell
+PS C:\> scoop install gcc
+```
 
 <%= note() { %>
 These instructions can also be used for upgrading to a newer version of Buffalo.

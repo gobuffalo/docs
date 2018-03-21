@@ -4,12 +4,12 @@ Buffalo uses the wonderful [http://www.gorillatoolkit.org/pkg/mux](http://www.go
 
 <%= title("Creating a new Buffalo App (and router)", {name: "new-app"}) %>
 
-The app configuration is located in the `app.go` file. 
+The app configuration is located in the `app.go` file.
 
 ```go
 a := buffalo.New(buffalo.Options{
   Env:         ENV,
-  SessionName: "_coke_session",  
+  SessionName: "_coke_session",
 })
 ```
 
@@ -136,11 +136,11 @@ The above code example would be the equivalent of the following:
 ur := &UserResource{}
 a.GET("/users", ur.List)
 a.GET("/users/new", ur.New)
-a.GET("/users/{id}", ur.Show)
-a.GET("/users/{id}/edit", ur.Edit)
+a.GET("/users/{user_id}", ur.Show)
+a.GET("/users/{user_id}/edit", ur.Edit)
 a.POST("/users", ur.Create)
-a.PUT("/users/{id}", ur.Update)
-a.DELETE("/users/{id}", ur.Destroy)
+a.PUT("/users/{user_id}", ur.Update)
+a.DELETE("/users/{user_id}", ur.Destroy)
 ```
 
 See [Generators](/docs/generators#resources) for information on how to generate new resources.
@@ -156,6 +156,6 @@ To allow your routes to ignore the ending slash, you can use the `LooseSlash` op
 ```go
 a := buffalo.New(buffalo.Options{
   Env:         ENV,
-  LooseSlash:  true,  
+  LooseSlash:  true,
 })
 ```

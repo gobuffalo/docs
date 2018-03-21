@@ -34,6 +34,16 @@
 
 * **January 12th, 2017** - Go And Buffalo Live From Dunkin' Donuts [https://changelog.com/gotime/29](https://changelog.com/gotime/29)
 
+<%= title("Videos About Buffalo") %>
+
+* **Mark Bates** - Buffalo Channel on Vimeo [https://vimeo.com/channels/1231196](https://vimeo.com/channels/1231196)
+
+* **September 18th, 2017** - Golang UK Conference 2017 | Mark Bates - Buffalo: Rapid Web Development in Go [https://www.youtube.com/watch?v=75NjCfLLftw&t=1s&list=PLDWZ5uzn69eyM81omhIZLzvRhTOXvpeX9&index=23](https://www.youtube.com/watch?v=75NjCfLLftw&t=1s&list=PLDWZ5uzn69eyM81omhIZLzvRhTOXvpeX9&index=23)
+
+* **August, 9th, 2017** - Buffalo Database Migration [https://www.youtube.com/watch?v=u92-Nh1h5BA](https://www.youtube.com/watch?v=u92-Nh1h5BA)
+
+* **June 13th, 2017** - Capital Go 2017 - Buffalo: Rapid Web Development in Go by Mark Bates [https://www.youtube.com/watch?v=Q0EHGtfiC1M&t=31s](https://www.youtube.com/watch?v=Q0EHGtfiC1M&t=31s)
+
 ---
 
 If you have an article, podcast, slideshow, video, etc... about Buffalo and want it listed here, please add an issue to [https://github.com/gobuffalo/gobuffalo](https://github.com/gobuffalo/gobuffalo) or better yet, why not open a PR?

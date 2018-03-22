@@ -16,7 +16,7 @@ Ensure the rights are correctly set, and give the ownership to the user you want
 
 ```bash
 $ sudo chown root: /usr/local/bin/myapp
-$ sudo chmod +x /user/local/bin/myapp
+$ sudo chmod +x /usr/local/bin/myapp
 ```
 
 <%= title("Create the systemd config file") %>

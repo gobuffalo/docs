@@ -100,19 +100,13 @@
     "regexp",
     "utf8"
   ]
-  revision = "9e4f15ba220601e0546afe6718d189ebbf60e143"
+  revision = "5083a469fcef50a4705e3c90652246ecd6806f2a"
 
 [[projects]]
   name = "github.com/davecgh/go-spew"
   packages = ["spew"]
   revision = "346938d642f2ec3594ed81d874461961cd0faa76"
   version = "v1.1.0"
-
-[[projects]]
-  name = "github.com/daviddengcn/go-colortext"
-  packages = ["."]
-  revision = "17e75f6184bc9e727756cd0d82e0af58b1fc7191"
-  version = "1.0.0"
 
 [[projects]]
   branch = "master"
@@ -148,7 +142,7 @@
   branch = "master"
   name = "github.com/glycerine/go-unsnap-stream"
   packages = ["."]
-  revision = "62a9a9eb44fd8932157b1a8ace2149eff5971af6"
+  revision = "9f0cb55181dd3a0a4c168d3dbc72d4aca4853126"
 
 [[projects]]
   name = "github.com/go-sql-driver/mysql"
@@ -157,7 +151,7 @@
   version = "v1.3"
 
 [[projects]]
-  branch = "refactor-i18n-language-finders"
+  branch = "development"
   name = "github.com/gobuffalo/buffalo"
   packages = [
     ".",
@@ -168,19 +162,19 @@
     "render",
     "worker"
   ]
-  revision = "95d0f07f83234d878eb5a57827b89fe33a2ecd75"
+  revision = "bc11ab081e7dbfcff5d478f05143e09e5a59f67d"
 
 [[projects]]
   name = "github.com/gobuffalo/envy"
   packages = ["."]
-  revision = "197631a8f4c665cf7eeb157d5bc00d988419c4e7"
-  version = "v1.5.0"
+  revision = "ef60bfc50c8f92d1ee64674d8ce7a48f1f67625e"
+  version = "v1.6.2"
 
 [[projects]]
   name = "github.com/gobuffalo/packr"
   packages = ["."]
-  revision = "d1edcdeb0cc5f68dacccdb5b63dcb055a8b32663"
-  version = "v1.10.5"
+  revision = "3402a167bccf1bdd5c93ca820be9f27bba46261e"
+  version = "v1.10.7"
 
 [[projects]]
   name = "github.com/gobuffalo/plush"
@@ -191,8 +185,8 @@
     "parser",
     "token"
   ]
-  revision = "a3df688902c0ccd9fa712ed5a1da6b78e7efab0d"
-  version = "v3.6.12"
+  revision = "15b6b3624ed2e8c99e24323ae39ced19138bf176"
+  version = "v3.7.0"
 
 [[projects]]
   name = "github.com/gobuffalo/pop"
@@ -204,8 +198,8 @@
     "fizz/translators",
     "nulls"
   ]
-  revision = "cb2f913d220feba6c42d6b9281c9e6c44d9f331a"
-  version = "v4.2.0"
+  revision = "d11f9179130af452f496f91138d120566ae40bed"
+  version = "v4.3.0"
 
 [[projects]]
   name = "github.com/gobuffalo/tags"
@@ -214,8 +208,8 @@
     "form",
     "form/bootstrap"
   ]
-  revision = "ab52126649ee51d858d9525f60bc1618592433b0"
-  version = "v2.0.0"
+  revision = "82cd7696c84aba829b74e81814ff489b64e7b56a"
+  version = "v2.0.5"
 
 [[projects]]
   name = "github.com/gobuffalo/uuid"
@@ -311,7 +305,7 @@
     ".",
     "oid"
   ]
-  revision = "88edab0803230a3898347e77b474f8c1820a1f20"
+  revision = "a96442e255fce502751c604916b0e14e81be6bf9"
 
 [[projects]]
   branch = "master"
@@ -327,7 +321,7 @@
   branch = "master"
   name = "github.com/markbates/grift"
   packages = ["grift"]
-  revision = "5499956ce4d9ef7fddc825ea7cb26744eeac3d79"
+  revision = "76f93617a788d350124f749acb3790276a436cc0"
 
 [[projects]]
   branch = "master"
@@ -339,7 +333,7 @@
   branch = "master"
   name = "github.com/markbates/inflect"
   packages = ["."]
-  revision = "3e32b42850a9f09fac18a6c09bbd04325f51f732"
+  revision = "b5c853d089b86134926274bc7a98496fee5e1d6b"
 
 [[projects]]
   name = "github.com/markbates/refresh"
@@ -360,42 +354,18 @@
   branch = "master"
   name = "github.com/markbates/willie"
   packages = ["."]
-  revision = "1eede1f49c9648490dcabd7828c2f39b560e7040"
+  revision = "67934945178ed6f7799c3a001e2dde57315558c2"
 
 [[projects]]
-  branch = "master"
   name = "github.com/mattn/anko"
   packages = [
     "ast",
-    "builtins",
-    "builtins/encoding/json",
-    "builtins/errors",
-    "builtins/flag",
-    "builtins/fmt",
-    "builtins/github.com/daviddengcn/go-colortext",
-    "builtins/io",
-    "builtins/io/ioutil",
-    "builtins/math",
-    "builtins/math/big",
-    "builtins/math/rand",
-    "builtins/net",
-    "builtins/net/http",
-    "builtins/net/url",
-    "builtins/os",
-    "builtins/os/exec",
-    "builtins/os/signal",
-    "builtins/path",
-    "builtins/path/filepath",
-    "builtins/regexp",
-    "builtins/runtime",
-    "builtins/sort",
-    "builtins/strconv",
-    "builtins/strings",
-    "builtins/time",
+    "core",
     "parser",
     "vm"
   ]
-  revision = "d5441ca3f0c7e071a9ede864f9db2cc652690f42"
+  revision = "f4b54922efdd844c58a93f8faca1fe0c62ca44c3"
+  version = "v0.0.2"
 
 [[projects]]
   name = "github.com/mattn/go-colorable"
@@ -604,7 +574,7 @@
     "blowfish",
     "ssh/terminal"
   ]
-  revision = "c7dcf104e3a7a1417abc0230cb0d5240d764159d"
+  revision = "88942b9c40a4c9d203b82b3731787b672d6e809b"
 
 [[projects]]
   branch = "master"
@@ -614,13 +584,13 @@
     "html",
     "html/atom"
   ]
-  revision = "ae89d30ce0c63142b652837da33d782e2b0a9b25"
+  revision = "6078986fec03a1dcc236c34816c71b0e05018fda"
 
 [[projects]]
   branch = "master"
   name = "golang.org/x/sync"
   packages = ["errgroup"]
-  revision = "fd80eb99c8f653c847d294a001bdf2a3a6f768f5"
+  revision = "1d60e4601c6fd243af51cc01ddf169918a5407ca"
 
 [[projects]]
   branch = "master"
@@ -629,17 +599,17 @@
     "unix",
     "windows"
   ]
-  revision = "c28acc882ebcbfbe8ce9f0f14b9ac26ee138dd51"
+  revision = "91ee8cde435411ca3f1cd365e8f20131aed4d0a1"
 
 [[projects]]
   name = "gopkg.in/yaml.v2"
   packages = ["."]
-  revision = "7f97868eec74b32b0982dd158a51a446d1da7eb5"
-  version = "v2.1.1"
+  revision = "86f5ed62f8a0ee96bd888d2efdfd6d4fb100a4eb"
+  version = "v2.2.0"
 
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "27189eae6b36ccb613a446f2f92d35f63beaa4d592c19b4fcba3fed0fd2cbade"
+  inputs-digest = "16d44ec1c734e72040f7c077b1de5108d7e0ea3771fc5380e69822b1a3e766d3"
   solver-name = "gps-cdcl"
   solver-version = 1

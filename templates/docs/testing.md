@@ -91,3 +91,23 @@ func (as *ActionSuite) Test_HomeHandler_LoggedIn() {
   as.Contains(res.Body.String(), "Sign In")
 }
 ```
+
+<%= title("Coverage Reports") %>
+
+<%= note() { %>
+The following feature requires the use of **Go 1.10** or a more recent version.
+Go cover does not support the `./...` operator in older versions, and trying to use it will generate an error.
+<% } %>
+It is possible to generate test coverage reports with buffalo by specifying the `-coverprofile` flag as follows:
+
+```bash
+$ buffalo test -coverprofile=c.out ./...
+created database authrecipe_test
+loaded schema for authrecipe_test
+INFO[0010] go test -p 1 -coverprofile=c.out ./...
+?       github.com/gobuffalo/authrecipe [no test files]
+ok      github.com/gobuffalo/authrecipe/actions 2.770s  coverage: 76.9% of statements
+?       github.com/gobuffalo/authrecipe/grifts  [no test files]
+ok      github.com/gobuffalo/authrecipe/models  2.609s  coverage: 71.4% of statements
+
+```

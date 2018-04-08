@@ -10,8 +10,8 @@
 [[projects]]
   name = "github.com/RoaringBitmap/roaring"
   packages = ["."]
-  revision = "d6540aab65a17321470b1661bfc52da1823871e9"
-  version = "v0.4.3"
+  revision = "6f670287d7ec5bb044dc8afcc8cb904113fd581a"
+  version = "v0.4.4"
 
 [[projects]]
   branch = "master"
@@ -162,7 +162,7 @@
     "render",
     "worker"
   ]
-  revision = "bc11ab081e7dbfcff5d478f05143e09e5a59f67d"
+  revision = "5bce869fcaddd05fdc388fa80d6f222c81b64c7e"
 
 [[projects]]
   name = "github.com/gobuffalo/envy"
@@ -185,8 +185,8 @@
     "parser",
     "token"
   ]
-  revision = "15b6b3624ed2e8c99e24323ae39ced19138bf176"
-  version = "v3.7.0"
+  revision = "2c66199a1b24507c54f4b9b478ead39890e86ff6"
+  version = "v3.7.1"
 
 [[projects]]
   name = "github.com/gobuffalo/pop"
@@ -198,8 +198,8 @@
     "fizz/translators",
     "nulls"
   ]
-  revision = "d11f9179130af452f496f91138d120566ae40bed"
-  version = "v4.3.0"
+  revision = "dc1f230b8ca3cfddd729717fe8f57a40c7971f67"
+  version = "v4.3.1"
 
 [[projects]]
   name = "github.com/gobuffalo/tags"
@@ -281,7 +281,7 @@
   branch = "master"
   name = "github.com/grokify/html-strip-tags-go"
   packages = ["."]
-  revision = "fda376fed04166f97c4d8a367ad6f44f4136787e"
+  revision = "2e24dd3c29e5fe86a6ac41c713f2e2840b3062e6"
 
 [[projects]]
   branch = "master"
@@ -290,7 +290,7 @@
     ".",
     "reflectx"
   ]
-  revision = "cf35089a197953c69420c8d0cecda90809764b1d"
+  revision = "2aeb6a910c2b94f2d5eb53d9895d80e27264ec41"
 
 [[projects]]
   name = "github.com/joho/godotenv"
@@ -305,7 +305,7 @@
     ".",
     "oid"
   ]
-  revision = "a96442e255fce502751c604916b0e14e81be6bf9"
+  revision = "d34b9ff171c21ad295489235aec8b6626023cd04"
 
 [[projects]]
   branch = "master"
@@ -333,7 +333,7 @@
   branch = "master"
   name = "github.com/markbates/inflect"
   packages = ["."]
-  revision = "b5c853d089b86134926274bc7a98496fee5e1d6b"
+  revision = "fbc6b23ce49e2578f572d2e72bb72fa03c7145de"
 
 [[projects]]
   name = "github.com/markbates/refresh"
@@ -364,8 +364,8 @@
     "parser",
     "vm"
   ]
-  revision = "f4b54922efdd844c58a93f8faca1fe0c62ca44c3"
-  version = "v0.0.2"
+  revision = "4e3cdcf522140b26466698841bfdc3227c898043"
+  version = "v0.0.3"
 
 [[projects]]
   name = "github.com/mattn/go-colorable"
@@ -389,7 +389,7 @@
   branch = "master"
   name = "github.com/microcosm-cc/bluemonday"
   packages = ["."]
-  revision = "542fd4642604d0d0c26112396ce5b1a9d01eee0b"
+  revision = "995366fdf961d03629cd17361bddd32745718e2c"
 
 [[projects]]
   branch = "master"
@@ -574,7 +574,7 @@
     "blowfish",
     "ssh/terminal"
   ]
-  revision = "88942b9c40a4c9d203b82b3731787b672d6e809b"
+  revision = "b2aa35443fbc700ab74c586ae79b81c171851023"
 
 [[projects]]
   branch = "master"
@@ -584,7 +584,7 @@
     "html",
     "html/atom"
   ]
-  revision = "6078986fec03a1dcc236c34816c71b0e05018fda"
+  revision = "61147c48b25b599e5b561d2e9c4f3e1ef489ca41"
 
 [[projects]]
   branch = "master"
@@ -599,13 +599,13 @@
     "unix",
     "windows"
   ]
-  revision = "91ee8cde435411ca3f1cd365e8f20131aed4d0a1"
+  revision = "3b87a42e500a6dc65dae1a55d0b641295971163e"
 
 [[projects]]
   name = "gopkg.in/yaml.v2"
   packages = ["."]
-  revision = "86f5ed62f8a0ee96bd888d2efdfd6d4fb100a4eb"
-  version = "v2.2.0"
+  revision = "5420a8b6744d3b0345ab293f6fcba19c978f1183"
+  version = "v2.2.1"
 
 [solve-meta]
   analyzer-name = "dep"

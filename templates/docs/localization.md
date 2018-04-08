@@ -122,6 +122,42 @@ func Login(c buffalo.Context) error {
 
 `T.Translate` takes the `buffalo.Context` as first argument, then the following args are the same as the `t` helper ones (`t` calls `T.Translate` with the context, behind the scene).
 
+<%= title("Refresh translation context") %>
+<%= sinceVersion("0.11.1") %>
+
+If you provide translated versions of your app, you'll probably have a language switch function. This way, the users can choose the correct language.
+Buffalo can't detect when you change the language in an action, since it will extract the user languages once per request. You'll then have to redirect to another page to see the changes. But even with that trick, if you use a flash message inside the action, the language used will be the old one.
+
+To solve that problem, you can use the `T.Refresh` method and refresh the language used for translations, within an action.
+
+```go
+func SwitchLanguage(c buffalo.Context) error {
+  f := struct {
+		Language string `form:"lang"`
+		URL      string `form:"url"`
+	}{}
+	if err := c.Bind(&f); err != nil {
+		return errors.WithStack(err)
+	}
+
+	// Set new current language using a cookie, for instance
+	cookie := http.Cookie{
+		Name:   "lang",
+		Value:  f.Language,
+		MaxAge: int((time.Hour * 24 * 265).Seconds()),
+		Path:   "/",
+	}
+	http.SetCookie(c.Response(), &cookie)
+
+	// Update language for the flash message
+	T.Refresh(c, f.Language)
+
+	c.Flash().Add("success", T.Translate(c, "users.language-changed", f))
+
+	return c.Redirect(302, f.URL)
+}
+```
+
 <%= title("Customize generated names") %>
 <%= sinceVersion("0.10.2") %>
 

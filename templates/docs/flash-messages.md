@@ -37,7 +37,7 @@ The names of the "keys", in this example, "success", are left up to your applica
   &lt;div class="col-md-12">
     \<%= for (k, messages) in flash { %>
       \<%= for (msg) in messages { %>
-        &lt;div class="alert alert-\\<%= k %>" role="alert">
+        &lt;div class="alert alert-\<%= k %>" role="alert">
           &lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
           \<%= msg %>
         &lt;/div>

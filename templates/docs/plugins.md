@@ -9,7 +9,7 @@ Here is a list of plugins made by the Buffalo community:
 * [buffalo-goth](https://github.com/gobuffalo/buffalo-goth), a generator to use with the [Goth](https://github.com/markbates/goth) package. **Author**: [@markbates](https://github.com/markbates)
 * [buffalo-bootstrap](https://github.com/markbates/buffalo-bootstrap), a plugin for generating Bootstrap stuff. **Author**: [@markbates](https://github.com/markbates)
 * [buffalo-heroku](https://github.com/markbates/buffalo-heroku), a plugin for deploying docker to heroku. **Author**: [@markbates](https://github.com/markbates)
-* [buffalo-ocean](https://github.com/wolves/buffalo-ocean), a plugin for deploying docker to DigitalOcean. **Author**: [@wolves](https://github.com/wolves)
+* [buffalo-ocean](https://github.com/wolves/buffalo-ocean) [[Demo](https://blog.wolvesdesign.com/post/buffalo-ocean-walkthrough/)], a plugin for deploying docker to DigitalOcean . **Author**: [@wolves](https://github.com/wolves)
 
 A plugin is missing from this list? Open [a PR](https://github.com/gobuffalo/gobuffalo/pulls) to add it!
 

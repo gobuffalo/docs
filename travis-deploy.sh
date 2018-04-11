@@ -13,11 +13,11 @@ then
 fi
 
 # Install the toolbelt, and the required plugin.
-npm install -g heroku-cli
+npm install -g cli-engine-config cli-engine-command heroku-cli
 heroku plugins:install heroku-container-registry --force
 
 # Build and release the application.
 # To give access to your Heroku apps, you
 # need to set the HEROKU_API_KEY environment variable.
-docker login --username=_ --password=$HEROKU_API_KEY registry.heroku.com
+echo "$DOCKER_PASSWORD" | docker login --username=_ --password-stdin registry.heroku.com
 heroku container:push web --app getbuffalo

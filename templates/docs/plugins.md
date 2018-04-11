@@ -6,10 +6,12 @@ Plugins, introducted in `v0.9.1`, allow for 3rd party code to extend the `buffal
 
 Here is a list of plugins made by the Buffalo community:
 
-* [buffalo-goth](https://github.com/gobuffalo/buffalo-goth), a generator to use with the [Goth](https://github.com/markbates/goth) package. **Author**: [@markbates](https://github.com/markbates)
-* [buffalo-bootstrap](https://github.com/markbates/buffalo-bootstrap), a plugin for generating Bootstrap stuff. **Author**: [@markbates](https://github.com/markbates)
-* [buffalo-heroku](https://github.com/markbates/buffalo-heroku), a plugin for deploying docker to heroku. **Author**: [@markbates](https://github.com/markbates)
-* [buffalo-ocean](https://github.com/wolves/buffalo-ocean) [[Demo](https://blog.wolvesdesign.com/post/buffalo-ocean-walkthrough/)], a plugin for deploying docker to DigitalOcean . **Author**: [@wolves](https://github.com/wolves)
+| Plugin  | Description | Author | Docs / Examples |
+|---------|-------------|--------|-----------------|
+| [buffalo-goth](https://github.com/gobuffalo/buffalo-goth) | A generator to use with the [Goth](https://github.com/markbates/goth) third-party auth package. | [@markbates](https://github.com/markbates) |   |
+| [buffalo-bootstrap](https://github.com/markbates/buffalo-bootstrap) | A plugin for generating Bootstrap stuff. | [@markbates](https://github.com/markbates) |   |
+| [buffalo-heroku](https://github.com/markbates/buffalo-heroku) | A plugin for deploying docker to heroku.  | [@markbates](https://github.com/markbates) |   |
+| [buffalo-ocean](https://github.com/wolves/buffalo-ocean) | A plugin for deploying docker to Digital Ocean.  | [@wolves](https://github.com/wolves) | [Demo](https://blog.wolvesdesign.com/post/buffalo-ocean-walkthrough/) |
 
 A plugin is missing from this list? Open [a PR](https://github.com/gobuffalo/gobuffalo/pulls) to add it!
 

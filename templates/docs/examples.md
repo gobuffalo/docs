@@ -36,6 +36,9 @@
   <div class="col-md-6">
     <%= partial("docs/examples/blog_app.md") %>
   </div>
+  <div class="col-md-6">
+    <%= partial("docs/examples/simple_ajax.md") %>
+  </div>
 </div>
 <div class="row">
   <div class="col-md-12">

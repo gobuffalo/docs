@@ -7,7 +7,7 @@ Scoping is a way to structure your DB calls, when it needs the same "base" query
 A "naive" way can be writing each full query.
 
 ```go
-type struct Book {
+type Book struct {
     ID         uuid.UUID `json:"id" db:"id"`
     Label      string    `json:"label" db:"label"`
     Restricted bool      `json:"is_restricted" db:"is_restricted"`
@@ -61,7 +61,7 @@ if err != nil {
 The scope factorizes the common part of the query:
 
 ```go
-type struct Book {
+type Book struct {
     ID         uuid.UUID `json:"id" db:"id"`
     Label      string    `json:"label" db:"label"`
     Restricted bool      `json:"is_restricted" db:"is_restricted"`
@@ -71,14 +71,13 @@ type Books []Book
 ```
 
 ```go
-func restrictedScope(c buffalo.Context, registeredAccount bool) *pop.Query {
-    tx := c.Value("tx").(*pop.Connection)
-
-    if registeredAccount {
-        return tx.Where("is_restricted = false")
+func restrictedScope(registeredAccount bool) pop.ScopeFunc {
+  return func(q *pop.Query) *pop.Query {
+    if !registeredAccount {
+      return q
     }
-    // Create an empty query
-    return tx.Q()
+    return q.Where("is_restricted = false")
+  }
 }
 ```
 
@@ -86,7 +85,7 @@ func restrictedScope(c buffalo.Context, registeredAccount bool) *pop.Query {
 // Get available books list
 books := Books{}
 
-if err := restrictedScope(c).All(&books); err != nil {
+if err := tx.Scope(restrictedScope(registeredAccount)).All(&books); err != nil {
     fmt.Printf("ERROR: %v\n", err)
 } else {
     fmt.Printf("%v\n", books)
@@ -99,7 +98,7 @@ tx := c.Value("tx").(*pop.Connection)
 
 var err error
 
-if err := restrictedScope(c).Find(&book, bookID) != nil {
+if err := tx.Scope(restrictedScope(registeredAccount)).Find(&book, bookID) != nil {
     fmt.Printf("ERROR: %v\n", err)
 } else {
     fmt.Printf("%v\n", book)

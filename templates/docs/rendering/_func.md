@@ -16,3 +16,11 @@ func csvWriter(w io.Writer, d render.Data) error {
 	return nil
 }
 ```
+
+Or it could be something as simple as
+```go
+return c.Render(200, r.Func("application/json", func(w io.Writer, d render.Data) error {
+	_, err := w.Write([]byte(myJSONString))
+	return err
+}))
+```

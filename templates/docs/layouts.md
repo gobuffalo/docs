@@ -64,8 +64,7 @@ func Hello(c buffalo.Context) error {
 
 <%= title("Using a Custom Layout", {name: "custom"})  %>
 
-Sometimes, on certain requests, a different layout is needed. This alternate layout can be passed in as the second parameter to `render.HTML`.
-
+Sometimes, on certain requests, a different layout is needed. This alternate layout can be passed in as the second parameter to `render.HTML`. Custom layouts do **NOT** work with `render.Auto`.
 
 ```go
 // actions/render.go

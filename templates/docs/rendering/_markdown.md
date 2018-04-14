@@ -24,10 +24,10 @@ func Beatles(c buffalo.Context) error {
 &lt;h1>The Beatles</h1>
 
 &lt;ul>
-  &lt;li>John</li>
-  &lt;li>Paul</li>
-  &lt;li>George</li>
-  &lt;li>Ringo</li>
+  &lt;li>John&lt;/li>
+  &lt;li>Paul&lt;/li>
+  &lt;li>George&lt;/li>
+  &lt;li>Ringo&lt;/li>
 &lt;/ul>
 ```
 

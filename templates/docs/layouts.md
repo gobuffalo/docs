@@ -115,7 +115,7 @@ func Hello(c buffalo.Context) error {
   &lt;/head>
   &lt;body>
     &lt;div id="main">
-      &lt;h1>Hello!!</h1>
+      &lt;h1>Hello!!&lt;/h1>
     &lt;/div>
   &lt;/body>
 &lt;/html>

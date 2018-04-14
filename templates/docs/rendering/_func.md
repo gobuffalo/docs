@@ -17,7 +17,8 @@ func csvWriter(w io.Writer, d render.Data) error {
 }
 ```
 
-Or it could be something as simple as
+For smaller, or one off situations, using an anonymous function can be even easier. 
+
 ```go
 return c.Render(200, r.Func("application/json", func(w io.Writer, d render.Data) error {
 	_, err := w.Write([]byte(myJSONString))

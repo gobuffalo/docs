@@ -198,8 +198,8 @@
     "fizz/translators",
     "nulls"
   ]
-  revision = "edc965a46240ff6cd9245c9fd366b986ad1972d2"
-  version = "v4.5.2"
+  revision = "d19561b3c003d9356b5f6cc0637f07a726789e8c"
+  version = "v4.5.3"
 
 [[projects]]
   name = "github.com/gobuffalo/tags"

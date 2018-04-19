@@ -10,8 +10,8 @@
 [[projects]]
   name = "github.com/RoaringBitmap/roaring"
   packages = ["."]
-  revision = "6f670287d7ec5bb044dc8afcc8cb904113fd581a"
-  version = "v0.4.4"
+  revision = "be602e3d1085b6aa8e24907cfbec8d0d3034f2dd"
+  version = "v0.4.5"
 
 [[projects]]
   branch = "master"
@@ -100,7 +100,7 @@
     "regexp",
     "utf8"
   ]
-  revision = "5083a469fcef50a4705e3c90652246ecd6806f2a"
+  revision = "aae1f8c29833410f13233f68a021c938d6acd95f"
 
 [[projects]]
   name = "github.com/davecgh/go-spew"
@@ -162,7 +162,7 @@
     "render",
     "worker"
   ]
-  revision = "5bce869fcaddd05fdc388fa80d6f222c81b64c7e"
+  revision = "ecee77f20ae7c4cb57226a97dc41ccc915921d66"
 
 [[projects]]
   name = "github.com/gobuffalo/envy"
@@ -173,8 +173,8 @@
 [[projects]]
   name = "github.com/gobuffalo/packr"
   packages = ["."]
-  revision = "3402a167bccf1bdd5c93ca820be9f27bba46261e"
-  version = "v1.10.7"
+  revision = "7f4074995d431987caaa35088199f13c44b24440"
+  version = "v1.11.0"
 
 [[projects]]
   name = "github.com/gobuffalo/plush"
@@ -198,8 +198,8 @@
     "fizz/translators",
     "nulls"
   ]
-  revision = "dc1f230b8ca3cfddd729717fe8f57a40c7971f67"
-  version = "v4.3.1"
+  revision = "edc965a46240ff6cd9245c9fd366b986ad1972d2"
+  version = "v4.5.2"
 
 [[projects]]
   name = "github.com/gobuffalo/tags"
@@ -477,7 +477,7 @@
     "reflectfind",
     "reflectsource"
   ]
-  revision = "364c5ae8518b51f5fda954762864d6f4d5c30c89"
+  revision = "47fa5b7ceee66c60ac3a281416089035bf526a3c"
 
 [[projects]]
   branch = "master"
@@ -558,7 +558,7 @@
   branch = "master"
   name = "github.com/unrolled/secure"
   packages = ["."]
-  revision = "88720c9cbecfcf2eceb9bb4311ad6e398a8381ed"
+  revision = "a1cf62cc2159fff407728f118c41aece76c397fa"
 
 [[projects]]
   name = "github.com/willf/bitset"
@@ -574,7 +574,7 @@
     "blowfish",
     "ssh/terminal"
   ]
-  revision = "b2aa35443fbc700ab74c586ae79b81c171851023"
+  revision = "d6449816ce06963d9d136eee5a56fca5b0616e7e"
 
 [[projects]]
   branch = "master"
@@ -584,7 +584,7 @@
     "html",
     "html/atom"
   ]
-  revision = "61147c48b25b599e5b561d2e9c4f3e1ef489ca41"
+  revision = "d41e8174641f662c5a2d1c7a5f9e828788eb8706"
 
 [[projects]]
   branch = "master"
@@ -599,7 +599,7 @@
     "unix",
     "windows"
   ]
-  revision = "3b87a42e500a6dc65dae1a55d0b641295971163e"
+  revision = "3ccc7e5779793fd54564baf60c51bf017955e0ba"
 
 [[projects]]
   name = "gopkg.in/yaml.v2"

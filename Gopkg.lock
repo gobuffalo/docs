@@ -198,8 +198,8 @@
     "fizz/translators",
     "nulls"
   ]
-  revision = "edc965a46240ff6cd9245c9fd366b986ad1972d2"
-  version = "v4.5.2"
+  revision = "bdb66423a127d670377c3156f36befee150c6c58"
+  version = "v4.5.4"
 
 [[projects]]
   name = "github.com/gobuffalo/tags"
@@ -610,6 +610,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "16d44ec1c734e72040f7c077b1de5108d7e0ea3771fc5380e69822b1a3e766d3"
+  inputs-digest = "235f47f677e6d22febb44c890a94055cce795fd991ad1b257cee23f1b4f8ac5e"
   solver-name = "gps-cdcl"
   solver-version = 1

@@ -21,19 +21,36 @@ var buildSideNav = () => {
     }
   });
   if (items.length > 0) {
-    let ul = $('<ul class="summary">').append(items);
-    $('.main-content h1').after(ul);
+    let ul = $("<ul class=\"summary\">").append(items);
+    $(".main-content h1").after(ul);
     sb.addClass("active");
   }
 };
 
 var activateSideNav = () => {
   let loc = window.location;
-  let path = loc.pathname === '/' ? '/docs/overview' : loc.pathname;
+  let path = loc.pathname === "/" ? "/docs/overview" : loc.pathname;
   $(".sidebar li").removeClass("active");
   let item = $(`.sidebar a[href="${path}"]`);
   item.closest("li").addClass("active");
 };
+
+
+$(() => {
+  $(".faq h6").on("click", (e) => {
+    let a = $(e.currentTarget).find("a[name]");
+    let hash = a.attr("name");
+    window.location.hash = hash;
+  });
+  let hash = window.location.hash;
+  if (hash !== "") {
+    if (hash.charAt(0) === "#") {
+     hash = hash.slice(1);
+    }
+    $(`.faq h6 a[name=${hash}]`).click();
+  }
+});
+
 
 $(() => {
   $("a[href]").each((_, a) => {
@@ -88,7 +105,7 @@ $(() => {
   });
 });
 
-// Handle language switch
+//Handle language switch
 $(() => {
   $("#language").on("change", (e) => {
     $(e.target).closest("form").submit();

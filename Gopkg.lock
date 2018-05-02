@@ -10,8 +10,8 @@
 [[projects]]
   name = "github.com/RoaringBitmap/roaring"
   packages = ["."]
-  revision = "be602e3d1085b6aa8e24907cfbec8d0d3034f2dd"
-  version = "v0.4.5"
+  revision = "77b4f79fe76d21c3b5aa05d6971e6e5689d763d9"
+  version = "v0.4.6"
 
 [[projects]]
   branch = "master"
@@ -100,7 +100,7 @@
     "regexp",
     "utf8"
   ]
-  revision = "aae1f8c29833410f13233f68a021c938d6acd95f"
+  revision = "eb6ae3743b3f300f2136f83ca78c08cc071edbd4"
 
 [[projects]]
   name = "github.com/davecgh/go-spew"
@@ -112,7 +112,7 @@
   branch = "master"
   name = "github.com/dustin/go-humanize"
   packages = ["."]
-  revision = "bb3d318650d48840a39aa21a027c6630e198e626"
+  revision = "02af3965c54e8cacf948b97fef38925c4120652c"
 
 [[projects]]
   branch = "master"
@@ -160,9 +160,10 @@
     "middleware/i18n",
     "middleware/ssl",
     "render",
+    "servers",
     "worker"
   ]
-  revision = "ecee77f20ae7c4cb57226a97dc41ccc915921d66"
+  revision = "d3bde84dcd6bcf7814e5ca0604b6f37ae7658508"
 
 [[projects]]
   name = "github.com/gobuffalo/envy"
@@ -185,8 +186,8 @@
     "parser",
     "token"
   ]
-  revision = "2c66199a1b24507c54f4b9b478ead39890e86ff6"
-  version = "v3.7.1"
+  revision = "b1a0867f5fcf38d145444a8c27dd0c0c3dc14833"
+  version = "v3.7.2"
 
 [[projects]]
   name = "github.com/gobuffalo/pop"
@@ -198,8 +199,8 @@
     "fizz/translators",
     "nulls"
   ]
-  revision = "bdb66423a127d670377c3156f36befee150c6c58"
-  version = "v4.5.4"
+  revision = "2d7bf0d3ce16eec61b870adb2be5f2fb0d0777e2"
+  version = "v4.5.7"
 
 [[projects]]
   name = "github.com/gobuffalo/tags"
@@ -238,8 +239,8 @@
 [[projects]]
   name = "github.com/golang/protobuf"
   packages = ["proto"]
-  revision = "925541529c1fa6821df4e44ce2723319eb2be768"
-  version = "v1.0.0"
+  revision = "b4deda0973fb4c70b50d226b1af49f3da59f5265"
+  version = "v1.1.0"
 
 [[projects]]
   branch = "master"
@@ -445,10 +446,10 @@
   version = "v1.0.0"
 
 [[projects]]
+  branch = "master"
   name = "github.com/russross/blackfriday"
   packages = ["."]
-  revision = "55d61fa8aa702f59229e6cff85793c22e580eaf5"
-  version = "v1.5.1"
+  revision = "11635eb403ff09dbc3a6b5a007ab5ab09151c229"
 
 [[projects]]
   branch = "master"
@@ -574,7 +575,7 @@
     "blowfish",
     "ssh/terminal"
   ]
-  revision = "d6449816ce06963d9d136eee5a56fca5b0616e7e"
+  revision = "8b1d31080a7692e075c4681cb2458454a1fe0706"
 
 [[projects]]
   branch = "master"
@@ -584,7 +585,7 @@
     "html",
     "html/atom"
   ]
-  revision = "d41e8174641f662c5a2d1c7a5f9e828788eb8706"
+  revision = "640f4622ab692b87c2f3a94265e6f579fe38263d"
 
 [[projects]]
   branch = "master"
@@ -599,7 +600,7 @@
     "unix",
     "windows"
   ]
-  revision = "3ccc7e5779793fd54564baf60c51bf017955e0ba"
+  revision = "78d5f264b493f125018180c204871ecf58a2dce1"
 
 [[projects]]
   name = "gopkg.in/yaml.v2"

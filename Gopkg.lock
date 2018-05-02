@@ -163,7 +163,7 @@
     "servers",
     "worker"
   ]
-  revision = "d3bde84dcd6bcf7814e5ca0604b6f37ae7658508"
+  revision = "01ff9c3cd2cd9250722cb8561fb9d883488e1bba"
 
 [[projects]]
   name = "github.com/gobuffalo/envy"

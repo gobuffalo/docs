@@ -5,7 +5,7 @@
 
 
 | <%= t("releases.date") %> | <%= t("releases.version") %> | <%= t("releases.blog") %>                                           | <%= t("releases.github") %>       |
-| ------------------------- | ---------------------------- | ------------------------------------------------------------------   | --------------------------------- |
+| ------------------------- | ---------------------------- | ------------------------------------------------------------------  | --------------------------------- |
 | May 2nd, 2018             | v0.11.1                      | https://blog.gobuffalo.io/buffalo-v0-11-1-patch-release-7cca1d415f7 | <%= githubRelease("v0.11.1") %>   |
 | February 28th, 2018       | v0.11.0                      | https://blog.gobuffalo.io/buffalo-v0-11-0-released-f7f79be826ff     | <%= githubRelease("v0.11.0") %>   |
 | January 8th, 2018         | v0.10.3                      | https://blog.gobuffalo.io/buffalo-v0-10-3-released-d871076013d1     | <%= githubRelease("v0.10.3") %>   |

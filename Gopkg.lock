@@ -10,8 +10,8 @@
 [[projects]]
   name = "github.com/RoaringBitmap/roaring"
   packages = ["."]
-  revision = "be602e3d1085b6aa8e24907cfbec8d0d3034f2dd"
-  version = "v0.4.5"
+  revision = "1a28a7fa985680f9f4e1644c0a857ec359a444b0"
+  version = "v0.4.7"
 
 [[projects]]
   branch = "master"
@@ -100,7 +100,7 @@
     "regexp",
     "utf8"
   ]
-  revision = "aae1f8c29833410f13233f68a021c938d6acd95f"
+  revision = "eb6ae3743b3f300f2136f83ca78c08cc071edbd4"
 
 [[projects]]
   name = "github.com/davecgh/go-spew"
@@ -112,7 +112,7 @@
   branch = "master"
   name = "github.com/dustin/go-humanize"
   packages = ["."]
-  revision = "bb3d318650d48840a39aa21a027c6630e198e626"
+  revision = "02af3965c54e8cacf948b97fef38925c4120652c"
 
 [[projects]]
   branch = "master"
@@ -123,8 +123,8 @@
 [[projects]]
   name = "github.com/fatih/color"
   packages = ["."]
-  revision = "507f6050b8568533fb3f5504de8e5205fa62a114"
-  version = "v1.6.0"
+  revision = "5b77d2a35fb0ede96d138fc9a99f5c9b6aef11b4"
+  version = "v1.7.0"
 
 [[projects]]
   name = "github.com/fatih/structs"
@@ -148,7 +148,7 @@
   name = "github.com/go-sql-driver/mysql"
   packages = ["."]
   revision = "a0583e0143b1624142adab07e0e97fe106d99561"
-  version = "v1.3"
+  version = "v1.3.0"
 
 [[projects]]
   branch = "development"
@@ -160,9 +160,10 @@
     "middleware/i18n",
     "middleware/ssl",
     "render",
+    "servers",
     "worker"
   ]
-  revision = "ecee77f20ae7c4cb57226a97dc41ccc915921d66"
+  revision = "8f945f6aab3feca2c8986853ea73c352738aa76f"
 
 [[projects]]
   name = "github.com/gobuffalo/envy"
@@ -185,8 +186,8 @@
     "parser",
     "token"
   ]
-  revision = "2c66199a1b24507c54f4b9b478ead39890e86ff6"
-  version = "v3.7.1"
+  revision = "5d52aed81c89f76ec6f19a03537c85773102ebf4"
+  version = "v3.7.3"
 
 [[projects]]
   name = "github.com/gobuffalo/pop"
@@ -198,8 +199,8 @@
     "fizz/translators",
     "nulls"
   ]
-  revision = "d19561b3c003d9356b5f6cc0637f07a726789e8c"
-  version = "v4.5.3"
+  revision = "addd35fa30f151cdee20971b635abf6dc631837c"
+  version = "v4.5.8"
 
 [[projects]]
   name = "github.com/gobuffalo/tags"
@@ -238,8 +239,8 @@
 [[projects]]
   name = "github.com/golang/protobuf"
   packages = ["proto"]
-  revision = "925541529c1fa6821df4e44ce2723319eb2be768"
-  version = "v1.0.0"
+  revision = "b4deda0973fb4c70b50d226b1af49f3da59f5265"
+  version = "v1.1.0"
 
 [[projects]]
   branch = "master"
@@ -250,14 +251,14 @@
 [[projects]]
   name = "github.com/gorilla/context"
   packages = ["."]
-  revision = "1ea25387ff6f684839d82767c1733ff4d4d15d0a"
-  version = "v1.1"
+  revision = "08b5f424b9271eedf6f9f0ce86cb9396ed337a42"
+  version = "v1.1.1"
 
 [[projects]]
   name = "github.com/gorilla/mux"
   packages = ["."]
-  revision = "53c1911da2b537f792e7cafcb446b05ffe33b996"
-  version = "v1.6.1"
+  revision = "e3702bed27f0d39777b0b37b664b6280e8ef8fbf"
+  version = "v1.6.2"
 
 [[projects]]
   name = "github.com/gorilla/securecookie"
@@ -333,7 +334,7 @@
   branch = "master"
   name = "github.com/markbates/inflect"
   packages = ["."]
-  revision = "fbc6b23ce49e2578f572d2e72bb72fa03c7145de"
+  revision = "dd7de90c06bca70f18136e59dec2270c19a401e7"
 
 [[projects]]
   name = "github.com/markbates/refresh"
@@ -364,8 +365,8 @@
     "parser",
     "vm"
   ]
-  revision = "4e3cdcf522140b26466698841bfdc3227c898043"
-  version = "v0.0.3"
+  revision = "e9c5c0ca86cf129292c56ddbddc4fff027844d65"
+  version = "v0.0.4"
 
 [[projects]]
   name = "github.com/mattn/go-colorable"
@@ -445,10 +446,10 @@
   version = "v1.0.0"
 
 [[projects]]
+  branch = "master"
   name = "github.com/russross/blackfriday"
   packages = ["."]
-  revision = "55d61fa8aa702f59229e6cff85793c22e580eaf5"
-  version = "v1.5.1"
+  revision = "11635eb403ff09dbc3a6b5a007ab5ab09151c229"
 
 [[projects]]
   branch = "master"
@@ -477,7 +478,7 @@
     "reflectfind",
     "reflectsource"
   ]
-  revision = "47fa5b7ceee66c60ac3a281416089035bf526a3c"
+  revision = "9e1955d9fb6e1ee2345ba1f5e71669263e719e27"
 
 [[projects]]
   branch = "master"
@@ -489,7 +490,7 @@
   branch = "master"
   name = "github.com/shurcooL/graphql"
   packages = ["ident"]
-  revision = "3d276b9dcc6b1e0adf19557a8de5cb8632c07697"
+  revision = "62c9ce094e75302d560f7adcdf16c06d05aaa958"
 
 [[projects]]
   branch = "master"
@@ -507,7 +508,7 @@
   branch = "master"
   name = "github.com/shurcooL/octiconssvg"
   packages = ["."]
-  revision = "91d14858bf8188ba5143d67a3a677ea559000b0a"
+  revision = "f4482000187f70884083d861259564f0822a2fb0"
 
 [[projects]]
   branch = "master"
@@ -574,7 +575,7 @@
     "blowfish",
     "ssh/terminal"
   ]
-  revision = "d6449816ce06963d9d136eee5a56fca5b0616e7e"
+  revision = "1a580b3eff7814fc9b40602fd35256c63b50f491"
 
 [[projects]]
   branch = "master"
@@ -584,7 +585,7 @@
     "html",
     "html/atom"
   ]
-  revision = "d41e8174641f662c5a2d1c7a5f9e828788eb8706"
+  revision = "2491c5de3490fced2f6cff376127c667efeed857"
 
 [[projects]]
   branch = "master"
@@ -599,7 +600,7 @@
     "unix",
     "windows"
   ]
-  revision = "3ccc7e5779793fd54564baf60c51bf017955e0ba"
+  revision = "7c87d13f8e835d2fb3a70a2912c811ed0c1d241b"
 
 [[projects]]
   name = "gopkg.in/yaml.v2"

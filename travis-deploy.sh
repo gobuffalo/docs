@@ -14,7 +14,7 @@ fi
 
 # Install the toolbelt, and the required plugin.
 sudo curl https://cli-assets.heroku.com/install-standalone.sh | sh
-heroku plugins:install heroku-container-registry --force
+heroku plugins:install @heroku-cli/plugin-container-registry
 
 # Build and release the application.
 # To give access to your Heroku apps, you

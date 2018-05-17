@@ -1,5 +1,3 @@
-<%= title("Models") %>
-
 ```bash
 $ buffalo db g model --help
 

@@ -1,7 +1,6 @@
 # Generators
 
 <%= partial("docs/db/list.md") %>
-<%= partial("docs/db/model.md") %>
 
 <%= title("Migrations") %>
 

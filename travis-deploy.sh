@@ -13,7 +13,7 @@ then
 fi
 
 # Install the toolbelt, and the required plugin.
-npm install -g cli-engine-config cli-engine-command heroku-cli
+sudo curl https://cli-assets.heroku.com/install-standalone.sh | sh
 heroku plugins:install heroku-container-registry --force
 
 # Build and release the application.

@@ -1,10 +1,18 @@
+/vendor/
 **/*.log
 **/*.sqlite
-public/assets
-node_modules/
-vendor/
-bin/
 .idea/
-.vscode
+bin/
+tmp/
+node_modules/
+.sass-cache/
+*-packr.go
+public/assets/
+nuapp
+.vscode/
+.grifter/
+.env
+
+# Search engine
 gobuffalo.search/
 .grifter/

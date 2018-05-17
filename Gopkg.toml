@@ -2,6 +2,14 @@
   name = "github.com/gobuffalo/buffalo"
   branch = "development"
 
+[[constraint]]
+  name = "github.com/gobuffalo/suite"
+  version = "2.0.0"
+
+[[constraint]]
+  name = "github.com/gobuffalo/tags"
+  version = "2.0.0"
+
 [prune]
   go-tests = true
   unused-packages = true
@@ -12,6 +20,6 @@
     unused-packages = false
 
   # DO NOT DELETE
-  [[prune.project]] # buffalo
+  [[prune.project]] # pop
     name = "github.com/gobuffalo/pop"
     unused-packages = false

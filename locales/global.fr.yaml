@@ -54,6 +54,12 @@
 - id: menu.config-variables
   translation: Configuration
 
+- id: menu.db
+  translation: Base de données
+
+- id: menu.db-getting-started
+  translation: Démarrer avec Pop
+
 - id: menu.contributing
   translation: Contribuer
 

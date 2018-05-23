@@ -63,6 +63,9 @@
 - id: menu.db-toolbox
   translation: Soda Toolbox
 
+- id: menu.db-models
+  translation: Models
+
 - id: menu.contributing
   translation: Contributing
 

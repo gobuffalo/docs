@@ -74,3 +74,37 @@ $ go get -u -v github.com/gobuffalo/buffalo/buffalo
 <%= note() { %>
 These instructions can also be used for upgrading to a newer version of Buffalo.
 <% } %>
+
+<%= title("Verify your installation") %>
+
+You can check if your installation is working, by executing the `buffalo` command in a terminal/command prompt:
+
+```bash
+$ buffalo
+Helps you build your Buffalo applications that much easier!
+
+Usage:
+  buffalo [command]
+
+Available Commands:
+  build       Builds a Buffalo binary, including bundling of assets (packr & webpack)
+  db          A tasty treat for all your database needs
+  destroy     Allows to destroy generated code.
+  dev         Runs your Buffalo app in 'development' mode
+  generate    A collection of generators to make life easier
+  help        Help about any command
+  info        Prints off diagnostic information useful for debugging.
+  new         Creates a new Buffalo application
+  setup       Setups a newly created, or recently checked out application.
+  task        Runs your grift tasks
+  test        Runs the tests for your Buffalo app
+  update      will attempt to upgrade a Buffalo application to version v0.11.1
+  version     Print the version number of buffalo
+
+Flags:
+  -h, --help   help for buffalo
+
+Use "buffalo [command] --help" for more information about a command.
+```
+
+If you have a similar output, your Buffalo toolbox is ready to work!

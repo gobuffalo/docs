@@ -1,9 +1,9 @@
-<% seoDescription("Pop Models") %>
+<% seoDescription("Models") %>
 <% seoKeywords(["buffalo", "go", "golang", "database", "ORM", "pop", "models"]) %>
 
-<%= h1("Pop Models") %>
+<%= h1("Models") %>
 
-Pop, as an ORM, allows you to translate database tables into Go structs. This way, you can manipulate Go structs instead of writing SQL statements.
+Pop, as an ORM, allows you to translate database tables into Go structs. This way, you can manipulate Go structs instead of writing SQL statements. The Go code managing this part is named "models", as a reference to the MVC architecture.
 
 In this chapter, you'll learn how to work with models by hand; and how to improve your workflow using the provided generators.
 
@@ -33,7 +33,7 @@ CREATE TABLE sodas (
 ALTER TABLE sodas ADD CONSTRAINT sodas_pkey PRIMARY KEY (id);
 ```
 
-We'll start by creating a new file in the `models` directory, called `soda.go` (the convention used here is to take the singular for of the word). In this file, we'll create the structure for the `sodas` table (the structure is singular too, since it will contain a single line of the table):
+We'll start by creating a new file in the `models` directory, called `soda.go` (the convention used here is to take the singular form of the word). In this file, we'll create the structure for the `sodas` table (the structure is singular too, since it will contain a single line of the table):
 
 ```go
 package models
@@ -52,13 +52,29 @@ type Soda struct {
 }
 ```
 
-That's it! You don't need anything else to work with Pop! Note, for each table field, we defined a `db` tag matching the field name.
+That's it! You don't need anything else to work with Pop! Note, for each table field, we defined a `db` tag matching the field name, but it's not required. If you don't provide a name, Pop will use the name of the struct field to generate one.
 
 <%= title("Using the generator") %>
 
-Writing the files by hand is not the most efficient way to work. Buffalo provides a generator to help you:
+<%= note() { %>
+**Note for Buffalo users**: `soda` commands are embedded into the `buffalo` command, behind the `db` namespace. So everytime you want to use a command from `soda`, just execute `buffalo db` instead.
+<% } %>
+
+Writing the files by hand is not the most efficient way to work. Soda (and Buffalo, if you followed the chapter about Soda) provides a generator to help you:
 
 <%= partial("docs/db/model.md") %>
+
+You can remove generated model by running:
+
+```bash
+$ soda destroy model [name]
+```
+
+Or in short form:
+
+```bash
+$ soda d m [name]
+```
 
 <%= title("Customize models") %>
 

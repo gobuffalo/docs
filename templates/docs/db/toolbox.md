@@ -1,4 +1,4 @@
-<% seoDescription("Database toolbox") %>
+<% seoDescription("Soda toolbox") %>
 <% seoKeywords(["buffalo", "go", "golang", "database", "utils", "pop", "toolbox", "soda"]) %>
 
 <%= h1("Database toolbox") %>

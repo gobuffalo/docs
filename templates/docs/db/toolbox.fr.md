@@ -1,4 +1,4 @@
-<% seoDescription("Boîte à outils de BDD") %>
+<% seoDescription("Boîte à outils Soda") %>
 <% seoKeywords(["buffalo", "go", "golang", "base de données", "outils", "pop", "soda"]) %>
 
 <%= h1("Boîte à outils de BDD") %>

@@ -60,6 +60,9 @@
 - id: menu.db-getting-started
   translation: Démarrer avec Pop
 
+- id: menu.db-toolbox
+  translation: Boîte à outils Soda
+
 - id: menu.contributing
   translation: Contribuer
 

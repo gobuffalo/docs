@@ -3,7 +3,7 @@
 
 <%= h1("Modèles") %>
 
-Pop, en tant qu'ORM, vous permet de traduire les tables de votre base de donnée en des structures en Go. De cette manière, vous pouvez manipuler écrire en Go ce qui nécessiterait d'écrire du SQL. Le code en Go qui permet de faire ce travail est nommé « modèles », en référence à l'architecture MVC. 
+Pop, en tant qu'ORM, vous permet de traduire les tables de votre base de données en des structures en Go. De cette manière, vous pouvez manipuler écrire en Go ce qui nécessiterait d'écrire du SQL. Le code en Go qui permet de faire ce travail est nommé « modèles », en référence à l'architecture MVC. 
 
 Dans ce chapitre, vous allez apprendre comment travailler avec les modèles à la main ; puis comment le faire avec les générateurs fournis, pour améliorer votre productivité.
 

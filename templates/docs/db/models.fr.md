@@ -181,3 +181,20 @@ La requête de sélection aurait alors cette tête :
 ```sql
 select id, email, password as p from users
 ```
+
+### Utiliser un nom de table personnalisé
+
+Parfois, vous devrez travailler avec un schéma existant, ne respectant pas les conventions de nommage de Pop. Vous pouvez personnaliser le nom de la table associée à un modèle, en implémentant l'interface [`TableNameAble`](https://godoc.org/github.com/gobuffalo/pop#TableNameAble) :
+
+```go
+type User struct {
+  ID       uuid.UUID `db:"id"`
+  Email    string    `db:"email"`
+  Password string    `db:"password"`
+}
+
+// TableName personnalise le nom de la table du modèle, utilisé par Pop.
+func (u User) TableName() string {
+  return "my_users"
+}
+```

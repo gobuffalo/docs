@@ -7,7 +7,7 @@ Pop, as an ORM, allows you to translate database tables into Go structs. This wa
 
 In this chapter, you'll learn how to work with models by hand; and how to improve your workflow using the provided generators.
 
-<%= title("The models directory") %>
+<%= title("The Models Directory") %>
 
 Pop model files are stored in the `models` directory, at your project root (see [the Directory Structure](/en/docs/directory-structure) chapter for more info about the Buffalo way to organize your files).
 
@@ -16,7 +16,7 @@ This directory contains:
 * A `models.go` file, which defines the common parts for every defined model. It also contains a pointer to the configured connection. Remember the code is your own, so you can place whatever you like here.
 * Model definition files, one for each model (so one per database table you want to access this way).
 
-<%= title("Define a simple model") %>
+<%= title("Define a Simple Model") %>
 
 A model file defines a mapping for the database table, validation methods and Pop callbacks if you want to add more model-related logic.
 
@@ -180,4 +180,21 @@ The resulting `select` statement would look like this:
 
 ```sql
 select id, email, password as p from users
+```
+
+### Using a Custom Table Name
+
+Sometimes, you'll have to work with an existing schema, with the table names non-matching the Pop conventions. You can override this behavior, and provide a custom table name by implementing the [`TableNameAble`](https://godoc.org/github.com/gobuffalo/pop#TableNameAble) interface:
+
+```go
+type User struct {
+  ID       uuid.UUID `db:"id"`
+  Email    string    `db:"email"`
+  Password string    `db:"password"`
+}
+
+// TableName overrides the table name used by Pop.
+func (u User) TableName() string {
+  return "my_users"
+}
 ```

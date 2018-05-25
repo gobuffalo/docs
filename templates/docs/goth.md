@@ -1,8 +1,15 @@
-<%= title("Goth") %>
+<% seoDescription("Authentication") %>
+<% seoKeywords(["buffalo", "go", "golang", "users", "oauth2", "authentication", "third-party"]) %>
 
-[Goth](https://github.com/markbates/goth) provides a simple, clean, and idiomatic way to write authentication packages for Go web applications. In Buffalo version, `v0.9.4`, the Goth generator was moved into it's own plugin, [https://github.com/gobuffalo/buffalo-goth](https://github.com/gobuffalo/buffalo-goth)
+<%= h1("Authentication") %>
+
+In many use-cases, you'll need to implement user authentication in your apps. [Goth](https://github.com/markbates/goth) provides a simple, clean, and idiomatic way to write authentication packages for Go web applications.
+
+Buffalo had a native support for Goth until version `v0.9.4`. Since then, it was moved into it's own plugin, [https://github.com/gobuffalo/buffalo-goth](https://github.com/gobuffalo/buffalo-goth).
 
 ### Installation
+
+To install the `buffalo-goth` plugin, run the following command:
 
 ```bash
 $ go get -u github.com/gobuffalo/buffalo-goth
@@ -122,5 +129,7 @@ func AuthCallback(c buffalo.Context) error {
   return c.Render(200, r.JSON(user))
 }
 ```
+
+## Video tutorial
 
 <%= vimeo("223666374") %>

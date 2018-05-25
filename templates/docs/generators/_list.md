@@ -1,6 +1,7 @@
 <%= title("Built-in Generators", {name: "built-in"}) %>
 
 ```bash
+$ buffalo generate -h
 A collection of generators to make life easier
 
 Usage:
@@ -12,10 +13,9 @@ Aliases:
 Available Commands:
   action      Generates new action(s)
   docker      Generates a Dockerfile
-  goth        Generates a actions/goth.go file configured to the specified providers.
+  mailer      Generates a new mailer for Buffalo
   resource    Generates a new actions/resource file
   task        Generates a grift task
-  webpack     Generates a webpack asset pipeline.
 
 Flags:
   -h, --help   help for generate

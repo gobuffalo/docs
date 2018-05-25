@@ -10,7 +10,7 @@ Buffalo defaults to using [plush](https://github.com/gobuffalo/plush) as its tem
 
 ```html
 // templates/index.html
-&lt;h1>\The Beatles</h1>
+&lt;h1>The Beatles</h1>
 &lt;ul>
   \<%= for (name) in names { %>
     &lt;li>\<%= name %></li>

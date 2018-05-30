@@ -1,8 +1,10 @@
 package actions
 
 import (
+	"encoding/json"
 	"fmt"
 	"log"
+	"net/http"
 	"net/http/httptest"
 	"os"
 	"path/filepath"
@@ -28,6 +30,71 @@ func init() {
 		index, err = bleve.New(indexName, mapping)
 		if err != nil {
 			log.Fatalf("could not create bleve index: %s\n", err)
+		}
+	}
+}
+
+type blogFeed struct {
+	Status string `json:"status"`
+	Feed   struct {
+		URL         string `json:"url"`
+		Title       string `json:"title"`
+		Link        string `json:"link"`
+		Author      string `json:"author"`
+		Description string `json:"description"`
+		Image       string `json:"image"`
+	} `json:"feed"`
+	Items []struct {
+		Title       string `json:"title"`
+		PubDate     string `json:"pubDate"`
+		Link        string `json:"link"`
+		GUID        string `json:"guid"`
+		Author      string `json:"author"`
+		Thumbnail   string `json:"thumbnail"`
+		Description string `json:"description"`
+		Content     string `json:"content"`
+		Enclosure   struct {
+		} `json:"enclosure"`
+		Categories []string `json:"categories"`
+	} `json:"items"`
+}
+
+type doc struct {
+	URL  string
+	Body string
+}
+
+const feed = "https://api.rss2json.com/v1/api.json?rss_url=https://blog.gobuffalo.io/feed"
+
+func indexBlog() {
+	fmt.Println("indexing blog")
+	res, err := http.Get(feed)
+	if err != nil {
+		fmt.Println(err)
+	}
+	if res.StatusCode != 200 {
+		fmt.Println("failed to index blog", res.StatusCode)
+	}
+
+	blog := &blogFeed{}
+	err = json.NewDecoder(res.Body).Decode(blog)
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	for _, b := range blog.Items {
+		body := strip.StripTags(b.Content)
+		for strings.Index(body, "  ") > 0 || strings.Index(body, "\n\n") > 0 {
+			r := strings.NewReplacer("  ", " ", "\n", " ", "\t", " ")
+			body = r.Replace(body)
+		}
+		d := doc{
+			URL:  b.Link,
+			Body: body,
+		}
+		err = index.Index(d.URL, d)
+		if err != nil {
+			fmt.Println(err)
 		}
 	}
 }
@@ -80,15 +147,12 @@ func indexDocs(app *buffalo.App) {
 			r := strings.NewReplacer("  ", " ", "\n", " ", "\t", " ")
 			body = r.Replace(body)
 		}
-		doc := struct {
-			URL  string
-			Body string
-		}{
+		d := doc{
 			URL:  u,
 			Body: body,
 		}
 
-		err = index.Index(doc.URL, doc)
+		err = index.Index(d.URL, d)
 		if err != nil {
 			fmt.Println(err)
 		}

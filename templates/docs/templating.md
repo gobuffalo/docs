@@ -4,7 +4,14 @@
 
 Buffalo defaults to using [plush](https://github.com/gobuffalo/plush) as its template engine.
 
-<%= vimeo("207200621") %>
+<div class="row">
+  <div class="col-md-6">
+    <%= vimeo("207200621") %>
+  </div>
+  <div class="col-md-6">
+    <%= vimeo("267643588") %>
+  </div>
+</div>
 
 <%= title("General Usage", {name: "general"}) %>
 

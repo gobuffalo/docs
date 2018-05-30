@@ -10,8 +10,8 @@
 [[projects]]
   name = "github.com/RoaringBitmap/roaring"
   packages = ["."]
-  revision = "1a28a7fa985680f9f4e1644c0a857ec359a444b0"
-  version = "v0.4.7"
+  revision = "361768d03f0924093d3eed7623f3cf58392620f4"
+  version = "v0.4.9"
 
 [[projects]]
   branch = "master"
@@ -163,13 +163,19 @@
     "servers",
     "worker"
   ]
-  revision = "8f945f6aab3feca2c8986853ea73c352738aa76f"
+  revision = "7c0b5fe40f0400a756a474848aa04d1bed6ba812"
 
 [[projects]]
   name = "github.com/gobuffalo/envy"
   packages = ["."]
   revision = "ef60bfc50c8f92d1ee64674d8ce7a48f1f67625e"
   version = "v1.6.2"
+
+[[projects]]
+  name = "github.com/gobuffalo/makr"
+  packages = ["."]
+  revision = "2f752af1831478b8c496635cb46b947811097061"
+  version = "v1.1.0"
 
 [[projects]]
   name = "github.com/gobuffalo/packr"
@@ -199,8 +205,8 @@
     "fizz/translators",
     "nulls"
   ]
-  revision = "addd35fa30f151cdee20971b635abf6dc631837c"
-  version = "v4.5.8"
+  revision = "9985012f32f5e36b1a10e9191ee460daac4a9bc7"
+  version = "v4.5.9"
 
 [[projects]]
   name = "github.com/gobuffalo/tags"
@@ -246,7 +252,7 @@
   branch = "master"
   name = "github.com/golang/snappy"
   packages = ["."]
-  revision = "553a641470496b2327abcac10b36396bd98e45c9"
+  revision = "2e65f85255dbc3072edf28d6b5b8efc472979f5a"
 
 [[projects]]
   name = "github.com/gorilla/context"
@@ -282,7 +288,7 @@
   branch = "master"
   name = "github.com/grokify/html-strip-tags-go"
   packages = ["."]
-  revision = "2e24dd3c29e5fe86a6ac41c713f2e2840b3062e6"
+  revision = "3f8856873ce5730282807732a0413fcf7c98cc58"
 
 [[projects]]
   branch = "master"
@@ -306,7 +312,7 @@
     ".",
     "oid"
   ]
-  revision = "d34b9ff171c21ad295489235aec8b6626023cd04"
+  revision = "90697d60dd844d5ef6ff15135d0203f65d2f53b8"
 
 [[projects]]
   branch = "master"
@@ -383,8 +389,8 @@
 [[projects]]
   name = "github.com/mattn/go-sqlite3"
   packages = ["."]
-  revision = "6c771bb9887719704b210e87e934f08be014bdb1"
-  version = "v1.6.0"
+  revision = "323a32be5a2421b8c7087225079c6c900ec397cd"
+  version = "v1.7.0"
 
 [[projects]]
   branch = "master"
@@ -396,7 +402,7 @@
   branch = "master"
   name = "github.com/mitchellh/go-homedir"
   packages = ["."]
-  revision = "b8bc1bf767474819792c23f32d8286a45736f1c6"
+  revision = "3864e76763d94a6df2f9960b16a20a33da9f9a66"
 
 [[projects]]
   name = "github.com/monoculum/formam"
@@ -575,7 +581,7 @@
     "blowfish",
     "ssh/terminal"
   ]
-  revision = "1a580b3eff7814fc9b40602fd35256c63b50f491"
+  revision = "ab813273cd59e1333f7ae7bff5d027d4aadf528c"
 
 [[projects]]
   branch = "master"
@@ -585,7 +591,7 @@
     "html",
     "html/atom"
   ]
-  revision = "2491c5de3490fced2f6cff376127c667efeed857"
+  revision = "89e543239a64caf31d3a6865872ea120b41446df"
 
 [[projects]]
   branch = "master"
@@ -600,7 +606,7 @@
     "unix",
     "windows"
   ]
-  revision = "7c87d13f8e835d2fb3a70a2912c811ed0c1d241b"
+  revision = "c11f84a56e43e20a78cee75a7c034031ecf57d1f"
 
 [[projects]]
   name = "gopkg.in/yaml.v2"

@@ -1,7 +1,7 @@
 <h1><%= t("search.title") %></h1>
 
 <div class="row">
-  <%= form({action: "/search", method: "GET"}) { %>
+  <%= form({action: "/en/search", method: "GET"}) { %>
     <div class="col-md-3">
       <%= f.InputTag({name: "query", placeholder: "enter search query here", value: params["query"]}) %>
     </div>
@@ -13,7 +13,7 @@
 
 <%= if (results) { %>
 
-<h2><%= results.Total %> <%= pluralize_uint("match", results.Total) %>, showing <%= results.Request.From+1 %> through <%= results.Request.From+len(results.Hits) %>, took <%= results.Took %></h2>
+<h2><%= results.Total %> <%= pluralize_uint("match", results.Total) %> for <code><%= params["query"] %></code></h2>
 
 <ol>
   <%= for (hit) in results.Hits { %>

@@ -21,3 +21,4 @@ heroku plugins:install @heroku-cli/plugin-container-registry
 # need to set the HEROKU_API_KEY environment variable.
 echo "$HEROKU_API_KEY" | docker login --username=_ --password-stdin registry.heroku.com
 heroku container:push web --app getbuffalo
+heroku container:release web --app getbuffalo

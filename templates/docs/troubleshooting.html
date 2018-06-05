@@ -3,6 +3,13 @@
 <div class="faq">
   <input class="faq-search" type="text" placeholder="Type to search...">
   <ul>
+    <%= faq("App Crashes with `securecookie: hash key is not set`", {name: "securecookie-hash-key-not-set"}) { %>
+After a recent change in the [github.com/gorilla/sessions](http://www.gorillatoolkit.org/pkg/sessions) Buffalo applications will fail to start with the error `securecookie: hash key is not set`. To fix this you must set an environment variable named `SESSION_SECRET`.
+
+For information see [https://github.com/gobuffalo/buffalo/issues/1067](https://github.com/gobuffalo/buffalo/issues/1067)
+    <% } %>
+
+
     <%= faq("Can't find `buffalo` binary.", {name: "binary-not-found"}) { %>
 If you can't find the `buffalo` binary after a successful installation, this is problably caused because `$GOPATH/bin`, or `%GOPATH\bin` (Windows), isn't in your `$PATH` variable. When a Go binary is installed it is placed in `$GOPATH/bin`. Adding this to your global `$PATH` will allow you to find **any** Go binary everywhere in your system. See [https://golang.org/doc/code.html#GOPATH](https://golang.org/doc/code.html#GOPATH) for more details.
     <% } %>

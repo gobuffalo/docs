@@ -2,14 +2,6 @@
   name = "github.com/gobuffalo/buffalo"
   branch = "development"
 
-[[constraint]]
-  name = "github.com/gobuffalo/suite"
-  version = "2.0.0"
-
-[[constraint]]
-  name = "github.com/gobuffalo/tags"
-  version = "2.0.0"
-
 [prune]
   go-tests = true
   unused-packages = true

@@ -9,6 +9,8 @@ Pop uses [Fizz](https://github.com/gobuffalo/pop/blob/master/fizz%2FREADME.md) t
 To generate a new **empty** migration, use the following command:
 
 ```bash
+$ soda g migration --help
+
 Generates Up/Down migrations for your database using fizz.
 
 Usage:

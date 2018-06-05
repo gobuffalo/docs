@@ -9,6 +9,8 @@ If you don't want to use Fizz, or you have a complicated query you want to execu
 To generate a new **empty** migration, use the following command:
 
 ```bash
+$ soda g sql --help
+
 Generates Up/Down migrations for your database using SQL.
 
 Usage:

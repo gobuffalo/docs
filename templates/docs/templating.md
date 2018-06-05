@@ -21,6 +21,7 @@ Buffalo defaults to using [plush](https://github.com/gobuffalo/plush) as its tem
 ```go
 // actions/index.go
 func IndexHandler(c buffalo.Context) error {
+  c.Set("name", "Mark")
   c.Set("names", []string{"John", "Paul", "George", "Ringo"})
   return c.Render(200, r.HTML("index.html"))
 }

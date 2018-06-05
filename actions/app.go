@@ -98,6 +98,19 @@ func App() *buffalo.App {
 		app.ServeFiles("/", assetBox)
 
 		indexDocs(app)
+		go func() {
+			indexBlog()
+			t := time.NewTicker(60 * time.Minute)
+			defer t.Stop()
+			for {
+				select {
+				case <-app.Context.Done():
+					return
+				case <-t.C:
+					indexBlog()
+				}
+			}
+		}()
 	}
 	return app
 }

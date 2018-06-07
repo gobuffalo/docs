@@ -71,9 +71,11 @@ func indexBlog() {
 	res, err := http.Get(feed)
 	if err != nil {
 		fmt.Println(err)
+		return
 	}
 	if res.StatusCode != 200 {
 		fmt.Println("failed to index blog", res.StatusCode)
+		return
 	}
 
 	blog := &blogFeed{}

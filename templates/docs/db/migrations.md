@@ -12,9 +12,7 @@ You can create new migrations using `fizz`, a custom language describing the dat
 
 <%= title("Running Migrations") %>
 
-<%= note() { %>
-**Note for Buffalo users**: `soda` commands are embedded into the `buffalo` command, behind the `db` namespace. So everytime you want to use a command from `soda`, just execute `buffalo db` instead.
-<% } %>
+<%= partial("docs/db/soda_buffalo_note.md") %>
 
 Once migrations have been created they can be run with either of the following commands:
 

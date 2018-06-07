@@ -1,8 +1,6 @@
 <%= title("SQL Migrations", {name: "generating-sql"}) %>
 
-<%= note() { %>
-**Note for Buffalo users**: `soda` commands are embedded into the `buffalo` command, behind the `db` namespace. So everytime you want to use a command from `soda`, just execute `buffalo db` instead.
-<% } %>
+<%= partial("docs/db/soda_buffalo_note.md") %>
 
 If you don't want to use Fizz, or you have a complicated query you want to execute, you can use SQL.
 

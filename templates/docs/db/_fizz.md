@@ -1,8 +1,6 @@
 <%= title("Fizz Migrations", {name:"generating-fizz"}) %>
 
-<%= note() { %>
-**Note for Buffalo users**: `soda` commands are embedded into the `buffalo` command, behind the `db` namespace. So everytime you want to use a command from `soda`, just execute `buffalo db` instead.
-<% } %>
+<%= partial("docs/db/soda_buffalo_note.md") %>
 
 Pop uses [Fizz](https://github.com/gobuffalo/pop/blob/master/fizz%2FREADME.md) to generate migrations that are both easy to work with and work across multiple types of databases.
 

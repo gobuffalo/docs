@@ -8,6 +8,10 @@ After a recent change in the [github.com/gorilla/sessions](http://www.gorillatoo
 
 For information see [https://github.com/gobuffalo/buffalo/issues/1067](https://github.com/gobuffalo/buffalo/issues/1067)
     <% } %>
+      
+     <%= faq("Command line is slow", {name: "slow-commands"}) { %>
+If executing `buffalo --help` or any other command from the terminal takes longer than expected set `export BUFFALO_PLUGIN_PATH=$GOPATH/bin` in your shell config (e.g. .bash_profile).
+    <% } %>
 
 
     <%= faq("Can't find `buffalo` binary.", {name: "binary-not-found"}) { %>

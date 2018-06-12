@@ -27,3 +27,4 @@ Global Flags:
   -p, --path string     Path to the migrations folder (default "./migrations")
 ```
  
+ > By default, the migration will create an `id` that serves as the primary key, as well as `created_at` and `updated_at` columns so there is no need to create your own.

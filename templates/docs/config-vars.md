@@ -11,15 +11,16 @@ Environment variables are a good way to separate environment specific values, or
 
 The following variables are used by Buffalo:
 
-| Variable              | Default                  | Usage                                                      |
-| ---                   | ---                      | ---                                                        |
-| `GO_ENV`              | `development`            | The "environment" that Buffalo is run in                   |
-| `GO_BIN`              | `go`                     | The Go compiler to use                                     |
-| `BUFFALO_PLUGIN_PATH` | `$PATH`                  | Where Buffalo looks for plugins                            |
-| `ADDR`                | `127.0.0.1` or `0.0.0.0` | Which address to bind the server to                        |
-| `PORT`                | `3000`                   | Which port to bind the server to                           |
-| `HOST`                | `http://127.0.0.1:$PORT` | The "URL" of the application (i.e. what end users type in) |
-| `SESSION_SECRET`      | `""`                     | A salt used for securing sessions                          |
+| Variable                | Default                  | Usage                                                      |
+| ---                     | ---                      | ---                                                        |
+| `GO_ENV`                | `development`            | The "environment" that Buffalo is run in                   |
+| `GO_BIN`                | `go`                     | The Go compiler to use                                     |
+| `BUFFALO_PLUGIN_PATH`   | `$PATH`                  | Where Buffalo looks for plugins                            |
+| `BUFFALO_PLUGIN_TIMEOUT | `1s`                     | How long Buffalo waits for a plugin to respond             |
+| `ADDR`                  | `127.0.0.1` or `0.0.0.0` | Which address to bind the server to                        |
+| `PORT`                  | `3000`                   | Which port to bind the server to                           |
+| `HOST`                  | `http://127.0.0.1:$PORT` | The "URL" of the application (i.e. what end users type in) |
+| `SESSION_SECRET`        | `""`                     | A salt used for securing sessions                          |
 
 <%= title("Custom Configuration") %>
 

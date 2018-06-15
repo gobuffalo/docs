@@ -66,22 +66,22 @@ type doc struct {
 
 const feed = "https://api.rss2json.com/v1/api.json?rss_url=https://blog.gobuffalo.io/feed"
 
-func indexBlog() {
-	fmt.Println("indexing blog")
+func indexBlog(app *buffalo.App) {
+	app.Logger.Info("Indexing blog")
 	res, err := http.Get(feed)
 	if err != nil {
-		fmt.Println(err)
+		app.Logger.Error(err)
 		return
 	}
 	if res.StatusCode != 200 {
-		fmt.Println("failed to index blog", res.StatusCode)
+		app.Logger.Error("Failed to index blog", res.StatusCode)
 		return
 	}
 
 	blog := &blogFeed{}
 	err = json.NewDecoder(res.Body).Decode(blog)
 	if err != nil {
-		fmt.Println(err)
+		app.Logger.Error(err)
 	}
 
 	for _, b := range blog.Items {
@@ -96,7 +96,7 @@ func indexBlog() {
 		}
 		err = index.Index(d.URL, d)
 		if err != nil {
-			fmt.Println(err)
+			app.Logger.Error(err)
 		}
 	}
 }
@@ -154,18 +154,14 @@ func indexDocs(app *buffalo.App) {
 			Body: body,
 		}
 
-		err = index.Index(d.URL, d)
-		if err != nil {
-			fmt.Println(err)
-		}
-
-		return nil
+		return index.Index(d.URL, d)
 	})
 	if err != nil {
-		fmt.Println(err)
+		app.Logger.Error(err)
 	}
 }
 
+// Search handles the search queries.
 func Search(c buffalo.Context) error {
 	if c.Param("query") != "" {
 		query := bleve.NewQueryStringQuery(c.Param("query"))

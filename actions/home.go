@@ -8,16 +8,17 @@ import (
 	"github.com/pkg/errors"
 )
 
-// HomeHandler is a default handler to serve up
-// a home page.
+// HomeHandler serves the home page.
 func HomeHandler(c buffalo.Context) error {
 	return c.Render(200, r.HTML("overview.html"))
 }
 
+// Sponsors serves the sponsors page.
 func Sponsors(c buffalo.Context) error {
 	return c.Render(200, r.HTML("sponsors.html"))
 }
 
+// ChangeLanguage handles the selector to change the current locale.
 func ChangeLanguage(c buffalo.Context) error {
 	f := struct {
 		OldLanguage string `form:"oldLanguage"`

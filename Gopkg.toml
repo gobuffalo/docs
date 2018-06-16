@@ -2,6 +2,10 @@
   name = "github.com/gobuffalo/buffalo"
   branch = "development"
 
+[[override]]
+  name = "github.com/gobuffalo/plush"
+  version = "=v3.7.3"
+
 [prune]
   go-tests = true
   unused-packages = true

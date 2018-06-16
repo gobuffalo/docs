@@ -30,27 +30,16 @@ func App() *buffalo.App {
 			Env:          ENV,
 			SessionStore: sessions.Null{},
 		})
-		app.Use(ssl.ForceSSL(secure.Options{
-			SSLRedirect:     ENV == "production",
-			SSLProxyHeaders: map[string]string{"X-Forwarded-Proto": "https"},
-		}))
+
+		// Automatically redirect to SSL
+		app.Use(forceSSL())
 
 		if ENV == "development" {
 			app.Use(middleware.ParameterLogger)
 		}
 
 		// Setup and use translations:
-		var err error
-		if T, err = i18n.New(packr.NewBox("../locales"), "en"); err != nil {
-			app.Stop(err)
-		}
-
-		T.LanguageExtractors = []i18n.LanguageExtractor{
-			i18n.URLPrefixLanguageExtractor,
-			i18n.HeaderLanguageExtractor,
-		}
-
-		app.Use(T.Middleware())
+		app.Use(translations())
 
 		app.Use(func(next buffalo.Handler) buffalo.Handler {
 			return func(c buffalo.Context) error {
@@ -99,7 +88,7 @@ func App() *buffalo.App {
 
 		indexDocs(app)
 		go func() {
-			indexBlog()
+			indexBlog(app)
 			t := time.NewTicker(60 * time.Minute)
 			defer t.Stop()
 			for {
@@ -107,10 +96,39 @@ func App() *buffalo.App {
 				case <-app.Context.Done():
 					return
 				case <-t.C:
-					indexBlog()
+					indexBlog(app)
 				}
 			}
 		}()
 	}
 	return app
+}
+
+// translations will load locale files, set up the translator `actions.T`,
+// and will return a middleware to use to load the correct locale for each
+// request.
+// for more information: https://gobuffalo.io/en/docs/localization
+func translations() buffalo.MiddlewareFunc {
+	var err error
+	if T, err = i18n.New(packr.NewBox("../locales"), "en"); err != nil {
+		app.Stop(err)
+	}
+
+	T.LanguageExtractors = []i18n.LanguageExtractor{
+		i18n.URLPrefixLanguageExtractor,
+		i18n.HeaderLanguageExtractor,
+	}
+	return T.Middleware()
+}
+
+// forceSSL will return a middleware that will redirect an incoming request
+// if it is not HTTPS. "http://example.com" => "https://example.com".
+// This middleware does **not** enable SSL. for your application. To do that
+// we recommend using a proxy: https://gobuffalo.io/en/docs/proxy
+// for more information: https://github.com/unrolled/secure/
+func forceSSL() buffalo.MiddlewareFunc {
+	return ssl.ForceSSL(secure.Options{
+		SSLRedirect:     ENV == "production",
+		SSLProxyHeaders: map[string]string{"X-Forwarded-Proto": "https"},
+	})
 }

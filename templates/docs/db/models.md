@@ -27,7 +27,7 @@ CREATE TABLE sodas (
     id uuid NOT NULL,
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL,
-    label character varying(255) NOT NULL
+    label character varying(255)
 );
 
 ALTER TABLE sodas ADD CONSTRAINT sodas_pkey PRIMARY KEY (id);
@@ -40,7 +40,8 @@ package models
 
 import (
 	"time"
-
+	
+	"github.com/gobuffalo/pop/nulls"
 	"github.com/gobuffalo/uuid"
 )
 
@@ -48,7 +49,7 @@ type Soda struct {
 	ID                   uuid.UUID `db:"id"`
 	CreatedAt            time.Time `db:"created_at"`
 	UpdatedAt            time.Time `db:"updated_at"`
-	Label                string    `db:"label"`
+	Label                nulls.String    `db:"label"`
 }
 ```
 

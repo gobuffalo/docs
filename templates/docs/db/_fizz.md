@@ -2,7 +2,7 @@
 
 <%= partial("docs/db/soda_buffalo_note.md") %>
 
-Pop uses [Fizz](https://github.com/gobuffalo/pop/blob/master/fizz%2FREADME.md) to generate migrations that are both easy to work with and work across multiple types of databases.
+Pop uses [Fizz](https://github.com/gobuffalo/fizz/blob/master/README.md) to generate migrations that are both easy to work with and work across multiple types of databases.
 
 To generate a new **empty** migration, use the following command:
 
@@ -26,4 +26,4 @@ Global Flags:
   -e, --env string      The environment you want to run migrations against. Will use $GO_ENV if set. (default "development")
   -p, --path string     Path to the migrations folder (default "./migrations")
 ```
- 
+

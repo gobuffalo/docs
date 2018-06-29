@@ -45,6 +45,9 @@
 - id: menu.installation
   translation: Installation
 
+- id: menu.integrations
+  translation: Tooling Integration
+
 - id: menu.new-project
   translation: Generate a New Project
 

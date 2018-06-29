@@ -45,6 +45,9 @@
 - id: menu.installation
   translation: Installation
 
+- id: menu.integrations
+  translation: Intégrations
+
 - id: menu.new-project
   translation: Générer un nouveau projet
 

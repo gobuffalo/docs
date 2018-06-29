@@ -108,3 +108,8 @@ Use "buffalo [command] --help" for more information about a command.
 ```
 
 If you have a similar output, your Buffalo toolbox is ready to work!
+
+<%= title("Next Steps") %>
+
+* [Tooling Integration](/en/docs/integrations) - Work with Buffalo, using existing tools.
+* [Generate a New Project](/en/docs/new-project) - Create your first Buffalo project!

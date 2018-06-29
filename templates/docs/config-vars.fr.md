@@ -11,15 +11,16 @@ Les variables d'environnement sont une bonne méthode pour séparer les valeurs 
 
 Les variables suivantes sont utilisées par Buffalo :
 
-| Variable              | Valeur par défaut        | Rôle                                                       |
-| ---                   | ---                      | ---                                                        |
-| `GO_ENV`              | `development`            | L'« environment » d'exécution de Buffalo                   |
-| `GO_BIN`              | `go`                     | Le compilateur Go à utiliser                               |
-| `BUFFALO_PLUGIN_PATH` | `$PATH`                  | L'endroit où Buffalo va chercher ses plugins               |
-| `ADDR`                | `127.0.0.1` or `0.0.0.0` | L'adresse d'écoute du serveur HTTP                         |
-| `PORT`                | `3000`                   | Le port d'écoute du serveur HTTP                           |
-| `HOST`                | `http://127.0.0.1:$PORT` | L'« URL » de l'application (c-à-d son adresse publique)    |
-| `SESSION_SECRET`      | `""`                     | Un sel utilisé pour sécuriser les sessions                 |
+| Variable                 | Valeur par défaut        | Rôle                                                       |
+| ---                      | ---                      | ---                                                        |
+| `GO_ENV`                 | `development`            | L'« environnement » d'exécution de Buffalo                 |
+| `GO_BIN`                 | `go`                     | Le compilateur Go à utiliser                               |
+| `BUFFALO_PLUGIN_PATH`    | `$PATH`                  | L'emplacement où Buffalo va chercher ses plugins           |
+| `BUFFALO_PLUGIN_TIMEOUT` | `1s`                     | Combien de temps Buffalo attend la réponse d'un plugin     |
+| `ADDR`                   | `127.0.0.1` or `0.0.0.0` | L'adresse d'écoute du serveur HTTP                         |
+| `PORT`                   | `3000`                   | Le port d'écoute du serveur HTTP                           |
+| `HOST`                   | `http://127.0.0.1:$PORT` | L'« URL » de l'application (c-à-d son adresse publique)    |
+| `SESSION_SECRET`         | `""`                     | Un sel utilisé pour sécuriser les sessions                 |
 
 <%= title("Configuration personnalisée") %>
 

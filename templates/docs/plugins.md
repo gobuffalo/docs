@@ -10,6 +10,7 @@ Here is a list of plugins made by the Buffalo community:
 |---------|-------------|--------|-----------------|
 | [buffalo-goth](https://github.com/gobuffalo/buffalo-goth) | A generator to use with the [Goth](https://github.com/markbates/goth) third-party auth package. | [@markbates](https://github.com/markbates) |   |
 | [buffalo-bootstrap](https://github.com/markbates/buffalo-bootstrap) | A plugin for generating Bootstrap stuff. | [@markbates](https://github.com/markbates) |   |
+| [buffalo-azure](https://github.com/Azure/buffalo-azure) | A plugin for deploying to and generating for Microsoft Azure. | [@Microsoft](https://open.microsoft.com) | |
 | [buffalo-heroku](https://github.com/markbates/buffalo-heroku) | A plugin for deploying docker to heroku.  | [@markbates](https://github.com/markbates) |   |
 | [buffalo-ocean](https://github.com/wolves/buffalo-ocean) | A plugin for deploying docker to Digital Ocean.  | [@wolves](https://github.com/wolves) | [Demo](https://blog.wolvesdesign.com/post/buffalo-ocean-walkthrough/) |
 

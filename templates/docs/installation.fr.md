@@ -109,3 +109,8 @@ Use "buffalo [command] --help" for more information about a command.
 ```
 
 Si vous avez un retour similaire de la commande, votre boîte à outils Buffalo est prête à fonctionner !
+
+<%= title("Prochaines étapes") %>
+
+* [Intégrations](/fr/docs/integrations) - Configurez votre environnement pour mieux travailler avec Buffalo.
+* [Générer un nouveau projet](/fr/docs/new-project) - Créez votre premier projet Buffalo !

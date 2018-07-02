@@ -1,5 +1,14 @@
 <%= h1("Mailers") %>
 
-The mailer extension is included in the Buffalo framework. It allows you to send emails using a standard SMTP connection, and is provided with a generator.
+E-mails are part of most (web) systems. It's a standard way to inform users about platform news, confirmations, marketing stuff, and so on.
+
+Buffalo provides, out of the box, a mailer extension with a standard SMTP sender. A generator is included, to allow you to work with emails as fast as possible.
 
 <%= partial("docs/generators/mail.md") %>
+
+<%= title("Sender Implementations") %>
+
+Some alternate [`Sender`](https://godoc.org/github.com/gobuffalo/buffalo/mail#Sender) implementations are provided by the Buffalo community:
+
+* [postmark-sender](https://github.com/paganotoni/postmark-sender) - A sender to work with [Postmark](https://postmarkapp.com/). Author: [@paganotoni](https://github.com/paganotoni).
+* [mocksmtp](https://github.com/stanislas-m/mocksmtp) - A mock implementation that can be used for testing. Author: [@stanislas-m](https://github.com/stanislas-m).

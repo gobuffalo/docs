@@ -63,6 +63,9 @@
 - id: menu.db-getting-started
   translation: Getting Started with Pop
 
+- id: menu.db-configuration
+  translation: Configuration
+
 - id: menu.db-toolbox
   translation: Soda Toolbox
 

@@ -99,6 +99,8 @@ func indexBlog(app *buffalo.App) {
 			app.Logger.Error(err)
 		}
 	}
+
+	app.Logger.Infof("%d blog items indexed", len(blog.Items))
 }
 
 func indexDocs(app *buffalo.App) {

@@ -7,6 +7,7 @@ Software maintenance is a hard task, and you'll probably need to patch your data
 
 You can create new migrations using `fizz`, a custom language describing the database changes in the most database-agnostic way; or use SQL statements if you prefer.
 
+<%= title("Writing Migrations") %>
 <%= partial("docs/db/fizz.md") %>
 <%= partial("docs/db/sql.md") %>
 
@@ -71,5 +72,19 @@ For instance, if you want to support both PostgreSQL and MySQL, you can create t
 * `my-migration.postgres.up.sql` and `my-migration.postgres.down.sql` will be used when migrating a PostgreSQL database.
 
 If no version for the dialect can be found, Pop will fallback to the non-suffixed version, if it exists.
+
+<%= title("Custom Migrations Table") %>
+
+By default, the applied migrations are tracked in the table `schema_migration`. This table is created by pop if it doesn't exist.
+
+In some cases, though, you may want to use a different name for this table. Since pop v4.5.0, you can customize the name of this table using the `migration_table_name` option. The example below will use `migrations` as the table name:
+
+```yaml
+development:
+  dialect: "postgres"
+  url: "your_db_development"
+  options:
+    migration_table_name: migrations
+```
 
 <%= partial("docs/db/deployed_app.md") %>

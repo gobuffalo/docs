@@ -1,4 +1,4 @@
-<%= title("SQL Migrations", {name: "generating-sql"}) %>
+### SQL Migrations
 
 <%= partial("docs/db/soda_buffalo_note.md") %>
 

@@ -1,4 +1,4 @@
-<%= title("Fizz Migrations", {name:"generating-fizz"}) %>
+### Fizz Migrations
 
 <%= partial("docs/db/soda_buffalo_note.md") %>
 

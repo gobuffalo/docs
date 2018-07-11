@@ -1,6 +1,6 @@
 # Plugins
 
-Plugins, introducted in `v0.9.1`, allow for 3rd party code to extend the `buffalo` command as well as it's sub-commands.
+Plugins, introducted in `v0.9.1`, allow for 3rd party code to extend the `buffalo` command as well as its sub-commands.
 
 <%= title("Plugins list") %>
 

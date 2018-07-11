@@ -57,6 +57,9 @@
 - id: menu.config-variables
   translation: Configuration
 
+- id: menu.sessions
+  translation: Sessions
+
 - id: menu.cookies
   translation: Cookies
 

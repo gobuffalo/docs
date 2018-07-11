@@ -1,6 +1,11 @@
-# Cookies
+<% seoDescription("Cookies") %>
+<% seoKeywords(["buffalo", "go", "golang", "http", "cookie"]) %>
 
-See [https://golang.org/pkg/net/http/#Cookie](https://golang.org/pkg/net/http/#Cookie) for more information on cookies in Go.
+<%= h1("Cookies") %>
+
+An HTTP cookie is a small piece of data that a server sends to the user's web brower. The browser can store this data and send it back to the same server, even after the browser restart (unlike a [browser session](/en/docs/sessions)).
+
+(HTTP) cookies are commonly used to save users state (like whether the user logged-in). See [https://golang.org/pkg/net/http/#Cookie](https://golang.org/pkg/net/http/#Cookie) for more information on cookies in Go.
 
 <%= title("Setting a Cookie") %>
 

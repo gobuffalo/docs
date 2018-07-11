@@ -40,3 +40,8 @@ You can get the available flags list using the `help` command:
 You can choose to generate an API application, skipping the frontend stuff. Maybe you want to setup a CI to build your app on your favourite system? Or even use your own package to handle the database? Just use the flags!
 
 <%= partial("docs/dev.md") %>
+
+<%= title("Next Steps") %>
+
+* [Directory Structure](/en/docs/directory-structure) - Learn more about Buffalo structure.
+* [Configuration](/en/docs/config-vars) - Manage your app configuration.

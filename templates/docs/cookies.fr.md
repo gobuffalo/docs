@@ -3,7 +3,7 @@
 
 <%= h1("Cookies") %>
 
-Un cookie HTTP est un petit morceau de données qu'un serveur envoie au navigateur web d'un utilisateur. Le navigateur peut stocker cette donnée et la renvoyer au même serveur, même après redémarrage du navigateur (contrairement à [une session](/en/docs/sessions)).
+Un cookie HTTP est un petit morceau de données qu'un serveur envoie au navigateur web d'un utilisateur. Le navigateur peut stocker cette donnée et la renvoyer au même serveur, même après redémarrage du navigateur (contrairement à [une session](/fr/docs/sessions)).
 
 Les cookies (HTTP) sont souvent utilisés pour sauvegarder l'état de l'utlisateur courant (comme par example pour savoir si l'utilisateur est connecté). Consultez [https://golang.org/pkg/net/http/#Cookie](https://golang.org/pkg/net/http/#Cookie) pour plus d'informations sur la manière de gérer les cookies en Go.
 

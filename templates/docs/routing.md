@@ -124,45 +124,6 @@ g.Use(APIAuthorizer)
 
 In the above example the `/api/v1` group will use both `SomeMiddleware` and `APIAuthorizer`. See [middleware](/docs/middleware) for more information about using, skipping, and clearing middleware.
 
-<%= title("Resources", {}) %>
-
-Often web applications need to build very similar "CRUD" end-points. To Help reduce the amount of thought and complexity involved in this, Buffalo supports the concept of a "Resource".
-
-```go
-type Resource interface {
-  List(Context) error
-  Show(Context) error
-  New(Context) error
-  Create(Context) error
-  Edit(Context) error
-  Update(Context) error
-  Destroy(Context) error
-}
-```
-
-```go
-type UserResource struct{
-  buffalo.Resource
-}
-
-a.Resource("/users", &UserResource{&buffalo.BaseResource{}})
-```
-
-The above code example would be the equivalent of the following:
-
-```go
-ur := &UserResource{}
-a.GET("/users", ur.List)
-a.GET("/users/new", ur.New)
-a.GET("/users/{user_id}", ur.Show)
-a.GET("/users/{user_id}/edit", ur.Edit)
-a.POST("/users", ur.Create)
-a.PUT("/users/{user_id}", ur.Update)
-a.DELETE("/users/{user_id}", ur.Destroy)
-```
-
-See [Generators](/docs/generators#resources) for information on how to generate new resources.
-
 <%= title("Loose Slash", {}) %>
 
 <%= sinceVersion("0.10.3") %>

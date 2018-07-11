@@ -19,9 +19,10 @@ func init() {
 	r = render.New(render.Options{
 		HTMLLayout: "application.html",
 		Helpers: render.Helpers{
-			"h1":    helpers.H1,
-			"title": helpers.SectionTitle,
-			"note":  helpers.Note,
+			"h1":      helpers.H1,
+			"title":   helpers.SectionTitle,
+			"note":    helpers.Note,
+			"warning": helpers.Warning,
 			"sinceVersion": func(version string, help plush.HelperContext) (template.HTML, error) {
 				ctx := help.Context.New()
 				ctx.Set("version", version)

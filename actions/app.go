@@ -16,6 +16,10 @@ import (
 
 var ENV = envy.Get("GO_ENV", "development")
 var app *buffalo.App
+var supportedLanguages = map[string]string{
+	"en": "English",
+	"fr": "Français",
+}
 
 // T is used to provide translations
 var T *i18n.Translator
@@ -51,7 +55,7 @@ func App() *buffalo.App {
 				c.Set("lang", "en")
 				langs := c.Value("languages").([]string)
 				for _, l := range langs {
-					if l == "fr" || l == "en" {
+					if _, ok := supportedLanguages[l]; ok {
 						c.Set("lang", l)
 						break
 					}
@@ -60,10 +64,6 @@ func App() *buffalo.App {
 			}
 		})
 
-		app.Redirect(302, "/docs/overview", "/")
-		app.Redirect(302, "/docs/repl", "/")
-		app.Redirect(302, "/docs/test-suites", "/docs/testing")
-		app.Redirect(302, "/docs/env-vars", "/docs/config-vars")
 		app.GET("/search", func(c buffalo.Context) error {
 			return c.Redirect(302, fmt.Sprintf("/%s/search", c.Value("lang").(string)))
 		})

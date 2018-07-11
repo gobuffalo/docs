@@ -103,3 +103,7 @@ This file contains the database configuration for [pop/soda](https://github.com/
 ### main.go
 
 This file bootstraps your app and starts it.
+
+<%= title("Next Steps") %>
+
+* [Configuration](/en/docs/config-vars) - Manage your app configuration.

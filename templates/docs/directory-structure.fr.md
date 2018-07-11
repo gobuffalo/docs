@@ -103,3 +103,7 @@ Ce fichier contient la configuration des bases de données utilisées par [pop/s
 ### main.go
 
 Ce fichier se charge d'amorcer votre application et de la démarrer.
+
+<%= title("Prochaines étapes") %>
+
+* [Configuration](/fr/docs/config-vars) - Comment gérer la configuration de mon application ?

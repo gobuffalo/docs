@@ -40,3 +40,8 @@ Vous pouvez lister les *flags* disponibles en utilisant la commande `help` :
 Vous pouvez choisir de générer une application de type API, en excluant les fichiers propres à l'interface utilisateur. Vous voulez utiliser un système d'intégration continue ? Ou même utiliser votre propre dépendance pour gérer les interactions avec la base de données ? Utilisez les *flags* !
 
 <%= partial("docs/dev.md") %>
+
+<%= title("Prochaines étapes") %>
+
+* [Structure d'un projet](/fr/docs/directory-structure) - En savoir plus sur la structure d'un projet Buffalo.
+* [Configuration](/fr/docs/config-vars) - Comment gérer la configuration de mon application ?

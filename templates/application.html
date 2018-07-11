@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<%= lang %>">
 
 <head>
   <meta charset="utf-8">
@@ -19,6 +19,8 @@
   <meta name=twitter:creator content="Mark Bates" />
   <meta name=twitter:url content="https://gobuffalo.io/" />
   <meta name=twitter:image content="https://gobuffalo.io/assets/images/buffalo.png" />
+
+  <link rel="canonical" href="https://gobuffalo.io<%= current_path %>" />
 
   <title><%= if (pageTitle) { %><%= pageTitle %> &#183; <% } %><%= raw(t("head.title")) %></title>
 

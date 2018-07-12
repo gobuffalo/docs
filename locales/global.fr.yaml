@@ -78,6 +78,9 @@
 - id: menu.db-models
   translation: Modèles
 
+- id: menu.db-migrations
+  translation: Migrations
+
 - id: menu.contributing
   translation: Contribuer
 

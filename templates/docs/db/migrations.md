@@ -15,6 +15,7 @@ You can create new migrations using `fizz`, a custom language describing the dat
 
 <%= partial("docs/db/soda_buffalo_note.md") %>
 
+### Apply Migrations
 Once migrations have been created they can be run with either of the following commands:
 
 ```bash
@@ -24,11 +25,14 @@ $ soda migrate up
 
 Both commands are identical, one is shorter to type!
 
+### Rollback a Migration
 If you want to rollback the last applied migration, use the following command:
 
 ```bash
 $ soda migrate down
 ```
+
+---
 
 More information about the migration command be found by running:
 

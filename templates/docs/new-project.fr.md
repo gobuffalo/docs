@@ -39,6 +39,19 @@ Vous pouvez lister les *flags* disponibles en utilisant la commande `help` :
 
 Vous pouvez choisir de générer une application de type API, en excluant les fichiers propres à l'interface utilisateur. Vous voulez utiliser un système d'intégration continue ? Ou même utiliser votre propre dépendance pour gérer les interactions avec la base de données ? Utilisez les *flags* !
 
+<%= title("Changer la config par défaut") %>
+
+Par défaut, la commande `buffalo new` recherche le fichier de configuration `$HOME/.buffalo.yml`, et tente de le charger s'il existe. Vous pouvez écraser les options de ce fichier en passant directement les flags d'options nécessaires, ou en utilisant l'option `--config` pour prendre un compte un autre fichier YAML à la place. Utilisez l'option `--skip-config` si vous ne souhaitez pas que la commande `buffalo new` charge un fichier de configuration par défaut.
+
+Voici un exemple de fichier de configuration `.buffalo.yml` :
+
+```yaml
+skip-yarn: true
+db-type: postgres
+bootstrap: 4
+with-dep: true
+```
+
 <%= partial("docs/dev.md") %>
 
 <%= title("Prochaines étapes") %>

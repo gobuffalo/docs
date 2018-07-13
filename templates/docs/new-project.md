@@ -39,6 +39,19 @@ You can get the available flags list using the `help` command:
 
 You can choose to generate an API application, skipping the frontend stuff. Maybe you want to setup a CI to build your app on your favourite system? Or even use your own package to handle the database? Just use the flags!
 
+<%= title("Override Default Config") %>
+
+By default `buffalo new` command will look for a configuration file at `$HOME/.buffalo.yml` and if it exists will try to load it. You can override the flags found in that file by passing the right ones in the command line or use the `--config` flag to specify a different YAML file. If the `--skip-config` flag is used `buffalo new` command will not load any config file and will use only the flags passed by the command line.
+
+An example of a `.buffalo.yml` config file can be:
+
+```yaml
+skip-yarn: true
+db-type: postgres
+bootstrap: 4
+with-dep: true
+```
+
 <%= partial("docs/dev.md") %>
 
 <%= title("Next Steps") %>

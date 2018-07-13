@@ -16,7 +16,7 @@ Vous pouvez écrire de nouvelles migrations en utilisant `fizz`, un langage de d
 <%= partial("docs/db/soda_buffalo_note.md") %>
 
 ### Appliquer les migrations
-Après avoir créé vos migrations, vous pouvez les exécuter à l'aide de l'un des commandes suivantes :
+Après avoir créé vos migrations, vous pouvez les exécuter à l'aide de l'une des commandes suivantes :
 
 ```bash
 $ soda migrate

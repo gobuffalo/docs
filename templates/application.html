@@ -5,10 +5,10 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="<%= if(metaDescription) { %><%= metaDescription %><% } else { %>Put the fun back in writing Go web applications using the Buffalo framework. A Ruby on Rails inspired, idiomatic, web framework written in Go.<% } %>">
   <meta name="keywords" content="<%= if(metaKeywords) { %><%= metaKeywords %><% } else { %>go, golang, web, buffalo, framework, html, javascript, ruby, rails, fast, easy<% } %>">
   <meta name="robots" content="index,follow">
 
+  <!-- common social tags -->
   <meta property=og:site_name content="Buffalo Go web framework" />
   <meta property=og:image content="https://gobuffalo.io/assets/images/buffalo.png" />
   <meta property=og:type content="website" />
@@ -20,7 +20,17 @@
   <meta name=twitter:url content="https://gobuffalo.io/" />
   <meta name=twitter:image content="https://gobuffalo.io/assets/images/buffalo.png" />
 
+  <!-- document-specific social tags -->
+  <meta property="og:title" content="<%= if (pageTitle) { %><%= pageTitle %> &#183; <% } %><%= raw(t("head.title")) %>" />
+  <meta name="twitter:title" content="<%= if (pageTitle) { %><%= pageTitle %> &#183; <% } %><%= raw(t("head.title")) %>" />
+
+  <meta property="og:description" content="<%= if(metaDescription) { %><%= metaDescription %><% } else { %><%= raw(t("head.description")) %><% } %>" />
+  <meta name="description" content="<%= if(metaDescription) { %><%= metaDescription %><% } else { %><%= raw(t("head.description")) %><% } %>" />
+  <meta name="twitter:description" content="<%= if(metaDescription) { %><%= metaDescription %><% } else { %><%= raw(t("head.description")) %><% } %>" />
+
   <link rel="canonical" href="https://gobuffalo.io<%= current_path %>" />
+  <link rel="alternate" href="https://gobuffalo.io<%= localized_current_path("fr") %>" hreflang="fr"/>
+  <link rel="alternate" href="https://gobuffalo.io<%= localized_current_path("en") %>" hreflang="en"/>
   <meta name="google-site-verification" content="GwQmhkMw9KUTJYJUgsYTP47viiXEYKCHot3aW4Po4AI" />
 
   <title><%= if (pageTitle) { %><%= pageTitle %> &#183; <% } %><%= raw(t("head.title")) %></title>
@@ -29,7 +39,7 @@
   <%= stylesheetTag("application.css") %>
 
   <!-- Fonts -->
-  <link href='//fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet" type="text/css">
 
   <!-- Favicons -->
   <link rel="icon" href="/assets/images/favicon.ico">

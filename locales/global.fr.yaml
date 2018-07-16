@@ -5,6 +5,9 @@
 - id: head.title
   translation: Buffalo &ndash; Développement Web rapide en Go
 
+- id: head.description
+  translation: Retrouvez le plaisir d'écrire des applications Web en Go ! Un framework inspiré de Ruby on Rails, idiomatique et écrit en Go.
+
 # Helpers
 - id: helpers.since
   translation: depuis <strong>v{{.version}}</strong>

@@ -1,4 +1,7 @@
-<%= h1("Building Your App") %>
+<% seoDescription("App Packing") %>
+<% seoKeywords(["buffalo", "go", "golang", "pack", "binary", "build"]) %>
+
+<%= h1("App Packing") %>
 
 Now, your project is ready to be deployed. In this section, you will learn how to package a version of your app to deploy it on a server.
 

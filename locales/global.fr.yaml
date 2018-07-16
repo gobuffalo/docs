@@ -106,7 +106,7 @@
   translation: Déploiement
 
 - id: menu.building-binaries
-  translation: Compilation / Binaire
+  translation: Empaquetage d'une app
 
 - id: menu.using-proxy
   translation: Utilisation d'un proxy

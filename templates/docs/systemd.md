@@ -1,3 +1,6 @@
+<% seoDescription("Systemd Service") %>
+<% seoKeywords(["buffalo", "go", "golang", "service", "systemd", "debian", "redhat", centos"]) %>
+
 <%= h1("Systemd service") %>
 
 In this chapter, we'll see how to setup you Buffalo app as a Systemd service. Systemd is the new standard on many GNU/Linux distributions, for running the system services.

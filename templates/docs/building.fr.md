@@ -1,6 +1,9 @@
-<%= h1("Building Your App") %>
+<% seoDescription("Empaquetage d'une app") %>
+<% seoKeywords(["buffalo", "go", "golang", "empaquetage", "binaire", "build", "contruction", "compilation"]) %>
 
-Votre projet est désormais prêt à être déployé. Dans cette section, vous allez apprendre comment «&nbsp;packager&nbsp;» une version de votre application et la déployer sur un serveur.
+<%= h1("Empaquetage d'une app") %>
+
+Votre projet est désormais prêt à être déployé. Dans cette section, vous allez apprendre comment empaqueter une version de votre application et la déployer sur un serveur.
 
 <%= title("La commande build") %>
 

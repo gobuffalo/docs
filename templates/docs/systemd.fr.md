@@ -1,4 +1,7 @@
-<%= h1("Systemd service") %>
+<% seoDescription("Service Systemd") %>
+<% seoKeywords(["buffalo", "go", "golang", "service", "systemd", "debian", "redhat", centos"]) %>
+
+<%= h1("Service Systemd") %>
 
 Dans ce chapitre, nous allons voir comment installer une app Buffalo comme un service Systemd. Systemd est le nouveau standard de beaucoup de distributions GNU/Linux, pour exécuter les services systèmes.
 

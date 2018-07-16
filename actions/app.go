@@ -2,6 +2,7 @@ package actions
 
 import (
 	"fmt"
+	"strings"
 	"time"
 
 	"github.com/gobuffalo/buffalo"
@@ -60,6 +61,14 @@ func App() *buffalo.App {
 						break
 					}
 				}
+
+				c.Set("localized_current_path", func(lang string) string {
+					cp := c.Value("current_path").(string)
+					l := c.Param("lang")
+					tp := strings.TrimPrefix(cp, fmt.Sprintf("/%s", l))
+					return fmt.Sprintf("/%s%s", lang, tp)
+				})
+
 				return next(c)
 			}
 		})

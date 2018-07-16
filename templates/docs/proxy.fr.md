@@ -1,3 +1,6 @@
+<% seoDescription("Utilisation d'un mandataire (proxy)") %>
+<% seoKeywords(["buffalo", "go", "golang", "proxy", "mandataire", "nginx", "apache"]) %>
+
 <%= h1("Utilisation d'un mandataire (proxy)") %>
 
 Buffalo peut-être utilisé pour écouter les requêtes clientes. Vous devez juste démarrer votre application et écouter sur une adresse et un port précis&nbsp;:

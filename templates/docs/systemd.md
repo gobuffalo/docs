@@ -1,5 +1,5 @@
 <% seoDescription("Systemd Service") %>
-<% seoKeywords(["buffalo", "go", "golang", "service", "systemd", "debian", "redhat", centos"]) %>
+<% seoKeywords(["buffalo", "go", "golang", "service", "systemd", "debian", "redhat", "centos"]) %>
 
 <%= h1("Systemd service") %>
 

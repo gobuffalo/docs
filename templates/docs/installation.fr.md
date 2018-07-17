@@ -3,6 +3,8 @@
 
 <%= h1("Installation") %>
 
+Dans ce chapitre, vous allez apprendre à installer Buffalo, depuis un binaire pré-compilé ou depuis les sources.
+
 Buffalo fournit **deux composants majeurs** :
 * La commande `buffalo`, une puissante boîte à outils pour vous aider à développer d'une manière rapide et efficace.
 * Le *framework* buffalo, un ensemble de pièces pour construire votre application.

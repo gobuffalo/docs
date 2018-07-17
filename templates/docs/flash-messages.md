@@ -1,7 +1,5 @@
 # Flash Messages
 
-<%= partial("docs/disclaimer.html") %>
-
 <%= title("What are Flash Messages?", {name:"what-is-flash"}) %>
 
 Flash messages are a means of communicating messages to the end user from inside of an application. These messages might be errors, warnings, or success types of messages.
@@ -29,6 +27,8 @@ func WidgetsCreate(c buffalo.Context) error {
 The names of the "keys", in this example, "success", are left up to your application to use as is appropriate. There are no "special" or "pre-defined" keys.
 
 <%= title("Accessing Flash Messages in Templates", {name: "accessing-in-templates"}) %>
+
+<%= partial("docs/disclaimer.html") %>
 
 ### Looping Over all Flash Messages
 

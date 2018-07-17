@@ -1,11 +1,11 @@
-# Tasks
+<% seoDescription("Tasks") %>
+<% seoKeywords(["buffalo", "go", "golang", "tasks", "scripts", "grift"]) %>
 
-
-<%= vimeo("213096302") %>
-
-<%= title("What are Tasks?") %>
+<%= h1("Tasks") %>
 
 Tasks are small scripts that are often needed when writing an application. These tasks might be along the lines of seeding a database, parsing a log file, or even a release script. Buffalo uses the [grift](https://github.com/markbates/grift) package to make writing these tasks simple.
+
+<%= vimeo("213096302") %>
 
 <%= title("Writing Tasks") %>
 

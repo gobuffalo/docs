@@ -58,7 +58,7 @@ Pour plus d'informations, consultez la documentation de [github.com/gobuffalo/po
 
 **Assurez-vous d'avoir configuré ce fichier correctement avant de travailler avec Pop !**
 
-## Options disponibles
+<%= title("Options disponibles") %>
 
 ### encoding
 

@@ -3,6 +3,8 @@
 
 <%= h1("Installation") %>
 
+In this chapter, you'll learn how to install Buffalo, either from pre-built binaries or from source.
+
 Buffalo provides **two major components**:
 * The `buffalo` tool, a powerful toolbox to help you develop in a fast and efficient way.
 * The buffalo framework, a collection of pieces to construct your app.

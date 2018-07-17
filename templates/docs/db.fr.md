@@ -30,3 +30,7 @@ Si vous souhaitez gérer la base de données par vous-même (sans utiliser Pop),
 ```bash
 $ buffalo new coke --skip-pop
 ```
+
+<%= title("Prochaines étapes") %>
+
+* [Configuration](/fr/docs/db/configuration) - Configurer vos connexions de base de données.

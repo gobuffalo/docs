@@ -171,3 +171,7 @@ Sometimes, the rules used by **inflect** are not correct (in this case, feel fre
   "singular form": "plural form"
 }
 ```
+
+<%= title("Related Resources") %>
+
+* [Translating a Buffalo app](https://blog.gobuffalo.io/translating-a-buffalo-app-1b4f32e6cb57) - An article about using Buffalo i18n tools.

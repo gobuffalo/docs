@@ -30,3 +30,7 @@ If you want to handle the database without using Pop, or if you're building an a
 ```bash
 $ buffalo new coke --skip-pop
 ```
+
+<%= title("Next Steps") %>
+
+* [Configuration](/en/docs/db/configuration) - Configure your database connections.

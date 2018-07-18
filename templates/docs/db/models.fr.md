@@ -20,38 +20,13 @@ Ce répertoire contient :
 
 Le fichier de modèle définit une structure pour accueillir une ligne de la table cible, des méthodes de validation et des fonctions callback optionnelles, qui permettent de définir des traitements liés aux modèles.
 
-Prenons par exmple cette définition de table SQL, et créons la structure associée :
+Prenons par exemple cette définition de table SQL, et créons la structure associée :
 
-```sql
-CREATE TABLE sodas (
-    id uuid NOT NULL,
-    created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL,
-    label character varying(255)
-);
-
-ALTER TABLE sodas ADD CONSTRAINT sodas_pkey PRIMARY KEY (id);
-```
+<%= partial("docs/db/models_sodas_sql.md") %>
 
 Nous allons commencer en créant un nouveau fichier dans le dossier `models`, que l'on nommera `soda.go` (la convention est d'utiliser la forme au singulier du nom du modèle). Dans ce fichier, nous allons créer une structure pour la table `sodas` (la structure est aussi au singulier, puisqu'elle ne contient d'une seule ligne de la table) :
 
-```go
-package models
-
-import (
-	"time"
-
-  "github.com/gobuffalo/pop/nulls"
-	"github.com/gobuffalo/uuid"
-)
-
-type Soda struct {
-	ID                   uuid.UUID    `db:"id"`
-	CreatedAt            time.Time    `db:"created_at"`
-	UpdatedAt            time.Time    `db:"updated_at"`
-	Label                nulls.String `db:"label"`
-}
-```
+<%= partial("docs/db/models_sodas_go.md") %>
 
 C'est tout ! Vous n'avez besoin de rien de plus pour travailler avec Pop ! Notez que pour chaque champ, nous avons défini un tag `db` qui correspond au nom du champ de la table, mais cela n'est pas obligatoire. Si vous ne fournissez pas de nom, il sera déterminé à partir de celui du champ de la structure.
 
@@ -199,3 +174,64 @@ func (u User) TableName() string {
   return "my_users"
 }
 ```
+
+<%= title("Modèles de vues") %>
+
+Une [vue](https://fr.wikipedia.org/wiki/Vue_(base_de_donn%C3%A9es)) est un objet de base de données qui stocke le résultat d'une requête. Puisque cet objet agit comme une table en lecture seule, il est possible de le lier avec un modèle de Pop tout comme vous le feriez avec une table.
+
+Si vous voulez utiliser un modèle avec plus d'une table, définir une vue est probablement la meilleure solution pour vous.
+
+### Exemple
+
+L'exemple suivant utilise la syntaxe de PostgreSQL. Nous allons commencer par créer deux tables :
+
+```sql
+-- Créer la table sodas
+CREATE TABLE sodas (
+    id uuid NOT NULL,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL,
+    provider_id uuid NOT NULL,
+    label character varying(255) NOT NULL
+);
+
+ALTER TABLE sodas ADD CONSTRAINT sodas_pkey PRIMARY KEY (id);
+
+-- Créer la table providers
+CREATE TABLE providers (
+    id uuid NOT NULL,
+    label character varying(255) NOT NULL
+);
+
+ALTER TABLE providers ADD CONSTRAINT providers_pkey PRIMARY KEY (id);
+
+-- Créer une clé étrangère pour lier les deux tables
+ALTER TABLE sodas ADD FOREIGN KEY (provider_id) REFERENCES providers(id);
+```
+
+Puis continuons en créant la vue :
+
+```sql
+CREATE VIEW sodas_with_providers AS
+SELECT s.id, s.created_at, s.updated_at, p.label AS provider_label, s.label
+FROM sodas s
+LEFT JOIN providers p ON p.id = s.provider_id;
+```
+
+Comme la vue est considérée comme une table par Pop, terminons en déclarant un nouveau modèle :
+
+```sql
+type Soda struct {
+	ID                   uuid.UUID    `db:"id" rw:"r"`
+	CreatedAt            time.Time    `db:"created_at" rw:"r"`
+	UpdatedAt            time.Time    `db:"updated_at" rw:"r"`
+	Label                string       `db:"label" rw:"r"`
+	ProviderLabel        string       `db:"provider_label" rw:"r"`
+}
+```
+
+Comme nous l'avons appris dans ce chapitre, chaque attribut de la structure possède un tag lecture seule `rw:"r"`. Puisqu'une vue est un objet en lecture seule, cela évite de laisser passer une opération d'écriture; avant même d'atteindre la base de données.
+
+<%= title("Contenu lié") %>
+
+* [Migrations](/fr/docs/db/migrations) - Écrire des migrations de base de données.

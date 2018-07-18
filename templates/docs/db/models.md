@@ -22,36 +22,11 @@ A model file defines a mapping for the database table, validation methods and Po
 
 Let's take the following SQL table definition, and write a matching structure:
 
-```sql
-CREATE TABLE sodas (
-    id uuid NOT NULL,
-    created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL,
-    label character varying(255)
-);
-
-ALTER TABLE sodas ADD CONSTRAINT sodas_pkey PRIMARY KEY (id);
-```
+<%= partial("docs/db/models_sodas_sql.md") %>
 
 We'll start by creating a new file in the `models` directory, called `soda.go` (the convention used here is to take the singular form of the word). In this file, we'll create the structure for the `sodas` table (the structure is singular too, since it will contain a single line of the table):
 
-```go
-package models
-
-import (
-	"time"
-	
-	"github.com/gobuffalo/pop/nulls"
-	"github.com/gobuffalo/uuid"
-)
-
-type Soda struct {
-	ID                   uuid.UUID    `db:"id"`
-	CreatedAt            time.Time    `db:"created_at"`
-	UpdatedAt            time.Time    `db:"updated_at"`
-	Label                nulls.String `db:"label"`
-}
-```
+<%= partial("docs/db/models_sodas_go.md") %>
 
 That's it! You don't need anything else to work with Pop! Note, for each table field, we defined a `db` tag matching the field name, but it's not required. If you don't provide a name, Pop will use the name of the struct field to generate one.
 
@@ -199,3 +174,64 @@ func (u User) TableName() string {
   return "my_users"
 }
 ```
+
+<%= title("Views Models") %>
+
+A [view](https://en.wikipedia.org/wiki/View_(SQL)) is a database collection object which stores the result of a query. Since this object acts as a read-only table, you can map it with Pop models just like a table.
+
+If you want to use a model with more than one table, defining a view is probably the best solution for you.
+
+### Example
+
+The following example use the PostgreSQL syntax. We'll start by creating two tables:
+
+```sql
+-- Create a sodas table
+CREATE TABLE sodas (
+    id uuid NOT NULL,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL,
+    provider_id uuid NOT NULL,
+    label character varying(255) NOT NULL
+);
+
+ALTER TABLE sodas ADD CONSTRAINT sodas_pkey PRIMARY KEY (id);
+
+-- Create a providers table
+CREATE TABLE providers (
+    id uuid NOT NULL,
+    label character varying(255) NOT NULL
+);
+
+ALTER TABLE providers ADD CONSTRAINT providers_pkey PRIMARY KEY (id);
+
+-- Create a foreign key between the two tables
+ALTER TABLE sodas ADD FOREIGN KEY (provider_id) REFERENCES providers(id);
+```
+
+Then create a view from the two tables:
+
+```sql
+CREATE VIEW sodas_with_providers AS
+SELECT s.id, s.created_at, s.updated_at, p.label AS provider_label, s.label
+FROM sodas s
+LEFT JOIN providers p ON p.id = s.provider_id;
+```
+
+Since the view is considered as a table by Pop, let's finish by declaring a new model:
+
+```sql
+type Soda struct {
+	ID                   uuid.UUID    `db:"id" rw:"r"`
+	CreatedAt            time.Time    `db:"created_at" rw:"r"`
+	UpdatedAt            time.Time    `db:"updated_at" rw:"r"`
+	Label                string       `db:"label" rw:"r"`
+	ProviderLabel        string       `db:"provider_label" rw:"r"`
+}
+```
+
+As we learned in this chapter, each attribute on the structure has a read-only tag `rw:"r"`. Since a view is a read-only object, it prevents any writing operation before hitting the database.
+
+<%= title("Related Content") %>
+
+* [Migrations](/en/docs/db/migrations) - Write database migrations.

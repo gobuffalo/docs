@@ -3,7 +3,7 @@
 
 <%= h1("Boîte à outils de BDD") %>
 
-Pop est une bibliothèque permettant de communiquer avec des bases de données, mais elle founit également `soda`, une petite boîte à outils en ligne de commande pour gérer vos bases de données. Elle peut vous aider à créer une nouvelle base de données, supprimer des bases existantes, et bien plus.
+Pop est une bibliothèque permettant de communiquer avec des bases de données, mais elle fournit également `soda`, une petite boîte à outils en ligne de commande pour gérer vos bases de données. Elle peut vous aider à créer une nouvelle base de données, supprimer des bases existantes, et bien plus.
 
 <%= note() { %>
 **Note pour les utilisateurs de Buffalo**: les commandes de `soda` sont intégrées à la commande `buffalo`, sous la commande `db`. À chaque fois que vous voulez utiliser une commande de `soda`, il vous suffit d'utiliser `buffalo db` à la place.

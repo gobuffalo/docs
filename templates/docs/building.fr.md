@@ -1,7 +1,7 @@
-<% seoDescription("Empaquetage d'une app") %>
+<% seoDescription("Empaquetage") %>
 <% seoKeywords(["buffalo", "go", "golang", "empaquetage", "binaire", "build", "contruction", "compilation"]) %>
 
-<%= h1("Empaquetage d'une app") %>
+<%= h1("Empaquetage") %>
 
 Votre projet est désormais prêt à être déployé. Dans cette section, vous allez apprendre comment empaqueter une version de votre application et la déployer sur un serveur.
 
@@ -96,3 +96,8 @@ $ ./coke task greet
 
 Hello World!
 ```
+
+<%= title("Prochaines étapes") %>
+
+* [Utilisation d'un proxy](/fr/docs/proxy) - Intégrez votre application avec un serveur comme NGINX.
+* [Service systemd](/fr/docs/systemd) - Gérez votre application comme un service systemd.

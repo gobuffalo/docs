@@ -1,7 +1,7 @@
-<% seoDescription("App Packing") %>
+<% seoDescription("Packing") %>
 <% seoKeywords(["buffalo", "go", "golang", "pack", "binary", "build"]) %>
 
-<%= h1("App Packing") %>
+<%= h1("Packing") %>
 
 Now, your project is ready to be deployed. In this section, you will learn how to package a version of your app to deploy it on a server.
 
@@ -96,3 +96,8 @@ $ ./coke task greet
 
 Hello World!
 ```
+
+<%= title("Next Steps") %>
+
+* [Using a Proxy](/en/docs/proxy) - Integrate your app with a server like NGINX.
+* [Systemd Service](/en/docs/systemd) - Run your app as a systemd service.

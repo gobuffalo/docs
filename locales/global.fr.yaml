@@ -106,13 +106,16 @@
   translation: Déploiement
 
 - id: menu.building-binaries
-  translation: Empaquetage d'une app
+  translation: Empaquetage
 
 - id: menu.using-proxy
   translation: Utilisation d'un proxy
 
 - id: menu.systemd-service
   translation: Service Systemd
+
+- id: menu.deploy-providers-solutions
+  translation: Fournisseurs cloud
 
 # Releases page
 - id: releases.title

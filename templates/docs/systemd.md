@@ -1,13 +1,13 @@
 <% seoDescription("Systemd Service") %>
 <% seoKeywords(["buffalo", "go", "golang", "service", "systemd", "debian", "redhat", "centos"]) %>
 
-<%= h1("Systemd service") %>
+<%= h1("Systemd Service") %>
 
 In this chapter, we'll see how to setup you Buffalo app as a Systemd service. Systemd is the new standard on many GNU/Linux distributions, for running the system services.
 
 It allows you to configure an application in a standard way, and manage its lifecycle with `systemctl` commands.
 
-<%= title("Install your buffalo app") %>
+<%= title("Install your Buffalo App") %>
 
 The first step is to place your app into the right folder: on Debian, the common place for executables installed by hand is `/usr/local/bin`. That's where we'll install the app.
 

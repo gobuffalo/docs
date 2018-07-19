@@ -106,13 +106,16 @@
   translation: Deploy
 
 - id: menu.building-binaries
-  translation: App Packing
+  translation: Packing
 
 - id: menu.using-proxy
   translation: Using a proxy
 
 - id: menu.systemd-service
   translation: Systemd service
+
+- id: menu.deploy-providers-solutions
+  translation: Cloud Providers
 
 # Releases page
 - id: releases.title

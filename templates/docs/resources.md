@@ -60,21 +60,23 @@ Aliases:
 ```bash
 $ buffalo g resource users name email bio:nulls.Text
 
---> actions/users.go
---> actions/users_test.go
---> locales/users.en-us.yaml
---> templates/users/_form.html
---> templates/users/edit.html
---> templates/users/index.html
---> templates/users/new.html
---> templates/users/show.html
---> buffalo db g model user name email bio:nulls.Text
---> models/user.go
---> models/user_test.go
---> goimports -w .
-> migrations/20170410180211_create_users.up.fizz
-> migrations/20170410180211_create_users.down.fizz
---> goimports -w .
+      create  actions/users.go
+      create  actions/users_test.go
+      create  locales/users.en-us.yaml
+      create  templates/users/_form.html
+      create  templates/users/edit.html
+      create  templates/users/index.html
+      create  templates/users/new.html
+      create  templates/users/show.html
+         run  buffalo db g model user name email bio:nulls.Text
+<%= version %>
+
+      create  models/user.go
+      create  models/user_test.go
+         run  goimports -w actions/actions_test.go actions/app.go actions/home.go actions/home_test.go actions/render.go actions/users.go actions/users_test.go grifts/db.go grifts/init.go main.go models/models.go models/models_test.go models/user.go models/user_test.go
+      create  migrations/20180719054002_create_users.up.fizz
+      create  migrations/20180719054002_create_users.down.fizz
+         run  goimports -w actions/actions_test.go actions/app.go actions/home.go actions/home_test.go actions/render.go actions/users.go actions/users_test.go grifts/db.go grifts/init.go main.go models/models.go models/models_test.go models/user.go models/user_test.go
 ```
 
 ```go
@@ -82,15 +84,16 @@ $ buffalo g resource users name email bio:nulls.Text
 package actions
 
 import (
-  "github.com/gobuffalo/buffalo"
-  "github.com/gobuffalo/buffalo/middleware"
-  "github.com/gobuffalo/buffalo/middleware/csrf"
-  "github.com/gobuffalo/buffalo/middleware/i18n"
+	"github.com/gobuffalo/buffalo"
+	"github.com/gobuffalo/buffalo/middleware"
+	"github.com/gobuffalo/buffalo/middleware/ssl"
+	"github.com/gobuffalo/envy"
+	"github.com/unrolled/secure"
 
-  "github.com/markbates/coke/models"
-
-  "github.com/gobuffalo/envy"
-  "github.com/gobuffalo/packr"
+	"github.com/gobuffalo/buffalo/middleware/csrf"
+	"github.com/gobuffalo/buffalo/middleware/i18n"
+	"github.com/gobuffalo/packr"
+	"github.com/markbates/coke/models"
 )
 
 // ENV is used to help switch settings based on where the
@@ -103,40 +106,61 @@ var T *i18n.Translator
 // should be defined. This is the nerve center of your
 // application.
 func App() *buffalo.App {
-  if app == nil {
-    app = buffalo.New(buffalo.Options{
-      Env:         ENV,
-      SessionName: "_coke_session",
-    })
+	if app == nil {
+		app = buffalo.New(buffalo.Options{
+			Env:         ENV,
+			SessionName: "_coke_session",
+		})
+		// Automatically redirect to SSL
+		app.Use(forceSSL())
 
-    if ENV == "development" {
-      app.Use(middleware.ParameterLogger)
-    }
-    if ENV != "test" {
-      // Protect against CSRF attacks. https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)
-      // Remove to disable this.
-      app.Use(csrf.New)
-    }
+		if ENV == "development" {
+			app.Use(middleware.ParameterLogger)
+		}
 
-    // Wraps each request in a transaction.
-    //  c.Value("tx").(*pop.PopTransaction)
-    // Remove to disable this.
-    app.Use(middleware.PopTransaction(models.DB))
+		// Protect against CSRF attacks. https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)
+		// Remove to disable this.
+		app.Use(csrf.New)
 
-    // Setup and use translations:
-    var err error
-    if T, err = i18n.New(packr.NewBox("../locales"), "en-US"); err != nil {
-      app.Stop(err)
-    }
-    app.Use(T.Middleware())
+		// Wraps each request in a transaction.
+		//  c.Value("tx").(*pop.PopTransaction)
+		// Remove to disable this.
+		app.Use(middleware.PopTransaction(models.DB))
 
-    app.GET("/", HomeHandler)
+		// Setup and use translations:
+		app.Use(translations())
 
-    app.ServeFiles("/assets", packr.NewBox("../public/assets"))
-    app.Resource("/users", UsersResource{&buffalo.BaseResource{}})
-  }
+		app.GET("/", HomeHandler)
 
-  return app
+		app.Resource("/users", UsersResource{})
+		app.ServeFiles("/", assetsBox) // serve files from the public directory
+	}
+
+	return app
+}
+
+// translations will load locale files, set up the translator `actions.T`,
+// and will return a middleware to use to load the correct locale for each
+// request.
+// for more information: https://gobuffalo.io/en/docs/localization
+func translations() buffalo.MiddlewareFunc {
+	var err error
+	if T, err = i18n.New(packr.NewBox("../locales"), "en-US"); err != nil {
+		app.Stop(err)
+	}
+	return T.Middleware()
+}
+
+// forceSSL will return a middleware that will redirect an incoming request
+// if it is not HTTPS. "http://example.com" => "https://example.com".
+// This middleware does **not** enable SSL. for your application. To do that
+// we recommend using a proxy: https://gobuffalo.io/en/docs/proxy
+// for more information: https://github.com/unrolled/secure/
+func forceSSL() buffalo.MiddlewareFunc {
+	return ssl.ForceSSL(secure.Options{
+		SSLRedirect:     ENV == "production",
+		SSLProxyHeaders: map[string]string{"X-Forwarded-Proto": "https"},
+	})
 }
 ```
 
@@ -145,10 +169,10 @@ func App() *buffalo.App {
 package actions
 
 import (
-  "github.com/gobuffalo/buffalo"
-  "github.com/markbates/coke/models"
-  "github.com/gobuffalo/pop"
-  "github.com/pkg/errors"
+	"github.com/gobuffalo/buffalo"
+	"github.com/gobuffalo/pop"
+	"github.com/pkg/errors"
+	"github.com/markbates/coke/models"
 )
 
 // This file is generated by Buffalo. It offers a basic structure for
@@ -158,162 +182,194 @@ import (
 
 // Following naming logic is implemented in Buffalo:
 // Model: Singular (User)
-// DB Table: Plural (Users)
+// DB Table: Plural (users)
 // Resource: Plural (Users)
 // Path: Plural (/users)
 // View Template Folder: Plural (/templates/users/)
 
-// UsersResource is the resource for the user model
+// UsersResource is the resource for the User model
 type UsersResource struct {
-  buffalo.Resource
+	buffalo.Resource
 }
 
 // List gets all Users. This function is mapped to the path
 // GET /users
 func (v UsersResource) List(c buffalo.Context) error {
-  // Get the DB connection from the context
-  tx := c.Value("tx").(*pop.Connection)
-  users := &models.Users{}
-  // You can order your list here. Just change
-  err := tx.All(users)
-  // to:
-  // err := tx.Order("create_at desc").All(users)
-  if err != nil {
-    return errors.WithStack(err)
-  }
-  // Make users available inside the html template
-  c.Set("users", users)
-  return c.Render(200, r.HTML("users/index.html"))
+	// Get the DB connection from the context
+	tx, ok := c.Value("tx").(*pop.Connection)
+	if !ok {
+		return errors.WithStack(errors.New("no transaction found"))
+	}
+
+	users := &models.Users{}
+
+	// Paginate results. Params "page" and "per_page" control pagination.
+	// Default values are "page=1" and "per_page=20".
+	q := tx.PaginateFromParams(c.Params())
+
+	// Retrieve all Users from the DB
+	if err := q.All(users); err != nil {
+		return errors.WithStack(err)
+	}
+
+	// Add the paginator to the context so it can be used in the template.
+	c.Set("pagination", q.Paginator)
+
+	return c.Render(200, r.Auto(c, users))
 }
 
 // Show gets the data for one User. This function is mapped to
 // the path GET /users/{user_id}
 func (v UsersResource) Show(c buffalo.Context) error {
-  // Get the DB connection from the context
-  tx := c.Value("tx").(*pop.Connection)
-  // Allocate an empty User
-  user := &models.User{}
-  // To find the User the parameter user_id is used.
-  err := tx.Find(user, c.Param("user_id"))
-  if err != nil {
-    return errors.WithStack(err)
-  }
-  // Make user available inside the html template
-  c.Set("user", user)
-  return c.Render(200, r.HTML("users/show.html"))
+	// Get the DB connection from the context
+	tx, ok := c.Value("tx").(*pop.Connection)
+	if !ok {
+		return errors.WithStack(errors.New("no transaction found"))
+	}
+
+	// Allocate an empty User
+	user := &models.User{}
+
+	// To find the User the parameter user_id is used.
+	if err := tx.Find(user, c.Param("user_id")); err != nil {
+		return c.Error(404, err)
+	}
+
+	return c.Render(200, r.Auto(c, user))
 }
 
-// New renders the form for creating a new user.
+// New renders the form for creating a new User.
 // This function is mapped to the path GET /users/new
 func (v UsersResource) New(c buffalo.Context) error {
-  // Make user available inside the html template
-  c.Set("user", &models.User{})
-  return c.Render(200, r.HTML("users/new.html"))
+	return c.Render(200, r.Auto(c, &models.User{}))
 }
 
-// Create adds a user to the DB. This function is mapped to the
+// Create adds a User to the DB. This function is mapped to the
 // path POST /users
 func (v UsersResource) Create(c buffalo.Context) error {
-  // Allocate an empty User
-  user := &models.User{}
-  // Bind user to the html form elements
-  err := c.Bind(user)
-  if err != nil {
-    return errors.WithStack(err)
-  }
-  // Get the DB connection from the context
-  tx := c.Value("tx").(*pop.Connection)
-  // Validate the data from the html form
-  verrs, err := tx.ValidateAndCreate(user)
-  if err != nil {
-    return errors.WithStack(err)
-  }
-  if verrs.HasAny() {
-    // Make user available inside the html template
-    c.Set("user", user)
-    // Make the errors available inside the html template
-    c.Set("errors", verrs)
-    // Render again the new.html template that the user can
-    // correct the input.
-    return c.Render(422, r.HTML("users/new.html"))
-  }
-  // If there are no errors set a success message
-  c.Flash().Add("success", "User was created successfully")
-  // and redirect to the users index page
-  return c.Redirect(302, "/users/%s", user.ID)
+	// Allocate an empty User
+	user := &models.User{}
+
+	// Bind user to the html form elements
+	if err := c.Bind(user); err != nil {
+		return errors.WithStack(err)
+	}
+
+	// Get the DB connection from the context
+	tx, ok := c.Value("tx").(*pop.Connection)
+	if !ok {
+		return errors.WithStack(errors.New("no transaction found"))
+	}
+
+	// Validate the data from the html form
+	verrs, err := tx.ValidateAndCreate(user)
+	if err != nil {
+		return errors.WithStack(err)
+	}
+
+	if verrs.HasAny() {
+		// Make the errors available inside the html template
+		c.Set("errors", verrs)
+
+		// Render again the new.html template that the user can
+		// correct the input.
+		return c.Render(422, r.Auto(c, user))
+	}
+
+	// If there are no errors set a success message
+	c.Flash().Add("success", "User was created successfully")
+
+	// and redirect to the users index page
+	return c.Render(201, r.Auto(c, user))
 }
 
-// Edit renders a edit formular for a user. This function is
+// Edit renders a edit form for a User. This function is
 // mapped to the path GET /users/{user_id}/edit
 func (v UsersResource) Edit(c buffalo.Context) error {
-  // Get the DB connection from the context
-  tx := c.Value("tx").(*pop.Connection)
-  // Allocate an empty User
-  user := &models.User{}
-  err := tx.Find(user, c.Param("user_id"))
-  if err != nil {
-    return errors.WithStack(err)
-  }
-  // Make user available inside the html template
-  c.Set("user", user)
-  return c.Render(200, r.HTML("users/edit.html"))
+	// Get the DB connection from the context
+	tx, ok := c.Value("tx").(*pop.Connection)
+	if !ok {
+		return errors.WithStack(errors.New("no transaction found"))
+	}
+
+	// Allocate an empty User
+	user := &models.User{}
+
+	if err := tx.Find(user, c.Param("user_id")); err != nil {
+		return c.Error(404, err)
+	}
+
+	return c.Render(200, r.Auto(c, user))
 }
 
-// Update changes a user in the DB. This function is mapped to
+// Update changes a User in the DB. This function is mapped to
 // the path PUT /users/{user_id}
 func (v UsersResource) Update(c buffalo.Context) error {
-  // Get the DB connection from the context
-  tx := c.Value("tx").(*pop.Connection)
-  // Allocate an empty User
-  user := &models.User{}
-  err := tx.Find(user, c.Param("user_id"))
-  if err != nil {
-    return errors.WithStack(err)
-  }
-  // Bind user to the html form elements
-  err = c.Bind(user)
-  if err != nil {
-    return errors.WithStack(err)
-  }
-  verrs, err := tx.ValidateAndUpdate(user)
-  if err != nil {
-    return errors.WithStack(err)
-  }
-  if verrs.HasAny() {
-    // Make user available inside the html template
-    c.Set("user", user)
-    // Make the errors available inside the html template
-    c.Set("errors", verrs)
-    // Render again the edit.html template that the user can
-    // correct the input.
-    return c.Render(422, r.HTML("users/edit.html"))
-  }
-  // If there are no errors set a success message
-  c.Flash().Add("success", "User was updated successfully")
-  // and redirect to the users index page
-  return c.Redirect(302, "/users/%s", user.ID)
+	// Get the DB connection from the context
+	tx, ok := c.Value("tx").(*pop.Connection)
+	if !ok {
+		return errors.WithStack(errors.New("no transaction found"))
+	}
+
+	// Allocate an empty User
+	user := &models.User{}
+
+	if err := tx.Find(user, c.Param("user_id")); err != nil {
+		return c.Error(404, err)
+	}
+
+	// Bind User to the html form elements
+	if err := c.Bind(user); err != nil {
+		return errors.WithStack(err)
+	}
+
+	verrs, err := tx.ValidateAndUpdate(user)
+	if err != nil {
+		return errors.WithStack(err)
+	}
+
+	if verrs.HasAny() {
+		// Make the errors available inside the html template
+		c.Set("errors", verrs)
+
+		// Render again the edit.html template that the user can
+		// correct the input.
+		return c.Render(422, r.Auto(c, user))
+	}
+
+	// If there are no errors set a success message
+	c.Flash().Add("success", "User was updated successfully")
+
+	// and redirect to the users index page
+	return c.Render(200, r.Auto(c, user))
 }
 
-// Destroy deletes a user from the DB. This function is mapped
+// Destroy deletes a User from the DB. This function is mapped
 // to the path DELETE /users/{user_id}
 func (v UsersResource) Destroy(c buffalo.Context) error {
-  // Get the DB connection from the context
-  tx := c.Value("tx").(*pop.Connection)
-  // Allocate an empty User
-  user := &models.User{}
-  // To find the User the parameter user_id is used.
-  err := tx.Find(user, c.Param("user_id"))
-  if err != nil {
-    return errors.WithStack(err)
-  }
-  err = tx.Destroy(user)
-  if err != nil {
-    return errors.WithStack(err)
-  }
-  // If there are no errors set a flash message
-  c.Flash().Add("success", "User was destroyed successfully")
-  // Redirect to the users index page
-  return c.Redirect(302, "/users")
+	// Get the DB connection from the context
+	tx, ok := c.Value("tx").(*pop.Connection)
+	if !ok {
+		return errors.WithStack(errors.New("no transaction found"))
+	}
+
+	// Allocate an empty User
+	user := &models.User{}
+
+	// To find the User the parameter user_id is used.
+	if err := tx.Find(user, c.Param("user_id")); err != nil {
+		return c.Error(404, err)
+	}
+
+	if err := tx.Destroy(user); err != nil {
+		return errors.WithStack(err)
+	}
+
+	// If there are no errors set a flash message
+	c.Flash().Add("success", "User was destroyed successfully")
+
+	// Redirect to the users index page
+	return c.Render(200, r.Auto(c, user))
 }
 ```
 
@@ -322,29 +378,29 @@ func (v UsersResource) Destroy(c buffalo.Context) error {
 package models
 
 import (
-  "encoding/json"
-  "time"
+	"encoding/json"
+	"time"
 
-  "github.com/gobuffalo/pop"
-  "github.com/gobuffalo/pop/nulls"
-  "github.com/markbates/validate"
-  "github.com/markbates/validate/validators"
-  "github.com/satori/go.uuid"
+	"github.com/gobuffalo/pop"
+	"github.com/gobuffalo/pop/nulls"
+	"github.com/gobuffalo/uuid"
+	"github.com/gobuffalo/validate"
+	"github.com/gobuffalo/validate/validators"
 )
 
 type User struct {
-  ID        uuid.UUID    `json:"id" db:"id"`
-  CreatedAt time.Time    `json:"created_at" db:"created_at"`
-  UpdatedAt time.Time    `json:"updated_at" db:"updated_at"`
-  Name      string       `json:"name" db:"name"`
-  Email     string       `json:"email" db:"email"`
-  Bio       nulls.String `json:"bio" db:"bio"`
+	ID        uuid.UUID    `json:"id" db:"id"`
+	CreatedAt time.Time    `json:"created_at" db:"created_at"`
+	UpdatedAt time.Time    `json:"updated_at" db:"updated_at"`
+	Name      string       `json:"name" db:"name"`
+	Email     string       `json:"email" db:"email"`
+	Bio       nulls.String `json:"bio" db:"bio"`
 }
 
 // String is not required by pop and may be deleted
 func (u User) String() string {
-  ju, _ := json.Marshal(u)
-  return string(ju)
+	ju, _ := json.Marshal(u)
+	return string(ju)
 }
 
 // Users is not required by pop and may be deleted
@@ -352,60 +408,61 @@ type Users []User
 
 // String is not required by pop and may be deleted
 func (u Users) String() string {
-  ju, _ := json.Marshal(u)
-  return string(ju)
+	ju, _ := json.Marshal(u)
+	return string(ju)
 }
 
-// Validate gets run everytime you call a "pop.Validate" method.
+// Validate gets run every time you call a "pop.Validate*" (pop.ValidateAndSave, pop.ValidateAndCreate, pop.ValidateAndUpdate) method.
 // This method is not required and may be deleted.
 func (u *User) Validate(tx *pop.Connection) (*validate.Errors, error) {
-  return validate.Validate(
-    &validators.StringIsPresent{Field: u.Name, Name: "Name"},
-    &validators.StringIsPresent{Field: u.Email, Name: "Email"},
-  ), nil
+	return validate.Validate(
+		&validators.StringIsPresent{Field: u.Name, Name: "Name"},
+		&validators.StringIsPresent{Field: u.Email, Name: "Email"},
+	), nil
 }
 
-// ValidateSave gets run everytime you call "pop.ValidateSave" method.
+// ValidateCreate gets run every time you call "pop.ValidateAndCreate" method.
 // This method is not required and may be deleted.
-func (u *User) ValidateSave(tx *pop.Connection) (*validate.Errors, error) {
-  return validate.NewErrors(), nil
+func (u *User) ValidateCreate(tx *pop.Connection) (*validate.Errors, error) {
+	return validate.NewErrors(), nil
 }
 
-// ValidateUpdate gets run everytime you call "pop.ValidateUpdate" method.
+// ValidateUpdate gets run every time you call "pop.ValidateAndUpdate" method.
 // This method is not required and may be deleted.
 func (u *User) ValidateUpdate(tx *pop.Connection) (*validate.Errors, error) {
-  return validate.NewErrors(), nil
+	return validate.NewErrors(), nil
 }
 ```
 
 ```fizz
 // migration
-create_table("users", func(t) {
-  t.Column("id", "uuid", {"primary": true})
-  t.Column("name", "string", {})
-  t.Column("email", "string", {})
-  t.Column("bio", "text", {"null": true})
-})
+create_table("users") {
+	t.Column("id", "uuid", {"primary": true})
+	t.Column("name", "string", {})
+	t.Column("email", "string", {})
+	t.Column("bio", "text", {"null": true})
+}
 ```
 
 ```html
-// users/index.html
-&lt;h1&gt;Users&lt;/h1&gt;
-
-&lt;p&gt;
-  &lt;a href="&lt;%= newUserPath() %&gt;" class="btn btn-primary"&gt;Create New User&lt;/a&gt;
-&lt;/p&gt;
+// templates/users/index.html
+&lt;div class="page-header"&gt;
+  &lt;h1&gt;Users&lt;/h1&gt;
+&lt;/div&gt;
+&lt;ul class="list-unstyled list-inline"&gt;
+  &lt;li&gt;&lt;a href="&lt;%= newUsersPath() %&gt;" class="btn btn-primary"&gt;Create New User&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;table class="table table-striped"&gt;
   &lt;thead&gt;
   &lt;th&gt;Name&lt;/th&gt;
-  &lt;th&gt;Email&lt;/th&gt;
-  &lt;th&gt;&amp;amp;nbsp;&lt;/th&gt;
+    &lt;th&gt;Email&lt;/th&gt;
+    &lt;th&gt;&nbsp;&lt;/th&gt;
   &lt;/thead&gt;
   &lt;tbody&gt;
     &lt;%= for (user) in users { %&gt;
       &lt;tr&gt;
-        &lt;td&gt;&lt;%= user.Name %&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;%= user.Name %&gt;&lt;/td&gt;
         &lt;td&gt;&lt;%= user.Email %&gt;&lt;/td&gt;
         &lt;td&gt;
           &lt;div class="pull-right"&gt;
@@ -418,16 +475,22 @@ create_table("users", func(t) {
     &lt;% } %&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
+
+&lt;div class="text-center"&gt;
+  &lt;%= paginator(pagination) %&gt;
+&lt;/div&gt;
 ```
 
 ```html
-// users/show.html
-&lt;h1&gt;Users#Show&lt;/h1&gt;
+// templates/users/show.html
+&lt;div class="page-header"&gt;
+  &lt;h1&gt;User#Show&lt;/h1&gt;
+&lt;/div&gt;
 
 &lt;ul class="list-unstyled list-inline"&gt;
-  &lt;li&gt;&lt;a href="&lt;%= usersPath() %&gt;" class="btn btn-info"&gt;Back to all Users&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="&lt;%= editUserPath({ user_id: user.ID })%&gt;" class="btn btn-warning"&gt;Edit&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="&lt;%= userPath({ user_id: user.ID })%&gt;" data-method="DELETE" data-confirm="Are you sure?" class="btn btn-danger"&gt;Destroy&lt;/a&gt;
+  &lt;li class="list-inline-item"&gt;&lt;a href="&lt;%= usersPath() %&gt;" class="btn btn-info"&gt;Back to all Users&lt;/a&gt;&lt;/li&gt;
+  &lt;li class="list-inline-item"&gt;&lt;a href="&lt;%= editUserPath({ user_id: user.ID })%&gt;" class="btn btn-warning"&gt;Edit&lt;/a&gt;&lt;/li&gt;
+  &lt;li class="list-inline-item"&gt;&lt;a href="&lt;%= userPath({ user_id: user.ID })%&gt;" data-method="DELETE" data-confirm="Are you sure?" class="btn btn-danger"&gt;Destroy&lt;/a&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;
@@ -442,8 +505,10 @@ create_table("users", func(t) {
 ```
 
 ```html
-// users/new.html
-&lt;h1&gt;New User&lt;/h1&gt;
+// templates/users/new.html
+&lt;div class="page-header"&gt;
+  &lt;h1&gt;New User&lt;/h1&gt;
+&lt;/div&gt;
 
 &lt;%= form_for(user, {action: usersPath(), method: "POST"}) { %&gt;
   &lt;%= partial("users/form.html") %&gt;
@@ -452,20 +517,22 @@ create_table("users", func(t) {
 ```
 
 ```html
-// users/_form.html
+// templates/users/_form.html
 &lt;%= f.InputTag("Name") %&gt;
 &lt;%= f.InputTag("Email") %&gt;
-&lt;%= f.TextArea("Bio", {rows: 10}) %&gt;
+&lt;%= f.TextAreaTag("Bio", {rows: 10}) %&gt;
 &lt;button class="btn btn-success" role="submit"&gt;Save&lt;/button&gt;
 ```
 
 ```html
-// users/edit.html
-&lt;h1&gt;Edit User&lt;/h1&gt;
+// templates/users/edit.html
+&lt;div class="page-header"&gt;
+  &lt;h1&gt;Edit User&lt;/h1&gt;
+&lt;/div&gt;
 
 &lt;%= form_for(user, {action: userPath({ user_id: user.ID }), method: "PUT"}) { %&gt;
   &lt;%= partial("users/form.html") %&gt;
-  &lt;a href="\&lt;%= userPath({ user_id: user.ID }) %&gt;" class="btn btn-warning" data-confirm="Are you sure?"&gt;Cancel&lt;/a&gt;
+  &lt;a href="&lt;%= userPath({ user_id: user.ID }) %&gt;" class="btn btn-warning" data-confirm="Are you sure?"&gt;Cancel&lt;/a&gt;
 &lt;% } %&gt;
 ```
 

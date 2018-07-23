@@ -1,4 +1,4 @@
-<% seoDescription("Configuration") %>
+<% seoDescription("Fizz") %>
 <% seoKeywords(["buffalo", "go", "golang", "database", "fizz", "pop", "DSL"]) %>
 
 <%= h1("Fizz") %>

@@ -23,7 +23,7 @@ $ soda migrate
 $ soda migrate up
 ```
 
-Ces deux commandes sont identiques d'un point de vue fonctionnel, mais la première est plus courte à taper !
+Ces deux commandes sont identiques d'un point de vue fonctionnel, mais la première est plus courte à taper ! Les migrations seront exécutées par ordre séquentiel.
 
 ### Annuler une migration
 Si vous souhaitez annuler l'effet de la dernière migration, vous pouvez utiliser la commande suivante :

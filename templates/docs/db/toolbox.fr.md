@@ -1,7 +1,7 @@
-<% seoDescription("Boîte à outils Soda") %>
-<% seoKeywords(["buffalo", "go", "golang", "base de données", "outils", "pop", "soda"]) %>
+<% seoDescription("CLI Soda") %>
+<% seoKeywords(["buffalo", "go", "golang", "base de données", "outils", "pop", "CLI", "soda"]) %>
 
-<%= h1("Boîte à outils de BDD") %>
+<%= h1("CLI Soda") %>
 
 Pop est une bibliothèque permettant de communiquer avec des bases de données, mais elle fournit également `soda`, une petite boîte à outils en ligne de commande pour gérer vos bases de données. Elle peut vous aider à créer une nouvelle base de données, supprimer des bases existantes, et bien plus.
 

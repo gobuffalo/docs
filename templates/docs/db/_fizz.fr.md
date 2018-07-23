@@ -2,9 +2,22 @@
 
 <%= partial("docs/db/soda_buffalo_note.md") %>
 
-Pop utilise [Fizz](https://github.com/gobuffalo/fizz/blob/master/README.md) pour générer des migrations à la fois faciles à écrire, et qui s'adaptent autant que faire se peut aux différents types de bases de données.
+La commande `soda` permet de générer des fichiers de migrations SQL (une pour appliquer, l'autre pour annuler) pour vous.
 
-Pour générer une nouvelle migration **vide**, utilisez la commande ci-dessous :
+```bash
+$ soda generate fizz nom_de_la_migration
+```
+
+Lancer cette commande génère les fichiers **vides** suivants :
+
+```text
+./migrations/20160815134952_nom_de_la_migration.up.fizz
+./migrations/20160815134952_nom_de_la_migration.down.fizz
+```
+
+Ces migrations sont des fichiers `fizz`. Pop utilise [Fizz](https://github.com/gobuffalo/fizz/blob/master/README.md) pour générer des migrations à la fois faciles à écrire, et qui s'adaptent autant que faire se peut aux différents types de bases de données.
+
+Pour en savoir plus sur cette commande, vous pouvez utiliser l'option `--help` :
 
 ```bash
 $ soda g migration --help

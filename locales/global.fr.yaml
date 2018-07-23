@@ -76,7 +76,7 @@
   translation: Configuration
 
 - id: menu.db-toolbox
-  translation: Boîte à outils Soda
+  translation: CLI Soda
 
 - id: menu.db-models
   translation: Modèles

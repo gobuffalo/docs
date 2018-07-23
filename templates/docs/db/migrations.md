@@ -23,7 +23,7 @@ $ soda migrate
 $ soda migrate up
 ```
 
-Both commands are identical, one is shorter to type!
+Both commands are identical, one is shorter to type! Migrations will be run in sequential order.
 
 ### Rollback a Migration
 If you want to rollback the last applied migration, use the following command:

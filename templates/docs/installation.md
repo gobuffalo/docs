@@ -40,6 +40,17 @@ $ wget  https://github.com/gobuffalo/buffalo/releases/download/v<%= version %>/b
 $ tar -xvzf buffalo_<%= version %>_linux_amd64.tar.gz
 $ sudo mv buffalo-no-sqlite /usr/local/bin/buffalo
 ```
+
+### MacOS
+
+```bash
+$ wget  https://github.com/gobuffalo/buffalo/releases/download/v<%= version %>/buffalo_<%= version %>_darwin_amd64.tar.gz
+$ tar -xvzf buffalo_<%= version %>_darwin_amd64.tar.gz
+$ sudo mv buffalo-no-sqlite /usr/local/bin/buffalo
+# or if you have ~/bin folder setup in the environment PATH variable
+$ mv buffalo-no-sqlite ~/bin/buffalo
+```
+
 ### Windows
 Buffalo can be installed using the [Scoop](http://scoop.sh/) package manager:
 

@@ -1,7 +1,5 @@
 ### SQL Migrations
 
-<%= partial("docs/db/soda_buffalo_note.md") %>
-
 If you don't want to use Fizz, or you have a complicated query you want to execute, you can use SQL.
 
 To generate a new **empty** migration, use the following command:

@@ -8,11 +8,12 @@ Software maintenance is a hard task, and you'll probably need to patch your data
 You can create new migrations using `fizz`, a custom language describing the database changes in the most database-agnostic way; or use SQL statements if you prefer.
 
 <%= title("Writing Migrations") %>
+<%= partial("docs/db/soda_buffalo_note.md") %>
+
 <%= partial("docs/db/fizz.md") %>
 <%= partial("docs/db/sql.md") %>
 
 <%= title("Running Migrations") %>
-
 <%= partial("docs/db/soda_buffalo_note.md") %>
 
 ### Apply Migrations

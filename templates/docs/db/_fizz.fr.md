@@ -1,7 +1,5 @@
 ### Migrations Fizz
 
-<%= partial("docs/db/soda_buffalo_note.md") %>
-
 La commande `soda` permet de générer des fichiers de migrations SQL (une pour appliquer, l'autre pour annuler) pour vous.
 
 ```bash

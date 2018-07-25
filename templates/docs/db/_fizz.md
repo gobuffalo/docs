@@ -1,7 +1,5 @@
 ### Fizz Migrations
 
-<%= partial("docs/db/soda_buffalo_note.md") %>
-
 The `soda` command will generate SQL migrations (both the up and down) files for you.
 
 ```bash

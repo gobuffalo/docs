@@ -8,11 +8,12 @@ Maintenir un logiciel n'est pas une tâche simple, et vous devrez sans doûte pa
 Vous pouvez écrire de nouvelles migrations en utilisant `fizz`, un langage de description des changements de votre base de données agnostique ; ou utiliser du SQL si vous préférez.
 
 <%= title("Écrire des migrations") %>
+<%= partial("docs/db/soda_buffalo_note.md") %>
+
 <%= partial("docs/db/fizz.md") %>
 <%= partial("docs/db/sql.md") %>
 
 <%= title("Exécuter des migrations") %>
-
 <%= partial("docs/db/soda_buffalo_note.md") %>
 
 ### Appliquer les migrations

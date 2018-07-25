@@ -1,7 +1,5 @@
 ### Migrations SQL
 
-<%= partial("docs/db/soda_buffalo_note.md") %>
-
 Si vous ne voulez pas utiliser Fizz, ou si vous souhaitez exécuter une requête complexe, vous pouvez utiliser des migrations SQL.
 
 Pour générer une nouvelle migration, utilisez la commande suivante :

@@ -12,7 +12,7 @@ Pop, par défaut, suit des conventions influencées par la gem Ruby ActiveRecord
 * Les tables doivent avoir une colonne « id » et un champ « ID » correspondant dans la structure Go utilisée.
 * Si une colonne `created_at` de type timestamp est définie, et que la structure Go correspondante possède un attribut `CreatedAt time.Time` ; la valeur de ce champ sera automatiquement modifiée avec le temps courant lors de la création de l'entrée dans la base.
 * Si une colonne `updated_at` de type timestamp est définie, et que la structure Go correspondante possède un attribut `UpdatedAt time.Time` ; la valeur de ce champ sera automatiquement modifiée avec le temps courant à chaque fois que l'entrée sera modifiée dans la base.
-* Les noms des tables dans la base de données sont par défaut en minuscules, au pluriel et en notation [snake_case](https://en.wikipedia.org/wiki/Snake_case). Par exemple : `User{}` donne « users », `FooBar{}` donne « foo_bars », etc.
+* Les noms des tables dans la base de données sont par défaut en minuscules, au pluriel et en notation [snake_case](https://fr.wikipedia.org/wiki/Snake_case). Par exemple : `User{}` donne « users », `FooBar{}` donne « foo_bars », etc.
 
 Buffalo a une intégration forte avec Pop, et la boîte à outils vous aidera à générer tout ce qui est nécessaire pour démarrer. Vous pouvez toujours utiliser une autre biliothèque pour communiquer avec vos bases de données, mais vous devrez vous débrouiller sans notre aide. :)
 

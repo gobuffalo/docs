@@ -73,6 +73,13 @@ func App() *buffalo.App {
 			}
 		})
 
+		app.GET("/docs/db", func(c buffalo.Context) error {
+			return c.Redirect(301, fmt.Sprintf("/%s/docs/db/getting-started", c.Value("lang").(string)))
+		})
+		app.GET("/{lang:fr|en}/docs/db", func(c buffalo.Context) error {
+			return c.Redirect(301, fmt.Sprintf("/%s/docs/db/getting-started", c.Value("lang").(string)))
+		})
+
 		app.GET("/search", func(c buffalo.Context) error {
 			return c.Redirect(302, fmt.Sprintf("/%s/search", c.Value("lang").(string)))
 		})

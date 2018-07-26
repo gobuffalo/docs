@@ -6,8 +6,26 @@
 Pop helps you to manage database connections, but it also provides `soda`, a small CLI toolbox to manage your database. It can help you to create a new database, drop existing ones, and so on.
 
 <%= note() { %>
-**Note for Buffalo users**: `soda` commands are embedded into the `buffalo` command, behind the `db` namespace. So everytime you want to use a command from `soda`, just execute `buffalo db` instead.
+**Note for Buffalo users**: `soda` commands are embedded into the `buffalo` command, behind the `db` namespace. So everytime you want to use a command from `soda`, just execute `buffalo db` instead. You don't need to install `soda` CLI.
 <% } %>
+
+<%= title("Installing CLI Support") %>
+
+**Without** sqlite 3 support:
+
+```bash
+$ go get github.com/gobuffalo/pop/...
+$ go install github.com/gobuffalo/pop/soda
+```
+
+**With** sqlite 3 support (requires GCC or equivalent C compiler):
+
+```bash
+$ go get -u -v -tags sqlite github.com/gobuffalo/pop/...
+$ go install -tags sqlite github.com/gobuffalo/pop/soda
+```
+
+If you're not building your code with `buffalo build`, you'll also have to pass `-tags sqlite` to `go build` when building your program.
 
 <%= title("Creating Databases") %>
 

@@ -220,7 +220,7 @@ body[data-spy] {
 }
 
 .navbar-default .navbar-nav>.hero>a {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: #da602d;
   border-radius: 3px;
   transition: 0.3s linear
 }
@@ -228,7 +228,7 @@ body[data-spy] {
 .navbar-default .navbar-nav>.hero>a:focus,
 .navbar-default .navbar-nav>.hero>a:hover {
   color: #fff;
-  background-color: rgba(255, 255, 255, 0.25)
+  background-color: #b45127;
 }
 
 .nav .dropdown-menu {
@@ -3816,4 +3816,9 @@ article.main-content {
   .jumbotron, .btn {
     font-family: Lato,Helvetica Neue,Helvetica,Arial,sans-serif;
   }
+}
+
+i.fa-external-link {
+  font-size: .83em;
+  vertical-align: super;
 }

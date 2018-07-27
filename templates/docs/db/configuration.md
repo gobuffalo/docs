@@ -30,6 +30,18 @@ You can see three connections defined:
 
 Of course, you can configure any new connection you want, but Buffalo won't pick them by default.
 
+### Generator
+
+<%= partial("docs/db/soda_buffalo_note.md") %>
+
+You can generate a default configuration file using the init command:
+
+```bash
+$ soda g config
+```
+
+The default will generate a `database.yml` file in the current directory for a PostgreSQL database. You can override the type of database using the `-t` flag and passing in any of the supported database types: `postgres`, `cockroach`, `mysql`, or `sqlite3`.
+
 ### Env vs detailed configuration
 
 <%= note() { %>

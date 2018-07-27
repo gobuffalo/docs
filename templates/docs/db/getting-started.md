@@ -16,13 +16,15 @@ Pop, by default, follows conventions that were influenced by the ActiveRecord Ru
 
 Buffalo has a deep integration with Pop, and it'll help you to generate all the stuff you need to get started. You can still use another package if you want, but you'll be by yourself. :)
 
-<%= title("Getting Started") %>
+<%= title("Supported Databases") %>
 
 Pop supports the following databases:
 * [PostgreSQL](https://www.postgresql.org/) (>= 9.3)
 * [CockroachDB](https://www.cockroachlabs.com/) (>= 1.1.1)
 * [MySQL](https://www.mysql.com/) (>= 5.7)
 * [SQLite3](https://sqlite.org/) (>= 3.x)
+
+<%= title("Buffalo Integration") %>
 
 When you generate a new Buffalo application you can choose the target database with the `--db-type` flag. For instance, to generate a new app with MySQL database support, you can write the following:
 

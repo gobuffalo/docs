@@ -62,7 +62,7 @@ envOr "TEST_DATABASE_URL" "postgres://postgres:postgres@127.0.0.1:5432/myapp_tes
 
 De cette manière, vous pouvez utiliser une valeur par défaut pour la phase de développement, et permettre de modifier cette configuration via une variable d'environnement !
 
-<%= note() { %>
+<%= warning() { %>
 Le paramètre `url` de la connexion écrasera tout autre configuration détaillée. Assurez-vous de passer tout paramètre nécessaire dans l'URL de connexion.
 <% } %>
 

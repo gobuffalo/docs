@@ -62,7 +62,7 @@ Tries to get the `TEST_DATABASE_URL` value from environment, and defaults to `po
 
 This way, you can provide a default value for development purposes, and allow to reconfigure the database settings from an environment variable!
 
-<%= note() { %>
+<%= warning() { %>
 The `url` param for a connection will override any other connection param. Make sure you set all the settings you want from the URL string.
 <% } %>
 

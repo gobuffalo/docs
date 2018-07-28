@@ -3,7 +3,7 @@
 
 <%= h1("Configuration") %>
 
-Pop configuration is managed by a `database.yml`, located at the root of your project. This file is generated for you by Buffalo, if you choose to use Pop, and contains a basic configuration for the database you selected on generation with the `--db-type` flag. PostgreSQL is considered as the default.
+Pop configuration is managed by a `database.yml` file, located at the root of your project. This file is generated for you if you use Buffalo &#8211; if you choose to use Pop &#8211; and contains a basic configuration for the database you selected on generation with the `--db-type` flag. PostgreSQL is considered as the default.
 
 Here is a sample configuration generated for a new app based on PostgreSQL:
 
@@ -41,6 +41,20 @@ $ soda g config
 ```
 
 The default will generate a `database.yml` file in the current directory for a PostgreSQL database. You can override the type of database using the `-t` flag and passing in any of the supported database types: `postgres`, `cockroach`, `mysql`, or `sqlite3`.
+
+### database.yml
+
+The Pop configuration file &#8211; `database.yml` &#8211; can be found either:
+* At your project root (default).
+* In the `config/` directory, at your project root.
+
+If you want to put your config file in another location, you can use the [`AddLookupPaths`](https://godoc.org/github.com/gobuffalo/pop#AddLookupPaths).
+
+You can also customize the file name:
+
+```go
+pop.ConfigName = "my_pop_config.yml"
+```
 
 ### Env vs detailed configuration
 
@@ -110,7 +124,15 @@ The password for the user you use to connect to the database.
 
 ### port
 
-The database host port for the database. 
+The database host port for the database.
+
+**Defaults**:
+
+| Driver    | Port  |
+|-----------|-------|
+| PostgreSQL| 5432  |
+| MySQL     | 3306  |
+| Cockroach | 26257 |
 
 ### user
 

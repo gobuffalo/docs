@@ -72,6 +72,18 @@ For additional details, check the documentation for [github.com/gobuffalo/pop](h
 
 <%= title("Available Options") %>
 
+### database
+
+The name of the database to use.
+
+### dialect
+
+The database dialect to use with the connection. Accepted values are:
+* MySQL driver: "mysql"
+* PostgreSQL driver: "postgres", "postgresql" or "pg"
+* Cockroach driver: "cockroach", "cockroachdb" or "crdb"
+* SQLite driver: "sqlite" or "sqlite3"
+
 ### encoding
 
 <%= sinceVersion("4.6.0") %>
@@ -87,3 +99,19 @@ development:
   host: 127.0.0.1
   encoding: "utf8mb4_general_ci"
 ```
+
+### host
+
+The database host address to connect to.
+
+### password
+
+The password for the user you use to connect to the database.
+
+### port
+
+The database host port for the database. 
+
+### user
+
+The user to use to connect to the database.

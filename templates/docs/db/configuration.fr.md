@@ -72,6 +72,18 @@ Pour plus d'informations, consultez la documentation de [github.com/gobuffalo/po
 
 <%= title("Options disponibles") %>
 
+### database
+
+Le nom de la base de données à utiliser.
+
+### dialect
+
+Le dialecte de base de données à utiliser avec la connection. Les valeurs acceptées sont :
+* Pilote MySQL : "mysql"
+* Pilote PostgreSQL : "postgres", "postgresql" or "pg"
+* Pilote Cockroach : "cockroach", "cockroachdb" or "crdb"
+* Pilote SQLite : "sqlite" or "sqlite3"
+
 ### encoding
 
 <%= sinceVersion("4.6.0") %>
@@ -87,3 +99,19 @@ development:
   host: 127.0.0.1
   encoding: "utf8mb4_general_ci"
 ```
+
+### host
+
+L'adresse de l'hôte de la base de données.
+
+### password
+
+Le mot de passe de l'utilisateur de la base de données.
+
+### port
+
+Le port de la base de données sur l'hôte.
+
+### user
+
+L'utilisateur de la base de données.

@@ -40,7 +40,7 @@ func App() *buffalo.App {
 		app.Use(forceSSL())
 
 		// Automatically redirect trailing slashes
-		app.Use(redirectTrailingSlash())
+		// app.Use(redirectTrailingSlash())
 
 		if ENV == "development" {
 			app.Use(middleware.ParameterLogger)

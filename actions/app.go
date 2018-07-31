@@ -40,7 +40,7 @@ func App() *buffalo.App {
 		app.Use(forceSSL())
 
 		// Automatically redirect trailing slashes
-		// app.Use(redirectTrailingSlash())
+		app.Use(redirectTrailingSlash())
 
 		if ENV == "development" {
 			app.Use(middleware.ParameterLogger)
@@ -104,7 +104,7 @@ func App() *buffalo.App {
 
 		app.POST("/lang", ChangeLanguage)
 		app.GET("/{lang:fr|en}/sponsors", Sponsors)
-		app.GET("/{lang:fr|en}/", HomeHandler)
+		app.GET("/{lang:fr|en}", HomeHandler)
 
 		app.ServeFiles("/", assetBox)
 
@@ -161,7 +161,7 @@ func redirectTrailingSlash() buffalo.MiddlewareFunc {
 	return func(next buffalo.Handler) buffalo.Handler {
 		return func(c buffalo.Context) error {
 			p := c.Request().URL.Path
-			if p[len(p)-1:] == "/" {
+			if p != "/" && p[len(p)-1:] == "/" {
 				return c.Redirect(301, p[:len(p)-1])
 			}
 			return next(c)

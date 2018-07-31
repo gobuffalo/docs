@@ -39,6 +39,9 @@ func App() *buffalo.App {
 		// Automatically redirect to SSL
 		app.Use(forceSSL())
 
+		// Automatically redirect trailing slashes
+		app.Use(redirectTrailingSlash())
+
 		if ENV == "development" {
 			app.Use(middleware.ParameterLogger)
 		}
@@ -147,4 +150,18 @@ func forceSSL() buffalo.MiddlewareFunc {
 		SSLRedirect:     ENV == "production",
 		SSLProxyHeaders: map[string]string{"X-Forwarded-Proto": "https"},
 	})
+}
+
+// redirectTrailingSlash ensures there are no pages duplicates by redirecting
+// trailing slash to the non-trailing slash version.
+func redirectTrailingSlash() buffalo.MiddlewareFunc {
+	return func(next buffalo.Handler) buffalo.Handler {
+		return func(c buffalo.Context) error {
+			p := c.Request().URL.Path
+			if p[len(p)-1:] == "/" {
+				return c.Redirect(301, p[:len(p)-1])
+			}
+			return next(c)
+		}
+	}
 }

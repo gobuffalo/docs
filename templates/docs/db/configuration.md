@@ -1,7 +1,7 @@
-<% seoDescription("Configuration") %>
+<% seoDescription("How to configure my database with Pop?") %>
 <% seoKeywords(["buffalo", "go", "golang", "database", "ORM", "pop", "configuration"]) %>
 
-<%= h1("Configuration") %>
+<%= h1("Database Configuration") %>
 
 Pop configuration is managed by a `database.yml`, located at the root of your project. This file is generated for you by Buffalo, if you choose to use Pop, and contains a basic configuration for the database you selected on generation with the `--db-type` flag. PostgreSQL is considered as the default.
 

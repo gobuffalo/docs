@@ -69,6 +69,9 @@ func App() *buffalo.App {
 					cp := c.Value("current_path").(string)
 					l := c.Param("lang")
 					tp := strings.TrimPrefix(cp, fmt.Sprintf("/%s", l))
+					if lang == "" {
+						return tp
+					}
 					return fmt.Sprintf("/%s%s", lang, tp)
 				})
 

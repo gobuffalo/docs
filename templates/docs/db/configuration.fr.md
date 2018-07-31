@@ -42,6 +42,20 @@ $ soda g config
 
 Cette commande génère un fichier `database.yml` dans le répertoire courant, pour une base de données PostgreSQL. Vous pouvez choisir le type de base de données en utilisant l'option `-t` et en passant l'un des types supportés : `postgres`, `cockroach`, `mysql` ou `sqlite3`.
 
+### database.yml
+
+Le fichier de configuration de Pop, `database.yml` peut se situer :
+* À la racine de votre projet (défaut).
+* Dans un dossier `config/`, à la racine de votre projet.
+
+Si vous souhaitez placer votre fichier de configuration à un autre endroit, vous pouvez utiliser [`AddLookupPaths`](https://godoc.org/github.com/gobuffalo/pop#AddLookupPaths).
+
+Il est également possible de personnaliser le nom de ce fichier :
+
+```go
+pop.ConfigName = "ma_config_pop.yml"
+```
+
 ### Configuration par environnement vs détaillée
 
 <%= note() { %>
@@ -72,6 +86,18 @@ Pour plus d'informations, consultez la documentation de [github.com/gobuffalo/po
 
 <%= title("Options disponibles") %>
 
+### database
+
+Le nom de la base de données à utiliser.
+
+### dialect
+
+Le dialecte de base de données à utiliser avec la connection. Les valeurs acceptées sont :
+* Pilote MySQL : « mysql »
+* Pilote PostgreSQL : « postgres », « postgresql » ou « pg »
+* Pilote Cockroach : « cockroach », « cockroachdb » ou « crdb »
+* Pilote SQLite : « sqlite » ou « sqlite3 »
+
 ### encoding
 
 <%= sinceVersion("4.6.0") %>
@@ -87,3 +113,27 @@ development:
   host: 127.0.0.1
   encoding: "utf8mb4_general_ci"
 ```
+
+### host
+
+L'adresse de l'hôte de la base de données.
+
+### password
+
+Le mot de passe de l'utilisateur de la base de données.
+
+### port
+
+Le port de la base de données sur l'hôte.
+
+**Valeurs par défaut** :
+
+| Pilote    | Port  |
+|-----------|-------|
+| PostgreSQL| 5432  |
+| MySQL     | 3306  |
+| Cockroach | 26257 |
+
+### user
+
+L'utilisateur de la base de données.

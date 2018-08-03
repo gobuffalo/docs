@@ -6,10 +6,10 @@ import (
 	"time"
 
 	"github.com/gobuffalo/buffalo"
-	"github.com/gobuffalo/buffalo/middleware"
-	"github.com/gobuffalo/buffalo/middleware/i18n"
-	"github.com/gobuffalo/buffalo/middleware/ssl"
 	"github.com/gobuffalo/envy"
+	"github.com/gobuffalo/mw-forcessl"
+	"github.com/gobuffalo/mw-i18n"
+	"github.com/gobuffalo/mw-paramlogger"
 	"github.com/gobuffalo/packr"
 	"github.com/gobuffalo/x/sessions"
 	"github.com/unrolled/secure"
@@ -40,7 +40,7 @@ func App() *buffalo.App {
 		app.Use(forceSSL())
 
 		if ENV == "development" {
-			app.Use(middleware.ParameterLogger)
+			app.Use(paramlogger.Middleware)
 		}
 
 		// Setup and use translations:
@@ -146,7 +146,7 @@ func translations() buffalo.MiddlewareFunc {
 // we recommend using a proxy: https://gobuffalo.io/en/docs/proxy
 // for more information: https://github.com/unrolled/secure/
 func forceSSL() buffalo.MiddlewareFunc {
-	return ssl.ForceSSL(secure.Options{
+	return forcessl.Middleware(secure.Options{
 		SSLRedirect:     ENV == "production",
 		SSLProxyHeaders: map[string]string{"X-Forwarded-Proto": "https"},
 	})

@@ -84,6 +84,9 @@
 - id: menu.db-migrations
   translation: Migrations
 
+- id: menu.db-fizz
+  translation: Fizz
+
 - id: menu.contributing
   translation: Contributing
 

@@ -3,7 +3,7 @@
 
 <%= h1("Fizz") %>
 
-A Common DSL for migrating databases.
+Fizz is a common DSL for migrating databases. It tries to be as database-agnostic as possible. 
 
 ## Create a Table
 
@@ -60,6 +60,26 @@ For example for PostgreSQL you could pass `jsonb`and it will be supported, howev
 * `default_raw` - The default value defined as a database function.
 * `after` - (MySQL Only) Add a column after another column in the table. `example: {"after":"created_at"}`
 * `first` - (MySQL Only) Add a column to the first position in the table. `example: {"first": true}`
+
+#### Disable Auto Timestamps
+
+```javascript
+create_table("users") {
+  t.Column("id", "uuid", {primary: true})
+  // ...
+  // Disable auto-creation of created_at and updated_at columns
+  t.DisableTimestamps()
+}
+```
+
+or
+
+```javascript
+create_table("users", {timestamps: false}) {
+  t.Column("id", "uuid", {primary: true})
+  // ...
+}
+```
 
 ## Drop a Table
 

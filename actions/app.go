@@ -55,6 +55,7 @@ func App() *buffalo.App {
 				c.Set("trainingURL", "http://www.gopherguides.com")
 
 				c.Set("lang", "en")
+				c.Set("current_path", strings.TrimRight(c.Value("current_path").(string), "/"))
 				langs := c.Value("languages").([]string)
 				for _, l := range langs {
 					if _, ok := supportedLanguages[l]; ok {

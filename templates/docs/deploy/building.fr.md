@@ -99,5 +99,6 @@ Hello World!
 
 <%= title("Prochaines étapes") %>
 
-* [Utilisation d'un proxy](/fr/docs/proxy) - Intégrez votre application avec un serveur comme NGINX.
-* [Service systemd](/fr/docs/systemd) - Gérez votre application comme un service systemd.
+* [Utilisation d'un proxy](/fr/docs/deploy/proxy) - Intégrez votre application avec un serveur comme NGINX.
+* [Service systemd](/fr/docs/deploy/systemd) - Gérez votre application comme un service systemd.
+* [Fournisseurs cloud](/fr/docs/deploy/providers) - Deployez votre application sur un fournisseur cloud.

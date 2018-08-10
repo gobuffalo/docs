@@ -17,6 +17,7 @@ import (
 
 var ENV = envy.Get("GO_ENV", "development")
 var app *buffalo.App
+var buffaloVersion = "0.12.4"
 var supportedLanguages = map[string]string{
 	"en": "English",
 	"fr": "Français",
@@ -48,7 +49,7 @@ func App() *buffalo.App {
 
 		app.Use(func(next buffalo.Handler) buffalo.Handler {
 			return func(c buffalo.Context) error {
-				c.Set("version", "0.12.4")
+				c.Set("version", buffaloVersion)
 				c.Set("goMinVersion", "1.8.1")
 				c.Set("year", time.Now().Year())
 				c.Set("trainingURL", "http://www.gopherguides.com")
@@ -82,6 +83,17 @@ func App() *buffalo.App {
 		app.GET("/{lang:fr|en}/docs/db", func(c buffalo.Context) error {
 			return c.Redirect(301, fmt.Sprintf("/%s/docs/db/getting-started", c.Value("lang").(string)))
 		})
+
+		// Patch old URLs
+		oldURLs := []string{"systemd", "proxy", "building"}
+		for _, url := range oldURLs {
+			app.GET(fmt.Sprintf("/docs/%s", url), func(c buffalo.Context) error {
+				return c.Redirect(301, fmt.Sprintf("/%s/docs/deploy/%s", c.Value("lang").(string), url))
+			})
+			app.GET(fmt.Sprintf("/{lang:fr|en}/docs/%s", url), func(c buffalo.Context) error {
+				return c.Redirect(301, fmt.Sprintf("/%s/docs/deploy/%s", c.Value("lang").(string), url))
+			})
+		}
 
 		app.GET("/search", func(c buffalo.Context) error {
 			return c.Redirect(302, fmt.Sprintf("/%s/search", c.Value("lang").(string)))

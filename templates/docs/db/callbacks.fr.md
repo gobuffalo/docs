@@ -1,9 +1,9 @@
-<% seoDescription("Attach callbacks to database operations") %>
-<% seoKeywords(["buffalo", "go", "golang", "callback", "hook", "database", "pop"]) %>
+<% seoDescription("Attacher des callbacks aux opérations de base de données") %>
+<% seoKeywords(["buffalo", "go", "golang", "callback", "base de données", "pop"]) %>
 
 # Callbacks
 
-Pop provides a means to execute code before and after database operations. This is done by defining specific methods for your models. For example, to hash a user password you may want to define the following method:
+Pop permet d'exécuter du code avant ou après les opérations de base de données. Pour cela, il suffit de définir des méthodes spécifiques sur vos modèles. Par exemple, pour générer le hash du mot de passe d'un utilisateur, vous pourriez définir la méthode suivante :
 
 ```go
 type User struct {
@@ -24,10 +24,9 @@ func (u *User) BeforeCreate(tx *pop.Connection) error {
 }
 ```
 
-In the above example, when the connection's `Save` method is called with a `User`, the `BeforeCreate` method
-will be called before writing to the database.
+Dans l'exemple ci-dessus, lorsque la méthode `Save` de la connection est appelée avec un `User`, la méthode `BeforeCreate` sera appelée avant d'écrire dans la base de données.
 
-The available callbacks include:
+Les méthodes callback disponibles sont les suivantes :
 
 * [BeforeSave](https://godoc.org/github.com/gobuffalo/pop#BeforeSaveable)
 * [BeforeCreate](https://godoc.org/github.com/gobuffalo/pop#BeforeCreateable)
@@ -39,6 +38,6 @@ The available callbacks include:
 * [AfterDestroy](https://godoc.org/github.com/gobuffalo/pop#AfterDestroyable)
 * [AfterFind](https://godoc.org/github.com/gobuffalo/pop#AfterFindable)
 
-<%= title("Related Content") %>
+<%= title("Contenu lié") %>
 
-* [Models](/en/docs/db/models) - Define a database model.
+* [Modèles](/fr/docs/db/models) - Définir un modèle de base de données.

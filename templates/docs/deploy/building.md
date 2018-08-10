@@ -1,4 +1,4 @@
-<% seoDescription("Packing") %>
+<% seoDescription("Packing a Buffalo application") %>
 <% seoKeywords(["buffalo", "go", "golang", "pack", "binary", "build"]) %>
 
 <%= h1("Packing") %>

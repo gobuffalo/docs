@@ -1,3 +1,6 @@
+<% seoDescription("Bind request parameters to Buffalo context") %>
+<% seoKeywords(["buffalo", "go", "golang", "bind", "parameter", "context"]) %>
+
 # Request Binding
 
 The `buffalo.Context` interface has a method named, `Bind`. This method allows for the binding of a request, such as a form or JSON body, to be mapped to a struct for easy form handling.

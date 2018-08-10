@@ -1,4 +1,4 @@
-<% seoDescription("Migrations") %>
+<% seoDescription("Comment créer et utiliser des migrations de base de données avec Pop") %>
 <% seoKeywords(["buffalo", "go", "golang", "base de données", "ORM", "pop", "migration"]) %>
 
 <%= h1("Migrations") %>

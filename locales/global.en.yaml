@@ -90,6 +90,9 @@
 - id: menu.db-querying
   translation: Querying
 
+- id: menu.db-callbacks
+  translation: Callbacks
+
 - id: menu.contributing
   translation: Contributing
 

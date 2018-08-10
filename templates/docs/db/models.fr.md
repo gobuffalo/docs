@@ -235,3 +235,4 @@ Comme nous l'avons appris dans ce chapitre, chaque attribut de la structure poss
 <%= title("Contenu lié") %>
 
 * [Migrations](/fr/docs/db/migrations) - Écrire des migrations de base de données.
+* [Requêtage](/fr/docs/db/querying) - Lire des données depuis votre base de données.

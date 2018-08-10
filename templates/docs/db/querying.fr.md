@@ -1,18 +1,18 @@
-<% seoDescription("Querying a Database with Pop") %>
-<% seoKeywords(["buffalo", "go", "golang", "database", "querying", "pop", "finders"]) %>
+<% seoDescription("Requêter une base de données avec Pop") %>
+<% seoKeywords(["buffalo", "go", "golang", "base de données", "requêtage", "pop"]) %>
 
-<%= h1("Querying") %>
+<%= h1("Requêtage") %>
 
-In this chapter, you'll learn how to retrieve data from your database using Pop.
+Dans ce chapitre, vous allez apprendre comment récupérer des données depuis votre base de données, en utilisant Pop.
 
-### Find By ID
+### Rechercher par ID
 
 ```go
 user := User{}
 err := db.Find(&user, id)
 ```
 
-### Find All
+### Rechercher toutes les occurences
 
 ```go
 users := []User{}
@@ -20,15 +20,15 @@ err := db.All(&users)
 err = db.Where("id in (?)", 1, 2, 3).All(&users)
 ```
 
-#### Find Last
+#### Rechercher le dernier résultat
 
 ```go
-// Last() orders by created_at
+// Last() trie les résultats par date (created_at)
 user := models.User{}
 err := tx.Last(&user)
 ```
 
-### Find Where
+### Recherche conditionnelle
 
 ```go
 users := []models.User{}
@@ -38,24 +38,24 @@ err := query.All(&users)
 err = tx.Where("id in (?)", 1, 2, 3).All(&users)
 ```
 
-#### Using `in` Queries
+#### Rechercher avec `IN`
 
 ```go
 err = db.Where("id in (?)", 1, 2, 3).All(&users)
 err = db.Where("id in (?)", 1, 2, 3).Where("foo = ?", "bar").All(&users)
 ```
 
-Unfortunately, for a variety of reasons you can't use an `and` query in the same `Where` call as an `in` query.
+Malheureusement, pour certaines raisons, vous ne pouvez pas utiliser une requête `AND` en même temps que `IN`.
 
 ```go
-// does not work:
+// ne fonctionne pas :
 err = db.Where("id in (?) and foo = ?", 1, 2, 3, "bar").All(&users)
-// works:
+// fonctionne  :
 err = db.Where("id in (?)", 1, 2, 3).Where("foo = ?", "bar").All(&users)
 ```
 
-### Select specific columns
-`Select` allows you to load specific columns from a table. Useful when you don't want all columns from a table to be loaded in a query.
+### Sélectionner des colonnes spécifiques
+`Select` vous permet de sélectionner des colonnes spécifiques d'une table. C'est pratique lorsque vous n'avez pas besoin de toutes les colonnes d'une table, et cela évite de charger des données pour rien.
 ```go
 err = db.Select("name").All(&users)
 // SELECT name FROM users
@@ -67,10 +67,10 @@ err = db.Select("age", "name").All(&users)
 // SELECT age, name FROM users
 ```
 
-### Join Query
+### Requête JOIN
 
 ```go
-// page: page number
+// page: numéro de page
 // perpage: limit
 roles := []models.UserRole{}
 query := models.DB.LeftJoin("roles", "roles.id=user_roles.role_id").

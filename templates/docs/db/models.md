@@ -235,3 +235,4 @@ As we learned in this chapter, each attribute on the structure has a read-only t
 <%= title("Related Content") %>
 
 * [Migrations](/en/docs/db/migrations) - Write database migrations.
+* [Querying](/en/docs/db/querying) - Query data from your database.

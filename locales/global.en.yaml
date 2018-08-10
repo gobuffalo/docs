@@ -87,6 +87,9 @@
 - id: menu.db-fizz
   translation: Fizz
 
+- id: menu.db-querying
+  translation: Querying
+
 - id: menu.contributing
   translation: Contributing
 

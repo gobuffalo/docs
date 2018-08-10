@@ -1,4 +1,4 @@
-<%= title("Running Your Application in Development", {name: "running-in-dev"}) %>
+<%= title("Running Your Application in Development") %>
 
 <%= note() { %>
 Before starting Buffalo for the first time, please head over to the [Database](/docs/db) docs and read a little bit about setting up your databases.

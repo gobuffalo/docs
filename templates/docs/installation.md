@@ -25,7 +25,7 @@ Before installing make sure you have the required dependencies installed:
 
 * **SQLite 3**: GCC, or equivalent C compiler for [mattn/go-sqlite3](https://github.com/mattn/go-sqlite3).
 
-<%= title("Installation from a release archive - 64 bits", {name: "from-release-archive", title: "Installation from a release archive"}) %>
+<%= title("Installation from a release archive - 64 bits", {title: "Installation from a release archive"}) %>
 
 <%= note() { %>
 The release packages contain Buffalo without SQLite support.
@@ -58,7 +58,7 @@ Buffalo can be installed using the [Scoop](http://scoop.sh/) package manager:
 PS C:\> scoop install buffalo
 ```
 
-<%= title("Custom installation **with** SQLite3 Support", {name: "with-SQLite3", title: "Installation with SQLite3 Support"}) %>
+<%= title("Custom installation **with** SQLite3 Support", {title: "Installation with SQLite3 Support"}) %>
 
 **SQLite 3** requires a GCC, or equivalent C compiler for [mattn/go-sqlite3](https://github.com/mattn/go-sqlite3) to compile. You **must** have a GCC installed **first** before installing Buffalo.
 
@@ -78,7 +78,7 @@ PS C:\> scoop install gcc
 These instructions can also be used for upgrading to a newer version of Buffalo.
 <% } %>
 
-<%= title("Custom installation **without** SQLite3 Support", {name: "without-SQLite3", title: "Installation without SQLite3 Support"}) %>
+<%= title("Custom installation **without** SQLite3 Support", {title: "Installation without SQLite3 Support"}) %>
 
 ```bash
 $ go get -u -v github.com/gobuffalo/buffalo/buffalo

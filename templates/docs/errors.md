@@ -1,6 +1,6 @@
 # Error Handling
 
-<%= title("Returning Errors From a Handler", {name: "returning-errors"}) %>
+<%= title("Returning Errors From a Handler") %>
 
 ```go
 func MyHandler(c buffalo.Context) error {
@@ -17,7 +17,7 @@ func MyHandler(c buffalo.Context) error {
 }
 ```
 
-<%= title("Default Error Handling (Development)", {name: "dev-error-handling"}) %>
+<%= title("Default Error Handling (Development)") %>
 
 In "development" mode (`GO_ENV=development`), Buffalo will generate some helpful errors pages for you.
 

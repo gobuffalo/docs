@@ -2,7 +2,7 @@
 
 <%= partial("docs/disclaimer.html") %>
 
-<%= title("Iterating Through Arrays", {name: "each-array"}) %>
+<%= title("Iterating Through Arrays") %>
 
 When looping through `arrays` or `slices`, the block being looped through will have access to the "global" context.
 

@@ -1,4 +1,4 @@
-<%= title("Buff.la - URL Shortner", {name: "buffla-url-shortner"}) %>
+<%= title("Buff.la - URL Shortner") %>
 
 <%= vimeo("234908859") %>
 

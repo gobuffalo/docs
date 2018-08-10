@@ -65,7 +65,7 @@ By default `Eager` will load all the assigned assocations for the model. To spec
 err  = tx.Eager("Books").Where("name = 'Mark'").All(&u) // preload only Books association for user with name 'Mark'.
 ```
 
-<%= title("Loading Associations for an Existing Model", {name: "existing-model"}) %>
+<%= title("Loading Associations for an Existing Model") %>
 
 The [`pop.Connection.Load()`](https://godoc.org/github.com/gobuffalo/pop#Connection.Load) method takes a model struct, that has already been populated from the database, and an optional list of associations to load.
 

@@ -1,4 +1,4 @@
-<%= title("Built-in Generators", {name: "built-in"}) %>
+<%= title("Built-in Generators") %>
 
 ```bash
 $ buffalo generate -h

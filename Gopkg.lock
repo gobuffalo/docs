@@ -562,6 +562,12 @@
   version = "v1.2.2"
 
 [[projects]]
+  branch = "master"
+  name = "github.com/stvp/slug"
+  packages = ["."]
+  revision = "5ab8191bb1fecafb3e73d3dc71cc81585ec57e5d"
+
+[[projects]]
   name = "github.com/tinylib/msgp"
   packages = ["msgp"]
   revision = "b2b6a672cf1e5b90748f79b8b81fc8c5cf0571a1"
@@ -615,6 +621,19 @@
   revision = "0ffbfd41fbef8ffcf9b62b0b0aa3a5873ed7a4fe"
 
 [[projects]]
+  name = "golang.org/x/text"
+  packages = [
+    "internal/gen",
+    "internal/triegen",
+    "internal/ucd",
+    "transform",
+    "unicode/cldr",
+    "unicode/norm"
+  ]
+  revision = "f21a4dfb5e38f5895301dc265a8def02365cc3d0"
+  version = "v0.3.0"
+
+[[projects]]
   name = "google.golang.org/appengine"
   packages = ["cloudsql"]
   revision = "b1f26356af11148e710935ed1ac8a7f5702c7612"
@@ -629,6 +648,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "8e3324439401c83049c850c64e2b6e75bc1970331b8eeb36edf49519c69743fa"
+  inputs-digest = "9dc7c05dd609a7e9b4f5140e90161c10d3183f0f19cdb7569944d8615677b283"
   solver-name = "gps-cdcl"
   solver-version = 1

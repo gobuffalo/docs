@@ -3,7 +3,7 @@
 Middleware allows for the interjection of code in the request/response cycle. Common use cases for middleware are things like logging (which Buffalo already does), authentication requests, etc. Buffalo ships with some common middleware, so please checkout out [https://godoc.org/github.com/gobuffalo/buffalo/middleware](https://godoc.org/github.com/gobuffalo/buffalo/middleware) for details on those.
 
 
-<%= title("The Middleware Interface", {name: "interface"}) %>
+<%= title("The Middleware Interface") %>
 
 ```go
 func MyMiddleware(next buffalo.Handler) buffalo.Handler {

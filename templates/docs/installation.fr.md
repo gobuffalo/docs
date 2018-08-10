@@ -25,7 +25,7 @@ Avant d'installer Buffalo, assurez-vous d'avoir installé les dépendances suiva
 
 * **SQLite 3**: GCC, ou compilateur équivalent pour [mattn/go-sqlite3](https://github.com/mattn/go-sqlite3).
 
-<%= title("Installation depuis une archive pré-compilée - 64 bits", {name: "from-release-archive", title: "Installation depuis une archive pré-compilée"}) %>
+<%= title("Installation depuis une archive pré-compilée - 64 bits", {title: "Installation depuis une archive pré-compilée"}) %>
 
 <%= note() { %>
 Ces archives sont fournies sans support pour SQLite.
@@ -58,7 +58,7 @@ Buffalo peut être installé en utilisant le gestionnaire de paquets [Scoop](htt
 PS C:\> scoop install buffalo
 ```
 
-<%= title("Installation personnalisée **avec** support pour SQLite3", {name: "avec-SQLite3", title: "Installation avec support pour SQLite3"}) %>
+<%= title("Installation personnalisée **avec** support pour SQLite3", {title: "Installation avec support pour SQLite3"}) %>
 
 **SQLite 3** nécessite GCC, ou un compilateur C équivalent pour compiler [mattn/go-sqlite3](https://github.com/mattn/go-sqlite3). Vous **devez** avoir installé GCC **avant** d'installer Buffalo.
 
@@ -78,7 +78,7 @@ PS C:\> scoop install gcc
 Ces instructions peuvent aussi être utilisées pour mettre à jour votre version de Buffalo.
 <% } %>
 
-<%= title("Installation personnalisée **sans** support pour SQLite3", {name: "sans-SQLite3", title: "Installation sans support pour SQLite3"}) %>
+<%= title("Installation personnalisée **sans** support pour SQLite3", {title: "Installation sans support pour SQLite3"}) %>
 
 ```bash
 $ go get -u -v github.com/gobuffalo/buffalo/buffalo

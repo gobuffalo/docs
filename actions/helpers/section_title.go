@@ -2,12 +2,16 @@ package helpers
 
 import (
 	"fmt"
-	"html"
 	"html/template"
 
 	"github.com/gobuffalo/plush"
-	"github.com/markbates/inflect"
+	"github.com/grokify/html-strip-tags-go"
+	"github.com/stvp/slug"
 )
+
+func init() {
+	slug.Replacement = '-'
+}
 
 func H1(title string, help plush.HelperContext) template.HTML {
 	help.Context.Set("pageTitle", title)
@@ -17,15 +21,13 @@ func H1(title string, help plush.HelperContext) template.HTML {
 func SectionTitle(title string, opts map[string]interface{}, help plush.HelperContext) (template.HTML, error) {
 	var err error
 	if sectionTitleTemplate == nil {
-		sectionTitleTemplate, err = plush.Parse(sectionTitleTemplateHtml)
+		sectionTitleTemplate, err = plush.Parse(sectionTitleTemplateHTML)
 		if err != nil {
 			return "", err
 		}
 	}
 
-	if _, ok := opts["name"]; !ok {
-		opts["name"] = html.EscapeString(inflect.Dasherize(title))
-	}
+	opts["name"] = slug.Clean(strip.StripTags(title))
 
 	if _, ok := opts["title"]; !ok {
 		opts["title"] = title
@@ -42,7 +44,7 @@ func SectionTitle(title string, opts map[string]interface{}, help plush.HelperCo
 
 var sectionTitleTemplate *plush.Template
 
-const sectionTitleTemplateHtml = `
+const sectionTitleTemplateHTML = `
 <h2>
 <a name="<%= name %>" title="<%= htmlEscape(title) %>" href="#<%= name %>"><%= raw(text) %></a>
 </h2>

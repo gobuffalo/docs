@@ -26,7 +26,7 @@ func WidgetsCreate(c buffalo.Context) error {
 
 The names of the "keys", in this example, "success", are left up to your application to use as is appropriate. There are no "special" or "pre-defined" keys.
 
-<%= title("Accessing Flash Messages in Templates", {name: "accessing-in-templates"}) %>
+<%= title("Accessing Flash Messages in Templates") %>
 
 <%= partial("docs/disclaimer.html") %>
 

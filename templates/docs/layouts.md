@@ -2,7 +2,7 @@
 
 <%= partial("docs/disclaimer.html") %>
 
-<%= title("Using a Standard Layout", {name: "standard"})  %>
+<%= title("Using a Standard Layout")  %>
 
 It is quite common to want to use the same layout across most, if not all of an application. When creating a new `render.Engine` the `HTMLLayout` property can be set to a file that will automatically be used by the `render.HTML` function.
 
@@ -62,7 +62,7 @@ func Hello(c buffalo.Context) error {
 ```
 
 
-<%= title("Using a Custom Layout", {name: "custom"})  %>
+<%= title("Using a Custom Layout")  %>
 
 Sometimes, on certain requests, a different layout is needed. This alternate layout can be passed in as the second parameter to `render.HTML`. Custom layouts do **NOT** work with `render.Auto`.
 

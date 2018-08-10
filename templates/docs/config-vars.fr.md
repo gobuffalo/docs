@@ -7,7 +7,7 @@ Dans ce chapitre, vous allez apprendre comment gérer la configuration de votre 
 
 Les variables d'environnement sont une bonne méthode pour séparer les valeurs sensibles (ou non) liées à un environnement spécifique, du reste de votre application ([comme le décrit The Twelve Factor app (EN)](https://12factor.net/config)). Cela peut aider à définir un comportement basé sur le contexte de l'application (forcer le SSL en production, par exemple), mais aussi isoler les clefs secrètes d'API (comme une API d'accès à une banque). De cette manière, les développeurs peuvent utiliser des valeurs de type « bac-à-sable », et ne pas mettre en danger la version de production.
 
-<%= title("Variables d'environnement disponibles", {name: "variables-disponibles"}) %>
+<%= title("Variables d'environnement disponibles") %>
 
 Les variables suivantes sont utilisées par Buffalo :
 

@@ -1,4 +1,4 @@
-<%= title("Lancer votre application en mode développement", {name: "running-in-dev"}) %>
+<%= title("Lancer votre application en mode développement") %>
 
 <%= note() { %>
 Avant de démarrer Buffalo pour la première fois, veuillez consulter la documentation sur les [bases de données](/docs/db) pour paramétrer votre application correctement.

@@ -82,6 +82,23 @@ Now the columns names are expected to be `id`, `email`, and `password`.
 
 This is very similar to how [form binding](/docs/bind) works.
 
+Any types can be used that adhere to the [Scanner](https://golang.org/pkg/database/sql/#Scanner) and [Valuer](https://golang.org/pkg/database/sql/driver/#Valuer) interfaces, however, so that you don't have to write these yourself it is recommended you stick with the following types:
+
+| Base type             | Nullable        | Slice/Array |
+|-----------------------|:---------------:|------------:|
+|int                    |nulls.Int        |slices.Int   |
+|int32                  |nulls.Int32      | ------      |
+|int64                  |nulls.Int64      | ------      |
+|uint32                 |nulls.UInt32     | ------      |
+|float32                |nulls.Float32    | ------      |
+|float, float64         |nulls.Float64    |slices.Float |
+|bool                   |nulls.Bool       | ------      |
+|[]byte                 |nulls.ByteSlice  | ------      |
+|string                 |nulls.String     |slices.String|
+|uuid.UUID              |nulls.UUID       |slices.UUID  |
+|time.Time              |nulls.Time       | ------      |
+|map[string]interface{} | ---------       |slices.Map   |
+
 ### Read Only Fields
 
 It is often necessary to read a field from a database, but not want to write that field to the database. This can be done using the `rw` struct  tag.

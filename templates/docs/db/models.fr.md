@@ -82,6 +82,23 @@ Avec ce changement, les noms recherchés en base sont `id`, `email` et `password
 
 À titre de comparaison, c'est très similaire à la manière dont fonctionne l'[association d'un formulaire à une structure](/docs/bind).
 
+Tout type implémentant les interfaces [Scanner](https://golang.org/pkg/database/sql/#Scanner) et [Valuer](https://golang.org/pkg/database/sql/driver/#Valuer) peut être utilisé. Cependant, il est recommandé d'utiliser les types suivants si vous ne voulez pas vous fatiguer à les écrire vous-même :
+
+| Type                  | Nullable        | Slice/Array |
+|-----------------------|:---------------:|------------:|
+|int                    |nulls.Int        |slices.Int   |
+|int32                  |nulls.Int32      | ------      |
+|int64                  |nulls.Int64      | ------      |
+|uint32                 |nulls.UInt32     | ------      |
+|float32                |nulls.Float32    | ------      |
+|float, float64         |nulls.Float64    |slices.Float |
+|bool                   |nulls.Bool       | ------      |
+|[]byte                 |nulls.ByteSlice  | ------      |
+|string                 |nulls.String     |slices.String|
+|uuid.UUID              |nulls.UUID       |slices.UUID  |
+|time.Time              |nulls.Time       | ------      |
+|map[string]interface{} | ---------       |slices.Map   |
+
 ### Champs en lecture seule
 
 Il est souvent nécessaire de lire un champ de la base de données, mais de ne pas vouloir écrire ce champ dans la base. C'est possible, grâce au tag `rw`.

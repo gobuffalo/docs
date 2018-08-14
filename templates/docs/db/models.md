@@ -82,7 +82,7 @@ Now the columns names are expected to be `id`, `email`, and `password`.
 
 This is very similar to how [form binding](/docs/bind) works.
 
-Any types can be used that adhere to the [scanner](https://golang.org/pkg/database/sql/#Scanner) and [valuer](https://golang.org/pkg/database/sql/driver/#Valuer) interfaces, however, so that you don't have to write these yourself it is recommended you stick with the following types:
+Any types can be used that adhere to the [Scanner](https://golang.org/pkg/database/sql/#Scanner) and [Valuer](https://golang.org/pkg/database/sql/driver/#Valuer) interfaces, however, so that you don't have to write these yourself it is recommended you stick with the following types:
 
 | Base type             | Nullable        | Slice/Array |
 |-----------------------|:---------------:|------------:|

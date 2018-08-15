@@ -588,14 +588,6 @@
   version = "v1.0.0"
 
 [[projects]]
-  digest = "1:39c2113f3a89585666e6f973650cff186b2d06deb4aa202c88addb87b0a201db"
-  name = "github.com/russross/blackfriday"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "cadec560ec52d93835bf2f15bd794700d3a2473b"
-  version = "v2.0.0"
-
-[[projects]]
   branch = "master"
   digest = "1:efa124a0ca36a35cc1a1b472cb0fa2be1e7d9fd1db0f8bc9a042e42e4c6405aa"
   name = "github.com/serenize/snaker"
@@ -610,14 +602,6 @@
   pruneopts = "UT"
   revision = "1744e2970ca51c86172c8190fadad617561ed6e7"
   version = "v1.0.0"
-
-[[projects]]
-  branch = "master"
-  digest = "1:6d6af6ab76763d93bf0ea3cf6647c6069aa1b2804553b2a1107fb1851e78860c"
-  name = "github.com/shurcooL/github_flavored_markdown"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "8913699a52e3aa02aa96387098e0004bb84aacf0"
 
 [[projects]]
   branch = "master"
@@ -845,6 +829,7 @@
     "github.com/gobuffalo/buffalo",
     "github.com/gobuffalo/buffalo/render",
     "github.com/gobuffalo/envy",
+    "github.com/gobuffalo/github_flavored_markdown",
     "github.com/gobuffalo/mw-forcessl",
     "github.com/gobuffalo/mw-i18n",
     "github.com/gobuffalo/mw-paramlogger",
@@ -857,7 +842,6 @@
     "github.com/markbates/inflect",
     "github.com/markbates/willie",
     "github.com/pkg/errors",
-    "github.com/shurcooL/github_flavored_markdown",
     "github.com/stretchr/testify/require",
     "github.com/stvp/slug",
     "github.com/unrolled/secure",

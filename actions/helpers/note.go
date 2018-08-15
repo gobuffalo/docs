@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"html/template"
 
+	"github.com/gobuffalo/github_flavored_markdown"
 	"github.com/gobuffalo/plush"
 	"github.com/gobuffalo/tags"
 	"github.com/pkg/errors"
-	"github.com/shurcooL/github_flavored_markdown"
 )
 
 // Note is a template block helper to insert a remark.

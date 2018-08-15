@@ -3,11 +3,11 @@ package helpers
 import (
 	"html/template"
 
+	"github.com/gobuffalo/github_flavored_markdown"
 	"github.com/gobuffalo/plush"
 	"github.com/gobuffalo/tags"
 	"github.com/markbates/going/randx"
 	"github.com/pkg/errors"
-	"github.com/shurcooL/github_flavored_markdown"
 )
 
 func CodeTabs(help plush.HelperContext) (template.HTML, error) {

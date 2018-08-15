@@ -1,3 +1,4 @@
+language: go
 sudo: required
 
 install: false
@@ -22,5 +23,4 @@ jobs:
           packages:
             - docker-ce
       script: echo $HEROKU_TOKEN
-      after_success:
-        - ./travis-deploy.sh
+      after_success: ./travis-deploy.sh

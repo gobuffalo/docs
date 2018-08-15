@@ -14,24 +14,16 @@ install: false
 go:
   - 1.9
 
-script:
-  - echo $HEROKU_TOKEN
+stages:
+  - test
+  - name: deploy
+    if: branch = master
 
-# after_success:
-#   - if [ "$TRAVIS_BRANCH" == "master" ]; then
-#       docker login --username=_ --password=$HEROKU_TOKEN registry.heroku.com
-#       docker build -t registry.heroku.com/getbuffalo/web .
-#       docker push registry.heroku.com/getbuffalo/web
-#     fi
-# after_success:
-#   - docker build -t registry.heroku.com/getbuffalo/web .
-#   - docker login --username=_ --password=$HEROKU_TOKEN registry.heroku.com
-#   - docker push registry.heroku.com/getbuffalo/web
-
-after_success:
-  - ./travis-deploy.sh
-
-# Don't build every commit - only PRs and when new code lands in Master
-branches:
-  only:
-      - master
+jobs:
+  include:
+    - stage: test
+      script: go test -v ./...
+    - stage: deploy
+      script: echo $HEROKU_TOKEN
+      after_success:
+        - ./travis-deploy.sh

@@ -41,7 +41,7 @@ func App() *buffalo.App {
 		app.Use(forceSSL())
 
 		if ENV == "development" {
-			app.Use(paramlogger.Middleware)
+			app.Use(paramlogger.ParameterLogger)
 		}
 
 		// Setup and use translations:

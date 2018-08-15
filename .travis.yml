@@ -11,6 +11,7 @@ jobs:
   include:
     - stage: test
       go: 1.9
+      install: go get -t -v ./...
       script: go test -v ./...
     - stage: deploy
       services:

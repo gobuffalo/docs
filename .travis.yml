@@ -12,7 +12,9 @@ jobs:
   include:
     - stage: test
       go: 1.9
-      install: go get -t -v ./...
+      install: 
+        - curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
+        - dep ensure -v
       script: go test -v ./...
     - stage: deploy
       services:

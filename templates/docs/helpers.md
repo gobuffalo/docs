@@ -59,7 +59,7 @@ Going down this list we start with the path *NAME*d `rootPath` which represents 
 
 Next we have a standard `app.GET("/about", AboutHandler)` which generates to `aboutPath`. 
 
-Then we use a resource `app.Resource("/drinks", DrinksResource{})` which generates a path for each of our standard actions, and for each of those a helper to be used in templates. Those that take a parameter can be used like this `<%= drinkPath({drink_id: drink.ID}) %>`. All helpers take a `map[string]interface{}` that is used to fill-in parameters.
+Then we use a resource `app.Resource("/drinks", DrinksResource{})` which generates a path for each of our standard actions, and for each of those a helper to be used in templates. Those that take a parameter can be used like this `\<%= drinkPath({drink_id: drink.ID}) %>`. All helpers take a `map[string]interface{}` that is used to fill-in parameters.
 
 Finally, when we use a group we can see that this changes the generated helpers. Here is the routing for those last paths:
 

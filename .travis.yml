@@ -1,18 +1,6 @@
 sudo: required
 
-services:
-  - docker
-
-addons:
-  apt:
-    update: true
-    packages:
-      - docker-ce
-
 install: false
-
-go:
-  - 1.9
 
 stages:
   - test
@@ -22,8 +10,16 @@ stages:
 jobs:
   include:
     - stage: test
+      go: 1.9
       script: go test -v ./...
     - stage: deploy
+      services:
+        - docker
+      addons:
+        apt:
+          update: true
+          packages:
+            - docker-ce
       script: echo $HEROKU_TOKEN
       after_success:
         - ./travis-deploy.sh

@@ -68,7 +68,7 @@ When setting up your application you *can* assign a worker implementation to the
 
 ```go
 import "github.com/gobuffalo/gocraft-work-adapter"
-import "github.com/garyburd/redigo/redis"
+import "github.com/gomodule/redigo/redis"
 
 // ...
 

@@ -1,6 +1,6 @@
 <%= title("Error Handling") %>
 
-Both `form` and `form_for` helpers have support for handling errors from the [`github.com/markbates/validate`](https://github.com/markbates/validate) package.
+Both `form` and `form_for` helpers have support for handling errors from the [`github.com/gobuffalo/validate`](https://github.com/gobuffalo/validate) package.
 
 In an action simply set a value of type `*validate.Errors` on the context as `errors` and the form helpers will pick it up and add error messages to the appropriate form tags.
 

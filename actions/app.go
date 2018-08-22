@@ -17,7 +17,7 @@ import (
 
 var ENV = envy.Get("GO_ENV", "development")
 var app *buffalo.App
-var buffaloVersion = "0.12.4"
+var buffaloVersion = "0.12.6"
 var supportedLanguages = map[string]string{
 	"en": "English",
 	"fr": "Français",

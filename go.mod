@@ -2,9 +2,11 @@ module github.com/gobuffalo/gobuffalo
 
 require (
 	github.com/BurntSushi/toml v0.3.0 // indirect
+	github.com/PuerkitoBio/goquery v1.4.1 // indirect
 	github.com/RoaringBitmap/roaring v0.4.16 // indirect
 	github.com/Smerity/govarint v0.0.0-20150407073650-7265e41f48f1 // indirect
 	github.com/ajg/form v0.0.0-20160822230020-523a5da1a92f // indirect
+	github.com/andybalholm/cascadia v1.0.0 // indirect
 	github.com/blevesearch/bleve v0.7.0
 	github.com/blevesearch/blevex v0.0.0-20180227211930-4b158bb555a3 // indirect
 	github.com/blevesearch/go-porterstemmer v1.0.1 // indirect
@@ -43,6 +45,8 @@ require (
 	github.com/markbates/going v1.0.2
 	github.com/markbates/inflect v1.0.0
 	github.com/markbates/willie v1.0.6
+	github.com/mmcdole/gofeed v1.0.0-beta2
+	github.com/mmcdole/goxpp v0.0.0-20170720115402-77e4a51a73ed // indirect
 	github.com/monoculum/formam v0.0.0-20170814190438-f25191ae7744 // indirect
 	github.com/mschoch/smat v0.0.0-20160514031455-90eadee771ae // indirect
 	github.com/philhofer/fwd v1.0.0 // indirect

@@ -21,6 +21,12 @@ const indexName = "gobuffalo.search"
 
 var index bleve.Index
 
+func indexSearch(app *buffalo.App) {
+	indexDocs(app)
+	indexBlog(app)
+	indexVideos(app)
+}
+
 func init() {
 	os.RemoveAll(indexName)
 	var err error
@@ -64,11 +70,11 @@ type doc struct {
 	Body string
 }
 
-const feed = "https://api.rss2json.com/v1/api.json?rss_url=https://blog.gobuffalo.io/feed"
+const blogFeedURL = "https://api.rss2json.com/v1/api.json?rss_url=https://blog.gobuffalo.io/feed"
 
 func indexBlog(app *buffalo.App) {
 	app.Logger.Info("Indexing blog")
-	res, err := http.Get(feed)
+	res, err := http.Get(blogFeedURL)
 	if err != nil {
 		app.Logger.Error(err)
 		return

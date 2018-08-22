@@ -1,5 +1,9 @@
 <%= title("Articles About Buffalo") %>
 
+* **August 19th, 2018** - Web App With Gobuffalo [http://www.nicolasmorin.com/blog/web-app-with-gobuffalo/](http://www.nicolasmorin.com/blog/web-app-with-gobuffalo/)
+
+* **January 23rd, 2018** - Instrumenting a Buffalo Application with New Relic [https://medium.com/@brainscott/instrumenting-a-buffalo-application-with-new-relic-1e9aa473e31d](https://medium.com/@brainscott/instrumenting-a-buffalo-application-with-new-relic-1e9aa473e31d)
+
 * **January 9th, 2018** - GoBuffalo Nested Resources [http://www.candland.net/gobuffalo/2018/01/09/gobuffalo_nested_resources.html](http://www.candland.net/gobuffalo/2018/01/09/gobuffalo_nested_resources.html)
 
 * **January 1st, 2018** - Web Apps with Buffalo - Part I [https://mmikael.com/post/buffalo-part1/](https://mmikael.com/post/buffalo-part1/) - Part II [https://mmikael.com/post/buffalo-part2/](https://mmikael.com/post/buffalo-part2/)

@@ -53,6 +53,7 @@ func App() *buffalo.App {
 				c.Set("goMinVersion", "1.8.1")
 				c.Set("year", time.Now().Year())
 				c.Set("trainingURL", "http://www.gopherguides.com")
+				c.Set("videoList", videoList)
 
 				c.Set("lang", "en")
 				c.Set("current_path", strings.TrimRight(c.Value("current_path").(string), "/"))
@@ -118,9 +119,8 @@ func App() *buffalo.App {
 
 		app.ServeFiles("/", assetBox)
 
-		indexDocs(app)
 		go func() {
-			indexBlog(app)
+			indexSearch(app)
 			t := time.NewTicker(60 * time.Minute)
 			defer t.Stop()
 			for {
@@ -128,7 +128,7 @@ func App() *buffalo.App {
 				case <-app.Context.Done():
 					return
 				case <-t.C:
-					indexBlog(app)
+					indexSearch(app)
 				}
 			}
 		}()

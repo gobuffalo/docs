@@ -61,7 +61,7 @@ WantedBy=multi-user.target
 
 <%= title("Set env variables") %>
 
-The official way to handle config with Buffalo is through [environment variables](/docs/env-vars). Using Systemd, you can set them with an override file.
+The official way to handle config with Buffalo is through [environment variables](/en/docs/config-vars). Using Systemd, you can set them with an override file.
 
 Our override file will be located in `/etc/systemd/system/myapp.service.d/`, and be called `override.conf`.
 

@@ -1,0 +1,7 @@
+# Default owner
+*       @gobuffalo/docs-managers
+
+# French translations
+templates/*.fr.md       @stanislas-m
+templates/*.fr.html       @stanislas-m
+locales/*.fr.yaml       @stanislas-m

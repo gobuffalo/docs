@@ -63,8 +63,13 @@ h2 {
   padding-bottom: 0.8em;
   border-radius: 0;
   margin-bottom: 0;
-  margin-left: -15px;
   margin-right: -15px;
+}
+
+@media screen and (max-width: 767px) {
+  #global-footer {
+    margin-left: -15px;
+  }
 }
 
 .feature {

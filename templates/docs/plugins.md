@@ -58,7 +58,7 @@ If we were to run `buffalo-heroku available` we would get a JSON response printe
 * `aliases`: This is an **optional** list of aliases for your command.
 * `name`: This is the name the plugin will be run as. For example, `buffalo heroku`.
 
-Will all of this in place when we run `buffalo --help` we should see the plugin listed with the rest of the commands.
+With all of this in place when we run `buffalo --help` we should see the plugin listed with the rest of the commands.
 
 ```bash
 $ buffalo --help

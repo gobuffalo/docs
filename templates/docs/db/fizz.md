@@ -9,6 +9,7 @@ Fizz is a common DSL for migrating databases. It tries to be as database-agnosti
 
 ``` javascript
 create_table("users") {
+  t.Column("id", "integer", {"primary": true})
   t.Column("email", "string", {})
   t.Column("twitter_handle", "string", {"size": 50})
   t.Column("age", "integer", {"default": 0})
@@ -19,6 +20,7 @@ create_table("users") {
 }
 
 create_table("todos") {
+  t.Column("id", "integer", {"primary": true})
   t.Column("user_id", "integer", {})
   t.Column("title", "string", {"size": 100})
   t.Column("details", "text", {"null": true})
@@ -26,7 +28,7 @@ create_table("todos") {
 }
 ```
 
-The `create_table` function will generate an `id` column of type `integer` that will auto-increment. This can be changed to use the [`UUID`](https://github.com/gobuffalo/uuid) type:
+To use the [`UUID`](https://github.com/gobuffalo/uuid) type as the primary key:
 
 ```javascript
 create_table("users") {
@@ -35,7 +37,7 @@ create_table("users") {
 }
 ```
 
-It will also generate two `timestamp` columns; `created_at` and `updated_at`.
+Note that a primary key is not required. The `create_table` function will generate two `timestamp` columns; `created_at` and `updated_at`.
 
 The `t.Columns` method takes the following arguments: name of the column, the type of the field, and finally the last argument is any options you want to set on that column.
 

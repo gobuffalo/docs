@@ -120,7 +120,7 @@ func (as *ActionSuite) Test_WidgetsResource_List() {
 }
 ```
 
-You can find more detailed information on fixtures in the [suite repository README](https://github.com/gobuffalo/suite#fixtures-test-data).
+You can find more detailed information on fixtures in the [gobuffalo/suite repository README](https://github.com/gobuffalo/suite#fixtures-test-data).
 
 <%= title("Accessing the Session") %>
 

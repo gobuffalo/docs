@@ -65,6 +65,8 @@ func (as *ActionSuite) Test_WidgetsResource_Create() {
 
 <%= title("Fixtures") %>
 
+<%= sinceVersion("0.12.0") %>
+
 Often it is useful to load sample data into the database at the start of a test. For example, you need to have a user in the database to log a person into the application, or you need some data in the database to test that a route renders responses correctly. Fixtures help us solve these problems easily.
 
 Fixtures are `toml` files that are placed in your `fixtures` directory. You can have as many fixture files as you like and they can also be named anyway that you like.

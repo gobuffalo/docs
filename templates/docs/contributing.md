@@ -36,3 +36,7 @@ We are fortunate, as a community, to have so many great packages written by some
 
 [https://github.com/gobuffalo/buffalo/blob/master/SHOULDERS.md](https://github.com/gobuffalo/buffalo/blob/master/SHOULDERS.md)
 
+<%= title("Other Buffalo Projects") %>
+
+There are also many other official and non-official Buffalo projects to which you can contribute. Search for the [gobuffalo](https://github.com/topics/gobuffalo) topic on GitHub to discover new projects.
+

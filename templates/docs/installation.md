@@ -58,6 +58,18 @@ Buffalo can be installed using the [Scoop](http://scoop.sh/) package manager:
 PS C:\> scoop install buffalo
 ```
 
+<%= title("Installation with GoFish") %>
+
+[GoFish](https://gofi.sh/index.html) is a cross-platform systems package manager, that works across Windows, macOS and Linux.
+
+After you have GoFish [installed](https://gofi.sh/index.html#install), you can very simply install Buffalo:
+
+```bash
+$ gofish install buffalo
+==> Installing buffalo...
+🐠  buffalo 0.12.6: installed in 3.223672926s
+```
+
 <%= title("Custom installation **with** SQLite3 Support", {title: "Installation with SQLite3 Support"}) %>
 
 **SQLite 3** requires a GCC, or equivalent C compiler for [mattn/go-sqlite3](https://github.com/mattn/go-sqlite3) to compile. You **must** have a GCC installed **first** before installing Buffalo.

@@ -37,7 +37,7 @@ You can get the available flags list using the `help` command:
 
 <%= partial("docs/new-project/help.md") %>
 
-You can choose to generate an API application, skipping the frontend stuff. Maybe you want to setup a CI to build your app on your favourite system? Or even use your own package to handle the database? Just use the flags!
+You can choose to generate an API application, skipping the frontend stuff. Maybe you want to setup a CI to build your app on your favorite system? Or even use your own package to handle the database? Just use the flags!
 
 <%= title("Override Default Config") %>
 

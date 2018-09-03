@@ -46,7 +46,7 @@ The second arg is accessible as "Count" in the translations strings.
 
 <%= title("Provide translations") %>
 
-Translations are stored in the `locales` folder. By default, they are stored in a `all.en-us.yaml` file for the american english strings.
+Translations are stored in the `locales` folder. By default, they are stored in a `all.en-us.yaml` file for the American English strings.
 
 You can provide translations for another language by providing a new file `all.my-language-code.yaml`. If you want to split your strings into logical modules, you can even create multiples files, e.g. `users.en-us.yaml` for the user-related stuff, and `all.en-us.yaml` for the global stuff.
 

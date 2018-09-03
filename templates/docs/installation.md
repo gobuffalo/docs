@@ -19,7 +19,7 @@ Before installing make sure you have the required dependencies installed:
 
 ##### Frontend Requirements
 
-* [node](https://github.com/nodejs/node) and [npm](https://github.com/npm/npm) for the [asset pipeline](/docs/assets) built upon [webpack](https://github.com/webpack/webpack).
+* [node](https://github.com/nodejs/node) version `8` or greater and [yarn](https://yarnpkg.com/en/) or [npm](https://github.com/npm/npm) for the [asset pipeline](/docs/assets) built upon [webpack](https://github.com/webpack/webpack).
 
 ##### Database Specific Requirements
 

@@ -19,7 +19,7 @@ Avant d'installer Buffalo, assurez-vous d'avoir installé les dépendances suiva
 
 ##### Prérequis pour le frontend
 
-* [node](https://github.com/nodejs/node) et [npm](https://github.com/npm/npm) pour la [gestion des ressources](/docs/assets) avec [webpack](https://github.com/webpack/webpack).
+* [node](https://github.com/nodejs/node) version `8` ou supérieure et [yarn](https://yarnpkg.com/en/) ou [npm](https://github.com/npm/npm) pour la [gestion des ressources](/docs/assets) avec [webpack](https://github.com/webpack/webpack).
 
 ##### Prérequis spécifiques aux bases de données
 

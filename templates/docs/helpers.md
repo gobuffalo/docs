@@ -68,7 +68,7 @@ api := app.Group("/api/v1")
 api.Resource("/users", UsersResource{})
 ```
 
-**Note** that the helpers are generated to match the generated paths. It is possible to override the path names in the `App.Routes`, but it is highly adviced that you find a different way to your goal than this. Slack is always open to these conversations.
+**Note** that the helpers are generated to match the generated paths. It is possible to override the path names in the `App.Routes`, but it is highly advised that you find a different way to your goal than this. Slack is always open to these conversations.
 
 <%= title("Content Helpers") %>
 

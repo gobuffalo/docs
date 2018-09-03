@@ -60,7 +60,7 @@ PS C:\> scoop install buffalo
 
 <%= title("Installation with GoFish") %>
 
-[GoFish](https://gofi.sh/index.html) is a cross-platform systems package manager, that works across Windows, macOS and Linux.
+[GoFish](https://gofi.sh/index.html) is a cross-platform systems package manager, that works across Windows, MacOSX and Linux.
 
 After you have GoFish [installed](https://gofi.sh/index.html#install), you can very simply install Buffalo:
 

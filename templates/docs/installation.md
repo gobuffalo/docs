@@ -1,7 +1,7 @@
 <% seoDescription("How to install the Buffalo framework") %>
-<% seoKeywords(["buffalo", "go", "golang", "installation", "framework", "web"]) %>
+<% seoKeywords(["buffalo", "go", "golang", "installation", "framework", "web", "mac", "windows", "linux"]) %>
 
-<%= h1("Installation") %>
+<%= h1("Install Buffalo") %>
 
 In this chapter, you'll learn how to install Buffalo, either from pre-built binaries or from source.
 
@@ -9,19 +9,29 @@ Buffalo provides **two major components**:
 * The `buffalo` tool, a powerful toolbox to help you develop in a fast and efficient way.
 * The buffalo framework, a collection of pieces to construct your app.
 
+Buffalo is currently available and tested on the following platforms:
+* GNU/Linux
+* Mac OSX
+* Windows
+
 <%= title("Requirements") %>
 
 Before installing make sure you have the required dependencies installed:
 
-* [Guide to Setting a Go Developer Environment](http://gopherguides.com/before-you-come-to-class)
+* [A working Go environment](http://gopherguides.com/before-you-come-to-class)
 * [A configured `$PATH` environment variable that includes `$GOPATH/bin`.](https://golang.org/doc/code.html#GOPATH)
 * [Go](https://golang.org) version `<%= goMinVersion %>` or greater.
 
 ##### Frontend Requirements
 
-* [node](https://github.com/nodejs/node) version `8` or greater and [yarn](https://yarnpkg.com/en/) or [npm](https://github.com/npm/npm) for the [asset pipeline](/docs/assets) built upon [webpack](https://github.com/webpack/webpack).
+The following requirements are optional. You don't need them if you want to build an API or if you prefer to build your app in an old-fashioned way.
+
+* [node](https://github.com/nodejs/node) version `8` or greater
+* either [yarn](https://yarnpkg.com/en/) or [npm](https://github.com/npm/npm) for the [asset pipeline](/docs/assets) built upon [webpack](https://github.com/webpack/webpack).
 
 ##### Database Specific Requirements
+
+Again, if you don't need a database, you won't need these.
 
 * **SQLite 3**: GCC, or equivalent C compiler for [mattn/go-sqlite3](https://github.com/mattn/go-sqlite3).
 
@@ -51,14 +61,14 @@ $ sudo mv buffalo-no-sqlite /usr/local/bin/buffalo
 $ mv buffalo-no-sqlite ~/bin/buffalo
 ```
 
-### Windows
+<%= title("Scoop (Windows)") %>
 Buffalo can be installed using the [Scoop](http://scoop.sh/) package manager:
 
 ```powershell
 PS C:\> scoop install buffalo
 ```
 
-<%= title("Installation with Homebrew") %>
+<%= title("Homebrew (macOS)") %>
 
 On macOS, you can also install Buffalo with [Homebrew](https://brew.sh/). After you have Homebrew [installed](https://docs.brew.sh/Installation), you can easily install Buffalo:
 
@@ -66,7 +76,7 @@ On macOS, you can also install Buffalo with [Homebrew](https://brew.sh/). After 
 brew install gobuffalo/tap/buffalo
 ```
 
-<%= title("Installation with GoFish") %>
+<%= title("GoFish (Cross-Platforms)") %>
 
 [GoFish](https://gofi.sh/index.html) is a cross-platform systems package manager, that works across Windows, MacOSX and Linux.
 

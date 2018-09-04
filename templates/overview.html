@@ -41,8 +41,6 @@
       Write your templates with <a href="https://github.com/gobuffalo/plush" target="_blank">Plush</a>, using a Rails-like syntax. Extend its features using custom helpers.<br />If you don't like it, you can use <code>html/template</code> or even bring your own!
     </p>
   </div>
-</div>
-<div class="row">
   <div class="feature">
     <h4>
       <i class="fa fa-cube" aria-hidden="true"></i>
@@ -87,8 +85,6 @@
       Use the Webpack-generated configuration to build your frontend assets, so you can optimize both backend and frontend.
     </p>
   </div>
-</div>
-<div class="row">
   <div class="feature">
     <h4>
       <i class="fa fa-database" aria-hidden="true"></i>
@@ -98,7 +94,7 @@
       Deep integration with <a href="https://github.com/gobuffalo/pop" target="_blank">pop</a> provides a simple way to handle database and common related tasks.
     </p>
     <p>
-      Supported databases: MySQL/ MariaDB, PostgreSQL, CockroachDB, SQLite.
+      Supported databases: MySQL/MariaDB, PostgreSQL, CockroachDB, SQLite.
     </p>
   </div>
   <div class="feature">
@@ -118,6 +114,27 @@
 <p class="get-started-btn">
   <a href="/docs/installation" class="btn btn-primary btn-lg"><strong>Get started</strong> with Buffalo</a>
 </p>
+
+<h2>From Our Blog</h2>
+
+<div class="row">
+  <%= for (bp) in blogPosts { %>
+    <div class="col-xs-12 col-md-4">
+      <header>
+        <h4>
+          <a href="<%= bp.Link %>" target="_blank" rel="noopener noreferrer"><%= bp.Title %></a>
+        </h4>
+        <h5>
+          From
+          <%= bp.Author %>
+        </h5>
+      </header>
+      <p>
+        <%= raw(bp.Description) %>
+      </p>
+    </div>
+    <% } %>
+</div>
 
 <%= partial("platinum_sponsors.html") %>
 

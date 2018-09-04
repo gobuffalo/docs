@@ -61,7 +61,7 @@ $ sudo mv buffalo-no-sqlite /usr/local/bin/buffalo
 $ mv buffalo-no-sqlite ~/bin/buffalo
 ```
 
-### Scoop (Windows)
+<%= title("Scoop (Windows)") %>
 Buffalo peut être installé en utilisant le gestionnaire de paquets [Scoop](http://scoop.sh/) :
 
 ```powershell
@@ -76,7 +76,7 @@ Sur macOS, vous pouvez également installer Buffalo avec [Homebrew](https://brew
 brew install gobuffalo/tap/buffalo
 ```
 
-<%= title("Installation avec GoFish") %>
+<%= title("GoFish (multi-plateformes)") %>
 
 [GoFish](https://gofi.sh/index.html) est un gestionnaire de paquets multi-plateformes ; qui fonctionne donc avec Windows, MacOSX et Linux.
 

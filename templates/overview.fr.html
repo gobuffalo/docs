@@ -119,6 +119,34 @@
   <a href="/fr/docs/installation" class="btn btn-primary btn-lg"><strong>Démarrer</strong> avec Buffalo</a>
 </p>
 
+<h2>En direct de notre blog</h2>
+
+<div class="row">
+  <%= for (bp) in blogPosts { %>
+    <div class="col-xs-12 col-md-4">
+      <header>
+        <h4>
+          <a href="<%= bp.Link %>" target="_blank" rel="noopener noreferrer"><%= bp.Title %></a>
+        </h4>
+        <h5>
+          De <%= bp.Author %>
+        </h5>
+      </header>
+      <p>
+        <%= raw(bp.Description) %>
+      </p>
+    </div>
+    <% } %>
+</div>
+
+<div class="row">
+<%= for (bp) in blogPosts { %>
+  <div class="col-xs-12 col-md-4">
+    Blog post
+  </div>
+<% } %>
+</div>
+
 <%= partial("platinum_sponsors.html") %>
 
 <div class="text-center" style="margin-top: 2.5em;">

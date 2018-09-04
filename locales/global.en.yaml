@@ -19,8 +19,8 @@
 - id: top.examples-tutorials
   translation: Tutorials
 
-- id: top.go-docs
-  translation: Go Docs
+- id: top.docs
+  translation: Documentation
 
 - id: top.blog
   translation: Blog

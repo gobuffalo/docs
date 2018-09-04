@@ -14,12 +14,28 @@ import (
 	"github.com/gobuffalo/buffalo"
 	"github.com/gobuffalo/packr"
 	strip "github.com/grokify/html-strip-tags-go"
+	"github.com/microcosm-cc/bluemonday"
 	"github.com/pkg/errors"
 )
 
 const indexName = "gobuffalo.search"
 
+type BlogItem struct {
+	Title       string `json:"title"`
+	PubDate     string `json:"pubDate"`
+	Link        string `json:"link"`
+	GUID        string `json:"guid"`
+	Author      string `json:"author"`
+	Thumbnail   string `json:"thumbnail"`
+	Description string `json:"description"`
+	Content     string `json:"content"`
+	Enclosure   struct {
+	} `json:"enclosure"`
+	Categories []string `json:"categories"`
+}
+
 var index bleve.Index
+var lastBlogPosts [3]BlogItem
 
 func indexSearch(app *buffalo.App) {
 	indexDocs(app)
@@ -50,19 +66,7 @@ type blogFeed struct {
 		Description string `json:"description"`
 		Image       string `json:"image"`
 	} `json:"feed"`
-	Items []struct {
-		Title       string `json:"title"`
-		PubDate     string `json:"pubDate"`
-		Link        string `json:"link"`
-		GUID        string `json:"guid"`
-		Author      string `json:"author"`
-		Thumbnail   string `json:"thumbnail"`
-		Description string `json:"description"`
-		Content     string `json:"content"`
-		Enclosure   struct {
-		} `json:"enclosure"`
-		Categories []string `json:"categories"`
-	} `json:"items"`
+	Items []BlogItem `json:"items"`
 }
 
 type doc struct {
@@ -104,6 +108,27 @@ func indexBlog(app *buffalo.App) {
 		if err != nil {
 			app.Logger.Error(err)
 		}
+	}
+
+	truncateString := func(str string, num int) string {
+		bnoden := str
+		if len(str) > num {
+			if num > 3 {
+				num -= 3
+			}
+			bnoden = str[0:num] + "..."
+		}
+		return bnoden
+	}
+
+	p := bluemonday.StrictPolicy()
+	for i, bp := range blog.Items[len(blog.Items)-3:] {
+		ip := strings.Index(bp.Description, "</p>")
+		if ip != -1 {
+			bp.Description = bp.Description[:ip]
+		}
+		bp.Description = truncateString(p.Sanitize(bp.Description), 100)
+		lastBlogPosts[i] = bp
 	}
 
 	app.Logger.Infof("%d blog items indexed", len(blog.Items))

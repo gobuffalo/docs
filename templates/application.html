@@ -81,7 +81,7 @@
         <div id="navbar" class="navbar-collapse collapse" aria-expanded="true" role="banner">
           <ul class="nav navbar-nav navbar-right">
             <li<%= if (current_path == "/en/docs/examples" || current_path == "/fr/docs/examples") { %> class="active"<% } %>><a href="/docs/examples"><%= t("top.examples-tutorials") %></a></li>
-            <li><a href="https://godoc.org/github.com/gobuffalo/buffalo" target="_blank" rel="noopener noreferrer"><%= t("top.go-docs") %> <i class="fa fa-external-link" aria-hidden="true"></i></a></li>
+            <li><a href="<%= docPath({name: "index", lang: lang}) %>"><%= t("top.docs") %></a></li>
             <li><a href="https://github.com/gobuffalo" target="_blank" rel="noopener noreferrer">GitHub <i class="fa fa-external-link" aria-hidden="true"></i></a></li>
             <li><a href="https://blog.gobuffalo.io" target="_blank" rel="noopener noreferrer"><%= t("top.blog") %> <i class="fa fa-external-link" aria-hidden="true"></i></a></li>
             <li><a href="http://store.gobuffalo.io" target="_blank" rel="noopener noreferrer"><%= t("top.store") %> <i class="fa fa-external-link" aria-hidden="true"></i></a></li>
@@ -96,9 +96,7 @@
 
   </header>
 
-  <%= partial("sidebar.html") %>
-
-    <main class="container-fluid">
+    <main class="container">
       <div class="row">
         <!-- Main content -->
         <article class="main-content" role="main">
@@ -106,8 +104,10 @@
         </article>
         <!-- END Main content -->
       </div>
-      <%= partial("footer.html") %>
     </main>
+    <div class="container-fluid">
+      <%= partial("footer.html") %>
+    </div>
 
 
     <!-- Scripts -->

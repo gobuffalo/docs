@@ -58,6 +58,14 @@ Buffalo can be installed using the [Scoop](http://scoop.sh/) package manager:
 PS C:\> scoop install buffalo
 ```
 
+<%= title("Installation with Homebrew") %>
+
+On macOS, you can also install Buffalo with [Homebrew](https://brew.sh/). After you have Homebrew [installed](https://docs.brew.sh/Installation), you can easily install Buffalo:
+
+```bash
+brew install gobuffalo/tap/buffalo
+```
+
 <%= title("Installation with GoFish") %>
 
 [GoFish](https://gofi.sh/index.html) is a cross-platform systems package manager, that works across Windows, MacOSX and Linux.

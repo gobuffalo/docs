@@ -1,4 +1,4 @@
-<div class="jumbotron">
+<section class="presentation-banner">
   <div class="row">
     <div class="col-md-6 col-lg-8 col-xs-12">
       <h2 style="margin-top: 0.3em; margin-bottom: 0.3em;">
@@ -16,104 +16,106 @@
       <img src="/assets/images/logo_med.png" alt="buffalo" class="logo-presentation" />
     </div>
   </div>
-</div>
+</section>
 
-<h2>Main Features</h2>
+<section class="main-features">
+  <h2>Main Features</h2>
 
-<div class="row">
-  <div class="feature">
-    <h4>
-      <i class="fa fa-road" aria-hidden="true"></i>
-      Routing
-    </h4>
+  <div class="row">
+    <div class="feature">
+      <h4>
+        <i class="fa fa-road" aria-hidden="true"></i>
+        Routing
+      </h4>
 
-    <p>
-      Buffalo uses <a href="https://github.com/gorilla" target="_blank">Gorilla</a> toolkit to manage routes, sessions, cookies... There might be faster routers out there, but this one is definitely the most powerful!
-    </p>
+      <p>
+        Buffalo uses <a href="https://github.com/gorilla" target="_blank">Gorilla</a> toolkit to manage routes, sessions, cookies... There might be faster routers out there, but this one is definitely the most powerful!
+      </p>
+    </div>
+
+    <div class="feature">
+      <h4>
+        <i class="fa fa-th" aria-hidden="true"></i>
+        Templating
+      </h4>
+      <p>
+        Write your templates with <a href="https://github.com/gobuffalo/plush" target="_blank">Plush</a>, using a Rails-like syntax. Extend its features using custom helpers.<br />If you don't like it, you can use <code>html/template</code> or even bring your own!
+      </p>
+    </div>
+    <div class="feature">
+      <h4>
+        <i class="fa fa-cube" aria-hidden="true"></i>
+        Buffalo toolbox
+      </h4>
+      <p>
+        Writing a web application module <strong>always begins with the same tasks</strong>. Buffalo provides you <strong>a simple toolbox</strong>, the <code>buffalo</code> command, to generate many parts of your app and run usual tasks.
+      </p>
+      <p>
+        Extend the toolbox with plugins, using the language you want!
+      </p>
+    </div>
+    <div class="feature">
+      <h4>
+        <i class="fa fa-flask" aria-hidden="true"></i>
+        Testing
+      </h4>
+      <p>
+        Since <strong>testing can be a boring task</strong>, Buffalo helps you to <strong>define test suites</strong>. Action, resource, model generators create test templates for the code you just generated.
+      </p>
+      <p>
+        You can run them all using a simple command from the toolbox.
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="feature">
+      <h4>
+        <i class="fa fa-refresh" aria-hidden="true"></i>
+        Hot Code Reload
+      </h4>
+      <p>
+        Code, save, refresh. Use the <code>buffalo dev</code> command to rebuild your app, from backend to frontend, and just see the changes live!
+      </p>
+    </div>
+    <div class="feature">
+      <h4>
+        <i class="fa fa-file-image-o" aria-hidden="true"></i>
+        Frontend pipeline <span class="label label-default">Optional</span>
+      </h4>
+      <p>
+        Use the Webpack-generated configuration to build your frontend assets, so you can optimize both backend and frontend.
+      </p>
+    </div>
+    <div class="feature">
+      <h4>
+        <i class="fa fa-database" aria-hidden="true"></i>
+        Models / ORM <span class="label label-default">Optional</span>
+      </h4>
+      <p>
+        Deep integration with <a href="https://github.com/gobuffalo/pop" target="_blank">pop</a> provides a simple way to handle database and common related tasks.
+      </p>
+      <p>
+        Supported databases: MySQL/MariaDB, PostgreSQL, CockroachDB, SQLite.
+      </p>
+    </div>
+    <div class="feature">
+      <h4>
+        <i class="fa fa-cogs" aria-hidden="true"></i>
+        Tasks / Background Workers <span class="label label-default">Optional</span>
+      </h4>
+      <p>
+        If you're familiar with Rake tasks from Ruby, you'll be right at home using <a href="https://github.com/markbates/grift" target="_blank">Grift</a>. Seeding a database, running a cleaning job are now at hand!
+      </p>
+      <p>
+        Running background tasks are easy too, using the Background Workers.
+      </p>
+    </div>
   </div>
 
-  <div class="feature">
-    <h4>
-      <i class="fa fa-th" aria-hidden="true"></i>
-      Templating
-    </h4>
-    <p>
-      Write your templates with <a href="https://github.com/gobuffalo/plush" target="_blank">Plush</a>, using a Rails-like syntax. Extend its features using custom helpers.<br />If you don't like it, you can use <code>html/template</code> or even bring your own!
-    </p>
-  </div>
-  <div class="feature">
-    <h4>
-      <i class="fa fa-cube" aria-hidden="true"></i>
-      Buffalo toolbox
-    </h4>
-    <p>
-      Writing a web application module <strong>always begins with the same tasks</strong>. Buffalo provides you <strong>a simple toolbox</strong>, the <code>buffalo</code> command, to generate many parts of your app and run usual tasks.
-    </p>
-    <p>
-      Extend the toolbox with plugins, using the language you want!
-    </p>
-  </div>
-  <div class="feature">
-    <h4>
-      <i class="fa fa-flask" aria-hidden="true"></i>
-      Testing
-    </h4>
-    <p>
-      Since <strong>testing can be a boring task</strong>, Buffalo helps you to <strong>define test suites</strong>. Action, resource, model generators create test templates for the code you just generated.
-    </p>
-    <p>
-      You can run them all using a simple command from the toolbox.
-    </p>
-  </div>
-</div>
-<div class="row">
-  <div class="feature">
-    <h4>
-      <i class="fa fa-refresh" aria-hidden="true"></i>
-      Hot Code Reload
-    </h4>
-    <p>
-      Code, save, refresh. Use the <code>buffalo dev</code> command to rebuild your app, from backend to frontend, and just see the changes live!
-    </p>
-  </div>
-  <div class="feature">
-    <h4>
-      <i class="fa fa-file-image-o" aria-hidden="true"></i>
-      Frontend pipeline <span class="label label-default">Optional</span>
-    </h4>
-    <p>
-      Use the Webpack-generated configuration to build your frontend assets, so you can optimize both backend and frontend.
-    </p>
-  </div>
-  <div class="feature">
-    <h4>
-      <i class="fa fa-database" aria-hidden="true"></i>
-      Models / ORM <span class="label label-default">Optional</span>
-    </h4>
-    <p>
-      Deep integration with <a href="https://github.com/gobuffalo/pop" target="_blank">pop</a> provides a simple way to handle database and common related tasks.
-    </p>
-    <p>
-      Supported databases: MySQL/MariaDB, PostgreSQL, CockroachDB, SQLite.
-    </p>
-  </div>
-  <div class="feature">
-    <h4>
-      <i class="fa fa-cogs" aria-hidden="true"></i>
-      Tasks / Background Workers <span class="label label-default">Optional</span>
-    </h4>
-    <p>
-      If you're familiar with Rake tasks from Ruby, you'll be right at home using <a href="https://github.com/markbates/grift" target="_blank">Grift</a>. Seeding a database, running a cleaning job are now at hand!
-    </p>
-    <p>
-      Running background tasks are easy too, using the Background Workers.
-    </p>
-  </div>
-</div>
-
-<p class="get-started-btn">
-  <a href="/docs/installation" class="btn btn-primary btn-lg"><strong>Get started</strong> with Buffalo</a>
-</p>
+  <p class="get-started-btn">
+    <a href="/docs/installation" class="btn btn-primary btn-lg"><strong>Get started</strong> with Buffalo</a>
+  </p>
+</section>
 
 <h2>From Our Blog</h2>
 

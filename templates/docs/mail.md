@@ -12,3 +12,4 @@ Some alternate [`Sender`](https://godoc.org/github.com/gobuffalo/buffalo/mail#Se
 
 * [postmark-sender](https://github.com/paganotoni/postmark-sender) - A sender to work with [Postmark](https://postmarkapp.com/). Author: [@paganotoni](https://github.com/paganotoni).
 * [mocksmtp](https://github.com/stanislas-m/mocksmtp) - A mock implementation that can be used for testing. Author: [@stanislas-m](https://github.com/stanislas-m).
+* [sendgrid-sender](https://github.com/paganotoni/sendgrid-sender) - A sender to work with Sendgrid](https://sendgrid.com/). Author: [@paganotoni](https://github.com/paganotoni). 

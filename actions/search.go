@@ -111,14 +111,14 @@ func indexBlog(app *buffalo.App) {
 	}
 
 	truncateString := func(str string, num int) string {
-		bnoden := str
-		if len(str) > num {
+		bnoden := []rune(str)
+		if len(bnoden) > num {
 			if num > 3 {
 				num -= 3
 			}
-			bnoden = str[0:num] + "..."
+			bnoden = append(bnoden[0:num], '.', '.', '.')
 		}
-		return bnoden
+		return string(bnoden)
 	}
 
 	p := bluemonday.StrictPolicy()
@@ -127,7 +127,7 @@ func indexBlog(app *buffalo.App) {
 		if ip != -1 {
 			bp.Description = bp.Description[:ip]
 		}
-		bp.Description = truncateString(p.Sanitize(bp.Description), 100)
+		bp.Description = truncateString(p.Sanitize(bp.Description), 143)
 		lastBlogPosts[i] = bp
 	}
 

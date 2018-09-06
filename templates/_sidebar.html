@@ -6,7 +6,7 @@
     <li class="sidebar-form">
 
   <%= form({action: searchPath({lang: lang}), method: "GET"}) { %>
-      <%= f.InputTag({name: "query", placeholder: "enter search query here", value: params["query"]}) %>
+      <%= f.InputTag({name: "query", placeholder: t("menu.search"), value: params["query"]}) %>
   <% } %>
 
     </li>

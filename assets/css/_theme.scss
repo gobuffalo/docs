@@ -3,7 +3,7 @@ body[data-spy] {
 }
 
 .main-content {
-  padding: 50px 50px 50px 0;
+  padding: 50px;
   font-size: 16px;
   line-height: 27px;
 
@@ -343,7 +343,7 @@ body[data-spy] {
     padding: 15px
   }
   .navbar-brand {
-    float: left
+    float: left;
   }
   .navbar-brand>img {
     max-height: 32px

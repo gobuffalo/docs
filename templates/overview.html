@@ -1,4 +1,4 @@
-<section class="presentation-banner">
+<section class="presentation-banner container">
   <div class="row">
     <div class="col-md-6 col-lg-8 col-xs-12">
       <h2 style="margin-top: 0.3em; margin-bottom: 0.3em;">
@@ -18,9 +18,9 @@
   </div>
 </section>
 
-<section class="main-features">
+<section class="main-features row">
   <h2>Main Features</h2>
-
+  <div class="container">
   <div class="row">
     <div class="feature">
       <h4>
@@ -78,18 +78,20 @@
       </p>
     </div>
     <div class="feature">
+        <span class="optional-label">Optional</span>
       <h4>
         <i class="fa fa-file-image-o" aria-hidden="true"></i>
-        Frontend pipeline <span class="label label-default">Optional</span>
+          Frontend pipeline
       </h4>
       <p>
         Use the Webpack-generated configuration to build your frontend assets, so you can optimize both backend and frontend.
       </p>
     </div>
     <div class="feature">
+        <span class="optional-label">Optional</span>
       <h4>
         <i class="fa fa-database" aria-hidden="true"></i>
-        Models / ORM <span class="label label-default">Optional</span>
+          Models / ORM
       </h4>
       <p>
         Deep integration with <a href="https://github.com/gobuffalo/pop" target="_blank">pop</a> provides a simple way to handle database and common related tasks.
@@ -99,9 +101,10 @@
       </p>
     </div>
     <div class="feature">
+        <span class="optional-label">Optional</span>
       <h4>
         <i class="fa fa-cogs" aria-hidden="true"></i>
-        Tasks / Background Workers <span class="label label-default">Optional</span>
+          Tasks / Background Workers
       </h4>
       <p>
         If you're familiar with Rake tasks from Ruby, you'll be right at home using <a href="https://github.com/markbates/grift" target="_blank">Grift</a>. Seeding a database, running a cleaning job are now at hand!
@@ -115,43 +118,50 @@
   <p class="get-started-btn">
     <a href="/docs/installation" class="btn btn-primary btn-lg"><strong>Get started</strong> with Buffalo</a>
   </p>
+  </div>
 </section>
-
-<h2>From Our Blog</h2>
-
-<div class="row">
-  <%= for (bp) in blogPosts { %>
-    <div class="col-xs-12 col-md-4">
-      <header>
-        <h4>
-          <a href="<%= bp.Link %>" target="_blank" rel="noopener noreferrer"><%= bp.Title %></a>
-        </h4>
-        <h5>
-          From
-          <%= bp.Author %>
-        </h5>
-      </header>
-      <p>
-        <%= raw(bp.Description) %>
-      </p>
+<div class="blog row">
+  <h2>From Our Blog</h2>
+  <div class="container">
+    <div class="row">
+      <%= for (bp) in blogPosts { %>
+        <div class="col-xs-12 col-md-4 blog-entry" >
+          <header>
+            <h4>
+              <a href="<%= bp.Link %>" target="_blank" rel="noopener noreferrer"><%= bp.Title %></a>
+            </h4>
+            <h5>
+              From
+              <%= bp.Author %>
+            </h5>
+          </header>
+          <p>
+            <%= raw(bp.Description) %>
+          </p>
+        </div>
+      <% } %>
     </div>
-    <% } %>
+  </div>
+
+  <a class="learn-more-btn" href="">Learn More</a>
 </div>
 
-<%= partial("platinum_sponsors.html") %>
+<div class="container">
+  <%= partial("platinum_sponsors.html") %>
 
-<div class="text-center" style="margin-top: 2.5em;">
-  <h4>Use Buffalo at work?</h4>
+  <div class="text-center" style="margin-top: 2.5em;">
+    <h4>Use Buffalo at work?</h4>
 
-  <p>
-    Ask your manager or marketing team if they’d help <a href="/sponsors">support</a> our project.
-  </p>
+    <p>
+      Ask your manager or marketing team if they’d help <a href="/sponsors">support</a> our project.
+    </p>
 
-  <p>
-      <a href="http://patreon.com/buffalo" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">Become a Patreon</a>
-  </p>
+    <p>
+        <a href="http://patreon.com/buffalo" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">Become a Patreon</a>
+    </p>
+  </div>
+
+  <h2>Discover Buffalo on video</h2>
+
+  <%= partial("docs/youtube.html") %>
 </div>
-
-<h2>Discover Buffalo on video</h2>
-
-<%= partial("docs/youtube.html") %>

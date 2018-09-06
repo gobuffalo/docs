@@ -1,0 +1,131 @@
+.container-fluid {
+    padding: 0;
+}
+
+.feature {
+    height: 346px;
+    width: 270px;
+    border-radius: 6px;
+    background-color: #FFFFFF;
+    box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.11);
+    margin-right: 15px;
+    padding-top: 30px;
+    position: relative;
+
+    p {
+        color: #1A2539;
+        font-size: 13px;
+        font-weight: 300;
+        letter-spacing: -0.24px;
+        line-height: 18px;
+        text-align: center;
+        width: 215px;
+        margin: 0 auto;
+
+        a {
+            text-decoration: underscore
+        }
+    }
+
+    .optional-label {
+        position: absolute;
+        height: 15px;
+        width: 60px;
+        color: #FFFFFF;
+        font-size: 12px;
+        font-weight: bold;
+        letter-spacing: -0.21px;
+        line-height: 15px;
+        text-align: center;
+        height: 26px;
+        width: 70px;
+        background-color: #3D8BDF;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+        line-height: 27px;
+        top: 10px;
+        right: -5px;
+    }
+}
+
+.main-features {
+    background-color: #F3F5F7;
+
+    .get-started-btn a {
+        box-sizing: border-box;
+        height: 46px;
+        width: 300px;
+        border: 1px solid #D55E2D;
+        border-radius: 4px;
+        background-color: #DA602D;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15);
+        text-transform: uppercase;
+    }
+}
+
+.blog {
+
+    background-color: #1A3782;
+    padding-bottom: 60px;
+    color: white;
+
+
+    h2 {
+        color: #FFFFFF;
+        font-size: 36px;
+        font-weight: bold;
+        letter-spacing: -1.06px;
+        line-height: 44px;
+        text-align: center;
+
+        &:after {
+            border-color: white
+        }
+    }
+
+    .blog-entry {
+        height: 161px;
+        margin-bottom: 30px;
+
+        h4 a {
+            color: #FFFFFF;
+            font-family: Lato;
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: -0.65px;
+            line-height: 27px;
+        }
+
+        h5 {
+            color: #FFFFFF;
+            font-family: Lato;
+            font-size: 16px;
+            letter-spacing: -0.47px;
+            line-height: 19px;
+        }
+
+        p {
+            color: #FFFFFF;
+            font-family: Lato;
+            font-size: 16px;
+            font-weight: 300;
+            letter-spacing: -0.47px;
+            line-height: 19px;
+        }
+    }
+
+    .learn-more-btn {
+        height: 44px;
+        width: 161px;
+        border: 1.5px solid #FFFFFF;
+        border-radius: 4px;
+        display: block;
+        text-transform: uppercase;
+        line-height: 42px;
+        color: white;
+        margin: auto;
+        font-family: Lato;
+        text-align: center;
+    }
+
+
+}

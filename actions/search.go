@@ -122,7 +122,7 @@ func indexBlog(app *buffalo.App) {
 	}
 
 	p := bluemonday.StrictPolicy()
-	for i, bp := range blog.Items[len(blog.Items)-3:] {
+	for i, bp := range blog.Items[:3] {
 		ip := strings.Index(bp.Description, "</p>")
 		if ip != -1 {
 			bp.Description = bp.Description[:ip]

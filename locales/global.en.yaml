@@ -96,6 +96,9 @@
 - id: menu.db-callbacks
   translation: Callbacks
 
+- id: menu.db-buffalo-integration
+  translation: Buffalo Integration
+
 - id: menu.contributing
   translation: Contributing
 

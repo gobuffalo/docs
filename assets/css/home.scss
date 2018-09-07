@@ -1,16 +1,83 @@
 .container-fluid {
     padding: 0;
+
+    article.main-content {
+        padding: 0;
+        margin: 0;
+    }
+}
+
+#global-footer {
+    margin-right: 0;
+}
+
+.presentation-banner {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+section {
+
+    margin: 0;
+    padding: 50px 0px 0 0px;
+
+    .learn-more-btn {
+        border: 1.5px solid #FFFFFF;
+        border-radius: 4px;
+        display: inline-block;
+        text-transform: uppercase;
+        line-height: 42px;
+        color: white;
+        font-family: Lato;
+        text-align: center;
+        padding: 3px 20px;
+    }
+    
+    h2 {
+        color: #1A2539;
+        font-family: Lato;
+        font-size: 36px;
+        font-weight: bold;
+        letter-spacing: -1.06px;
+        line-height: 44px;
+        text-align: center;
+    }
+    
+    p {
+        color: #1A2539;
+        font-family: Lato;
+        font-size: 20px;
+        font-weight: 300;
+        letter-spacing: -0.59px;
+        line-height: 24px;
+    }
+}
+
+.main-content {
+    padding-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+    &>section:last-child {
+        padding-top: inherit;
+        margin-bottom: inherit;
+        padding-bottom: 60px;
+    }
 }
 
 .feature {
     height: 346px;
-    width: 270px;
+    width: 100%;
     border-radius: 6px;
     background-color: #FFFFFF;
     box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.11);
-    margin-right: 15px;
     padding-top: 30px;
     position: relative;
+    margin-bottom: 20px;
 
     p {
         color: #1A2539;
@@ -19,7 +86,6 @@
         letter-spacing: -0.24px;
         line-height: 18px;
         text-align: center;
-        width: 215px;
         margin: 0 auto;
 
         a {
@@ -63,11 +129,9 @@
 }
 
 .blog {
-
     background-color: #1A3782;
     padding-bottom: 60px;
     color: white;
-
 
     h2 {
         color: #FFFFFF;
@@ -112,20 +176,58 @@
             line-height: 19px;
         }
     }
+}
 
-    .learn-more-btn {
-        height: 44px;
-        width: 161px;
-        border: 1.5px solid #FFFFFF;
-        border-radius: 4px;
-        display: block;
-        text-transform: uppercase;
-        line-height: 42px;
-        color: white;
-        margin: auto;
-        font-family: Lato;
-        text-align: center;
+.sponsors {
+    background-color: #FFFBF9;
+    padding-bottom: 60px;
+
+    .logo {
+        width: 190px;
+
+        a {
+            width: 190px;
+            display: block;
+            color: #3D8BDF;
+            font-family: Lato;
+            font-size: 19.8px;
+            letter-spacing: -0.58px;
+            line-height: 24px;
+            text-align: center;
+        }
     }
 
+    #platinum-sponsors img {
+        height: 153px;
+        width: 153px;
+        margin-bottom: 10px;
+    }
+}
 
+.know-more {
+    background-color: #0A193F;
+    padding-bottom: 60px;
+
+    h2, p {color: white}
+}
+
+@media screen and (max-width: 767px) {
+    .container-fluid .main-content { padding: 0 !important}
+    body>main {padding: 0 !important}
+    .presentation-banner {
+        margin-top: -80px;
+    }
+
+    #global-footer {
+        padding: 20px;
+    }
+
+    .blog-entry {
+        height: auto;
+    }
+
+    .feature {
+        height: auto;
+        padding-bottom: 40px;
+    }
 }

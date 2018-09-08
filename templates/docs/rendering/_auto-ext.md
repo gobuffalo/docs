@@ -2,7 +2,7 @@
 
 <%= sinceVersion("0.10.2") %>
 
-You can use HTML, Javascript and Markdown renderers without specifing the file extension:
+You can use HTML, Javascript and Markdown renderers without specifying the file extension:
 
 ```go
 // actions/beatles.go

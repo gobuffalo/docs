@@ -14,7 +14,7 @@
 
 * **November 6th, 2017** - Why You Should Choose Buffalo For Building Web Apps In Go [https://medium.com/@alkeshsrivastava11/why-you-should-choose-buffalo-for-building-web-apps-in-go-46f711043437](https://medium.com/@alkeshsrivastava11/why-you-should-choose-buffalo-for-building-web-apps-in-go-46f711043437)
 
-* **Octover 9th, 2017** - JWT And [Go] Buffalo [https://medium.com/@francescodonzello/jwt-and-go-buffalo-4cce3ae73723](https://medium.com/@francescodonzello/jwt-and-go-buffalo-4cce3ae73723)
+* **October 9th, 2017** - JWT And [Go] Buffalo [https://medium.com/@francescodonzello/jwt-and-go-buffalo-4cce3ae73723](https://medium.com/@francescodonzello/jwt-and-go-buffalo-4cce3ae73723)
 
 * **August 25th, 2017** - Setting Up Windows For Go And Buffalo [http://www.stuartellis.name/articles/windows-golang-setup/](http://www.stuartellis.name/articles/windows-golang-setup/)
 

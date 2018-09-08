@@ -6,7 +6,7 @@
     <li class="sidebar-form">
 
   <%= form({action: searchPath({lang: lang}), method: "GET"}) { %>
-      <%= f.InputTag({name: "query", placeholder: "enter search query here", value: params["query"]}) %>
+      <%= f.InputTag({name: "query", placeholder: t("menu.search"), value: params["query"]}) %>
   <% } %>
 
     </li>
@@ -160,7 +160,7 @@
           <a href="/en/docs/db/scoping">Scoping</a>
         </li>
         <li>
-          <a href="/en/docs/db/buffalo-integration">Buffalo Integration</a>
+          <a href="<%= docPath({name: "db/buffalo-integration", lang: lang}) %>"><%= t("menu.db-buffalo-integration") %></a>
         </li>
         <li>
           <a href="https://andrew-sledge.gitbooks.io/the-unofficial-pop-book/content/" target="_blank">The Unofficial Pop Book</a>

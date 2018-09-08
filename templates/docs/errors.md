@@ -6,7 +6,7 @@
 func MyHandler(c buffalo.Context) error {
   // Return any old error, this will result in a 500 status code.
   return errors.New("boom!")
-  }
+}
 ```
 
 ```go

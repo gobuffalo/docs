@@ -59,18 +59,12 @@
 
     <!-- Top navbar & branding -->
     <nav class="navbar navbar-default">
-      <div class="container-fluid">
+      <div class="container">
 
         <!-- Toggle buttons and brand -->
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
             <i class="fa fa-ellipsis-v"></i>
-          </button>
-
-          <button type="button" class="navbar-toggle for-sidebar" data-toggle="offcanvas">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
           </button>
 
           <a class="navbar-brand" href="/<%= lang %>" id="logo"><span class="force-middle"></span><img src="/assets/images/logo_top.png" alt="logo"> <%= raw(t("top.title")) %></a>
@@ -81,11 +75,11 @@
         <div id="navbar" class="navbar-collapse collapse" aria-expanded="true" role="banner">
           <ul class="nav navbar-nav navbar-right">
             <li<%= if (current_path == "/en/docs/examples" || current_path == "/fr/docs/examples") { %> class="active"<% } %>><a href="/docs/examples"><%= t("top.examples-tutorials") %></a></li>
-            <li><a href="https://godoc.org/github.com/gobuffalo/buffalo" target="_blank" rel="noopener noreferrer"><%= t("top.go-docs") %> <i class="fa fa-external-link" aria-hidden="true"></i></a></li>
-            <li><a href="https://github.com/gobuffalo" target="_blank" rel="noopener noreferrer">GitHub <i class="fa fa-external-link" aria-hidden="true"></i></a></li>
-            <li><a href="https://blog.gobuffalo.io" target="_blank" rel="noopener noreferrer"><%= t("top.blog") %> <i class="fa fa-external-link" aria-hidden="true"></i></a></li>
-            <li><a href="http://store.gobuffalo.io" target="_blank" rel="noopener noreferrer"><%= t("top.store") %> <i class="fa fa-external-link" aria-hidden="true"></i></a></li>
-            <li class="hero"><a href="http://patreon.com/buffalo" target="_blank" rel="noopener noreferrer"><%= t("top.become-a-patreon") %> <i class="fa fa-external-link" aria-hidden="true"></i></a></li>
+            <li><a href="<%= docPath({name: "index", lang: lang}) %>"><%= t("top.docs") %></a></li>
+            <li><a href="https://github.com/gobuffalo" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="https://blog.gobuffalo.io" target="_blank" rel="noopener noreferrer"><%= t("top.blog") %></a></li>
+            <li><a href="http://store.gobuffalo.io" target="_blank" rel="noopener noreferrer"><%= t("top.store") %></a></li>
+            <li class="hero"><a href="http://patreon.com/buffalo" target="_blank" rel="noopener noreferrer"><%= t("top.become-a-patreon") %></a></li>
           </ul>
         </div>
         <!-- END Top navbar -->
@@ -96,19 +90,14 @@
 
   </header>
 
-  <%= partial("sidebar.html") %>
-
-    <main class="container-fluid">
-      <div class="row">
-        <!-- Main content -->
-        <article class="main-content" role="main">
-          <%= yield %>
-        </article>
-        <!-- END Main content -->
-      </div>
-      <%= partial("footer.html") %>
+    <main class="container">
+      <!-- Main content -->
+      <article class="main-content" role="main">
+        <%= yield %>
+      </article>
+      <!-- END Main content -->
     </main>
-
+    <%= partial("footer.html") %>
 
     <!-- Scripts -->
     <%= javascriptTag("application.js") %>

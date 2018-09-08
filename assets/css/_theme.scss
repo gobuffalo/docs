@@ -3,7 +3,7 @@ body[data-spy] {
 }
 
 .main-content {
-  padding: 50px 50px 50px 0;
+  padding: 50px;
   font-size: 16px;
   line-height: 27px;
 
@@ -343,7 +343,7 @@ body[data-spy] {
     padding: 15px
   }
   .navbar-brand {
-    float: left
+    float: left;
   }
   .navbar-brand>img {
     max-height: 32px
@@ -1011,7 +1011,7 @@ h2 {
   margin-top: 65px;
   font-weight: 300;
   padding-bottom: 16px;
-  border-bottom: 1px solid #ddd
+  text-align: center;
 }
 
 h2 a {
@@ -1019,14 +1019,18 @@ h2 a {
   line-height: 44px
 }
 
-h2 a:after {
+h1, h2, h3 {
+  text-align: center;
+}
+
+h1::after, h2::after, h3::after
+{
   content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -20px;
-  height: 1px;
-  background-color: #aaa
+  border-bottom: 3px solid #e0562e;
+  width: 75px;
+  display: block;
+  margin: 0 auto;
+  padding-top: 15px;
 }
 
 h3 {
@@ -1036,22 +1040,11 @@ h3 {
   margin-top: 45px;
   font-weight: 300;
   padding-bottom: 16px;
-  border-bottom: 1px solid #ddd;
 }
 
 h3 a {
   position: relative;
   // line-height: 44px
-}
-
-h3 a:after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -20px;
-  height: 1px;
-  background-color: #aaa
 }
 
 h4 {

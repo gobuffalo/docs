@@ -10,6 +10,7 @@ import (
 
 // HomeHandler serves the home page.
 func HomeHandler(c buffalo.Context) error {
+	c.Set("blogPosts", lastBlogPosts)
 	return c.Render(200, r.HTML("overview.html"))
 }
 

@@ -57,6 +57,31 @@ a.POST("/some/path", func (c buffalo.Context) error {
 
 As you can see, you can use inline handlers if you want. For more readability though, it's often better to separate your handlers into multiple files. If you have many handlers managing users stuff, you can group them into a `users.go` file in the [`actions`](/en/docs/directory-structure) folder, for instance.
 
+<%= title("Named Routes")  %>
+
+By default, Buffalo will name your routes for you in the form of `pathnamePath`. For example `a.GET("/coke", CokeHandler)` will result in a route named `cokePath`. You can inspect all of your paths by running `buffalo routes` from the command line.
+
+You can also specify the name of your route.
+
+```go
+a.GET("/coke", CokeHandler).Name("customPath")
+```
+
+This route is now called `customPath` and you can reference it as such in your templates.
+
+```html
+&lt;a href="\<%= customPath() %>">Coke&lt;/a>
+```
+
+If your route accepts a parameter, you can easily pass it in via your named route.
+
+```go
+a.GET("/coke/{coke_id}", CokeHandler).Name("customPath")
+```
+```html
+&lt;a href="\<%= customPath({coke_id: 1}) %>">Coke 1&lt;/a>
+```
+
 <%= title("Parameters", {})  %>
 
 Query string and other parameters are available from the [`buffalo.Context`](/docs/context) that is passed into the `buffalo.Handler`.

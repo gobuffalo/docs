@@ -19,8 +19,8 @@
 - id: top.examples-tutorials
   translation: Tutoriels
 
-- id: top.go-docs
-  translation: Docs Go
+- id: top.docs
+  translation: Documentation
 
 - id: top.blog
   translation: Blog
@@ -39,6 +39,9 @@
   translation: Gopher Buffalo conçu par <a href="https://twitter.com/ashleymcnamara" target="_blank" rel="noopener noreferrer">Ashley McNamara</a> &mdash; Gopher originel conçu par Renee French.
 
 # Menu
+- id: menu.search
+  translation: Rechercher...
+
 - id: menu.language
   translation: Langue
 
@@ -92,6 +95,9 @@
 
 - id: menu.db-callbacks
   translation: Callbacks
+
+- id: menu.db-buffalo-integration
+  translation: Intégration avec Buffalo
 
 - id: menu.contributing
   translation: Contribuer

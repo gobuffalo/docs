@@ -1,3 +1,6 @@
+<% seoDescription("How to handle routes in Buffalo?") %>
+<% seoKeywords(["buffalo", "go", "golang", "http", "route", "gorilla", "router"]) %>
+
 # Routing
 
 Buffalo uses the [github.com/gorilla/mux](http://www.gorillatoolkit.org/pkg/mux) package under the covers, to handle routing within Buffalo applications. With that said, Buffalo wraps the `mux` API with its own. This guide walks you through all you'll need to know about how Buffalo handles routing.
@@ -148,6 +151,29 @@ g.Use(APIAuthorizer)
 ```
 
 In the above example the `/api/v1` group will use both `SomeMiddleware` and `APIAuthorizer`. See [middleware](/docs/middleware) for more information about using, skipping, and clearing middleware.
+
+<%= title("Mount another App") %>
+
+<%= sinceVersion("0.9.4") %>
+
+Sometimes, you'll want to reuse some components from other apps. Using the [`Mount`](https://godoc.org/github.com/gobuffalo/buffalo#App.Mount) method, you can bind a standard [`http.Handler`](https://golang.org/pkg/net/http/#Handler) to a route, just like you'll do with a normal route handler.
+
+```go
+func muxer() http.Handler {
+	f := func(res http.ResponseWriter, req *http.Request) {
+		fmt.Fprintf(res, "%s - %s", req.Method, req.URL.String())
+	}
+	mux := mux.NewRouter()
+	mux.HandleFunc("/foo", f).Methods("GET")
+	mux.HandleFunc("/bar", f).Methods("POST")
+	mux.HandleFunc("/baz/baz", f).Methods("DELETE")
+	return mux
+}
+
+a.Mount("/admin", muxer())
+```
+
+Since Buffalo `App` implements the `http.Handler` interface, you can also mount another Buffalo app and build modular apps.
 
 <%= title("Loose Slash", {}) %>
 

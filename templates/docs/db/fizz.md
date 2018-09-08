@@ -39,7 +39,7 @@ create_table("users") {
 
 Note that a primary key is not required. The `create_table` function will generate two `timestamp` columns; `created_at` and `updated_at`.
 
-The `t.Columns` method takes the following arguments: name of the column, the type of the field, and finally the last argument is any options you want to set on that column.
+The `t.Column` method takes the following arguments: name of the column, the type of the field, and finally the last argument is any options you want to set on that column.
 
 #### <a name="column-info"></a> "Common" Types:
 

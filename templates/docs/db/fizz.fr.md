@@ -38,7 +38,7 @@ create_table("users") {
 
 Deux colonnes de type `timestamp` seront aussi générées par défaut ; `created_at` et `updated_at`.
 
-La méthode `t.Columns` accepte les arguments suivants : nom de la colonne, le type du champ, et finalement les options que vous souhaitez attribuer à cette colonne.
+La méthode `t.Column` accepte les arguments suivants : nom de la colonne, le type du champ, et finalement les options que vous souhaitez attribuer à cette colonne.
 
 #### <a name="column-info"></a> Types « courants » :
 

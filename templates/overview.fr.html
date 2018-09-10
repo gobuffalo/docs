@@ -2,18 +2,20 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-lg-8 col-xs-12">
-        <h2 class="text-left title" style="margin-top: 0.3em; margin-bottom: 0.3em;">
-        Un écosystème pour le développement Web en Go,<br /> conçu pour rendre votre vie plus facile.
-      </h2>
-      <p style="margin-bottom: 1.4em;">
-        <a href="/fr/docs/installation" class="btn btn-primary btn-lg">Démarrer</a>
-      </p>
-      <p>
-        Dernière version&nbsp;: <a href="https://github.com/gobuffalo/buffalo/releases/tag/v<%= version %>" target="_blank"><strong><%= version %></strong></a><br />
-        Nécessite Go <strong><%= goMinVersion %>+</strong>
-      </p>
-    </div>
-    <div class="col-md-6 col-lg-4 col-xs-6 text-center">
+        <h2 class="text-left title" style="margin-top: 0.3em; margin-bottom: 0.3em;">Un écosystème pour <br/>le développement Web en Go, conçu pour rendre votre vie plus facile.</h2>
+        <p style="margin-bottom: 1.4em;">
+          <a href="/fr/docs/installation" class="btn btn-primary btn-lg">Démarrer</a>
+        </p>
+        <div class="last-info">
+          <p>Dernière version:</p>
+          <a class="badge badge-pill" href="https://github.com/gobuffalo/buffalo/releases/tag/v<%= version %>" target="_blank"><%= version %></a>
+        </div>
+        <div class="last-info">
+          <p>Nécessite:</p>
+          <span class="badge badge-pill">Go <%= goMinVersion %>+</span>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 col-xs-6 text-center">
         <img src="/assets/images/logo_med.png" alt="buffalo" class="logo-presentation center-block"/>
         <a class="buffalo-video center-block" href="#" data-toggle="modal" data-target="#videoModal">
           <img src="<%= assetPath("images/landing_icons/play_button.svg") %>" alt="play_button">

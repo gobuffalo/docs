@@ -3,16 +3,20 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-lg-8 col-xs-12">
-        <h2 style="margin-top: 0.3em; margin-bottom: 0.3em;">
-          A Go web development eco-system, <br /> designed to make your life easier.
+        <h2 class="text-left title" style="margin-top: 0.3em; margin-bottom: 0.3em;">
+          A Go web development eco-system, <br /> designed to make the life of a Go web<br> web developer easier.
         </h2>
         <p style="margin-bottom: 1.4em;">
-          <a href="/en/docs/installation" class="btn btn-primary btn-lg">Get started</a>
+          <a href="/en/docs/installation" class="btn btn-primary btn-lg btn-buffalo">Get started</a>
         </p>
-        <p>
-          Latest release: <a href="https://github.com/gobuffalo/buffalo/releases/tag/v<%= version %>" target="_blank"><strong><%= version %></strong></a><br />
-          Requires Go <strong><%= goMinVersion %>+</strong>
-        </p>
+        <div class="last-info">
+          <p>Latest release:</p>
+          <a class="badge badge-pill" href="https://github.com/gobuffalo/buffalo/releases/tag/v<%= version %>" target="_blank"><%= version %></a>
+        </div>
+        <div class="last-info">
+          <p>Requires:</p>
+          <span class="badge badge-pill">Go <%= goMinVersion %>+</span>
+        </div>
       </div>
       <div class="col-md-6 col-lg-4 col-sm-6 col-xs-12">
         <img src="/assets/images/logo_med.png" alt="buffalo" class="logo-presentation" />
@@ -22,141 +26,99 @@
 </section>
 
 <section class="main-features">
-  <h2>Main Features</h2>
+  <h2 class="title">Main Features</h2>
   <div class="container">
     <div class="row">
       <div class="col-md-3">
         <div class="feature">
-          <h4>
-            <i class="fa fa-road" aria-hidden="true"></i>
-            Routing
-          </h4>
-
-          <p>
-            Buffalo uses <a href="https://github.com/gorilla" target="_blank">Gorilla</a> toolkit to manage routes, sessions, cookies... There might be faster routers out there, but this one is definitely the most powerful!
-          </p>
+          <img src="<%= assetPath("images/landing_icons/routing.svg") %>" alt="routing">
+          <h4>Routing</h4>
+          <p>Buffalo uses <a href="https://github.com/gorilla" target="_blank">Gorilla</a> toolkit to manage routes, sessions, cookies...</p>
+          <p>There might be faster routers out there, but this one is definitely the most powerful!</p>
         </div>
       </div>
       <div class="col-md-3">
         <div class="feature">
-          <h4>
-            <i class="fa fa-th" aria-hidden="true"></i>
-            Templating
-          </h4>
-          <p>
-            Write your templates with <a href="https://github.com/gobuffalo/plush" target="_blank">Plush</a>, using a Rails-like syntax. Extend its features using custom helpers.<br />If you don't like it, you can use <code>html/template</code> or even bring your own!
-          </p>
+          <img src="<%= assetPath("images/landing_icons/templating.svg") %>" alt="templating">
+          <h4>Templating</h4>
+          <p>Write your templates with <a href="https://github.com/gobuffalo/plush" target="_blank">Plush</a>, using a Rails-like syntax. Extend its features using custom helpers.</p>
+          <p>If you don't like it, you can use <code>html/template</code> or even bring your own!</p>
         </div>
       </div>
       <div class="col-md-3">
         <div class="feature">
-          <h4>
-            <i class="fa fa-cube" aria-hidden="true"></i>
-            Buffalo toolbox
-          </h4>
-          <p>
-            Writing a web application module <strong>always begins with the same tasks</strong>. Buffalo provides you <strong>a simple toolbox</strong>, the <code>buffalo</code> command, to generate many parts of your app and run usual tasks.
-          </p>
-          <p>
-            Extend the toolbox with plugins, using the language you want!
-          </p>
+          <img src="<%= assetPath("images/landing_icons/toolbox.svg") %>" alt="buffalo-toolbox">
+          <h4>Buffalo toolbox</h4>
+          <p>Writing a web application module <strong>always begins with the same tasks</strong>. Buffalo provides you <strong>a simple toolbox</strong>, the <code>buffalo</code> command, to generate many parts of your app and run usual tasks.</p>
+          <p>Extend the toolbox with plugins, using the language you want!</p>
         </div>
       </div>
       <div class="col-md-3">
         <div class="feature">
-          <h4>
-            <i class="fa fa-flask" aria-hidden="true"></i>
-            Testing
-          </h4>
-          <p>
-            Since <strong>testing can be a boring task</strong>, Buffalo helps you to <strong>define test suites</strong>. Action, resource, model generators create test templates for the code you just generated.
-          </p>
-          <p>
-            You can run them all using a simple command from the toolbox.
-          </p>
+          <img src="<%= assetPath("images/landing_icons/testing.svg") %>" alt="testing">
+          <h4>Testing</h4>
+          <p>Since <strong>testing can be a boring task</strong>, Buffalo helps you to <strong>define test suites</strong>. Action, resource, model generators create test templates for the code you just generated.</p>
+          <p>You can run them all using a simple command from the toolbox.</p>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-md-3">
         <div class="feature">
-          <h4>
-            <i class="fa fa-refresh" aria-hidden="true"></i>
-            Hot Code Reload
-          </h4>
-          <p>
-            Code, save, refresh. Use the <code>buffalo dev</code> command to rebuild your app, from backend to frontend, and just see the changes live!
-          </p>
+          <img src="<%= assetPath("images/landing_icons/routing.svg") %>" alt="hot-reload">
+          <h4>Hot Code Reload</h4>
+          <p>Code, save, refresh. Use the <code>buffalo dev</code> command to rebuild your app, from backend to frontend, and just see the changes live!</p>
         </div>
       </div>
       <div class="col-md-3">
         <div class="feature">
-            <span class="optional-label">Optional</span>
-          <h4>
-            <i class="fa fa-file-image-o" aria-hidden="true"></i>
-              Frontend pipeline
-          </h4>
-          <p>
-            Use the Webpack-generated configuration to build your frontend assets, so you can optimize both backend and frontend.
-          </p>
+          <span class="optional-label">Optional</span>
+          <img src="<%= assetPath("images/landing_icons/frontend.svg") %>" alt="front-end">
+          <h4>Frontend pipeline</h4>
+          <p>Use the Webpack-generated configuration to build your frontend assets, so you can optimize both backend and frontend.</p>
         </div>
       </div>
       <div class="col-md-3">
         <div class="feature">
-            <span class="optional-label">Optional</span>
-          <h4>
-            <i class="fa fa-database" aria-hidden="true"></i>
-              Models / ORM
-          </h4>
-          <p>
-            Deep integration with <a href="https://github.com/gobuffalo/pop" target="_blank">pop</a> provides a simple way to handle database and common related tasks.
-          </p>
-          <p>
-            Supported databases: MySQL/MariaDB, PostgreSQL, CockroachDB, SQLite.
-          </p>
+          <span class="optional-label">Optional</span>
+          <img src="<%= assetPath("images/landing_icons/models.svg") %>" alt="models">
+          <h4>Models / ORM</h4>
+          <p>Deep integration with <a href="https://github.com/gobuffalo/pop" target="_blank">pop</a> provides a simple way to handle database and common related tasks.</p>
+          <p>Supported databases: MySQL/MariaDB, PostgreSQL, CockroachDB, SQLite.</p>
         </div>
       </div>
       <div class="col-md-3">
         <div class="feature">
-            <span class="optional-label">Optional</span>
-          <h4>
-            <i class="fa fa-cogs" aria-hidden="true"></i>
-              Tasks / Background Workers
-          </h4>
-          <p>
-            If you're familiar with Rake tasks from Ruby, you'll be right at home using <a href="https://github.com/markbates/grift" target="_blank">Grift</a>. Seeding a database, running a cleaning job are now at hand!
-          </p>
-          <p>
-            Running background tasks are easy too, using the Background Workers.
-          </p>
+          <span class="optional-label">Optional</span>
+          <img class="text-center" src="<%= assetPath("images/landing_icons/task.svg") %>" alt="task-workers">
+          <h4>Tasks / Background Workers</h4>
+          <p>If you're familiar with Rake tasks from Ruby, you'll be right at home using <a href="https://github.com/markbates/grift" target="_blank">Grift</a>. Seeding a database, running a cleaning job are now at hand!</p>
+          <p>Running background tasks are easy too, using the Background Workers.</p>
         </div>
+      </div>
+      <div class="col-md-12">
+        <p class="get-started-btn">
+          <a href="/docs/installation" class="btn btn-primary btn-lg btn-buffalo"><strong>Get started</strong> with Buffalo</a>
+        </p>
       </div>
     </div>
-
-    <p class="get-started-btn">
-      <a href="/docs/installation" class="btn btn-primary btn-lg"><strong>Get started</strong> with Buffalo</a>
-    </p>
+  </div>
+  <div class="white-overlay">
+    
   </div>
 </section>
 
 <section class="blog">
-  <h2>From Our Blog</h2>
+  <h2 class="title">From Our Blog</h2>
   <div class="container">
     <div class="row">
       <%= for (bp) in blogPosts { %>
         <div class="col-xs-12 col-md-4 blog-entry" >
           <header>
-            <h4>
-              <a href="<%= bp.Link %>" target="_blank" rel="noopener noreferrer"><%= bp.Title %></a>
-            </h4>
-            <h5>
-              From
-              <%= bp.Author %>
-            </h5>
+            <h4><a href="<%= bp.Link %>" target="_blank" rel="noopener noreferrer"><%= bp.Title %></a></h4>
+            <h5><%= bp.Author %></h5>
           </header>
-          <p>
-            <%= raw(bp.Description) %>
-          </p>
+          <p><%= raw(bp.Description) %></p>
         </div>
       <% } %>
     </div>
@@ -170,14 +132,20 @@
   <%= partial("platinum_sponsors.html") %>
 </section>
 
-<section class="">
+<section class="buffalo-at-work">
+  <div class="tumbleweed tumbleweed-left">
+    <img src="<%= assetPath("images/landing_icons/tumbleweed.svg") %>" alt="tumbleweed-left">
+    <img src="<%= assetPath("images/landing_icons/tumbleweed.svg") %>" alt="tumbleweed-left">
+    <img src="<%= assetPath("images/landing_icons/tumbleweed.svg") %>" alt="tumbleweed-left">
+  </div>
   <div class="container text-center">
       <h4>Use Buffalo at work?</h4>
       <p>Ask your manager or marketing team if they’d help <a href="/sponsors">support</a> our project.</p>
-
-      <p>
-          <a href="http://patreon.com/buffalo" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">Become a Patreon</a>
-      </p>
+      <p><a href="http://patreon.com/buffalo" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg btn-buffalo">Become a Patreon</a></p>
+  </div>
+  <div class="tumbleweed tumbleweed-right">
+      <img src="<%= assetPath("images/landing_icons/tumbleweed.svg") %>" alt="tumbleweed-right">
+      <img src="<%= assetPath("images/landing_icons/tumbleweed.svg") %>" alt="tumbleweed-right">
   </div>
 </section>
 

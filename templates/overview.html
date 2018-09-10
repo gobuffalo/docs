@@ -2,24 +2,26 @@
 <section class="presentation-banner">
   <div class="container">
     <div class="row">
-      <div class="col-md-6 col-lg-8 col-xs-12">
-        <h2 class="text-left title" style="margin-top: 0.3em; margin-bottom: 0.3em;">
-          A Go web development eco-system, <br /> designed to make the life of a Go web<br> web developer easier.
-        </h2>
-        <p style="margin-bottom: 1.4em;">
-          <a href="/en/docs/installation" class="btn btn-primary btn-lg btn-buffalo">Get started</a>
-        </p>
-        <div class="last-info">
-          <p>Latest release:</p>
-          <a class="badge badge-pill" href="https://github.com/gobuffalo/buffalo/releases/tag/v<%= version %>" target="_blank"><%= version %></a>
+      <div class="mask">
+        <div class="col-md-6 col-lg-8 col-xs-12">
+          <h2 class="text-left title" style="margin-top: 0.3em; margin-bottom: 0.3em;">
+            A Go web development eco-system, <br/> designed to make the life of a Go web<br> web developer easier.
+          </h2>
+          <p style="margin-bottom: 1.4em;">
+            <a href="/en/docs/installation" class="btn btn-primary btn-lg btn-buffalo">Get started</a>
+          </p>
+          <div class="last-info">
+            <p>Latest release:</p>
+            <a class="badge badge-pill" href="https://github.com/gobuffalo/buffalo/releases/tag/v<%= version %>" target="_blank"><%= version %></a>
+          </div>
+          <div class="last-info">
+            <p>Requires:</p>
+            <span class="badge badge-pill">Go <%= goMinVersion %>+</span>
+          </div>
         </div>
-        <div class="last-info">
-          <p>Requires:</p>
-          <span class="badge badge-pill">Go <%= goMinVersion %>+</span>
+        <div class="col-md-6 col-lg-4 col-xs-6">
+          <img src="/assets/images/logo_med.png" alt="buffalo" class="logo-presentation" />
         </div>
-      </div>
-      <div class="col-md-6 col-lg-4 col-sm-6 col-xs-12">
-        <img src="/assets/images/logo_med.png" alt="buffalo" class="logo-presentation" />
       </div>
     </div>
   </div>
@@ -29,7 +31,7 @@
   <h2 class="title">Main Features</h2>
   <div class="container">
     <div class="row">
-      <div class="col-md-3">
+      <div class="col-lg-3 col-sm-6">
         <div class="feature">
           <img src="<%= assetPath("images/landing_icons/routing.svg") %>" alt="routing">
           <h4>Routing</h4>
@@ -37,7 +39,7 @@
           <p>There might be faster routers out there, but this one is definitely the most powerful!</p>
         </div>
       </div>
-      <div class="col-md-3">
+      <div class="col-lg-3 col-sm-6">
         <div class="feature">
           <img src="<%= assetPath("images/landing_icons/templating.svg") %>" alt="templating">
           <h4>Templating</h4>
@@ -45,7 +47,7 @@
           <p>If you don't like it, you can use <code>html/template</code> or even bring your own!</p>
         </div>
       </div>
-      <div class="col-md-3">
+      <div class="col-lg-3 col-sm-6">
         <div class="feature">
           <img src="<%= assetPath("images/landing_icons/toolbox.svg") %>" alt="buffalo-toolbox">
           <h4>Buffalo toolbox</h4>
@@ -53,7 +55,7 @@
           <p>Extend the toolbox with plugins, using the language you want!</p>
         </div>
       </div>
-      <div class="col-md-3">
+      <div class="col-lg-3 col-sm-6">
         <div class="feature">
           <img src="<%= assetPath("images/landing_icons/testing.svg") %>" alt="testing">
           <h4>Testing</h4>
@@ -63,14 +65,14 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-3">
+      <div class="col-lg-3 col-sm-6">
         <div class="feature">
           <img src="<%= assetPath("images/landing_icons/routing.svg") %>" alt="hot-reload">
           <h4>Hot Code Reload</h4>
           <p>Code, save, refresh. Use the <code>buffalo dev</code> command to rebuild your app, from backend to frontend, and just see the changes live!</p>
         </div>
       </div>
-      <div class="col-md-3">
+      <div class="col-lg-3 col-sm-6">
         <div class="feature">
           <span class="optional-label">Optional</span>
           <img src="<%= assetPath("images/landing_icons/frontend.svg") %>" alt="front-end">
@@ -78,7 +80,7 @@
           <p>Use the Webpack-generated configuration to build your frontend assets, so you can optimize both backend and frontend.</p>
         </div>
       </div>
-      <div class="col-md-3">
+      <div class="col-lg-3 col-sm-6">
         <div class="feature">
           <span class="optional-label">Optional</span>
           <img src="<%= assetPath("images/landing_icons/models.svg") %>" alt="models">
@@ -87,7 +89,7 @@
           <p>Supported databases: MySQL/MariaDB, PostgreSQL, CockroachDB, SQLite.</p>
         </div>
       </div>
-      <div class="col-md-3">
+      <div class="col-lg-3 col-sm-6">
         <div class="feature">
           <span class="optional-label">Optional</span>
           <img class="text-center" src="<%= assetPath("images/landing_icons/task.svg") %>" alt="task-workers">
@@ -104,7 +106,10 @@
     </div>
   </div>
   <div class="white-overlay">
-    
+    <div class="white-bg"></div>
+    <img src="<%= assetPath("images/landing_icons/cactus.svg") %>" alt="cactus" class="cactus cactus-left">
+    <img src="<%= assetPath("images/landing_icons/cactus.svg") %>" alt="cactus" class="cactus cactus-right">
+    <img src="<%= assetPath("images/landing_icons/cactus.svg") %>" alt="cactus" class="cactus cactus-right">
   </div>
 </section>
 

@@ -1,161 +1,192 @@
+
 <section class="presentation-banner">
-  <div class="row">
-    <div class="col-md-6 col-lg-8 col-xs-12">
-      <h2 style="margin-top: 0.3em; margin-bottom: 0.3em;">
-        A Go web development eco-system, <br /> designed to make your life easier.
-      </h2>
-      <p style="margin-bottom: 1.4em;">
-        <a href="/en/docs/installation" class="btn btn-primary btn-lg">Get started</a>
-      </p>
-      <p>
-        Latest release: <a href="https://github.com/gobuffalo/buffalo/releases/tag/v<%= version %>" target="_blank"><strong><%= version %></strong></a><br />
-        Requires Go <strong><%= goMinVersion %>+</strong>
-      </p>
-    </div>
-    <div class="col-md-6 col-lg-4 col-sm-6 col-xs-12">
-      <img src="/assets/images/logo_med.png" alt="buffalo" class="logo-presentation" />
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-lg-8 col-xs-12">
+        <h2 style="margin-top: 0.3em; margin-bottom: 0.3em;">
+          A Go web development eco-system, <br /> designed to make your life easier.
+        </h2>
+        <p style="margin-bottom: 1.4em;">
+          <a href="/en/docs/installation" class="btn btn-primary btn-lg">Get started</a>
+        </p>
+        <p>
+          Latest release: <a href="https://github.com/gobuffalo/buffalo/releases/tag/v<%= version %>" target="_blank"><strong><%= version %></strong></a><br />
+          Requires Go <strong><%= goMinVersion %>+</strong>
+        </p>
+      </div>
+      <div class="col-md-6 col-lg-4 col-sm-6 col-xs-12">
+        <img src="/assets/images/logo_med.png" alt="buffalo" class="logo-presentation" />
+      </div>
     </div>
   </div>
 </section>
 
 <section class="main-features">
   <h2>Main Features</h2>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="feature">
+          <h4>
+            <i class="fa fa-road" aria-hidden="true"></i>
+            Routing
+          </h4>
 
-  <div class="row">
-    <div class="feature">
-      <h4>
-        <i class="fa fa-road" aria-hidden="true"></i>
-        Routing
-      </h4>
-
-      <p>
-        Buffalo uses <a href="https://github.com/gorilla" target="_blank">Gorilla</a> toolkit to manage routes, sessions, cookies... There might be faster routers out there, but this one is definitely the most powerful!
-      </p>
+          <p>
+            Buffalo uses <a href="https://github.com/gorilla" target="_blank">Gorilla</a> toolkit to manage routes, sessions, cookies... There might be faster routers out there, but this one is definitely the most powerful!
+          </p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="feature">
+          <h4>
+            <i class="fa fa-th" aria-hidden="true"></i>
+            Templating
+          </h4>
+          <p>
+            Write your templates with <a href="https://github.com/gobuffalo/plush" target="_blank">Plush</a>, using a Rails-like syntax. Extend its features using custom helpers.<br />If you don't like it, you can use <code>html/template</code> or even bring your own!
+          </p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="feature">
+          <h4>
+            <i class="fa fa-cube" aria-hidden="true"></i>
+            Buffalo toolbox
+          </h4>
+          <p>
+            Writing a web application module <strong>always begins with the same tasks</strong>. Buffalo provides you <strong>a simple toolbox</strong>, the <code>buffalo</code> command, to generate many parts of your app and run usual tasks.
+          </p>
+          <p>
+            Extend the toolbox with plugins, using the language you want!
+          </p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="feature">
+          <h4>
+            <i class="fa fa-flask" aria-hidden="true"></i>
+            Testing
+          </h4>
+          <p>
+            Since <strong>testing can be a boring task</strong>, Buffalo helps you to <strong>define test suites</strong>. Action, resource, model generators create test templates for the code you just generated.
+          </p>
+          <p>
+            You can run them all using a simple command from the toolbox.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="feature">
+          <h4>
+            <i class="fa fa-refresh" aria-hidden="true"></i>
+            Hot Code Reload
+          </h4>
+          <p>
+            Code, save, refresh. Use the <code>buffalo dev</code> command to rebuild your app, from backend to frontend, and just see the changes live!
+          </p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="feature">
+            <span class="optional-label">Optional</span>
+          <h4>
+            <i class="fa fa-file-image-o" aria-hidden="true"></i>
+              Frontend pipeline
+          </h4>
+          <p>
+            Use the Webpack-generated configuration to build your frontend assets, so you can optimize both backend and frontend.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="feature">
+            <span class="optional-label">Optional</span>
+          <h4>
+            <i class="fa fa-database" aria-hidden="true"></i>
+              Models / ORM
+          </h4>
+          <p>
+            Deep integration with <a href="https://github.com/gobuffalo/pop" target="_blank">pop</a> provides a simple way to handle database and common related tasks.
+          </p>
+          <p>
+            Supported databases: MySQL/MariaDB, PostgreSQL, CockroachDB, SQLite.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="feature">
+            <span class="optional-label">Optional</span>
+          <h4>
+            <i class="fa fa-cogs" aria-hidden="true"></i>
+              Tasks / Background Workers
+          </h4>
+          <p>
+            If you're familiar with Rake tasks from Ruby, you'll be right at home using <a href="https://github.com/markbates/grift" target="_blank">Grift</a>. Seeding a database, running a cleaning job are now at hand!
+          </p>
+          <p>
+            Running background tasks are easy too, using the Background Workers.
+          </p>
+        </div>
+      </div>
     </div>
 
-    <div class="feature">
-      <h4>
-        <i class="fa fa-th" aria-hidden="true"></i>
-        Templating
-      </h4>
-      <p>
-        Write your templates with <a href="https://github.com/gobuffalo/plush" target="_blank">Plush</a>, using a Rails-like syntax. Extend its features using custom helpers.<br />If you don't like it, you can use <code>html/template</code> or even bring your own!
-      </p>
-    </div>
-    <div class="feature">
-      <h4>
-        <i class="fa fa-cube" aria-hidden="true"></i>
-        Buffalo toolbox
-      </h4>
-      <p>
-        Writing a web application module <strong>always begins with the same tasks</strong>. Buffalo provides you <strong>a simple toolbox</strong>, the <code>buffalo</code> command, to generate many parts of your app and run usual tasks.
-      </p>
-      <p>
-        Extend the toolbox with plugins, using the language you want!
-      </p>
-    </div>
-    <div class="feature">
-      <h4>
-        <i class="fa fa-flask" aria-hidden="true"></i>
-        Testing
-      </h4>
-      <p>
-        Since <strong>testing can be a boring task</strong>, Buffalo helps you to <strong>define test suites</strong>. Action, resource, model generators create test templates for the code you just generated.
-      </p>
-      <p>
-        You can run them all using a simple command from the toolbox.
-      </p>
-    </div>
+    <p class="get-started-btn">
+      <a href="/docs/installation" class="btn btn-primary btn-lg"><strong>Get started</strong> with Buffalo</a>
+    </p>
   </div>
-  <div class="row">
-    <div class="feature">
-      <h4>
-        <i class="fa fa-refresh" aria-hidden="true"></i>
-        Hot Code Reload
-      </h4>
-      <p>
-        Code, save, refresh. Use the <code>buffalo dev</code> command to rebuild your app, from backend to frontend, and just see the changes live!
-      </p>
-    </div>
-    <div class="feature">
-      <h4>
-        <i class="fa fa-file-image-o" aria-hidden="true"></i>
-        Frontend pipeline <span class="label label-default">Optional</span>
-      </h4>
-      <p>
-        Use the Webpack-generated configuration to build your frontend assets, so you can optimize both backend and frontend.
-      </p>
-    </div>
-    <div class="feature">
-      <h4>
-        <i class="fa fa-database" aria-hidden="true"></i>
-        Models / ORM <span class="label label-default">Optional</span>
-      </h4>
-      <p>
-        Deep integration with <a href="https://github.com/gobuffalo/pop" target="_blank">pop</a> provides a simple way to handle database and common related tasks.
-      </p>
-      <p>
-        Supported databases: MySQL/MariaDB, PostgreSQL, CockroachDB, SQLite.
-      </p>
-    </div>
-    <div class="feature">
-      <h4>
-        <i class="fa fa-cogs" aria-hidden="true"></i>
-        Tasks / Background Workers <span class="label label-default">Optional</span>
-      </h4>
-      <p>
-        If you're familiar with Rake tasks from Ruby, you'll be right at home using <a href="https://github.com/markbates/grift" target="_blank">Grift</a>. Seeding a database, running a cleaning job are now at hand!
-      </p>
-      <p>
-        Running background tasks are easy too, using the Background Workers.
-      </p>
-    </div>
-  </div>
-
-  <p class="get-started-btn">
-    <a href="/docs/installation" class="btn btn-primary btn-lg"><strong>Get started</strong> with Buffalo</a>
-  </p>
 </section>
 
-<h2>From Our Blog</h2>
-
-<div class="row">
-  <%= for (bp) in blogPosts { %>
-    <div class="col-xs-12 col-md-4">
-      <header>
-        <h4>
-          <a href="<%= bp.Link %>" target="_blank" rel="noopener noreferrer"><%= bp.Title %></a>
-        </h4>
-        <h5>
-          From
-          <%= bp.Author %>
-        </h5>
-      </header>
-      <p>
-        <%= raw(bp.Description) %>
-      </p>
+<section class="blog">
+  <h2>From Our Blog</h2>
+  <div class="container">
+    <div class="row">
+      <%= for (bp) in blogPosts { %>
+        <div class="col-xs-12 col-md-4 blog-entry" >
+          <header>
+            <h4>
+              <a href="<%= bp.Link %>" target="_blank" rel="noopener noreferrer"><%= bp.Title %></a>
+            </h4>
+            <h5>
+              From
+              <%= bp.Author %>
+            </h5>
+          </header>
+          <p>
+            <%= raw(bp.Description) %>
+          </p>
+        </div>
+      <% } %>
     </div>
-    <% } %>
-</div>
+  </div>
+  <div class="text-center">
+    <a class="learn-more-btn" href="https://blog.gobuffalo.io/" target="_blank" rel="noopener noreferrer">Learn More</a>
+  </div>
+</section>
 
-<p class="get-started-btn">
-  <a href="https://blog.gobuffalo.io/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">Learn more</a>
-</p>
+<section class="sponsors">
+  <%= partial("platinum_sponsors.html") %>
+</section>
 
-<%= partial("platinum_sponsors.html") %>
+<section class="">
+  <div class="container text-center">
+      <h4>Use Buffalo at work?</h4>
+      <p>Ask your manager or marketing team if they’d help <a href="/sponsors">support</a> our project.</p>
 
-<div class="text-center" style="margin-top: 2.5em;">
-  <h4>Use Buffalo at work?</h4>
+      <p>
+          <a href="http://patreon.com/buffalo" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">Become a Patreon</a>
+      </p>
+  </div>
+</section>
 
-  <p>
-    Ask your manager or marketing team if they’d help <a href="/sponsors">support</a> our project.
-  </p>
-
-  <p>
-      <a href="http://patreon.com/buffalo" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">Become a Patreon</a>
-  </p>
-</div>
-
-<h2>Discover Buffalo on video</h2>
-
-<%= partial("docs/youtube.html") %>
+<section class="know-more">
+  <div class="container">
+      <div class="text-center">
+        <h2>Want to know more about Buffalo?</h2>
+        <p>Get all the support and resources in our documentation.</p>
+        <a class="learn-more-btn" href="https://blog.gobuffalo.io/" target="_blank" rel="noopener noreferrer">Go to the documentation</a>
+      </div>
+  </div>
+</section>

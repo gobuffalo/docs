@@ -1,0 +1,233 @@
+.container-fluid {
+    padding: 0;
+
+    article.main-content {
+        padding: 0;
+        margin: 0;
+    }
+}
+
+#global-footer {
+    margin-right: 0;
+}
+
+.presentation-banner {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+section {
+
+    margin: 0;
+    padding: 50px 0px 0 0px;
+
+    .learn-more-btn {
+        border: 1.5px solid #FFFFFF;
+        border-radius: 4px;
+        display: inline-block;
+        text-transform: uppercase;
+        line-height: 42px;
+        color: white;
+        font-family: Lato;
+        text-align: center;
+        padding: 3px 20px;
+    }
+    
+    h2 {
+        color: #1A2539;
+        font-family: Lato;
+        font-size: 36px;
+        font-weight: bold;
+        letter-spacing: -1.06px;
+        line-height: 44px;
+        text-align: center;
+    }
+    
+    p {
+        color: #1A2539;
+        font-family: Lato;
+        font-size: 20px;
+        font-weight: 300;
+        letter-spacing: -0.59px;
+        line-height: 24px;
+    }
+}
+
+.main-content {
+    padding-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+    &>section:last-child {
+        padding-top: inherit;
+        margin-bottom: inherit;
+        padding-bottom: 60px;
+    }
+}
+
+.feature {
+    height: 346px;
+    width: 100%;
+    border-radius: 6px;
+    background-color: #FFFFFF;
+    box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.11);
+    padding-top: 30px;
+    position: relative;
+    margin-bottom: 20px;
+
+    p {
+        color: #1A2539;
+        font-size: 13px;
+        font-weight: 300;
+        letter-spacing: -0.24px;
+        line-height: 18px;
+        text-align: center;
+        margin: 0 auto;
+
+        a {
+            text-decoration: underscore
+        }
+    }
+
+    .optional-label {
+        position: absolute;
+        height: 15px;
+        width: 60px;
+        color: #FFFFFF;
+        font-size: 12px;
+        font-weight: bold;
+        letter-spacing: -0.21px;
+        line-height: 15px;
+        text-align: center;
+        height: 26px;
+        width: 70px;
+        background-color: #3D8BDF;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+        line-height: 27px;
+        top: 10px;
+        right: -5px;
+    }
+}
+
+.main-features {
+    background-color: #F3F5F7;
+
+    .get-started-btn a {
+        box-sizing: border-box;
+        height: 46px;
+        width: 300px;
+        border: 1px solid #D55E2D;
+        border-radius: 4px;
+        background-color: #DA602D;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15);
+        text-transform: uppercase;
+    }
+}
+
+.blog {
+    background-color: #1A3782;
+    padding-bottom: 60px;
+    color: white;
+
+    h2 {
+        color: #FFFFFF;
+        font-size: 36px;
+        font-weight: bold;
+        letter-spacing: -1.06px;
+        line-height: 44px;
+        text-align: center;
+
+        &:after {
+            border-color: white
+        }
+    }
+
+    .blog-entry {
+        height: 161px;
+        margin-bottom: 30px;
+
+        h4 a {
+            color: #FFFFFF;
+            font-family: Lato;
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: -0.65px;
+            line-height: 27px;
+        }
+
+        h5 {
+            color: #FFFFFF;
+            font-family: Lato;
+            font-size: 16px;
+            letter-spacing: -0.47px;
+            line-height: 19px;
+        }
+
+        p {
+            color: #FFFFFF;
+            font-family: Lato;
+            font-size: 16px;
+            font-weight: 300;
+            letter-spacing: -0.47px;
+            line-height: 19px;
+        }
+    }
+}
+
+.sponsors {
+    background-color: #FFFBF9;
+    padding-bottom: 60px;
+
+    .logo {
+        width: 190px;
+
+        a {
+            width: 190px;
+            display: block;
+            color: #3D8BDF;
+            font-family: Lato;
+            font-size: 19.8px;
+            letter-spacing: -0.58px;
+            line-height: 24px;
+            text-align: center;
+        }
+    }
+
+    #platinum-sponsors img {
+        height: 153px;
+        width: 153px;
+        margin-bottom: 10px;
+    }
+}
+
+.know-more {
+    background-color: #0A193F;
+    padding-bottom: 60px;
+
+    h2, p {color: white}
+}
+
+@media screen and (max-width: 767px) {
+    .container-fluid .main-content { padding: 0 !important}
+    body>main {padding: 0 !important}
+    .presentation-banner {
+        margin-top: -80px;
+    }
+
+    #global-footer {
+        padding: 20px;
+    }
+
+    .blog-entry {
+        height: auto;
+    }
+
+    .feature {
+        height: auto;
+        padding-bottom: 40px;
+    }
+}

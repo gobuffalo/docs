@@ -1,4 +1,3 @@
-
 <section class="presentation-banner">
   <div class="container">
     <div class="row">
@@ -18,14 +17,18 @@
           <span class="badge badge-pill">Go <%= goMinVersion %>+</span>
         </div>
       </div>
-      <div class="col-md-6 col-lg-4 col-xs-6">
-        <img src="/assets/images/logo_med.png" alt="buffalo" class="logo-presentation" />
+      <div class="col-md-6 col-lg-4 col-xs-6 text-center">
+        <img src="/assets/images/logo_med.png" alt="buffalo" class="logo-presentation center-block"/>
+        <a class="buffalo-video center-block" href="#" data-toggle="modal" data-target="#videoModal">
+          <img src="<%= assetPath("images/landing_icons/play_button.svg") %>" alt="play_button">
+          <span>Play video</span>
+        </a>
       </div>
     </div>
   </div>
   <div class="mask"></div>
 </section>
-  
+
 <section class="main-features">
   <h2 class="title">Main Features</h2>
   <div class="container">
@@ -162,3 +165,12 @@
       </div>
   </div>
 </section>
+
+<div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <%= partial("docs/youtube.html") %>
+  </div>
+</div>

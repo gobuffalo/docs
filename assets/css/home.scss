@@ -103,8 +103,17 @@
                 border-top-right-radius: 55%;
                 top: 85%;
                 left: -26%;
-                @media (max-width:1200px) {
-
+            }
+            .logo-presentation { 
+                display: block;
+                float: none !important; 
+            }
+            .logo-presentation + .buffalo-video {
+                margin-top: 15px;
+                &:hover { text-decoration: none; }
+                &:focus { outline: none; }
+                span {
+                    margin-left: 5px;
                 }
             }
         }
@@ -420,6 +429,21 @@
         .feature {
             height: auto;
             padding-bottom: 40px;
+        }
+    }
+}
+
+#videoModal{
+    .modal-dialog {
+        margin: 60px auto;
+        width: 1000px;
+    }
+    button.close {
+        color: white;
+        margin: 0px 15px 0px 0px;
+        opacity: 1;
+        span {
+            font-size: 50px;
         }
     }
 }

@@ -234,6 +234,8 @@
         background-color: #F3F5F7;
         position: relative;
 
+        .docs-link:hover { text-decoration: none !important; }
+
         .get-started-btn a {
             box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15);
             text-transform: uppercase;

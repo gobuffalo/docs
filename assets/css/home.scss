@@ -18,7 +18,9 @@
 
                 &>li>a {
                     color: white;
-                    font-weight: 300;
+                    font-size: 16px;
+                    font-weight: 500;
+                    letter-spacing: -0.47px;
                     margin: 0 10px;
                     padding: 10px 0px;
                     text-transform: capitalize;
@@ -31,7 +33,16 @@
                     text-transform: uppercase;
                 }
             }
-            .navbar-brand { padding: 0; }
+            .navbar-brand { 
+                padding: 0; 
+                font-weight: 600;
+                letter-spacing: -0.76px;
+                font-size: 26px;
+
+                img {
+                    margin-right: 9px;
+                }
+            }
         }
     }
 
@@ -163,18 +174,19 @@
     }
 
     .feature {
-        height: 390px;
+        height: 346px;
         width: 100%;
         border-radius: 6px;
         background-color: #FFFFFF;
         box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.11);
-        padding: 30px 25px 0px;
+        padding: 41px 25px 0px;
         position: relative;
         margin-bottom: 20px;
 
         img {
             display: block;
             margin: 0 auto;
+            margin-bottom: 20px;
             height: 60px;
             width: 60px;
         }
@@ -182,11 +194,12 @@
         h4 {
             font-size: 18px;
             text-transform: uppercase;
+            margin-bottom: 20px;
         }
 
         p {
             color: #1A2539;
-            font-size: 13px;
+            font-size: 14px;
             font-weight: 300;
             letter-spacing: -0.24px;
             line-height: 18px;
@@ -203,16 +216,17 @@
             width: 60px;
             color: #FFFFFF;
             font-size: 12px;
+            text-transform: uppercase;
             font-weight: bold;
             letter-spacing: -0.21px;
             line-height: 15px;
             text-align: center;
             height: 26px;
-            width: 70px;
+            width: 93px;
             background-color: #3D8BDF;
             box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
             line-height: 27px;
-            top: 10px;
+            top: 15px;
             right: -10px;
 
             &::before {
@@ -231,6 +245,7 @@
     }
 
     .main-features {
+        margin-top: -40px;
         background-color: #F3F5F7;
         position: relative;
 

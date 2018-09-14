@@ -1,0 +1,82 @@
+.landing-page .site-header {
+    .docs-dropdown {
+        position: absolute;
+        left: -100%;
+        background-color: white;
+        opacity: 0;
+        transform: rotateX(-25deg);
+        transform-origin: 0 0;
+        transition: transform, opacity, .25s ease-in-out;
+        will-change: transform, opacity;
+        visibility: hidden;
+
+        .dropdown-arrow {
+            height: 20px;
+            width: 20px;
+            background-color: #F3F5F7;
+            transform: rotate(45deg);
+            top: -6px;
+            left: 47%;
+            position: absolute;
+        }
+
+        .dropdown-header {
+            background-color: #F3F5F7;
+            padding: 5px 25px;
+
+            h4 {
+                color: #B2B7C0;
+                font-size: 16px;
+                font-weight: bold;
+                letter-spacing: -0.51px;
+                line-height: 19px;
+                text-transform: uppercase;
+            }
+        }
+
+        .dropdown-content {
+            display: flex;
+            padding: 20px 25px;
+
+            .vertical-separator {
+                border-left: 1px solid #D2DCE6;
+                margin: 0px 20px;
+            }
+
+            .docs-group {
+                min-width: 140px;
+
+                ul {
+                    list-style-type: none;
+                    padding: 0px;
+
+                    li {
+                        font-size: 16px;
+                        letter-spacing: -0.51px;
+                        line-height: 19px;
+
+                        a {
+                            color: #1A2539;
+
+                            &:hover {
+                                color: #DA602D;
+                                text-decoration: none;
+                            }
+                        }
+
+                        &:not(:last-child) {
+                            margin-bottom: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .dropdown-toggle:hover+.docs-dropdown,
+    .docs-dropdown:hover {
+        visibility: visible;
+        opacity: 1;
+        transform: rotateX(0deg);
+    }
+}

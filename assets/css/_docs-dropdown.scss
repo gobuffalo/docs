@@ -6,7 +6,7 @@
         opacity: 0;
         transform: rotateX(-25deg);
         transform-origin: 0 0;
-        transition: transform, opacity, .25s ease-in-out;
+        transition: transform,opacity, .25s ease-in-out;
         will-change: transform, opacity;
         visibility: hidden;
 

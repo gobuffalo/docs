@@ -3,6 +3,8 @@
         position: absolute;
         left: -100%;
         background-color: white;
+        border-radius: 5px;
+        box-shadow: 0 6px 14px 0 rgba(0,0,0,0.3);
         opacity: 0;
         transform: rotateX(-25deg);
         transform-origin: 0 0;
@@ -22,6 +24,7 @@
 
         .dropdown-header {
             background-color: #F3F5F7;
+            border-radius: 5px;
             padding: 5px 25px;
 
             h4 {

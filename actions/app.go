@@ -118,20 +118,6 @@ func App() *buffalo.App {
 		app.GET("/{lang:fr|en}", HomeHandler)
 
 		app.ServeFiles("/", assetBox)
-
-		go func() {
-			indexSearch(app)
-			t := time.NewTicker(60 * time.Minute)
-			defer t.Stop()
-			for {
-				select {
-				case <-app.Context.Done():
-					return
-				case <-t.C:
-					indexSearch(app)
-				}
-			}
-		}()
 	}
 	return app
 }

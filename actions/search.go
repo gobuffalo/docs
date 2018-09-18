@@ -9,9 +9,11 @@ import (
 	"os"
 	"path/filepath"
 	"strings"
+	"time"
 
 	"github.com/blevesearch/bleve"
 	"github.com/gobuffalo/buffalo"
+	"github.com/gobuffalo/events"
 	"github.com/gobuffalo/packr"
 	strip "github.com/grokify/html-strip-tags-go"
 	"github.com/microcosm-cc/bluemonday"
@@ -75,6 +77,28 @@ type doc struct {
 }
 
 const blogFeedURL = "https://api.rss2json.com/v1/api.json?rss_url=https://blog.gobuffalo.io/feed"
+
+func init() {
+	// Start indexing routine on app start
+	events.Listen(func(e events.Event) {
+		if e.Kind == events.AppStart {
+			a := e.Payload.(*buffalo.App)
+			go func() {
+				indexSearch(a)
+				t := time.NewTicker(60 * time.Minute)
+				defer t.Stop()
+				for {
+					select {
+					case <-a.Context.Done():
+						return
+					case <-t.C:
+						indexSearch(a)
+					}
+				}
+			}()
+		}
+	})
+}
 
 func indexBlog(app *buffalo.App) {
 	app.Logger.Info("Indexing blog")

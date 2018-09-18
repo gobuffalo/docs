@@ -367,6 +367,12 @@
         }
     }
 
+    .main-features.fr {
+        .feature {
+            height: 420px;
+        }
+    }
+
     .buffalo-at-work {
         position: relative;
         .tumbleweed {
@@ -446,6 +452,8 @@
         .blog-entry {
             height: auto;
         }
+
+
 
         .feature {
             height: auto;

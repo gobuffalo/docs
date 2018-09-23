@@ -204,26 +204,25 @@
 
 [[projects]]
   branch = "development"
-  digest = "1:5ba44afa2d8eebb351b7888ca0b0c41d6e7a02e779d3edc2463ed3a6d12bea0d"
+  digest = "1:6f4232ebe030a7b3a75cf3412c48d5de1dd3b64bad6a2ea86c012fa9d7e2c7ed"
   name = "github.com/gobuffalo/buffalo"
   packages = [
     ".",
     "binding",
-    "plugins",
     "render",
     "servers",
     "worker",
   ]
   pruneopts = "T"
-  revision = "197ef54aa41fa8d51a9e449651f6402019a019e6"
+  revision = "75f58c3f70bbca0e24f865ab6bb2bf1adc0e9392"
 
 [[projects]]
   branch = "master"
-  digest = "1:dfc02638b666dab4c934e915d06c4ff38db0f12a52de79f6435b52030b7856bc"
+  digest = "1:a9215e0feeda7bef2a32ee79be1951809005fe426178000e5e1eeaffd02a67f0"
   name = "github.com/gobuffalo/buffalo-plugins"
   packages = ["plugins"]
   pruneopts = "UT"
-  revision = "ca94b2cb30ad31bd7e74e664cb4407d3f6e46e26"
+  revision = "48fd94ed4832c3a28713c39fb4f35e0dfff2b9bd"
 
 [[projects]]
   digest = "1:38101365bdbea4ca2746cf7bac064b3f18d6a5561787d653a54f80c7afb4b513"
@@ -235,11 +234,11 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:3f6e4f5ec9b7cd94cc373ecc7a7c7e94090737ff1d53a500816697423cba7237"
+  digest = "1:9d79937aab5aa878623347fd585f8dd143144d5bffdb0870a298dec62b4bcf4c"
   name = "github.com/gobuffalo/events"
   packages = ["."]
   pruneopts = "UT"
-  revision = "6d97f129e77f14496567f789b4f9621a0d4d5208"
+  revision = "bcd0f5dd556ac0ecffb04ae7f47d13cbd5ae053b"
 
 [[projects]]
   digest = "1:8ac794054bf9c75011121c3f19bb733bb7b4888b81b069959ebfd30b3b9c09bd"
@@ -267,6 +266,14 @@
   pruneopts = "UT"
   revision = "bfe537384e6f4cf8a4d9d149bae4f519b186c9fe"
   version = "v1.1.5"
+
+[[projects]]
+  branch = "master"
+  digest = "1:257fafe8f23510db4e9e118d53ef2e084524b19735ab9c822b3626713deb31b1"
+  name = "github.com/gobuffalo/mapi"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "5485bb0900f530773d7f5d95f1b8c59f2e2021b3"
 
 [[projects]]
   branch = "master"
@@ -495,15 +502,23 @@
   version = "v1.0.0"
 
 [[projects]]
-  digest = "1:3de28d8afd4be7b64d73ea07d7d73482e14bf84d35bc0225c1463583fb15f146"
+  branch = "master"
+  digest = "1:b974bb0d31c1cf1cfe1d36303e0834b7d35fd09aaeb03837633fb4c7318f33e4"
+  name = "github.com/markbates/oncer"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "d941c19fb28a616602690634286d07aa455ffca6"
+
+[[projects]]
+  digest = "1:9c668e9b7a7adec079b6b68f44dbcd9f3173fef7e8aaf09150c2294f982e71f6"
   name = "github.com/markbates/refresh"
   packages = [
     "refresh",
     "refresh/web",
   ]
   pruneopts = "UT"
-  revision = "7839c498602709b5445bd6920a8920ef37bbf341"
-  version = "v1.4.3"
+  revision = "17364bf8563584ff2514b14ceaf8c535c88ccfd4"
+  version = "v1.4.7"
 
 [[projects]]
   digest = "1:1f74d2e87dec3e6d4ddbfc8bf23f9b89be85903131c2ebbb6557eb2ec646bc28"
@@ -810,7 +825,7 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:6b508ddf4dafd8889ef647eb30be109c6b8ff73e097ca9b077d4d89ec89ce97e"
+  digest = "1:908ac65130b45626b3724705bbb8183a785054fb9b7284c93803918bb81e813b"
   name = "golang.org/x/net"
   packages = [
     "context",
@@ -819,7 +834,7 @@
     "html/charset",
   ]
   pruneopts = "UT"
-  revision = "26e67e76b6c3f6ce91f7c52def5af501b4e0f3a2"
+  revision = "2f5d2388922f370f4355f327fcf4cfe9f5583908"
 
 [[projects]]
   branch = "master"
@@ -831,14 +846,14 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:e10551220bea6da5274318545537df1012268056be6484b83a3338328050cde0"
+  digest = "1:4d2869b8df54b3a687c426758d0891720e8bedfa6ff5d472671ce1d31d29bdfb"
   name = "golang.org/x/sys"
   packages = [
     "unix",
     "windows",
   ]
   pruneopts = "UT"
-  revision = "ee1b12c67af419cf5a9be3bdbeea7fc1c5f32f11"
+  revision = "d47a0f3392421c5624713c9a19fe781f651f8a50"
 
 [[projects]]
   digest = "1:4392fcf42d5cf0e3ff78c96b2acf8223d49e4fdc53eb77c99d2f8dfe4680e006"
@@ -874,8 +889,8 @@
   name = "google.golang.org/appengine"
   packages = ["cloudsql"]
   pruneopts = "UT"
-  revision = "b1f26356af11148e710935ed1ac8a7f5702c7612"
-  version = "v1.1.0"
+  revision = "ae0ab99deb4dc413a2b4bd6c8bdd0eb67f1e4d06"
+  version = "v1.2.0"
 
 [[projects]]
   digest = "1:8bc629776d035c003c7814d4369521afe67fdb8efc4b5f66540d29343b98cf23"

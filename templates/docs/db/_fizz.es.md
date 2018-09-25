@@ -6,7 +6,7 @@ El comando `soda` generará migraciones de SQL (tanto arriba como abajo) para us
 $ soda generate fizz name_of_migration
 ```
 
-Al ejecutar este comando, se generarán los siguientes archivos **vacios**:
+Al ejecutar este comando, se generarán los siguientes archivos **vacíos**:
 
 ```text
 ./migrations/20160815134952_name_of_migration.up.fizz

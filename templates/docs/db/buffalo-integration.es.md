@@ -32,8 +32,8 @@ func App() *buffalo.App {
 `poptx.PopTransaction(models.DB)` utiliza la conexión a la base de datos configurada para crear un nuevo middleware `PopTransaction`. Este middleware hace lo siguiente:
 
 * Registre la duración total gastada durante la solicitud de llamadas a la base de datos.
-* Ajustar ** cada solicitud HTTP ** en una transacción de base de datos.
-* Confirme el cambio ** si no hubo error ** ejecutando los middlewares y la acción; ** y el estado de respuesta es un 2xx o 3xx **.
+* Ajustar **cada solicitud HTTP** en una transacción de base de datos.
+* Confirme el cambio **si no hubo error** ejecutando los middlewares y la acción; **y el estado de respuesta es un 2xx o 3xx**.
 * Realizar un _rollback_ de lo contrario.
 
 ### Manejar la transacción a mano

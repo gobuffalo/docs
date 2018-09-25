@@ -3,7 +3,7 @@
 
 <%= h1("Configuración de la base de datos") %>
 
-La configuración Pop se gestiona mediante un archivo `database.yml`, ubicado en la raíz de su proyecto. Este archivo se genera para usted si utiliza Buffalo &#8211; si elige usar Pop &#8211; y contiene una configuración básica para la base de datos que seleccionó en la generación con el _flag_ `--db-type`. PostgreSQL se considera como el predeterminado.
+La configuración Pop se gestiona mediante un archivo `database.yml`, ubicado en la raíz de su proyecto. Este archivo se genera para usted si utiliza Buffalo &#8211; si elige usar Pop &#8211; y contiene una configuración básica para la base de datos que seleccionó en la generación con el _flag_ `--db-type`. PostgreSQL se usa como base de datos predeterminada.
 
 Aquí hay una configuración de muestra generada para una nueva aplicación basada en PostgreSQL:
 

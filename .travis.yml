@@ -15,7 +15,7 @@ jobs:
       script: go test -v ./...
     - stage: deploy
       if: branch = master AND type != pull_request
-      install: false
+      install: true
       services:
         - docker
       addons:

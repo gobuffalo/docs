@@ -81,22 +81,23 @@ const blogFeedURL = "https://api.rss2json.com/v1/api.json?rss_url=https://blog.g
 func init() {
 	// Start indexing routine on app start
 	events.Listen(func(e events.Event) {
-		if e.Kind == events.AppStart {
-			a := e.Payload.(*buffalo.App)
-			go func() {
-				indexSearch(a)
-				t := time.NewTicker(60 * time.Minute)
-				defer t.Stop()
-				for {
-					select {
-					case <-a.Context.Done():
-						return
-					case <-t.C:
-						indexSearch(a)
-					}
-				}
-			}()
+		if e.Kind != buffalo.EvtAppStart {
+			return
 		}
+		a := e.Payload["app"].(*buffalo.App)
+		go func() {
+			indexSearch(a)
+			t := time.NewTicker(60 * time.Minute)
+			defer t.Stop()
+			for {
+				select {
+				case <-a.Context.Done():
+					return
+				case <-t.C:
+					indexSearch(a)
+				}
+			}
+		}()
 	})
 }
 

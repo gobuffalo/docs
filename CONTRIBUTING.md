@@ -21,7 +21,7 @@ The current available languages are:
 * French
 
 ### Adding a new language
-Before translating the docs into another language, **make sure the french version of the page is available**. If it's not, this probably means the page will move a bit: it's better to wait for a stable version, so you don't need to translate the page for (almost) nothing.
+Before translating the docs into another language, **make sure the French version of the page is available**. If it's not, this probably means the page will move a bit: it's better to wait for a stable version, so you don't need to translate the page for (almost) nothing.
 
 ### Internationalization
 Internationalization (or i18n) is the way to mark software parts as translatable. Buffalo docs i18n uses two ways to do so:

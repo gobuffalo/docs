@@ -2,7 +2,7 @@
 
 Si no desea usar Fizz, o si tiene una consulta complicada que desea ejecutar, puede usar SQL.
 
-Para generar una nueva migración ** vacía **, use el siguiente comando:
+Para generar una nueva migración **vacía**, use el siguiente comando:
 
 ```bash
 $ soda generate sql name_of_migration

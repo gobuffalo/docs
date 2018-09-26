@@ -5,3 +5,8 @@
 templates/*.fr.md       @stanislas-m
 templates/*.fr.html       @stanislas-m
 locales/*.fr.yaml       @stanislas-m
+
+# Spanish translations
+templates/*.es.md       @paganotoni
+templates/*.es.html       @paganotoni
+locales/*.es.yaml       @paganotoni

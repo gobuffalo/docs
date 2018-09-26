@@ -39,6 +39,7 @@ This website is powered by [Buffalo](https://github.com/gobuffalo/buffalo), so i
 * nodejs 8.x
 * `npm` & `yarn` for the frontend pipeline.
 * A working go (1.8.1 or greater) setup.
+* [`dep`](https://golang.github.io/dep/)
 
 ### Run the website for dev
 ```bash

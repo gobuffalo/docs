@@ -691,7 +691,7 @@ create_table("users") {
 \
 ```html
 // templates/new/new.html
-<style>
+&lt;style>
   .auth-wrapper{
     height: 100%;
     display: flex;
@@ -706,26 +706,26 @@ create_table("users") {
   }
 
   .auth-wrapper h1{margin-bottom: 20px;}
-</style>
+&lt;/style>
   
-<div class="auth-wrapper">
-  <div class="sign-form">
-    <h1>Register</h1>
+&lt;div class="auth-wrapper">
+  &lt;div class="sign-form">
+    &lt;h1>Register</h1>
 
-    <%= form_for(user, {action: usersPath()}) { %>
-      <%= f.InputTag("Email") %>
-      <%= f.InputTag("Password", {type: "password"}) %>
-      <%= f.InputTag("PasswordConfirmation", {type: "password"}) %>
+    \<%= form_for(user, {action: usersPath()}) { %>
+      \<%= f.InputTag("Email") %>
+      \<%= f.InputTag("Password", {type: "password"}) %>
+      \<%= f.InputTag("PasswordConfirmation", {type: "password"}) %>
       
-      <button class="btn btn-success">Register!</button>
-    <% } %>
-  </div>
-</div>
+      &lt;button class="btn btn-success">Register!</button>
+    \<% } %>
+  &lt;/div>
+&lt;/div>
 ```
 
 ```html
 // templates/index.html
-<style>
+&lt;style>
   .auth-center{
     display: flex;
     align-items: center;
@@ -735,19 +735,15 @@ create_table("users") {
   .sign-in-btn{
     margin-right: 10px;
   }
-</style>
+&lt;/style>
 
-<div class="auth-center">
+&lt;div class="auth-center">
   <%= if (current_user) { %>
-    <h1><%= current_user.Email %></h1>
-    <a href="/signout" data-method="DELETE">Sign Out</a>
+    &lt;h1><%= current_user.Email %></h1>
+    &lt;a href="/signout" data-method="DELETE">Sign Out</a>
   <% } else { %>
-    <a href="/signin" class="btn btn-primary">Sign In</a>
-    <a href="/users/new" class="btn btn-success">Register</a>
+    &lt;a href="/signin" class="btn btn-primary">Sign In</a>
+    &lt;a href="/users/new" class="btn btn-success">Register</a>
   <% } %>
-</div>
+&lt;/div>
 ```
-
-<%= title("Video Tutorial") %>
-
-<%= vimeo("223666374") %>

@@ -5,7 +5,7 @@ h<% seoDescription("Third Party Authentication") %>
 
 In many use-cases, you'll need to implement user authentication in your apps.
 
-Buffalo had a native support for Auht until version `v0.9.4`. Since then, it g  was moved into it's own plugin, [https://github.com/gobuffalo/buffalo-auth](https://github.com/gobuffalo/buffalo-auth).
+Buffalo had a native support for Auth until version `v0.9.4`. Since then, it g  was moved into it's own plugin, [https://github.com/gobuffalo/buffalo-auth](https://github.com/gobuffalo/buffalo-auth).
 
 <%= title("Installation") %>
 

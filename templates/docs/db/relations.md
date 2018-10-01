@@ -75,3 +75,98 @@ tx.Load(u, "Books") // load only the Books associations for user
 ```
 
 The `Load` method will not retreive the `User` from the database only its associations.
+
+<%= title("Flat Nested Creation") %>
+
+Pop allows you to create the models and their associations with other models in one step by default. You no longer need to create every association separately anymore. Pop will even create join table records for `many_to_many` associations.
+
+Assuming the following pieces of pseudo-code:
+
+```go
+book := Book{Title: "Pop Book", Description: "Pop Book", Isbn: "PB1"}
+tx.Create(&book)
+song := Song{Title: "Don't know the title"}
+tx.Create(&song)
+addr := Address{HouseNumber: 1, Street: "Golang"}
+tx.Create(&addr)
+
+user := User{
+  Name: "Mark Bates",
+  Books: Books{Book{ID: book.ID}},
+  FavoriteSong: song,
+  Houses: Addresses{
+    addr,
+  },
+}
+```
+
+```go
+err := tx.Create(&user)
+```
+
+1. It will notice `Books` is a `has_many` association and it will realize that to actually store every book it will need to get the `User ID` first. So, it proceeds to store first `User` data so it can retrieve an **ID** and then use that ID to fill `UserID` field in every `Book` in `Books`. Later it updates all affected books in the database using their `ID`s to target them.
+
+2. `FavoriteSong` is a `has_one` association and it uses same logic described in `has_many` association. Since `User` data was previously saved before updating all affected books, it already knows that `User` got an `ID` so it fills its `UserID` field with that value and `FavoriteSong` is then updated in the database.
+
+3. `Houses` in this example is a `many_to_many` relationship and it will have to deal with two tables in this case: `users` and `addresses`. Because `User` was already stored, it already has an `ID`.  It will then use the `ID`s passed with the `Addresses` to create the coresponding entries in the join table.
+
+For a `belongs_to` association like shown in the example below, it fill its `UserID` field before be saved in database.
+
+```go
+book := Book{
+   Title:      "Pop Book",
+   Description: "Pop Book",
+   Isbn:        "PB1",
+   User: user,
+}
+```
+
+```go
+tx.Create(&book)
+```
+
+<%= title("Eager Creation") %>
+
+Pop allows you to create models and their associations in one step. You no longer need to create every association separately anymore. Pop will even create join table records for `many_to_many` associations.
+
+Assuming the following pieces of pseudo-code:
+
+```go
+user := User{
+  Name: "Mark Bates",
+  Books: Books{{Title: "Pop Book", Description: "Pop Book", Isbn: "PB1"}},
+  FavoriteSong: Song{Title: "Don't know the title"},
+  Houses: Addresses{
+    Address{HouseNumber: 1, Street: "Golang"},
+  },
+}
+```
+
+```go
+err := tx.Eager().Create(&user)
+```
+
+1. It will notice `Books` is a `has_many` association and it will realize that to actually store every book it will need to get the `User ID` first. So, it proceeds to store first `User` data so it can retrieve an **ID** and then use that ID to fill `UserID` field in every `Book` in `Books`. Later it stores all books in database.
+
+2. `FavoriteSong` is a `has_one` association and it uses same logic described in `has_many` association. Since `User` data was previously saved before creating all books, it already knows that `User` got an `ID` so it fills its `UserID` field with that value and `FavoriteSong` is then stored in database.
+
+3. `Houses` in this example is a `many_to_many` relationship and it will have to deal with two tables in this case: `users` and `addresses`. It will need to store all addresses first in `addresses` table before save them in the many to many table. Because `User` was already stored, it already have an `ID`. * This is a special case to deal with, since this behavior is different to all other associations, it is solved by implementing the `AssociationCreatableStatement` interface, all other associations implement by default `AssociationCreatable` interface.
+
+For a `belongs_to` association like shown in the example below, it will need first to create `User` to retrieve **ID** value and then fill its `UserID` field before be saved in database.
+
+```go
+book := Book{
+   Title:      "Pop Book",
+   Description: "Pop Book",
+   Isbn:        "PB1",
+   User: User{
+        Name: nulls.NewString("Larry"),
+   },
+}
+```
+
+```go
+tx.Eager().Create(&book)
+```
+
+In the case that you feed the eager create with associate models that already exist it will, instead of creating duplicates of them, simply create/update the accosiations with them.

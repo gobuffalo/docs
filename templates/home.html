@@ -85,7 +85,7 @@
                   <li<%= if (current_path == "/en/docs/examples" || current_path == "/fr/docs/examples") { %> class="active"<% } %>><a href="/docs/examples"><%= t("top.examples-tutorials") %></a></li>
                   <li>
                       <a class="dropdown-toggle" data-toggle="dropdown" href="<%= docPath({name: "index", lang: lang}) %>"><%= t("top.docs") %></a>
-                      <%= partial("docs-dropdown.html") %>
+                      <%= partial("docs_dropdown.html") %>
                   </li>
                   <li><a href="https://github.com/gobuffalo" target="_blank" rel="noopener noreferrer">GitHub</a></li>
                   <li><a href="https://blog.gobuffalo.io" target="_blank" rel="noopener noreferrer"><%= t("top.blog") %></a></li>

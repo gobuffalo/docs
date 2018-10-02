@@ -45,6 +45,7 @@ The site is powered by [Buffalo](https://github.com/gobuffalo/buffalo) itself, s
 ```bash
 $ go get github.com/gobuffalo/gobuffalo
 $ cd $GOPATH/github.com/gobuffalo/gobuffalo
+$ buffalo setup
 $ buffalo dev
 ```
 

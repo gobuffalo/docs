@@ -9,6 +9,7 @@ import (
 func Test_findLatestVersion(t *testing.T) {
 	r := require.New(t)
 
-	r.NotZero(buffaloVersion)
-	r.NotEqual(buffaloVersion, "unknown")
+	v := findLatestVersion()
+	r.NotZero(v)
+	r.NotEqual(v, "unknown")
 }

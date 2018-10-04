@@ -58,6 +58,7 @@ require (
 	github.com/tinylib/msgp v1.0.2 // indirect
 	github.com/unrolled/secure v0.0.0-20180918153822-f340ee86eb8b
 	github.com/willf/bitset v1.1.9 // indirect
+	golang.org/x/tools v0.0.0-20181003164445-c930a8531daf
 	gopkg.in/alexcesaro/quotedprintable.v3 v3.0.0-20150716171945-2caba252f4dc // indirect
 	gopkg.in/gomail.v2 v2.0.0-20160411212932-81ebce5c23df // indirect
 	gopkg.in/russross/blackfriday.v1 v1.5.1 // indirect

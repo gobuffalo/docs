@@ -9,7 +9,7 @@ Pop le ayuda a administrar las conexiones a la base de datos, pero también prop
 **Nota para los usuarios de Buffalo**: los comandos `soda` están incrustados en el comando `buffalo`, detrás del espacio de nombres `db`. Entonces, cada vez que quiera usar un comando de `soda`, simplemente ejecute `buffalo db` en su lugar. No es necesario instalar la CLI `soda`.
 <% } %>
 
-<%= title("Instalar soporte CLI"") %>
+<%= title("Instalar soporte CLI") %>
 
 **Sin** compatibilidad con sqlite 3:
 

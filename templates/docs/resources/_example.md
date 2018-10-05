@@ -9,7 +9,7 @@ In this example Buffalo will generate the code needed to CRUD a resource named `
 $ buffalo generate resource widget title description:nulls.Text
 ```
 
-<%= exampleDir("docs/resources/example/standard") %>
+<%= exampleDir("docs/resources/_example/standard") %>
 
 ### Video Presentation
 

@@ -57,6 +57,7 @@ func init() {
 		TemplatesBox: packr.NewBox("../templates"),
 		AssetsBox:    assetBox,
 	})
+	r.Helpers["exampleDir"] = helpers.ExampleDir(r)
 }
 
 const vimeo = `<div class="video">

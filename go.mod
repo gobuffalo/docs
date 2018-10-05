@@ -24,6 +24,7 @@ require (
 	github.com/gobuffalo/buffalo v0.13.0-rc.1.0.20181003204013-e1b0d91cd9b2
 	github.com/gobuffalo/envy v1.6.4
 	github.com/gobuffalo/events v1.0.3
+	github.com/gobuffalo/genny v0.0.0-20181003150629-3786a0744c5d
 	github.com/gobuffalo/github_flavored_markdown v1.0.5
 	github.com/gobuffalo/mw-forcessl v0.0.0-20180802152810-73921ae7a130
 	github.com/gobuffalo/mw-i18n v0.0.0-20180802152014-e3060b7e13d6

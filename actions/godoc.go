@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"net/http"
+	"strings"
 	"time"
 
 	"github.com/gobuffalo/buffalo"
@@ -26,9 +27,27 @@ func indexGodocs(app *buffalo.App) error {
 		"github.com/gobuffalo/buffalo",
 		"github.com/gobuffalo/pop",
 		"github.com/gobuffalo/fizz",
+		"github.com/gobuffalo/tags",
+		"github.com/gobuffalo/plush",
+		"github.com/gobuffalo/packr",
+		"github.com/gobuffalo/genny",
+		"github.com/gobuffalo/buffalo-plugins",
+		"github.com/gobuffalo/buffalo-pop",
+		"github.com/gobuffalo/buffalo-goth",
+		"github.com/gobuffalo/buffalo-auth",
+		"github.com/gobuffalo/buffalo-heroku",
+		"github.com/gobuffalo/envy",
+		"github.com/gobuffalo/release",
+		"github.com/gobuffalo/x",
+		"github.com/gobuffalo/flect",
+		"github.com/gobuffalo/suite",
+		"github.com/gobuffalo/httptest",
+		"github.com/gobuffalo/validate",
+		"github.com/markbates/grift",
 	}
 	for _, l := range list {
 		if err := indexGodoc(l, app); err != nil {
+			// it's fine if there's an error, just log it and move on
 			fmt.Println("### err ->", err)
 		}
 	}
@@ -36,6 +55,9 @@ func indexGodocs(app *buffalo.App) error {
 }
 
 func indexGodoc(pkg string, app *buffalo.App) error {
+	if strings.Contains(pkg, "vendor") {
+		return nil
+	}
 	ctx, cancel := context.WithTimeout(app.Context, 5*time.Second)
 	defer cancel()
 

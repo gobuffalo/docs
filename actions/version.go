@@ -38,5 +38,8 @@ func findLatestVersion() string {
 	if err := json.Unmarshal(b, &gh); err != nil {
 		return "unknown"
 	}
+	if len(gh.Tag) == 0 {
+		return "unknown"
+	}
 	return gh.Tag
 }

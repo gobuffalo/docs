@@ -11,6 +11,3 @@ $ buffalo generate resource widget title description:nulls.Text
 
 <%= exampleDir("docs/resources/_example/standard") %>
 
-### Video Presentation
-
-<%= vimeo("212302823") %>

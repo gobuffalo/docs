@@ -180,9 +180,10 @@ func indexDocs(app *buffalo.App) {
 			return nil
 		}
 
-		n := filepath.Base(path)
-		if strings.HasPrefix(n, "_") {
-			return nil
+		for _, n := range strings.Split(path, string(filepath.Separator)) {
+			if strings.HasPrefix(n, "_") {
+				return nil
+			}
 		}
 
 		u := "/en/" + path

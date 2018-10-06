@@ -46,7 +46,7 @@ Depuis la version `v0.10.3`, des archives contenant une version pré-compilée d
 ### GNU / Linux
 
 ```bash
-$ wget  https://github.com/gobuffalo/buffalo/releases/download/v<%= version %>/buffalo_<%= version %>_linux_amd64.tar.gz
+$ wget  https://github.com/gobuffalo/buffalo/releases/download/<%= version %>/buffalo_<%= version %>_linux_amd64.tar.gz
 $ tar -xvzf buffalo_<%= version %>_linux_amd64.tar.gz
 $ sudo mv buffalo-no-sqlite /usr/local/bin/buffalo
 ```
@@ -54,7 +54,7 @@ $ sudo mv buffalo-no-sqlite /usr/local/bin/buffalo
 ### MacOS
 
 ```bash
-$ wget  https://github.com/gobuffalo/buffalo/releases/download/v<%= version %>/buffalo_<%= version %>_darwin_amd64.tar.gz
+$ wget  https://github.com/gobuffalo/buffalo/releases/download/<%= version %>/buffalo_<%= version %>_darwin_amd64.tar.gz
 $ tar -xvzf buffalo_<%= version %>_darwin_amd64.tar.gz
 $ sudo mv buffalo-no-sqlite /usr/local/bin/buffalo
 # ou si vous avez configuré votre PATH pour inclure le dossier ~/bin

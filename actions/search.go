@@ -43,6 +43,7 @@ func indexSearch(app *buffalo.App) {
 	indexDocs(app)
 	indexBlog(app)
 	indexVideos(app)
+	indexGodocs(app)
 }
 
 func init() {

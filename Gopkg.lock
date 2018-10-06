@@ -381,6 +381,19 @@
   revision = "dc54d929c4a2942638d7786a178894b41648f284"
 
 [[projects]]
+  branch = "master"
+  digest = "1:42eab5d4413d0ea1129144b1273c75b6901cae00b0857272152fdbb40b0ef3e6"
+  name = "github.com/golang/gddo"
+  packages = [
+    "doc",
+    "gosrc",
+    "httputil",
+    "httputil/header",
+  ]
+  pruneopts = "UT"
+  revision = "8b031907f29f163ebae1e3978af398769a5f3df6"
+
+[[projects]]
   digest = "1:97df918963298c287643883209a2c3f642e6593379f97ab400c2a2e219ab647d"
   name = "github.com/golang/protobuf"
   packages = ["proto"]
@@ -925,6 +938,7 @@
     "github.com/gobuffalo/plush",
     "github.com/gobuffalo/tags",
     "github.com/gobuffalo/x/sessions",
+    "github.com/golang/gddo/doc",
     "github.com/grokify/html-strip-tags-go",
     "github.com/markbates/going/randx",
     "github.com/markbates/inflect",

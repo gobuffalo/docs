@@ -2,6 +2,9 @@
 # https://docs.docker.com/engine/userguide/eng-image/multistage-build/
 FROM gobuffalo/buffalo:development as builder
 
+ARG GITHUB_TOKEN=local
+ENV GITHUB_TOKEN ${GITHUB_TOKEN}
+
 RUN mkdir -p $GOPATH/src/github.com/gobuffalo/gobuffalo
 WORKDIR $GOPATH/src/github.com/gobuffalo/gobuffalo
 
@@ -10,7 +13,6 @@ ADD package.json .
 ADD yarn.lock .
 RUN yarn install --no-progress
 ADD . .
-RUN dep ensure -v
 RUN buffalo build --static -o /bin/app -d --environment=production
 
 FROM alpine

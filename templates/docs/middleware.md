@@ -11,3 +11,4 @@ A list of "known" middleware packages can be found at [https://toolkit.gobuffalo
 <%= partial("docs/middleware/skipping.md") %>
 <%= partial("docs/middleware/skipping_resource.md") %>
 <%= partial("docs/middleware/clearing.md") %>
+<%= partial("docs/middleware/listing.md") %>

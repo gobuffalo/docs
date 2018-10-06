@@ -1,7 +1,6 @@
 module github.com/gobuffalo/gobuffalo
 
 require (
-	dmitri.shuralyov.com/text/kebabcase v0.0.0-20180217051803-40e40b42552a // indirect
 	github.com/PuerkitoBio/goquery v1.4.1 // indirect
 	github.com/RoaringBitmap/roaring v0.4.16 // indirect
 	github.com/Smerity/govarint v0.0.0-20150407073650-7265e41f48f1 // indirect
@@ -32,7 +31,9 @@ require (
 	github.com/gobuffalo/plush v3.7.16+incompatible
 	github.com/gobuffalo/tags v2.0.11+incompatible
 	github.com/gobuffalo/x v0.0.0-20181003152136-452098b06085
+	github.com/golang/gddo v0.0.0-20180911175731-8b031907f29f
 	github.com/golang/snappy v0.0.0-20180518054509-2e65f85255db // indirect
+	github.com/google/go-cmp v0.2.0 // indirect
 	github.com/gopherjs/gopherjs v0.0.0-20181004054836-b337c879405b // indirect
 	github.com/grokify/html-strip-tags-go v0.0.0-20180907063347-e9e44961e26f
 	github.com/jmhodges/levigo v0.0.0-20161115193449-c42d9e0ca023 // indirect
@@ -47,7 +48,6 @@ require (
 	github.com/nicksnyder/go-i18n v1.10.0 // indirect
 	github.com/philhofer/fwd v1.0.0 // indirect
 	github.com/pkg/errors v0.8.0
-	github.com/shurcooL/graphql v0.0.0-20180514000029-62c9ce094e75 // indirect
 	github.com/smartystreets/assertions v0.0.0-20180927180507-b2de0cb4f26d // indirect
 	github.com/smartystreets/goconvey v0.0.0-20180222194500-ef6db91d284a // indirect
 	github.com/steveyen/gtreap v0.0.0-20150807155958-0abe01ef9be2 // indirect
@@ -58,7 +58,4 @@ require (
 	github.com/tinylib/msgp v1.0.2 // indirect
 	github.com/unrolled/secure v0.0.0-20180918153822-f340ee86eb8b
 	github.com/willf/bitset v1.1.9 // indirect
-	gopkg.in/alexcesaro/quotedprintable.v3 v3.0.0-20150716171945-2caba252f4dc // indirect
-	gopkg.in/gomail.v2 v2.0.0-20160411212932-81ebce5c23df // indirect
-	gopkg.in/russross/blackfriday.v1 v1.5.1 // indirect
 )

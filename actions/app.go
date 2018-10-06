@@ -17,7 +17,6 @@ import (
 
 var ENV = envy.Get("GO_ENV", "development")
 var app *buffalo.App
-var buffaloVersion = "0.12.7"
 var supportedLanguages = map[string]string{
 	"en": "English",
 	"fr": "Français",
@@ -50,7 +49,7 @@ func App() *buffalo.App {
 		app.Use(func(next buffalo.Handler) buffalo.Handler {
 			return func(c buffalo.Context) error {
 				c.Set("version", buffaloVersion)
-				c.Set("goMinVersion", "1.8.1")
+				c.Set("goMinVersion", "1.9.7")
 				c.Set("year", time.Now().Year())
 				c.Set("trainingURL", "http://www.gopherguides.com")
 				c.Set("videoList", videoList)

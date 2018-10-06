@@ -1,0 +1,25 @@
+<% seoDescription("Buffalo Documentation") %>
+<% seoKeywords(["buffalo", "go", "golang", "docs", "framework", "web"]) %>
+
+<%= h1("Buffalo Documentation") %>
+
+<%= godoc() { %>
+
+<%= title(pkg.ProjectName) %>
+
+<%= markdown(pkg.Doc) %>
+
+<ul>
+  <li>
+  ImportPath: <code><%= pkg.ImportPath %></code>
+  </li>
+  <li>
+    ProjectURL: <a href="<%= pkg.ProjectURL %>" target="_blank"><%= pkg.ProjectURL %></a>
+  </li>
+  <li>
+    GoDoc: <a href="https://godoc.org/<%= pkg.ImportPath %>" target="_blank">https://godoc.org/<%= pkg.ProjectURL %></a>
+  </li>
+</ul>
+
+
+<% } %>

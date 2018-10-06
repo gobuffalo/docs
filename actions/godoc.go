@@ -1,17 +1,54 @@
 package actions
 
 import (
+	"bytes"
 	"context"
 	"fmt"
+	"html/template"
 	"net/http"
+	"sort"
 	"strings"
+	"sync"
 	"time"
 
 	"github.com/gobuffalo/buffalo"
 	"github.com/gobuffalo/envy"
+	"github.com/gobuffalo/plush"
 	gd "github.com/golang/gddo/doc"
 	"github.com/pkg/errors"
 )
+
+func init() {
+	sort.Strings(goDocPkgs)
+}
+
+var godoc = &GoDoc{
+	moot: &sync.RWMutex{},
+	data: map[string]*gd.Package{},
+}
+
+var goDocPkgs = []string{
+	"github.com/gobuffalo/buffalo",
+	"github.com/gobuffalo/pop",
+	"github.com/gobuffalo/fizz",
+	"github.com/gobuffalo/tags",
+	"github.com/gobuffalo/plush",
+	"github.com/gobuffalo/packr",
+	"github.com/gobuffalo/genny",
+	"github.com/gobuffalo/buffalo-plugins",
+	"github.com/gobuffalo/buffalo-pop",
+	"github.com/gobuffalo/buffalo-goth",
+	"github.com/gobuffalo/buffalo-auth",
+	"github.com/gobuffalo/buffalo-heroku",
+	"github.com/gobuffalo/envy",
+	"github.com/gobuffalo/release",
+	"github.com/gobuffalo/x",
+	"github.com/gobuffalo/flect",
+	"github.com/gobuffalo/suite",
+	"github.com/gobuffalo/httptest",
+	"github.com/gobuffalo/validate",
+	"github.com/markbates/grift",
+}
 
 type githubTrans struct{}
 
@@ -22,44 +59,65 @@ func (githubTrans) RoundTrip(req *http.Request) (*http.Response, error) {
 	return http.DefaultTransport.RoundTrip(req)
 }
 
-func indexGodocs(app *buffalo.App) error {
-	list := []string{
-		"github.com/gobuffalo/buffalo",
-		"github.com/gobuffalo/pop",
-		"github.com/gobuffalo/fizz",
-		"github.com/gobuffalo/tags",
-		"github.com/gobuffalo/plush",
-		"github.com/gobuffalo/packr",
-		"github.com/gobuffalo/genny",
-		"github.com/gobuffalo/buffalo-plugins",
-		"github.com/gobuffalo/buffalo-pop",
-		"github.com/gobuffalo/buffalo-goth",
-		"github.com/gobuffalo/buffalo-auth",
-		"github.com/gobuffalo/buffalo-heroku",
-		"github.com/gobuffalo/envy",
-		"github.com/gobuffalo/release",
-		"github.com/gobuffalo/x",
-		"github.com/gobuffalo/flect",
-		"github.com/gobuffalo/suite",
-		"github.com/gobuffalo/httptest",
-		"github.com/gobuffalo/validate",
-		"github.com/markbates/grift",
+type GoDoc struct {
+	moot  *sync.RWMutex
+	data  map[string]*gd.Package
+	udata map[string]*gd.Package
+}
+
+func (g *GoDoc) List() []*gd.Package {
+	g.moot.RLock()
+	var list []*gd.Package
+	for _, v := range g.data {
+		list = append(list, v)
 	}
-	for _, l := range list {
-		if err := indexGodoc(l, app); err != nil {
+	g.moot.RUnlock()
+	sort.Slice(list, func(a, b int) bool {
+		return list[a].Name < list[b].Name
+	})
+	return list
+}
+
+func (g *GoDoc) Get(pkg string) (*gd.Package, error) {
+	g.moot.RLock()
+	if p, ok := g.data[pkg]; ok {
+		g.moot.RUnlock()
+		return p, nil
+	}
+	g.moot.RUnlock()
+
+	p := &gd.Package{
+		ProjectName: pkg,
+		ImportPath:  pkg,
+		ProjectURL:  "https://" + pkg,
+	}
+
+	return p, nil
+}
+
+func (g *GoDoc) Update(ctx context.Context) error {
+	g.moot.Lock()
+	g.udata = map[string]*gd.Package{}
+	g.moot.Unlock()
+	for _, l := range goDocPkgs {
+		if err := g.indexGodoc(ctx, l); err != nil {
 			// it's fine if there's an error, just log it and move on
 			fmt.Println("### err ->", err)
 		}
 	}
+	g.moot.Lock()
+	if len(g.udata) != 0 {
+		g.data, g.udata = g.udata, g.data
+	}
+	g.moot.Unlock()
 	return nil
 }
 
-func indexGodoc(pkg string, app *buffalo.App) error {
+func (g *GoDoc) indexGodoc(ctx context.Context, pkg string) error {
 	if strings.Contains(pkg, "vendor") {
 		return nil
 	}
-	ctx, cancel := context.WithTimeout(app.Context, 5*time.Second)
-	defer cancel()
+	ctx, _ = context.WithTimeout(ctx, 5*time.Second)
 
 	c := &http.Client{
 		Transport: githubTrans{},
@@ -68,14 +126,17 @@ func indexGodoc(pkg string, app *buffalo.App) error {
 	if err != nil {
 		return errors.WithStack(err)
 	}
+	g.moot.Lock()
+	g.udata[pkg] = dpkg
+	g.moot.Unlock()
 	for _, sd := range dpkg.Subdirectories {
 		sd = pkg + "/" + sd
-		go func(sd string, app *buffalo.App) {
-			err := indexGodoc(sd, app)
+		go func(sd string, ctx context.Context) {
+			err := g.indexGodoc(ctx, sd)
 			if err != nil {
 				fmt.Println(sd, err)
 			}
-		}(sd, app)
+		}(sd, ctx)
 	}
 
 	ub := func(name string) string {
@@ -111,4 +172,31 @@ func indexGodoc(pkg string, app *buffalo.App) error {
 	}
 
 	return nil
+}
+
+func indexGodocs(app *buffalo.App) error {
+	return godoc.Update(app.Context)
+}
+
+func godocHelper(help plush.HelperContext) (template.HTML, error) {
+	if !help.HasBlock() {
+		return "", errors.New("a block is required")
+	}
+
+	bb := &bytes.Buffer{}
+
+	for _, pkg := range goDocPkgs {
+		p, err := godoc.Get(pkg)
+		if err != nil {
+			return "", errors.WithStack(err)
+		}
+		ctx := help.Context.New()
+		ctx.Set("pkg", p)
+		s, err := help.BlockWith(ctx)
+		if err != nil {
+			return "", errors.WithStack(err)
+		}
+		bb.WriteString(s)
+	}
+	return template.HTML(bb.String()), nil
 }

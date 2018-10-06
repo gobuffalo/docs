@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"io/ioutil"
 	"net/http"
+	"strings"
 	"time"
 )
 
@@ -41,5 +42,5 @@ func findLatestVersion() string {
 	if len(gh.Tag) == 0 {
 		return "unknown"
 	}
-	return gh.Tag
+	return strings.TrimLeft(gh.Tag, "v")
 }

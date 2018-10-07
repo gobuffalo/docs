@@ -7,7 +7,11 @@
 
 <%= title(pkg.ProjectName) %>
 
-<%= markdown(pkg.Doc) %>
+<%= if (pkg.Doc) { %>
+  <div class="well">
+  <%= markdown(pkg.Doc) %>
+  </div>
+<% } %>
 
 <ul>
   <li>

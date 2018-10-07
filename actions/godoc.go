@@ -5,6 +5,7 @@ import (
 	"context"
 	"fmt"
 	"html/template"
+	"io/ioutil"
 	"net/http"
 	"sort"
 	"strings"
@@ -90,8 +91,52 @@ func (g *GoDoc) Get(pkg string) (*gd.Package, error) {
 		ImportPath:  pkg,
 		ProjectURL:  "https://" + pkg,
 	}
+	g.add(p)
 
 	return p, nil
+}
+
+func (g *GoDoc) add(p *gd.Package) {
+	g.moot.RLock()
+	p.ProjectName = strings.TrimPrefix(p.ImportPath, "github.com/")
+	p.Doc = readme(p)
+	g.data[p.ImportPath] = p
+	g.moot.RUnlock()
+}
+
+func readme(p *gd.Package) string {
+	if len(p.Doc) > 0 {
+		return p.Doc
+	}
+	if !strings.HasPrefix(p.ImportPath, "github.com") {
+		return ""
+	}
+	u := "https://raw.githubusercontent.com/" + p.ProjectName + "/master/README.md"
+	res, err := http.Get(u)
+	if err != nil {
+		return p.Doc
+	}
+	b, err := ioutil.ReadAll(res.Body)
+	if err != nil {
+		return p.Doc
+	}
+	s := string(b)
+
+	bb := &bytes.Buffer{}
+
+	var h1 bool
+	for _, line := range strings.Split(s, "\n") {
+		if strings.HasPrefix(line, "#") {
+			h1 = true
+			continue // don't write the h1
+		}
+		if h1 {
+			bb.WriteString(line + "\n")
+			continue
+		}
+	}
+
+	return strings.TrimSpace(bb.String())
 }
 
 func (g *GoDoc) Update(ctx context.Context) error {
@@ -125,9 +170,7 @@ func (g *GoDoc) indexGodoc(ctx context.Context, pkg string) error {
 	if err != nil {
 		return errors.WithStack(err)
 	}
-	g.moot.Lock()
-	g.udata[pkg] = dpkg
-	g.moot.Unlock()
+	g.add(dpkg)
 	for _, sd := range dpkg.Subdirectories {
 		sd = pkg + "/" + sd
 		go func(sd string, ctx context.Context) {

@@ -41,7 +41,6 @@ var goDocPkgs = []string{
 	"github.com/gobuffalo/buffalo-auth",
 	"github.com/gobuffalo/buffalo-heroku",
 	"github.com/gobuffalo/envy",
-	"github.com/gobuffalo/release",
 	"github.com/gobuffalo/x",
 	"github.com/gobuffalo/flect",
 	"github.com/gobuffalo/suite",

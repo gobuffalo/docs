@@ -23,12 +23,14 @@ require (
 	github.com/gobuffalo/buffalo v0.13.0-rc.1.0.20181003204013-e1b0d91cd9b2
 	github.com/gobuffalo/envy v1.6.4
 	github.com/gobuffalo/events v1.0.3
+	github.com/gobuffalo/genny v0.0.0-20181003150629-3786a0744c5d
 	github.com/gobuffalo/github_flavored_markdown v1.0.5
 	github.com/gobuffalo/mw-forcessl v0.0.0-20180802152810-73921ae7a130
 	github.com/gobuffalo/mw-i18n v0.0.0-20180802152014-e3060b7e13d6
 	github.com/gobuffalo/mw-paramlogger v0.0.0-20180917205648-9e0d9b7760c0
 	github.com/gobuffalo/packr v1.13.7
 	github.com/gobuffalo/plush v3.7.16+incompatible
+	github.com/gobuffalo/pop v4.8.2+incompatible
 	github.com/gobuffalo/tags v2.0.11+incompatible
 	github.com/gobuffalo/x v0.0.0-20181003152136-452098b06085
 	github.com/golang/gddo v0.0.0-20180911175731-8b031907f29f
@@ -39,6 +41,7 @@ require (
 	github.com/jmhodges/levigo v0.0.0-20161115193449-c42d9e0ca023 // indirect
 	github.com/jtolds/gls v4.2.1+incompatible // indirect
 	github.com/markbates/going v1.0.2
+	github.com/markbates/grift v1.0.4
 	github.com/markbates/inflect v1.0.1
 	github.com/markbates/willie v1.0.9
 	github.com/microcosm-cc/bluemonday v1.0.1

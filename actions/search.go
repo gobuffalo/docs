@@ -85,7 +85,10 @@ func init() {
 		if e.Kind != buffalo.EvtAppStart {
 			return
 		}
-		a := e.Payload["app"].(*buffalo.App)
+		a, ok := e.Payload["app"].(*buffalo.App)
+		if !ok {
+			return
+		}
 		go func() {
 			indexSearch(a)
 			t := time.NewTicker(60 * time.Minute)

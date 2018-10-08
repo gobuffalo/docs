@@ -21,7 +21,7 @@ var buildSideNav = () => {
   });
   if (items.length > 0) {
     let ul = $("<ul class=\"summary\">").append(items);
-    $(".main-content h1").after(ul);
+    $(".main-content h1:first").after(ul);
     sb.addClass("active");
   }
 };

@@ -85,6 +85,14 @@ a.GET("/coke/{coke_id}", CokeHandler).Name("customPath")
 &lt;a href="\<%= customPath({coke_id: 1}) %>">Coke 1&lt;/a>
 ```
 
+You can also use route names when redirecting to another url.
+
+```go
+return c.Redirect(307, "customPath()")
+// Or with parameters
+return c.Redirect(307, "customPath()", render.Data{"coke_id": "1"})
+```
+
 <%= title("Parameters", {})  %>
 
 Query string and other parameters are available from the [`buffalo.Context`](/docs/context) that is passed into the `buffalo.Handler`.

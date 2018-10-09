@@ -7,6 +7,7 @@ import (
 
 	"github.com/gobuffalo/buffalo/render"
 	"github.com/gobuffalo/gobuffalo/actions/helpers"
+	"github.com/gobuffalo/gobuffalo/search/godoc"
 	"github.com/gobuffalo/packr"
 	"github.com/gobuffalo/plush"
 	"github.com/markbates/inflect"
@@ -19,8 +20,8 @@ func init() {
 	r = render.New(render.Options{
 		HTMLLayout: "application.html",
 		Helpers: render.Helpers{
-			"goDocPkgs": goDocPkgs,
-			"godoc":     godocHelper,
+			"goDocPkgs": godoc.Pkgs,
+			"godoc":     godoc.Helper,
 			"h1":        helpers.H1,
 			"title":     helpers.SectionTitle,
 			"note":      helpers.Note,
@@ -32,7 +33,7 @@ func init() {
 				return template.HTML(s), err
 			},
 			"vimeo": func(code string) template.HTML {
-				return template.HTML(fmt.Sprintf(vimeo, code))
+				return template.HTML(fmt.Sprintf(vimeoTmpl, code))
 			},
 			"codeTabs": helpers.CodeTabs,
 			"faq":      helpers.Faq,
@@ -62,7 +63,7 @@ func init() {
 	r.Helpers["exampleDir"] = helpers.ExampleDir(r)
 }
 
-const vimeo = `<div class="video">
+const vimeoTmpl = `<div class="video">
 <iframe src="https://player.vimeo.com/video/%s?portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 </div>`
 

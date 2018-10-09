@@ -25,15 +25,12 @@ func Indexer(app *buffalo.App, r *render.Engine) search.Indexer {
 		App:    app,
 		Engine: r,
 	}.Index
+
 }
 
 func (ind indexer) Index() error {
 	r := ind.Engine
 	defer events.EmitPayload("gobuffalo:site:search:finished", events.Payload{})
-	hl := r.HTMLLayout
-	// set a blank layout until we finish indexing
-	r.HTMLLayout = ""
-	defer func() { r.HTMLLayout = hl }()
 
 	box := r.TemplatesBox
 	err := box.Walk(func(path string, file packr.File) error {
@@ -64,6 +61,9 @@ func (ind indexer) Index() error {
 
 		req := httptest.NewRequest("GET", u, nil)
 		req.Header.Set("X-Forwarded-Proto", "https")
+		q := req.URL.Query()
+		q.Add("_indexing", "true")
+		req.URL.RawQuery = q.Encode()
 		res := httptest.NewRecorder()
 
 		ind.App.ServeHTTP(res, req)

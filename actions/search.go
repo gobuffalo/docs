@@ -14,11 +14,39 @@ import (
 	"github.com/blevesearch/bleve"
 	"github.com/gobuffalo/buffalo"
 	"github.com/gobuffalo/events"
+	"github.com/gobuffalo/gobuffalo/search"
+	"github.com/gobuffalo/gobuffalo/search/site"
 	"github.com/gobuffalo/packr"
 	strip "github.com/grokify/html-strip-tags-go"
 	"github.com/microcosm-cc/bluemonday"
 	"github.com/pkg/errors"
 )
+
+func init() {
+	StartSearch()
+}
+
+func StartSearch() {
+	search.AddIndex(site.Indexer(App(), r))
+
+	// Start indexing routine on app start
+	events.Listen(func(e events.Event) {
+		if e.Kind != buffalo.EvtAppStart {
+			return
+		}
+		go func() {
+			events.EmitPayload(search.E_INDEX, events.Payload{})
+			for {
+				select {
+				case <-App().Context.Done():
+					return
+				default:
+					time.Sleep(60 * time.Minute)
+				}
+			}
+		}()
+	})
+}
 
 const indexName = "gobuffalo.search"
 
@@ -47,6 +75,7 @@ func indexSearch(app *buffalo.App) {
 }
 
 func init() {
+	StartSearch()
 	os.RemoveAll(indexName)
 	var err error
 	index, err = bleve.Open(indexName)
@@ -80,29 +109,6 @@ type doc struct {
 const blogFeedURL = "https://api.rss2json.com/v1/api.json?rss_url=https://blog.gobuffalo.io/feed"
 
 func init() {
-	// Start indexing routine on app start
-	events.Listen(func(e events.Event) {
-		if e.Kind != buffalo.EvtAppStart {
-			return
-		}
-		a, ok := e.Payload["app"].(*buffalo.App)
-		if !ok {
-			return
-		}
-		go func() {
-			indexSearch(a)
-			t := time.NewTicker(60 * time.Minute)
-			defer t.Stop()
-			for {
-				select {
-				case <-a.Context.Done():
-					return
-				case <-t.C:
-					indexSearch(a)
-				}
-			}
-		}()
-	})
 }
 
 func indexBlog(app *buffalo.App) {

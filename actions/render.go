@@ -19,10 +19,12 @@ func init() {
 	r = render.New(render.Options{
 		HTMLLayout: "application.html",
 		Helpers: render.Helpers{
-			"h1":      helpers.H1,
-			"title":   helpers.SectionTitle,
-			"note":    helpers.Note,
-			"warning": helpers.Warning,
+			"goDocPkgs": goDocPkgs,
+			"godoc":     godocHelper,
+			"h1":        helpers.H1,
+			"title":     helpers.SectionTitle,
+			"note":      helpers.Note,
+			"warning":   helpers.Warning,
 			"sinceVersion": func(version string, help plush.HelperContext) (template.HTML, error) {
 				ctx := help.Context.New()
 				ctx.Set("version", version)
@@ -57,6 +59,7 @@ func init() {
 		TemplatesBox: packr.NewBox("../templates"),
 		AssetsBox:    assetBox,
 	})
+	r.Helpers["exampleDir"] = helpers.ExampleDir(r)
 }
 
 const vimeo = `<div class="video">

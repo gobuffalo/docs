@@ -85,6 +85,14 @@ a.GET("/coke/{coke_id}", CokeHandler).Name("customPath")
 &lt;a href="\<%= customPath({coke_id: 1}) %>">Coke 1&lt;/a>
 ```
 
+You can also use route names when redirecting to another url.
+
+```go
+return c.Redirect(307, "customPath()")
+// Or with parameters
+return c.Redirect(307, "customPath()", render.Data{"coke_id": "1"})
+```
+
 <%= title("Parameters", {})  %>
 
 Query string and other parameters are available from the [`buffalo.Context`](/docs/context) that is passed into the `buffalo.Handler`.
@@ -176,6 +184,35 @@ a.Mount("/admin", muxer())
 Since Buffalo `App` implements the `http.Handler` interface, you can also mount another Buffalo app and build modular apps.
 
 <%= title("Loose Slash", {}) %>
+
+<%= sinceVersion("0.13.0-beta.1") %>
+
+The `LooseSlash` option was removed in `v0.13.0-beta.1` in this [PR](https://github.com/gobuffalo/buffalo/pull/1168).
+
+What this PR does is normalizes Buffalo to using a trailing `/`. However, it does not force this behavior on the end user or the end developer.
+
+The Gorilla Mux [`StrictSlash`](http://www.gorillatoolkit.org/pkg/mux#Router.StrictSlash) has been removed and is now handled on the Buffalo side.
+
+```go
+table := []struct {
+  mapped   string
+  browser  string
+  expected string
+}{
+  {"/foo", "/foo", "/foo/"},
+  {"/foo", "/foo/", "/foo/"},
+  {"/foo/", "/foo", "/foo/"},
+  {"/foo/", "/foo/", "/foo/"},
+  {"/index.html", "/index.html", "/index.html"},
+  {"/foo.gif", "/foo.gif", "/foo.gif"},
+}
+```
+
+Regardless of whether the developer maps `/foo` or `/foo/` and regardless of which variant the user goes to, the router will respond the same with a `200`.
+
+**NOTE:** There is a slight breaking change in that incoming path `c.Request().URL.Path` will **ALWAYS** have the trailing slash.
+
+---
 
 <%= sinceVersion("0.10.3") %>
 

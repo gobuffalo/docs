@@ -43,6 +43,7 @@ func indexSearch(app *buffalo.App) {
 	indexDocs(app)
 	indexBlog(app)
 	indexVideos(app)
+	indexGodocs(app)
 }
 
 func init() {
@@ -84,7 +85,10 @@ func init() {
 		if e.Kind != buffalo.EvtAppStart {
 			return
 		}
-		a := e.Payload["app"].(*buffalo.App)
+		a, ok := e.Payload["app"].(*buffalo.App)
+		if !ok {
+			return
+		}
 		go func() {
 			indexSearch(a)
 			t := time.NewTicker(60 * time.Minute)
@@ -179,9 +183,10 @@ func indexDocs(app *buffalo.App) {
 			return nil
 		}
 
-		n := filepath.Base(path)
-		if strings.HasPrefix(n, "_") {
-			return nil
+		for _, n := range strings.Split(path, string(filepath.Separator)) {
+			if strings.HasPrefix(n, "_") {
+				return nil
+			}
 		}
 
 		u := "/en/" + path

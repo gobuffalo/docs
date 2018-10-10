@@ -4,5 +4,6 @@
 <%= partial("docs/resources/intro.md") %>
 <%= partial("docs/resources/generator.md") %>
 <%= partial("docs/resources/destroying.md") %>
+<%= partial("docs/resources/nesting.md") %>
 <%= partial("docs/resources/base_resource.md") %>
 

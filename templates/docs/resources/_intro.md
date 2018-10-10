@@ -15,17 +15,17 @@ type Resource interface {
 ```
 
 ```go
-type UserResource struct{
+type UsersResource struct{
   buffalo.Resource
 }
 
-a.Resource("/users", UserResource{})
+a.Resource("/users", UsersResource{})
 ```
 
 The above code example would be the equivalent of the following:
 
 ```go
-ur := UserResource{}
+ur := UsersResource{}
 a.GET("/users", ur.List)
 a.GET("/users/new", ur.New)
 a.GET("/users/{user_id}", ur.Show)

@@ -43,6 +43,7 @@ require (
 	github.com/markbates/going v1.0.2
 	github.com/markbates/grift v1.0.4
 	github.com/markbates/inflect v1.0.1
+	github.com/markbates/oncer v0.0.0-20180924034138-723ad0170a46
 	github.com/markbates/willie v1.0.9
 	github.com/microcosm-cc/bluemonday v1.0.1
 	github.com/mmcdole/gofeed v1.0.0-beta2

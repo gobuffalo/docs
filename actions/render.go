@@ -20,6 +20,7 @@ func init() {
 	r = render.New(render.Options{
 		HTMLLayout: "application.html",
 		Helpers: render.Helpers{
+			"doclink":   godoc.DocLinkHelper,
 			"goDocPkgs": godoc.Pkgs,
 			"godoc":     godoc.Helper,
 			"h1":        helpers.H1,

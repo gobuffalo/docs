@@ -17,7 +17,11 @@ func Docs(c buffalo.Context) error {
 		f := fmt.Sprintf("docs/%s.%s", name, ext)
 		if r.TemplatesBox.Has(f) {
 			c.Set("sourceRoot", docsRepoBase)
-			return c.Render(200, r.HTML(f, "docs-layout.html"))
+			l := "docs-layout.html"
+			if c.Param("_indexing") == "true" {
+				l = "search-layout.html"
+			}
+			return c.Render(200, r.HTML(f, l))
 		}
 	}
 	return c.Error(404, errors.Errorf("could not find %s", name))

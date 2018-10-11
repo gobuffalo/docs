@@ -7,6 +7,7 @@ import (
 
 	"github.com/gobuffalo/buffalo"
 	"github.com/gobuffalo/envy"
+	"github.com/gobuffalo/gobuffalo/search/vimeo"
 	"github.com/gobuffalo/mw-forcessl"
 	"github.com/gobuffalo/mw-i18n"
 	"github.com/gobuffalo/mw-paramlogger"
@@ -17,7 +18,6 @@ import (
 
 var ENV = envy.Get("GO_ENV", "development")
 var app *buffalo.App
-var buffaloVersion = "0.12.6"
 var supportedLanguages = map[string]string{
 	"en": "English",
 	"fr": "Français",
@@ -50,10 +50,10 @@ func App() *buffalo.App {
 		app.Use(func(next buffalo.Handler) buffalo.Handler {
 			return func(c buffalo.Context) error {
 				c.Set("version", buffaloVersion)
-				c.Set("goMinVersion", "1.8.1")
+				c.Set("goMinVersion", "1.9.7")
 				c.Set("year", time.Now().Year())
 				c.Set("trainingURL", "http://www.gopherguides.com")
-				c.Set("videoList", videoList)
+				c.Set("videoList", vimeo.Videos)
 
 				c.Set("lang", "en")
 				c.Set("current_path", strings.TrimRight(c.Value("current_path").(string), "/"))

@@ -32,19 +32,20 @@ See https://gobuffalo.io/docs/localization for further info about this two tools
 
 ## Hack the code
 
-This website is powered by [Buffalo](https://github.com/gobuffalo/buffalo), so if your read this docs, you'll be able to run it and make the changes you want! (if you can't, the docs are not good enough, and are waiting for a [PR](https://github.com/gobuffalo/gobuffalo/pulls)! ;))
+The site is powered by [Buffalo](https://github.com/gobuffalo/buffalo) itself, so if you're reading the docs, you'll be able to run them and make the changes you want! (If you can't, the docs are not good enough, and are waiting for a [PR](https://github.com/gobuffalo/gobuffalo/pulls)! ;))
 
 ### Requirements
 
-* nodejs 8.x
-* `npm` & `yarn` for the frontend pipeline.
-* A working go (1.8.1 or greater) setup.
+* Node.js >= 8.x
+* `npm` or `yarn` for the frontend pipeline.
+* A working Go (1.8.1 or greater) setup.
 * [`dep`](https://golang.github.io/dep/)
 
 ### Run the website for dev
 ```bash
 $ go get github.com/gobuffalo/gobuffalo
 $ cd $GOPATH/github.com/gobuffalo/gobuffalo
+$ buffalo setup
 $ buffalo dev
 ```
 

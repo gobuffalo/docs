@@ -210,6 +210,7 @@
     ".",
     "binding",
     "render",
+    "runtime",
     "servers",
     "worker",
   ]
@@ -250,6 +251,14 @@
   pruneopts = "UT"
   revision = "cfb4532f6efef6bb213c5616f5847922b596645f"
   version = "v1.0.10"
+
+[[projects]]
+  branch = "master"
+  digest = "1:5100106c854dcde66e9630eff697fb244bc1ae5f1458238dc999e716f95d8a31"
+  name = "github.com/gobuffalo/genny"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "318a41a134cc0b6eaeaaa65a5d7f43b4cc6f8b19"
 
 [[projects]]
   digest = "1:d5d0824f029cecbe33537700f267085e3eb0ffc20305cbabc4daa6be107f015c"
@@ -379,6 +388,19 @@
   ]
   pruneopts = "UT"
   revision = "dc54d929c4a2942638d7786a178894b41648f284"
+
+[[projects]]
+  branch = "master"
+  digest = "1:42eab5d4413d0ea1129144b1273c75b6901cae00b0857272152fdbb40b0ef3e6"
+  name = "github.com/golang/gddo"
+  packages = [
+    "doc",
+    "gosrc",
+    "httputil",
+    "httputil/header",
+  ]
+  pruneopts = "UT"
+  revision = "8b031907f29f163ebae1e3978af398769a5f3df6"
 
 [[projects]]
   digest = "1:97df918963298c287643883209a2c3f642e6593379f97ab400c2a2e219ab647d"
@@ -915,18 +937,23 @@
     "github.com/blevesearch/bleve",
     "github.com/gobuffalo/buffalo",
     "github.com/gobuffalo/buffalo/render",
+    "github.com/gobuffalo/buffalo/runtime",
     "github.com/gobuffalo/envy",
     "github.com/gobuffalo/events",
+    "github.com/gobuffalo/genny",
     "github.com/gobuffalo/github_flavored_markdown",
     "github.com/gobuffalo/mw-forcessl",
     "github.com/gobuffalo/mw-i18n",
     "github.com/gobuffalo/mw-paramlogger",
     "github.com/gobuffalo/packr",
     "github.com/gobuffalo/plush",
+    "github.com/gobuffalo/pop",
     "github.com/gobuffalo/tags",
     "github.com/gobuffalo/x/sessions",
+    "github.com/golang/gddo/doc",
     "github.com/grokify/html-strip-tags-go",
     "github.com/markbates/going/randx",
+    "github.com/markbates/grift/grift",
     "github.com/markbates/inflect",
     "github.com/markbates/willie",
     "github.com/microcosm-cc/bluemonday",

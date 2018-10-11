@@ -21,7 +21,7 @@ var buildSideNav = () => {
   });
   if (items.length > 0) {
     let ul = $("<ul class=\"summary\">").append(items);
-    $(".main-content h1").after(ul);
+    $(".main-content h1:first").after(ul);
     sb.addClass("active");
   }
 };
@@ -85,6 +85,8 @@ $(() => {
       let lid = `${id}-${i}`;
       let block = $(b);
       let name = block.text().split("\n")[0];
+      name = name.toString();
+      try {
       name = name.replace("Copy// ", "");
 
       let act = "";
@@ -100,6 +102,11 @@ $(() => {
         ).append(block)
       );
       blocks.remove(block);
+      } catch (err) {
+        if (window.console) {
+          console.log("err:", err);
+        }
+      }
     });
   });
 });
@@ -110,10 +117,10 @@ $(() => {
     $(e.target).closest("form").submit();
   });
 
-  $("body").on('hidden.bs.modal', function (e) {
+  $("body").on("hidden.bs.modal", (e) => {
     var $iframes = $(e.target).find("iframe");
-    $iframes.each(function(index, iframe){
+    $iframes.each((index, iframe) => {
       $(iframe).attr("src", $(iframe).attr("src"));
     });
-  });  
+  });
 });

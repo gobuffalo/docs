@@ -6,6 +6,7 @@
 
 | <%= t("releases.date") %> | <%= t("releases.version") %> | <%= t("releases.blog") %>                                            | <%= t("releases.github") %>       |
 | ------------------------- | ---------------------------- | ------------------------------------------------------------------   | --------------------------------- |
+| October 3rd, 2018         | v0.12.7                      | https://blog.gobuffalo.io/buffalo-v0-12-1-patch-release-929dda0a197f | <%= githubRelease("v0.12.7") %>   |
 | August 14th, 2018         | v0.12.6                      | https://blog.gobuffalo.io/buffalo-v0-12-1-patch-release-929dda0a197f | <%= githubRelease("v0.12.6") %>   |
 | August 14th, 2018         | v0.12.5                      | https://blog.gobuffalo.io/buffalo-v0-12-1-patch-release-929dda0a197f | <%= githubRelease("v0.12.5") %>   |
 | July 19th, 2018           | v0.12.4                      | https://blog.gobuffalo.io/buffalo-v0-12-1-patch-release-929dda0a197f | <%= githubRelease("v0.12.4") %>   |

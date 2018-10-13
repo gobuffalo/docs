@@ -14,7 +14,7 @@ func Fetch(q Query) (*bleve.SearchResult, error) {
 	if q.Language == UNKNOWN {
 		q.Language = L_EN
 	}
-	query := bleve.NewMatchPhraseQuery(q.Text)
+	query := bleve.NewMatchQuery(q.Text)
 	// TODO: figure out how to filter by language
 	// q1 := bleve.NewMatchQuery(q.Text)
 	// q2 := bleve.NewTermQuery(strconv.Itoa(q.Language))

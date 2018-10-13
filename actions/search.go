@@ -42,10 +42,6 @@ func StartSearch() {
 	})
 }
 
-func init() {
-	StartSearch()
-}
-
 // Search handles the search queries.
 func Search(c buffalo.Context) error {
 	if c.Param("query") != "" {

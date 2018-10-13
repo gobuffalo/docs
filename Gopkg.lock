@@ -233,12 +233,12 @@
   version = "v1.6.5"
 
 [[projects]]
-  digest = "1:97499ce23ad36ddaf8d00b6b0660b2fc4b965c20f7533d46095481e4d5fa478c"
+  digest = "1:34902d9430b54f1d873a0387c9f109509b7dd84055c73b78d580c44791228e62"
   name = "github.com/gobuffalo/events"
   packages = ["."]
   pruneopts = "UT"
-  revision = "454ace19aabe9eaa3c5fbf53ac53422d9f5959e3"
-  version = "v1.0.6"
+  revision = "4e9037c3f5720a9256f2acb6cf84802bb84a8f56"
+  version = "v1.0.7"
 
 [[projects]]
   digest = "1:92bbc6f986eb5d6c33b31555cd58a90b98a49b77bb41a33de7ab7457ed5ea12a"

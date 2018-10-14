@@ -4,7 +4,10 @@ E-mails are part of most (web) systems. It's a standard way to inform users abou
 
 Buffalo provides, out of the box, a mailer extension with a standard SMTP sender. A generator is included, to allow you to work with emails as fast as possible.
 
-<%= partial("docs/generators/mail.md") %>
+<%= partial("docs/mail/generator.md") %>
+<%= partial("docs/mail/example.md") %>
+<%= partial("docs/mail/context.md") %>
+<%= partial("docs/mail/configuration.md") %>
 
 <%= title("Sender Implementations") %>
 

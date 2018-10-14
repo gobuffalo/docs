@@ -204,7 +204,7 @@
 
 [[projects]]
   branch = "development"
-  digest = "1:ccb66591572d23b501e6a661247b8a575c510a54df095902bc99abaa23c9f11b"
+  digest = "1:01f3f4af810149bc1a255c56d505a90462bb13bb6dcc3caf55b2dba7a058559f"
   name = "github.com/gobuffalo/buffalo"
   packages = [
     ".",
@@ -214,7 +214,7 @@
     "worker",
   ]
   pruneopts = "T"
-  revision = "f06aa57ecf864b0b191f4fe207aba6ab8e5c0740"
+  revision = "edb42b69f2dd3bf08ab7d007820612b395ce0f06"
 
 [[projects]]
   digest = "1:62515277bcd7cdcb6798156fc08cdc8eb21f30fbc97acafcd56d2d81bb31eef6"
@@ -233,12 +233,12 @@
   version = "v1.6.5"
 
 [[projects]]
-  digest = "1:97499ce23ad36ddaf8d00b6b0660b2fc4b965c20f7533d46095481e4d5fa478c"
+  digest = "1:34902d9430b54f1d873a0387c9f109509b7dd84055c73b78d580c44791228e62"
   name = "github.com/gobuffalo/events"
   packages = ["."]
   pruneopts = "UT"
-  revision = "454ace19aabe9eaa3c5fbf53ac53422d9f5959e3"
-  version = "v1.0.6"
+  revision = "4e9037c3f5720a9256f2acb6cf84802bb84a8f56"
+  version = "v1.0.7"
 
 [[projects]]
   digest = "1:92bbc6f986eb5d6c33b31555cd58a90b98a49b77bb41a33de7ab7457ed5ea12a"
@@ -271,7 +271,7 @@
     "movinglater/gotools/gomods",
   ]
   pruneopts = "UT"
-  revision = "b8de7d5667571d66b5e0c4bd658b2320c4d46aee"
+  revision = "33e5f43d83a64e2a9c1074a419b2cbb679f3c6c7"
 
 [[projects]]
   digest = "1:d2b56555eb15e319da4656309c395c39febc3bdd451f2f44c00b71bd82ef1d0f"
@@ -661,11 +661,11 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:d01bd1ff8447854db69f2c5443d918c60a9ff3a70cbd8fedfe7af0fc14ca69bb"
+  digest = "1:fb880b85ddcd119242ca65175135771539226ab4f004ddf76b6b1220da231ea2"
   name = "github.com/mmcdole/goxpp"
   packages = ["."]
   pruneopts = "UT"
-  revision = "e18b6e9b49411ec3116496e8e4e7af93015dfbfc"
+  revision = "0068e33feabfc0086c7aeb58a9603f91c061c89f"
 
 [[projects]]
   digest = "1:9f6f7ba2d9477766a32520ac15339c00d5c1baebb84091d43c9f0d68c04b78bb"
@@ -890,7 +890,7 @@
     "ssh/terminal",
   ]
   pruneopts = "UT"
-  revision = "7c1a557ab941a71c619514f229f0b27ccb0c27cf"
+  revision = "a92615f3c49003920a58dedcf32cf55022cefb8d"
 
 [[projects]]
   branch = "master"

@@ -19,8 +19,8 @@ var availableCmd = &cobra.Command{
 ```
 ```go
 // listenCmd
-var listenCmd = *cobra.Command {
-  Use:   use,
+var listenCmd = &cobra.Command{
+  Use:   "listen",
   Short: "listens to github.com/gobuffalo/events",
   RunE: func(cmd *cobra.Command, args []string) error {
     if len(args) == 0 {

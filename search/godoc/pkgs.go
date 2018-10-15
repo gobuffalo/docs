@@ -20,6 +20,7 @@ var Pkgs = []string{
 	"github.com/gobuffalo/buffalo-auth",
 	"github.com/gobuffalo/buffalo-heroku",
 	"github.com/gobuffalo/envy",
+	"github.com/gobuffalo/events",
 	"github.com/gobuffalo/x",
 	"github.com/gobuffalo/flect",
 	"github.com/gobuffalo/suite",

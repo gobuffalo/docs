@@ -87,7 +87,8 @@ $(() => {
       let name = block.text().split("\n")[0];
       name = name.toString();
       try {
-      name = name.replace("Copy// ", "");
+        name = name.replace("Copy// ", "");
+        // name = name.replace("$ ", "");
 
       let act = "";
       if (i === 0) {

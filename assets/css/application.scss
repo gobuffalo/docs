@@ -68,7 +68,7 @@ h2 {
   color: #fff;
 }
 
-.container+#global-footer {
+.container + #global-footer {
   margin-right: 0;
   margin-left: 0;
 }
@@ -79,7 +79,7 @@ h2 {
   }
 
   .container {
-    &>#global-footer {
+    & > #global-footer {
       margin-left: 0;
     }
   }
@@ -89,7 +89,6 @@ h2 {
   @extend .jumbotron;
 
   background-color: #FFF3CA;
-
   margin-left: -50px;
   margin-right: -50px;
 
@@ -195,4 +194,8 @@ a {
   @extend .label-primary;
 
   font-family: Arial, Helvetica, sans-serif;
+
+  a {
+    color: #fff;
+  }
 }

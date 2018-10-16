@@ -78,12 +78,21 @@ func ExampleDir(r *render.Engine) func(dir string, help plush.HelperContext) (te
 		div := tags.New("div", tags.Options{})
 		for k, gfs := range files {
 			dt := tags.New("div", tags.Options{})
-			dt.Append(tags.New("h3", tags.Options{"body": strings.ToUpper(k)}))
+			title := strings.TrimSpace(k)
+			if !strings.HasPrefix(title, "/") {
+				title = "/" + title
+			}
+			title = "." + title
+			dt.Append(tags.New("h3", tags.Options{"body": title}))
 
 			bb := &bytes.Buffer{}
 			for _, f := range gfs {
+				ext := strings.TrimPrefix(filepath.Ext(f.Name()), ".")
+				if len(ext) == 0 {
+					ext = "plain"
+				}
 				bb.WriteString("\n```")
-				bb.WriteString(strings.TrimPrefix(filepath.Ext(f.Name()), ".") + "\n")
+				bb.WriteString(ext + "\n")
 				bb.WriteString("// " + f.Name() + "\n")
 				bb.WriteString(f.String())
 				bb.WriteString("\n```\n")

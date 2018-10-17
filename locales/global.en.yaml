@@ -10,7 +10,7 @@
 
 # Helpers
 - id: helpers.since
-  translation: since <strong>v{{.version}}</strong>
+  translation: since {{.name}}<strong>{{.version}}</strong>
 
 # Top
 - id: top.title

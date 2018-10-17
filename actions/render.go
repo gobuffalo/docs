@@ -31,9 +31,20 @@ func init() {
 			"title":     helpers.SectionTitle,
 			"note":      helpers.Note,
 			"warning":   helpers.Warning,
-			"sinceVersion": func(version string, help plush.HelperContext) (template.HTML, error) {
+			"sinceVersion": func(version string, opts render.Data, help plush.HelperContext) (template.HTML, error) {
 				ctx := help.Context.New()
+				if !strings.HasPrefix(version, "v") {
+					version = "v" + version
+				}
+				var name string
+				pkg := "github.com/gobuffalo/buffalo"
+				if n, ok := opts["pkg"].(string); ok {
+					pkg = n
+					name = strings.TrimPrefix(n, "github.com/") + " "
+				}
+				ctx.Set("name", name)
 				ctx.Set("version", version)
+				ctx.Set("pkg", pkg)
 				s, err := plush.Render(sinceVersion, ctx)
 				return template.HTML(s), err
 			},
@@ -72,6 +83,6 @@ const vimeoTmpl = `<div class="video">
 <iframe src="https://player.vimeo.com/video/%s?portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 </div>`
 
-const sinceVersion = `<span class="since-version"><%= raw(t("helpers.since", {"version": version})) %></span>`
+const sinceVersion = `<span class="since-version"><a href="https://<%= pkg %>/releases/tag/<%= version %>" target="_blank"><%= raw(t("helpers.since", {"version": version, "name": name})) %></a></span>`
 
 const githubRelease = `<a href="https://github.com/gobuffalo/buffalo/releases/tag/%s" target="_blank" rel="noopener noreferrer">releases/tag/%s</a>`

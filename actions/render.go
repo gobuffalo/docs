@@ -7,6 +7,7 @@ import (
 
 	"github.com/gobuffalo/buffalo/render"
 	"github.com/gobuffalo/gobuffalo/actions/helpers"
+	"github.com/gobuffalo/gobuffalo/search/godoc"
 	"github.com/gobuffalo/packr"
 	"github.com/gobuffalo/plush"
 	"github.com/markbates/inflect"
@@ -15,14 +16,21 @@ import (
 var r *render.Engine
 var assetBox = packr.NewBox("../public")
 
+func Renderer() *render.Engine {
+	return r
+}
+
 func init() {
 	r = render.New(render.Options{
 		HTMLLayout: "application.html",
 		Helpers: render.Helpers{
-			"h1":      helpers.H1,
-			"title":   helpers.SectionTitle,
-			"note":    helpers.Note,
-			"warning": helpers.Warning,
+			"doclink":   godoc.DocLinkHelper,
+			"goDocPkgs": godoc.Pkgs,
+			"godoc":     godoc.Helper,
+			"h1":        helpers.H1,
+			"title":     helpers.SectionTitle,
+			"note":      helpers.Note,
+			"warning":   helpers.Warning,
 			"sinceVersion": func(version string, help plush.HelperContext) (template.HTML, error) {
 				ctx := help.Context.New()
 				ctx.Set("version", version)
@@ -30,7 +38,7 @@ func init() {
 				return template.HTML(s), err
 			},
 			"vimeo": func(code string) template.HTML {
-				return template.HTML(fmt.Sprintf(vimeo, code))
+				return template.HTML(fmt.Sprintf(vimeoTmpl, code))
 			},
 			"codeTabs": helpers.CodeTabs,
 			"faq":      helpers.Faq,
@@ -57,9 +65,10 @@ func init() {
 		TemplatesBox: packr.NewBox("../templates"),
 		AssetsBox:    assetBox,
 	})
+	r.Helpers["exampleDir"] = helpers.ExampleDir(r)
 }
 
-const vimeo = `<div class="video">
+const vimeoTmpl = `<div class="video">
 <iframe src="https://player.vimeo.com/video/%s?portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 </div>`
 

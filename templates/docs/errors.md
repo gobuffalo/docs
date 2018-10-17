@@ -1,4 +1,6 @@
-# Error Handling
+<%= h1("Error Handling") %>
+
+An `error` is Go way to tell something went wrong. In this chapter, you'll learn how to return errors from a route handler and how Buffalo will catch any non-handled error.
 
 <%= title("Returning Errors From a Handler") %>
 
@@ -25,6 +27,23 @@ In "development" mode (`GO_ENV=development`), Buffalo will generate some helpful
   <img src="/assets/images/500_example.png" title="screenshot">
   <figcaption>An example of a `500` error in development mode.</figcaption>
 </figure>
+
+If you use a JSON or a XML content type, the error is returned in the proper type:
+
+```json
+{
+  "error": "could not find test/",
+  "trace": "could not find test/\ngithub.com/gobuffalo/gobuffalo/vendor/github.com/gobuffalo/buffalo.(*App).fileServer.func1\n\t/home/michalakst/go/src/github.com/gobuffalo/gobuffalo/vendor/github.com/gobuffalo/buffalo/route_mappings.go:97\nnet/http.HandlerFunc.ServeHTTP\n\t/usr/local/go/src/net/http/server.go:1947\nnet/http.StripPrefix.func1\n\t/usr/local/go/src/net/http/server.go:1986\nnet/http.HandlerFunc.ServeHTTP\n\t/usr/local/go/src/net/http/server.go:1947\ngithub.com/gobuffalo/gobuffalo/vendor/github.com/gorilla/mux.(*Router).ServeHTTP\n\t/home/michalakst/go/src/github.com/gobuffalo/gobuffalo/vendor/github.com/gorilla/mux/mux.go:162\ngithub.com/gobuffalo/gobuffalo/vendor/github.com/markbates/refresh/refresh/web.ErrorChecker.func1\n\t/home/michalakst/go/src/github.com/gobuffalo/gobuffalo/vendor/github.com/markbates/refresh/refresh/web/web.go:23\nnet/http.HandlerFunc.ServeHTTP\n\t/usr/local/go/src/net/http/server.go:1947\ngithub.com/gobuffalo/gobuffalo/vendor/github.com/gobuffalo/buffalo.(*App).ServeHTTP\n\t/home/michalakst/go/src/github.com/gobuffalo/gobuffalo/vendor/github.com/gobuffalo/buffalo/server.go:127\nnet/http.serverHandler.ServeHTTP\n\t/usr/local/go/src/net/http/server.go:2694\nnet/http.(*conn).serve\n\t/usr/local/go/src/net/http/server.go:1830\nruntime.goexit\n\t/usr/local/go/src/runtime/asm_amd64.s:2361",
+  "code": 404
+}
+```
+
+```xml
+&lt;response code="404">
+  &lt;error>could not find test/&lt;/error>
+  &lt;trace>could not find test/&#xA;github.com/gobuffalo/gobuffalo/vendor/github.com/gobuffalo/buffalo.(*App).fileServer.func1&#xA;&#x9;/home/michalakst/go/src/github.com/gobuffalo/gobuffalo/vendor/github.com/gobuffalo/buffalo/route_mappings.go:97&#xA;net/http.HandlerFunc.ServeHTTP&#xA;&#x9;/usr/local/go/src/net/http/server.go:1947&#xA;net/http.StripPrefix.func1&#xA;&#x9;/usr/local/go/src/net/http/server.go:1986&#xA;net/http.HandlerFunc.ServeHTTP&#xA;&#x9;/usr/local/go/src/net/http/server.go:1947&#xA;github.com/gobuffalo/gobuffalo/vendor/github.com/gorilla/mux.(*Router).ServeHTTP&#xA;&#x9;/home/michalakst/go/src/github.com/gobuffalo/gobuffalo/vendor/github.com/gorilla/mux/mux.go:162&#xA;github.com/gobuffalo/gobuffalo/vendor/github.com/markbates/refresh/refresh/web.ErrorChecker.func1&#xA;&#x9;/home/michalakst/go/src/github.com/gobuffalo/gobuffalo/vendor/github.com/markbates/refresh/refresh/web/web.go:23&#xA;net/http.HandlerFunc.ServeHTTP&#xA;&#x9;/usr/local/go/src/net/http/server.go:1947&#xA;github.com/gobuffalo/gobuffalo/vendor/github.com/gobuffalo/buffalo.(*App).ServeHTTP&#xA;&#x9;/home/michalakst/go/src/github.com/gobuffalo/gobuffalo/vendor/github.com/gobuffalo/buffalo/server.go:127&#xA;net/http.serverHandler.ServeHTTP&#xA;&#x9;/usr/local/go/src/net/http/server.go:2694&#xA;net/http.(*conn).serve&#xA;&#x9;/usr/local/go/src/net/http/server.go:1830&#xA;runtime.goexit&#xA;&#x9;/usr/local/go/src/runtime/asm_amd64.s:2361&lt;/trace>
+&lt;/response>
+```
 
 In "production" mode (`GO_ENV=production`), Buffalo will not generate pages that have developer style information. Instead the pages are simpler.
 

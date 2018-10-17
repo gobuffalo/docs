@@ -63,6 +63,9 @@
 - id: menu.config-variables
   translation: Configuration
 
+- id: menu.request-handling
+  translation: Traitement des requêtes
+
 - id: menu.sessions
   translation: Sessions
 

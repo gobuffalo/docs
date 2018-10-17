@@ -4,7 +4,10 @@ E-mails are part of most (web) systems. It's a standard way to inform users abou
 
 Buffalo provides, out of the box, a mailer extension with a standard SMTP sender. A generator is included, to allow you to work with emails as fast as possible.
 
-<%= partial("docs/generators/mail.md") %>
+<%= partial("docs/mail/generator.md") %>
+<%= partial("docs/mail/example.md") %>
+<%= partial("docs/mail/context.md") %>
+<%= partial("docs/mail/configuration.md") %>
 
 <%= title("Sender Implementations") %>
 
@@ -12,4 +15,4 @@ Some alternate [`Sender`](https://godoc.org/github.com/gobuffalo/buffalo/mail#Se
 
 * [postmark-sender](https://github.com/paganotoni/postmark-sender) - A sender to work with [Postmark](https://postmarkapp.com/). Author: [@paganotoni](https://github.com/paganotoni).
 * [mocksmtp](https://github.com/stanislas-m/mocksmtp) - A mock implementation that can be used for testing. Author: [@stanislas-m](https://github.com/stanislas-m).
-* [sendgrid-sender](https://github.com/paganotoni/sendgrid-sender) - A sender to work with Sendgrid](https://sendgrid.com/). Author: [@paganotoni](https://github.com/paganotoni). 
+* [sendgrid-sender](https://github.com/paganotoni/sendgrid-sender) - A sender to work with [Sendgrid](https://sendgrid.com/). Author: [@paganotoni](https://github.com/paganotoni). 

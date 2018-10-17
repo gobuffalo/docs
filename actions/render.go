@@ -16,10 +16,15 @@ import (
 var r *render.Engine
 var assetBox = packr.NewBox("../public")
 
+func Renderer() *render.Engine {
+	return r
+}
+
 func init() {
 	r = render.New(render.Options{
 		HTMLLayout: "application.html",
 		Helpers: render.Helpers{
+			"doclink":   godoc.DocLinkHelper,
 			"goDocPkgs": godoc.Pkgs,
 			"godoc":     godoc.Helper,
 			"h1":        helpers.H1,

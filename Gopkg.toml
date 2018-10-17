@@ -10,8 +10,3 @@
   [[prune.project]] # buffalo
     name = "github.com/gobuffalo/buffalo"
     unused-packages = false
-
-  # DO NOT DELETE
-  [[prune.project]] # pop
-    name = "github.com/gobuffalo/pop"
-    unused-packages = false

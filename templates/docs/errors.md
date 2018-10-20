@@ -1,3 +1,6 @@
+<% seoDescription("Errors Handling") %>
+<% seoKeywords(["buffalo", "go", "golang", "errors"]) %>
+
 <%= h1("Error Handling") %>
 
 An `error` is Go way to tell something went wrong. In this chapter, you'll learn how to return errors from a route handler and how Buffalo will catch any non-handled error.

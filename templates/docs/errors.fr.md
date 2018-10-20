@@ -1,4 +1,7 @@
-<%= h1("Error Handling") %>
+<% seoDescription("Traitement des erreurs") %>
+<% seoKeywords(["buffalo", "go", "golang", "erreurs"]) %>
+
+<%= h1("Traitement des erreurs") %>
 
 Une `error` est la manière que Go utilise pour prévenir que quelque chose s'est mal passé. Dans ce chapitre, vous allez apprendre comment retourner des erreurs depuis un contrôleur ; et comment Buffalo rattrape les erreurs non-traitées.
 

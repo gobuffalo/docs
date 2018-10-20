@@ -85,7 +85,7 @@ Après avoir [installé](https://gofi.sh/index.html#install) GoFish, vous pouvez
 ```bash
 $ gofish install buffalo
 ==> Installing buffalo...
-🐠  buffalo 0.12.7: installed in 3.223672926s
+🐠  buffalo <%= version %>: installed in 3.223672926s
 ```
 
 <%= title("Installation personnalisée **avec** support pour SQLite3", {title: "Installation avec support pour SQLite3"}) %>
@@ -141,7 +141,7 @@ Available Commands:
   setup       Setups a newly created, or recently checked out application.
   task        Runs your grift tasks
   test        Runs the tests for your Buffalo app
-  update      will attempt to upgrade a Buffalo application to version v0.12.7
+  update      will attempt to upgrade a Buffalo application to version v<%= version %>
   version     Print the version number of buffalo
 
 Flags:

@@ -7,6 +7,7 @@ import (
 
 	"github.com/gobuffalo/buffalo"
 	"github.com/gobuffalo/envy"
+	"github.com/gobuffalo/gobuffalo/search/vimeo"
 	"github.com/gobuffalo/mw-forcessl"
 	"github.com/gobuffalo/mw-i18n"
 	"github.com/gobuffalo/mw-paramlogger"
@@ -52,7 +53,7 @@ func App() *buffalo.App {
 				c.Set("goMinVersion", "1.9.7")
 				c.Set("year", time.Now().Year())
 				c.Set("trainingURL", "http://www.gopherguides.com")
-				c.Set("videoList", videoList)
+				c.Set("videoList", vimeo.Videos)
 
 				c.Set("lang", "en")
 				c.Set("current_path", strings.TrimRight(c.Value("current_path").(string), "/"))

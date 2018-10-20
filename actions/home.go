@@ -5,12 +5,13 @@ import (
 	"strings"
 
 	"github.com/gobuffalo/buffalo"
+	"github.com/gobuffalo/gobuffalo/search/blog"
 	"github.com/pkg/errors"
 )
 
 // HomeHandler serves the home page.
 func HomeHandler(c buffalo.Context) error {
-	c.Set("blogPosts", lastBlogPosts)
+	c.Set("blogPosts", blog.LastPosts)
 	return c.Render(200, r.HTML("overview.html", "home.html"))
 }
 

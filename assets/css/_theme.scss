@@ -1,3 +1,5 @@
+$orange: #C15424;
+
 body[data-spy] {
   position: relative
 }
@@ -220,7 +222,7 @@ body[data-spy] {
 }
 
 .navbar-default .navbar-nav>.hero>a {
-  background-color: #da602d;
+  background-color: $orange;
   border-radius: 3px;
   transition: 0.3s linear
 }

@@ -10,7 +10,7 @@
 
 # Helpers
 - id: helpers.since
-  translation: since <strong>v{{.version}}</strong>
+  translation: since {{.name}}<strong>{{.version}}</strong>
 
 # Top
 - id: top.title
@@ -62,6 +62,9 @@
 
 - id: menu.config-variables
   translation: Configuration
+
+- id: menu.request-handling
+  translation: Request Handling
 
 - id: menu.sessions
   translation: Sessions

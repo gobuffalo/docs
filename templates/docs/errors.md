@@ -4,13 +4,23 @@ An `error` is Go way to tell something went wrong. In this chapter, you'll learn
 
 <%= title("Returning Errors From a Handler") %>
 
+The easiest way to produce an error response is to return a standard Go error:
 ```go
 func MyHandler(c buffalo.Context) error {
-  // Return any old error, this will result in a 500 status code.
+  // Return any go error, this will result in a 500 status code.
   return errors.New("boom!")
 }
 ```
 
+A `nil` error will produce a raw HTTP 200 response:
+```go
+func MyHandler(c buffalo.Context) error {
+  // HTTP 200
+  return nil
+}
+```
+
+If you need to customize the error message or the HTTP code, use the <%= doclink("github.com/gobuffalo/buffalo#DefaultContext.Error") %> method:
 ```go
 func MyHandler(c buffalo.Context) error {
   // Use the Error function on the context.

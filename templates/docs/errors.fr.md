@@ -4,13 +4,23 @@ Une `error` est la manière que Go utilise pour prévenir que quelque chose s'es
 
 <%= title("Retourner une erreur depuis un contrôleur") %>
 
+La façon la plus simple de renvoyer une erreur HTTP est de retourner une erreur Go standard :
 ```go
 func MyHandler(c buffalo.Context) error {
-  // Retourner une erreur classique : cela provoquera un statut HTTP 500.
+  // Retourner une erreur go classique : cela provoquera un statut HTTP 500.
   return errors.New("boom!")
 }
 ```
 
+Une erreur `nil` produira une réponse HTTP 200 :
+```go
+func MyHandler(c buffalo.Context) error {
+  // HTTP 200
+  return nil
+}
+```
+
+Si vous avez besoin de personnaliser l'erreur avec un message ou un code HTTP différent, utilisez la méthode <%= doclink("github.com/gobuffalo/buffalo#DefaultContext.Error") %> :
 ```go
 func MyHandler(c buffalo.Context) error {
   // En utilisant la méthode Error du Context.

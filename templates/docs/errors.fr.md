@@ -1,34 +1,34 @@
 <%= h1("Error Handling") %>
 
-An `error` is Go way to tell something went wrong. In this chapter, you'll learn how to return errors from a route handler and how Buffalo will catch any non-handled error.
+Une `error` est la manière que Go utilise pour prévenir que quelque chose s'est mal passé. Dans ce chapitre, vous allez apprendre comment retourner des erreurs depuis un contrôleur ; et comment Buffalo rattrape les erreurs non-traitées.
 
-<%= title("Returning Errors From a Handler") %>
+<%= title("Retourner une erreur depuis un contrôleur") %>
 
 ```go
 func MyHandler(c buffalo.Context) error {
-  // Return any old error, this will result in a 500 status code.
+  // Retourner une erreur classique : cela provoquera un statut HTTP 500.
   return errors.New("boom!")
 }
 ```
 
 ```go
 func MyHandler(c buffalo.Context) error {
-  // Use the Error function on the context.
-  // This will result in a status code of 401.
+  // En utilisant la méthode Error du Context.
+  // Dans cet exemple, le résultat sera une réponse HTTP 401.
   return c.Error(401, errors.New("Unauthorized!"))
 }
 ```
 
-<%= title("Default Error Handling (Development)") %>
+<%= title("Rattrapage des erreurs par défaut (mode développement)") %>
 
-In "development" mode (`GO_ENV=development`), Buffalo will generate some helpful errors pages for you.
+En mode développement (`GO_ENV=development`), Buffalo génère des pages d'erreur détaillées pour vous permettre de débogguer facilement.
 
 <figure>
   <img src="/assets/images/500_example.png" title="screenshot">
-  <figcaption>An example of a `500` error in development mode.</figcaption>
+  <figcaption>Un exemple d'erreur `500` en mode développement.</figcaption>
 </figure>
 
-If you use a JSON or a XML content type, the error is returned in the proper type:
+Si vous utilisez un `Content-Type` JSON ou XML, l'erreur sera formattée en respectant le type demandé :
 
 ```json
 {
@@ -45,19 +45,19 @@ If you use a JSON or a XML content type, the error is returned in the proper typ
 &lt;/response>
 ```
 
-In "production" mode (`GO_ENV=production`), Buffalo will not generate pages that have developer style information, because this would give precious informations to hackers. Instead the pages are simpler.
+En mode production (`GO_ENV=production`), Buffalo ne génère pas ces pages, vu qu'elles donneraient des informations très utiles à des personnes mal intentionnées. Des pages d'erreur neutres sont générées à la place.
 
-<%= title("Custom Error Handling", {}) %>
+<%= title("Gestion personnalisée des erreurs", {}) %>
 
-While Buffalo will handle errors for you out of the box, it can be useful to handle errors in a custom way. To accomplish this, Buffalo allows for the mapping of HTTP status codes to specific handlers. This means the error can be dealt with in a custom fashion.
+Bien que Buffalo se charge de gérer les erreurs pour vous sans n'avoir rien à faire, il peut être utile de gérer les erreurs d'une autre façon. Vous pouvez pour cela associer des codes HTTP à des contrôleurs spécifiques. De cette manière, vous pouvez gérer ces erreurs comme bon vous semble.
 
 ```go
 app = buffalo.New(buffalo.Options{
   Env: ENV,
 })
 
-// We associate the HTTP 422 status to a specific handler.
-// All the other status code will still use the default handler provided by Buffalo.
+// On associe à l'erreur HTTP 422 un traitement spécifique.
+// Toutes les autres erreurs gardent le traitement par défaut.
 app.ErrorHandlers[422] = func(status int, err error, c buffalo.Context) error {
   res := c.Response()
   res.WriteHeader(422)
@@ -76,5 +76,4 @@ func MyHandler(c buffalo.Context) error {
 GET /oops -> [422] Oh no!
 ```
 
-In the above example any error from your application that returns a status of `422` will be caught by the custom handler and will be dealt with accordingly.
-
+Dans l'exemple ci-dessus, toute erreur de votre application renvoyant un statut `422` sera rattrapée par le contrôleur personnalisé, et renverra donc le message d'erreur `Oops!! There was an error` avec le texte de l'erreur.

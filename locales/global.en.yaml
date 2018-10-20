@@ -66,6 +66,9 @@
 - id: menu.request-handling
   translation: Request Handling
 
+- id: menu.errors-handling
+  translation: Errors Handling
+
 - id: menu.sessions
   translation: Sessions
 

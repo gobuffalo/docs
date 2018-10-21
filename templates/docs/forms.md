@@ -63,8 +63,9 @@ Yes! You most definitely can create and use your own form! The forms provided fr
 If you do decide to use your own forms you are going to need a way to provide the form with the authenticity token.  To solve this problem you can create a helper inside `render.go`.  That code would look something like:
 
 ```go
-"csrf": func() template.HTML {
-	return template.HTML("&lt;input name=\"authenticity_token\" value=\"&lt;%= authenticity_token %&gt;\" type=\"hidden\"&gt;")
+"csrf": func(helper plush.HelperContext) template.HTML {
+	t, _ := helper.Render("&lt;input name=\"authenticity_token\" value=\"&lt;%= authenticity_token %&gt;\" type=\"hidden\"&gt;")
+	return template.HTML(t)
 },
 ```
 

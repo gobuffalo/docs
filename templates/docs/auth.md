@@ -36,6 +36,9 @@ create  templates/users/new.html
 ```
 
 <%= title("Example Usage") %>
+
+### Actions
+<%= codeTabs() { %>
 ```go
 // actions/app.go
 package actions
@@ -453,7 +456,10 @@ func (as *ActionSuite) Test_HomeHandler_LoggedIn() {
 	as.Contains(res.Body.String(), "Sign In")
 }
 ```
+<% } %>
 
+### Models
+<%= codeTabs() { %>
 ```go
 // models/user.go
 package models
@@ -637,7 +643,10 @@ func (ms *ModelSuite) Test_User_Create_UserExists() {
 	ms.Equal(1, count)
 }
 ```
+<% } %>
 
+### Migrations
+<%= codeTabs() { %>
 ```go
 // migrations/20180910062057_create_users.down.fizz
 drop_table("users")
@@ -651,7 +660,10 @@ create_table("users") {
 	t.Column("password_hash", "string", {})
 }
 ```
+<% } %>
 
+### Templates
+<%= codeTabs() { %>
 ```html
 // templates/auth/new.html
 &lt;style>
@@ -743,3 +755,4 @@ create_table("users") {
   <% } %>
 &lt;/div>
 ```
+<% } %>

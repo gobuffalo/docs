@@ -6,6 +6,8 @@
 @import "skin.scss";
 @import "custom.scss";
 
+$titles-orange: #CC471E;
+
 .main-content {
   padding-top: 40px;
   margin-bottom: 100px;
@@ -117,7 +119,7 @@ h2 {
   @extend .col-md-3;
 
   h4 {
-    color: #e0562e;
+    color: $titles-orange;
     text-align: center;
     font-variant: small-caps;
 

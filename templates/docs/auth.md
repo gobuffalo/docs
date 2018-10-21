@@ -140,7 +140,7 @@ import (
 	"database/sql"
 	"strings"
 
-  "coke/models"
+    "coke/models"
 	"github.com/gobuffalo/buffalo"
 	"github.com/gobuffalo/pop"
 	"github.com/gobuffalo/validate"
@@ -259,7 +259,54 @@ func (as *ActionSuite) Test_Auth_Create_BadPassword() {
 ```
 
 ```go
-// actions/user.go
+// actions/home.go
+package actions
+
+import "github.com/gobuffalo/buffalo"
+
+// HomeHandler is a default handler to serve up
+// a home page.
+func HomeHandler(c buffalo.Context) error {
+	return c.Render(200, r.HTML("index.html"))
+}
+```
+
+```go
+// actions/home_test.go
+package actions
+
+import "coke/models"
+
+func (as *ActionSuite) Test_HomeHandler() {
+	res := as.HTML("/").Get()
+	as.Equal(200, res.Code)
+	as.Contains(res.Body.String(), "Sign In")
+}
+
+func (as *ActionSuite) Test_HomeHandler_LoggedIn() {
+	u := &models.User{
+		Email:                "mark@example.com",
+		Password:             "password",
+		PasswordConfirmation: "password",
+	}
+	verrs, err := u.Create(as.DB)
+	as.NoError(err)
+	as.False(verrs.HasAny())
+	as.Session.Set("current_user_id", u.ID)
+
+	res := as.HTML("/").Get()
+	as.Equal(200, res.Code)
+	as.Contains(res.Body.String(), "Sign Out")
+
+	as.Session.Clear()
+	res = as.HTML("/").Get()
+	as.Equal(200, res.Code)
+	as.Contains(res.Body.String(), "Sign In")
+}
+```
+
+```go
+// actions/users.go
 package actions
 
 import (
@@ -330,7 +377,7 @@ func Authorize(next buffalo.Handler) buffalo.Handler {
 ```
 
 ```go
-// actions/user_test.go
+// actions/users_test.go
 package actions
 
 import (
@@ -359,101 +406,6 @@ func (as *ActionSuite) Test_Users_Create() {
 	count, err = as.DB.Count("users")
 	as.NoError(err)
 	as.Equal(1, count)
-}
-```
-
-```go
-// actions/app.go
-package actions
-
-import (
-	"github.com/gobuffalo/buffalo"
-	"github.com/gobuffalo/buffalo/middleware"
-	"github.com/gobuffalo/envy"
-
-	"coke/models"
-
-	"github.com/gobuffalo/buffalo/middleware/csrf"
-	"github.com/gobuffalo/buffalo/middleware/i18n"
-)
-
-// ENV is used to help switch settings based on where the
-// application is being run. Default is "development".
-var ENV = envy.Get("GO_ENV", "development")
-var app *buffalo.App
-var T *i18n.Translator
-
-// App is where all routes and middleware for buffalo
-// should be defined. This is the nerve center of your
-// application.
-func App() *buffalo.App {
-	if app == nil {
-		app = buffalo.New(buffalo.Options{
-			Env:         ENV,
-			SessionName: "_coke_session",
-		})
-
-		if ENV == "development" {
-			app.Use(middleware.ParameterLogger)
-		}
-
-		// Protect against CSRF attacks. https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)
-		// Remove to disable this.
-		app.Use(csrf.New)
-
-		// Wraps each request in a transaction.
-		//  c.Value("tx").(*pop.PopTransaction)
-		// Remove to disable this.
-		app.Use(middleware.PopTransaction(models.DB))
-
-		app.GET("/", HomeHandler)
-
-		app.Use(SetCurrentUser)
-		app.Use(Authorize)
-		app.GET("/users/new", UsersNew)
-		app.POST("/users", UsersCreate)
-		app.GET("/signin", AuthNew)
-		app.POST("/signin", AuthCreate)
-		app.DELETE("/signout", AuthDestroy)
-		app.Middleware.Skip(Authorize, HomeHandler, UsersNew, UsersCreate, AuthNew, AuthCreate)
-		app.ServeFiles("/", assetsBox) // serve files from the public directory
-	}
-
-	return app
-}
-```
-
-```go
-// actions/home_test.go
-package actions
-
-import "coke/models"
-
-func (as *ActionSuite) Test_HomeHandler() {
-	res := as.HTML("/").Get()
-	as.Equal(200, res.Code)
-	as.Contains(res.Body.String(), "Sign In")
-}
-
-func (as *ActionSuite) Test_HomeHandler_LoggedIn() {
-	u := &models.User{
-		Email:                "mark@example.com",
-		Password:             "password",
-		PasswordConfirmation: "password",
-	}
-	verrs, err := u.Create(as.DB)
-	as.NoError(err)
-	as.False(verrs.HasAny())
-	as.Session.Set("current_user_id", u.ID)
-
-	res := as.HTML("/").Get()
-	as.Equal(200, res.Code)
-	as.Contains(res.Body.String(), "Sign Out")
-
-	as.Session.Clear()
-	res = as.HTML("/").Get()
-	as.Equal(200, res.Code)
-	as.Contains(res.Body.String(), "Sign In")
 }
 ```
 <% } %>

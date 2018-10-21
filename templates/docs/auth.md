@@ -1,11 +1,11 @@
-h<% seoDescription("Third Party Authentication") %>
+<% seoDescription("Local authentication") %>
 <% seoKeywords(["buffalo", "go", "golang", "users", "password", "authentication"]) %>
 
 <%= h1("Local Authentication") %>
 
 In many use-cases, you'll need to implement user authentication in your apps.
 
-Buffalo had a native support for Auth until version `v0.9.4`. Since then, it g  was moved into it's own plugin, [https://github.com/gobuffalo/buffalo-auth](https://github.com/gobuffalo/buffalo-auth).
+Buffalo had a native support for Auth until version `v0.9.4`. Since then, it was moved into it's own plugin, [https://github.com/gobuffalo/buffalo-auth](https://github.com/gobuffalo/buffalo-auth).
 
 <%= title("Installation") %>
 
@@ -499,43 +499,39 @@ func (u Users) String() string {
 // Validate gets run every time you call a "pop.Validate*" (pop.ValidateAndSave, pop.ValidateAndCreate, pop.ValidateAndUpdate) method.
 // This method is not required and may be deleted.
 func (u *User) Validate(tx *pop.Connection) (*validate.Errors, error) {
-
-				var err error
-				return validate.Validate(
-					&validators.StringIsPresent{Field: u.Email, Name: "Email"},
-					&validators.StringIsPresent{Field: u.PasswordHash, Name: "PasswordHash"},
-					// check to see if the email address is already taken:
-					&validators.FuncValidator{
-						Field:   u.Email,
-						Name:    "Email",
-						Message: "%s is already taken",
-						Fn: func() bool {
-							var b bool
-							q := tx.Where("email = ?", u.Email)
-							if u.ID != uuid.Nil {
-								q = q.Where("id != ?", u.ID)
-							}
-							b, err = q.Exists(u)
-							if err != nil {
-								return false
-							}
-							return !b
-						},
-					},
-				), err
-			
+    var err error
+    return validate.Validate(
+        &validators.StringIsPresent{Field: u.Email, Name: "Email"},
+        &validators.StringIsPresent{Field: u.PasswordHash, Name: "PasswordHash"},
+        // check to see if the email address is already taken:
+        &validators.FuncValidator{
+            Field:   u.Email,
+            Name:    "Email",
+            Message: "%s is already taken",
+            Fn: func() bool {
+                var b bool
+                q := tx.Where("email = ?", u.Email)
+                if u.ID != uuid.Nil {
+                    q = q.Where("id != ?", u.ID)
+                }
+                b, err = q.Exists(u)
+                if err != nil {
+                    return false
+                }
+                return !b
+            },
+        },
+    ), err
 }
 
 // ValidateCreate gets run every time you call "pop.ValidateAndCreate" method.
 // This method is not required and may be deleted.
 func (u *User) ValidateCreate(tx *pop.Connection) (*validate.Errors, error) {
-
-				var err error
-				return validate.Validate(
-					&validators.StringIsPresent{Field: u.Password, Name: "Password"},
-					&validators.StringsMatch{Name: "Password", Field: u.Password, Field2: u.PasswordConfirmation, Message: "Password does not match confirmation"},
-				), err
-			
+    var err error
+    return validate.Validate(
+        &validators.StringIsPresent{Field: u.Password, Name: "Password"},
+        &validators.StringsMatch{Name: "Password", Field: u.Password, Field2: u.PasswordConfirmation, Message: "Password does not match confirmation"},
+    ), err
 }
 
 // ValidateUpdate gets run every time you call "pop.ValidateAndUpdate" method.
@@ -545,17 +541,17 @@ func (u *User) ValidateUpdate(tx *pop.Connection) (*validate.Errors, error) {
 }
 
 
-				// Create wraps up the pattern of encrypting the password and
-				// running validations. Useful when writing tests.
-				func (u *User) Create(tx *pop.Connection) (*validate.Errors, error) {
-					u.Email = strings.ToLower(strings.TrimSpace(u.Email))
-					ph, err := bcrypt.GenerateFromPassword([]byte(u.Password), bcrypt.DefaultCost)
-					if err != nil {
-						return validate.NewErrors(), errors.WithStack(err)
-					}
-					u.PasswordHash = string(ph)
-					return tx.ValidateAndCreate(u)
-				}
+// Create wraps up the pattern of encrypting the password and
+// running validations. Useful when writing tests.
+func (u *User) Create(tx *pop.Connection) (*validate.Errors, error) {
+    u.Email = strings.ToLower(strings.TrimSpace(u.Email))
+    ph, err := bcrypt.GenerateFromPassword([]byte(u.Password), bcrypt.DefaultCost)
+    if err != nil {
+        return validate.NewErrors(), errors.WithStack(err)
+    }
+    u.PasswordHash = string(ph)
+    return tx.ValidateAndCreate(u)
+}
 ```
 
 ```go

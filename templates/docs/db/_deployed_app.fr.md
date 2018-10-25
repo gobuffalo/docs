@@ -4,7 +4,7 @@
 Cette section ne concerne que les utilisateurs de Buffalo.
 <% } %>
 
-Lorsque vous compilez votre application, les migrations sont stockées dans le binaire résultant. Ce binaire inclut une commande cachée `migrate` qui applique les migrations, tout comme la commande `buffalo db migrate` que vous utiliseriez en développement :
+Lorsque vous compilez votre application, les migrations sont stockées dans le binaire résultant. Ce binaire inclut une commande cachée `migrate` qui applique les migrations, tout comme la commande `buffalo pop migrate` que vous utiliseriez en développement :
 
 ```bash
 $ ./myapp migrate

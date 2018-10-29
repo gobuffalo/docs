@@ -15,4 +15,4 @@ The [Digital Ocean](https://www.digitalocean.com/) plugin is managed by [@wolves
 
 <%= title("Heroku") %>
 
-The [Heroku](https://www.heroku.com/) plugin is managed by [@markbates](https://github.com/markbates): https://github.com/markbates/buffalo-heroku.
+The [Heroku](https://www.heroku.com/) plugin is managed by the [buffalo team](https://github.com/gobuffalo): https://github.com/gobuffalo/buffalo-heroku.

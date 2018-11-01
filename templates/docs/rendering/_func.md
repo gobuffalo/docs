@@ -18,8 +18,9 @@ func csvWriter(w io.Writer, d render.Data) error {
 ```
 
 For smaller, or one off situations, using an anonymous function can be even easier. 
-
+In this example you can see how to use an anonymous function to render a string that already contains JSON.
 ```go
+var myJSONString string
 return c.Render(200, r.Func("application/json", func(w io.Writer, d render.Data) error {
 	_, err := w.Write([]byte(myJSONString))
 	return err

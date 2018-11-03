@@ -30,8 +30,9 @@
 
   <link rel="canonical" href="https://gobuffalo.io<%= current_path %>" />
   <link rel="alternate" href="https://gobuffalo.io<%= localized_current_path("en") %>" hreflang="x-default" />
-  <link rel="alternate" href="https://gobuffalo.io<%= localized_current_path("fr") %>" hreflang="fr" title="Français" />
-  <link rel="alternate" href="https://gobuffalo.io<%= localized_current_path("en") %>" hreflang="en" title="English" />
+  <%= for (k,v) in supported_languages { %>
+  <link rel="alternate" href="https://gobuffalo.io<%= localized_current_path(v) %>" hreflang="<%= v %>" title="<%= k %>" />
+  <% } %>
   <meta name="google-site-verification" content="GwQmhkMw9KUTJYJUgsYTP47viiXEYKCHot3aW4Po4AI" />
 
   <title><%= if (pageTitle) { %><%= pageTitle %> &#183; <% } %><%= raw(t("head.title")) %></title>

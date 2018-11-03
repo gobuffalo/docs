@@ -18,8 +18,10 @@ import (
 
 var ENV = envy.Get("GO_ENV", "development")
 var app *buffalo.App
+
 var supportedLanguages = map[string]string{
 	"en": "English",
+	"es": "Español",
 	"fr": "Français",
 }
 
@@ -47,6 +49,7 @@ func App() *buffalo.App {
 		// Setup and use translations:
 		app.Use(translations())
 
+		supportedLanguagesReversed := reverseMap(supportedLanguages)
 		app.Use(func(next buffalo.Handler) buffalo.Handler {
 			return func(c buffalo.Context) error {
 				c.Set("version", buffaloVersion)
@@ -56,6 +59,7 @@ func App() *buffalo.App {
 				c.Set("videoList", vimeo.Videos)
 
 				c.Set("lang", "en")
+				c.Set("supported_languages", supportedLanguagesReversed)
 				c.Set("current_path", strings.TrimRight(c.Value("current_path").(string), "/"))
 				langs := c.Value("languages").([]string)
 				for _, l := range langs {
@@ -82,7 +86,7 @@ func App() *buffalo.App {
 		app.GET("/docs/db", func(c buffalo.Context) error {
 			return c.Redirect(301, fmt.Sprintf("/%s/docs/db/getting-started", c.Value("lang").(string)))
 		})
-		app.GET("/{lang:fr|en}/docs/db", func(c buffalo.Context) error {
+		app.GET("/{lang:fr|en|es}/docs/db", func(c buffalo.Context) error {
 			return c.Redirect(301, fmt.Sprintf("/%s/docs/db/getting-started", c.Value("lang").(string)))
 		})
 
@@ -92,7 +96,7 @@ func App() *buffalo.App {
 			app.GET(fmt.Sprintf("/docs/%s", url), func(c buffalo.Context) error {
 				return c.Redirect(301, fmt.Sprintf("/%s/docs/deploy/%s", c.Value("lang").(string), url))
 			})
-			app.GET(fmt.Sprintf("/{lang:fr|en}/docs/%s", url), func(c buffalo.Context) error {
+			app.GET(fmt.Sprintf("/{lang:fr|en|es}/docs/%s", url), func(c buffalo.Context) error {
 				return c.Redirect(301, fmt.Sprintf("/%s/docs/deploy/%s", c.Value("lang").(string), url))
 			})
 		}
@@ -110,12 +114,12 @@ func App() *buffalo.App {
 			return c.Redirect(302, fmt.Sprintf("/%s", c.Value("lang").(string)))
 		})
 
-		app.GET("/{lang:fr|en}/search", Search)
-		app.GET("/{lang:fr|en}/docs/{name:.+}", Docs)
+		app.GET("/{lang:fr|en|es}/search", Search)
+		app.GET("/{lang:fr|en|es}/docs/{name:.+}", Docs)
 
 		app.POST("/lang", ChangeLanguage)
-		app.GET("/{lang:fr|en}/sponsors", Sponsors)
-		app.GET("/{lang:fr|en}", HomeHandler)
+		app.GET("/{lang:fr|en|es}/sponsors", Sponsors)
+		app.GET("/{lang:fr|en|es}", HomeHandler)
 
 		app.ServeFiles("/", assetBox)
 	}

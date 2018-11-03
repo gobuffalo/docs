@@ -12,7 +12,7 @@
     </li>
     <li class="sidebar-form">
       <%= form({action: "/lang"}) { %>
-        <%= f.SelectTag({name: "language", options: {"English": "en", "Français": "fr"}, id: "language", value: lang, label: t("menu.language")}) %>
+        <%= f.SelectTag({name: "language", options: supported_languages, id: "language", value: lang, label: t("menu.language")}) %>
         <%= f.InputTag({type: "hidden", value: current_path, name: "url"}) %>
         <%= f.InputTag({type: "hidden", value: lang, name: "oldLanguage"}) %>
       <% } %>

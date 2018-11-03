@@ -28,12 +28,12 @@ Comenzaremos por crear un nuevo archivo en el directorio `models`, llamado `soda
 
 <%= partial("docs/db/models_sodas_go.md") %>
 
-¡Eso es! ¡No necesita nada más para trabajar con Pop! Tenga en cuenta que, para cada campo de tabla, definimos una etiqueta `db` que coincide con el nombre del campo, pero no es obligatorio. Si no proporciona un nombre, Pop usará el nombre del campo _struct_ para generar uno.
+¡Eso es! ¡No necesita nada más para trabajar con Pop! Tenga en cuenta que, para cada campo de tabla, definimos una etiqueta `pop` que coincide con el nombre del campo, pero no es obligatorio. Si no proporciona un nombre, Pop usará el nombre del campo _struct_ para generar uno.
 
 <%= title("Uso del generador") %>
 
 <%= note() { %>
-**Nota para los usuarios de Buffalo**: los comandos `soda` están incrustados en el comando` buffalo`, detrás del espacio de nombres `db`. Así que cada vez que quiera usar un comando de `soda`, simplemente ejecute `buffalo db` en su lugar.<% } %>
+**Nota para los usuarios de Buffalo**: los comandos `soda` están incrustados en el comando` buffalo`, detrás del espacio de nombres `pop`. Así que cada vez que quiera usar un comando de `soda`, simplemente ejecute `buffalo pop` en su lugar.<% } %>
 
 Escribir los archivos a mano no es la manera más eficiente de trabajar. Soda (y Buffalo, si siguió el capítulo sobre Soda) proporciona un generador para ayudarlo a:
 

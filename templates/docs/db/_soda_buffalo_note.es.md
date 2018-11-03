@@ -1,2 +1,2 @@
 <%= note() { %>
-** Nota para los usuarios de Buffalo **: los comandos `soda` hacen parte del comando` buffalo`, dentro del mismo _namespace_ `db`. Entonces, cada vez que quiera usar un comando de `soda`, simplemente ejecute` buffalo db` en su lugar.<% } %>
+** Nota para los usuarios de Buffalo **: los comandos `soda` hacen parte del comando` buffalo`, dentro del mismo _namespace_ `pop`. Entonces, cada vez que quiera usar un comando de `soda`, simplemente ejecute` buffalo pop` en su lugar.<% } %>

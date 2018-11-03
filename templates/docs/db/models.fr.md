@@ -28,12 +28,12 @@ Nous allons commencer en créant un nouveau fichier dans le dossier `models`, qu
 
 <%= partial("docs/db/models_sodas_go.md") %>
 
-C'est tout ! Vous n'avez besoin de rien de plus pour travailler avec Pop ! Notez que pour chaque champ, nous avons défini un tag `db` qui correspond au nom du champ de la table, mais cela n'est pas obligatoire. Si vous ne fournissez pas de nom, il sera déterminé à partir de celui du champ de la structure.
+C'est tout ! Vous n'avez besoin de rien de plus pour travailler avec Pop ! Notez que pour chaque champ, nous avons défini un tag `pop` qui correspond au nom du champ de la table, mais cela n'est pas obligatoire. Si vous ne fournissez pas de nom, il sera déterminé à partir de celui du champ de la structure.
 
 <%= title("En utilisant le générateur") %>
 
 <%= note() { %>
-**Note pour les utilisateurs de Buffalo**: les commandes de `soda` sont intégrées à la commande `buffalo`, sous la commande `db`. À chaque fois que vous voulez utiliser une commande de `soda`, il vous suffit d'utiliser `buffalo db` à la place.
+**Note pour les utilisateurs de Buffalo**: les commandes de `soda` sont intégrées à la commande `buffalo`, sous la commande `pop`. À chaque fois que vous voulez utiliser une commande de `soda`, il vous suffit d'utiliser `buffalo pop` à la place.
 <% } %>
 
 Écrire les fichiers de modèles à la main n'est pas de tout repos. Soda (et donc Buffalo, si vous avez bien suivi le chapitre sur Soda) fournit un générateur pour vous aider :

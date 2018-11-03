@@ -1,5 +1,7 @@
 <%= title("Generating Actions") %>
 
+Since writing actions boilerplate is quite redundant, Buffalo provides you a generator to help you.
+
 ```bash
 $ buffalo g action --help
 

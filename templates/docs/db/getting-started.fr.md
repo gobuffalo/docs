@@ -3,7 +3,7 @@
 
 <%= h1("Démarrer avec Pop") %>
 
-Le paquet [pop](https://godoc.org/github.com/gobuffalo/pop) est fourni par défaut avec Buffalo, mais vous pouvez l'utiliser en dehors de l'écosystème Buffalo. Pop se sert de la fantastique paquet https://github.com/jmoiron/sqlx, normalise quelques patterns courants et workflows généralement associés à la manipulation de bases de données en Go.
+Le paquet [pop](https://godoc.org/github.com/gobuffalo/pop) est fourni par défaut avec Buffalo, mais vous pouvez l'utiliser en dehors de l'écosystème Buffalo. Pop se sert du fantastique paquet https://github.com/jmoiron/sqlx, normalise quelques patterns courants et workflows généralement associés à la manipulation de bases de données en Go.
 
 **Pop rend les opérations de type CRUD simples à l'aide de fonctionnalités basiques d'ORM, permet de déployer des migrations et de construire et d'exécuter des requêtes.**
 

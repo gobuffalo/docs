@@ -13,7 +13,7 @@ ADD package.json .
 ADD yarn.lock .
 RUN yarn install --no-progress
 ADD . .
-RUN buffalo build --static -o /bin/app -d --environment=production
+RUN buffalo build --static -o /bin/app -v --environment=production --skip-template-validation
 
 FROM alpine
 RUN apk add --no-cache curl

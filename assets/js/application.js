@@ -4,7 +4,7 @@ require("expose-loader?Clipboard!./clipboard.min.js");
 
 var buildSideNav = () => {
   let loc = window.location;
-  let path = loc.pathname;
+  let path = loc.pathname.replace(/\/$/, '');
   let sb = $(`aside a[href="${path}"]`);
   let sn = sb.closest("ul.sidenav");
   sn.addClass("open");

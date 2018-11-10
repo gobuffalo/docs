@@ -2,6 +2,9 @@
 # https://docs.docker.com/engine/userguide/eng-image/multistage-build/
 FROM gobuffalo/buffalo:development as builder
 
+ARG GITHUB_TOKEN=local
+ENV GITHUB_TOKEN ${GITHUB_TOKEN}
+
 RUN mkdir -p $GOPATH/src/github.com/gobuffalo/gobuffalo
 WORKDIR $GOPATH/src/github.com/gobuffalo/gobuffalo
 
@@ -10,10 +13,10 @@ ADD package.json .
 ADD yarn.lock .
 RUN yarn install --no-progress
 ADD . .
-RUN dep ensure -v
-RUN buffalo build --static -o /bin/app -d --environment=production
+RUN buffalo build --static -o /bin/app -v --environment=production --skip-template-validation
 
 FROM alpine
+RUN apk add --no-cache curl
 RUN apk add --no-cache bash
 RUN apk add --no-cache ca-certificates
 
@@ -32,3 +35,4 @@ EXPOSE 3000
 # Comment out to run the migrations before running the binary:
 # CMD /bin/app migrate; /bin/app
 CMD exec /bin/app
+

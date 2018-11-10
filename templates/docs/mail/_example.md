@@ -1,11 +1,3 @@
-<%= title("Generator") %>
-
-When the generator is run for the first time it will bootstrap a new `mailers` package and a new `templates/mail` directory.
-
-```bash
-$ buffalo generate mailer welcome_email
-```
-
 <%= title("Example Usage") %>
 
 ```go
@@ -95,31 +87,3 @@ func ContactFormHandler(c buffalo.Context) error {
 }
 ...
 ```
-
-If you're using Gmail or need to configure your SMTP connection you can use the Dialer property on the SMTPSender, p.e: (for Gmail)
-
-```go
-...
-var smtp mail.Sender
-
-func init() {
-  port := envy.Get("SMTP_PORT", "465")
-  // or 587 with TLS
-
-  host := envy.Get("SMTP_HOST", "smtp.gmail.com")
-  user := envy.Get("SMTP_USER", "your@email.com")
-  password := envy.Get("SMTP_PASSWORD", "yourp4ssw0rd")
-
-  var err error
-  sender, err := mail.NewSMTPSender(host, port, user, password)
-  sender.Dialer.SSL = true
-
-  //or if TLS
-  sender.Dialer.TLSConfig = &tls.Config{...}
-
-  smtp = sender
-}
-...
-```
-
-

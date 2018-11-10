@@ -1,4 +1,4 @@
-# Assocations and Relationships
+# Associations and Relationships
 
 Pop allows you to perform an eager loading for associations defined in a model. By using [`pop.Connection.Eager()`](https://godoc.org/github.com/gobuffalo/pop#Connection.Eager) method plus some struct field tags predefined in your model you can extract associated data from a model.
 
@@ -59,7 +59,7 @@ u := Users{}
 err := tx.Eager().Where("name = 'Mark'").All(&u)  // preload all associations for user with name 'Mark', i.e Books, Houses and FavoriteSong
 ```
 
-By default `Eager` will load all the assigned assocations for the model. To specify which associations should be loaded you can pass in the names of those fields to the `Eager` method and only those associations will be loaded.
+By default `Eager` will load all the assigned associations for the model. To specify which associations should be loaded you can pass in the names of those fields to the `Eager` method and only those associations will be loaded.
 
 ```go
 err  = tx.Eager("Books").Where("name = 'Mark'").All(&u) // preload only Books association for user with name 'Mark'.

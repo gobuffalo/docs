@@ -1,138 +1,190 @@
-<div class="jumbotron">
-  <div class="row">
-    <div class="col-md-6 col-lg-8 col-xs-12">
-      <h2 style="margin-top: 0.3em; margin-bottom: 0.3em;">
-        Un écosystème pour le développement Web en Go,<br /> conçu pour rendre votre vie plus facile.
-      </h2>
-      <p style="margin-bottom: 1.4em;">
-        <a href="/fr/docs/installation" class="btn btn-primary btn-lg">Démarrer</a>
-      </p>
-      <p>
-        Dernière version&nbsp;: <a href="https://github.com/gobuffalo/buffalo/releases" target="_blank"><strong><%= version %></strong></a><br />
-        Nécessite Go <strong><%= goMinVersion %>+</strong>
-      </p>
+<section class="presentation-banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-lg-8 col-xs-12">
+        <h2 class="text-left title" style="margin-top: 0.3em; margin-bottom: 0.3em;">Un écosystème pour <br/>le développement Web en Go, conçu pour rendre votre vie plus facile.</h2>
+        <p style="margin-bottom: 1.4em;">
+          <a href="/fr/docs/installation" class="btn btn-primary btn-lg btn-buffalo">Démarrer</a>
+        </p>
+        <div class="last-info">
+          <p>Dernière version :</p>
+          <a class="badge badge-pill" href="https://github.com/gobuffalo/buffalo/releases/latest" target="_blank" rel="noopener noreferrer"><%= version %></a>
+        </div>
+        <div class="last-info">
+          <p>Nécessite :</p>
+          <span class="badge badge-pill">Go <%= goMinVersion %>+</span>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 col-xs-6 text-center">
+        <img src="/assets/images/logo_med.png" alt="buffalo" class="logo-presentation center-block"/>
+        <a class="buffalo-video center-block" href="#" data-toggle="modal" data-target="#videoModal">
+          <img src="<%= assetPath("images/landing_icons/play_button.svg") %>" alt="play_button">
+          <span>Lancer la vidéo</span>
+        </a>
+      </div>
     </div>
-    <div class="col-md-6 col-lg-4 col-sm-6 col-xs-12">
-      <img src="/assets/images/logo_med.png" alt="buffalo" class="logo-presentation" />
+  </div>
+  <div class="mask"></div>
+</section>
+
+<section class="main-features fr">
+  <h2 class="title">Fonctionnalités</h2>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-sm-6">
+        <div class="feature">
+          <a href="/fr/docs/routing">
+            <img src="<%= assetPath("images/landing_icons/routing.svg") %>" alt="routing">
+            <h4>Routage</h4>
+          </a>
+          <p>Buffalo utilise la boîte à outils <a href="https://github.com/gorilla" target="_blank" rel="noopener noreferrer">Gorilla</a> pour gérer les routes, sessions, cookies, etc.</p>
+          <p>Il existe sans doute des routeurs plus rapides, mais celui-ci est le plus puissant&nbsp;!</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6">
+        <div class="feature">
+          <a href="/fr/docs/templating">
+            <img src="<%= assetPath("images/landing_icons/templating.svg") %>" alt="templating">
+            <h4>Templating</h4>
+          </a>
+          <p>Composez vos templates avec <a href="https://github.com/gobuffalo/plush" target="_blank" rel="noopener noreferrer">Plush</a>, en utilisant une syntaxe similaire à Ruby on Rails.</p>
+          <p>Étendez ses possiblités en créant vos propres fonctions.<br />Si vous ne l'aimez pas, vous pouvez utiliser le standard <code>html/template</code> ou même votre propre moteur !</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6">
+        <div class="feature">
+          <a href="/fr/docs/generators">
+            <img src="<%= assetPath("images/landing_icons/toolbox.svg") %>" alt="buffalo-toolbox">
+            <h4>Boîte à outils Buffalo</h4>
+          </a>
+          <p>Développer un module pour une application Web débute <strong>toujours par les mêmes tâches</strong>. Buffalo fournit <strong>une boîte à outils simple</strong>, la commande <code>buffalo</code>, pour générer de nombreuses parties de votre application et exécuter des tâches courantes.</p>
+          <p>Vous pouvez même créer de nouveaux plugins, en utilisant le langage de votre choix&nbsp;!</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6">
+        <div class="feature">
+          <a href="/fr/docs/testing">
+            <img src="<%= assetPath("images/landing_icons/testing.svg") %>" alt="testing">
+            <h4>Tests</h4>
+          </a>
+          <p><strong>Tester peut être une tâche ennuyeuse&nbsp;</strong>: Buffalo vous aide à <strong>définir des scénarios de test</strong>. Les générateurs d'action, de resource, ou de modèles créent des gabarits prêts à remplir pour vos tests.</p>
+          <p>Vous pouvez exécuter tous vos tests à l'aide d'une simple commande de la boîte à outils.</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-3 col-sm-6">
+        <div class="feature">
+          <a href="/fr/docs/new-project#running-your-application-in-development">
+            <img src="<%= assetPath("images/landing_icons/routing.svg") %>" alt="hot-reload">
+            <h4>Rechargement automatique du code</h4>
+          </a>
+          <p>Codez, sauvegardez, rafraîchissez la page. Utilisez la commande <code>buffalo dev</code> pour reconstruire votre application, du backend au frontend, et constatez les changements en direct&nbsp;!</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6">
+        <div class="feature">
+          <a href="/fr/docs/assets">
+            <span class="optional-label">Optionnel</span>
+            <img src="<%= assetPath("images/landing_icons/frontend.svg") %>" alt="front-end">
+            <h4>Pipeline frontend</h4>
+          </a>
+          <p>Utilisez la configuration Webpack pré-générée pour compiler vos composants graphiques&nbsp;: optimisez votre application de fond en comble&nbsp;!</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6">
+        <div class="feature">
+          <a href="/fr/docs/db/models">
+            <span class="optional-label">Optionnel</span>
+            <img src="<%= assetPath("images/landing_icons/models.svg") %>" alt="models">
+            <h4>Modèles / ORM</h4>
+          </a>
+          <p>Une intégration forte avec <a href="https://github.com/gobuffalo/pop" target="_blank" rel="noopener noreferrer">pop</a> permet de gérer les bases de données simplement, ainsi que les tâches courantes associées.</p>
+          <p>Bases de données supportées&nbsp;: MySQL/ MariaDB, PostgreSQL, CockroachDB, SQLite.</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6">
+        <div class="feature">
+          <a href="/fr/docs/tasks">
+            <span class="optional-label">Optionnel</span>
+            <img class="text-center" src="<%= assetPath("images/landing_icons/task.svg") %>" alt="task-workers">
+            <h4>Tâches / Tâches de fond</h4>
+          </a>
+          <p>Si vous êtes famillier des tâches Rake en Ruby, vous vous sentirez comme chez vous en utilisant <a href="https://github.com/markbates/grift" target="_blank" rel="noopener noreferrer">Grift</a>. Populer une base de données, lancer une tâche de nettoyage sont maintenant à portée de main&nbsp;!</p>
+          <p>Vous pouvez également faire tourner des tâches de fond, avec la même simplicité.</p>
+        </div>
+      </div>
+      <div class="col-md-12">
+          <p class="get-started-btn">
+            <a href="/fr/docs/installation" class="btn btn-primary btn-lg btn-buffalo"><strong>Démarrer</strong> avec Buffalo</a>
+          </p>
+      </div>
     </div>
   </div>
-</div>
+  <div class="white-overlay">
+    <div class="white-bg"></div>
+    <img src="<%= assetPath("images/landing_icons/cactus.svg") %>" alt="cactus" class="cactus cactus-left">
+    <img src="<%= assetPath("images/landing_icons/cactus.svg") %>" alt="cactus" class="cactus cactus-right">
+    <img src="<%= assetPath("images/landing_icons/cactus.svg") %>" alt="cactus" class="cactus cactus-right">
+  </div>
+</section>
 
-<h2>Fonctionnalités</h2>
+<section class="blog">
+  <h2 class="title">En direct de notre blog</h2>
+  <div class="container">
+    <div class="row">
+      <%= for (bp) in blogPosts { %>
+        <div class="col-xs-12 col-md-4 blog-entry" >
+          <header>
+            <h4><a href="<%= bp.Link %>" target="_blank" rel="noopener noreferrer"><%= bp.Title %></a></h4>
+            <h5><%= bp.Author %></h5>
+          </header>
+          <p><%= raw(bp.Description) %></p>
+        </div>
+      <% } %>
+    </div>
+  </div>
+  <div class="text-center">
+    <a class="learn-more-btn" href="https://blog.gobuffalo.io/" target="_blank" rel="noopener noreferrer">Découvrir plus</a>
+  </div>
+</section>
 
-<div class="row">
-  <div class="feature">
-    <h4>
-      <i class="fa fa-road" aria-hidden="true"></i>
-      Routage
-    </h4>
+<section class="sponsors">
+  <%= partial("platinum_sponsors.html") %>
+</section>
 
-    <p>
-      Buffalo utilise la boîte à outils <a href="https://github.com/gorilla" target="_blank">Gorilla</a> pour gérer les routes, sessions, cookies, etc. Il existe sans doute des routeurs plus rapides, mais celui-ci est le plus puissant&nbsp;!
-    </p>
+<section class="buffalo-at-work">
+  <div class="tumbleweed tumbleweed-left">
+    <img src="<%= assetPath("images/landing_icons/tumbleweed.svg") %>" alt="tumbleweed-left">
+    <img src="<%= assetPath("images/landing_icons/tumbleweed.svg") %>" alt="tumbleweed-left">
+    <img src="<%= assetPath("images/landing_icons/tumbleweed.svg") %>" alt="tumbleweed-left">
   </div>
+  <div class="container text-center">
+      <h4>Vous utilisez Buffalo dans le cadre de votre travail?</h4>
+      <p>Demandez à votre manager ou aux responsables marketing s'ils pourraient nous aider en <a href="/fr/sponsors">soutenant</a> notre projet.</p>
+      <p><a href="http://patreon.com/buffalo" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg btn-buffalo">Devenir un Patreon</a></p>
+  </div>
+  <div class="tumbleweed tumbleweed-right">
+      <img src="<%= assetPath("images/landing_icons/tumbleweed.svg") %>" alt="tumbleweed-right">
+      <img src="<%= assetPath("images/landing_icons/tumbleweed.svg") %>" alt="tumbleweed-right">
+  </div>
+</section>
 
-  <div class="feature">
-    <h4>
-      <i class="fa fa-th" aria-hidden="true"></i>
-      Templates
-    </h4>
-    <p>
-      Composez vos templates avec <a href="https://github.com/gobuffalo/plush" target="_blank">Plush</a>, en utilisant une syntaxe similaire à Ruby on Rails. Étendez ses possiblités en créant vos propres fonctions.<br />Si vous ne l'aimez pas, vous pouvez utiliser le standard <code>html/template</code> ou même votre propre moteur !
-    </p>
+<section class="know-more">
+  <div class="container">
+      <div class="text-center">
+        <h2>Vous voulez en savoir plus sur Buffalo?</h2>
+        <p>Obtenez tout le support et les ressources dans notre documentation.</p>
+        <a class="docs-btn" href="<%= docPath({name: "index", lang: lang}) %>">Aller à la documentation</a>
+      </div>
   </div>
-</div>
-<div class="row">
-  <div class="feature">
-    <h4>
-      <i class="fa fa-cube" aria-hidden="true"></i>
-      Boîte à outils Buffalo
-    </h4>
-    <p>
-      Développer un module pour une application Web débute <strong>toujours par les mêmes tâches</strong>. Buffalo fournit <strong>une boîte à outils simple</strong>, la commande <code>buffalo</code>, pour générer de nombreuses parties de votre application et exécuter des tâches courantes.
-    </p>
-    <p>
-      Vous pouvez même créer de nouveaux plugins, en utilisant le langage de votre choix&nbsp;!
-    </p>
-  </div>
-  <div class="feature">
-    <h4>
-      <i class="fa fa-flask" aria-hidden="true"></i>
-      Tests
-    </h4>
-    <p>
-      <strong>Tester peut être une tâche ennuyeuse&nbsp;</strong>: Buffalo vous aide à <strong>définir des scénarios de test</strong>. Les générateurs d'action, de resource, ou de modèles créent des gabarits prêts à remplir pour vos tests.
-    </p>
-    <p>
-      Vous pouvez exécuter tous vos tests à l'aide d'une simple commande de la boîte à outils.
-    </p>
-  </div>
-</div>
-<div class="row">
-  <div class="feature">
-    <h4>
-      <i class="fa fa-refresh" aria-hidden="true"></i>
-      Rechargement automatique du code
-    </h4>
-    <p>
-      Codez, sauvegardez, rafraîchissez la page. Utilisez la commande <code>buffalo dev</code> pour reconstruire votre application, du backend au frontend, et constatez les changements en direct&nbsp;!
-    </p>
-  </div>
-  <div class="feature">
-    <h4>
-      <i class="fa fa-file-image-o" aria-hidden="true"></i>
-      Pipeline frontend <span class="label label-default">Optionnel</span>
-    </h4>
-    <p>
-      Utilisez la configuration Webpack pré-générée pour compiler vos composants graphiques&nbsp;: optimisez votre application de fond en comble&nbsp;!
-    </p>
+</section>
+
+<div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <%= partial("docs/youtube.html") %>
   </div>
 </div>
-<div class="row">
-  <div class="feature">
-    <h4>
-      <i class="fa fa-database" aria-hidden="true"></i>
-      Modèles / ORM <span class="label label-default">Optionnel</span>
-    </h4>
-    <p>
-      Une intégration forte avec <a href="https://github.com/gobuffalo/pop" target="_blank">pop</a> permet de gérer les bases de données simplement, ainsi que les tâches courantes associées.
-    </p>
-    <p>
-      Bases de données supportées&nbsp;: MySQL/ MariaDB, PostgreSQL, CockroachDB, SQLite.
-    </p>
-  </div>
-  <div class="feature">
-    <h4>
-      <i class="fa fa-cogs" aria-hidden="true"></i>
-      Tâches / Tâches de fond <span class="label label-default">Optionnel</span>
-    </h4>
-    <p>
-      Si vous êtes famillier des tâches Rake en Ruby, vous vous sentirez comme chez vous en utilisant <a href="https://github.com/markbates/grift" target="_blank">Grift</a>. Populer une base de données, lancer une tâche de nettoyage sont maintenant à portée de main&nbsp;!
-    </p>
-    <p>
-      Vous pouvez également faire tourner des tâches de fond, avec la même simplicité.
-    </p>
-  </div>
-</div>
-
-<p class="get-started-btn">
-  <a href="/fr/docs/installation" class="btn btn-primary btn-lg"><strong>Démarrer</strong> avec Buffalo</a>
-</p>
-
-<%= partial("platinum_sponsors.html") %>
-
-<div class="text-center" style="margin-top: 2.5em;">
-  <h4>Vous utilisez Buffalo dans le cadre de votre travail ?</h4>
-
-  <p>
-    Demandez à votre manager ou aux responsables marketing s'ils pourraient nous aider en <a href="/fr/sponsors">soutenant</a> notre projet.
-  </p>
-
-  <p>
-      <a href="http://patreon.com/buffalo" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">Devenir un Patreon</a>
-  </p>
-</div>
-
-<h2>Découvrir Buffalo en vidéo (EN)</h2>
-
-<%= partial("docs/youtube.html") %>

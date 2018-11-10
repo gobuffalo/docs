@@ -8,12 +8,15 @@ The `buffalo.Context` interface supports `context.Context` so it can be passed a
 
 Since `buffalo.Context` is an interface it is possible to create an application specific implementation that is tailor suited to the needs of the application being built.
 
+<%= sinceVersion("0.12.0") %>
+
 ```go
 type Context interface {
   context.Context
   Response() http.ResponseWriter
   Request() *http.Request
   Session() *Session
+  Cookies() *Cookies
   Params() ParamValues
   Param(string) string
   Set(string, interface{})
@@ -23,11 +26,14 @@ type Context interface {
   Bind(interface{}) error
   Render(int, render.Renderer) error
   Error(int, error) error
-  Websocket() (*websocket.Conn, error)
   Redirect(int, string, ...interface{}) error
   Data() map[string]interface{}
+  Flash() *Flash
+  File(string) (binding.File, error)
 }
 ```
+
+The `Websocket() (*websocket.Conn, error)` function was removed from `buffalo.Context` in version `v0.12.0`. Use the [http://www.gorillatoolkit.org/pkg/websocket](http://www.gorillatoolkit.org/pkg/websocket) package directly instead
 
 <%= title("Context and Rendering") %>
 

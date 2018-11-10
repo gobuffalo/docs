@@ -10,7 +10,7 @@
 
 # Helpers
 - id: helpers.since
-  translation: since <strong>v{{.version}}</strong>
+  translation: since {{.name}}<strong>{{.version}}</strong>
 
 # Top
 - id: top.title
@@ -19,8 +19,8 @@
 - id: top.examples-tutorials
   translation: Tutorials
 
-- id: top.go-docs
-  translation: Go Docs
+- id: top.docs
+  translation: Documentation
 
 - id: top.blog
   translation: Blog
@@ -39,6 +39,9 @@
   translation: Buffalo Gopher designed by <a href="https://twitter.com/ashleymcnamara" target="_blank" rel="noopener noreferrer">Ashley McNamara</a> &mdash; Original Gopher designed by Renee French.
 
 # Menu
+- id: menu.search
+  translation: Search...
+
 - id: menu.language
   translation: Language
 
@@ -59,6 +62,12 @@
 
 - id: menu.config-variables
   translation: Configuration
+
+- id: menu.request-handling
+  translation: Request Handling
+
+- id: menu.errors-handling
+  translation: Errors Handling
 
 - id: menu.sessions
   translation: Sessions
@@ -92,6 +101,9 @@
 
 - id: menu.db-callbacks
   translation: Callbacks
+
+- id: menu.db-buffalo-integration
+  translation: Buffalo Integration
 
 - id: menu.contributing
   translation: Contributing

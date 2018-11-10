@@ -68,7 +68,7 @@ When setting up your application you *can* assign a worker implementation to the
 
 ```go
 import "github.com/gobuffalo/gocraft-work-adapter"
-import "github.com/garyburd/redigo/redis"
+import "github.com/gomodule/redigo/redis"
 
 // ...
 
@@ -110,7 +110,7 @@ import "github.com/gobuffalo/buffalo/worker"
 var w worker.Worker
 
 func init() {
-  w = app.Worker // Get a ref to the previously defined Worker
+  w = App().Worker // Get a ref to the previously defined Worker
   w.Register("send_email", func(args worker.Args) error {
     // do work to send an email
     return nil

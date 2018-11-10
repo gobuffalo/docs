@@ -1,11 +1,10 @@
 require("expose-loader?$!expose-loader?jQuery!jquery");
-require("bootstrap-sass/assets/javascripts/bootstrap.js");
 require("./theme.js");
 require("expose-loader?Clipboard!./clipboard.min.js");
 
 var buildSideNav = () => {
   let loc = window.location;
-  let path = loc.pathname;
+  let path = loc.pathname.replace(/\/$/, '');
   let sb = $(`aside a[href="${path}"]`);
   let sn = sb.closest("ul.sidenav");
   sn.addClass("open");
@@ -22,7 +21,7 @@ var buildSideNav = () => {
   });
   if (items.length > 0) {
     let ul = $("<ul class=\"summary\">").append(items);
-    $(".main-content h1").after(ul);
+    $(".main-content h1:first").after(ul);
     sb.addClass("active");
   }
 };
@@ -86,7 +85,10 @@ $(() => {
       let lid = `${id}-${i}`;
       let block = $(b);
       let name = block.text().split("\n")[0];
-      name = name.replace("Copy// ", "");
+      name = name.toString();
+      try {
+        name = name.replace("Copy// ", "");
+        // name = name.replace("$ ", "");
 
       let act = "";
       if (i === 0) {
@@ -101,6 +103,11 @@ $(() => {
         ).append(block)
       );
       blocks.remove(block);
+      } catch (err) {
+        if (window.console) {
+          console.log("err:", err);
+        }
+      }
     });
   });
 });
@@ -109,5 +116,12 @@ $(() => {
 $(() => {
   $("#language").on("change", (e) => {
     $(e.target).closest("form").submit();
+  });
+
+  $("body").on("hidden.bs.modal", (e) => {
+    var $iframes = $(e.target).find("iframe");
+    $iframes.each((index, iframe) => {
+      $(iframe).attr("src", $(iframe).attr("src"));
+    });
   });
 });

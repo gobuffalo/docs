@@ -1,7 +1,7 @@
 <% seoDescription("Installer le framework Buffalo") %>
-<% seoKeywords(["buffalo", "go", "golang", "installation", "framework", "web"]) %>
+<% seoKeywords(["buffalo", "go", "golang", "installation", "framework", "web", "mac", "windows", "linux"]) %>
 
-<%= h1("Installation") %>
+<%= h1("Installer Buffalo") %>
 
 Dans ce chapitre, vous allez apprendre à installer Buffalo, depuis un binaire pré-compilé ou depuis les sources.
 
@@ -9,19 +9,29 @@ Buffalo fournit **deux composants majeurs** :
 * La commande `buffalo`, une puissante boîte à outils pour vous aider à développer d'une manière rapide et efficace.
 * Le *framework* buffalo, un ensemble de pièces pour construire votre application.
 
+Buffalo est actuellement disponible et testé sur les plateformes suivantes :
+* GNU/Linux
+* Mac OSX
+* Windows
+
 <%= title("Prérequis") %>
 
 Avant d'installer Buffalo, assurez-vous d'avoir installé les dépendances suivantes :
 
-* [Guide de configuration d'un environnement de développement Go (EN)](http://gopherguides.com/before-you-come-to-class).
+* [En environnement fonctionnel pour Go (EN)](http://gopherguides.com/before-you-come-to-class).
 * [Une variable d'environnement `$PATH` correctement configurée, incluant `$GOPATH/bin`](https://golang.org/doc/code.html#GOPATH).
 * [Go](https://golang.org) version `<%= goMinVersion %>` ou supérieure.
 
 ##### Prérequis pour le frontend
 
-* [node](https://github.com/nodejs/node) et [npm](https://github.com/npm/npm) pour la [gestion des ressources](/docs/assets) avec [webpack](https://github.com/webpack/webpack).
+Les pré-requis suivants sont optionnels. Vous n'en aurez pas besoin si vous souhaitez créer une API, ou si vous préférez construire votre application d'une manière plus traditionnelle.
+
+* [node](https://github.com/nodejs/node) version `8` ou supérieure
+* [yarn](https://yarnpkg.com/en/) ou [npm](https://github.com/npm/npm) pour la [gestion des ressources](/docs/assets) avec [webpack](https://github.com/webpack/webpack).
 
 ##### Prérequis spécifiques aux bases de données
+
+Là encore, si vous n'avez pas besoin de base de données, vous pouvez vous affranchir de ce paragraphe.
 
 * **SQLite 3**: GCC, ou compilateur équivalent pour [mattn/go-sqlite3](https://github.com/mattn/go-sqlite3).
 
@@ -31,7 +41,7 @@ Avant d'installer Buffalo, assurez-vous d'avoir installé les dépendances suiva
 Ces archives sont fournies sans support pour SQLite.
 <% } %>
 
-Depuis la version `v0.10.3`, des archives contenant une version pré-compilée de Buffalo sont fournies à chaque publication officielle. Si vous n'avez pas besoin de la toute dernière version de développement et que vous souhaitez une version stable, vous préférerez sans-doute cette version. 
+Depuis la version `v0.10.3`, des archives contenant une version pré-compilée de Buffalo sont fournies à chaque publication officielle. Si vous n'avez pas besoin de la toute dernière version de développement et que vous souhaitez une version stable, vous préférerez sans-doute cette version.
 
 ### GNU / Linux
 
@@ -51,11 +61,31 @@ $ sudo mv buffalo-no-sqlite /usr/local/bin/buffalo
 $ mv buffalo-no-sqlite ~/bin/buffalo
 ```
 
-### Windows
+<%= title("Scoop (Windows)") %>
 Buffalo peut être installé en utilisant le gestionnaire de paquets [Scoop](http://scoop.sh/) :
 
 ```powershell
 PS C:\> scoop install buffalo
+```
+
+<%= title("Homebrew (macOS)") %>
+
+Sur macOS, vous pouvez également installer Buffalo avec [Homebrew](https://brew.sh/). Après avoir [installé](https://docs.brew.sh/Installation) Homebrew, vous pouvez installer Buffalo en une simple ligne de commande :
+
+```bash
+brew install gobuffalo/tap/buffalo
+```
+
+<%= title("GoFish (multi-plateformes)") %>
+
+[GoFish](https://gofi.sh/index.html) est un gestionnaire de paquets multi-plateformes ; qui fonctionne donc avec Windows, MacOSX et Linux.
+
+Après avoir [installé](https://gofi.sh/index.html#install) GoFish, vous pouvez installer Buffalo comme suit :
+
+```bash
+$ gofish install buffalo
+==> Installing buffalo...
+🐠  buffalo <%= version %>: installed in 3.223672926s
 ```
 
 <%= title("Installation personnalisée **avec** support pour SQLite3", {title: "Installation avec support pour SQLite3"}) %>
@@ -111,7 +141,7 @@ Available Commands:
   setup       Setups a newly created, or recently checked out application.
   task        Runs your grift tasks
   test        Runs the tests for your Buffalo app
-  update      will attempt to upgrade a Buffalo application to version v0.11.1
+  update      will attempt to upgrade a Buffalo application to version v<%= version %>
   version     Print the version number of buffalo
 
 Flags:

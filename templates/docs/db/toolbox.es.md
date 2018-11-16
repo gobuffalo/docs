@@ -6,7 +6,7 @@
 Pop le ayuda a administrar las conexiones a la base de datos, pero también proporciona `soda`, una pequeña caja de herramientas CLI para administrar su base de datos. Puede ayudarlo a crear una nueva base de datos, descartar las existentes, y así sucesivamente.
 
 <%= note() { %>
-**Nota para los usuarios de Buffalo**: los comandos `soda` están incrustados en el comando `buffalo`, detrás del espacio de nombres `db`. Entonces, cada vez que quiera usar un comando de `soda`, simplemente ejecute `buffalo db` en su lugar. No es necesario instalar la CLI `soda`.
+**Nota para los usuarios de Buffalo**: los comandos `soda` están incrustados en el comando `buffalo`, detrás del espacio de nombres `pop`. Entonces, cada vez que quiera usar un comando de `soda`, simplemente ejecute `buffalo pop` en su lugar. No es necesario instalar la CLI `soda`.
 <% } %>
 
 <%= title("Instalar soporte CLI") %>

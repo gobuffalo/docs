@@ -28,12 +28,12 @@ We'll start by creating a new file in the `models` directory, called `soda.go` (
 
 <%= partial("docs/db/models_sodas_go.md") %>
 
-That's it! You don't need anything else to work with Pop! Note, for each table field, we defined a `db` tag matching the field name, but it's not required. If you don't provide a name, Pop will use the name of the struct field to generate one.
+That's it! You don't need anything else to work with Pop! Note, for each table field, we defined a `pop` tag matching the field name, but it's not required. If you don't provide a name, Pop will use the name of the struct field to generate one.
 
 <%= title("Using the generator") %>
 
 <%= note() { %>
-**Note for Buffalo users**: `soda` commands are embedded into the `buffalo` command, behind the `db` namespace. So everytime you want to use a command from `soda`, just execute `buffalo db` instead.
+**Note for Buffalo users**: `soda` commands are embedded into the `buffalo` command, behind the `pop` namespace. So everytime you want to use a command from `soda`, just execute `buffalo pop` instead.
 <% } %>
 
 Writing the files by hand is not the most efficient way to work. Soda (and Buffalo, if you followed the chapter about Soda) provides a generator to help you:

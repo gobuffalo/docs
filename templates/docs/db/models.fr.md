@@ -192,6 +192,37 @@ func (u User) TableName() string {
 }
 ```
 
+### Timestamps UNIX
+
+<%= sinceVersion("v4.7.0") %>
+
+Si vous définissez les champs `CreatedAt` et `UpdatedAt` dans votre modèle (ce qui est fait par défaut lorsque vous utilisez le générateur de modèles), Pop se chargera de gérer la valeur de ces champs pour vous. Cela signifie que si vous créez une nouvelle entité en base de données, le champ `CreatedAt` aura pour valeur la date et l'heure courantes ; et que le champ `UpdatedAt` sera mis à jour à chaque vous que vous sauvegarderez une entité existante en base.
+
+Ces champs sont définis avec le type `time.Time`, mais vous pouvez leur donner le type `int` à la place. Ils seront alors considérés comme des timestamps UNIX.
+
+```go
+type User struct {
+  ID        int    `db:"id"`
+  CreatedAt int    `db:"created_at"`
+  UpdatedAt int    `db:"updated_at"`
+  FirstName string `db:"first_name"`
+  LastName  string `db:"last_name"`
+}
+```
+
+Si vous utilisez les migrations de type fizz, assurez-vous de définir ces champs vous-même et de désactiver l'horodatage automatique :
+
+```go
+create_table(“users”) {
+  t.Column("id", "int", {primary: true})
+  t.Column(“created_at”, “int”)
+  t.Column(“updated_at”, “int”)
+  t.Column(“first_name”, “string”)
+  t.Column(“last_name”, “string”)
+  t.DisableTimestamps()
+}
+```
+
 <%= title("Modèles de vues") %>
 
 Une [vue](https://fr.wikipedia.org/wiki/Vue_(base_de_donn%C3%A9es)) est un objet de base de données qui stocke le résultat d'une requête. Puisque cet objet agit comme une table en lecture seule, il est possible de le lier avec un modèle de Pop tout comme vous le feriez avec une table.

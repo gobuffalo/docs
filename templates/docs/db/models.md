@@ -192,6 +192,37 @@ func (u User) TableName() string {
 }
 ```
 
+### UNIX Timestamps
+
+<%= sinceVersion("v4.7.0") %>
+
+If you define the `CreatedAt` and `UpdatedAt` fields in your model struct (and they are created by default when you use the model generator), Pop will manage them for you. It means when you create a new entity in the database, the `CreatedAt` field will be set to the current datetime, and `UpdatedAt` will be set each time you update an existing entity.
+
+These fields are defined as time.Time, but now you can define them as int and handle them as UNIX timestamps.
+
+```go
+type User struct {
+  ID        int    `db:"id"`
+  CreatedAt int    `db:"created_at"`
+  UpdatedAt int    `db:"updated_at"`
+  FirstName string `db:"first_name"`
+  LastName  string `db:"last_name"`
+}
+```
+
+If you use fizz migrations, make sure to define these fields by yourself, and disable the default datetime timestamps:
+
+```go
+create_table(“users”) {
+  t.Column("id", "int", {primary: true})
+  t.Column(“created_at”, “int”)
+  t.Column(“updated_at”, “int”)
+  t.Column(“first_name”, “string”)
+  t.Column(“last_name”, “string”)
+  t.DisableTimestamps()
+}
+```
+
 <%= title("Views Models") %>
 
 A [view](https://en.wikipedia.org/wiki/View_(SQL)) is a database collection object which stores the result of a query. Since this object acts as a read-only table, you can map it with Pop models just like a table.

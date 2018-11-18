@@ -156,6 +156,15 @@ $titles-orange: #CC471E;
             text-transform: uppercase;
             color: white;
             padding: 5px 20px;
+            font-weight: normal;
+
+            &:hover {
+                color: #000;
+                background: #fff;
+                -webkit-transition: .2s ease;
+                transition: .2s ease;
+                text-decoration: none;
+            }
         }
 
         h2 {
@@ -348,7 +357,7 @@ $titles-orange: #CC471E;
             a {
                 width: 190px;
                 display: block;
-                color: #3D8BDF;
+                color: #125B96;
                 font-size: 19.8px;
                 letter-spacing: -0.58px;
                 line-height: 24px;

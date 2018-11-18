@@ -62,11 +62,42 @@ const configurator = {
             { loader: "sass-loader", options: { sourceMap: true } }
           ]
         },
+        { test: /\.tsx?$/, use: "ts-loader", exclude: /node_modules/ },
         { test: /\.jsx?$/, loader: "babel-loader", exclude: /node_modules/ },
         { test: /\.(woff|woff2|ttf|svg)(\?v=\d+\.\d+\.\d+)?$/, use: "url-loader" },
         { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, use: "file-loader" },
         { test: require.resolve("jquery"), use: "expose-loader?jQuery!expose-loader?$" },
-        { test: /\.go$/, use: "gopherjs-loader" }
+        { test: /\.go$/, use: "gopherjs-loader" },
+        {
+          test: /\.(gif|png|jpe?g|svg|ico)$/i,
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                name: 'images/[name]-[hash].[ext]',
+              },
+            },
+            {
+              loader: 'image-webpack-loader',
+              options: {
+                mozjpeg: {
+                  progressive: true,
+                  quality: 65
+                },
+                optipng: {
+                  enabled: false,
+                },
+                pngquant: {
+                  quality: '65-90',
+                  speed: 4
+                },
+                gifsicle: {
+                  interlaced: false,
+                }
+              }
+            }
+          ],
+        },
       ]
     }
   },
@@ -79,7 +110,10 @@ const configurator = {
       entry: configurator.entries(),
       output: { filename: "[name].[hash].js", path: `${__dirname}/public/assets` },
       plugins: configurator.plugins(),
-      module: configurator.moduleOptions()
+      module: configurator.moduleOptions(),
+      resolve: {
+        extensions: ['.ts', '.js', '.json']
+      }
     }
 
     if (env === "development") {

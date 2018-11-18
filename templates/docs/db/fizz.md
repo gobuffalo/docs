@@ -26,7 +26,7 @@ create_table("todos") {
 }
 ```
 
-The `id` column don't have to be an integer. For instance, your can use an [`UUID`](https://github.com/gobuffalo/uuid) type instead:
+The `id` column doesn't have to be an integer. For instance, you can use an [`UUID`](https://github.com/gobuffalo/uuid) type instead:
 
 ```javascript
 create_table("users") {

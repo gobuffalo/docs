@@ -72,7 +72,7 @@ $titles-orange: #CC471E;
     .main-content {
         overflow: hidden;
         section.presentation-banner {
-            background: #0a193f url("/assets/images/bg.png") no-repeat left bottom;
+            background: #0a193f url("../images/bg.png") no-repeat left bottom;
             background-size: cover;
             box-sizing: border-box;
             margin-left: -5px;
@@ -383,6 +383,7 @@ $titles-orange: #CC471E;
             top: 0;
             img {
                 position: absolute;
+                z-index: -1;
             }
         }
         .tumbleweed-left {

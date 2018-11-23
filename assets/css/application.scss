@@ -206,3 +206,16 @@ a {
     color: #fff;
   }
 }
+
+@media screen and (min-width: 767px) {
+  .improve-page-btn {
+    float: right !important;
+    margin-left: -126px;
+  }
+}
+
+@media screen and (max-width: 766px) {
+  .improve-page-btn {
+    text-align: right;
+  }
+}

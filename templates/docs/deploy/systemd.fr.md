@@ -5,7 +5,7 @@
 
 Dans ce chapitre, nous allons voir comment installer une app Buffalo comme un service Systemd. Systemd est le nouveau standard de beaucoup de distributions GNU/Linux, pour exécuter les services systèmes.
 
-Il vous permet de configurer votre application d'une manière standard, et de gérer son cycle de vie avec les commandes `systemctl`.
+Il vous permet de configurer votre application d'une manière standard, et de gérer son cycle de vie avec les commandes `systemctl`. Vous pouvez vous référer à la [page man de systemd (EN)](https://www.freedesktop.org/software/systemd/man/systemd.service.html) pour plus d'informations.
 
 <%= title("Installer votre app Buffalo") %>
 

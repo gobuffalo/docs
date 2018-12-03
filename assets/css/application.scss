@@ -1,5 +1,5 @@
 @import "~bootstrap-sass/assets/stylesheets/_bootstrap-sprockets.scss";
-@import "~bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import "bootstrap.scss";
 @import "~font-awesome/css/font-awesome.css";
 @import "~highlightjs/styles/monokai.css";
 @import "theme.scss";
@@ -68,6 +68,11 @@ h2 {
   margin-bottom: 0;
   margin-right: -15px;
   color: #fff;
+
+  a {
+    color: #fff;
+    text-decoration: underline #fff;
+  }
 }
 
 .container + #global-footer {
@@ -182,7 +187,7 @@ h2 {
 a {
   code {
     text-decoration: underline;
-    text-decoration-color: #62a8ea;
+    text-decoration-color: #125B96;
 
     &:hover {
       text-decoration: none;
@@ -199,5 +204,18 @@ a {
 
   a {
     color: #fff;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .improve-page-btn {
+    float: right !important;
+    margin-left: -126px;
+  }
+}
+
+@media screen and (max-width: 766px) {
+  .improve-page-btn {
+    text-align: right;
   }
 }

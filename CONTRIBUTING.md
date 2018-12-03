@@ -38,8 +38,8 @@ The site is powered by [Buffalo](https://github.com/gobuffalo/buffalo) itself, s
 
 * Node.js >= 8.x
 * `npm` or `yarn` for the frontend pipeline.
-* A working Go (1.8.1 or greater) setup.
-* [`dep`](https://golang.github.io/dep/)
+* A working Go (1.9.7 or greater) setup.
+* Go modules enabled (GO111MODULE set to `on`)
 
 ### Run the website for dev
 ```bash

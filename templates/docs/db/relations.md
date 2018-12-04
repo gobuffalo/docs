@@ -1,6 +1,9 @@
+<% seoDescription("How to manage associations and relationships with Pop?") %>
+<% seoKeywords(["buffalo", "go", "golang", "database", "ORM", "pop", "associations", "relations", "entity"]) %>
+
 # Associations and Relationships
 
-Pop allows you to perform an eager loading for associations defined in a model. By using [`pop.Connection.Eager()`](https://godoc.org/github.com/gobuffalo/pop#Connection.Eager) method plus some struct field tags predefined in your model you can extract associated data from a model.
+Associations are the Pop way to define **a relation between two objects in the database**. In this chapter, you'll learn how to define associations using struct tags; and how to manipulate them with the `Eager()` modifier.
 
 <%= vimeo("253683926") %>
 
@@ -170,3 +173,7 @@ tx.Eager().Create(&book)
 ```
 
 In the case that you feed the eager create with associate models that already exist it will, instead of creating duplicates of them or updating the contents of them, simply create/update the associations with them.
+
+<%= title("Related Content") %>
+
+* [Associations with Pop: 1 to 1](https://blog.gobuffalo.io/associations-with-pop-1-to-1-592f02e2bdd8) - An article about 1 to 1 associations in Pop.

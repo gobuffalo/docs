@@ -3,7 +3,9 @@
 
 # Callbacks
 
-Pop provides a means to execute code before and after database operations. This is done by defining specific methods for your models. For example, to hash a user password you may want to define the following method:
+Pop provides a means to execute code before and after database operations. This is done by defining specific methods for your models.
+
+For example, to hash a user password you may want to define the following method:
 
 ```go
 type User struct {

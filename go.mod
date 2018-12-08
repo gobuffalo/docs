@@ -33,7 +33,7 @@ require (
 	github.com/gobuffalo/mw-i18n v0.0.0-20181027200759-09e0c99be4d3
 	github.com/gobuffalo/mw-paramlogger v0.0.0-20181005191442-d6ee392ec72e
 	github.com/gobuffalo/packr v1.21.5
-	github.com/gobuffalo/plush v3.7.30+incompatible
+	github.com/gobuffalo/plush v3.7.33-0.20181208220007-290bc52c57d1+incompatible
 	github.com/gobuffalo/tags v2.0.14+incompatible
 	github.com/gobuffalo/x v0.0.0-20181110221217-14085ca3e1a9
 	github.com/golang/gddo v0.0.0-20181116215533-9bd4a3295021

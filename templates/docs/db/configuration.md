@@ -102,16 +102,13 @@ The database dialect to use with the connection. Accepted values are:
 
 <%= sinceVersion("4.6.0") %>
 
-This option is currently only supported by the **mysql dialect**. This encoding will be used to create the database (if you create it using `soda`), and as the `collation` parameter for the connection string. If this option is omitted, the default value is `utf8_general_ci`.
+This option is currently only supported by the **mysql dialect**. This encoding will be used to create the database (if you create it using `soda`), and as the `collation` parameter for the connection string. If this option is omitted, the default value is `utf8mb4_general_ci`.
 
 ```yaml
 development:
   dialect: mysql
-  database: myapp_development
-  user: root
-  password: root
-  host: 127.0.0.1
-  encoding: "utf8mb4_general_ci"
+  options:
+    encoding: "utf8_general_ci"
 ```
 
 ### host

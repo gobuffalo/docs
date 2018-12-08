@@ -102,16 +102,13 @@ Le dialecte de base de données à utiliser avec la connection. Les valeurs acce
 
 <%= sinceVersion("4.6.0") %>
 
-Cette option n'est pour le moment supportée que par le **dialecte mysql**. Ce paramètre est utilisé pour créer la base de données (si vous la créez avec `soda`), et en tant que paramètre `collation` de l'URL de connexion à la base de données. Si cette option n'est pas renseignée, la valeur par défaut est  `utf8_general_ci`.
+Cette option n'est pour le moment supportée que par le **dialecte mysql**. Ce paramètre est utilisé pour créer la base de données (si vous la créez avec `soda`), et en tant que paramètre `collation` de l'URL de connexion à la base de données. Si cette option n'est pas renseignée, la valeur par défaut est  `utf8mb4_general_ci`.
 
 ```yaml
 development:
   dialect: mysql
-  database: myapp_development
-  user: root
-  password: root
-  host: 127.0.0.1
-  encoding: "utf8mb4_general_ci"
+  options:
+    encoding: "utf8_general_ci"
 ```
 
 ### host

@@ -26,9 +26,11 @@ Applications generated with the `--api` flag don't contain any front systems. Th
 API applications have `actions/app.go` and `actions/render.go` files that are a good starting point for JSON API applications.
 
 <h5><code>buffalo new coke --api</code></h5>
+
 <%= partial("docs/apis/api_app.md") %>
 <%= partial("docs/apis/api_render.md") %>
 
 <h5><code>buffalo new coke</code></h5>
+
 <%= partial("docs/apis/web_app.md") %> 
 <%= partial("docs/apis/web_render.md") %>

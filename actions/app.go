@@ -14,7 +14,6 @@ import (
 	"github.com/gobuffalo/mw-paramlogger"
 	"github.com/gobuffalo/packr"
 	"github.com/gobuffalo/x/sessions"
-	"github.com/gorilla/mux"
 	"github.com/unrolled/secure"
 )
 
@@ -81,6 +80,7 @@ func App() *buffalo.App {
 			}
 		})
 
+		enableProfiling(app)
 		bindRedirects(app)
 
 		app.GET("/{lang:fr|en}/search", Search)
@@ -89,8 +89,6 @@ func App() *buffalo.App {
 		app.POST("/lang", ChangeLanguage)
 		app.GET("/{lang:fr|en}/sponsors", Sponsors)
 		app.GET("/{lang:fr|en}", HomeHandler)
-
-		enableProfiling(app.Muxer())
 
 		app.ServeFiles("/", assetBox)
 	}
@@ -158,15 +156,14 @@ func bindRedirects(app *buffalo.App) {
 	})
 }
 
-func enableProfiling(router *mux.Router) {
-	router.HandleFunc("/debug/pprof/", pprof.Index)
-	router.HandleFunc("/debug/pprof/cmdline", pprof.Cmdline)
-	router.HandleFunc("/debug/pprof/profile", pprof.Profile)
-	router.HandleFunc("/debug/pprof/symbol", pprof.Symbol)
-
-	// Manually add support for paths linked to by index page at /debug/pprof/
-	router.Handle("/debug/pprof/goroutine", pprof.Handler("goroutine"))
-	router.Handle("/debug/pprof/heap", pprof.Handler("heap"))
-	router.Handle("/debug/pprof/threadcreate", pprof.Handler("threadcreate"))
-	router.Handle("/debug/pprof/block", pprof.Handler("block"))
+func enableProfiling(app *buffalo.App) {
+	app.GET("/debug/pprof/", buffalo.WrapHandlerFunc(pprof.Index))
+	app.GET("/debug/pprof/block", buffalo.WrapHandler(pprof.Handler("block")))
+	app.GET("/debug/pprof/goroutine", buffalo.WrapHandler(pprof.Handler("goroutine")))
+	app.GET("/debug/pprof/heap", buffalo.WrapHandler(pprof.Handler("heap")))
+	app.GET("/debug/pprof/mutex", buffalo.WrapHandler(pprof.Handler("mutex")))
+	app.GET("/debug/pprof/threadcreate", buffalo.WrapHandler(pprof.Handler("threadcreate")))
+	app.GET("/debug/pprof/profile", buffalo.WrapHandler(pprof.Handler("profile")))
+	app.GET("/debug/pprof/symbol", buffalo.WrapHandler(pprof.Handler("symbol")))
+	app.GET("/debug/pprof/trace", buffalo.WrapHandler(pprof.Handler("trace")))
 }

@@ -2,6 +2,7 @@ package actions
 
 import (
 	"fmt"
+	"net/http/pprof"
 	"strings"
 	"time"
 
@@ -13,6 +14,7 @@ import (
 	"github.com/gobuffalo/mw-paramlogger"
 	"github.com/gobuffalo/packr"
 	"github.com/gobuffalo/x/sessions"
+	"github.com/gorilla/mux"
 	"github.com/unrolled/secure"
 )
 
@@ -79,36 +81,7 @@ func App() *buffalo.App {
 			}
 		})
 
-		app.GET("/docs/db", func(c buffalo.Context) error {
-			return c.Redirect(301, fmt.Sprintf("/%s/docs/db/getting-started", c.Value("lang").(string)))
-		})
-		app.GET("/{lang:fr|en}/docs/db", func(c buffalo.Context) error {
-			return c.Redirect(301, fmt.Sprintf("/%s/docs/db/getting-started", c.Value("lang").(string)))
-		})
-
-		// Patch old URLs
-		oldURLs := []string{"systemd", "proxy", "building"}
-		for _, url := range oldURLs {
-			app.GET(fmt.Sprintf("/docs/%s", url), func(c buffalo.Context) error {
-				return c.Redirect(301, fmt.Sprintf("/%s/docs/deploy/%s", c.Value("lang").(string), url))
-			})
-			app.GET(fmt.Sprintf("/{lang:fr|en}/docs/%s", url), func(c buffalo.Context) error {
-				return c.Redirect(301, fmt.Sprintf("/%s/docs/deploy/%s", c.Value("lang").(string), url))
-			})
-		}
-
-		app.GET("/search", func(c buffalo.Context) error {
-			return c.Redirect(302, fmt.Sprintf("/%s/search", c.Value("lang").(string)))
-		})
-		app.GET("/sponsors", func(c buffalo.Context) error {
-			return c.Redirect(302, fmt.Sprintf("/%s/sponsors", c.Value("lang").(string)))
-		})
-		app.GET("/docs/{name:.+}", func(c buffalo.Context) error {
-			return c.Redirect(302, fmt.Sprintf("/%s/docs/%s", c.Value("lang").(string), c.Param("name")))
-		})
-		app.GET("/", func(c buffalo.Context) error {
-			return c.Redirect(302, fmt.Sprintf("/%s", c.Value("lang").(string)))
-		})
+		bindRedirects(app)
 
 		app.GET("/{lang:fr|en}/search", Search)
 		app.GET("/{lang:fr|en}/docs/{name:.+}", Docs)
@@ -116,6 +89,8 @@ func App() *buffalo.App {
 		app.POST("/lang", ChangeLanguage)
 		app.GET("/{lang:fr|en}/sponsors", Sponsors)
 		app.GET("/{lang:fr|en}", HomeHandler)
+
+		enableProfiling(app.Muxer())
 
 		app.ServeFiles("/", assetBox)
 	}
@@ -149,4 +124,49 @@ func forceSSL() buffalo.MiddlewareFunc {
 		SSLRedirect:     ENV == "production",
 		SSLProxyHeaders: map[string]string{"X-Forwarded-Proto": "https"},
 	})
+}
+
+func bindRedirects(app *buffalo.App) {
+	app.GET("/docs/db", func(c buffalo.Context) error {
+		return c.Redirect(301, fmt.Sprintf("/%s/docs/db/getting-started", c.Value("lang").(string)))
+	})
+	app.GET("/{lang:fr|en}/docs/db", func(c buffalo.Context) error {
+		return c.Redirect(301, fmt.Sprintf("/%s/docs/db/getting-started", c.Value("lang").(string)))
+	})
+
+	oldURLs := []string{"systemd", "proxy", "building"}
+	for _, url := range oldURLs {
+		app.GET(fmt.Sprintf("/docs/%s", url), func(c buffalo.Context) error {
+			return c.Redirect(301, fmt.Sprintf("/%s/docs/deploy/%s", c.Value("lang").(string), url))
+		})
+		app.GET(fmt.Sprintf("/{lang:fr|en}/docs/%s", url), func(c buffalo.Context) error {
+			return c.Redirect(301, fmt.Sprintf("/%s/docs/deploy/%s", c.Value("lang").(string), url))
+		})
+	}
+
+	app.GET("/search", func(c buffalo.Context) error {
+		return c.Redirect(302, fmt.Sprintf("/%s/search", c.Value("lang").(string)))
+	})
+	app.GET("/sponsors", func(c buffalo.Context) error {
+		return c.Redirect(302, fmt.Sprintf("/%s/sponsors", c.Value("lang").(string)))
+	})
+	app.GET("/docs/{name:.+}", func(c buffalo.Context) error {
+		return c.Redirect(302, fmt.Sprintf("/%s/docs/%s", c.Value("lang").(string), c.Param("name")))
+	})
+	app.GET("/", func(c buffalo.Context) error {
+		return c.Redirect(302, fmt.Sprintf("/%s", c.Value("lang").(string)))
+	})
+}
+
+func enableProfiling(router *mux.Router) {
+	router.HandleFunc("/debug/pprof/", pprof.Index)
+	router.HandleFunc("/debug/pprof/cmdline", pprof.Cmdline)
+	router.HandleFunc("/debug/pprof/profile", pprof.Profile)
+	router.HandleFunc("/debug/pprof/symbol", pprof.Symbol)
+
+	// Manually add support for paths linked to by index page at /debug/pprof/
+	router.Handle("/debug/pprof/goroutine", pprof.Handler("goroutine"))
+	router.Handle("/debug/pprof/heap", pprof.Handler("heap"))
+	router.Handle("/debug/pprof/threadcreate", pprof.Handler("threadcreate"))
+	router.Handle("/debug/pprof/block", pprof.Handler("block"))
 }

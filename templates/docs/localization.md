@@ -113,10 +113,10 @@ You'll need to use the i18n features in actions, for instance, to translate flas
 
 ``` go
 func Login(c buffalo.Context) error {
-	// [...]
-	// Set a translated flash message
-	c.Flash().Add("success", T.Translate(c, "users.login-success"))
-	return c.Redirect(303, "/users/signin")
+  // [...]
+  // Set a translated flash message
+  c.Flash().Add("success", T.Translate(c, "users.login-success"))
+  return c.Redirect(303, "/users/signin")
 }
 ```
 
@@ -133,28 +133,28 @@ To solve that problem, you can use the `T.Refresh` method and refresh the langua
 ```go
 func SwitchLanguage(c buffalo.Context) error {
   f := struct {
-		Language string `form:"lang"`
-		URL      string `form:"url"`
-	}{}
-	if err := c.Bind(&f); err != nil {
-		return errors.WithStack(err)
-	}
+    Language string `form:"lang"`
+    URL      string `form:"url"`
+  }{}
+  if err := c.Bind(&f); err != nil {
+    return errors.WithStack(err)
+  }
 
-	// Set new current language using a cookie, for instance
-	cookie := http.Cookie{
-		Name:   "lang",
-		Value:  f.Language,
-		MaxAge: int((time.Hour * 24 * 265).Seconds()),
-		Path:   "/",
-	}
-	http.SetCookie(c.Response(), &cookie)
+  // Set new current language using a cookie, for instance
+  cookie := http.Cookie{
+    Name:   "lang",
+    Value:  f.Language,
+    MaxAge: int((time.Hour * 24 * 265).Seconds()),
+    Path:   "/",
+  }
+  http.SetCookie(c.Response(), &cookie)
 
-	// Update language for the flash message
-	T.Refresh(c, f.Language)
+  // Update language for the flash message
+  T.Refresh(c, f.Language)
 
-	c.Flash().Add("success", T.Translate(c, "users.language-changed", f))
+  c.Flash().Add("success", T.Translate(c, "users.language-changed", f))
 
-	return c.Redirect(302, f.URL)
+  return c.Redirect(302, f.URL)
 }
 ```
 

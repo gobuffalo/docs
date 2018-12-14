@@ -21,13 +21,13 @@ func Beatles(c buffalo.Context) error {
 
 ```html
 // output
-&lt;h1>The Beatles</h1>
+<h1>The Beatles</h1>
 
-&lt;ul>
-  &lt;li>John&lt;/li>
-  &lt;li>Paul&lt;/li>
-  &lt;li>George&lt;/li>
-  &lt;li>Ringo&lt;/li>
-&lt;/ul>
+<ul>
+  <li>John</li>
+  <li>Paul</li>
+  <li>George</li>
+  <li>Ringo</li>
+</ul>
 ```
 

@@ -4,25 +4,25 @@ The [`r.Func`](https://godoc.org/github.com/gobuffalo/buffalo/render#Func) metho
 
 ```go
 func MyHandler(c buffalo.Context) error {
-	return c.Render(200, r.Func("application/csv", csvWriter))
+  return c.Render(200, r.Func("application/csv", csvWriter))
 }
 
 func csvWriter(w io.Writer, d render.Data) error {
-	cw := csv.NewWriter(w)
-	if err := cw.Write([]string{"a", "b", "c"}); err != nil {
-		return errors.WithStack(err)
-	}
-	cw.Flush()
-	return nil
+  cw := csv.NewWriter(w)
+  if err := cw.Write([]string{"a", "b", "c"}); err != nil {
+    return errors.WithStack(err)
+  }
+  cw.Flush()
+  return nil
 }
 ```
 
-For smaller, or one off situations, using an anonymous function can be even easier. 
+For smaller, or one off situations, using an anonymous function can be even easier.
 In this example you can see how to use an anonymous function to render a string that already contains JSON.
 ```go
 var myJSONString string
 return c.Render(200, r.Func("application/json", func(w io.Writer, d render.Data) error {
-	_, err := w.Write([]byte(myJSONString))
-	return err
+  _, err := w.Write([]byte(myJSONString))
+  return err
 }))
 ```

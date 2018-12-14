@@ -22,16 +22,16 @@ The [`buffalo.RouteList#Lookup`](https://godoc.org/github.com/gobuffalo/buffalo#
 
 ```go
 func MyHandler(c buffalo.Context) error {
-	ri, err := App().Routes().Lookup("widgetPath")
-	if err != nil {
-		return errors.WithStack(err)
-	}
-	h := ri.BuildPathHelper()
-	u, err := h(render.Data{"widget_id": 1})
-	if err != nil {
-		return errors.WithStack(err)
-	}
-	return c.Redirect(307, string(u))
+  ri, err := App().Routes().Lookup("widgetPath")
+  if err != nil {
+    return errors.WithStack(err)
+  }
+  h := ri.BuildPathHelper()
+  u, err := h(render.Data{"widget_id": 1})
+  if err != nil {
+    return errors.WithStack(err)
+  }
+  return c.Redirect(307, string(u))
 }
 ```
 

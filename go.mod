@@ -20,23 +20,22 @@ require (
 	github.com/facebookgo/subset v0.0.0-20150612182917-8dac2c3c4870 // indirect
 	github.com/glycerine/go-unsnap-stream v0.0.0-20180323001048-9f0cb55181dd // indirect
 	github.com/glycerine/goconvey v0.0.0-20180728074245-46e3a41ad493 // indirect
-	github.com/gobuffalo/buffalo v0.13.10
+	github.com/gobuffalo/buffalo v0.14.0-alpha.4.0.20181213195912-894f57b2e1a0
 	github.com/gobuffalo/envy v1.6.11
 	github.com/gobuffalo/events v1.1.8
-	github.com/gobuffalo/genny v0.0.0-20181207193730-587570ab2cf7
+	github.com/gobuffalo/genny v0.0.0-20181211165820-e26c8466f14d
 	github.com/gobuffalo/github_flavored_markdown v1.0.7
 	github.com/gobuffalo/mw-forcessl v0.0.0-20180802152810-73921ae7a130
 	github.com/gobuffalo/mw-i18n v0.0.0-20181027200759-09e0c99be4d3
 	github.com/gobuffalo/mw-paramlogger v0.0.0-20181005191442-d6ee392ec72e
-	github.com/gobuffalo/packr v1.21.8
-	github.com/gobuffalo/plush v3.7.33-0.20181208220007-290bc52c57d1+incompatible
-	github.com/gobuffalo/tags v2.0.14+incompatible
+	github.com/gobuffalo/packr v1.21.9
+	github.com/gobuffalo/plush v3.7.32+incompatible
+	github.com/gobuffalo/tags v2.0.15+incompatible
 	github.com/gobuffalo/x v0.0.0-20181110221217-14085ca3e1a9
 	github.com/golang/gddo v0.0.0-20181116215533-9bd4a3295021
 	github.com/golang/snappy v0.0.0-20180518054509-2e65f85255db // indirect
 	github.com/google/go-cmp v0.2.0 // indirect
 	github.com/gopherjs/gopherjs v0.0.0-20181103185306-d547d1d9531e // indirect
-	github.com/gorilla/mux v1.6.2
 	github.com/grokify/html-strip-tags-go v0.0.0-20180907063347-e9e44961e26f
 	github.com/jackc/pgx v3.3.0+incompatible // indirect
 	github.com/jmhodges/levigo v0.0.0-20161115193449-c42d9e0ca023 // indirect
@@ -61,9 +60,9 @@ require (
 	github.com/syndtr/goleveldb v0.0.0-20181128100959-b001fa50d6b2 // indirect
 	github.com/tecbot/gorocksdb v0.0.0-20181010114359-8752a9433481 // indirect
 	github.com/tinylib/msgp v1.0.2 // indirect
-	github.com/ugorji/go/codec v0.0.0-20181209151446-772ced7fd4c2 // indirect
 	github.com/unrolled/secure v0.0.0-20181022170031-4b6b7cf51606
 	github.com/willf/bitset v1.1.9 // indirect
-	golang.org/x/sys v0.0.0-20181210030007-2a47403f2ae5 // indirect
-	golang.org/x/tools v0.0.0-20181207222222-4c874b978acb // indirect
+	golang.org/x/net v0.0.0-20181213202711-891ebc4b82d6 // indirect
+	golang.org/x/sys v0.0.0-20181213200352-4d1cda033e06 // indirect
+	golang.org/x/tools v0.0.0-20181213210126-fe2443f7b950 // indirect
 )

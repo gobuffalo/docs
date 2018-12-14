@@ -3,11 +3,13 @@ package actions
 import (
 	"fmt"
 	"html/template"
+	"path"
 	"strings"
 
 	"github.com/gobuffalo/buffalo/render"
 	"github.com/gobuffalo/gobuffalo/actions/helpers"
 	"github.com/gobuffalo/gobuffalo/search/godoc"
+	"github.com/gobuffalo/gobuffalo/search/vimeo"
 	"github.com/gobuffalo/packr"
 	"github.com/gobuffalo/plush"
 	"github.com/markbates/inflect"
@@ -49,6 +51,10 @@ func init() {
 				return template.HTML(s), err
 			},
 			"vimeo": func(code string) template.HTML {
+				return template.HTML(fmt.Sprintf(vimeoTmpl, code))
+			},
+			"vimeoFromVideo": func(v vimeo.Video) template.HTML {
+				code := path.Base(v.Link)
 				return template.HTML(fmt.Sprintf(vimeoTmpl, code))
 			},
 			"codeTabs": helpers.CodeTabs,

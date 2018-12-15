@@ -5,7 +5,7 @@ When emitting events the `Kind` attribute should be a unique, but constant, stri
 It is recommended to namespace this attribute like such, with error events being suffixed with `:err`.
 
 ```plain
-"&lt;package-name&gt;:&lt;additional-names&gt;:&lt;optional-error&gt;"
+"<package-name>:<additional-names>:<optional-error>"
 "myapp:foo:start"
 "myapp:foo:stop"
 "mypkg:workers:bar:err"

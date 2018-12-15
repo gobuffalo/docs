@@ -6,14 +6,14 @@ Sometimes, you'll want to reuse some components from other apps. Using the [`Mou
 
 ```go
 func muxer() http.Handler {
-	f := func(res http.ResponseWriter, req *http.Request) {
-		fmt.Fprintf(res, "%s - %s", req.Method, req.URL.String())
-	}
-	mux := mux.NewRouter()
-	mux.HandleFunc("/foo", f).Methods("GET")
-	mux.HandleFunc("/bar", f).Methods("POST")
-	mux.HandleFunc("/baz/baz", f).Methods("DELETE")
-	return mux
+  f := func(res http.ResponseWriter, req *http.Request) {
+    fmt.Fprintf(res, "%s - %s", req.Method, req.URL.String())
+  }
+  mux := mux.NewRouter()
+  mux.HandleFunc("/foo", f).Methods("GET")
+  mux.HandleFunc("/bar", f).Methods("POST")
+  mux.HandleFunc("/baz/baz", f).Methods("DELETE")
+  return mux
 }
 
 a.Mount("/admin", muxer())

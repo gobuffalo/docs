@@ -10,9 +10,9 @@ func muxer() http.Handler {
     fmt.Fprintf(res, "%s - %s", req.Method, req.URL.String())
   }
   mux := mux.NewRouter()
-  mux.HandleFunc("/foo", f).Methods("GET")
-  mux.HandleFunc("/bar", f).Methods("POST")
-  mux.HandleFunc("/baz/baz", f).Methods("DELETE")
+  mux.HandleFunc("/foo/", f).Methods("GET")
+  mux.HandleFunc("/bar/", f).Methods("POST")
+  mux.HandleFunc("/baz/baz/", f).Methods("DELETE")
   return mux
 }
 

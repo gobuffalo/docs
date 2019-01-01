@@ -1,5 +1,7 @@
 <%= title("Articles About Buffalo") %>
 
+* **November 17th, 2017** - Setting Up Windows For Go And Buffalo [http://www.stuartellis.name/articles/windows-golang-setup/](http://www.stuartellis.name/articles/windows-golang-setup/)
+
 * **August 19th, 2018** - Web App With Gobuffalo [http://www.nicolasmorin.com/blog/web-app-with-gobuffalo/](http://www.nicolasmorin.com/blog/web-app-with-gobuffalo/)
 
 * **January 23rd, 2018** - Instrumenting a Buffalo Application with New Relic [https://medium.com/@brainscott/instrumenting-a-buffalo-application-with-new-relic-1e9aa473e31d](https://medium.com/@brainscott/instrumenting-a-buffalo-application-with-new-relic-1e9aa473e31d)
@@ -15,8 +17,6 @@
 * **November 6th, 2017** - Why You Should Choose Buffalo For Building Web Apps In Go [https://medium.com/@alkeshsrivastava11/why-you-should-choose-buffalo-for-building-web-apps-in-go-46f711043437](https://medium.com/@alkeshsrivastava11/why-you-should-choose-buffalo-for-building-web-apps-in-go-46f711043437)
 
 * **October 9th, 2017** - JWT And [Go] Buffalo [https://medium.com/@francescodonzello/jwt-and-go-buffalo-4cce3ae73723](https://medium.com/@francescodonzello/jwt-and-go-buffalo-4cce3ae73723)
-
-* **August 25th, 2017** - Setting Up Windows For Go And Buffalo [http://www.stuartellis.name/articles/windows-golang-setup/](http://www.stuartellis.name/articles/windows-golang-setup/)
 
 * **August 25th, 2017** - Get Rolling With Buffalo On Windows [http://www.stuartellis.name/articles/buffalo-windows-short/](http://www.stuartellis.name/articles/buffalo-windows-short/)
 

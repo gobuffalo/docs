@@ -1,6 +1,6 @@
 <%= title("Articles About Buffalo") %>
 
-* **November 17th, 2017** - Setting Up Windows For Go And Buffalo [http://www.stuartellis.name/articles/windows-golang-setup/](http://www.stuartellis.name/articles/windows-golang-setup/)
+* **November 17th, 2018** - Setting Up Windows For Go And Buffalo [http://www.stuartellis.name/articles/windows-golang-setup/](http://www.stuartellis.name/articles/windows-golang-setup/)
 
 * **August 19th, 2018** - Web App With Gobuffalo [http://www.nicolasmorin.com/blog/web-app-with-gobuffalo/](http://www.nicolasmorin.com/blog/web-app-with-gobuffalo/)
 

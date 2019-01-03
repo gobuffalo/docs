@@ -2,7 +2,11 @@
 
 * **November 17th, 2018** - Setting Up Windows For Go And Buffalo [http://www.stuartellis.name/articles/windows-golang-setup/](http://www.stuartellis.name/articles/windows-golang-setup/)
 
+* **November 4th, 2018** - Integrating Go-Buffalo with Pre-existing Apps [https://jayunit100.blogspot.com/2018/11/integrating-go-buffalo-with-golang.html](https://jayunit100.blogspot.com/2018/11/integrating-go-buffalo-with-golang.html)
+
 * **August 19th, 2018** - Web App With Gobuffalo [http://www.nicolasmorin.com/blog/web-app-with-gobuffalo/](http://www.nicolasmorin.com/blog/web-app-with-gobuffalo/)
+
+* **August 3rd, 2018** - Add Custom Dashboard Template to Buffalo Application [https://medium.com/@KagundaJM/add-custom-dashboard-template-to-buffalo-application-2515298ecf75](https://medium.com/@KagundaJM/add-custom-dashboard-template-to-buffalo-application-2515298ecf75)
 
 * **January 23rd, 2018** - Instrumenting a Buffalo Application with New Relic [https://medium.com/@brainscott/instrumenting-a-buffalo-application-with-new-relic-1e9aa473e31d](https://medium.com/@brainscott/instrumenting-a-buffalo-application-with-new-relic-1e9aa473e31d)
 

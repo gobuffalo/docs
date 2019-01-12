@@ -10,16 +10,13 @@ $ buffalo new --api coke
 
 Applications generated with the `--api` flag don't contain any front systems. This means there is no templating, stylesheets, etc...
 
-<div class="row">
-    <div class="col-md-6 col-sm-12">
-        <h5><code>buffalo new coke --api</code></h5>
-        <%= partial("docs/apis/api_ls.md") %>
-    </div>
-    <div class="col-md-6 col-sm-12">
-        <h5><code>buffalo new coke</code></h5>
-        <%= partial("docs/apis/web_ls.md") %>
-    </div>
-</div>
+<h5><code>buffalo new coke --api</code></h5>
+
+<%= partial("docs/apis/api_ls.md") %>
+
+<h5><code>buffalo new coke</code></h5>
+
+<%= partial("docs/apis/web_ls.md") %>
 
 ### Tuned `actions/app.go actions/render.go` Files
 

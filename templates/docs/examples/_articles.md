@@ -1,5 +1,7 @@
 <%= title("Articles About Buffalo") %>
 
+* **January 15th, 2019** - Cara Bisa Install Buffalo pada Windows 10 [https://kangmicin.com/2018/12/30/cara-install-buffalo-di-windows/](https://kangmicin.com/2018/12/30/cara-install-buffalo-di-windows/)
+
 * **November 17th, 2018** - Setting Up Windows For Go And Buffalo [http://www.stuartellis.name/articles/windows-golang-setup/](http://www.stuartellis.name/articles/windows-golang-setup/)
 
 * **November 4th, 2018** - Integrating Go-Buffalo with Pre-existing Apps [https://jayunit100.blogspot.com/2018/11/integrating-go-buffalo-with-golang.html](https://jayunit100.blogspot.com/2018/11/integrating-go-buffalo-with-golang.html)

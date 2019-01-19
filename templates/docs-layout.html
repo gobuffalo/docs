@@ -105,12 +105,8 @@
         <div class="row">
             <!-- Main content -->
             <article class="main-content" role="main">
-                <p class="improve-page-btn">
-                    <a href="<%= sourceRoot %><%= current_template %>" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                        <i class="fa fa-pencil"></i> <%= t("docs.improve-page-button") %>
-                    </a>
-                </p>
                 <%= yield %>
+                <%= partial("feedback_footer.html") %>
             </article>
             <!-- END Main content -->
         </div>

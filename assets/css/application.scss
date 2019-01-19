@@ -207,15 +207,18 @@ a {
   }
 }
 
-@media screen and (min-width: 767px) {
-  .improve-page-btn {
-    float: right !important;
-    margin-left: -126px;
-  }
+.feedback {
+  border-top: solid 3px #dfdfdf;
 }
 
-@media screen and (max-width: 766px) {
-  .improve-page-btn {
-    text-align: right;
+.feedback-row {
+  &:last-child{
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 7px;
   }
+  @extend .row;
+  border-bottom: solid 1px #dfdfdf;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
 }

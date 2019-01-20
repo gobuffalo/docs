@@ -31,7 +31,7 @@ Because Go Modules are still experimental, and not complete, it is recommended t
 
 When working inside the `GOPATH` you should continue to use `GOPATH` style module names.
 
-#### Recommended:
+#### Recommended
 
 This style of module name works both inside, and outside, of the `GOPATH` easily. It also makes your projects work with `go get`.
 
@@ -39,7 +39,7 @@ This style of module name works both inside, and outside, of the `GOPATH` easily
 module github.com/markbates/coke
 ```
 
-#### Not-Recommended:
+#### Not-Recommended
 
 This style of module, can work inside of the `GOPATH`, but it is less flexible, although shorter, than the longer format module name.
 

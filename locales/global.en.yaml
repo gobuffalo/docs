@@ -105,6 +105,9 @@
 - id: menu.db-buffalo-integration
   translation: Buffalo Integration
 
+- id: menu.gomods
+  translation: Go Modules
+
 - id: menu.contributing
   translation: Contributing
 

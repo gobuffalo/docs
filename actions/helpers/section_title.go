@@ -5,7 +5,7 @@ import (
 	"html/template"
 
 	"github.com/gobuffalo/plush"
-	"github.com/grokify/html-strip-tags-go"
+	strip "github.com/grokify/html-strip-tags-go"
 	"github.com/stvp/slug"
 )
 
@@ -30,7 +30,7 @@ func SectionTitle(title string, opts map[string]interface{}, help plush.HelperCo
 	opts["name"] = slug.Clean(strip.StripTags(title))
 
 	if _, ok := opts["title"]; !ok {
-		opts["title"] = title
+		opts["title"] = strip.StripTags(title)
 	}
 
 	opts["text"] = title

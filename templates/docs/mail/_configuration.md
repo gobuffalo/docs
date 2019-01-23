@@ -1,4 +1,4 @@
-<%= title("Additional Configuration") %>
+## Additional Configuration
 
 If you're using Gmail or need to configure your SMTP connection, you can use the `Dialer` property on the SMTPSender, p.e: (for Gmail)
 

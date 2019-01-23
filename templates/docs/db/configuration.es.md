@@ -84,7 +84,7 @@ Para obtener detalles adicionales, consulte la documentación de [github.com/gob
 
 ** Asegúrese de haber configurado este archivo correctamente antes de trabajar con Pop! **
 
-<%= title("Opciones disponibles") %>
+## Opciones disponibles
 
 ### database
 

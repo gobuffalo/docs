@@ -16,7 +16,7 @@ Pop, por defecto, sigue las convenciones que fueron influenciadas por la gema Ac
 
 Buffalo tiene una profunda integración con Pop, y te ayudará a generar todo lo que usted necesita para empezar. Todavía puede usar otro paquete si lo desea, pero estará solo. :)
 
-<%= title("Bases de datos compatibles") %>
+## Bases de datos compatibles
 
 Pop es compatible con las siguientes bases de datos:
 * [PostgreSQL](https://www.postgresql.org/) (>= 9.3)
@@ -24,7 +24,7 @@ Pop es compatible con las siguientes bases de datos:
 * [MySQL](https://www.mysql.com/) (>= 5.7)
 * [SQLite3](https://sqlite.org/) (>= 3.x)
 
-<%= title("Integración de Buffalo") %>
+## Integración de Buffalo
 
 Cuando genera una nueva aplicación Buffalo, puede elegir la base de datos de destino con el indicador `--db-type`. Por ejemplo, para generar una nueva aplicación con soporte de base de datos MySQL, puede escribir lo siguiente:
 
@@ -42,6 +42,6 @@ Si desea manejar la base de datos sin utilizar Pop, o si está creando una aplic
 $ buffalo new coke --skip-pop
 ```
 
-<%= title("Siguientes pasos") %>
+## Siguientes pasos
 
 * [Configuración](/es/docs/db/configuration) - Configure sus conexiones a la base de datos..

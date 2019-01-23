@@ -7,7 +7,7 @@ In many use-cases, you'll need to implement user authentication in your apps. [G
 
 Buffalo had a native support for Goth until version `v0.9.4`. Since then, it was moved into it's own plugin, [https://github.com/gobuffalo/buffalo-goth](https://github.com/gobuffalo/buffalo-goth).
 
-<%= title("Installation") %>
+## Installation
 
 To install the `buffalo-goth` plugin, run the following command:
 
@@ -15,7 +15,7 @@ To install the `buffalo-goth` plugin, run the following command:
 $ go get -u github.com/gobuffalo/buffalo-goth
 ```
 
-<%= title("Generator") %>
+## Generator
 ```bash
 $ buffalo g goth twitter facebook linkedin github
 
@@ -24,7 +24,7 @@ $ buffalo g goth twitter facebook linkedin github
 --> goimports -w .
 ```
 
-<%= title("Example Usage") %>
+## Example Usage
 ```go
 // actions/app.go
 package actions
@@ -130,6 +130,6 @@ func AuthCallback(c buffalo.Context) error {
 }
 ```
 
-<%= title("Video Tutorial") %>
+## Video Tutorial
 
 <%= vimeo("223666374") %>

@@ -2,7 +2,7 @@
 
 Translating your app is an effective way to **make it understandable to the many people** around the globe! Buffalo uses the [go-i18n](https://github.com/nicksnyder/go-i18n) project to provide the <abbr title="internationalization">i18n</abbr> (adapting the software to make it translatable without code change) and <abbr title="localization">l10n</abbr> (providing translation strings and specific formats) of your app.
 
-<%= title("Markup the translatable strings") %>
+## Markup the translatable strings
 
 <%= note() { %>
 <%= partial("docs/disclaimer.html") %>
@@ -44,7 +44,7 @@ Provide a context using a third arg:
 The second arg is accessible as "Count" in the translations strings.
 <% } %>
 
-<%= title("Provide translations") %>
+## Provide translations
 
 Translations are stored in the `locales` folder. By default, they are stored in a `all.en-us.yaml` file for the American English strings.
 
@@ -62,7 +62,7 @@ The localization format used by [go-i18n](https://github.com/nicksnyder/go-i18n)
     other: "You have {{.Count}} notifications"
 ```
 
-<%= title("Define the default language") %>
+## Define the default language
 
 To define the default language of your app, you need to edit the `app.go` file in the `actions` folder:
 
@@ -77,7 +77,7 @@ app.Use(T.Middleware())
 
 Changing `"en-US"` to another language code will change the default language.
 
-<%= title("Localized Views") %>
+## Localized Views
 <%= sinceVersion("0.10.2") %>
 
 Sometimes, you have to **translate a whole page**, and marking every part of the page takes a lot of time. On some other cases, you'll want to localize the page in a different way for a specific locale. Localized views is a complementary way to handle your translations.
@@ -107,7 +107,7 @@ Then, create a new suffixed version for each language you want to support:
 
 The middleware will detect the user language and choose the right template for you! It also works with guest users, using the `Accept-Language` HTTP header.
 
-<%= title("Use i18n in actions") %>
+## Use i18n in actions
 
 You'll need to use the i18n features in actions, for instance, to translate flash messages. Here is the way to use it:
 
@@ -122,7 +122,7 @@ func Login(c buffalo.Context) error {
 
 `T.Translate` takes the `buffalo.Context` as first argument, then the following args are the same as the `t` helper ones (`t` calls `T.Translate` with the context, behind the scene).
 
-<%= title("Refresh translation context") %>
+## Refresh translation context
 <%= sinceVersion("0.12.0") %>
 
 If you provide translated versions of your app, you'll probably have a language switch function. This way, the users can choose the correct language.
@@ -158,7 +158,7 @@ func SwitchLanguage(c buffalo.Context) error {
 }
 ```
 
-<%= title("Customize generated names") %>
+## Customize generated names
 <%= sinceVersion("0.10.2") %>
 
 Many Buffalo generators use [markbates/inflect](https://github.com/markbates/inflect) to generate a normalized version of a name. For example, when you want to generate a new model, the name you give to the command line is normalized in plural, capitalized, and so on forms.
@@ -172,6 +172,6 @@ Sometimes, the rules used by **inflect** are not correct (in this case, feel fre
 }
 ```
 
-<%= title("Related Resources") %>
+## Related Resources
 
 * [Translating a Buffalo app](https://blog.gobuffalo.io/translating-a-buffalo-app-1b4f32e6cb57) - An article about using Buffalo i18n tools.

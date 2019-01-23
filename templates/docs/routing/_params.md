@@ -1,4 +1,4 @@
-<%= title("Parameters", {})  %>
+## Parameters
 
 Query string and other parameters are available from the [`buffalo.Context`](/docs/context) that is passed into the `buffalo.Handler`.
 

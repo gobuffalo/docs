@@ -2,7 +2,7 @@
 
 **NOTE** : Avant toute chose, veuillez lire [https://github.com/golang/go/wiki/Modules](https://github.com/golang/go/wiki/Modules) pour mieux comprendre comment fonctionnent les modules Go.
 
-<%= title("Activer le support pour les modules Go", {name: "enabling"}) %>
+## Activer le support pour les modules Go
 
 <%= sinceVersion("v0.13.0") %>
 
@@ -14,7 +14,7 @@ C'est un **PRÉ-REQUIS** pour utiliser les modules Go avec Buffalo : la valeur `
 $ export GO111MODULE=on
 ```
 
-<%= title("Travailler en dehors du `GOPATH`") %>
+## Travailler en dehors du `GOPATH`
 
 En plus de vous permettre de construire vos projets Go à l'identique (avec des versions clairement définies des dépendances), les modules Go offrent la possibilité de travailler facilement en dehors du `GOPATH`.
 
@@ -25,7 +25,7 @@ $ export GO111MODULE=on
 $ buffalo new -h
 ```
 
-<%= title("Travailler dans le `GOPATH`") %>
+## Travailler dans le `GOPATH`
 
 Puisque les modules Go sont encore expérimentaux, et incomplets, il est recommandé de continuer à travailler **DANS** le `GOPATH`. Cela vous permettra de tester les modules, tout en pouvant toujours travailler sans.
 
@@ -51,7 +51,7 @@ Peu importe le style de nom de module choisi, vous **DEVEZ** respecter le même 
 
 Par exemple, si le nom de votre module est `coke`, le nom du paquet contenant les actions est `coke/actions`. Si le nom de votre module est `github.com/markbates/coke`, le nom du paquet contenant les actions est `github.com/markbates/coke/actions`.
 
-<%= title("FAQ") %>
+## FAQ
 
 ### J'obtiens une erreur `invalid import`
 

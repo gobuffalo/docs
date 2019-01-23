@@ -2,7 +2,7 @@
 
 **NOTE**: Please read [https://github.com/golang/go/wiki/Modules](https://github.com/golang/go/wiki/Modules) to understand more about Go Modules **before** using them.
 
-<%= title("Enabling Go Module Support", {name: "enabling"}) %>
+## Enabling Go Module Support
 
 <%= sinceVersion("v0.13.0") %>
 
@@ -14,7 +14,7 @@ This is **REQUIRED** to use Go Modules with "Buffalo" packages. The `auto` setti
 $ export GO111MODULE=on
 ```
 
-<%= title("Working Outside of the `GOPATH`") %>
+## Working Outside of the `GOPATH`
 
 In addition to repeatable builds, Go Modules, allows you to easily work outside of the `GOPATH`.
 
@@ -25,7 +25,7 @@ $ export GO111MODULE=on
 $ buffalo new -h
 ```
 
-<%= title("Working Inside the `GOPATH`") %>
+## Working Inside the `GOPATH`
 
 Because Go Modules are still experimental, and not complete, it is recommended to continue to work **INSIDE** the `GOPATH`. This will allow you to easily move between using, and not using modules.
 
@@ -51,7 +51,7 @@ Regardless of which module name style you pick, you **MUST** be consistent withi
 
 For example, if your module name is `coke` your actions package is `coke/actions`. If you module name is `github.com/markbates/coke` your actions package is `github.com/markbates/coke/actions`.
 
-<%= title("FAQs") %>
+## FAQs
 
 ### I Get `invalid import`
 

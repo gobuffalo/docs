@@ -5,7 +5,7 @@
 
 Une `error` est la manière que Go utilise pour prévenir que quelque chose s'est mal passé. Dans ce chapitre, vous allez apprendre comment retourner des erreurs depuis un contrôleur ; et comment Buffalo rattrape les erreurs non-traitées.
 
-<%= title("Retourner une erreur depuis un contrôleur") %>
+## Retourner une erreur depuis un contrôleur
 
 La façon la plus simple de renvoyer une erreur HTTP est de retourner une erreur Go standard :
 ```go
@@ -32,7 +32,7 @@ func MyHandler(c buffalo.Context) error {
 }
 ```
 
-<%= title("Rattrapage des erreurs par défaut (mode développement)") %>
+## Rattrapage des erreurs par défaut (mode développement)
 
 En mode développement (`GO_ENV=development`), Buffalo génère des pages d'erreur détaillées pour vous permettre de débogguer facilement.
 
@@ -60,7 +60,7 @@ Si vous utilisez un `Content-Type` JSON ou XML, l'erreur sera formattée en resp
 
 En mode production (`GO_ENV=production`), Buffalo ne génère pas ces pages, vu qu'elles donneraient des informations très utiles à des personnes mal intentionnées. Des pages d'erreur neutres sont générées à la place.
 
-<%= title("Gestion personnalisée des erreurs", {}) %>
+## Gestion personnalisée des erreurs
 
 Bien que Buffalo se charge de gérer les erreurs pour vous sans n'avoir rien à faire, il peut être utile de gérer les erreurs d'une autre façon. Vous pouvez pour cela associer des codes HTTP à des contrôleurs spécifiques. De cette manière, vous pouvez gérer ces erreurs comme bon vous semble.
 

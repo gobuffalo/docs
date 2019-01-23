@@ -7,13 +7,13 @@ Software maintenance is a hard task, and you'll probably need to patch your data
 
 You can create new migrations using `fizz`, a custom language describing the database changes in the most database-agnostic way; or use SQL statements if you prefer.
 
-<%= title("Writing Migrations") %>
+## Writing Migrations
 <%= partial("docs/db/soda_buffalo_note.md") %>
 
 <%= partial("docs/db/fizz.md") %>
 <%= partial("docs/db/sql.md") %>
 
-<%= title("Running Migrations") %>
+## Running Migrations
 <%= partial("docs/db/soda_buffalo_note.md") %>
 
 ### Apply Migrations
@@ -67,7 +67,7 @@ Global Flags:
 Use "soda migrate [command] --help" for more information about a command.
 ```
 
-<%= title("Targeting a Database") %>
+## Targeting a Database
 
 Since Pop [v4.4.0](https://github.com/gobuffalo/pop/releases/tag/v4.4.0), migrations can target a specific database, using a suffix. This allows to use commands specific to a dialect, only for a given database.
 
@@ -78,7 +78,7 @@ For instance, if you want to support both PostgreSQL and MySQL, you can create t
 
 If no version for the dialect can be found, Pop will fallback to the non-suffixed version, if it exists.
 
-<%= title("Custom Migrations Table") %>
+## Custom Migrations Table
 
 By default, the applied migrations are tracked in the table `schema_migration`. This table is created by pop if it doesn't exist.
 

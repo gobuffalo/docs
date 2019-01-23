@@ -1,4 +1,4 @@
-<%= title("Using Context Variables") %>
+## Using Context Variables
 
 <%= sinceVersion("0.13.0-rc1") %>
 

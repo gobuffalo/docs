@@ -9,7 +9,7 @@ Pop helps you to manage database connections, but it also provides `soda`, a sma
 **Note for Buffalo users**: `soda` commands are embedded into the `buffalo` command, behind the `pop` namespace. So every time you want to use a command from `soda`, just execute `buffalo pop` instead. You don't need to install `soda` CLI.
 <% } %>
 
-<%= title("Installing CLI Support") %>
+## Installing CLI Support
 
 **Without** sqlite 3 support:
 
@@ -27,7 +27,7 @@ $ go install -tags sqlite github.com/gobuffalo/pop/soda
 
 If you're not building your code with `buffalo build`, you'll also have to pass `-tags sqlite` to `go build` when building your program.
 
-<%= title("Creating Databases") %>
+## Creating Databases
 
 Once the `database.yml` has been configured with the appropriate settings, and the database server is running, Soda can create all of the databases in the `database.yml` file with a simple command:
 
@@ -41,7 +41,7 @@ You can also create just one of the configured databases by using the `-e` flag 
 $ soda create -e test
 ```
 
-<%= title("Dropping Databases") %>
+## Dropping Databases
 
 Soda can drop all of your databases, should you want to, with one command:
 

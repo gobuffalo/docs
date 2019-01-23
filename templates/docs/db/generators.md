@@ -2,6 +2,6 @@
 
 <%= partial("docs/db/list.md") %>
 
-<%= title("Migrations") %>
+## Migrations
 
 For information on generating migrations see [/docs/db/migrations](/docs/db/migrations).

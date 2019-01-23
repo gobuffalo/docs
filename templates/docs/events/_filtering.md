@@ -1,4 +1,4 @@
-<%= title("Filtering Events") %>
+## Filtering Events
 
 In the [Emitting Events](#emitting-events) section the naming convention for <%= doclink("github.com/gobuffalo/events#Event.Kind") %> is described. By the checking the value of <%= doclink("github.com/gobuffalo/events#Event.Kind") %>.
 

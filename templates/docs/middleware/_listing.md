@@ -1,4 +1,4 @@
-<%= title("Listing an Application's Middleware", {name: "listing"}) %>
+## Listing an Application's Middleware
 
 To get a complete list of the middleware your application is using, broken down by grouping, can be found by running the `buffalo task middleware` command.
 

@@ -1,4 +1,4 @@
-<%= title("Creating a new API Application") %>
+## Creating a new API Application
 
 When creating a new Buffalo application using the `buffalo new` command, the optional `--api` flag will generate an application that is better suited to serving JSON APIs than a stock Buffalo application.
 

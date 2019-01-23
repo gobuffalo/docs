@@ -1,4 +1,4 @@
-<%= title("Groups", {}) %>
+## Groups
 
 Buffalo apps allow for the grouping of end-points. This allows for common functionality, such as [middleware](/docs/middleware) to be collected together. A great example of this would be an API end-point.
 

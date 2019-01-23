@@ -7,7 +7,7 @@ In many use-cases, you'll need to implement user authentication in your apps.
 
 Buffalo had a native support for Auth until version `v0.9.4`. Since then, it was moved into it's own plugin, [https://github.com/gobuffalo/buffalo-auth](https://github.com/gobuffalo/buffalo-auth).
 
-<%= title("Installation") %>
+## Installation
 
 To install the `buffalo-auth` plugin, run the following command:
 
@@ -15,7 +15,7 @@ To install the `buffalo-auth` plugin, run the following command:
 $ go get -u github.com/gobuffalo/buffalo-auth
 ```
 
-<%= title("Generator") %>
+## Generator
 ```bash
 $ buffalo g auth
 
@@ -35,7 +35,7 @@ create  templates/index.html
 create  templates/users/new.html
 ```
 
-<%= title("Example Usage") %>
+## Example Usage
 
 ### Actions
 <%= codeTabs() { %>

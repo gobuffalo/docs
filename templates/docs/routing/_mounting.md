@@ -1,4 +1,4 @@
-<%= title("Mounting http.Handler Apps", {name: "mount-another-app"}) %>
+## Mounting http.Handler Apps
 
 <%= sinceVersion("0.9.4") %>
 

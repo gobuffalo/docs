@@ -1,6 +1,6 @@
 # Moteurs de templates
 
-<%= title("Configurer un moteur de templates par extension de fichier") %>
+## Configurer un moteur de templates par extension de fichier
 <%= sinceVersion("0.10.0") %>
 
 Avant la version 0.10.0, vous n'étiez capable de définir qu'une seule implémentation du [`render.TemplateEngine`](https://godoc.org/github.com/gobuffalo/buffalo/render#TemplateEngine) par [`render.Engine`](https://godoc.org/github.com/gobuffalo/buffalo/render#Engine). Ce n'est plus le cas grâce au nouveau tableau de `render.TemplateEngine`. Vous pouvez désormais faire correspondre l'extension d'un fichier avec une implémentation de `render.TemplateEngine`. Cela signifie que vous pouvez non-seulement utiliser plusieurs moteurs de templates dans une seule application, mais que vous pouvez également des utiliser en chaîne.

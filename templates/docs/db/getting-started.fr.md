@@ -16,7 +16,7 @@ Pop, par défaut, suit des conventions influencées par la gem Ruby ActiveRecord
 
 Buffalo a une intégration forte avec Pop, et la boîte à outils vous aidera à générer tout ce qui est nécessaire pour démarrer. Vous pouvez toujours utiliser une autre biliothèque pour communiquer avec vos bases de données, mais vous devrez vous débrouiller sans notre aide. :)
 
-<%= title("Bases de données supportées") %>
+## Bases de données supportées
 
 Pop supporte les bases de données suivantes :
 * [PostgreSQL](https://www.postgresql.org/) (>= 9.3)
@@ -24,7 +24,7 @@ Pop supporte les bases de données suivantes :
 * [MySQL](https://www.mysql.com/) (>= 5.7)
 * [SQLite3](https://sqlite.org/) (>= 3.x)
 
-<%= title("Intégration avec Buffalo") %>
+## Intégration avec Buffalo
 
 Lorsque vous générez une nouvelle application Buffalo, vous pouvez choisir la base de données à utiliser à l'aide de l'option `--db-type`. Par exemple, pour générer une nouvelle application avec le support de MySQL, vous pouvez utiliser la commande suivante :
 
@@ -42,6 +42,6 @@ Si vous souhaitez gérer la base de données par vous-même (sans utiliser Pop),
 $ buffalo new coke --skip-pop
 ```
 
-<%= title("Prochaines étapes") %>
+## Prochaines étapes
 
 * [Configuration](/fr/docs/db/configuration) - Configurer vos connexions de base de données.

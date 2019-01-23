@@ -9,7 +9,7 @@ Buffalo provides, out of the box, a mailer extension with a standard SMTP sender
 <%= partial("docs/mail/context.md") %>
 <%= partial("docs/mail/configuration.md") %>
 
-<%= title("Sender Implementations") %>
+## Sender Implementations
 
 Some alternate [`Sender`](https://godoc.org/github.com/gobuffalo/buffalo/mail#Sender) implementations are provided by the Buffalo community:
 

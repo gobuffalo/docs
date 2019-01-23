@@ -1,4 +1,4 @@
-<%= title("Using Middleware", {}) %>
+## Using Middleware
 
 ```go
 a := buffalo.New(buffalo.Options{})

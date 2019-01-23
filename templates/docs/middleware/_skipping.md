@@ -1,4 +1,4 @@
-<%= title("Skipping Middleware", {}) %>
+## Skipping Middleware
 
 There are times when, in an application, you want to add middleware to the entire application, or a group, but not call that middleware on a few individual handlers. Buffalo allows you to create these sorts of mappings.
 

@@ -2,38 +2,6 @@ require("expose-loader?$!expose-loader?jQuery!jquery");
 require("./theme.js");
 require("expose-loader?Clipboard!./clipboard.min.js");
 
-var buildSideNav = () => {
-  let loc = window.location;
-  let path = loc.pathname.replace(/\/$/, "");
-  let sb = $(`aside a[href="${path}"]`);
-  let sn = sb.closest("ul.sidenav");
-  sn.addClass("open");
-  sn.prev().addClass("open");
-
-  let items = [];
-  $(".main-content a[name]").each((_, a) => {
-    let $a = $(a);
-    if ($a.attr("title")) {
-      let name = $a.attr("name");
-      let title = $a.attr("title");
-      items.push(`<li><a href="${path}#${name}">${title}</a></li>`);
-    }
-  });
-  if (items.length > 0) {
-    let ul = $("<ul class=\"summary\">").append(items);
-    $(".main-content h1:first").after(ul);
-    sb.addClass("active");
-  }
-};
-
-var activateSideNav = () => {
-  let loc = window.location;
-  let path = loc.pathname === "/" ? "/docs/overview" : loc.pathname;
-  $(".sidebar li").removeClass("active");
-  let item = $(`.sidebar a[href="${path}"]`);
-  item.closest("li").addClass("active");
-};
-
 $(() => {
   $(".faq h6").on("click", (e) => {
     let a = $(e.currentTarget).find("a[name]");
@@ -45,24 +13,11 @@ $(() => {
     if (hash.charAt(0) === "#") {
       hash = hash.slice(1);
     }
-    $(`.faq h6 a[name=${hash}]`).click();
+    $(`.faq h6 a[name="${hash}"]`).click();
   }
 });
 
 $(() => {
-  $("a[href]").each((_, a) => {
-    let $a = $(a);
-    let href = $a.attr("href");
-    if (href.startsWith("http")) {
-      $a.attr("target", "_blank");
-    }
-  });
-});
-
-$(() => {
-  activateSideNav();
-  buildSideNav();
-
   $(".code-tabs .window-content").each((_, wc) => {
     $(wc).
       find("pre").

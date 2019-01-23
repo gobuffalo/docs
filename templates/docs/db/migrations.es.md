@@ -7,13 +7,13 @@ El mantenimiento del software es una tarea difícil, y es probable que necesite 
 
 Puede crear nuevas migraciones usando `fizz`, un lenguaje personalizado que describe los cambios de la base de datos de la manera más independiente de las bases de datos; o use declaraciones SQL si lo prefiere.
 
-<%= title("Escribir migraciones") %>
+## Escribir migraciones
 <%= partial("docs/db/soda_buffalo_note.md") %>
 
 <%= partial("docs/db/fizz.md") %>
 <%= partial("docs/db/sql.md") %>
 
-<%= title("Ejecutar migraciones") %>
+## Ejecutar migraciones
 <%= partial("docs/db/soda_buffalo_note.md") %>
 
 ### Aplicar migraciones
@@ -67,7 +67,7 @@ Global Flags:
 Use "soda migrate [command] --help" for more information about a command.
 ```
 
-<%= title("Orientación de una base de datos") %>
+## Orientación de una base de datos
 
 Desde Pop [v4.4.0](https://github.com/gobuffalo/pop/releases/tag/v4.4.0), las migraciones pueden dirigirse a una base de datos específica, utilizando un sufijo. Esto permite usar comandos específicos de un dialecto, solo para una base de datos dada.
 
@@ -78,7 +78,7 @@ Por ejemplo, si desea admitir PostgreSQL y MySQL, puede crear dos migraciones:
 
 Si no se puede encontrar ninguna versión para el dialecto, Pop recurrirá a la versión no sufijada, si existe.
 
-<%= title("Tabla de migraciones personalizadas") %>
+## Tabla de migraciones personalizadas
 
 De forma predeterminada, las migraciones aplicadas se rastrean en la tabla `schema_migration`. Esta tabla es creada por Pop si no existe.
 

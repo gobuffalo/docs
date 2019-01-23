@@ -20,7 +20,7 @@ Both types of form helpers have the following features in common:
 <%= partial("docs/forms/errors.md") %>
 <%= partial("docs/forms/non_bootstrap.md") %>
 
-<%= title("FAQs") %>
+## FAQs
 
 ### How Do I Map a Form to a Model/Struct?
 

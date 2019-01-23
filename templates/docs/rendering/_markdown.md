@@ -1,4 +1,4 @@
-<%= title("Markdown", {}) %>
+## Markdown
 
 Files passed into the `render.HTML` or `render.Template` functions, that have an extension of `.md`, will be converted from Markdown (using GitHub flavored Markdown) to HTML before being run through the templating engine. This makes for incredibly easy templating for simpler pages.
 

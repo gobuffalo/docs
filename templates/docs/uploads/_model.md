@@ -1,4 +1,4 @@
-<%= title("Binding to a Struct") %>
+## Binding to a Struct
 
 The [`c.Bind`](https://godoc.org/github.com/gobuffalo/buffalo#Context) allows form elements to be bound to a struct, but it can also attach uploaded files to the struct. To do this, the type of the struct attribute **must** be a `binding.File` type.
 

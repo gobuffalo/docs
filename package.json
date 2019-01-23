@@ -5,6 +5,7 @@
   "license": "MIT",
   "repository": "github.com/gobuffalo/gobuffalo",
   "dependencies": {
+    "anchor-js": "^4.2.0",
     "bootstrap-sass": "~3.3.7",
     "font-awesome": "~4.7.0",
     "highlightjs": "^9.12.0",

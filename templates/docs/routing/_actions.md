@@ -1,4 +1,4 @@
-<%= title("Using Route Helpers in Actions") %>
+## Using Route Helpers in Actions
 
 ### Redirecting with Route Helpers
 

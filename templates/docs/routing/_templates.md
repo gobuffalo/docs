@@ -1,4 +1,4 @@
-<%= title("Using Route Helpers in Templates") %>
+## Using Route Helpers in Templates
 
 Route helpers can be used directly in templates using the name of the helper:
 

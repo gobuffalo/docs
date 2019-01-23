@@ -9,7 +9,7 @@ Pop est une bibliothèque permettant de communiquer avec des bases de données, 
 **Note pour les utilisateurs de Buffalo**: les commandes de `soda` sont intégrées à la commande `buffalo`, sous la commande `pop`. À chaque fois que vous voulez utiliser une commande de `soda`, il vous suffit d'utiliser `buffalo pop` à la place. Vous n'avez pas besoin d'installer la CLI `soda`.
 <% } %>
 
-<%= title("Installer la CLI") %>
+## Installer la CLI
 
 **Sans** support pour sqlite 3 :
 
@@ -27,7 +27,7 @@ $ go install -tags sqlite github.com/gobuffalo/pop/soda
 
 Si vous ne compilez pas votre code avec `buffalo build` (donc vous n'utilisez probablement pas Buffalo), vous devrez aussi passer l'option `-tags sqlite` à `go build` lors de la compilation.
 
-<%= title("Créer des bases de données") %>
+## Créer des bases de données
 
 Une fois que le fichier `database.yml` a été correctement configuré, et que le serveur de base de données fonctionne, Soda peut créer toutes les bases déclarées dans le fichier `database.yml`, à l'aide d'une simple commande :
 
@@ -41,7 +41,7 @@ Vous pouvez également choisir d'en créer qu'une seule, en utilisant l'option `
 $ soda create -e test
 ```
 
-<%= title("Supprimer une base de données") %>
+## Supprimer une base de données
 
 Soda peut supprimer toutes les bases de données configurées dans le fichier `database.yml`, à l'aide d'une simple commande :
 

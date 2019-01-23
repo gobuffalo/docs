@@ -16,7 +16,7 @@ PORT=80
 
 Mais dans la plupart des cas, vous allez utiliser un proxy pour distribuer les requêtes à un cluster, gérer les cas où votre application n'est pas démarrée, etc.
 
-<%= title("NGINX") %>
+## NGINX
 
 NGINX peut-être utilisé de deux manières avec votre app&nbsp;:
 
@@ -144,7 +144,7 @@ server {
 }
 ```
 
-<%= title("Apache 2") %>
+## Apache 2
 
 ### Utilisation avec une adresse IP
 

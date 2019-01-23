@@ -1,4 +1,4 @@
-<%= title("Emitting Events") %>
+## Emitting Events
 
 When emitting events the `Kind` attribute should be a unique, but constant, string. It is this attribute that users will use to determine how to respond to events they receive.
 

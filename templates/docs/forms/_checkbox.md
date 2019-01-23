@@ -1,4 +1,4 @@
-<%= title("Checkbox Tags") %>
+## Checkbox Tags
 
 Tags provide a convenient way to build an HTML `&lt;input&gt;` element with `type="checkbox"`:
 

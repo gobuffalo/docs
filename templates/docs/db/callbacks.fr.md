@@ -40,6 +40,6 @@ Les méthodes callback disponibles sont les suivantes :
 * [AfterDestroy](https://godoc.org/github.com/gobuffalo/pop#AfterDestroyable)
 * [AfterFind](https://godoc.org/github.com/gobuffalo/pop#AfterFindable)
 
-<%= title("Contenu lié") %>
+## Contenu lié
 
 * [Modèles](/fr/docs/db/models) - Définir un modèle de base de données.

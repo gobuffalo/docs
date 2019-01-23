@@ -2,7 +2,7 @@
 
 <%= partial("docs/disclaimer.html") %>
 
-<%= title("Builtin Helpers") %>
+## Builtin Helpers
 
 Listed below are a few of the helpers that ship with Plush. Please see the Plush [documentation](https://github.com/gobuffalo/plush) for more information on its helpers.
 
@@ -29,7 +29,7 @@ Listed below are a few of the helpers that ship with Plush. Please see the Plush
 
 Plush also imports all of the helpers found [https://github.com/markbates/inflect/blob/master/helpers.go](https://github.com/markbates/inflect/blob/master/helpers.go)
 
-<%= title("Path Helpers") %>
+## Path Helpers
 
 Buffalo will generate path helpers for all of the routes you add to the App. The easiest way to see what all of the generated path helpers are and what they point to is to run `buffalo routes`. This will print out a list that looks something like this:
 
@@ -70,7 +70,7 @@ api.Resource("/users", UsersResource{})
 
 **Note** that the helpers are generated to match the generated paths. It is possible to override the path names in the `App.Routes`, but it is highly advised that you find a different way to your goal than this. Slack is always open to these conversations.
 
-<%= title("Content Helpers") %>
+## Content Helpers
 
 Plush ships with two complementary helpers that let you create dynamic HTML snippets and re-use them later in the template.
 

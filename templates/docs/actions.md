@@ -5,7 +5,7 @@
 
 In this chapter, you'll learn how action controllers work; and how you can generate them using the built-in generators.
 
-<%= title("What is a Controller?") %>
+## What is a Controller?
 
 Controllers are the *C* part of the [MVC pattern](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller). They handle the logic given the router decision, and produce an appropriate response.
 
@@ -13,7 +13,7 @@ For instance, if you request the `/` path of this website, the handler responsib
 
 In Buffalo case, we commonly call controllers "actions".
 
-<%= title("Define an Action") %>
+## Define an Action
 
 Buffalo's actions (or controllers) are <%= doclink("github.com/gobuffalo/buffalo#Handler") %> functions:
 
@@ -29,7 +29,7 @@ Each action takes a `buffalo.Context` as parameter: see [Context](/en/docs/conte
 
 <%= partial("docs/generators/action.md") %>
 
-<%= title("Next Steps") %>
+## Next Steps
 
 * [Resources](/en/docs/resources) - Define CRUD-like action bundles.
 * [Context](/en/docs/context) - Learn more about Buffalo Context.

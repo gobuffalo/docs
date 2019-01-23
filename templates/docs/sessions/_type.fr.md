@@ -1,4 +1,4 @@
-<%= title("Le type Session") %>
+## Le type Session
 
 Le type `buffalo.Session` contient tout le nécessaire pour travailler avec une session attachée à une requête. Buffalo utilise le paquet [github.com/gorilla/sessions](http://www.gorillatoolkit.org/pkg/sessions) derrière le décors pour gérer la session.
 

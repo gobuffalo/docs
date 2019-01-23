@@ -1,4 +1,4 @@
-<%= title("Basic Forms") %>
+## Basic Forms
 
 The `form` helper can be used to generate HTML forms. Since this type of form isn't attached to any particular "model" all information must be passed as options to the form and it's methods.
 

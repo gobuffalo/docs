@@ -1,4 +1,4 @@
-<%= title("Articles About Buffalo") %>
+## Articles About Buffalo
 
 * **January 15th, 2019** - Cara Bisa Install Buffalo pada Windows 10 [https://kangmicin.com/2018/12/30/cara-install-buffalo-di-windows/](https://kangmicin.com/2018/12/30/cara-install-buffalo-di-windows/)
 
@@ -38,7 +38,7 @@
 
 * More articles can be found at [https://blog.gobuffalo.io](https://blog.gobuffalo.io)
 
-<%= title("Podcasts About Buffalo") %>
+## Podcasts About Buffalo
 
 * **October 5th, 2017** - Mark Bates On Go And Buffalo [https://www.oreilly.com/ideas/mark-bates-on-go-and-buffalo](https://www.oreilly.com/ideas/mark-bates-on-go-and-buffalo)
 
@@ -46,7 +46,7 @@
 
 * **January 12th, 2017** - Go And Buffalo Live From Dunkin' Donuts [https://changelog.com/gotime/29](https://changelog.com/gotime/29)
 
-<%= title("Videos About Buffalo") %>
+## Videos About Buffalo
 
 * **Mark Bates** - Buffalo Channel on Vimeo [https://vimeo.com/channels/1231196](https://vimeo.com/channels/1231196)
 

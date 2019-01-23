@@ -1,4 +1,4 @@
-<%= title("Skipping Resource Actions") %>
+## Skipping Resource Actions
 
 Often it is necessary to want to skip middleware for one or more actions. For example, allowing guest users to view the `List` and `Show` actions on a resource, but requiring authorization on the rest of the actions.
 

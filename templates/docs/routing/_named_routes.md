@@ -1,4 +1,4 @@
-<%= title("Named Routes")  %>
+## Named Routes
 
 By default, Buffalo will name your routes for you in the form of `pathnamePath`. For example `a.GET("/coke", CokeHandler)` will result in a route named `cokePath`.
 

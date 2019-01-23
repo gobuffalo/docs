@@ -30,7 +30,6 @@ func init() {
 			"goDocPkgs": godoc.Pkgs,
 			"godoc":     godoc.Helper,
 			"h1":        helpers.H1,
-			"title":     helpers.SectionTitle,
 			"note":      helpers.Note,
 			"warning":   helpers.Warning,
 			"sinceVersion": func(version string, opts render.Data, help plush.HelperContext) (template.HTML, error) {

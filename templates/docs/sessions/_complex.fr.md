@@ -1,4 +1,4 @@
-<%= title("Stocker un type complexe") %>
+## Stocker un type complexe
 
 C'est rarement une bonne idée de stocker des types complexes dans une session. Il y a plein de raisons à ça, mais il est recommandé de conserver l'ID du type à la place de la structure complète.
 

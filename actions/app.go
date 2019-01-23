@@ -2,6 +2,7 @@ package actions
 
 import (
 	"fmt"
+	"net/http"
 	"net/http/pprof"
 	"strings"
 	"time"
@@ -9,9 +10,9 @@ import (
 	"github.com/gobuffalo/buffalo"
 	"github.com/gobuffalo/envy"
 	"github.com/gobuffalo/gobuffalo/search/vimeo"
-	"github.com/gobuffalo/mw-forcessl"
-	"github.com/gobuffalo/mw-i18n"
-	"github.com/gobuffalo/mw-paramlogger"
+	forcessl "github.com/gobuffalo/mw-forcessl"
+	i18n "github.com/gobuffalo/mw-i18n"
+	paramlogger "github.com/gobuffalo/mw-paramlogger"
 	"github.com/gobuffalo/packr"
 	"github.com/gobuffalo/x/sessions"
 	"github.com/unrolled/secure"
@@ -125,34 +126,38 @@ func forceSSL() buffalo.MiddlewareFunc {
 }
 
 func bindRedirects(app *buffalo.App) {
+	app.GET("/en/docs/generators", func(c buffalo.Context) error {
+		return c.Render(http.StatusGone, nil)
+	})
+
 	app.GET("/docs/db", func(c buffalo.Context) error {
-		return c.Redirect(301, fmt.Sprintf("/%s/docs/db/getting-started", c.Value("lang").(string)))
+		return c.Redirect(http.StatusMovedPermanently, fmt.Sprintf("/%s/docs/db/getting-started", c.Value("lang").(string)))
 	})
 	app.GET("/{lang:fr|en}/docs/db", func(c buffalo.Context) error {
-		return c.Redirect(301, fmt.Sprintf("/%s/docs/db/getting-started", c.Value("lang").(string)))
+		return c.Redirect(http.StatusMovedPermanently, fmt.Sprintf("/%s/docs/db/getting-started", c.Value("lang").(string)))
 	})
 
 	oldURLs := []string{"systemd", "proxy", "building"}
 	for _, url := range oldURLs {
 		app.GET(fmt.Sprintf("/docs/%s", url), func(c buffalo.Context) error {
-			return c.Redirect(301, fmt.Sprintf("/%s/docs/deploy/%s", c.Value("lang").(string), url))
+			return c.Redirect(http.StatusMovedPermanently, fmt.Sprintf("/%s/docs/deploy/%s", c.Value("lang").(string), url))
 		})
 		app.GET(fmt.Sprintf("/{lang:fr|en}/docs/%s", url), func(c buffalo.Context) error {
-			return c.Redirect(301, fmt.Sprintf("/%s/docs/deploy/%s", c.Value("lang").(string), url))
+			return c.Redirect(http.StatusMovedPermanently, fmt.Sprintf("/%s/docs/deploy/%s", c.Value("lang").(string), url))
 		})
 	}
 
 	app.GET("/search", func(c buffalo.Context) error {
-		return c.Redirect(302, fmt.Sprintf("/%s/search", c.Value("lang").(string)))
+		return c.Redirect(http.StatusFound, fmt.Sprintf("/%s/search", c.Value("lang").(string)))
 	})
 	app.GET("/sponsors", func(c buffalo.Context) error {
-		return c.Redirect(302, fmt.Sprintf("/%s/sponsors", c.Value("lang").(string)))
+		return c.Redirect(http.StatusFound, fmt.Sprintf("/%s/sponsors", c.Value("lang").(string)))
 	})
 	app.GET("/docs/{name:.+}", func(c buffalo.Context) error {
-		return c.Redirect(302, fmt.Sprintf("/%s/docs/%s", c.Value("lang").(string), c.Param("name")))
+		return c.Redirect(http.StatusFound, fmt.Sprintf("/%s/docs/%s", c.Value("lang").(string), c.Param("name")))
 	})
 	app.GET("/", func(c buffalo.Context) error {
-		return c.Redirect(302, fmt.Sprintf("/%s", c.Value("lang").(string)))
+		return c.Redirect(http.StatusFound, fmt.Sprintf("/%s", c.Value("lang").(string)))
 	})
 }
 

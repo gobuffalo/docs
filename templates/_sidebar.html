@@ -126,10 +126,6 @@
     </li>
 
     <li>
-      <a href="/en/docs/generators">Generators</a>
-    </li>
-
-    <li>
       <a href="#"><%= t("menu.db") %></a>
 
       <ul class="sidenav dropable">
@@ -206,7 +202,7 @@
           <a href="/en/docs/plugins">Plugins</a>
         </li>
         <li>
-          <a href="/en/docs/template-engines">Template Engines</a>
+          <a href="<%= docPath({name: "template-engines", lang: lang}) %>"><%= t("menu.template-engines") %></a>
         </li>
         <li>
           <a href="/en/docs/localization">Localization</a>

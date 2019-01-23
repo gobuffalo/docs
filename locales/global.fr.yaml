@@ -108,6 +108,9 @@
 - id: menu.gomods
   translation: Modules Go
 
+- id: menu.template-engines
+  translation: Moteurs de templates
+
 - id: menu.contributing
   translation: Contribuer
 

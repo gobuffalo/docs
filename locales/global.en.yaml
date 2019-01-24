@@ -108,6 +108,9 @@
 - id: menu.gomods
   translation: Go Modules
 
+- id: menu.third-party-auth
+  translation: 3<sup>rd</sup> Party Authentication
+
 - id: menu.template-engines
   translation: Template Engines
 

@@ -1,25 +1,25 @@
-<% seoDescription("Third Party Authentication") %>
-<% seoKeywords(["buffalo", "go", "golang", "users", "oauth2", "authentication", "third-party", "google", "facebook"]) %>
+<% seoDescription("Authentification tierce") %>
+<% seoKeywords(["buffalo", "go", "golang", "users", "oauth2", "authentification", "tierce", "google", "facebook"]) %>
 
-<%= h1("Third Party Authentication") %>
+<%= h1("Authentification tierce") %>
 
-In many use-cases, you'll need to implement user authentication in your apps. [Goth](https://github.com/markbates/goth) provides a simple, clean, and idiomatic way to write authentication packages for Go web applications.
+Dans bien des cas, vous allez devoir implémenter un méchanisme d'authentification dans vos applications. [Goth](https://github.com/markbates/goth) fournit un moyen simple, propre et idiomatique d'écrire des paquets d'authentification pour les applications Web en Go.
 
-If you're looking for authentication through Facebook, Google and others, that's probably the solution you're looking for.
+Si vous cherchez à intégrer la connexion via Facebook, Google ou autres, c'est sans doute la solution que vous recherchez.
 
 <%= note() { %>
-Buffalo had a native support for Goth until version `v0.9.4`. Since then, it was moved into it's own plugin, [https://github.com/gobuffalo/buffalo-goth](https://github.com/gobuffalo/buffalo-goth).
+Buffalo fournissait un support native en standard pour Goth jusqu'à la version `v0.9.4`. Depuis, ce support à été déplacé dans un plugin à part, [https://github.com/gobuffalo/buffalo-goth](https://github.com/gobuffalo/buffalo-goth).
 <% } %>
 
 ## Installation
 
-To install the `buffalo-goth` plugin, run the following command:
+Pour installer le plugin `buffalo-goth`, lancez le commande suivante :
 
 ```bash
 $ go get -u github.com/gobuffalo/buffalo-goth
 ```
 
-## Generator
+## Générateur
 ```bash
 $ buffalo g goth twitter facebook linkedin github
 
@@ -28,7 +28,7 @@ $ buffalo g goth twitter facebook linkedin github
 --> goimports -w .
 ```
 
-## Example Usage
+## Exemple d'utilisation
 ```go
 // actions/app.go
 package actions
@@ -129,15 +129,15 @@ func AuthCallback(c buffalo.Context) error {
   if err != nil {
     return c.Error(401, err)
   }
-  // Do something with the user, maybe register them/sign them in
+  // Faire quelque chose avec l'utilisateur, par exemple créer un compte associé ou le connecter.
   return c.Render(200, r.JSON(user))
 }
 ```
 
-## Video Tutorial
+## Tutoriel vidéo (EN)
 
 <%= vimeo("223666374") %>
 
-## See Also
+## Voir aussi
 
-* [Local Authentication](/en/docs/auth) - Manage internal users auth.
+* [Authentification locale](/fr/docs/auth) - Gérer l'authentification d'utilisateurs internes.

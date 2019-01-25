@@ -24,16 +24,15 @@ require (
 	github.com/gobuffalo/envy v1.6.12
 	github.com/gobuffalo/events v1.1.9
 	github.com/gobuffalo/fizz v1.5.0 // indirect
-	github.com/gobuffalo/genny v0.0.0-20190112155932-f31a84fcacf5
+	github.com/gobuffalo/genny v0.0.0-20190124191459-3310289fa4b4
 	github.com/gobuffalo/github_flavored_markdown v1.0.7
 	github.com/gobuffalo/meta v0.0.0-20190121163014-ecaa953cbfb3 // indirect
 	github.com/gobuffalo/mw-forcessl v0.0.0-20180802152810-73921ae7a130
 	github.com/gobuffalo/mw-i18n v0.0.0-20181027200759-09e0c99be4d3
 	github.com/gobuffalo/mw-paramlogger v0.0.0-20181005191442-d6ee392ec72e
 	github.com/gobuffalo/packr v1.21.9
-	github.com/gobuffalo/packr/v2 v2.0.0-rc.15 // indirect
 	github.com/gobuffalo/plush v3.7.33+incompatible
-	github.com/gobuffalo/pop v4.9.5+incompatible
+	github.com/gobuffalo/pop v4.9.5+incompatible // indirect
 	github.com/gobuffalo/tags v2.0.15+incompatible
 	github.com/gobuffalo/x v0.0.0-20181110221217-14085ca3e1a9
 	github.com/golang/gddo v0.0.0-20181116215533-9bd4a3295021
@@ -44,10 +43,10 @@ require (
 	github.com/jackc/pgx v3.3.0+incompatible // indirect
 	github.com/jmhodges/levigo v0.0.0-20161115193449-c42d9e0ca023 // indirect
 	github.com/jtolds/gls v4.2.1+incompatible // indirect
-	github.com/markbates/going v1.0.2
-	github.com/markbates/grift v1.0.5
+	github.com/markbates/going v1.0.3
 	github.com/markbates/inflect v1.0.4
 	github.com/markbates/oncer v0.0.0-20181203154359-bf2de49a0be2
+	github.com/markbates/refresh v1.5.0 // indirect
 	github.com/markbates/willie v1.0.9
 	github.com/mattn/go-sqlite3 v1.10.0 // indirect
 	github.com/microcosm-cc/bluemonday v1.0.2
@@ -68,8 +67,8 @@ require (
 	github.com/unrolled/secure v0.0.0-20190103195806-76e6d4e9b90c
 	github.com/willf/bitset v1.1.9 // indirect
 	golang.org/x/crypto v0.0.0-20190123085648-057139ce5d2b // indirect
-	golang.org/x/net v0.0.0-20190119204137-ed066c81e75e // indirect
-	golang.org/x/sys v0.0.0-20190123074212-c6b37f3e9285 // indirect
-	golang.org/x/tools v0.0.0-20190123192057-0c44af741bb7 // indirect
+	golang.org/x/net v0.0.0-20190125091013-d26f9f9a57f3 // indirect
+	golang.org/x/sys v0.0.0-20190124100055-b90733256f2e // indirect
+	golang.org/x/tools v0.0.0-20190124215303-cc6a436ffe6b // indirect
 	google.golang.org/appengine v1.4.0 // indirect
 )

@@ -161,13 +161,13 @@ func doWork() {
 
 #### `worker.PerformAt`
 
-The `PerformIn` method enqueues the job, so the worker should try and run the job at (or near) the time specified, based on the implementation of the worker itself.
+The `PerformAt` method enqueues the job, so the worker should try and run the job at (or near) the time specified, based on the implementation of the worker itself.
 
 ```go
 func doWork() {
   // Send the send_email job to the queue, and process it at now + 5 seconds.
   // Please note if no working unit is free at this time, it will wait for a free slot.
-  w.PerformIn(worker.Job{
+  w.PerformAt(worker.Job{
     Queue: "default",
     Handler: "send_email",
     Args: worker.Args{

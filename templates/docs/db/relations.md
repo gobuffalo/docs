@@ -73,8 +73,8 @@ err  = tx.Eager("Books").Where("name = 'Mark'").All(&u) // preload only Books as
 The [`pop.Connection.Load()`](https://godoc.org/github.com/gobuffalo/pop#Connection.Load) method takes a model struct, that has already been populated from the database, and an optional list of associations to load.
 
 ```go
-tx.Load(u) // load all associations for user, i.e Books, Houses and FavoriteSong
-tx.Load(u, "Books") // load only the Books associations for user
+tx.Load(&u) // load all associations for user, i.e Books, Houses and FavoriteSong
+tx.Load(&u, "Books") // load only the Books associations for user
 ```
 
 The `Load` method will not retreive the `User` from the database only its associations.

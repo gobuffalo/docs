@@ -10,7 +10,7 @@ import (
 	"github.com/gobuffalo/buffalo/render"
 	"github.com/gobuffalo/events"
 	"github.com/gobuffalo/gobuffalo/search"
-	"github.com/gobuffalo/packr"
+	"github.com/gobuffalo/packr/v2"
 	strip "github.com/grokify/html-strip-tags-go"
 	"github.com/pkg/errors"
 )

@@ -10,13 +10,13 @@ import (
 	"github.com/gobuffalo/gobuffalo/actions/helpers"
 	"github.com/gobuffalo/gobuffalo/search/godoc"
 	"github.com/gobuffalo/gobuffalo/search/vimeo"
-	"github.com/gobuffalo/packr"
+	"github.com/gobuffalo/packr/v2"
 	"github.com/gobuffalo/plush"
 	"github.com/markbates/inflect"
 )
 
 var r *render.Engine
-var assetBox = packr.NewBox("../public")
+var assetBox = packr.New("app:assets", "../public")
 
 func Renderer() *render.Engine {
 	return r
@@ -78,7 +78,7 @@ func init() {
 				return fmt.Sprintf("%.2f%%", f*100)
 			},
 		},
-		TemplatesBox: packr.NewBox("../templates"),
+		TemplatesBox: packr.New("../templates", "../templates"),
 		AssetsBox:    assetBox,
 	})
 	r.Helpers["exampleDir"] = helpers.ExampleDir(r)

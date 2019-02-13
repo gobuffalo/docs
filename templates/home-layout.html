@@ -57,7 +57,7 @@
 
 <body class="landing-page">
   <header class="site-header sticky">
-    
+
     <!-- Top navbar & branding -->
     <nav class="navbar navbar-default">
       <div class="container">
@@ -68,21 +68,22 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
                   <i class="fa fa-ellipsis-v"></i>
                 </button>
-      
+
                 <button type="button" class="navbar-toggle for-sidebar" data-toggle="offcanvas">
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                 </button>
-      
+
                 <a class="navbar-brand" href="/<%= lang %>" id="logo"><span class="force-middle"></span><img src="/assets/images/logo_top.png" alt="logo"> <%= raw(t("top.title")) %></a>
               </div>
               <!-- END Toggle buttons and brand -->
-      
+
               <!-- Top navbar -->
               <div id="navbar" class="navbar-collapse collapse" aria-expanded="true" role="banner">
                 <ul class="nav navbar-nav navbar-right">
                   <li<%= if (current_path == "/en/docs/examples" || current_path == "/fr/docs/examples") { %> class="active"<% } %>><a href="/docs/examples"><%= t("top.examples-tutorials") %></a></li>
+                  <li<%= if (current_path == "/en/docs/support" || current_path == "/fr/docs/support") { %> class="active"<% } %>><a href="/docs/support"><%= t("top.support") %></a></li>
                   <li><a href="<%= docPath({name: "index", lang: lang}) %>"><%= t("top.docs") %></a></li>
                   <li><a href="https://github.com/gobuffalo" target="_blank" rel="noopener noreferrer">GitHub</a></li>
                   <li><a href="https://blog.gobuffalo.io" target="_blank" rel="noopener noreferrer"><%= t("top.blog") %></a></li>
@@ -91,10 +92,10 @@
                 </ul>
               </div>
               <!-- END Top navbar -->
-      
+
             </div>
       </div>
-      
+
     </nav>
     <!-- END Top navbar & branding -->
 

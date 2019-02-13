@@ -31,6 +31,9 @@
 - id: top.store
   translation: Store
 
+- id: top.support
+  translation: Support
+
 # Footer
 - id: footer.copyright
   translation: Copyright &copy; {{ .year }} Buffalo. All rights reserved.
@@ -129,8 +132,8 @@
 - id: menu.troubleshooting
   translation: Trouble Shooting
 
-- id: menu.training-and-consulting
-  translation: Training and Consulting
+- id: menu.support
+  translation: Support
 
 - id: menu.deploy
   translation: Deploy

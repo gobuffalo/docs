@@ -1,4 +1,4 @@
-<%= title("JavaScript") %>
+## JavaScript
 <%= sinceVersion("0.10.0") %>
 
 The [`render`](https://godoc.org/github.com/gobuffalo/buffalo/render) package has a new implementation of [`render.Renderer`](https://godoc.org/github.com/gobuffalo/buffalo/render#Renderer), [`render.JavaScript`](https://godoc.org/github.com/gobuffalo/buffalo/render#JavaScript).

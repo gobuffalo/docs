@@ -19,7 +19,7 @@
   <%= for (hit) in results.Hits { %>
   <li>
     <a href="<%= hit.ID %>"><%= hit.ID %></a> (<%= score(hit.Score) %>)
-    <%= for (body) in hit.Fragments["Body"] { %>
+    <%= for (body) in hit.Fragments["body"] { %>
       <%= debug(body) %>
     <% } %>
   </li>

@@ -13,7 +13,7 @@ Buffalo defaults to using [plush](https://github.com/gobuffalo/plush) as its tem
   </div>
 </div>
 
-<%= title("General Usage", {name: "general"}) %>
+## General Usage
 
 ```html
 // templates/index.html
@@ -45,7 +45,7 @@ func IndexHandler(c buffalo.Context) error {
 &lt;/ul>
 ```
 
-<%= title("If Statements", {name: "if"}) %>
+## If Statements
 
 ```html
 \<%= if (true) { %>
@@ -55,7 +55,7 @@ func IndexHandler(c buffalo.Context) error {
 
 
 
-<%= title("Else Statements", {name: "else"}) %>
+## Else Statements
 
 ```html
 \<%= if (false) { %>

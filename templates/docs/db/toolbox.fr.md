@@ -1,15 +1,33 @@
-<% seoDescription("Boîte à outils Soda") %>
-<% seoKeywords(["buffalo", "go", "golang", "base de données", "outils", "pop", "soda"]) %>
+<% seoDescription("CLI Soda") %>
+<% seoKeywords(["buffalo", "go", "golang", "base de données", "outils", "pop", "CLI", "soda"]) %>
 
-<%= h1("Boîte à outils de BDD") %>
+<%= h1("CLI Soda") %>
 
-Pop est une bibliothèque permettant de communiquer avec des bases de données, mais elle founit également `soda`, une petite boîte à outils en ligne de commande pour gérer vos bases de données. Elle peut vous aider à créer une nouvelle base de données, supprimer des bases existantes, et bien plus.
+Pop est une bibliothèque permettant de communiquer avec des bases de données, mais elle fournit également `soda`, une petite boîte à outils en ligne de commande pour gérer vos bases de données. Elle peut vous aider à créer une nouvelle base de données, supprimer des bases existantes, et bien plus.
 
 <%= note() { %>
-**Note pour les utilisateurs de Buffalo**: les commandes de `soda` sont intégrées à la commande `buffalo`, sous la commande `db`. À chaque fois que vous voulez utiliser une commande de `soda`, il vous suffit d'utiliser `buffalo db` à la place.
+**Note pour les utilisateurs de Buffalo**: les commandes de `soda` sont intégrées à la commande `buffalo`, sous la commande `pop`. À chaque fois que vous voulez utiliser une commande de `soda`, il vous suffit d'utiliser `buffalo pop` à la place. Vous n'avez pas besoin d'installer la CLI `soda`.
 <% } %>
 
-<%= title("Créer des bases de données") %>
+## Installer la CLI
+
+**Sans** support pour sqlite 3 :
+
+```bash
+$ go get github.com/gobuffalo/pop/...
+$ go install github.com/gobuffalo/pop/soda
+```
+
+**Avec** support pour sqlite 3 (nécessite un compilateur C, GCC ou équivalent) :
+
+```bash
+$ go get -u -v -tags sqlite github.com/gobuffalo/pop/...
+$ go install -tags sqlite github.com/gobuffalo/pop/soda
+```
+
+Si vous ne compilez pas votre code avec `buffalo build` (donc vous n'utilisez probablement pas Buffalo), vous devrez aussi passer l'option `-tags sqlite` à `go build` lors de la compilation.
+
+## Créer des bases de données
 
 Une fois que le fichier `database.yml` a été correctement configuré, et que le serveur de base de données fonctionne, Soda peut créer toutes les bases déclarées dans le fichier `database.yml`, à l'aide d'une simple commande :
 
@@ -23,7 +41,7 @@ Vous pouvez également choisir d'en créer qu'une seule, en utilisant l'option `
 $ soda create -e test
 ```
 
-<%= title("Supprimer une base de données") %>
+## Supprimer une base de données
 
 Soda peut supprimer toutes les bases de données configurées dans le fichier `database.yml`, à l'aide d'une simple commande :
 

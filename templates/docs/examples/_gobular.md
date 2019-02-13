@@ -1,4 +1,4 @@
-<%= title("Gobular.com") %>
+## Gobular.com
 
 This open source application allows people to test their Go regular expressions at [http://gobular.com](http://gobular.com).
 

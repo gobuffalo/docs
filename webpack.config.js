@@ -1,6 +1,5 @@
 const Webpack = require("webpack");
 const Glob = require("glob");
-const path = require("path");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ManifestPlugin = require("webpack-manifest-plugin");
@@ -42,7 +41,7 @@ const configurator = {
     var plugins = [
       new CleanObsoleteChunks(),
       new Webpack.ProvidePlugin({ $: "jquery", jQuery: "jquery" }),
-      new MiniCssExtractPlugin({ filename: "[name].[contenthash].css" }),
+      new MiniCssExtractPlugin({ filename: "[name]-[contenthash:8].css" }),
       new CopyWebpackPlugin([{ from: "./assets", to: "" }], { copyUnmodified: true, ignore: ["css/**", "js/**"] }),
       new Webpack.LoaderOptionsPlugin({ minimize: true, debug: false }),
       new ManifestPlugin({ fileName: "manifest.json" })
@@ -62,11 +61,42 @@ const configurator = {
             { loader: "sass-loader", options: { sourceMap: true } }
           ]
         },
+        { test: /\.tsx?$/, use: "ts-loader", exclude: /node_modules/ },
         { test: /\.jsx?$/, loader: "babel-loader", exclude: /node_modules/ },
         { test: /\.(woff|woff2|ttf|svg)(\?v=\d+\.\d+\.\d+)?$/, use: "url-loader" },
         { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, use: "file-loader" },
         { test: require.resolve("jquery"), use: "expose-loader?jQuery!expose-loader?$" },
-        { test: /\.go$/, use: "gopherjs-loader" }
+        { test: /\.go$/, use: "gopherjs-loader" },
+        {
+          test: /\.(gif|png|jpe?g|svg|ico)$/i,
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                name: 'images/[name]-[hash].[ext]',
+              },
+            },
+            {
+              loader: 'image-webpack-loader',
+              options: {
+                mozjpeg: {
+                  progressive: true,
+                  quality: 65
+                },
+                optipng: {
+                  enabled: false,
+                },
+                pngquant: {
+                  quality: '65-90',
+                  speed: 4
+                },
+                gifsicle: {
+                  interlaced: false,
+                }
+              }
+            }
+          ],
+        },
       ]
     }
   },
@@ -77,9 +107,12 @@ const configurator = {
     var config = {
       mode: env,
       entry: configurator.entries(),
-      output: { filename: "[name].[hash].js", path: `${__dirname}/public/assets` },
+      output: { filename: "[name].[contenthash:8].js", path: `${__dirname}/public/assets` },
       plugins: configurator.plugins(),
-      module: configurator.moduleOptions()
+      module: configurator.moduleOptions(),
+      resolve: {
+        extensions: ['.ts', '.js', '.json']
+      }
     }
 
     if (env === "development") {

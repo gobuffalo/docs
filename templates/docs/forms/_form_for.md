@@ -1,4 +1,4 @@
-<%= title("Model Forms") %>
+## Model Forms
 
 The `form_for` helper can be used to generate HTML forms for a specified model. This makes the code easier to write, and maintains a level of "consistency" across your application.
 
@@ -6,7 +6,7 @@ The `form_for` helper behaves in a similar matter to the `form` helper, with sev
 
 The first difference is that the `form_for` takes a "model" as a first argument. This "model" only needs to be a `struct` it does not have to be database backed.
 
-The second difference is in the tag calls themselves. These tags, such as `InputTag`, take the name of the attribute on the model you want to build a field for, then they take an optional set of options as the second argument.
+The second difference is in the tag calls the models directly. These tags, such as `InputTag`, take the name of the attribute on the model you want to build a field for, then they take an optional set of options as the second argument.
 
 <%= codeTabs() { %>
 ```go

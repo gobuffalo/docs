@@ -2,7 +2,7 @@
 
 <%= partial("docs/disclaimer.html") %>
 
-<%= title("Builtin Helpers") %>
+## Builtin Helpers
 
 Listed below are a few of the helpers that ship with Plush. Please see the Plush [documentation](https://github.com/gobuffalo/plush) for more information on its helpers.
 
@@ -29,7 +29,48 @@ Listed below are a few of the helpers that ship with Plush. Please see the Plush
 
 Plush also imports all of the helpers found [https://github.com/markbates/inflect/blob/master/helpers.go](https://github.com/markbates/inflect/blob/master/helpers.go)
 
-<%= title("Content Helpers") %>
+## Path Helpers
+
+Buffalo will generate path helpers for all of the routes you add to the App. The easiest way to see what all of the generated path helpers are and what they point to is to run `buffalo routes`. This will print out a list that looks something like this:
+
+```
+$ buffalo routes
+METHOD | PATH                         | ALIASES | NAME              | HANDLER
+------ | ----                         | ------- | ----              | -------
+GET    | /                            |         | rootPath          | github.com/gobuffalo/coke/actions.HomeHandler
+GET    | /about                       |         | aboutPath         | github.com/gobuffalo/coke/actions.AboutHandler
+GET    | /drinks                      |         | drinksPath        | github.com/gobuffalo/coke/actions.DrinksResource.List
+POST   | /drinks                      |         | drinksPath        | github.com/gobuffalo/coke/actions.DrinksResource.Create
+GET    | /drinks/new                  |         | newDrinksPath     | github.com/gobuffalo/coke/actions.DrinksResource.New
+GET    | /drinks/{drink_id}           |         | drinkPath         | github.com/gobuffalo/coke/actions.DrinksResource.Show
+PUT    | /drinks/{drink_id}           |         | drinkPath         | github.com/gobuffalo/coke/actions.DrinksResource.Update
+DELETE | /drinks/{drink_id}           |         | drinkPath         | github.com/gobuffalo/coke/actions.DrinksResource.Destroy
+GET    | /drinks/{drink_id}/edit      |         | editDrinkPath     | github.com/gobuffalo/coke/actions.DrinksResource.Edit
+GET    | /api/v1/users                |         | apiV1UsersPath    | github.com/gobuffalo/coke/actions.UsersResource.List
+POST   | /api/v1/users                |         | apiV1UsersPath    | github.com/gobuffalo/coke/actions.UsersResource.Create
+GET    | /api/v1/users/new            |         | newApiV1UsersPath | github.com/gobuffalo/coke/actions.UsersResource.New
+GET    | /api/v1/users/{user_id}      |         | apiV1UserPath     | github.com/gobuffalo/coke/actions.UsersResource.Show
+PUT    | /api/v1/users/{user_id}      |         | apiV1UserPath     | github.com/gobuffalo/coke/actions.UsersResource.Update
+DELETE | /api/v1/users/{user_id}      |         | apiV1UserPath     | github.com/gobuffalo/coke/actions.UsersResource.Destroy
+GET    | /api/v1/users/{user_id}/edit |         | editApiV1UserPath | github.com/gobuffalo/coke/actions.UsersResource.Edit
+```
+
+Going down this list we start with the path *NAME*d `rootPath` which represents *PATH* `/` or the root route of the server and as a bonus with all of these we can even see exactly which *HANDLER* code is being run for this METHOD+PATH combination.
+
+Next we have a standard `app.GET("/about", AboutHandler)` which generates to `aboutPath`. 
+
+Then we use a resource `app.Resource("/drinks", DrinksResource{})` which generates a path for each of our standard actions, and for each of those a helper to be used in templates. Those that take a parameter can be used like this `\<%= drinkPath({drink_id: drink.ID}) %>`. All helpers take a `map[string]interface{}` that is used to fill-in parameters.
+
+Finally, when we use a group we can see that this changes the generated helpers. Here is the routing for those last paths:
+
+```
+api := app.Group("/api/v1")
+api.Resource("/users", UsersResource{})
+```
+
+**Note** that the helpers are generated to match the generated paths. It is possible to override the path names in the `App.Routes`, but it is highly advised that you find a different way to your goal than this. Slack is always open to these conversations.
+
+## Content Helpers
 
 Plush ships with two complementary helpers that let you create dynamic HTML snippets and re-use them later in the template.
 

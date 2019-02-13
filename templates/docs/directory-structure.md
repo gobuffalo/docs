@@ -7,7 +7,7 @@ Buffalo provides you **a minimal directory structure** to work on your project. 
 
 Now that you have a minimal new project, let's go through its contents.
 
-<%= title("The root directory") %>
+## The root directory
 
 Here is the structure of a Buffalo project:
 
@@ -66,7 +66,7 @@ If you use pop/soda with the integrated generator, it will generate the model fi
 This directory is optional. If you don't need to use a database, it can be removed.
 <% } %>
 
-This directory handles the **Model** part of the MVC pattern. It contains the `models.go` file to initialize the datasource connection, and the model files to refect objects from the datasource.
+This directory handles the **Model** part of the MVC pattern. It contains the `models.go` file to initialize the datasource connection, and the model files to reflect objects from the datasource.
 
 ### public
 
@@ -103,3 +103,7 @@ This file contains the database configuration for [pop/soda](https://github.com/
 ### main.go
 
 This file bootstraps your app and starts it.
+
+## Next Steps
+
+* [Configuration](/en/docs/config-vars) - Manage your app configuration.

@@ -1,8 +1,8 @@
-<%= title("Session Store") %>
+## Session Store
 
 By default Buffalo will setup a session store using [`sessions.CookieStore`](http://www.gorillatoolkit.org/pkg/sessions#CookieStore).
 
-This can be changed when setting up a new Buffalo application.
+This can be changed when setting up a new Buffalo application using the `SessionStore` option:
 
 ```go
 app = buffalo.New(buffalo.Options{

@@ -5,19 +5,22 @@ import (
 	"strings"
 
 	"github.com/gobuffalo/buffalo"
+	"github.com/gobuffalo/gobuffalo/search/blog"
 	"github.com/pkg/errors"
 )
 
-// HomeHandler is a default handler to serve up
-// a home page.
+// HomeHandler serves the home page.
 func HomeHandler(c buffalo.Context) error {
-	return c.Render(200, r.HTML("overview.html"))
+	c.Set("blogPosts", blog.LastPosts)
+	return c.Render(200, r.HTML("overview.html", "home-layout.html"))
 }
 
+// Sponsors serves the sponsors page.
 func Sponsors(c buffalo.Context) error {
 	return c.Render(200, r.HTML("sponsors.html"))
 }
 
+// ChangeLanguage handles the selector to change the current locale.
 func ChangeLanguage(c buffalo.Context) error {
 	f := struct {
 		OldLanguage string `form:"oldLanguage"`

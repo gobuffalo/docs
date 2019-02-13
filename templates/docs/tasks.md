@@ -1,13 +1,13 @@
-# Tasks
+<% seoDescription("Tasks") %>
+<% seoKeywords(["buffalo", "go", "golang", "tasks", "scripts", "grift"]) %>
 
-
-<%= vimeo("213096302") %>
-
-<%= title("What are Tasks?") %>
+<%= h1("Tasks") %>
 
 Tasks are small scripts that are often needed when writing an application. These tasks might be along the lines of seeding a database, parsing a log file, or even a release script. Buffalo uses the [grift](https://github.com/markbates/grift) package to make writing these tasks simple.
 
-<%= title("Writing Tasks") %>
+<%= vimeo("213096302") %>
+
+## Writing Tasks
 
 Tasks must all be in the `grifts` package. A simple task would look like following:
 
@@ -20,7 +20,7 @@ var _ = grift.Add("hello", func(c *grift.Context) error {
 
 <%= partial("docs/generators/tasks.md") %>
 
-<%= title("Listing Available Tasks") %>
+## Listing Available Tasks
 
 ```bash
 $ buffalo task list
@@ -32,7 +32,7 @@ buffalo task routes        # Print out all defined routes
 buffalo task secret        # Generate a cryptographically secure secret key
 ```
 
-<%= title("Running Tasks") %>
+## Running Tasks
 
 ### Development
 

@@ -1,10 +1,21 @@
-<%= title("SQL Migrations", {name: "generating-sql"}) %>
-
-<%= partial("docs/db/soda_buffalo_note.md") %>
+### SQL Migrations
 
 If you don't want to use Fizz, or you have a complicated query you want to execute, you can use SQL.
 
 To generate a new **empty** migration, use the following command:
+
+```bash
+$ soda generate sql name_of_migration
+```
+
+Running this command will generate the following files:
+
+```text
+./migrations/20160815134952_name_of_migration.up.sql
+./migrations/20160815134952_name_of_migration.down.sql
+```
+
+Further info about this command can be found by using the `--help` flag:
 
 ```bash
 $ soda g sql --help

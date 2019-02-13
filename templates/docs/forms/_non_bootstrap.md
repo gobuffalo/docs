@@ -1,6 +1,6 @@
-<%= title("Using Non-Bootstrap Form Helpers") %>
+## Using Non-Bootstrap Form Helpers
 
-The default form helpers, `form` and `form_for`, generate forms that are compatiable with Bootstrap 3. If this is not for you, you can easily use the non-Bootstrap versions of these helpers.
+The default form helpers, `form` and `form_for`, generate forms that are compatible with Bootstrap 3. If this is not for you, you can easily use the non-Bootstrap versions of these helpers.
 
 <em><small>Requires Plush version `v3.6.8` or greater</small></em>
 

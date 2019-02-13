@@ -5,19 +5,22 @@
 - id: head.title
   translation: Buffalo &ndash; Développement Web rapide en Go
 
+- id: head.description
+  translation: Retrouvez le plaisir d'écrire des applications Web en Go ! Un framework inspiré de Ruby on Rails, idiomatique et écrit en Go.
+
 # Helpers
 - id: helpers.since
-  translation: depuis <strong>v{{.version}}</strong>
+  translation: depuis {{.name}}<strong>{{.version}}</strong>
 
 # Top
 - id: top.title
   translation: Buffalo
 
 - id: top.examples-tutorials
-  translation: Exemples & tutoriels
+  translation: Tutoriels
 
-- id: top.go-docs
-  translation: Docs Go
+- id: top.docs
+  translation: Documentation
 
 - id: top.blog
   translation: Blog
@@ -36,6 +39,9 @@
   translation: Gopher Buffalo conçu par <a href="https://twitter.com/ashleymcnamara" target="_blank" rel="noopener noreferrer">Ashley McNamara</a> &mdash; Gopher originel conçu par Renee French.
 
 # Menu
+- id: menu.search
+  translation: Rechercher...
+
 - id: menu.language
   translation: Langue
 
@@ -44,6 +50,9 @@
 
 - id: menu.installation
   translation: Installation
+
+- id: menu.integrations
+  translation: Intégrations
 
 - id: menu.new-project
   translation: Générer un nouveau projet
@@ -54,17 +63,56 @@
 - id: menu.config-variables
   translation: Configuration
 
+- id: menu.request-handling
+  translation: Traitement des requêtes
+
+- id: menu.errors-handling
+  translation: Traitement des erreurs
+
+- id: menu.sessions
+  translation: Sessions
+
+- id: menu.cookies
+  translation: Cookies
+
 - id: menu.db
   translation: Base de données
 
 - id: menu.db-getting-started
   translation: Démarrer avec Pop
 
+- id: menu.db-configuration
+  translation: Configuration
+
 - id: menu.db-toolbox
-  translation: Boîte à outils Soda
+  translation: CLI Soda
 
 - id: menu.db-models
   translation: Modèles
+
+- id: menu.db-migrations
+  translation: Migrations
+
+- id: menu.db-fizz
+  translation: Fizz
+
+- id: menu.db-querying
+  translation: Requêtage
+
+- id: menu.db-callbacks
+  translation: Callbacks
+
+- id: menu.db-buffalo-integration
+  translation: Intégration avec Buffalo
+
+- id: menu.gomods
+  translation: Modules Go
+
+- id: menu.third-party-auth
+  translation: Authentification tierce
+
+- id: menu.template-engines
+  translation: Moteurs de templates
 
 - id: menu.contributing
   translation: Contribuer
@@ -88,13 +136,16 @@
   translation: Déploiement
 
 - id: menu.building-binaries
-  translation: Compilation / Binaire
+  translation: Empaquetage
 
 - id: menu.using-proxy
   translation: Utilisation d'un proxy
 
 - id: menu.systemd-service
   translation: Service Systemd
+
+- id: menu.deploy-providers-solutions
+  translation: Fournisseurs cloud
 
 # Releases page
 - id: releases.title
@@ -129,6 +180,18 @@
 # Docs
 - id: docs.improve-page-button
   translation: Améliorer cette page
+
+- id: docs.new-issue-button
+  translation: Ouvrir un nouveau ticket
+
+- id: docs.feedback.title
+  translation: Vos retours
+
+- id: docs.feedback.edit
+  translation: "Si vous avez trouvé une erreur ou que quelque chose manque, et que vous souhaitez apporter votre contribution :"
+
+- id: docs.feedback.issue
+  translation: "Si vous souhaitez suggérer une amélioration pour cette page :"
 
 - id: docs.page-not-available-in-your-language
   translation: Cette page n'est pas encore disponible dans votre langue, vous trouverez la version originale en anglais à la place.

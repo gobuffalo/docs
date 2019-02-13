@@ -5,19 +5,22 @@
 - id: head.title
   translation: Buffalo &ndash; Rapid Web Development in Go
 
+- id: head.description
+  translation: Put the fun back in writing Go web applications! A Ruby on Rails inspired, idiomatic, web framework written in Go.
+
 # Helpers
 - id: helpers.since
-  translation: since <strong>v{{.version}}</strong>
+  translation: since {{.name}}<strong>{{.version}}</strong>
 
 # Top
 - id: top.title
   translation: Buffalo
 
 - id: top.examples-tutorials
-  translation: Examples & Tutorials
+  translation: Tutorials
 
-- id: top.go-docs
-  translation: Go Docs
+- id: top.docs
+  translation: Documentation
 
 - id: top.blog
   translation: Blog
@@ -28,6 +31,9 @@
 - id: top.store
   translation: Store
 
+- id: top.support
+  translation: Support
+
 # Footer
 - id: footer.copyright
   translation: Copyright &copy; {{ .year }} Buffalo. All rights reserved.
@@ -36,6 +42,9 @@
   translation: Buffalo Gopher designed by <a href="https://twitter.com/ashleymcnamara" target="_blank" rel="noopener noreferrer">Ashley McNamara</a> &mdash; Original Gopher designed by Renee French.
 
 # Menu
+- id: menu.search
+  translation: Search...
+
 - id: menu.language
   translation: Language
 
@@ -44,6 +53,9 @@
 
 - id: menu.installation
   translation: Installation
+
+- id: menu.integrations
+  translation: Tooling Integration
 
 - id: menu.new-project
   translation: Generate a New Project
@@ -54,17 +66,56 @@
 - id: menu.config-variables
   translation: Configuration
 
+- id: menu.request-handling
+  translation: Request Handling
+
+- id: menu.errors-handling
+  translation: Errors Handling
+
+- id: menu.sessions
+  translation: Sessions
+
+- id: menu.cookies
+  translation: Cookies
+
 - id: menu.db
   translation: Database
 
 - id: menu.db-getting-started
   translation: Getting Started with Pop
 
+- id: menu.db-configuration
+  translation: Configuration
+
 - id: menu.db-toolbox
-  translation: Soda Toolbox
+  translation: Soda CLI
 
 - id: menu.db-models
   translation: Models
+
+- id: menu.db-migrations
+  translation: Migrations
+
+- id: menu.db-fizz
+  translation: Fizz
+
+- id: menu.db-querying
+  translation: Querying
+
+- id: menu.db-callbacks
+  translation: Callbacks
+
+- id: menu.db-buffalo-integration
+  translation: Buffalo Integration
+
+- id: menu.gomods
+  translation: Go Modules
+
+- id: menu.third-party-auth
+  translation: 3<sup>rd</sup> Party Authentication
+
+- id: menu.template-engines
+  translation: Template Engines
 
 - id: menu.contributing
   translation: Contributing
@@ -81,20 +132,23 @@
 - id: menu.troubleshooting
   translation: Trouble Shooting
 
-- id: menu.training-and-consulting
-  translation: Training and Consulting
+- id: menu.support
+  translation: Support
 
 - id: menu.deploy
   translation: Deploy
 
 - id: menu.building-binaries
-  translation: Building/Binaries
+  translation: Packing
 
 - id: menu.using-proxy
   translation: Using a proxy
 
 - id: menu.systemd-service
   translation: Systemd service
+
+- id: menu.deploy-providers-solutions
+  translation: Cloud Providers
 
 # Releases page
 - id: releases.title
@@ -129,6 +183,18 @@
 # Docs
 - id: docs.improve-page-button
   translation: Improve this page
+
+- id: docs.new-issue-button
+  translation: Open a new issue
+
+- id: docs.feedback.title
+  translation: Feedback
+
+- id: docs.feedback.edit
+  translation: "If you found an error or something which needs to be improved, and you want to contribute to fix it:"
+
+- id: docs.feedback.issue
+  translation: "If you'd like to suggest something to improve this page:"
 
 - id: docs.page-not-available-in-your-language
   translation: This page is not available in your language yet, you'll find the original english version instead.

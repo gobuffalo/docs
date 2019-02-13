@@ -6,7 +6,7 @@
     <li class="sidebar-form">
 
   <%= form({action: searchPath({lang: lang}), method: "GET"}) { %>
-      <%= f.InputTag({name: "query", placeholder: "enter search query here", value: params["query"]}) %>
+      <%= f.InputTag({name: "query", placeholder: t("menu.search"), value: params["query"]}) %>
   <% } %>
 
     </li>
@@ -22,25 +22,36 @@
       <a href="#"><%= t("menu.getting-started") %></a>
       <ul class="sidenav dropable">
         <li>
-          <a href="<%= docPath({name: "installation", lang: lang}) %>"><%= t("menu.installation") %></a>
+          <a href="<%= docPath({name: "installation", lang: lang}) %>" hreflang="<%= lang %>"><%= t("menu.installation") %></a>
         </li>
         <li>
-          <a href="<%= docPath({name: "new-project", lang: lang}) %>"><%= t("menu.new-project") %></a>
+          <a href="<%= docPath({name: "integrations", lang: lang}) %>" hreflang="<%= lang %>"><%= t("menu.integrations") %></a>
         </li>
         <li>
-          <a href="<%= docPath({name: "directory-structure", lang: lang}) %>"><%= t("menu.directory-structure") %></a>
+          <a href="<%= docPath({name: "new-project", lang: lang}) %>" hreflang="<%= lang %>"><%= t("menu.new-project") %></a>
         </li>
         <li>
-          <a href="<%= docPath({name: "config-vars", lang: lang}) %>"><%= t("menu.config-variables") %></a>
+          <a href="<%= docPath({name: "directory-structure", lang: lang}) %>" hreflang="<%= lang %>"><%= t("menu.directory-structure") %></a>
+        </li>
+        <li>
+          <a href="<%= docPath({name: "config-vars", lang: lang}) %>" hreflang="<%= lang %>"><%= t("menu.config-variables") %></a>
         </li>
       </ul>
     </li>
 
     <li>
-      <a href="#">Request Handling</a>
+      <a href="#"><%= t("menu.request-handling") %></a>
       <ul class="sidenav dropable">
         <li>
           <a href="/en/docs/routing">Routing</a>
+        </li>
+
+        <li>
+          <a href="/en/docs/actions">Actions</a>
+        </li>
+
+        <li>
+          <a href="/en/docs/resources">Resources</a>
         </li>
 
         <li>
@@ -56,14 +67,14 @@
         </li>
 
         <li>
-          <a href="/en/docs/errors">Error Handling</a>
+          <a href="<%= docPath({name: "errors", lang: lang}) %>"><%= t("menu.errors-handling") %></a>
         </li>
 
         <li>
-          <a href="/en/docs/sessions">Sessions</a>
+          <a href="<%= docPath({name: "sessions", lang: lang}) %>"><%= t("menu.sessions") %></a>
         </li>
         <li>
-          <a href="/en/docs/cookies">Cookies</a>
+          <a href="<%= docPath({name: "cookies", lang: lang}) %>"><%= t("menu.cookies") %></a>
         </li>
       </ul>
     </li>
@@ -115,15 +126,14 @@
     </li>
 
     <li>
-      <a href="/en/docs/generators">Generators</a>
-    </li>
-
-    <li>
       <a href="#"><%= t("menu.db") %></a>
 
       <ul class="sidenav dropable">
         <li>
-          <a href="<%= docPath({name: "db", lang: lang}) %>"><%= t("menu.db-getting-started") %></a>
+          <a href="<%= docPath({name: "db/getting-started", lang: lang}) %>"><%= t("menu.db-getting-started") %></a>
+        </li>
+        <li>
+          <a href="<%= docPath({name: "db/configuration", lang: lang}) %>"><%= t("menu.db-configuration") %></a>
         </li>
         <li>
           <a href="<%= docPath({name: "db/toolbox", lang: lang}) %>"><%= t("menu.db-toolbox") %></a>
@@ -132,19 +142,25 @@
           <a href="<%= docPath({name: "db/models", lang: lang}) %>"><%= t("menu.db-models") %></a>
         </li>
         <li>
-          <a href="/en/docs/db/migrations">Migrations</a>
+          <a href="<%= docPath({name: "db/migrations", lang: lang}) %>"><%= t("menu.db-migrations") %></a>
         </li>
         <li>
-          <a href="https://github.com/gobuffalo/pop/tree/master/fizz#fizz" target="_blank">Fizz</a>
+          <a href="<%= docPath({name: "db/fizz", lang: lang}) %>"><%= t("menu.db-fizz") %></a>
+        </li>
+        <li>
+          <a href="<%= docPath({name: "db/querying", lang: lang}) %>"><%= t("menu.db-querying") %></a>
         </li>
         <li>
           <a href="/en/docs/db/relations">Associations and Relationships</a>
         </li>
         <li>
-          <a href="/en/docs/db/callbacks">Callbacks</a>
+          <a href="<%= docPath({name: "db/callbacks", lang: lang}) %>"><%= t("menu.db-callbacks") %></a>
         </li>
         <li>
           <a href="/en/docs/db/scoping">Scoping</a>
+        </li>
+        <li>
+          <a href="<%= docPath({name: "db/buffalo-integration", lang: lang}) %>"><%= t("menu.db-buffalo-integration") %></a>
         </li>
         <li>
           <a href="https://andrew-sledge.gitbooks.io/the-unofficial-pop-book/content/" target="_blank">The Unofficial Pop Book</a>
@@ -156,7 +172,13 @@
       <a href="#">Guides</a>
       <ul class="sidenav dropable">
         <li>
-          <a href="/en/docs/goth">Authentication</a>
+          <a href="<%= docPath({name: "gomods", lang: lang}) %>"><%= t("menu.gomods") %></a>
+        </li>
+        <li>
+          <a href="<%= docPath({name: "goth", lang: lang}) %>"><%= raw(t("menu.third-party-auth")) %></a>
+        </li>
+        <li>
+          <a href="/en/docs/auth">Local Authentication</a>
         </li>
         <li>
           <a href="/en/docs/apis">APIs</a>
@@ -180,13 +202,19 @@
           <a href="/en/docs/plugins">Plugins</a>
         </li>
         <li>
-          <a href="/en/docs/template-engines">Template Engines</a>
+          <a href="<%= docPath({name: "template-engines", lang: lang}) %>"><%= t("menu.template-engines") %></a>
         </li>
         <li>
           <a href="/en/docs/localization">Localization</a>
         </li>
         <li>
           <a href="/en/docs/testing">Testing</a>
+        </li>
+        <li>
+          <a href="/en/docs/events">Events</a>
+        </li>
+        <li>
+          <a href="/en/docs/videos">Videos</a>
         </li>
       </ul>
     </li>
@@ -195,13 +223,16 @@
       <a href="#"><%= t("menu.deploy") %></a>
       <ul class="sidenav dropable">
         <li>
-          <a href="<%= docPath({name: "building", lang: lang}) %>"><%= t("menu.building-binaries") %></a>
+          <a href="<%= docPath({name: "deploy/building", lang: lang}) %>"><%= t("menu.building-binaries") %></a>
         </li>
         <li>
-          <a href="<%= docPath({name: "proxy", lang: lang}) %>"><%= t("menu.using-proxy") %></a>
+          <a href="<%= docPath({name: "deploy/proxy", lang: lang}) %>"><%= t("menu.using-proxy") %></a>
         </li>
         <li>
-          <a href="<%= docPath({name: "systemd", lang: lang}) %>"><%= t("menu.systemd-service") %></a>
+          <a href="<%= docPath({name: "deploy/systemd", lang: lang}) %>"><%= t("menu.systemd-service") %></a>
+        </li>
+        <li>
+          <a href="<%= docPath({name: "deploy/providers", lang: lang}) %>"><%= t("menu.deploy-providers-solutions") %></a>
         </li>
       </ul>
     </li>
@@ -213,14 +244,14 @@
           <a href="<%= docPath({name: "troubleshooting", lang: lang}) %>"><%= t("menu.troubleshooting") %></a>
         </li>
         <li>
-          <a href="<%= trainingURL %>" target="_blank" rel="noopener noreferrer"><%= t("menu.training-and-consulting") %></a>
-        </li>
-        <li>
           <a href="<%= docPath({name: "slack", lang: lang}) %>">#Buffalo/Slack</a>
         </li>
       </ul>
     </li>
 
+    <li>
+      <a href="<%= docPath({name: "support", lang: lang}) %>"><%= t("menu.support") %></a>
+    </li>
     <li>
       <a href="<%= docPath({name: "contributing", lang: lang}) %>"><%= t("menu.contributing") %></a>
     </li>

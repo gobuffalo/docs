@@ -1,8 +1,10 @@
-# Background Job Workers
+<%= h1("Background Job Workers") %>
 
 When building complex applications it is often nice to be able to run things in the “background”. While Go provides beautiful concurrency features, like the famed Goroutine, often one wants to run these on different machines, persist them using Redis, or any number of potential reasons why a simple Goroutine isn’t sufficient.
 
-<%= title("The Worker Interface") %>
+Workers shouldn't be confused with [tasks](/en/docs/tasks): tasks are synchronous tools, whereas workers are intended to run asynchronously.
+
+## The Worker Interface
 
 In order to use background jobs, the `worker.Worker` interface must first be satisfied.
 
@@ -35,7 +37,7 @@ The following Worker implementations are provided by Buffalo users (no official 
 |------|--------|-------------|
 | [AMQP worker adapter](https://github.com/stanislas-m/amqp-work-adapter) | [@stanislas-m](https://github.com/stanislas-m) | A Worker implementation to use with AMQP-compatible brokers (such as [RabbitMQ](https://www.rabbitmq.com/)). |
 
-<%= title("The Job type") %>
+## The Job type
 
 A Job is an unit of work for a given Worker implementation.
 
@@ -54,7 +56,7 @@ type Job struct {
 }
 ```
 
-<%= title("How to use background tasks") %>
+## How to use background tasks
 
 To be able to use background tasks, you'll need to setup a worker adapter, register job handlers and trigger jobs.
 
@@ -66,7 +68,7 @@ When setting up your application you *can* assign a worker implementation to the
 
 ```go
 import "github.com/gobuffalo/gocraft-work-adapter"
-import "github.com/garyburd/redigo/redis"
+import "github.com/gomodule/redigo/redis"
 
 // ...
 
@@ -108,7 +110,7 @@ import "github.com/gobuffalo/buffalo/worker"
 var w worker.Worker
 
 func init() {
-  w = app.Worker // Get a ref to the previously defined Worker
+  w = App().Worker // Get a ref to the previously defined Worker
   w.Register("send_email", func(args worker.Args) error {
     // do work to send an email
     return nil
@@ -159,13 +161,13 @@ func doWork() {
 
 #### `worker.PerformAt`
 
-The `PerformIn` method enqueues the job, so the worker should try and run the job at (or near) the time specified, based on the implementation of the worker itself.
+The `PerformAt` method enqueues the job, so the worker should try and run the job at (or near) the time specified, based on the implementation of the worker itself.
 
 ```go
 func doWork() {
   // Send the send_email job to the queue, and process it at now + 5 seconds.
   // Please note if no working unit is free at this time, it will wait for a free slot.
-  w.PerformIn(worker.Job{
+  w.PerformAt(worker.Job{
     Queue: "default",
     Handler: "send_email",
     Args: worker.Args{

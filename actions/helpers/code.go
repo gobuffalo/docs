@@ -10,7 +10,7 @@ import (
 	"github.com/gobuffalo/buffalo/render"
 	"github.com/gobuffalo/genny"
 	"github.com/gobuffalo/github_flavored_markdown"
-	"github.com/gobuffalo/packr"
+	"github.com/gobuffalo/packr/v2"
 	"github.com/gobuffalo/plush"
 	"github.com/gobuffalo/tags"
 	"github.com/markbates/going/randx"

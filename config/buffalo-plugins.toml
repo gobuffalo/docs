@@ -1,0 +1,3 @@
+[[plugin]]
+  binary = "buffalo-plugins"
+  go_get = "github.com/gobuffalo/buffalo-plugins"

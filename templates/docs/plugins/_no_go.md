@@ -1,4 +1,4 @@
-<%= title("Writing Non-Go Plugins") %>
+## Writing Non-Go Plugins
 
 Plugins do not need to be written in Go. They can be written in any language you would like, as long as they comply with the rules above.
 

@@ -1,4 +1,4 @@
-<%= title("Creating a new Buffalo App (and router)") %>
+## Creating a new Buffalo App (and router)
 
 The app configuration is located in the `app.go` file.
 

@@ -55,11 +55,12 @@ Por ejemplo, para PostgreSQL puede pasar `jsonb` y será compatible, sin embargo
 #### Opciones compatibles:
 
 * `size` - El tamaño de la columna. Por ejemplo, si quisiera un `varchar (50)` en Postgres, haría: `t.Column (" column_name "," string ", {" size ": 50})`
+* `scale`, `precision` - Ejemplo: `{"scale": 4, "precision": 2}`
 * `null` - Por defecto, las columnas no pueden ser` null`.
 * `default` - El valor predeterminado que desea para esta columna. Por defecto, esto es `nulo`.
 * `default_raw` -  El valor predeterminado definido como una función de base de datos.
-* `after` - (MySQL solamente) Agregue una columna después de otra columna en la tabla. `ejemplo: {"after":"created_at"}`
-* `first` - (MySQL solamente) Agregue una columna a la primera posición en la tabla. `ejemplo: {"first": true}`
+* `after` - (MySQL solamente) Agregue una columna después de otra columna en la tabla. Ejemplo: `{"after":"created_at"}`
+* `first` - (MySQL solamente) Agregue una columna a la primera posición en la tabla. Ejemplo: `{"first": true}`
 
 #### Desactivar marcas de tiempo automáticas
 

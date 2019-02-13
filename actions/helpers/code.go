@@ -2,6 +2,7 @@ package helpers
 
 import (
 	"bytes"
+	"html"
 	"html/template"
 	"path/filepath"
 	"strings"
@@ -9,7 +10,7 @@ import (
 	"github.com/gobuffalo/buffalo/render"
 	"github.com/gobuffalo/genny"
 	"github.com/gobuffalo/github_flavored_markdown"
-	"github.com/gobuffalo/packr"
+	"github.com/gobuffalo/packr/v2"
 	"github.com/gobuffalo/plush"
 	"github.com/gobuffalo/tags"
 	"github.com/markbates/going/randx"
@@ -28,19 +29,19 @@ func CodeTabs(help plush.HelperContext) (template.HTML, error) {
 }
 
 func codeTab(s string) (template.HTML, error) {
-	b := github_flavored_markdown.Markdown([]byte(s))
+	s = strings.TrimSpace(s)
 
 	t := tags.New("div", tags.Options{
 		"class": "codetabs",
 		"id":    randx.String(10),
 	})
-	t.Append(tags.New("ul", tags.Options{
-		"class": "nav nav-tabs",
-		"role":  "tablist",
-	}))
+	t.Append(tags.New("ul", tags.Options{}))
+
+	s = string(github_flavored_markdown.Markdown([]byte(s)))
+	s = html.UnescapeString(s)
 	t.Append(tags.New("div", tags.Options{
 		"class": "tab-content",
-		"body":  string(b),
+		"body":  template.HTML(s),
 	}))
 	return t.HTML(), nil
 }

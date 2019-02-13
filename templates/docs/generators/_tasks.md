@@ -1,4 +1,4 @@
-<%= title("Tasks Generator") %>
+## Tasks Generator
 
 ```bash
 $ buffalo g task foo:bar

@@ -7,7 +7,7 @@ Un cookie HTTP est un petit morceau de données qu'un serveur envoie au navigate
 
 Les cookies (HTTP) sont souvent utilisés pour sauvegarder l'état de l'utlisateur courant (comme par example pour savoir si l'utilisateur est connecté). Consultez [https://golang.org/pkg/net/http/#Cookie](https://golang.org/pkg/net/http/#Cookie) pour plus d'informations sur la manière de gérer les cookies en Go.
 
-<%= title("Créer un cookie") %>
+## Créer un cookie
 
 ```go
 func MyHandler(c buffalo.Context) error {
@@ -17,7 +17,7 @@ func MyHandler(c buffalo.Context) error {
 }
 ```
 
-<%= title("Créer un cookie périssable") %>
+## Créer un cookie périssable
 
 ```go
 func MyHandler(c buffalo.Context) error {
@@ -28,7 +28,7 @@ func MyHandler(c buffalo.Context) error {
 }
 ```
 
-<%= title("Récupérer un cookie") %>
+## Récupérer un cookie
 
 ```go
 func MyHandler(c buffalo.Context) error {
@@ -40,7 +40,7 @@ func MyHandler(c buffalo.Context) error {
 }
 ```
 
-<%= title("Supprimer un cookie") %>
+## Supprimer un cookie
 
 
 ```go

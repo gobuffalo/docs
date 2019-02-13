@@ -6,7 +6,7 @@ import (
 	"testing"
 
 	"github.com/gobuffalo/gobuffalo/actions"
-	"github.com/markbates/willie"
+	"github.com/gobuffalo/httptest"
 	"github.com/stretchr/testify/require"
 )
 
@@ -15,7 +15,7 @@ const docsTemplatesDirectory = "../templates/docs/"
 func Test_EnDocsHandler(t *testing.T) {
 	r := require.New(t)
 
-	w := willie.New(actions.App())
+	w := httptest.New(actions.App())
 
 	files, err := ioutil.ReadDir(docsTemplatesDirectory)
 
@@ -24,7 +24,7 @@ func Test_EnDocsHandler(t *testing.T) {
 	for _, file := range files {
 		if strings.HasSuffix(file.Name(), ".md") {
 			name := strings.Split(file.Name(), ".")[0]
-			res := w.Request("/en/docs/" + name).Get()
+			res := w.HTML("/en/docs/" + name).Get()
 			r.Equal(200, res.Code)
 		}
 	}
@@ -33,7 +33,7 @@ func Test_EnDocsHandler(t *testing.T) {
 func Test_FrDocsHandler(t *testing.T) {
 	r := require.New(t)
 
-	w := willie.New(actions.App())
+	w := httptest.New(actions.App())
 
 	files, err := ioutil.ReadDir(docsTemplatesDirectory)
 
@@ -42,7 +42,7 @@ func Test_FrDocsHandler(t *testing.T) {
 	for _, file := range files {
 		if strings.HasSuffix(file.Name(), ".fr.md") {
 			name := strings.Split(file.Name(), ".")[0]
-			res := w.Request("/fr/docs/" + name).Get()
+			res := w.HTML("/fr/docs/" + name).Get()
 			r.Equal(200, res.Code)
 		}
 	}

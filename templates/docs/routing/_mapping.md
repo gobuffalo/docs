@@ -1,4 +1,4 @@
-<%= title("Mapping Handlers", {}) %>
+## Mapping Handlers
 
 All routing in Buffalo results in the calling of a `buffalo.Handler` function. The signature for a `buffalo.Handler` looks like this:
 

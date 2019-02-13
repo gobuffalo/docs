@@ -3,7 +3,9 @@
 
 # Callbacks
 
-Pop proporciona un medio para ejecutar código antes y después de las operaciones de la base de datos. Esto se hace definiendo métodos específicos para sus modelos. Por ejemplo, para hash una contraseña de usuario, es posible que desee definir el siguiente método:
+Pop proporciona un medio para ejecutar código antes y después de las operaciones de la base de datos. Esto se hace definiendo métodos específicos para sus modelos.
+
+Por ejemplo, para hash una contraseña de usuario, es posible que desee definir el siguiente método:
 
 ```go
 type User struct {
@@ -39,6 +41,6 @@ Los _callbacks_ disponibles incluyen:
 * [AfterDestroy](https://godoc.org/github.com/gobuffalo/pop#AfterDestroyable)
 * [AfterFind](https://godoc.org/github.com/gobuffalo/pop#AfterFindable)
 
-<%= title("Contenido relacionado") %>
+## Contenido relacionado
 
 * [Models](/en/docs/db/models) - Defina un modelo de base de datos.

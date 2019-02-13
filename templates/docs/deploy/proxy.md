@@ -16,7 +16,7 @@ PORT=80
 
 On common scenarios though, you'll be using a proxy to distribute queries to a cluster, handle cases when your app is down, and so on.
 
-<%= title("NGINX") %>
+## NGINX
 
 NGINX allows two ways to be configured with your app:
 
@@ -147,7 +147,7 @@ server {
 ```
 
 
-<%= title("Apache 2") %>
+## Apache 2
 
 ### Using an IP address
 

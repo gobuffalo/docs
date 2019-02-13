@@ -5,7 +5,7 @@
 
 Ahora, su proyecto está listo para ser implementado. En esta sección, aprenderá a empaquetar una versión de su aplicación para implementarla en un servidor.
 
-<%= title("El comando de compilación") %>
+## El comando de compilación
 
 Buffalo tiene un comando, `build`, que creará un **binario completo** de su aplicación, que incluye, entre otros; activos, migraciones, plantillas, etc. Si sigue el _"Buffalo Way"_, las cosas simplemente funcionan. Es una experiencia maravillosa :)
 
@@ -13,7 +13,7 @@ Buffalo tiene un comando, `build`, que creará un **binario completo** de su apl
 
 Cuando finaliza la compilación, tiene un binario recién creado en la carpeta `bin`. También tendrá el **tiempo de compilación** y **chit commit SHA** grabado, por lo que los binarios serán "versionados".
 
-<%= title("Personalizar la compilación") %>
+## Personalizar la compilación
 
 Para obtener la lista de opciones disponibles, use el comando de ayuda:
 
@@ -43,7 +43,7 @@ Por defecto, el archivo de activos se coloca en el directorio *bin*, pero si cam
 
 <%= partial("docs/building/extract_assets_layout.md") %>
 
-<%= title("Opciones avanzadas") %>
+## Opciones avanzadas
 
 ### Creación de binarios "estáticos" / CGO
 
@@ -57,7 +57,7 @@ Al construir un binario de Buffalo utilizando el comando `buffalo build`, puede 
 $ buffalo build --tags="mytag" --ldflags="-X foo.Bar=baz"
 ```
 
-<%= title("Comandos binarios") %>
+## Comandos binarios
 
 ### Modos
 
@@ -98,7 +98,7 @@ $ ./coke task greet
 Hello World!
 ```
 
-<%= title("Siguientes pasos") %>
+## Siguientes pasos
 
 * [Usando un Proxy](/es/docs/deploy/proxy) - Integrar su aplicación con un servidor como NGINX.
 * [Servicio de systemd](/es/docs/deploy/systemd) - Ejecutar su aplicación como un servicio systemd.

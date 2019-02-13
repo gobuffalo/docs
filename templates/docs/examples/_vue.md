@@ -1,4 +1,4 @@
-<%= title("Using Vue.js with Buffalo") %>
+## Using Vue.js with Buffalo
 
 <%= vimeo("238650365") %>
 

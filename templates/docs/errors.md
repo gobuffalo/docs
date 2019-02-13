@@ -5,7 +5,7 @@
 
 An `error` is Go way to tell something went wrong. In this chapter, you'll learn how to return errors from a route handler and how Buffalo will catch any non-handled error.
 
-<%= title("Returning Errors From a Handler") %>
+## Returning Errors From a Handler
 
 The easiest way to produce an error response is to return a standard Go error:
 ```go
@@ -32,7 +32,7 @@ func MyHandler(c buffalo.Context) error {
 }
 ```
 
-<%= title("Default Error Handling (Development)") %>
+## Default Error Handling (Development)
 
 In "development" mode (`GO_ENV=development`), Buffalo will generate some helpful errors pages for you.
 
@@ -60,7 +60,7 @@ If you use a JSON or a XML content type, the error is returned in the proper typ
 
 In "production" mode (`GO_ENV=production`), Buffalo will not generate pages that have developer style information, because this would give precious informations to hackers. Instead the pages are simpler.
 
-<%= title("Custom Error Handling", {}) %>
+## Custom Error Handling
 
 While Buffalo will handle errors for you out of the box, it can be useful to handle errors in a custom way. To accomplish this, Buffalo allows for the mapping of HTTP status codes to specific handlers. This means the error can be dealt with in a custom fashion.
 

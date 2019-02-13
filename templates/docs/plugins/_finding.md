@@ -1,4 +1,4 @@
-<%= title("Finding Available Plugins") %>
+## Finding Available Plugins
 
 A full list of Plugins can be found at [https://toolkit.gobuffalo.io/tools?topic=plugin](https://toolkit.gobuffalo.io/tools?topic=plugin).
 

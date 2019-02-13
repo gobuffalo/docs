@@ -1,10 +1,10 @@
-<%= title("Migraciones una vez desplegadas", {name:"migrating-deployed-app"}) %>
+## Migraciones una vez desplegadas
 
 <%= note() { %>
 Esta sección es solo para usuarios de Buffalo..
 <% } %>
 
-Cuando construye su aplicación, las migraciones se almacenan dentro de su binario. Su binario tiene un comando oculto `migrate` que realiza las migraciones, al igual que cuando se usa` buffalo db migrate`:
+Cuando construye su aplicación, las migraciones se almacenan dentro de su binario. Su binario tiene un comando oculto `migrate` que realiza las migraciones, al igual que cuando se usa` buffalo pop migrate`:
 
 ```bash
 $ ./myapp migrate

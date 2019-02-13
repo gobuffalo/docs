@@ -3,18 +3,20 @@ package actions
 import (
 	"fmt"
 	"html/template"
+	"path"
 	"strings"
 
 	"github.com/gobuffalo/buffalo/render"
 	"github.com/gobuffalo/gobuffalo/actions/helpers"
 	"github.com/gobuffalo/gobuffalo/search/godoc"
-	"github.com/gobuffalo/packr"
+	"github.com/gobuffalo/gobuffalo/search/vimeo"
+	"github.com/gobuffalo/packr/v2"
 	"github.com/gobuffalo/plush"
 	"github.com/markbates/inflect"
 )
 
 var r *render.Engine
-var assetBox = packr.NewBox("../public")
+var assetBox = packr.New("app:assets", "../public")
 
 func Renderer() *render.Engine {
 	return r
@@ -28,7 +30,6 @@ func init() {
 			"goDocPkgs": godoc.Pkgs,
 			"godoc":     godoc.Helper,
 			"h1":        helpers.H1,
-			"title":     helpers.SectionTitle,
 			"note":      helpers.Note,
 			"warning":   helpers.Warning,
 			"sinceVersion": func(version string, opts render.Data, help plush.HelperContext) (template.HTML, error) {
@@ -49,6 +50,10 @@ func init() {
 				return template.HTML(s), err
 			},
 			"vimeo": func(code string) template.HTML {
+				return template.HTML(fmt.Sprintf(vimeoTmpl, code))
+			},
+			"vimeoFromVideo": func(v vimeo.Video) template.HTML {
+				code := path.Base(v.Link)
 				return template.HTML(fmt.Sprintf(vimeoTmpl, code))
 			},
 			"codeTabs": helpers.CodeTabs,
@@ -73,7 +78,7 @@ func init() {
 				return fmt.Sprintf("%.2f%%", f*100)
 			},
 		},
-		TemplatesBox: packr.NewBox("../templates"),
+		TemplatesBox: packr.New("../templates", "../templates"),
 		AssetsBox:    assetBox,
 	})
 	r.Helpers["exampleDir"] = helpers.ExampleDir(r)

@@ -1,4 +1,4 @@
-<%= title("Example Usage") %>
+## Example Usage
 
 ```go
 // mailers/mail.go

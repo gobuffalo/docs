@@ -5,15 +5,15 @@ FROM gobuffalo/buffalo:development as builder
 ARG GITHUB_TOKEN=local
 ENV GITHUB_TOKEN ${GITHUB_TOKEN}
 
-RUN mkdir -p $GOPATH/src/github.com/gobuffalo/gobuffalo
-WORKDIR $GOPATH/src/github.com/gobuffalo/gobuffalo
+RUN mkdir -p /tmp/gobuffalo
+WORKDIR /tmp/gobuffalo
 
 # this will cache the npm install step, unless package.json changes
 ADD package.json .
 ADD yarn.lock .
 RUN yarn install --no-progress
 ADD . .
-RUN buffalo build --static -o /bin/app -d --environment=production
+RUN GO111MODULE=on buffalo build --static -o /bin/app -v --environment=production --skip-template-validation
 
 FROM alpine
 RUN apk add --no-cache curl

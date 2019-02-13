@@ -2,7 +2,7 @@
 
 Scoping is a way to structure your DB calls, when it needs the same "base" query. Let's say you want to create a book store: the store provides books for everyone, but some special editions are reserved to customers with a registered account. It means that for the whole store, you'll need to filter the books, so the "guest" customers can only see the restricted list of books.
 
-<%= title("The usual way") %>
+## The usual way
 
 A "naive" way can be writing each full query.
 
@@ -56,7 +56,7 @@ if err != nil {
 }
 ```
 
-<%= title("The scoped way") %>
+## The scoped way
 
 The scope factorizes the common part of the query:
 

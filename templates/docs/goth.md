@@ -1,13 +1,17 @@
 <% seoDescription("Third Party Authentication") %>
-<% seoKeywords(["buffalo", "go", "golang", "users", "oauth2", "authentication", "third-party"]) %>
+<% seoKeywords(["buffalo", "go", "golang", "users", "oauth2", "authentication", "third-party", "google", "facebook"]) %>
 
 <%= h1("Third Party Authentication") %>
 
 In many use-cases, you'll need to implement user authentication in your apps. [Goth](https://github.com/markbates/goth) provides a simple, clean, and idiomatic way to write authentication packages for Go web applications.
 
-Buffalo had a native support for Goth until version `v0.9.4`. Since then, it was moved into it's own plugin, [https://github.com/gobuffalo/buffalo-goth](https://github.com/gobuffalo/buffalo-goth).
+If you're looking for authentication through Facebook, Google and others, that's probably the solution you're looking for.
 
-<%= title("Installation") %>
+<%= note() { %>
+Buffalo had a native support for Goth until version `v0.9.4`. Since then, it was moved into it's own plugin, [https://github.com/gobuffalo/buffalo-goth](https://github.com/gobuffalo/buffalo-goth).
+<% } %>
+
+## Installation
 
 To install the `buffalo-goth` plugin, run the following command:
 
@@ -15,7 +19,7 @@ To install the `buffalo-goth` plugin, run the following command:
 $ go get -u github.com/gobuffalo/buffalo-goth
 ```
 
-<%= title("Generator") %>
+## Generator
 ```bash
 $ buffalo g goth twitter facebook linkedin github
 
@@ -24,7 +28,7 @@ $ buffalo g goth twitter facebook linkedin github
 --> goimports -w .
 ```
 
-<%= title("Example Usage") %>
+## Example Usage
 ```go
 // actions/app.go
 package actions
@@ -130,6 +134,10 @@ func AuthCallback(c buffalo.Context) error {
 }
 ```
 
-<%= title("Video Tutorial") %>
+## Video Tutorial
 
 <%= vimeo("223666374") %>
+
+## See Also
+
+* [Local Authentication](/en/docs/auth) - Manage internal users auth.

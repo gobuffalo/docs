@@ -8,7 +8,4 @@ jobs:
   include:
     - stage: test
       go: 1.11
-      install:
-        - curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
-        - dep ensure -v
       script: go test -v ./...

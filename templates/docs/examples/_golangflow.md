@@ -1,4 +1,4 @@
-<%= title("GolangFlow.io") %>
+## GolangFlow.io
 
 This open source application allows people to post their favorite Go related stories at [http://golangflow.io](http://golangflow.io).
 

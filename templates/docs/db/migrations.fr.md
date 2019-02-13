@@ -7,13 +7,13 @@ Maintenir un logiciel n'est pas une tâche simple, et vous devrez sans doûte pa
 
 Vous pouvez écrire de nouvelles migrations en utilisant `fizz`, un langage de description des changements de votre base de données agnostique ; ou utiliser du SQL si vous préférez.
 
-<%= title("Écrire des migrations") %>
+## Écrire des migrations
 <%= partial("docs/db/soda_buffalo_note.md") %>
 
 <%= partial("docs/db/fizz.md") %>
 <%= partial("docs/db/sql.md") %>
 
-<%= title("Exécuter des migrations") %>
+## Exécuter des migrations
 <%= partial("docs/db/soda_buffalo_note.md") %>
 
 ### Appliquer les migrations
@@ -67,7 +67,7 @@ Global Flags:
 Use "soda migrate [command] --help" for more information about a command.
 ```
 
-<%= title("Cibler un type de base de données") %>
+## Cibler un type de base de données
 
 Depuis Pop [v4.4.0](https://github.com/gobuffalo/pop/releases/tag/v4.4.0), les migrations peuvent cibler un type de base de données en utilisant un suffixe. Cela permet d'utiliser des commandes SQL propres à un dialecte de base de données, tout en ignorant les autres.
 
@@ -78,7 +78,7 @@ Par exemple, si vous voulez supporter à la fois PostgreSQL et MySQL, vous pouve
 
 Si aucune version spécifique au dialecte ne peut être trouvée, Pop tentera d'utiliser la version classique non-suffixée à la place, si elle existe.
 
-<%= title("Table de migrations personnalisée") %>
+## Table de migrations personnalisée
 
 Par défaut, les migrations appliquées sont suivies dans la table `schema_migration`. Cette dernière est créée par Pop si elle n'existe pas.
 

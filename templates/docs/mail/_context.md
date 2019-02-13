@@ -1,4 +1,4 @@
-<%= title("Using Context Variables") %>
+## Using Context Variables
 
 <%= sinceVersion("0.13.0-rc1") %>
 
@@ -7,13 +7,13 @@ To use context variables such as [RouteHelpers](/docs/routing#using-route-helper
 
 ```go
 func SendMail(c buffalo.Context) error {
-	m := mail.New(c)
-	...
-	
-	m.AddBody(r.HTML("mail.html"))
-	return SMTP.Send(m)
+  m := mail.New(c)
+  ...
+
+  m.AddBody(r.HTML("mail.html"))
+  return SMTP.Send(m)
 }
-``` 
+```
 
 ```html
 &lt;a href="\<%= awesomePath() %>">Click here&lt;/a>

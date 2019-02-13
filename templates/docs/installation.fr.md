@@ -14,7 +14,7 @@ Buffalo est actuellement disponible et testé sur les plateformes suivantes :
 * Mac OSX
 * Windows
 
-<%= title("Prérequis") %>
+## Prérequis
 
 Avant d'installer Buffalo, assurez-vous d'avoir installé les dépendances suivantes :
 
@@ -35,7 +35,7 @@ Là encore, si vous n'avez pas besoin de base de données, vous pouvez vous affr
 
 * **SQLite 3**: GCC, ou compilateur équivalent pour [mattn/go-sqlite3](https://github.com/mattn/go-sqlite3).
 
-<%= title("Installation depuis une archive pré-compilée - 64 bits", {title: "Installation depuis une archive pré-compilée"}) %>
+## Installation depuis une archive pré-compilée - 64 bits
 
 <%= note() { %>
 Ces archives sont fournies sans support pour SQLite.
@@ -61,14 +61,14 @@ $ sudo mv buffalo-no-sqlite /usr/local/bin/buffalo
 $ mv buffalo-no-sqlite ~/bin/buffalo
 ```
 
-<%= title("Scoop (Windows)") %>
+## Scoop (Windows)
 Buffalo peut être installé en utilisant le gestionnaire de paquets [Scoop](http://scoop.sh/) :
 
 ```powershell
 PS C:\> scoop install buffalo
 ```
 
-<%= title("Homebrew (macOS)") %>
+## Homebrew (macOS)
 
 Sur macOS, vous pouvez également installer Buffalo avec [Homebrew](https://brew.sh/). Après avoir [installé](https://docs.brew.sh/Installation) Homebrew, vous pouvez installer Buffalo en une simple ligne de commande :
 
@@ -76,7 +76,7 @@ Sur macOS, vous pouvez également installer Buffalo avec [Homebrew](https://brew
 brew install gobuffalo/tap/buffalo
 ```
 
-<%= title("GoFish (multi-plateformes)") %>
+## GoFish (multi-plateformes)
 
 [GoFish](https://gofi.sh/index.html) est un gestionnaire de paquets multi-plateformes ; qui fonctionne donc avec Windows, MacOSX et Linux.
 
@@ -88,7 +88,7 @@ $ gofish install buffalo
 🐠  buffalo <%= version %>: installed in 3.223672926s
 ```
 
-<%= title("Installation personnalisée **avec** support pour SQLite3", {title: "Installation avec support pour SQLite3"}) %>
+## Installation personnalisée **avec** support pour SQLite3
 
 **SQLite 3** nécessite GCC, ou un compilateur C équivalent pour compiler [mattn/go-sqlite3](https://github.com/mattn/go-sqlite3). Vous **devez** avoir installé GCC **avant** d'installer Buffalo.
 
@@ -108,7 +108,7 @@ PS C:\> scoop install gcc
 Ces instructions peuvent aussi être utilisées pour mettre à jour votre version de Buffalo.
 <% } %>
 
-<%= title("Installation personnalisée **sans** support pour SQLite3", {title: "Installation sans support pour SQLite3"}) %>
+## Installation personnalisée **sans** support pour SQLite3
 
 ```bash
 $ go get -u -v github.com/gobuffalo/buffalo/buffalo
@@ -118,7 +118,7 @@ $ go get -u -v github.com/gobuffalo/buffalo/buffalo
 Ces instructions peuvent également être utilisées pour mettre à jour votre version de Buffalo.
 <% } %>
 
-<%= title("Vérifier votre installation") %>
+## Vérifier votre installation
 
 Vous pouvez vérifier que votre installation fonctionne, en exécutant la commande `buffalo` dans un terminal (ou console) :
 
@@ -152,7 +152,7 @@ Use "buffalo [command] --help" for more information about a command.
 
 Si vous avez un retour similaire de la commande, votre boîte à outils Buffalo est prête à fonctionner !
 
-<%= title("Prochaines étapes") %>
+## Prochaines étapes
 
 * [Intégrations](/fr/docs/integrations) - Configurez votre environnement pour mieux travailler avec Buffalo.
 * [Générer un nouveau projet](/fr/docs/new-project) - Créez votre premier projet Buffalo !

@@ -1,4 +1,4 @@
-<%= title("Custom Named Routes") %>
+## Custom Named Routes
 
 The [`buffalo.RouteInfo#Name`](https://godoc.org/github.com/gobuffalo/buffalo#RouteInfo.Name) function allows you to set a custom name for route helpers.
 

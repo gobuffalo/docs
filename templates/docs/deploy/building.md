@@ -5,7 +5,7 @@
 
 Now, your project is ready to be deployed. In this section, you will learn how to package a version of your app to deploy it on a server.
 
-<%= title("The build command") %>
+## The build command
 
 Buffalo features a command, `build`, that will build a **full binary** of your application including, but not limited to; assets, migrations, templates, etc. If you buy into the “Buffalo Way”, things just work. It's a wonderful experience. :)
 
@@ -13,7 +13,7 @@ Buffalo features a command, `build`, that will build a **full binary** of your a
 
 When the build finishes, you have a fresh baked binary in the `bin` folder. It will also have the **compilation time** and the **git commit SHA** burnt in, thus making the binaries “versioned”.
 
-<%= title("Customize the build") %>
+## Customize the build
 
 To get the list of available options, use the help command:
 
@@ -43,7 +43,7 @@ By default, the assets archive is put in the *bin* directory, but if you change 
 
 <%= partial("docs/building/extract_assets_layout.md") %>
 
-<%= title("Advanced Options") %>
+## Advanced Options
 
 ### Building “Static”/CGO Binaries
 
@@ -57,7 +57,7 @@ When building a Buffalo binary using the `buffalo build` command, you can pass `
 $ buffalo build --tags="mytag" --ldflags="-X foo.Bar=baz"
 ```
 
-<%= title("Binary Commands") %>
+## Binary Commands
 
 ### Modes
 Binaries, by default, run in `development` mode, which means all of the sub-commands will run in that mode as well. To change the mode, you must use the `GO_ENV` environment variable.
@@ -97,7 +97,7 @@ $ ./coke task greet
 Hello World!
 ```
 
-<%= title("Next Steps") %>
+## Next Steps
 
 * [Using a Proxy](/en/docs/deploy/proxy) - Integrate your app with a server like NGINX.
 * [Systemd Service](/en/docs/deploy/systemd) - Run your app as a systemd service.

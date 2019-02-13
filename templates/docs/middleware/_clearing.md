@@ -1,4 +1,4 @@
-<%= title("Clearing Middleware", {}) %>
+## Clearing Middleware
 
 Since middleware is [inherited](#using-middleware) from its parent, there maybe times when it is necessary to start with a "blank" set of middleware.
 

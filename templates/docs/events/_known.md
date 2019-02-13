@@ -1,4 +1,4 @@
-<%= title("Known Events") %>
+## Known Events
 
 ### Application Events
 

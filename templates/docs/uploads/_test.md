@@ -1,4 +1,4 @@
-<%= title("Testing File Uploads") %>
+## Testing File Uploads
 
 The HTTP testing library, [`github.com/markbates/willie`](https://github.com/markbates/willie) (which is included in the [`github.com/gobuffalo/suite`](https://github.com/gobuffalo/suite) package that Buffalo uses for testing) has been updated to include two new functions: [`MultiPartPost`](https://godoc.org/github.com/markbates/willie#Request.MultiPartPost) and [`MultiPartPut`](https://godoc.org/github.com/markbates/willie#Request.MultiPartPut).
 

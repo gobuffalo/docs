@@ -1,4 +1,4 @@
-<%= title("Example Resource Generation") %>
+## Example Resource Generation
 
 In this example Buffalo will generate the code needed to CRUD a resource named `widget` (Go: `Widget`) that has the following attributes:
 

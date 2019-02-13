@@ -1,4 +1,4 @@
-<%= title("Session Store") %>
+## Session Store
 
 By default Buffalo will setup a session store using [`sessions.CookieStore`](http://www.gorillatoolkit.org/pkg/sessions#CookieStore).
 

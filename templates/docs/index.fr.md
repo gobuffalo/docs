@@ -5,6 +5,6 @@
 
 Bienvenue sur l'index de la documentation de Buffalo !
 
-<%= title("Resources liées") %>
+## Resources liées
 
 * [Godoc](https://godoc.org/github.com/gobuffalo/buffalo) - La référence technique du framework.

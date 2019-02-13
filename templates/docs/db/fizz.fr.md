@@ -27,7 +27,7 @@ create_table("todos") {
 }
 ```
 
-La fonction `create_table` génère une colonne `id` de type `integer` en mode auto-incrément. Il est possible de changer ce type pour utiliser le type [`UUID`](https://github.com/gobuffalo/uuid) :
+La colonne `id` n'a pas besoin d'être un `integer`. Par exemple, vous pouvez utiliser un type [`UUID`](https://github.com/gobuffalo/uuid) à la place :
 
 ```javascript
 create_table("users") {
@@ -36,7 +36,7 @@ create_table("users") {
 }
 ```
 
-Deux colonnes de type `timestamp` seront aussi générées par défaut ; `created_at` et `updated_at`.
+Par défaut, deux colonnes de type `timestamp` sont générées : `created_at` et `updated_at`.
 
 La méthode `t.Column` accepte les arguments suivants : nom de la colonne, le type du champ, et finalement les options que vous souhaitez attribuer à cette colonne.
 
@@ -56,11 +56,12 @@ Par exemple, pour PostgreSQL, vous pouvez passer le type `jsonb` et il sera supp
 #### Options supportées :
 
 * `size` - La taille de la colonne. Par exemple, si vous voulez un `varchar(50)` avec PostgreSQL, vous procéderiez de la façon suivante : `t.Column("column_name", "string", {"size": 50})`
+* `scale`, `precision` - L'échelle et la précision, pour une colonne de type float. Exemple : `{"scale": 4, "precision": 2}`
 * `null` - Par défaut, les colonnes ne peuvent pas être `null`.
 * `default` - La valeur par défaut de la colonne. La valeur par défaut est `null`.
 * `default_raw` - La valeur par défaut, si vous souhaitez utiliser une fonction de base de données (comme `NOW()`).
-* `after` - (MySQL seul) Ajouter la colonne après une autre colonne existante. `example: {"after":"created_at"}`
-* `first` - (MySQL seul) Ajouter la colonne en première position dans la table. `example: {"first": true}`
+* `after` - (MySQL seul) Ajouter la colonne après une autre colonne existante. Exemple : `{"after":"created_at"}`
+* `first` - (MySQL seul) Ajouter la colonne en première position dans la table. Exemple : `{"first": true}`
 
 #### Désactiver l'horodatage automatique
 

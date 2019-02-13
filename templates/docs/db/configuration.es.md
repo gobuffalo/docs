@@ -84,7 +84,7 @@ Para obtener detalles adicionales, consulte la documentación de [github.com/gob
 
 ** Asegúrese de haber configurado este archivo correctamente antes de trabajar con Pop! **
 
-<%= title("Opciones disponibles") %>
+## Opciones disponibles
 
 ### database
 
@@ -102,16 +102,13 @@ El dialecto de la base de datos a usar con la conexión. Los valores aceptados s
 
 <%= sinceVersion("4.6.0") %>
 
-Esta opción actualmente solo es compatible con **dialecto de mysql**. Esta codificación se usará para crear la base de datos (si la creas usando `soda`), y como el parámetro` collation` para la cadena de conexión. Si se omite esta opción, el valor predeterminado es `utf8_general_ci`.
+Esta opción actualmente solo es compatible con **dialecto de mysql**. Esta codificación se usará para crear la base de datos (si la creas usando `soda`), y como el parámetro` collation` para la cadena de conexión. Si se omite esta opción, el valor predeterminado es `utf8mb4_general_ci`.
 
 ```yaml
 development:
   dialect: mysql
-  database: myapp_development
-  user: root
-  password: root
-  host: 127.0.0.1
-  encoding: "utf8mb4_general_ci"
+  options:
+    encoding: "utf8_general_ci"
 ```
 
 ### host

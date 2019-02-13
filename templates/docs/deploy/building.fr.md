@@ -5,7 +5,7 @@
 
 Votre projet est désormais prêt à être déployé. Dans cette section, vous allez apprendre comment empaqueter une version de votre application et la déployer sur un serveur.
 
-<%= title("La commande build") %>
+## La commande build
 
 Buffalo contient une commande `build`. Celle-ci permet de construire un **exécutable complet** de votre application, comprenant (mais pas seulement) les fichiers statiques (c'est-à-dire les ressources graphiques), migrations, templates, etc. Si vous adhérez à la «&nbsp;façon de faire Buffalo&nbsp;», les choses fonctionnent simplement. C'est une expérience incroyable. :)
 
@@ -13,7 +13,7 @@ Buffalo contient une commande `build`. Celle-ci permet de construire un **exécu
 
 Lorsque le build est terminé, vous obtenez un binaire tout frais dans le dossier `bin`. Il contient également **l'heure de compilation** et le **hash SHA du commit git** intégrés&nbsp;: cela permet de «&nbsp;versionner&nbsp;» vos binaires.
 
-<%= title("Personnaliser le binaire") %>
+## Personnaliser le binaire
 
 Pour lister les options disponibles, utilisez la commande help&nbsp;:
 
@@ -43,7 +43,7 @@ Par défault, l'archive des fichiers statiques est place dans le répertoire *bi
 
 <%= partial("docs/building/extract_assets_layout.md") %>
 
-<%= title("Options avancées") %>
+## Options avancées
 
 ### Construire des binaires « statiques » avec CGO
 
@@ -57,7 +57,7 @@ Quand vous construisez un binaire Buffalo en utilisant la commande `buffalo buil
 $ buffalo build --tags="mytag" --ldflags="-X foo.Bar=baz"
 ```
 
-<%= title("Commandes binaires") %>
+## Commandes binaires
 
 ### Modes
 Le binaire fonctionne par défaut en mode `développement`, ce qui signifie que toutes les sous-commandes seront executées aussi dans ce mode. Pour changer le mode, utilisez la variable d'environment `GO_ENV`&nbsp;:
@@ -97,7 +97,7 @@ $ ./coke task greet
 Hello World!
 ```
 
-<%= title("Prochaines étapes") %>
+## Prochaines étapes
 
 * [Utilisation d'un proxy](/fr/docs/deploy/proxy) - Intégrez votre application avec un serveur comme NGINX.
 * [Service systemd](/fr/docs/deploy/systemd) - Gérez votre application comme un service systemd.

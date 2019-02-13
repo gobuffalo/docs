@@ -46,6 +46,6 @@
   </div>
 </div>
 
-<%= title("More on the Blog") %>
+## More on the Blog
 
 New videos, tutorials, etc... are always being published to the official Buffalo blog, [http://blog.gobuffalo.io](http://blog.gobuffalo.io). Please subscribe check out all of the great content that is being published there.

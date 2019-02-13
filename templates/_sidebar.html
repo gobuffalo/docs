@@ -40,10 +40,14 @@
     </li>
 
     <li>
-      <a href="#">Request Handling</a>
+      <a href="#"><%= t("menu.request-handling") %></a>
       <ul class="sidenav dropable">
         <li>
           <a href="/en/docs/routing">Routing</a>
+        </li>
+
+        <li>
+          <a href="/en/docs/actions">Actions</a>
         </li>
 
         <li>
@@ -63,7 +67,7 @@
         </li>
 
         <li>
-          <a href="/en/docs/errors">Error Handling</a>
+          <a href="<%= docPath({name: "errors", lang: lang}) %>"><%= t("menu.errors-handling") %></a>
         </li>
 
         <li>
@@ -122,10 +126,6 @@
     </li>
 
     <li>
-      <a href="/en/docs/generators">Generators</a>
-    </li>
-
-    <li>
       <a href="#"><%= t("menu.db") %></a>
 
       <ul class="sidenav dropable">
@@ -172,7 +172,13 @@
       <a href="#">Guides</a>
       <ul class="sidenav dropable">
         <li>
-          <a href="/en/docs/goth">3<sup>rd</sup> Party Authentication</a>
+          <a href="<%= docPath({name: "gomods", lang: lang}) %>"><%= t("menu.gomods") %></a>
+        </li>
+        <li>
+          <a href="<%= docPath({name: "goth", lang: lang}) %>"><%= raw(t("menu.third-party-auth")) %></a>
+        </li>
+        <li>
+          <a href="/en/docs/auth">Local Authentication</a>
         </li>
         <li>
           <a href="/en/docs/apis">APIs</a>
@@ -196,13 +202,16 @@
           <a href="/en/docs/plugins">Plugins</a>
         </li>
         <li>
-          <a href="/en/docs/template-engines">Template Engines</a>
+          <a href="<%= docPath({name: "template-engines", lang: lang}) %>"><%= t("menu.template-engines") %></a>
         </li>
         <li>
           <a href="/en/docs/localization">Localization</a>
         </li>
         <li>
           <a href="/en/docs/testing">Testing</a>
+        </li>
+        <li>
+          <a href="/en/docs/events">Events</a>
         </li>
         <li>
           <a href="/en/docs/videos">Videos</a>
@@ -235,14 +244,14 @@
           <a href="<%= docPath({name: "troubleshooting", lang: lang}) %>"><%= t("menu.troubleshooting") %></a>
         </li>
         <li>
-          <a href="<%= trainingURL %>" target="_blank" rel="noopener noreferrer"><%= t("menu.training-and-consulting") %></a>
-        </li>
-        <li>
           <a href="<%= docPath({name: "slack", lang: lang}) %>">#Buffalo/Slack</a>
         </li>
       </ul>
     </li>
 
+    <li>
+      <a href="<%= docPath({name: "support", lang: lang}) %>"><%= t("menu.support") %></a>
+    </li>
     <li>
       <a href="<%= docPath({name: "contributing", lang: lang}) %>"><%= t("menu.contributing") %></a>
     </li>

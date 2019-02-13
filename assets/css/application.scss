@@ -1,10 +1,12 @@
 @import "~bootstrap-sass/assets/stylesheets/_bootstrap-sprockets.scss";
-@import "~bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import "bootstrap.scss";
 @import "~font-awesome/css/font-awesome.css";
 @import "~highlightjs/styles/monokai.css";
 @import "theme.scss";
 @import "skin.scss";
 @import "custom.scss";
+
+$titles-orange: #CC471E;
 
 .main-content {
   padding-top: 40px;
@@ -66,9 +68,14 @@ h2 {
   margin-bottom: 0;
   margin-right: -15px;
   color: #fff;
+
+  a {
+    color: #fff;
+    text-decoration: underline #fff;
+  }
 }
 
-.container+#global-footer {
+.container + #global-footer {
   margin-right: 0;
   margin-left: 0;
 }
@@ -79,7 +86,7 @@ h2 {
   }
 
   .container {
-    &>#global-footer {
+    & > #global-footer {
       margin-left: 0;
     }
   }
@@ -89,7 +96,6 @@ h2 {
   @extend .jumbotron;
 
   background-color: #FFF3CA;
-
   margin-left: -50px;
   margin-right: -50px;
 
@@ -118,7 +124,7 @@ h2 {
   @extend .col-md-3;
 
   h4 {
-    color: #e0562e;
+    color: $titles-orange;
     text-align: center;
     font-variant: small-caps;
 
@@ -181,7 +187,7 @@ h2 {
 a {
   code {
     text-decoration: underline;
-    text-decoration-color: #62a8ea;
+    text-decoration-color: #125B96;
 
     &:hover {
       text-decoration: none;
@@ -195,4 +201,24 @@ a {
   @extend .label-primary;
 
   font-family: Arial, Helvetica, sans-serif;
+
+  a {
+    color: #fff;
+  }
+}
+
+.feedback {
+  border-top: solid 3px #dfdfdf;
+}
+
+.feedback-row {
+  &:last-child{
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 7px;
+  }
+  @extend .row;
+  border-bottom: solid 1px #dfdfdf;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
 }

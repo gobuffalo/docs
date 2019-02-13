@@ -14,7 +14,7 @@ Buffalo is currently available and tested on the following platforms:
 * Mac OSX
 * Windows
 
-<%= title("Requirements") %>
+## Requirements
 
 Before installing make sure you have the required dependencies installed:
 
@@ -35,7 +35,7 @@ Again, if you don't need a database, you won't need these.
 
 * **SQLite 3**: GCC, or equivalent C compiler for [mattn/go-sqlite3](https://github.com/mattn/go-sqlite3).
 
-<%= title("Installation from a release archive - 64 bits", {title: "Installation from a release archive"}) %>
+## Installation from a release archive - 64 bits
 
 <%= note() { %>
 The release packages contain Buffalo without SQLite support.
@@ -46,7 +46,7 @@ Since `v0.10.3`, pre-compiled archives are provided with each release. If you do
 ### GNU / Linux
 
 ```bash
-$ wget  https://github.com/gobuffalo/buffalo/releases/download/v<%= version %>/buffalo_<%= version %>_linux_amd64.tar.gz
+$ wget https://github.com/gobuffalo/buffalo/releases/download/v<%= version %>/buffalo_<%= version %>_linux_amd64.tar.gz
 $ tar -xvzf buffalo_<%= version %>_linux_amd64.tar.gz
 $ sudo mv buffalo-no-sqlite /usr/local/bin/buffalo
 ```
@@ -54,21 +54,21 @@ $ sudo mv buffalo-no-sqlite /usr/local/bin/buffalo
 ### MacOS
 
 ```bash
-$ wget  https://github.com/gobuffalo/buffalo/releases/download/v<%= version %>/buffalo_<%= version %>_darwin_amd64.tar.gz
+$ curl -OL https://github.com/gobuffalo/buffalo/releases/download/v<%= version %>/buffalo_<%= version %>_darwin_amd64.tar.gz
 $ tar -xvzf buffalo_<%= version %>_darwin_amd64.tar.gz
 $ sudo mv buffalo-no-sqlite /usr/local/bin/buffalo
 # or if you have ~/bin folder setup in the environment PATH variable
 $ mv buffalo-no-sqlite ~/bin/buffalo
 ```
 
-<%= title("Scoop (Windows)") %>
+## Scoop (Windows)
 Buffalo can be installed using the [Scoop](http://scoop.sh/) package manager:
 
 ```powershell
 PS C:\> scoop install buffalo
 ```
 
-<%= title("Homebrew (macOS)") %>
+## Homebrew (macOS)
 
 On macOS, you can also install Buffalo with [Homebrew](https://brew.sh/). After you have Homebrew [installed](https://docs.brew.sh/Installation), you can easily install Buffalo:
 
@@ -76,7 +76,7 @@ On macOS, you can also install Buffalo with [Homebrew](https://brew.sh/). After 
 brew install gobuffalo/tap/buffalo
 ```
 
-<%= title("GoFish (Cross-Platforms)") %>
+## GoFish (Cross-Platforms)
 
 [GoFish](https://gofi.sh/index.html) is a cross-platform systems package manager, that works across Windows, MacOSX and Linux.
 
@@ -85,10 +85,10 @@ After you have GoFish [installed](https://gofi.sh/index.html#install), you can v
 ```bash
 $ gofish install buffalo
 ==> Installing buffalo...
-🐠  buffalo 0.12.6: installed in 3.223672926s
+🐠  buffalo <%= version %>: installed in 3.223672926s
 ```
 
-<%= title("Custom installation **with** SQLite3 Support", {title: "Installation with SQLite3 Support"}) %>
+## Custom installation **with** SQLite3 Support
 
 **SQLite 3** requires a GCC, or equivalent C compiler for [mattn/go-sqlite3](https://github.com/mattn/go-sqlite3) to compile. You **must** have a GCC installed **first** before installing Buffalo.
 
@@ -108,7 +108,7 @@ PS C:\> scoop install gcc
 These instructions can also be used for upgrading to a newer version of Buffalo.
 <% } %>
 
-<%= title("Custom installation **without** SQLite3 Support", {title: "Installation without SQLite3 Support"}) %>
+## Custom installation **without** SQLite3 Support
 
 ```bash
 $ go get -u -v github.com/gobuffalo/buffalo/buffalo
@@ -118,7 +118,7 @@ $ go get -u -v github.com/gobuffalo/buffalo/buffalo
 These instructions can also be used for upgrading to a newer version of Buffalo.
 <% } %>
 
-<%= title("Verify your installation") %>
+## Verify your installation
 
 You can check if your installation is working, by executing the `buffalo` command in a terminal/command prompt:
 
@@ -141,7 +141,7 @@ Available Commands:
   setup       Setups a newly created, or recently checked out application.
   task        Runs your grift tasks
   test        Runs the tests for your Buffalo app
-  update      will attempt to upgrade a Buffalo application to version v0.11.1
+  update      will attempt to upgrade a Buffalo application to version v<%= version %>
   version     Print the version number of buffalo
 
 Flags:
@@ -152,7 +152,7 @@ Use "buffalo [command] --help" for more information about a command.
 
 If you have a similar output, your Buffalo toolbox is ready to work!
 
-<%= title("Next Steps") %>
+## Next Steps
 
 * [Tooling Integration](/en/docs/integrations) - Work with Buffalo, using existing tools.
 * [Generate a New Project](/en/docs/new-project) - Create your first Buffalo project!

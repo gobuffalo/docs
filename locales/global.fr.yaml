@@ -10,7 +10,7 @@
 
 # Helpers
 - id: helpers.since
-  translation: depuis <strong>v{{.version}}</strong>
+  translation: depuis {{.name}}<strong>{{.version}}</strong>
 
 # Top
 - id: top.title
@@ -63,6 +63,12 @@
 - id: menu.config-variables
   translation: Configuration
 
+- id: menu.request-handling
+  translation: Traitement des requêtes
+
+- id: menu.errors-handling
+  translation: Traitement des erreurs
+
 - id: menu.sessions
   translation: Sessions
 
@@ -98,6 +104,15 @@
 
 - id: menu.db-buffalo-integration
   translation: Intégration avec Buffalo
+
+- id: menu.gomods
+  translation: Modules Go
+
+- id: menu.third-party-auth
+  translation: Authentification tierce
+
+- id: menu.template-engines
+  translation: Moteurs de templates
 
 - id: menu.contributing
   translation: Contribuer
@@ -165,6 +180,18 @@
 # Docs
 - id: docs.improve-page-button
   translation: Améliorer cette page
+
+- id: docs.new-issue-button
+  translation: Ouvrir un nouveau ticket
+
+- id: docs.feedback.title
+  translation: Vos retours
+
+- id: docs.feedback.edit
+  translation: "Si vous avez trouvé une erreur ou que quelque chose manque, et que vous souhaitez apporter votre contribution :"
+
+- id: docs.feedback.issue
+  translation: "Si vous souhaitez suggérer une amélioration pour cette page :"
 
 - id: docs.page-not-available-in-your-language
   translation: Cette page n'est pas encore disponible dans votre langue, vous trouverez la version originale en anglais à la place.

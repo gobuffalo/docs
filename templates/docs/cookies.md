@@ -7,7 +7,7 @@ An HTTP cookie is a small piece of data that a server sends to the user's web br
 
 (HTTP) cookies are commonly used to save users state (like whether the user logged-in). See [https://golang.org/pkg/net/http/#Cookie](https://golang.org/pkg/net/http/#Cookie) for more information on cookies in Go.
 
-<%= title("Setting a Cookie") %>
+## Setting a Cookie
 
 ```go
 func MyHandler(c buffalo.Context) error {
@@ -17,7 +17,7 @@ func MyHandler(c buffalo.Context) error {
 }
 ```
 
-<%= title("Setting a Cookie with Expiration") %>
+## Setting a Cookie with Expiration
 
 ```go
 func MyHandler(c buffalo.Context) error {
@@ -28,7 +28,7 @@ func MyHandler(c buffalo.Context) error {
 }
 ```
 
-<%= title("Getting a Cookie") %>
+## Getting a Cookie
 
 ```go
 func MyHandler(c buffalo.Context) error {
@@ -40,7 +40,7 @@ func MyHandler(c buffalo.Context) error {
 }
 ```
 
-<%= title("Deleting a Cookie") %>
+## Deleting a Cookie
 
 
 ```go

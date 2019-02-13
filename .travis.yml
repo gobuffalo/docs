@@ -3,26 +3,9 @@ sudo: required
 
 stages:
   - test
-  - deploy
 
 jobs:
   include:
     - stage: test
       go: 1.11
-      install: 
-        - curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
-        - dep ensure -v
       script: go test -v ./...
-    - stage: deploy
-      if: branch = master AND type != pull_request
-      install: false
-      services:
-        - docker
-      addons:
-        apt:
-          update: true
-          packages:
-            - docker-ce
-      script: 
-        - echo $HEROKU_TOKEN
-        - ./travis-deploy.sh

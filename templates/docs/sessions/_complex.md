@@ -1,4 +1,4 @@
-<%= title("Storing Complex Types") %>
+## Storing Complex Types
 
 It is generally considered **not** good practice to store complex types in a session. There are lots of reasons for this, but it is recommended to store the ID of a type, instead of the "whole" value.
 

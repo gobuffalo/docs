@@ -7,7 +7,7 @@ Tasks are small scripts that are often needed when writing an application. These
 
 <%= vimeo("213096302") %>
 
-<%= title("Writing Tasks") %>
+## Writing Tasks
 
 Tasks must all be in the `grifts` package. A simple task would look like following:
 
@@ -20,7 +20,7 @@ var _ = grift.Add("hello", func(c *grift.Context) error {
 
 <%= partial("docs/generators/tasks.md") %>
 
-<%= title("Listing Available Tasks") %>
+## Listing Available Tasks
 
 ```bash
 $ buffalo task list
@@ -32,7 +32,7 @@ buffalo task routes        # Print out all defined routes
 buffalo task secret        # Generate a cryptographically secure secret key
 ```
 
-<%= title("Running Tasks") %>
+## Running Tasks
 
 ### Development
 

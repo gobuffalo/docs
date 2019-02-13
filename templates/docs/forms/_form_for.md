@@ -1,4 +1,4 @@
-<%= title("Model Forms") %>
+## Model Forms
 
 The `form_for` helper can be used to generate HTML forms for a specified model. This makes the code easier to write, and maintains a level of "consistency" across your application.
 

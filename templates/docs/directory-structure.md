@@ -7,7 +7,7 @@ Buffalo provides you **a minimal directory structure** to work on your project. 
 
 Now that you have a minimal new project, let's go through its contents.
 
-<%= title("The root directory") %>
+## The root directory
 
 Here is the structure of a Buffalo project:
 
@@ -104,6 +104,6 @@ This file contains the database configuration for [pop/soda](https://github.com/
 
 This file bootstraps your app and starts it.
 
-<%= title("Next Steps") %>
+## Next Steps
 
 * [Configuration](/en/docs/config-vars) - Manage your app configuration.

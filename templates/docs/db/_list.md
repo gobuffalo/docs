@@ -1,8 +1,8 @@
 ```bash
-$ buffalo db g --help
+$ buffalo pop g --help
 
 Usage:
-  buffalo db generate [command]
+  buffalo pop generate [command]
 
 Aliases:
   generate, g
@@ -20,5 +20,5 @@ Global Flags:
   -e, --env string      The environment you want to run migrations against. Will use $GO_ENV if set. (default "development")
   -p, --path string     Path to the migrations folder (default "./migrations")
 
-Use "buffalo db generate [command] --help" for more information about a command.
+Use "buffalo pop generate [command] --help" for more information about a command.
 ```

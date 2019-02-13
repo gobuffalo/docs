@@ -7,7 +7,7 @@ Dans ce chapitre, vous allez apprendre comment gérer la configuration de votre 
 
 Les variables d'environnement sont une bonne méthode pour séparer les valeurs sensibles (ou non) liées à un environnement spécifique, du reste de votre application ([comme le décrit The Twelve Factor app (EN)](https://12factor.net/config)). Cela peut aider à définir un comportement basé sur le contexte de l'application (forcer le SSL en production, par exemple), mais aussi isoler les clefs secrètes d'API (comme une API d'accès à une banque). De cette manière, les développeurs peuvent utiliser des valeurs de type « bac-à-sable », et ne pas mettre en danger la version de production.
 
-<%= title("Variables d'environnement disponibles") %>
+## Variables d'environnement disponibles
 
 Les variables suivantes sont utilisées par Buffalo :
 
@@ -22,7 +22,7 @@ Les variables suivantes sont utilisées par Buffalo :
 | `HOST`                   | `http://127.0.0.1:$PORT` | L'« URL » de l'application (c-à-d son adresse publique)    |
 | `SESSION_SECRET`         | `""`                     | Un sel utilisé pour sécuriser les sessions                 |
 
-<%= title("Configuration personnalisée") %>
+## Configuration personnalisée
 
 Vous pouvez toujours fournir vos propres variables, et en récupérer les valeurs depuis votre application. Le paquet [envy](https://github.com/gobuffalo/envy) rend cela très facile&nbsp;!
 
@@ -38,7 +38,7 @@ var MYSECRET = envy.Get("MYSECRET", "")
 REQUIREDSECRET, err := envy.MustGet("REQUIREDSECRET")
 ```
 
-<%= title("Support des fichiers .env") %>
+## Support des fichiers .env
 
 <%= sinceVersion("0.10.3") %>
 

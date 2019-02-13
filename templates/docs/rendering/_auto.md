@@ -1,4 +1,4 @@
-<%= title("Render Auto", {}) %>
+## Render Auto
 
 <%= sinceVersion("0.11.0") %>
 

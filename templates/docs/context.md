@@ -2,11 +2,13 @@
 
 At the heart of every Buffalo request handler is the `Context`. This context gives handlers a simple, and clean, function definition, while being immensely powerful.
 
-<%= title("The Context Interface", {name:"interface"}) %>
+## The Context Interface
 
 The `buffalo.Context` interface supports `context.Context` so it can be passed around and used as a "standard" Go Context.
 
 Since `buffalo.Context` is an interface it is possible to create an application specific implementation that is tailor suited to the needs of the application being built.
+
+<%= sinceVersion("0.12.0") %>
 
 ```go
 type Context interface {
@@ -14,6 +16,7 @@ type Context interface {
   Response() http.ResponseWriter
   Request() *http.Request
   Session() *Session
+  Cookies() *Cookies
   Params() ParamValues
   Param(string) string
   Set(string, interface{})
@@ -23,13 +26,16 @@ type Context interface {
   Bind(interface{}) error
   Render(int, render.Renderer) error
   Error(int, error) error
-  Websocket() (*websocket.Conn, error)
   Redirect(int, string, ...interface{}) error
   Data() map[string]interface{}
+  Flash() *Flash
+  File(string) (binding.File, error)
 }
 ```
 
-<%= title("Context and Rendering") %>
+The `Websocket() (*websocket.Conn, error)` function was removed from `buffalo.Context` in version `v0.12.0`. Use the [http://www.gorillatoolkit.org/pkg/websocket](http://www.gorillatoolkit.org/pkg/websocket) package directly instead
+
+## Context and Rendering
 
 As part of the context interface, there is a `Render` function that takes a type of `render.Renderer`. See [rendering](/docs/rendering) for more information.
 
@@ -42,7 +48,7 @@ func Hello(c buffalo.Context) error {
 }
 ```
 
-<%= title("Implementing the Interface", {name:"implementing"}) %>
+## Implementing the Interface
 
 The `buffalo.Context` is never meant to be "fully" implemented. Instead it is recommended that you use composition and implement only the functions that you want to provide custom implementations of.
 
@@ -79,7 +85,7 @@ func App() *buffalo.App {
 // ...
 ```
 
-<%= title("Ranging Over Parameters") %>
+## Ranging Over Parameters
 
 The `buffalo.Context#Params` method returns [`buffalo.ParamValues`](https://godoc.org/github.com/gobuffalo/buffalo#ParamValues) which is an interface around [`url.Values`](https://golang.org/pkg/net/url/#Values). You can cast to this type in a handler to range over the parameter values.
 
@@ -94,7 +100,7 @@ func HomeHandler(c buffalo.Context) error {
 }
 ```
 
-<%= title("What's in the Context", {name:"whats-in-the-context"}) %>
+## What's in the Context
 
 Buffalo stuffs the context of each request with a lot of information that could be useful in your application, such as the `current_route` or the `session`. Below is a list of what Buffalo adds to the context on each request that you can access from in your actions or templates.
 

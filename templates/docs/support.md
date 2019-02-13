@@ -32,7 +32,7 @@ Working on Buffalo daily? The [Gopher Guides](https://www.gopherguides.com) offe
 
 Is your company, or team, getting ready to do your first major Buffalo, or Go, project? The [Gopher Guides](https://www.gopherguides.com) have been bringing companies up to speed for years with their customized training platform and curriculum.
 
-They work with you and organization to create a completely customized training program tailored to your exact needs. They don't push prepackaged materials or outlines on you, because your business and project is unique.
+They work with you and your organization to create a completely customized training program tailored to your exact needs. They don't push prepackaged materials or outlines on you, because your business and project is unique.
 
 With in person, on site, training a prominent member of the Go community travels to your facility to help get your team up to speed in as little as two days.
 

@@ -1,6 +1,6 @@
 # Template Engines
 
-<%= title("Map Template Engines by Extension") %>
+## Map Template Engines by Extension
 <%= sinceVersion("0.10.0") %>
 
 Previously you were able to define a single implementation of [`render.TemplateEngine`](https://godoc.org/github.com/gobuffalo/buffalo/render#TemplateEngine) per [`render.Engine`](https://godoc.org/github.com/gobuffalo/buffalo/render#Engine). This has been removed in favor of a map of `render.TemplateEngine`. Now you can map a file extension to a implementation of `render.TemplateEngine`. This means, not only, can you now use multiple template engines in one application, but you can also chain them together.

@@ -7,7 +7,7 @@ Dans ce chapitre, nous allons voir comment installer une app Buffalo comme un se
 
 Il vous permet de configurer votre application d'une manière standard, et de gérer son cycle de vie avec les commandes `systemctl`. Vous pouvez vous référer à la [page man de systemd (EN)](https://www.freedesktop.org/software/systemd/man/systemd.service.html) pour plus d'informations.
 
-<%= title("Installer votre app Buffalo") %>
+## Installer votre app Buffalo
 
 La première étape est de placer votre application dans le bon dossier&nbsp;: sur Debian, l'emplacement habituel pour les applications installées à la main est `/usr/local/bin`. C'est donc ici que nous allons installer l'application.
 
@@ -22,7 +22,7 @@ $ sudo chown root: /usr/local/bin/myapp
 $ sudo chmod +x /user/local/bin/myapp
 ```
 
-<%= title("Créer un fichier de config systemd") %>
+## Créer un fichier de config systemd
 
 Les fichiers de services systemd sont situés dans `/lib/systemd/system/`. Nous allons créer un nouveau fichier `myapp.service` pour notre app.
 
@@ -59,7 +59,7 @@ UMask=007
 WantedBy=multi-user.target
 ```
 
-<%= title("Déclarer les variables d'environment") %>
+## Déclarer les variables d'environment
 
 La manière officielle de gérer la configuration avec Buffalo est à travers les [variables d'environment](/fr/docs/config-vars). En utilisant Systemd, vous pouvez les définir avec un fichier de surcharge.
 
@@ -74,7 +74,7 @@ Environment="SESSION_SECRET=kqdjmlkajdùméa]$"
 
 Chaque ligne `Environment` définit une variable d'environment dans votre app.
 
-<%= title("Jouer avec le service") %>
+## Jouer avec le service
 
 Le service systemd est maintenant prêt, vous pouvez le tester avec les commandes `systemctl` and `journalctl`&nbsp;:
 
@@ -96,7 +96,7 @@ $ sudo systemctl stop myapp.service
 
 Pour stopper le service, pour effectuer une maintenance (par example).
 
-<%= title("Activer le service au démarrage") %>
+## Activer le service au démarrage
 
 Une fois que le service fonctionne comme vous le souhaitez, vous pouvez l'activer au démarrage. De cette manière, si le serveur doit redémarrer, votre app va redémarrer aussi.
 

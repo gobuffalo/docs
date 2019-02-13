@@ -1,4 +1,4 @@
-<%= title("Stockage des sessions") %>
+## Stockage des sessions
 
 Par défaut, Buffalo stocke les sessions via un cookie en utilisant [`sessions.CookieStore`](http://www.gorillatoolkit.org/pkg/sessions#CookieStore).
 

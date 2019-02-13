@@ -1,4 +1,4 @@
-<%= title("Listening with Plugins") %>
+## Listening with Plugins
 
 To enable a plugin to a receive a JSON version of emitted events, the plugin can set the <%= doclink("github.com/gobuffalo/buffalo-plugins/plugins#Command.BuffaloCommand") %> value to `events` when listing the `available` commands for the plugin.
 

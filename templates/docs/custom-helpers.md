@@ -6,7 +6,7 @@ No templating package would be complete without allowing for you to build your o
 
 <%= vimeo("229572343") %>
 
-<%= title("Registering Helpers") %>
+## Registering Helpers
 
 Helper functions can be registered in two different places, depending on how they are to be used.
 
@@ -43,7 +43,7 @@ func HomeHandler(c buffalo.Context) error {
 }
 ```
 
-<%= title("Return Values") %>
+## Return Values
 
 Plush allows you to return any values you would like from a helper function. This guide will focus on helpers that
 are designed to generate "output".
@@ -77,11 +77,11 @@ func() template.HTML {
 }
 ```
 
-<%= title("Input Values") %>
+## Input Values
 
 Custom helper functions can take any type, and any number of arguments. You can even use variadic functions. There is an optional last argument, [`plush.HelperContext`](https://godoc.org/github.com/gobuffalo/plush#HelperContext), that can be received. It's quite useful, and I would recommend taking it, as it provides you access to things like the context of the call, the block associated with the helper, etc...
 
-<%= title("Simple Helpers") %>
+## Simple Helpers
 
 ```go
 r := render.New(render.Options{
@@ -110,7 +110,7 @@ func Greeter(c buffalo.Context) error {
 &lt;h1>Hi Mark!&lt;/h1>
 ```
 
-<%= title("Block Helpers") %>
+## Block Helpers
 
 Like the `if` or `for` statements, block helpers take a "block" of text that can be evaluated and potentially rendered, manipulated, or whatever you would like. To write a block helper, you have to take the `plush.HelperContext` as the last argument to your helper function. This will give you access to the block associated with that call.
 
@@ -158,7 +158,7 @@ HELLO WORLD
 <% } %>
 
 
-<%= title("Getting Values From the Context") %>
+## Getting Values From the Context
 
 <%= codeTabs() { %>
 ```go

@@ -1,4 +1,4 @@
-<%= title("Installing Plugins") %>
+## Installing Plugins
 
 <%= sinceVersion("1.1.0", {pkg: "github.com/gobuffalo/buffalo-plugins"}) %>
 

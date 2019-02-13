@@ -1,4 +1,4 @@
-<%= title("Removing Plugins") %>
+## Removing Plugins
 
 <%= sinceVersion("1.1.0", {pkg: "github.com/gobuffalo/buffalo-plugins"}) %>
 

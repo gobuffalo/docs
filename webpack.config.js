@@ -1,6 +1,5 @@
 const Webpack = require("webpack");
 const Glob = require("glob");
-const path = require("path");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ManifestPlugin = require("webpack-manifest-plugin");
@@ -42,7 +41,7 @@ const configurator = {
     var plugins = [
       new CleanObsoleteChunks(),
       new Webpack.ProvidePlugin({ $: "jquery", jQuery: "jquery" }),
-      new MiniCssExtractPlugin({ filename: "[name].[contenthash].css" }),
+      new MiniCssExtractPlugin({ filename: "[name]-[contenthash:8].css" }),
       new CopyWebpackPlugin([{ from: "./assets", to: "" }], { copyUnmodified: true, ignore: ["css/**", "js/**"] }),
       new Webpack.LoaderOptionsPlugin({ minimize: true, debug: false }),
       new ManifestPlugin({ fileName: "manifest.json" })
@@ -108,7 +107,7 @@ const configurator = {
     var config = {
       mode: env,
       entry: configurator.entries(),
-      output: { filename: "[name].[hash].js", path: `${__dirname}/public/assets` },
+      output: { filename: "[name].[contenthash:8].js", path: `${__dirname}/public/assets` },
       plugins: configurator.plugins(),
       module: configurator.moduleOptions(),
       resolve: {

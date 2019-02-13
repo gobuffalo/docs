@@ -1,4 +1,4 @@
-<%= title("How Does Buffalo Find Plugins?") %>
+## How Does Buffalo Find Plugins?
 
 Buffalo plugins have a set of rules that must be followed for them to be consider, by Buffalo, as a plugin.
 

@@ -4,15 +4,15 @@ import (
 	"testing"
 
 	"github.com/gobuffalo/gobuffalo/actions"
-	"github.com/markbates/willie"
+	"github.com/gobuffalo/httptest"
 	"github.com/stretchr/testify/require"
 )
 
 func Test_RawHomeHandler(t *testing.T) {
 	r := require.New(t)
 
-	w := willie.New(actions.App())
-	res := w.Request("/").Get()
+	w := httptest.New(actions.App())
+	res := w.HTML("/").Get()
 
 	r.Equal(302, res.Code)
 	r.Equal("/en", res.Location())
@@ -21,8 +21,8 @@ func Test_RawHomeHandler(t *testing.T) {
 func Test_HomeHandler(t *testing.T) {
 	r := require.New(t)
 
-	w := willie.New(actions.App())
-	res := w.Request("/en").Get()
+	w := httptest.New(actions.App())
+	res := w.HTML("/en").Get()
 
 	r.Equal(200, res.Code)
 }
@@ -30,8 +30,8 @@ func Test_HomeHandler(t *testing.T) {
 func Test_HomeHandlerFr(t *testing.T) {
 	r := require.New(t)
 
-	w := willie.New(actions.App())
-	res := w.Request("/fr").Get()
+	w := httptest.New(actions.App())
+	res := w.HTML("/fr").Get()
 
 	r.Equal(200, res.Code)
 }

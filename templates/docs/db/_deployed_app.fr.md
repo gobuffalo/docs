@@ -1,4 +1,4 @@
-<%= title("Migrations en production", {name:"migrating-deployed-app"}) %>
+## Migrations en production
 
 <%= note() { %>
 Cette section ne concerne que les utilisateurs de Buffalo.

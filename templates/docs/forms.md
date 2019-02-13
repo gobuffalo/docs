@@ -20,7 +20,7 @@ Both types of form helpers have the following features in common:
 <%= partial("docs/forms/errors.md") %>
 <%= partial("docs/forms/non_bootstrap.md") %>
 
-<%= title("FAQs") %>
+## FAQs
 
 ### How Do I Map a Form to a Model/Struct?
 
@@ -60,12 +60,30 @@ Yes! You most definitely can create and use your own form! The forms provided fr
 
 #### How Do I Handle CSRF Tokens If I Use My Own Form?
 
-If you do decide to use your own forms you are going to need a way to provide the form with the authenticity token.  To solve this problem you can create a helper inside `render.go`.  That code would look something like:
+If you do decide to use your own forms you are going to need a way to provide the form with the authenticity token. There are two ways to solve this issue.
+
+The first way is to use the `authenticity_token` directly in form, since it is already in the context.
+
+```html
+&lt;form method="POST" ...&gt;
+  &lt;input name="authenticity_token" type="hidden" value="&lt;%= authenticity_token %&gt;"&gt;
+&lt;/form&gt;
+```
+
+Another way is to write a helper to generate that line of code for you.
 
 ```go
-"csrf": func(helper plush.HelperContext) template.HTML {
-	t, _ := helper.Render("&lt;input name=\"authenticity_token\" value=\"&lt;%= authenticity_token %&gt;\" type=\"hidden\"&gt;")
-	return template.HTML(t)
+"csrf": func(ctx plush.HelperContext) (template.HTML, error) {
+  tok, ok := ctx.Value("authenticity_token").(string)
+  if !ok {
+    return "", fmt.Errorf("expected CSRF token got %T", ctx.Value("authenticity_token"))
+  }
+  t := tags.New("input", tags.Options{
+    "value": tok,
+    "type":  "hidden",
+    "name":  "authenticity_token",
+  })
+  return t.HTML(), nil
 },
 ```
 
@@ -73,8 +91,7 @@ Now that you have defined a helper to use in your templates you can use your hel
 
 ```html
 &lt;form method="POST" ...&gt;
-  &lt;input type="hidden" name="_method" value="PUT" /&gt;
   &lt;%= csrf() %&gt;
-...
+&lt;/form&gt;
 ```
 

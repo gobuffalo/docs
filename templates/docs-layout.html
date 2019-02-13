@@ -85,6 +85,7 @@
             <div id="navbar" class="navbar-collapse collapse" aria-expanded="true" role="banner">
             <ul class="nav navbar-nav navbar-right">
                 <li<%= if (current_path == "/en/docs/examples" || current_path == "/fr/docs/examples") { %> class="active"<% } %>><a href="/docs/examples"><%= t("top.examples-tutorials") %></a></li>
+                  <li<%= if (current_path == "/en/docs/support" || current_path == "/fr/docs/support") { %> class="active"<% } %>><a href="/docs/support"><%= t("top.support") %></a></li>
                 <li><a href="<%= docPath({name: "index", lang: lang}) %>"><%= t("top.docs") %></a></li>
                 <li><a href="https://github.com/gobuffalo" target="_blank" rel="noopener noreferrer">GitHub</a></li>
                 <li><a href="https://blog.gobuffalo.io" target="_blank" rel="noopener noreferrer"><%= t("top.blog") %></a></li>
@@ -105,12 +106,8 @@
         <div class="row">
             <!-- Main content -->
             <article class="main-content" role="main">
-                <p class="improve-page-btn">
-                    <a href="<%= sourceRoot %><%= current_template %>" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                        <i class="fa fa-pencil"></i> <%= t("docs.improve-page-button") %>
-                    </a>
-                </p>
                 <%= yield %>
+                <%= partial("feedback_footer.html") %>
             </article>
             <!-- END Main content -->
         </div>
@@ -120,6 +117,7 @@
 
     <!-- Scripts -->
     <%= javascriptTag("application.js") %>
+    <%= javascriptTag("docs.js") %>
 
     <%= partial("analytics.html") %>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>

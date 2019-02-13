@@ -1,4 +1,4 @@
-<%= title("buffalo.BaseResource") %>
+## buffalo.BaseResource
 
 There are often occasions, such as JSON APIs where a resource doesn't need to implement endpoints such as `/widget/{widget_id}/edit`.
 
@@ -21,6 +21,6 @@ func (v BaseResource) Edit(c Context) error {
 }
 ```
 
-<%= title("Video Presentation") %>
+## Video Presentation
 
 <%= vimeo("212302823") %>

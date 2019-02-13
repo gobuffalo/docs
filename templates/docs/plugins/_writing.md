@@ -1,4 +1,4 @@
-<%= title("Writing a Plugin") %>
+## Writing a Plugin
 
 First, you must understand [how Buffalo finds plugins](#how-does-buffalo-find-plugins), before you can successfully write one.
 

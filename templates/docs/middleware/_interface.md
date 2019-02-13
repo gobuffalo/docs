@@ -1,4 +1,4 @@
-<%= title("The Middleware Interface") %>
+## The Middleware Interface
 
 The [`buffalo.MiddlewareFunc`](https://godoc.org/github.com/gobuffalo/buffalo#MiddlewareFunc) interface is any function that takes a `buffalo.Handler` and returns a `buffalo.Handler`.
 

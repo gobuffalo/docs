@@ -1,4 +1,4 @@
-<%= title("Null Sessions for APIs") %>
+## Null Sessions for APIs
 
 When building API servers the default cookie session store is undesirable. The [`sessions.Null`](`sessions.Null`) type is the recommended replacement for the default session store.
 

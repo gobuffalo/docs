@@ -1,4 +1,4 @@
-<%= title("Using Middleware with One Action") %>
+## Using Middleware with One Action
 
 Often there are cases when you want to use a piece of middleware on just one action, and not on the whole application or resource.
 

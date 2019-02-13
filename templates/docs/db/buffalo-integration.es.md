@@ -5,7 +5,7 @@
 
 Buffalo proporciona un middleware Pop para facilitar el uso de la base de datos dentro de Buffalo: https://github.com/gobuffalo/buffalo-pop
 
-<%= title("El Middleware de Transacción Pop") %>
+## El Middleware de Transacción Pop
 
 ### Configuración
 

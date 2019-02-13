@@ -1,4 +1,4 @@
-<%= title("Nesting resources") %>
+## Nesting resources
 
 To simplify creating resource hierarchies, Buffalo supports nesting resources.
 

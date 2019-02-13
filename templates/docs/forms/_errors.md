@@ -1,4 +1,4 @@
-<%= title("Error Handling") %>
+## Error Handling
 
 Both `form` and `form_for` helpers have support for handling errors from the [`github.com/gobuffalo/validate`](https://github.com/gobuffalo/validate) package.
 

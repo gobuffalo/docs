@@ -1,10 +1,12 @@
-<%= title("Basic Forms") %>
+## Basic Forms
 
 The `form` helper can be used to generate HTML forms. Since this type of form isn't attached to any particular "model" all information must be passed as options to the form and it's methods.
 
 <%= codeTabs() { %>
+
 ```erb
 // templates/talks/edit.html
+
 &lt;%= form({action: talkPath({id: 3}), method: "PUT"}) { %&gt;
   &lt;div class="row"&gt;
     &lt;div class="col-md-12"&gt;

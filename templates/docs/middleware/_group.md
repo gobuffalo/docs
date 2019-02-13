@@ -1,4 +1,4 @@
-<%= title("Group Middleware", {}) %>
+## Group Middleware
 
 ```go
 a := buffalo.New(buffalo.Options{})

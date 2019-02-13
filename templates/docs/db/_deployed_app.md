@@ -1,4 +1,4 @@
-<%= title("Migrations Once Deployed", {name:"migrating-deployed-app"}) %>
+## Migrations Once Deployed
 
 <%= note() { %>
 This section is only for Buffalo users.

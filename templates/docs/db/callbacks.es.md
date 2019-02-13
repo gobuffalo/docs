@@ -41,6 +41,6 @@ Los _callbacks_ disponibles incluyen:
 * [AfterDestroy](https://godoc.org/github.com/gobuffalo/pop#AfterDestroyable)
 * [AfterFind](https://godoc.org/github.com/gobuffalo/pop#AfterFindable)
 
-<%= title("Contenido relacionado") %>
+## Contenido relacionado
 
 * [Models](/en/docs/db/models) - Defina un modelo de base de datos.

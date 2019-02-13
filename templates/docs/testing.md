@@ -1,6 +1,6 @@
 # Testing
 
-<%= title("Running Tests") %>
+## Running Tests
 
 The Buffalo test runner will make sure your test environment is correct, and run your tests.
 
@@ -31,7 +31,7 @@ Debugging a specific test is a difficult task, if you must execute all existing 
 $ buffalo test -m "FooMethod"
 ```
 
-<%= title("Test Suites") %>
+## Test Suites
 
 Buffalo uses the [`github.com/gobuffalo/suite`](https://github.com/gobuffalo/suite) package to create test suites.
 
@@ -44,7 +44,7 @@ the test:
 * The [`github.com/stretchr/testify/require`](https://github.com/stretchr/testify) test assertions.
 * The [`github.com/markbates/willie`](https://github.com/markbates/willie) HTTP testing library.
 
-<%= title("Test Example") %>
+## Test Example
 
 ```go
 func (as *ActionSuite) Test_WidgetsResource_Create() {
@@ -63,7 +63,7 @@ func (as *ActionSuite) Test_WidgetsResource_Create() {
 }
 ```
 
-<%= title("Fixtures") %>
+## Fixtures
 
 <%= sinceVersion("0.12.0") %>
 
@@ -124,7 +124,7 @@ func (as *ActionSuite) Test_WidgetsResource_List() {
 
 You can find more detailed information on fixtures in the [gobuffalo/suite repository README](https://github.com/gobuffalo/suite#fixtures-test-data).
 
-<%= title("Accessing the Session") %>
+## Accessing the Session
 
 Being able to manipulate the session for testing is very important. Test suites in Buffalo give you access to a testing session that you can use.
 
@@ -153,7 +153,7 @@ func (as *ActionSuite) Test_HomeHandler_LoggedIn() {
 }
 ```
 
-<%= title("Coverage Reports") %>
+## Coverage Reports
 
 <%= note() { %>
 The following feature requires the use of **Go 1.10** or a more recent version.

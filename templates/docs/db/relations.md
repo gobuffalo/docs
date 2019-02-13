@@ -7,7 +7,7 @@ Associations are the Pop way to define **a relation between two objects in the d
 
 <%= vimeo("253683926") %>
 
-<%= title("Example") %>
+## Example
 
 ```go
 type User struct {
@@ -42,7 +42,7 @@ type Address struct {
 type Addresses []Address
 ```
 
-<%= title("Available Struct Tags") %>
+## Available Struct Tags
 
 Using the above [example](#example) code below is a list of available struct tags and how to use them.
 
@@ -53,7 +53,7 @@ Using the above [example](#example) code below is a list of available struct tag
 * `fk_id`: Defines the column name in the target association that matches model ID. In the example above `Song` has a column named `u_id` that represents id of `users` table. When loading `FavoriteSong`, `u_id` will be used instead of `user_id`.
 * `order_by`: Used in `has_many` and `many_to_many` to indicate the order for the association when loading. The format to use is `order_by:"&lt;column_name> &lt;asc | desc>"`
 
-<%= title("Eager Loading Associations") %>
+## Eager Loading Associations
 
 The [`pop.Connection.Eager()`](https://godoc.org/github.com/gobuffalo/pop#Connection.Eager) method tells Pop to load the associations for a model when that model is loaded from the database.
 
@@ -68,18 +68,18 @@ By default `Eager` will load all the assigned associations for the model. To spe
 err  = tx.Eager("Books").Where("name = 'Mark'").All(&u) // preload only Books association for user with name 'Mark'.
 ```
 
-<%= title("Loading Associations for an Existing Model") %>
+## Loading Associations for an Existing Model
 
 The [`pop.Connection.Load()`](https://godoc.org/github.com/gobuffalo/pop#Connection.Load) method takes a model struct, that has already been populated from the database, and an optional list of associations to load.
 
 ```go
-tx.Load(u) // load all associations for user, i.e Books, Houses and FavoriteSong
-tx.Load(u, "Books") // load only the Books associations for user
+tx.Load(&u) // load all associations for user, i.e Books, Houses and FavoriteSong
+tx.Load(&u, "Books") // load only the Books associations for user
 ```
 
 The `Load` method will not retreive the `User` from the database only its associations.
 
-<%= title("Flat Nested Creation") %>
+## Flat Nested Creation
 
 Pop allows you to create the models and their associations with other models in one step by default. You no longer need to create every association separately anymore. Pop will even create join table records for `many_to_many` associations.
 
@@ -128,7 +128,7 @@ book := Book{
 tx.Create(&book)
 ```
 
-<%= title("Eager Creation") %>
+## Eager Creation
 
 Pop also allows you to create models and embed the creation of their associations in one step as well.
 
@@ -174,6 +174,6 @@ tx.Eager().Create(&book)
 
 In the case that you feed the eager create with associate models that already exist it will, instead of creating duplicates of them or updating the contents of them, simply create/update the associations with them.
 
-<%= title("Related Content") %>
+## Related Content
 
 * [Associations with Pop: 1 to 1](https://blog.gobuffalo.io/associations-with-pop-1-to-1-592f02e2bdd8) - An article about 1 to 1 associations in Pop.

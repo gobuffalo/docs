@@ -1,4 +1,4 @@
-<%= title("Automatic extensions", {}) %>
+## Automatic extensions
 
 <%= sinceVersion("0.10.2") %>
 

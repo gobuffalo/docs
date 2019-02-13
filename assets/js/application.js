@@ -2,39 +2,6 @@ require("expose-loader?$!expose-loader?jQuery!jquery");
 require("./theme.js");
 require("expose-loader?Clipboard!./clipboard.min.js");
 
-var buildSideNav = () => {
-  let loc = window.location;
-  let path = loc.pathname.replace(/\/$/, '');
-  let sb = $(`aside a[href="${path}"]`);
-  let sn = sb.closest("ul.sidenav");
-  sn.addClass("open");
-  sn.prev().addClass("open");
-
-  let items = [];
-  $(".main-content a[name]").each((_, a) => {
-    let $a = $(a);
-    if ($a.attr("title")) {
-      let name = $a.attr("name");
-      let title = $a.attr("title");
-      items.push(`<li><a href="${path}#${name}">${title}</a></li>`);
-    }
-  });
-  if (items.length > 0) {
-    let ul = $("<ul class=\"summary\">").append(items);
-    $(".main-content h1:first").after(ul);
-    sb.addClass("active");
-  }
-};
-
-var activateSideNav = () => {
-  let loc = window.location;
-  let path = loc.pathname === "/" ? "/docs/overview" : loc.pathname;
-  $(".sidebar li").removeClass("active");
-  let item = $(`.sidebar a[href="${path}"]`);
-  item.closest("li").addClass("active");
-};
-
-
 $(() => {
   $(".faq h6").on("click", (e) => {
     let a = $(e.currentTarget).find("a[name]");
@@ -44,29 +11,18 @@ $(() => {
   let hash = window.location.hash;
   if (hash !== "") {
     if (hash.charAt(0) === "#") {
-     hash = hash.slice(1);
+      hash = hash.slice(1);
     }
-    $(`.faq h6 a[name=${hash}]`).click();
+    $(`.faq h6 a[name="${hash}"]`).click();
   }
 });
 
-
 $(() => {
-  $("a[href]").each((_, a) => {
-    let $a = $(a);
-    let href = $a.attr("href");
-    if (href.startsWith("http")) {
-      $a.attr("target", "_blank");
-    }
-  });
-});
-
-$(() => {
-  activateSideNav();
-  buildSideNav();
-
   $(".code-tabs .window-content").each((_, wc) => {
-    $(wc).find("pre").first().show();
+    $(wc).
+      find("pre").
+      first().
+      show();
   });
 
   $("img[title=screenshot]").addClass(
@@ -77,7 +33,8 @@ $(() => {
 $(() => {
   $(".codetabs").each((_, ct) => {
     let el = $(ct);
-    let ul = el.find(".nav-tabs");
+    let ul = el.find("ul:first-child");
+    ul.addClass("nav nav-tabs");
     let tc = el.find(".tab-content");
     let id = el.attr("id");
     let blocks = el.find(".tab-content .highlight");
@@ -88,21 +45,21 @@ $(() => {
       name = name.toString();
       try {
         name = name.replace("Copy// ", "");
-        // name = name.replace("$ ", "");
+        //name = name.replace("$ ", "");
 
-      let act = "";
-      if (i === 0) {
-        act = "active";
-      }
-      ul.append(
-        `<li role="presentation" class="${act}"><a href="#${lid}" role="tab" data-toggle="tab">${name}</a></li>`
-      );
-      tc.append(
-        $(
-          `<div role="tabpanel" class="tab-pane ${act}" id="${lid}"></div>`
-        ).append(block)
-      );
-      blocks.remove(block);
+        let act = "";
+        if (i === 0) {
+          act = "active";
+        }
+        ul.append(
+          `<li role="presentation" class="${act}"><a href="#${lid}" role="tab" data-toggle="tab">${name}</a></li>`
+        );
+        tc.append(
+          $(
+            `<div role="tabpanel" class="tab-pane ${act}" id="${lid}"></div>`
+          ).append(block)
+        );
+        blocks.remove(block);
       } catch (err) {
         if (window.console) {
           console.log("err:", err);
@@ -115,7 +72,9 @@ $(() => {
 //Handle language switch
 $(() => {
   $("#language").on("change", (e) => {
-    $(e.target).closest("form").submit();
+    $(e.target).
+      closest("form").
+      submit();
   });
 
   $("body").on("hidden.bs.modal", (e) => {

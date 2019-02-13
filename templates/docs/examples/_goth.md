@@ -1,4 +1,4 @@
-<%= title("Using Goth with Buffalo") %>
+## Using Goth with Buffalo
 
 <%= vimeo("223666374") %>
 

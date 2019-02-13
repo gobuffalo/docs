@@ -1,4 +1,4 @@
-<%= title("Business-card in GoBuffalo") %>
+## Business-card in GoBuffalo
 
 [Part 1 - templates, navigation](http://mycodesmells.com/post/business-card-in-gobuffalo---part-1)
 

@@ -2,7 +2,7 @@
 
 <%= partial("docs/disclaimer.html") %>
 
-<%= title("Iterating Through Arrays") %>
+## Iterating Through Arrays
 
 When looping through `arrays` or `slices`, the block being looped through will have access to the "global" context.
 
@@ -26,7 +26,7 @@ When using the one argument version the index is omitted and just the value is r
 &lt;/ul>
 ```
 
-<%= title("Iterating Through Maps", {name:"each-maps"}) %>
+## Iterating Through Maps
 
 Looping through `maps` using the `each` helper is also supported, and follows very similar guidelines to looping through `arrays`.
 

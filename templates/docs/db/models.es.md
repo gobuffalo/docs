@@ -7,7 +7,7 @@ Pop, como ORM, le permite traducir tablas de base de datos en estructuras Go. De
 
 En este capítulo, aprenderá a trabajar con modelos a mano; y cómo mejorar su flujo de trabajo utilizando los generadores brindados.
 
-<%= title("El directorio de modelos") %>
+## El directorio de modelos
 
 Los archivos de modelos Pop se almacenan en el directorio `models`, en la raíz de su proyecto (consulte el capítulo [Estructura de directorio](/es/docs/directory-structure) para obtener más información sobre la forma en que Buffalo organiza sus archivos).
 
@@ -16,7 +16,7 @@ Este directorio contiene:
 * Un archivo `models.go`, que define las partes comunes para cada modelo definido. También contiene un _pointer_ a la conexión configurada. Recuerda que el código es suyo, así que puede colocar lo que quiera aquí.
 * Archivos de definición de modelo, uno para cada modelo (por lo que uno por cada tabla de base de datos a la que desee acceder de esta manera).
 
-<%= title("Definir un modelo simple") %>
+## Definir un modelo simple
 
 Un archivo de modelo define una asignación para la tabla de la base de datos, los métodos de validación y las devoluciones de llamada Pop si desea agregar más lógica relacionada con el modelo.
 
@@ -30,7 +30,7 @@ Comenzaremos por crear un nuevo archivo en el directorio `models`, llamado `soda
 
 ¡Eso es! ¡No necesita nada más para trabajar con Pop! Tenga en cuenta que, para cada campo de tabla, definimos una etiqueta `pop` que coincide con el nombre del campo, pero no es obligatorio. Si no proporciona un nombre, Pop usará el nombre del campo _struct_ para generar uno.
 
-<%= title("Uso del generador") %>
+## Uso del generador
 
 <%= note() { %>
 **Nota para los usuarios de Buffalo**: los comandos `soda` están incrustados en el comando` buffalo`, detrás del espacio de nombres `pop`. Así que cada vez que quiera usar un comando de `soda`, simplemente ejecute `buffalo pop` en su lugar.<% } %>
@@ -51,7 +51,7 @@ O en forma corta:
 $ soda d m [name]
 ```
 
-<%= title("Personalizar modelos") %>
+## Personalizar modelos
 
 ### Asignación de campos de modelo
 
@@ -191,7 +191,7 @@ func (u User) TableName() string {
 }
 ```
 
-<%= title("Modelos de vistas") %>
+## Modelos de vistas
 
 Una [vista](https://en.wikipedia.org/wiki/View_(SQL)) es un objeto de colección de base de datos que almacena el resultado de una consulta. Como este objeto actúa como una tabla de solo lectura, puede asignarlo a los modelos Pop como una tabla.
 
@@ -248,7 +248,7 @@ type Soda struct {
 
 Como aprendimos en este capítulo, cada atributo de la estructura tiene una etiqueta de solo lectura `rw:"r"`. Como una vista es un objeto de solo lectura, impide cualquier operación de escritura antes de llegar a la base de datos.
 
-<%= title("Contenido relacionado") %>
+## Contenido relacionado
 
 * [Migraciones](/es/docs/db/migrations) - Escribe migraciones de bases de datos.
 * [Consulta](/es/docs/db/querying) - Consulta dato de su base de datos.

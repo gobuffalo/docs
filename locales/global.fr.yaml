@@ -132,6 +132,9 @@
 - id: menu.troubleshooting
   translation: Problèmes fréquents
 
+- id: menu.support
+  translation: Support
+
 - id: menu.training-and-consulting
   translation: Formation et consulting
 

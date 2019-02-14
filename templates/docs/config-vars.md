@@ -13,7 +13,7 @@ The following variables are used by Buffalo:
 
 | Variable                 | Default                  | Usage                                                      |
 | ---                      | ---                      | ---                                                        |
-| `GO_ENV`                 | `development`            | The "environment" that Buffalo is run in                   |
+| `GO_ENV`                 | `development`            | The environment (dev, qa, production etc.) that Buffalo is run in                   |
 | `GO_BIN`                 | `go`                     | The Go compiler to use                                     |
 | `BUFFALO_PLUGIN_PATH`    | `$PATH`                  | Where Buffalo looks for plugins                            |
 | `BUFFALO_PLUGIN_TIMEOUT` | `1s`                     | How long Buffalo waits for a plugin to respond             |

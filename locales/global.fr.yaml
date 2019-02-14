@@ -31,6 +31,9 @@
 - id: top.store
   translation: Boutique
 
+- id: top.support
+  translation: Support
+
 # Footer
 - id: footer.copyright
   translation: Copyright &copy; {{ .year }} Buffalo. Tous droits réservés.

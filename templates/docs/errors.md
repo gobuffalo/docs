@@ -74,7 +74,7 @@ app = buffalo.New(buffalo.Options{
 app.ErrorHandlers[422] = func(status int, err error, c buffalo.Context) error {
   res := c.Response()
   res.WriteHeader(422)
-  res.Write([]byte(fmt.Sprintf("Oops!! There was an error %s", err.Error())))
+  res.Write([]byte(fmt.Sprintf("Oops!! There was an error: %s", err.Error())))
   return nil
 }
 
@@ -86,7 +86,7 @@ func MyHandler(c buffalo.Context) error {
 ```
 
 ```text
-GET /oops -> [422] Oh no!
+GET /oops -> [422] Oops!! There was an error: Oh no!
 ```
 
 In the above example any error from your application that returns a status of `422` will be caught by the custom handler and will be dealt with accordingly.

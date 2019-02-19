@@ -54,3 +54,30 @@ You can also drop just one of the configured databases by using the `-e` flag an
 ```bash
 $ soda drop -e test
 ```
+
+## Generating Models
+
+The available types for use in the generator are:
+
+| Base type             | Nullable        | Slice/Array |
+|-----------------------|:---------------:|------------:|
+|int                    |nulls.Int        |slices.Int   |
+|int32                  |nulls.Int32      | ------      |
+|int64                  |nulls.Int64      | ------      |
+|uint32                 |nulls.UInt32     | ------      |
+|float32                |nulls.Float32    | ------      |
+|float, float64         |nulls.Float64    |slices.Float |
+|bool                   |nulls.Bool       | ------      |
+|[]byte                 |nulls.ByteSlice  | ------      |
+|string                 |nulls.String     |slices.String|
+|uuid.UUID              |nulls.UUID       |slices.UUID  |
+|time.Time              |nulls.Time       | ------      |
+|map[string]interface{} | ---------       |slices.Map   |
+
+
+For example:
+
+```bash
+soda generate model user id:uuid name:string email:string password:string
+soda generate model post user_id:uuid title:string text:blob tags:slices.String
+```

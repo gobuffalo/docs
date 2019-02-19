@@ -52,6 +52,8 @@ Or in short form:
 $ soda d m [name]
 ```
 
+You can [read more about `soda` here](https://gobuffalo.io/en/docs/db/toolbox)
+
 ## Customize models
 
 ### Mapping Model Fields

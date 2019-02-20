@@ -57,7 +57,7 @@ const configurator = {
   moduleOptions: function() {
     return {
       rules: [
-        { test: /\.jsx?$/, loader: "babel-loader", exclude: /node_modules/, query: { presets: ['es2015', 'stage-2']}},
+        { test: /\.jsx?$/, loader: "babel-loader", exclude: /node_modules/, query: { presets: ['env', 'stage-2']}},
         { test: /\.s[ac]ss$/,
             use: [
               MiniCssExtractPlugin.loader,

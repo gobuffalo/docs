@@ -10,8 +10,8 @@ WORKDIR /tmp/gobuffalo
 
 # this will cache the npm install step, unless package.json changes
 ADD package.json .
-ADD yarn.lock .
-RUN yarn install --no-progress
+ADD package-lock.json .
+RUN npm install --no-progress
 ADD . .
 RUN GO111MODULE=on buffalo build --static -o /bin/app -v --environment=production --skip-template-validation
 

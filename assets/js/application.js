@@ -2,6 +2,8 @@ require("expose-loader?$!expose-loader?jQuery!jquery");
 require("./theme.js");
 require("expose-loader?Clipboard!./clipboard.min.js");
 
+import highlighter from 'highlight.js'
+
 $(() => {
   $(".faq h6").on("click", (e) => {
     let a = $(e.currentTarget).find("a[name]");
@@ -19,10 +21,7 @@ $(() => {
 
 $(() => {
   $(".code-tabs .window-content").each((_, wc) => {
-    $(wc).
-      find("pre").
-      first().
-      show();
+    $(wc).find("pre").first().show();
   });
 
   $("img[title=screenshot]").addClass(
@@ -84,3 +83,10 @@ $(() => {
     });
   });
 });
+
+
+$(() => {
+  $('.highlight pre').each(function(_, block) {
+    highlighter.highlightBlock(block);
+  });
+})

@@ -100,18 +100,18 @@
         <!-- END Top navbar & branding -->
     </header>
 
-    <%= partial("sidebar.html") %>
+    <%= partial("partials/sidebar.html") %>
 
     <main class="container-fluid">
         <div class="row">
             <!-- Main content -->
             <article class="main-content" role="main">
                 <%= yield %>
-                <%= partial("feedback_footer.html") %>
+                <%= partial("partials/feedback_footer.html") %>
             </article>
             <!-- END Main content -->
         </div>
-        <%= partial("footer.html") %>
+        <%= partial("partials/footer.html") %>
     </main>
 
 
@@ -119,7 +119,7 @@
     <%= javascriptTag("application.js") %>
     <%= javascriptTag("docs.js") %>
 
-    <%= partial("analytics.html") %>
+    <%= partial("partials/analytics.html") %>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script>
         $(document).ready(function () {

@@ -4,20 +4,6 @@ require("expose-loader?Clipboard!./clipboard.min.js");
 
 import highlighter from 'highlight.js'
 
-$(() => {
-  $(".faq h6").on("click", (e) => {
-    let a = $(e.currentTarget).find("a[name]");
-    let hash = a.attr("name");
-    window.location.hash = hash;
-  });
-  let hash = window.location.hash;
-  if (hash !== "") {
-    if (hash.charAt(0) === "#") {
-      hash = hash.slice(1);
-    }
-    $(`.faq h6 a[name="${hash}"]`).click();
-  }
-});
 
 $(() => {
   $(".code-tabs .window-content").each((_, wc) => {
@@ -27,9 +13,7 @@ $(() => {
   $("img[title=screenshot]").addClass(
     "img-shadow img-responsive center-block img-rounded"
   );
-});
 
-$(() => {
   $(".codetabs").each((_, ct) => {
     let el = $(ct);
     let ul = el.find("ul:first-child");
@@ -42,9 +26,9 @@ $(() => {
       let block = $(b);
       let name = block.text().split("\n")[0];
       name = name.toString();
+
       try {
         name = name.replace("Copy// ", "");
-        //name = name.replace("$ ", "");
 
         let act = "";
         if (i === 0) {
@@ -68,8 +52,9 @@ $(() => {
   });
 });
 
-//Handle language switch
+
 $(() => {
+  //Handle language switch
   $("#language").on("change", (e) => {
     $(e.target).
       closest("form").
@@ -82,11 +67,23 @@ $(() => {
       $(iframe).attr("src", $(iframe).attr("src"));
     });
   });
-});
 
-
-$(() => {
   $('.highlight pre').each(function(_, block) {
     highlighter.highlightBlock(block);
   });
-})
+
+  $(".faq h6").on("click", (e) => {
+    let a = $(e.currentTarget).find("a[name]");
+    let hash = a.attr("name");
+    window.location.hash = hash;
+  });
+
+  let hash = window.location.hash;
+  if (hash !== "") {
+    if (hash.charAt(0) === "#") {
+      hash = hash.slice(1);
+    }
+    $(`.faq h6 a[name="${hash}"]`).click();
+  }
+});
+

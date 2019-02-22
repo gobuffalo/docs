@@ -2,7 +2,7 @@
 
 Buffalo plugins have a set of rules that must be followed for them to be consider, by Buffalo, as a plugin.
 
-* Plugins must be named in the format of `buffalo-&lt;plugin-name>`. For example, `buffalo-myplug`.
+* Plugins must be named in the format of `buffalo-<plugin-name>`. For example, `buffalo-myplugin`.
 * Plugins must be executable and must be available in one of the following places:
   * in the `$BUFFALO_PLUGIN_PATH`
   * if not set, `$GOPATH/bin`, is tried

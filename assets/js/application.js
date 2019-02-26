@@ -2,6 +2,7 @@ require("expose-loader?$!expose-loader?jQuery!jquery");
 require("./theme.js");
 require("expose-loader?Clipboard!./clipboard.min.js");
 
+import "bootstrap/dist/js/bootstrap.bundle"
 import highlighter from 'highlight.js'
 
 

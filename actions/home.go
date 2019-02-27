@@ -12,7 +12,7 @@ import (
 // HomeHandler serves the home page.
 func HomeHandler(c buffalo.Context) error {
 	c.Set("blogPosts", blog.LastPosts)
-	return c.Render(200, r.HTML("home.html", "home-layout.html"))
+	return c.Render(200, r.HTML("overview.html", "home-layout.html"))
 }
 
 // Sponsors serves the sponsors page.

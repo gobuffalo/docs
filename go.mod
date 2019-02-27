@@ -20,24 +20,32 @@ require (
 	github.com/facebookgo/subset v0.0.0-20150612182917-8dac2c3c4870 // indirect
 	github.com/glycerine/go-unsnap-stream v0.0.0-20181221182339-f9677308dec2 // indirect
 	github.com/glycerine/goconvey v0.0.0-20180728074245-46e3a41ad493 // indirect
-	github.com/gobuffalo/buffalo v0.14.0
+	github.com/gobuffalo/buffalo v0.14.0-rc.1
 	github.com/gobuffalo/envy v1.6.15
 	github.com/gobuffalo/events v1.2.0
 	github.com/gobuffalo/genny v0.0.0-20190131190646-008a76242145
 	github.com/gobuffalo/github_flavored_markdown v1.0.7
 	github.com/gobuffalo/httptest v1.1.0
 	github.com/gobuffalo/makr v1.1.5 // indirect
+	github.com/gobuffalo/mw-csrf v0.0.0-20190129204204-25460a055517 // indirect
 	github.com/gobuffalo/mw-forcessl v0.0.0-20180802152810-73921ae7a130
-	github.com/gobuffalo/mw-i18n v0.0.0-20190129204410-552713a3ebb4
-	github.com/gobuffalo/mw-paramlogger v0.0.0-20190129202837-395da1998525
+	github.com/gobuffalo/mw-i18n v0.0.0-20181027200759-09e0c99be4d3
+	github.com/gobuffalo/mw-paramlogger v0.0.0-20181005191442-d6ee392ec72e
+	github.com/gobuffalo/packr v1.22.0
 	github.com/gobuffalo/packr/v2 v2.0.1
 	github.com/gobuffalo/plush v3.7.33+incompatible
+	github.com/gobuffalo/pop v4.9.6+incompatible
+	github.com/gobuffalo/suite v2.6.0+incompatible
 	github.com/gobuffalo/tags v2.0.15+incompatible
+	github.com/gobuffalo/uuid v2.0.5+incompatible
+	github.com/gobuffalo/validate v2.0.3+incompatible
 	github.com/gobuffalo/x v0.0.0-20181110221217-14085ca3e1a9
 	github.com/golang/gddo v0.0.0-20181116215533-9bd4a3295021
 	github.com/golang/snappy v0.0.0-20180518054509-2e65f85255db // indirect
+	github.com/google/go-cmp v0.2.0 // indirect
 	github.com/gopherjs/gopherjs v0.0.0-20181103185306-d547d1d9531e // indirect
 	github.com/grokify/html-strip-tags-go v0.0.0-20180907063347-e9e44961e26f
+	github.com/jackc/pgx v3.3.0+incompatible // indirect
 	github.com/jmhodges/levigo v0.0.0-20161115193449-c42d9e0ca023 // indirect
 	github.com/jmoiron/sqlx v1.2.0 // indirect
 	github.com/jtolds/gls v4.2.1+incompatible // indirect
@@ -61,4 +69,7 @@ require (
 	github.com/tinylib/msgp v1.1.0 // indirect
 	github.com/unrolled/secure v0.0.0-20190103195806-76e6d4e9b90c
 	github.com/willf/bitset v1.1.9 // indirect
+	golang.org/x/net v0.0.0-20190213061140-3a22650c66bd // indirect
+	golang.org/x/sys v0.0.0-20190213121743-983097b1a8a3 // indirect
+	golang.org/x/tools v0.0.0-20190213135902-6bedcd10978a // indirect
 )

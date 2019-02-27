@@ -15,8 +15,8 @@
           <span class="badge badge-pill">Go <%= goMinVersion %>+</span>
         </div>
       </div>
-      <div class="col-md-6 col-lg-4 hidden-xs text-center pt-2">
-        <img src="/assets/images/logo_med.png" alt="buffalo" class="logo-presentation text-centered ml-auto mr-auto mb-3"/>
+      <div class="col-md-6 col-lg-4 text-center hidden-xs">
+        <img src="/assets/images/logo_med.png" alt="buffalo" class="logo-presentation center-block"/>
         <a class="buffalo-video center-block" href="#" data-toggle="modal" data-target="#videoModal">
           <img src="<%= assetPath("images/landing_icons/play_button.svg") %>" alt="play_button">
           <span>Lancer la vidéo</span>
@@ -150,7 +150,7 @@
 </section>
 
 <section class="sponsors">
-  <%= partial("partials/platinum_sponsors.html") %>
+  <%= partial("platinum_sponsors.html") %>
 </section>
 
 <section class="buffalo-at-work">
@@ -180,4 +180,11 @@
   </div>
 </section>
 
-<%= partial("partials/video_modal.html") %>
+<div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <%= partial("docs/youtube.html") %>
+  </div>
+</div>

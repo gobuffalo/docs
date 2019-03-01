@@ -3,7 +3,7 @@ func App() *buffalo.App {
 	if app == nil {
 		app = buffalo.New(buffalo.Options{
 			Env:         ENV,
-			SessionName: "_pepsi_session",
+			SessionName: "_coke_session",
 		})
 		app.Use(forceSSL())
 		if ENV == "development" {

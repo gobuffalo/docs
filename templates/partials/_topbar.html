@@ -1,15 +1,19 @@
-<header class="site-header sticky">
+<header class="site-header sticky <%= if(!contained){ return "docs-header" } %>">
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="<%= if(contained){ return "container" } else { return "container-fluid"} %>">
             <div class="logo-wrapper d-flex justify-content-between align-items-center">
+                <button class="navbar-toggler for-sidebar d-md-none" type="button" data-toggle="offcanvas">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
                 <a class="navbar-brand" href="/<%= lang %>" id="logo">
                     <span class="force-middle"></span>
-                    <img src="/assets/images/logo_top.png" alt="logo"> 
-                    <%= raw(t("top.title")) %>
+                    <img src="/assets/images/logo_top.png" alt="logo"> <%= raw(t("top.title")) %>
                 </a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <!-- <span class="navbar-toggler-icon"></span> -->
+                    <i class="fa fa-ellipsis-v"></i>
                 </button>
             </div>
             

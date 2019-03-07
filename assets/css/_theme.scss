@@ -62,7 +62,8 @@ body[data-spy] {
 }
 
 .container-fluid .main-content {
-  padding-left: 30px
+  padding-left: 30px;
+  max-width: 100%
 }
 
 .container-fluid .sidebar+.main-content {
@@ -78,9 +79,53 @@ body[data-spy] {
   padding-left: 30px
 }
 
+main.container-fluid {
+  @media screen and (max-width: 890px){
+    padding-left: 220px;
+
+    #global-footer .container{
+      max-width: 100%;
+    }
+  }
+}
+
 .docs-header{
   .navbar .navbar-nav>li>a{
     padding: 10px 15px !important;
+  }
+
+  .navbar .navbar-brand{
+    padding: 0;
+    font-weight: 300;
+    font-size: 26px;
+  }
+
+  .landing-page .site-header .navbar .navbar-brand img {
+    margin-right: 9px;
+  }
+
+  @media (max-width: 991px){
+    .logo-wrapper {
+      width: 100%;
+    }
+
+    .navbar .navbar-nav .nav-item {
+      width: 100%;
+    }
+
+    .navbar-collapse {
+      border-top: 1px solid transparent;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.1);
+      margin-top: 10px;
+    }
+  }
+
+  @media screen and (max-width: 767px){
+    .navbar {
+      padding-top: 10px !important;
+      padding-bottom: 10px !important;
+    }
   }
 }
 
@@ -188,14 +233,6 @@ body[data-spy] {
 
 .navbar {
   min-height: 54px;
-}
-
-.navbar .navbar-brand,
-.navbar .navbar-brand:focus,
-.navbar .navbar-brand:hover {
-  color: #fff;
-  font-size: 25px;
-  font-weight: 300
 }
 
 .navbar .navbar-nav>li>a {
@@ -370,7 +407,7 @@ body[data-spy] {
 
 @media screen and (max-width: 767px) {
   .site-header>.navbar {
-    padding: 2px 15px 0 !important
+    padding: 10px 15px !important;
   }
   .navbar .navbar-brand {
     font-size: 22px
@@ -873,7 +910,7 @@ body[data-spy] {
     overflow-x: hidden
   }
   body {
-    padding-top: 50px
+    padding-top: 58px
   }
   .site-header,
   .site-header .navbar {

@@ -78,6 +78,12 @@ body[data-spy] {
   padding-left: 30px
 }
 
+.docs-header{
+  .navbar .navbar-nav>li>a{
+    padding: 10px 15px !important;
+  }
+}
+
 @media screen and (max-width: 991px) {
   .main-content {
     padding: 50px 30px 50px 0
@@ -197,7 +203,8 @@ body[data-spy] {
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 1px;
-  transition: .2s ease
+  transition: .2s ease;
+  font-size: 14px
 }
 
 .navbar .navbar-nav>li>a:focus,

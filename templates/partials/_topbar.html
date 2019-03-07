@@ -1,4 +1,4 @@
-<header class="site-header sticky">
+<header class="site-header sticky <%= if(!contained){ return "docs-header" } %>">
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="<%= if(contained){ return "container" } else { return "container-fluid"} %>">
             <div class="logo-wrapper d-flex justify-content-between align-items-center">

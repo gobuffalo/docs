@@ -87,6 +87,12 @@ main.container-fluid {
       max-width: 100%;
     }
   }
+
+  @media screen and (max-width: 460px){
+    a{
+      word-wrap: break-word;
+    }
+  }
 }
 
 .docs-header{

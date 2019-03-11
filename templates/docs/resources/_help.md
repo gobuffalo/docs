@@ -1,7 +1,7 @@
 ```bash
 $ buffalo generate resource -h
 
-Generates a new actions/resource file
+Generate a new actions/resource file
 
 Usage:
   buffalo generate resource [name] [flags]
@@ -41,10 +41,12 @@ Generates:
 - actions/users_test.go
 
 Flags:
+  -d, --dry-run            dry run
   -h, --help               help for resource
   -n, --name string        allows to define a different model name for the resource being generated.
   -s, --skip-migration     tells resource generator not-to add model migration
       --skip-model         tells resource generator not to generate model nor migrations
       --skip-templates     tells resource generator not to generate templates for the resource
       --use-model string   tells resource generator to reference an existing model in generated code
+  -v, --verbose            verbosely print out the go get commands
 ```

@@ -2,6 +2,24 @@
 
 Often web applications need to build very similar "CRUD" end-points. To help reduce the amount of thought and complexity involved in this, Buffalo supports the concept of a "Resource".
 
+The [`github.com/gobuffalo/buffalo#Resource`](https://godoc.org/github.com/gobuffalo/buffalo#Resource) interface allows Buffalo to map common routes and respond to common requests.
+
+<%= sinceVersion("0.14.1") %>
+
+```go
+type Resource interface {
+  List(Context) error
+  Show(Context) error
+  Create(Context) error
+  Update(Context) error
+  Destroy(Context) error
+}
+```
+
+The [`github.com/gobuffalo/buffalo#Resource`](https://godoc.org/github.com/gobuffalo/buffalo#Resource) interface was made smaller in release `v0.14.1`.
+
+<%= sinceVersion("0.5.0") %>
+
 ```go
 type Resource interface {
   List(Context) error
@@ -12,25 +30,4 @@ type Resource interface {
   Update(Context) error
   Destroy(Context) error
 }
-```
-
-```go
-type UsersResource struct{
-  buffalo.Resource
-}
-
-a.Resource("/users", UsersResource{})
-```
-
-The above code example would be the equivalent of the following:
-
-```go
-ur := UsersResource{}
-a.GET("/users", ur.List)
-a.GET("/users/new", ur.New)
-a.GET("/users/{user_id}", ur.Show)
-a.GET("/users/{user_id}/edit", ur.Edit)
-a.POST("/users", ur.Create)
-a.PUT("/users/{user_id}", ur.Update)
-a.DELETE("/users/{user_id}", ur.Destroy)
 ```

@@ -56,9 +56,9 @@ $ sudo mv buffalo-no-sqlite /usr/local/bin/buffalo
 ```bash
 $ wget  https://github.com/gobuffalo/buffalo/releases/download/v<%= version %>/buffalo_<%= version %>_darwin_amd64.tar.gz
 $ tar -xvzf buffalo_<%= version %>_darwin_amd64.tar.gz
-$ sudo mv buffalo-no-sqlite /usr/local/bin/buffalo
+$ sudo mv buffalo /usr/local/bin/buffalo
 # ou si vous avez configuré votre PATH pour inclure le dossier ~/bin
-$ mv buffalo-no-sqlite ~/bin/buffalo
+$ mv buffalo ~/bin/buffalo
 ```
 
 ## Scoop (Windows)

@@ -1,5 +1,3 @@
-$titles-orange: #CC471E;
-
 .navbar-collapse.collapse.in {
     display: block!important;
 }
@@ -132,7 +130,7 @@ h2 {
     @extend .col-3;
 
     h4 {
-        color: $titles-orange;
+        color: $primary;
         text-align: center;
         font-variant: small-caps;
 

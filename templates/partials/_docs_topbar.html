@@ -1,0 +1,13 @@
+<header class="">
+    <nav class="">
+        <%= form({action: searchPath({lang: lang}), method: "GET"}) { %>
+            <%= f.InputTag({name: "query", placeholder: t("menu.search"), value: params["query"]}) %>
+        <% } %>
+
+        <%= form({action: "/lang"}) { %>
+            <%= f.SelectTag({name: "language", options: {"English": "en", "Français": "fr"}, id: "language", value: lang, label: t("menu.language")}) %>
+            <%= f.InputTag({type: "hidden", value: current_path, name: "url"}) %>
+            <%= f.InputTag({type: "hidden", value: lang, name: "oldLanguage"}) %>
+        <% } %>
+    </nav>
+</header>

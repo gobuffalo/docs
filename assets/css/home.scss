@@ -1,5 +1,4 @@
-$orange: #C15424;
-$titles-orange: #CC471E;
+$primary: #DA602D;
 
 * {
     font-family: Lato;
@@ -58,7 +57,7 @@ $titles-orange: #CC471E;
     }
 
     .btn-buffalo {
-        background-color: $orange;
+        background-color: $primary;
         padding: 8px 25px;
         text-transform: uppercase;
     }

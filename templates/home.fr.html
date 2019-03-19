@@ -1,8 +1,10 @@
 <section class="presentation-banner">
   <div class="container">
     <div class="row">
-      <div class="col-md-6 col-lg-8 col-xs-12">
-        <h2 class="text-left title" style="margin-top: 0.3em; margin-bottom: 0.3em;">Un écosystème pour <br/>le développement Web en Go, conçu pour rendre votre vie plus facile.</h2>
+      <div class="col-md-6 col-lg-8 col-sm-8 col-xs-12">
+        <h2 class="text-left title" style="margin-top: 0.3em; margin-bottom: 0.3em;">
+          Un écosystème pour <br/>le développement Web en Go, conçu pour rendre votre vie plus facile.
+        </h2>
         <p style="margin-bottom: 1.4em;">
           <a href="/fr/docs/installation" class="btn btn-primary btn-lg btn-buffalo">Démarrer</a>
         </p>
@@ -15,8 +17,8 @@
           <span class="badge badge-pill">Go <%= goMinVersion %>+</span>
         </div>
       </div>
-      <div class="col-md-6 col-lg-4 text-center hidden-xs">
-        <img src="/assets/images/logo_med.png" alt="buffalo" class="logo-presentation center-block"/>
+      <div class="col-md-6 col-lg-4 hidden-xs text-center d-none d-md-block">
+        <img src="/assets/images/logo_med.png" alt="buffalo" class="logo-presentation text-centered ml-auto mr-auto mb-3"/>
         <a class="buffalo-video center-block" href="#" data-toggle="modal" data-target="#videoModal">
           <img src="<%= assetPath("images/landing_icons/play_button.svg") %>" alt="play_button">
           <span>Lancer la vidéo</span>
@@ -31,7 +33,7 @@
   <h2 class="title">Fonctionnalités</h2>
   <div class="container">
     <div class="row">
-      <div class="col-lg-3 col-sm-6">
+      <div class="col-xl-3 col-md-6 col-sm-12">
         <div class="feature">
           <a href="/fr/docs/routing">
             <img src="<%= assetPath("images/landing_icons/routing.svg") %>" alt="routing">
@@ -41,7 +43,7 @@
           <p>Il existe sans doute des routeurs plus rapides, mais celui-ci est le plus puissant&nbsp;!</p>
         </div>
       </div>
-      <div class="col-lg-3 col-sm-6">
+      <div class="col-xl-3 col-md-6 col-sm-12">
         <div class="feature">
           <a href="/fr/docs/templating">
             <img src="<%= assetPath("images/landing_icons/templating.svg") %>" alt="templating">
@@ -51,7 +53,7 @@
           <p>Étendez ses possiblités en créant vos propres fonctions.<br />Si vous ne l'aimez pas, vous pouvez utiliser le standard <code>html/template</code> ou même votre propre moteur !</p>
         </div>
       </div>
-      <div class="col-lg-3 col-sm-6">
+      <div class="col-xl-3 col-md-6 col-sm-12">
         <div class="feature">
           <a href="/fr/docs/generators">
             <img src="<%= assetPath("images/landing_icons/toolbox.svg") %>" alt="buffalo-toolbox">
@@ -61,7 +63,7 @@
           <p>Vous pouvez même créer de nouveaux plugins, en utilisant le langage de votre choix&nbsp;!</p>
         </div>
       </div>
-      <div class="col-lg-3 col-sm-6">
+      <div class="col-xl-3 col-md-6 col-sm-12">
         <div class="feature">
           <a href="/fr/docs/testing">
             <img src="<%= assetPath("images/landing_icons/testing.svg") %>" alt="testing">
@@ -73,7 +75,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-lg-3 col-sm-6">
+      <div class="col-xl-3 col-md-6 col-sm-12">
         <div class="feature">
           <a href="/fr/docs/new-project#running-your-application-in-development">
             <img src="<%= assetPath("images/landing_icons/routing.svg") %>" alt="hot-reload">
@@ -82,7 +84,7 @@
           <p>Codez, sauvegardez, rafraîchissez la page. Utilisez la commande <code>buffalo dev</code> pour reconstruire votre application, du backend au frontend, et constatez les changements en direct&nbsp;!</p>
         </div>
       </div>
-      <div class="col-lg-3 col-sm-6">
+      <div class="col-xl-3 col-md-6 col-sm-12">
         <div class="feature">
           <a href="/fr/docs/assets">
             <span class="optional-label">Optionnel</span>
@@ -92,7 +94,7 @@
           <p>Utilisez la configuration Webpack pré-générée pour compiler vos composants graphiques&nbsp;: optimisez votre application de fond en comble&nbsp;!</p>
         </div>
       </div>
-      <div class="col-lg-3 col-sm-6">
+      <div class="col-xl-3 col-md-6 col-sm-12">
         <div class="feature">
           <a href="/fr/docs/db/models">
             <span class="optional-label">Optionnel</span>
@@ -103,7 +105,7 @@
           <p>Bases de données supportées&nbsp;: MySQL/ MariaDB, PostgreSQL, CockroachDB, SQLite.</p>
         </div>
       </div>
-      <div class="col-lg-3 col-sm-6">
+      <div class="col-xl-3 col-md-6 col-sm-12">
         <div class="feature">
           <a href="/fr/docs/tasks">
             <span class="optional-label">Optionnel</span>
@@ -150,7 +152,7 @@
 </section>
 
 <section class="sponsors">
-  <%= partial("platinum_sponsors.html") %>
+  <%= partial("partials/platinum_sponsors.html") %>
 </section>
 
 <section class="buffalo-at-work">
@@ -180,11 +182,4 @@
   </div>
 </section>
 
-<div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <%= partial("docs/youtube.html") %>
-  </div>
-</div>
+<%= partial("partials/video_modal.html") %>

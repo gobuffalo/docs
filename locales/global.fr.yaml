@@ -43,7 +43,7 @@
 
 # Menu
 - id: menu.search
-  translation: Rechercher...
+- translation: Rechercher
 
 - id: menu.language
   translation: Langue

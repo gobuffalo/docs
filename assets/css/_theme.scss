@@ -14,8 +14,7 @@ body[data-spy] {
   }
 
   &>header {
-    margin-bottom: 20px;
-    border-bottom: 1px solid #f1f1f1;
+    background: #FFFBF9;
 
     &>p:last-child {
       margin-bottom: 30px
@@ -261,25 +260,27 @@ main.container-fluid {
 }
 
 .navbar .navbar-nav>li>a {
-  color: rgba(255, 255, 255, 0.8);
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  color: #0A193F;
+  text-transform: capitalize;
   transition: .2s ease;
-  font-size: 14px
+  font-size: 16px;
+  padding-bottom: 1px !important;
+  border-bottom: 3px solid transparent;
+  line-height: 22px;
 }
 
 .navbar .navbar-nav>li>a:focus,
 .navbar .navbar-nav>li>a:hover {
-  color: #fff
+  color: #0A193F;
 }
 
 .navbar .navbar-nav>.active>a,
 .navbar .navbar-nav>.active>a:focus,
 .navbar .navbar-nav>.active>a:hover {
-  color: #fff;
+  color: #0A193F;
   background-color: transparent;
-  font-weight: 700
+  font-weight: 700;
+  border-color: #DA602D;
 }
 
 .navbar .navbar-nav>.open>a {
@@ -472,6 +473,8 @@ main.container-fluid {
     background-color: #5cc7b2 !important
   }
 }
+
+
 
 .site-footer {
   position: relative;
@@ -742,7 +745,7 @@ main.container-fluid {
 .sidebar-boxed~header,
 .sidebar-boxed~main,
 .sidebar-boxed~footer {
-  padding-left: 280px
+  padding-left: 320px
 }
 
 .sidebar-boxed~header.navbar-transparent .navbar {
@@ -804,9 +807,9 @@ main.container-fluid {
 }
 
 .sidebar-boxed .sidenav>li>a {
-  padding: 7px 45px !important;
+  padding: 2px 45px !important;
   color: #FFFFFF !important;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 300;
 }
 
@@ -824,7 +827,7 @@ main.container-fluid {
   font-family: FontAwesome;
   position: absolute;
   right: 36px;
-  top: 7px;
+  top: 2px;
   font-size: 23px;
 }
 
@@ -894,8 +897,7 @@ main.container-fluid {
     padding-right: 120px
   }
   .sidebar-boxed~main .main-content {
-    padding-left: 135px;
-    padding-right: 135px
+    padding: 0;
   }
 }
 
@@ -3886,10 +3888,6 @@ figcaption {
 
 .comment-form textarea {
   height: 140px !important
-}
-
-article.main-content {
-  font-family: Georgia,Cambria,"Times New Roman",Times,serif;
 }
 
 article.main-content {

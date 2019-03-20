@@ -1,0 +1,55 @@
+<header class="site-header sticky <%= if(!contained){ return "docs-header" } %>">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="<%= if(contained){ return "container" } else { return "container-fluid"} %>">
+            <div class="logo-wrapper d-flex justify-content-between align-items-center">
+                <button class="navbar-toggler for-sidebar d-md-none" type="button" data-toggle="offcanvas">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <a class="navbar-brand" href="/<%= lang %>" id="logo">
+                    <span class="force-middle"></span>
+                    <img src="/assets/images/logo_top.png" alt="logo"> <%= raw(t("top.title")) %>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-label="Toggle navigation">
+                    <!-- <span class="navbar-toggler-icon"></span> -->
+                    <i class="fa fa-ellipsis-v"></i>
+                </button>
+            </div>
+            
+            <div class="collapse navbar-collapse" id="navbarToggler">
+                <ul class="navbar-nav ml-auto align-items-lg-center align-items-start py-1">  
+                    <li class="nav-item p-0 <%= if (current_path == "/en/docs/examples" || current_path == "/fr/docs/examples") { %> active<% } %>">
+                        <a class="d-block p-lg-2" href="/docs/examples"><%= t("top.examples-tutorials") %></a>
+                    </li>
+
+                    <li class="nav-item p-0 <%= if (current_path == "/docs/support" || current_path == "/fr/docs/examples") { %> active<% } %>">
+                        <a class="d-block p-lg-2" href="/docs/support"><%= t("top.support") %></a>
+                    </li>
+        
+                    <li class="nav-item p-0">
+                        <a class="d-block p-lg-2" href="<%= docPath({name: "index", lang: lang}) %>">
+                            <%= t("top.docs") %>
+                        </a>
+                    </li>
+        
+                    <li class="nav-item p-0">
+                        <a class="d-block p-lg-2" href="https://github.com/gobuffalo" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    </li>
+        
+                    <li class="nav-item p-0">
+                        <a class="d-block p-lg-2" href="https://blog.gobuffalo.io" target="_blank" rel="noopener noreferrer"><%= t("top.blog") %></a>
+                    </li>
+        
+                    <li class="nav-item p-0">
+                        <a class="d-block p-lg-2" href="http://store.gobuffalo.io" target="_blank" rel="noopener noreferrer"><%= t("top.store") %> </a>
+                    </li>
+        
+                    <li class="nav-item hero pt-sm-3 p-lg-0">
+                        <a class="btn btn-buffalo d-block p-lg-2 m-0" href="http://patreon.com/buffalo" target="_blank" rel="noopener noreferrer"><%= t("top.become-a-patreon") %></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>

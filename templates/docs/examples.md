@@ -1,5 +1,4 @@
-<% contentFor("docsLanding") { %>
-<% } %>
+<%= h1("Examples and Tutorials") %>
 
 <div class="row">
   <div class="col-md-6">

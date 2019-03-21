@@ -1,5 +1,5 @@
 import anchorJS from "anchor-js";
-let anchors = new anchorJS();
+//let anchors = new anchorJS();
 
 // Auto-anchor titles
 document.addEventListener("DOMContentLoaded", function(event) {

@@ -3,8 +3,8 @@ let anchors = new anchorJS();
 
 // Auto-anchor titles
 document.addEventListener("DOMContentLoaded", function(event) {
-    anchors.add();
-    buildToc();
+    //anchors.add();
+    //buildToc();
     activateSideNav();
 });
 

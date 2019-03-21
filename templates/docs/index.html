@@ -1,36 +1,98 @@
 <% seoDescription("Buffalo Documentation") %>
 <% seoKeywords(["buffalo", "go", "golang", "docs", "framework", "web"]) %>
 
-<%= h1("Buffalo Documentation") %>
+<% contentFor("docsLanding") { %>
+  <div class="d-flex justify-content-between align-items-center">
+    <div class="landing-info">
+      <h4 class="landing-title">Buffalo Docs</h4>
+      <p>Welcome to the Buffalo Docs, you can always contribute to this documentation it is a great, and easy, way to help make Buffalo better.</p>
+      <a href="#" class="btn btn-buffalo">Contribute</a>
+    </div>
 
-<%= godoc() { %>
-
-<h2><%= pkg.ImportPath %></h2>
-
-<ul class="list-inline" style="text-align: center">
-  <li>
-  <i class="fa fa-file-code-o" aria-hidden="true"></i> <code><%= pkg.ImportPath %></code>
-  </li>
-  <li>
-    <i class="fa fa-github" aria-hidden="true"></i> <a href="<%= pkg.ProjectURL %>" target="_blank"><%= pkg.ProjectURL %></a>
-  </li>
-  <li>
-    <i class="fa fa-book" aria-hidden="true"></i> <a href="https://godoc.org/<%= pkg.ImportPath %>" target="_blank">https://godoc.org/<%= pkg.ProjectURL %></a>
-  </li>
-</ul>
-<p align="center">
-
-<a href="https://godoc.org/<%= pkg.ImportPath %>"><img src="https://godoc.org/<%= pkg.ImportPath %>?status.svg" alt="GoDoc" /></a>
-<a href="https://travis-ci.org/<%= pkg.ProjectName %>"><img src="https://travis-ci.org/<%= pkg.ProjectName %>.svg?branch=master" alt="Build Status" /></a>
-<a href="https://codecov.io/gh/<%= pkg.ProjectName %>"><img src="https://codecov.io/gh/<%= pkg.ProjectName %>/branch/master/graph/badge.svg" alt="Code coverage status" /></a>
-<a href="https://goreportcard.com/report/<%= pkg.ImportPath %>"><img src="https://goreportcard.com/badge/<%= pkg.ImportPath %>" alt="Go Report Card" /></a>
-</p>
-
-<%= if (pkg.Doc) { %>
-  <div id="" class="well" style="overflow:scroll; height:400px;">
-    <%= markdown(pkg.Doc) %>
+    <div class="landing-logo-wrapper">
+      <img src="/assets/images/logo_med.png" alt="buffalo" class="landing-logo" />
+    </div>
   </div>
 <% } %>
 
+<div class="docs-introduction">
+  <div class="d-flex justify-content-between align-items-start">
+    <div>
+      <p>In this chapter, you'll learn how to install Buffalo, either from pre-built binaries or from source.</p>
 
+      <div>
+        <p>Buffalo provides two major components:</p>
+
+        <ul>
+          <li>
+            <span><b>The buffalo tool</b>, a powerful toolbox to help you develop in a fast and efficient way.</span>
+          </li>
+          <li>
+            <span><b>The buffalo framework</b>, a collection of pieces to construct your app.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <p>Buffalo is currently available and tested on the following platforms:</p>
+
+        <ul>
+          <li>
+            <span>GNU/Linux</span>
+          </li>
+          <li>
+            <span>Mac OSX</span>
+          </li>
+          <li>
+            <span>Windows</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="d-flex flex-column docs-right-index">
+      <a href="" class="active">Requirements</a>
+      <a href="">Installation from a release archive - 64 bits</a>
+      <a href="">Scoop (Windows)</a>
+      <a href="">Homebrew (macOS)</a>
+      <a href="">GoFish (Cross-Platforms)</a>
+      <a href="">Custom installation with SQLite3 Support</a>
+      <a href="">Custom installation without SQLite3 Support</a>
+      <a href="">Verify your installation</a>
+    </div>
+  </div>
+  
+  <div>
+    <h2>Requirements</h2>
+  </div>
+</div>
+
+<%= godoc() { %>
+
+  <h2><%= pkg.ImportPath %></h2>
+
+  <ul class="list-inline" style="text-align: center">
+    <li>
+    <i class="fa fa-file-code-o" aria-hidden="true"></i> <code><%= pkg.ImportPath %></code>
+    </li>
+    <li>
+      <i class="fa fa-github" aria-hidden="true"></i> <a href="<%= pkg.ProjectURL %>" target="_blank"><%= pkg.ProjectURL %></a>
+    </li>
+    <li>
+      <i class="fa fa-book" aria-hidden="true"></i> <a href="https://godoc.org/<%= pkg.ImportPath %>" target="_blank">https://godoc.org/<%= pkg.ProjectURL %></a>
+    </li>
+  </ul>
+  <p align="center">
+
+  <a href="https://godoc.org/<%= pkg.ImportPath %>"><img src="https://godoc.org/<%= pkg.ImportPath %>?status.svg" alt="GoDoc" /></a>
+  <a href="https://travis-ci.org/<%= pkg.ProjectName %>"><img src="https://travis-ci.org/<%= pkg.ProjectName %>.svg?branch=master" alt="Build Status" /></a>
+  <a href="https://codecov.io/gh/<%= pkg.ProjectName %>"><img src="https://codecov.io/gh/<%= pkg.ProjectName %>/branch/master/graph/badge.svg" alt="Code coverage status" /></a>
+  <a href="https://goreportcard.com/report/<%= pkg.ImportPath %>"><img src="https://goreportcard.com/badge/<%= pkg.ImportPath %>" alt="Go Report Card" /></a>
+  </p>
+
+  <%= if (pkg.Doc) { %>
+    <div id="" class="well" style="overflow:scroll; height:400px;">
+      <%= markdown(pkg.Doc) %>
+    </div>
+  <% } %>
 <% } %>

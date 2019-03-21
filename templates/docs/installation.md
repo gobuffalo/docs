@@ -48,7 +48,7 @@ Since `v0.10.3`, pre-compiled archives are provided with each release. If you do
 ```bash
 $ wget https://github.com/gobuffalo/buffalo/releases/download/v<%= version %>/buffalo_<%= version %>_linux_amd64.tar.gz
 $ tar -xvzf buffalo_<%= version %>_linux_amd64.tar.gz
-$ sudo mv buffalo-no-sqlite /usr/local/bin/buffalo
+$ sudo mv buffalo /usr/local/bin/buffalo
 ```
 
 ### MacOS

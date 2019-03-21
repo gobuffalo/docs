@@ -1,0 +1,52 @@
+<div class="docs-header-wrapper">
+    <header class="d-flex justify-content-between align-items-center">
+        <nav class="navbar p-0">
+            <ul class="navbar-nav d-flex flex-row">
+                <li class="nav-item p-lg-2 pb-1 pl-0 <%= if (current_path == "/en/docs/examples" || current_path == "/fr/docs/examples") { %> active<% } %>">
+                    <a class="d-block" href="/docs/examples"><%= t("top.examples-tutorials") %></a>
+                </li>
+
+                <li class="nav-item p-lg-2 pb-1 <%= if (current_path == "/en/docs/support" || current_path == "/fr/docs/examples") { %> active<% } %>">
+                    <a class="d-block" href="/docs/support"><%= t("top.support") %></a>
+                </li>
+
+                <li class="nav-item p-lg-2 pb-1 <%= if (current_path == "/en/docs/index" || current_path == "/fr/docs/index") { %> active<% } %>">
+                    <a class="d-block" href="<%= docPath({name: "index", lang: lang}) %>">
+                        <%= t("top.docs") %>
+                    </a>
+                </li>
+
+                <li class="nav-item p-lg-2 pb-1">
+                    <a class="d-block" href="https://github.com/gobuffalo" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </li>
+
+                <li class="nav-item p-lg-2 pb-1">
+                    <a class="d-block" href="https://blog.gobuffalo.io" target="_blank" rel="noopener noreferrer"><%= t("top.blog") %></a>
+                </li>
+
+                <li class="nav-item p-lg-2 pb-1">
+                    <a class="d-block" href="http://store.gobuffalo.io" target="_blank" rel="noopener noreferrer"><%= t("top.store") %> </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="d-flex align-items-center">
+            <%= form({class:"search-form d-flex",  action: searchPath({lang: lang}), method: "GET"}) { %>
+                <%= f.InputTag({name: "query", value: params["query"]}) %>
+                <input type="submit" class="btn btn-buffalo ml-2" value="<%= t("menu.search") %>">
+            <% } %>
+
+            <%= form({action: "/lang", class: "ml-2"}) { %>
+                <div class="language-wrapper">
+                    <%= f.SelectTag({name: "language", options: {"EN": "en", "FR": "fr"}, id: "language", value: lang, hide_label: true}) %>
+                </div>
+                <%= f.InputTag({type: "hidden", value: current_path, name: "url"}) %>
+                <%= f.InputTag({type: "hidden", value: lang, name: "oldLanguage"}) %>
+            <% } %>
+        </div>
+    </header>
+
+    <div class="docs-landing-wrapper">
+        <%= contentOf("docsLanding") %>
+    </div>
+</div>

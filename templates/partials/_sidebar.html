@@ -1,23 +1,13 @@
 <!-- Sidebar -->
-<aside class="col-md-3 col-sm-3 sidebar sidebar-boxed sidebar-dark">
+<aside class="col-md-3 sidebar sidebar-boxed sidebar-dark">
+  <div class="docs-logo d-flex align-items-center justify-content-center">
+    <a class="d-flex align-items-center" href="/<%= lang %>">
+      <img src="/assets/images/logo_top.png" alt="logo" class="mr-2"> 
+      <span><%= raw(t("top.title")) %></span>
+    </a> &nbsp;&nbsp; / Docs
+  </div>
 
-  <ul class="sidenav dropable ">
-
-    <li class="sidebar-form">
-
-  <%= form({action: searchPath({lang: lang}), method: "GET"}) { %>
-      <%= f.InputTag({name: "query", placeholder: t("menu.search"), value: params["query"]}) %>
-  <% } %>
-
-    </li>
-    <li class="sidebar-form">
-      <%= form({action: "/lang"}) { %>
-        <%= f.SelectTag({name: "language", options: {"English": "en", "Français": "fr"}, id: "language", value: lang, label: t("menu.language")}) %>
-        <%= f.InputTag({type: "hidden", value: current_path, name: "url"}) %>
-        <%= f.InputTag({type: "hidden", value: lang, name: "oldLanguage"}) %>
-      <% } %>
-    </li>
-
+  <ul class="sidenav dropable pt-1">
     <li>
       <a href="#"><%= t("menu.getting-started") %></a>
       <ul class="sidenav dropable">

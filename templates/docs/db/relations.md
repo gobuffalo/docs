@@ -39,6 +39,7 @@ type Address struct {
   HouseNumber  int
 }
 
+type Books []Book
 type Addresses []Address
 ```
 

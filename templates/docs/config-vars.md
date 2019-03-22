@@ -1,7 +1,15 @@
 <% seoDescription("Handle configuration with Buffalo") %>
 <% seoKeywords(["buffalo", "go", "golang", "configuration", "env", "framework", "web"]) %>
 
-<%= h1("Configuration") %>
+<div>
+  <% contentFor("docsLanding") { %>
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="landing-info">
+        <h1 class="landing-title">Configuration</h1>  
+      </div>
+    </div>
+  <% } %>
+</div>
 
 In this chapter, you'll learn how to manage configuration with Buffalo.
 

@@ -18,10 +18,10 @@ var buildToc = () => {
         let title = a.textContent;
         items.push(`<a href="${path}#${name}">${title}</a>`);
     });
-    if (items.length > 0) {
-        let ul = $("<div class=\"d-flex flex-column docs-right-index\">").append(items);
-        $(".docs-header-wrapper").after(ul);
-    }
+    // if (items.length > 0) {
+    //     let ul = $("<div class=\"d-flex flex-column docs-right-index\">").append(items);
+    //     $(".docs-header-wrapper").after(ul);
+    // }
 };
 
 // Activate entry in the menu

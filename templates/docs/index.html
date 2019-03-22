@@ -4,7 +4,7 @@
 <% contentFor("docsLanding") { %>
   <div class="d-flex justify-content-between align-items-center">
     <div class="landing-info">
-      <h4 class="landing-title">Buffalo Docs</h4>
+      <h1 class="landing-title">Buffalo Docs</h1>
       <p>Welcome to the Buffalo Docs, you can always contribute to this documentation it is a great, and easy, way to help make Buffalo better.</p>
       <a href="#" class="btn btn-buffalo">Contribute</a>
     </div>
@@ -16,38 +16,93 @@
 <% } %>
 
 <div class="docs-introduction">
-  <div class="d-flex justify-content-between align-items-start">
+  <div class="d-flex justify-content-between align-items-start mb-3">
     <div>
-      <p>In this chapter, you'll learn how to install Buffalo, either from pre-built binaries or from source.</p>
 
-      <div>
-        <p>Buffalo provides two major components:</p>
+      <section class="mb-5"> 
+        <p>In this chapter, you'll learn how to install Buffalo, either from pre-built binaries or from source.</p>
 
-        <ul>
-          <li>
-            <span><b>The buffalo tool</b>, a powerful toolbox to help you develop in a fast and efficient way.</span>
-          </li>
-          <li>
-            <span><b>The buffalo framework</b>, a collection of pieces to construct your app.</span>
-          </li>
-        </ul>
-      </div>
+        <div>
+          <p>Buffalo provides two major components:</p>
 
-      <div>
-        <p>Buffalo is currently available and tested on the following platforms:</p>
+          <ul>
+            <li>
+              <span><b>The buffalo tool</b>, a powerful toolbox to help you develop in a fast and efficient way.</span>
+            </li>
+            <li>
+              <span><b>The buffalo framework</b>, a collection of pieces to construct your app.</span>
+            </li>
+          </ul>
+        </div>
 
-        <ul>
-          <li>
-            <span>GNU/Linux</span>
-          </li>
-          <li>
-            <span>Mac OSX</span>
-          </li>
-          <li>
-            <span>Windows</span>
-          </li>
-        </ul>
-      </div>
+        <div>
+          <p>Buffalo is currently available and tested on the following platforms:</p>
+
+          <ul>
+            <li>
+              <span>GNU/Linux</span>
+            </li>
+            <li>
+              <span>Mac OSX</span>
+            </li>
+            <li>
+              <span>Windows</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="mb-5">
+        <h2>Requirements</h2>
+
+        <div>
+          <p>Before installing make sure you have the required dependencies installed:</p>
+
+          <ul class="checked-items">
+            <li><span>A working Go environment</span></li>
+            <li><span>A configured <span class="highlighted-command">$PATH</span> environment variable that includes <span class="highlighted-command">$GOPATH/bin.</span></span></li>
+            <li><span>Go version 1.9.7 or greater.</span></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Frontend Requirements</h3>
+
+          <p>The following requirements are optional. You don’t need them if you want to build an API or if you prefer to build your app in an old-fashioned way.</p>
+
+          <ul class="checked-items">
+            <li><span>Node version 8 or greater</span></li>
+            <li><span>Either yarn or npm for the asset pipeline built upon webpack.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Database Specific Requirements</h3>
+
+          <p>Again, if you don't need a database, you won't need these.</p>
+
+          <ul class="checked-items">
+            <li><span><b>SQLite 3:</b> GCC, or equivalent C compiler for mattn/go-sqlite3</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>Installation from a release archive - 64 bits</h2>
+        <div class="alert info">
+          <p class="d-flex m-0 align-items-center">
+            <i class="info-icon mr-2">i</i>
+            The release packages contain Buffalo without SQLite support.
+          </p>
+        </div>
+        
+        <p>Since <span class="highlighted-command">v0.10.3</span>, pre-compiled archives are provided with each release. If you don't need the latest cutting-edge version, you'll probably prefer to install this version.</p>
+      </section>
+
+      <section>
+        <h2>GNU / Linux</h2>
+        
+      </section>
     </div>
 
     <div class="d-flex flex-column docs-right-index">
@@ -60,10 +115,6 @@
       <a href="">Custom installation without SQLite3 Support</a>
       <a href="">Verify your installation</a>
     </div>
-  </div>
-  
-  <div>
-    <h2>Requirements</h2>
   </div>
 </div>
 

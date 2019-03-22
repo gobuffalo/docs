@@ -1,10 +1,10 @@
 import anchorJS from "anchor-js";
-//let anchors = new anchorJS();
+let anchors = new anchorJS();
 
 // Auto-anchor titles
 document.addEventListener("DOMContentLoaded", function(event) {
-    //anchors.add();
-    //buildToc();
+    anchors.add();
+    buildToc();
     activateSideNav();
 });
 
@@ -16,11 +16,11 @@ var buildToc = () => {
     $(".main-content h2").each((_, a) => {
         let name = anchors.urlify(a.textContent);
         let title = a.textContent;
-        items.push(`<li><a href="${path}#${name}">${title}</a></li>`);
+        items.push(`<a href="${path}#${name}">${title}</a>`);
     });
     if (items.length > 0) {
-        let ul = $("<ul class=\"summary\">").append(items);
-        $(".main-content h1:first").after(ul);
+        let ul = $("<div class=\"d-flex flex-column docs-right-index\">").append(items);
+        $(".docs-header-wrapper").after(ul);
     }
 };
 

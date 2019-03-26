@@ -126,43 +126,66 @@ func forceSSL() buffalo.MiddlewareFunc {
 }
 
 func bindRedirects(app *buffalo.App) {
+	// Deleted pages
 	app.GET("/en/docs/generators", func(c buffalo.Context) error {
 		return c.Render(http.StatusGone, nil)
 	})
 
-	app.GET("/docs/db", func(c buffalo.Context) error {
-		return c.Redirect(http.StatusMovedPermanently, fmt.Sprintf("/%s/docs/db/getting-started", c.Value("lang").(string)))
-	})
-	app.GET("/{lang:fr|en}/docs/db", func(c buffalo.Context) error {
-		return c.Redirect(http.StatusMovedPermanently, fmt.Sprintf("/%s/docs/db/getting-started", c.Value("lang").(string)))
-	})
-
-	// deploy
-	oldURLs := []string{"systemd", "proxy", "building"}
-	for _, url := range oldURLs {
-		func(u string) {
-			app.GET(fmt.Sprintf("/docs/%s", u), func(c buffalo.Context) error {
-				return c.Redirect(http.StatusMovedPermanently, fmt.Sprintf("/%s/docs/deploy/%s", c.Value("lang").(string), u))
-			})
-			app.GET(fmt.Sprintf("/{lang:fr|en}/docs/%s", u), func(c buffalo.Context) error {
-				return c.Redirect(http.StatusMovedPermanently, fmt.Sprintf("/%s/docs/deploy/%s", c.Value("lang").(string), u))
-			})
-		}(url)
+	// Remapped pages
+	redirectsTable := []struct {
+		From string
+		To   string
+	}{
+		{
+			From: "/docs/db",
+			To:   "/docs/db/getting-started",
+		},
+		{
+			From: "/docs/systemd",
+			To:   "/docs/deploy/systemd",
+		},
+		{
+			From: "/docs/proxy",
+			To:   "/docs/deploy/proxy",
+		},
+		{
+			From: "/docs/building",
+			To:   "/docs/deploy/building",
+		},
+		{
+			From: "/docs/installation",
+			To:   "/docs/getting-started/installation",
+		},
+		{
+			From: "/docs/integrations",
+			To:   "/docs/getting-started/integrations",
+		},
+		{
+			From: "/docs/new-project",
+			To:   "/docs/getting-started/new-project",
+		},
+		{
+			From: "/docs/directory-structure",
+			To:   "/docs/getting-started/directory-structure",
+		},
+		{
+			From: "/docs/config-vars",
+			To:   "/docs/getting-started/config-vars",
+		},
 	}
 
-	// getting-started
-	oldURLs = []string{"installation", "integrations", "new-project", "directory-structure", "config-vars"}
-	for _, url := range oldURLs {
-		func(u string) {
-			app.GET(fmt.Sprintf("/docs/%s", u), func(c buffalo.Context) error {
-				return c.Redirect(http.StatusMovedPermanently, fmt.Sprintf("/%s/docs/getting-started/%s", c.Value("lang").(string), u))
+	for _, route := range redirectsTable {
+		func(from string, to string) {
+			app.GET(from, func(c buffalo.Context) error {
+				return c.Redirect(http.StatusMovedPermanently, fmt.Sprintf("/%s%s", c.Value("lang").(string), to))
 			})
-			app.GET(fmt.Sprintf("/{lang:fr|en}/docs/%s", u), func(c buffalo.Context) error {
-				return c.Redirect(http.StatusMovedPermanently, fmt.Sprintf("/%s/docs/getting-started/%s", c.Value("lang").(string), u))
+			app.GET(fmt.Sprintf("/{lang:fr|en}%s", from), func(c buffalo.Context) error {
+				return c.Redirect(http.StatusMovedPermanently, fmt.Sprintf("/%s%s", c.Value("lang").(string), to))
 			})
-		}(url)
+		}(route.From, route.To)
 	}
 
+	// Specific cases
 	app.GET("/search", func(c buffalo.Context) error {
 		return c.Redirect(http.StatusFound, fmt.Sprintf("/%s/search", c.Value("lang").(string)))
 	})

@@ -9,7 +9,7 @@ Dans ce chapitre, vous allez apprendre comment travailler avec les modèles à l
 
 ## Le dossier models
 
-Les fichiers de modèle de Pop sont placés dans le dossier `models`, à la racine de votre projet (voir le chapitre sur [la structure d'un projet](/fr/docs/directory-structure) pour plus d'informations sur la manière dont Buffalo organise ses fichiers).
+Les fichiers de modèle de Pop sont placés dans le dossier `models`, à la racine de votre projet (voir le chapitre sur [la structure d'un projet](/fr/docs/getting-started/directory-structure) pour plus d'informations sur la manière dont Buffalo organise ses fichiers).
 
 Ce répertoire contient :
 

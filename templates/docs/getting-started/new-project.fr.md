@@ -81,7 +81,7 @@ Il arrive souvent que vous ayez déjà une application utilisant le port 3000. V
 $ PORT=3001 buffalo dev
 ```
 
-Vous pouvez également consulter le chapitre sur les [variables d'environnement](/fr/docs/config-vars) pour plus d'informations sur la configuration de Buffalo.
+Vous pouvez également consulter le chapitre sur les [variables d'environnement](/fr/docs/getting-started/config-vars) pour plus d'informations sur la configuration de Buffalo.
 
 ## Prochaines étapes
 

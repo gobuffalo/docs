@@ -9,7 +9,7 @@ En este capítulo, aprenderá a trabajar con modelos a mano; y cómo mejorar su 
 
 ## El directorio de modelos
 
-Los archivos de modelos Pop se almacenan en el directorio `models`, en la raíz de su proyecto (consulte el capítulo [Estructura de directorio](/es/docs/directory-structure) para obtener más información sobre la forma en que Buffalo organiza sus archivos).
+Los archivos de modelos Pop se almacenan en el directorio `models`, en la raíz de su proyecto (consulte el capítulo [Estructura de directorio](/es/docs/getting-started/directory-structure) para obtener más información sobre la forma en que Buffalo organiza sus archivos).
 
 Este directorio contiene:
 

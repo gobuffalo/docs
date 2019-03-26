@@ -137,6 +137,7 @@ func bindRedirects(app *buffalo.App) {
 		return c.Redirect(http.StatusMovedPermanently, fmt.Sprintf("/%s/docs/db/getting-started", c.Value("lang").(string)))
 	})
 
+	// deploy
 	oldURLs := []string{"systemd", "proxy", "building"}
 	for _, url := range oldURLs {
 		app.GET(fmt.Sprintf("/docs/%s", url), func(c buffalo.Context) error {
@@ -144,6 +145,17 @@ func bindRedirects(app *buffalo.App) {
 		})
 		app.GET(fmt.Sprintf("/{lang:fr|en}/docs/%s", url), func(c buffalo.Context) error {
 			return c.Redirect(http.StatusMovedPermanently, fmt.Sprintf("/%s/docs/deploy/%s", c.Value("lang").(string), url))
+		})
+	}
+
+	// getting-started
+	oldURLs = []string{"installation", "integrations", "new-project", "directory-structure", "config-vars"}
+	for _, url := range oldURLs {
+		app.GET(fmt.Sprintf("/docs/%s", url), func(c buffalo.Context) error {
+			return c.Redirect(http.StatusMovedPermanently, fmt.Sprintf("/%s/docs/getting-started/%s", c.Value("lang").(string), url))
+		})
+		app.GET(fmt.Sprintf("/{lang:fr|en}/docs/%s", url), func(c buffalo.Context) error {
+			return c.Redirect(http.StatusMovedPermanently, fmt.Sprintf("/%s/docs/getting-started/%s", c.Value("lang").(string), url))
 		})
 	}
 

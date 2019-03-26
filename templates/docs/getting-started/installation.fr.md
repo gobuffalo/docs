@@ -154,5 +154,5 @@ Si vous avez un retour similaire de la commande, votre boîte à outils Buffalo 
 
 ## Prochaines étapes
 
-* [Intégrations](/fr/docs/integrations) - Configurez votre environnement pour mieux travailler avec Buffalo.
-* [Générer un nouveau projet](/fr/docs/new-project) - Créez votre premier projet Buffalo !
+* [Intégrations](/fr/docs/getting-started/integrations) - Configurez votre environnement pour mieux travailler avec Buffalo.
+* [Générer un nouveau projet](/fr/docs/getting-started/new-project) - Créez votre premier projet Buffalo !

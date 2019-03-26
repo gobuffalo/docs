@@ -15,4 +15,4 @@ Si vous utilisez le shell `bash`, vous pouvez essayer ce script proposé par [@c
 
 ## Prochaines étapes
 
-* [Générer un nouveau projet](/fr/docs/new-project) - Créez votre premier projet Buffalo !
+* [Générer un nouveau projet](/fr/docs/getting-started/new-project) - Créez votre premier projet Buffalo !

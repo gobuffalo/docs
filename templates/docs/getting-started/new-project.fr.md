@@ -85,5 +85,5 @@ Vous pouvez également consulter le chapitre sur les [variables d'environnement]
 
 ## Prochaines étapes
 
-* [Structure d'un projet](/fr/docs/directory-structure) - En savoir plus sur la structure d'un projet Buffalo.
-* [Configuration](/fr/docs/config-vars) - Comment gérer la configuration de mon application ?
+* [Structure d'un projet](/fr/docs/getting-started/directory-structure) - En savoir plus sur la structure d'un projet Buffalo.
+* [Configuration](/fr/docs/getting-started/config-vars) - Comment gérer la configuration de mon application ?

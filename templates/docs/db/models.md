@@ -52,6 +52,22 @@ Or in short form:
 $ soda d m [name]
 ```
 
+## Nulls handling
+
+If you need to store `NULL` values in your table, you'll have to use special types: for instance, you can't store a `NULL` value if your type is `int`.
+
+The [Go standard library](https://golang.org/pkg/database/sql) provides special types for that use case, like [`sql.NullBool`](https://golang.org/pkg/database/sql/#NullBool) or [`sql.NullInt64`](https://golang.org/pkg/database/sql/#NullInt64).
+
+If you need more than what the standard library offers, you can use the [gobuffalo/nulls](https://github.com/gobuffalo/nulls) package which provides more nulls types and a better handling for JSON serialization and unserialization.
+
+```go
+type User struct {
+  ID       uuid.UUID
+  Email    string
+  Password nulls.String
+}
+```
+
 ## Customize models
 
 ### Mapping Model Fields

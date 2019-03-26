@@ -140,23 +140,27 @@ func bindRedirects(app *buffalo.App) {
 	// deploy
 	oldURLs := []string{"systemd", "proxy", "building"}
 	for _, url := range oldURLs {
-		app.GET(fmt.Sprintf("/docs/%s", url), func(c buffalo.Context) error {
-			return c.Redirect(http.StatusMovedPermanently, fmt.Sprintf("/%s/docs/deploy/%s", c.Value("lang").(string), url))
-		})
-		app.GET(fmt.Sprintf("/{lang:fr|en}/docs/%s", url), func(c buffalo.Context) error {
-			return c.Redirect(http.StatusMovedPermanently, fmt.Sprintf("/%s/docs/deploy/%s", c.Value("lang").(string), url))
-		})
+		func(u string) {
+			app.GET(fmt.Sprintf("/docs/%s", u), func(c buffalo.Context) error {
+				return c.Redirect(http.StatusMovedPermanently, fmt.Sprintf("/%s/docs/deploy/%s", c.Value("lang").(string), u))
+			})
+			app.GET(fmt.Sprintf("/{lang:fr|en}/docs/%s", u), func(c buffalo.Context) error {
+				return c.Redirect(http.StatusMovedPermanently, fmt.Sprintf("/%s/docs/deploy/%s", c.Value("lang").(string), u))
+			})
+		}(url)
 	}
 
 	// getting-started
 	oldURLs = []string{"installation", "integrations", "new-project", "directory-structure", "config-vars"}
 	for _, url := range oldURLs {
-		app.GET(fmt.Sprintf("/docs/%s", url), func(c buffalo.Context) error {
-			return c.Redirect(http.StatusMovedPermanently, fmt.Sprintf("/%s/docs/getting-started/%s", c.Value("lang").(string), url))
-		})
-		app.GET(fmt.Sprintf("/{lang:fr|en}/docs/%s", url), func(c buffalo.Context) error {
-			return c.Redirect(http.StatusMovedPermanently, fmt.Sprintf("/%s/docs/getting-started/%s", c.Value("lang").(string), url))
-		})
+		func(u string) {
+			app.GET(fmt.Sprintf("/docs/%s", u), func(c buffalo.Context) error {
+				return c.Redirect(http.StatusMovedPermanently, fmt.Sprintf("/%s/docs/getting-started/%s", c.Value("lang").(string), u))
+			})
+			app.GET(fmt.Sprintf("/{lang:fr|en}/docs/%s", u), func(c buffalo.Context) error {
+				return c.Redirect(http.StatusMovedPermanently, fmt.Sprintf("/%s/docs/getting-started/%s", c.Value("lang").(string), u))
+			})
+		}(url)
 	}
 
 	app.GET("/search", func(c buffalo.Context) error {

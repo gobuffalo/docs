@@ -1,7 +1,9 @@
 <% seoDescription("Using a Proxy") %>
 <% seoKeywords(["buffalo", "go", "golang", "proxy", "nginx", "apache"]) %>
 
-<%= h1("Using a Proxy") %>
+<% contentFor("docsLanding") { %>
+  <%= partial("docs/landing.html", {title: "Using a Proxy"}) %>
+<% } %>
 
 Buffalo can be used raw to handle queries. You just need to start your app and listen on a given address and port:
 

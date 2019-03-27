@@ -1,4 +1,6 @@
-# Iterating
+<% contentFor("docsLanding") { %>
+  <%= partial("docs/landing.html", {title: "Iterating"}) %>
+<% } %>
 
 <%= partial("docs/disclaimer.html") %>
 

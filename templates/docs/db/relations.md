@@ -1,7 +1,9 @@
 <% seoDescription("How to manage associations and relationships with Pop?") %>
 <% seoKeywords(["buffalo", "go", "golang", "database", "ORM", "pop", "associations", "relations", "entity"]) %>
 
-# Associations and Relationships
+<% contentFor("docsLanding") { %>
+  <%= partial("docs/landing.html", {title: "Associations and Relationships"}) %>
+<% } %>
 
 Associations are the Pop way to define **a relation between two objects in the database**. In this chapter, you'll learn how to define associations using struct tags; and how to manipulate them with the `Eager()` modifier.
 

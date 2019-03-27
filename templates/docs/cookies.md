@@ -1,7 +1,9 @@
 <% seoDescription("Cookies") %>
 <% seoKeywords(["buffalo", "go", "golang", "http", "cookie"]) %>
 
-<%= h1("Cookies") %>
+<% contentFor("docsLanding") { %>
+  <%= partial("docs/landing.html", {title: "Cookies"}) %>
+<% } %>
 
 An HTTP cookie is a small piece of data that a server sends to the user's web browser. The browser can store this data and send it back to the same server, even after the browser restart (unlike a [browser session](/en/docs/sessions)).
 

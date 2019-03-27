@@ -1,15 +1,9 @@
 <% seoDescription("Buffalo project directory structure") %>
 <% seoKeywords(["buffalo", "go", "golang", "structure", "directory", "framework", "web"]) %>
 
-<div>
-  <% contentFor("docsLanding") { %>
-    <div class="d-flex justify-content-between align-items-center">
-      <div class="landing-info">
-        <h1 class="landing-title">Directory structure</h1>  
-      </div>
-    </div>
-  <% } %>
-</div>
+<% contentFor("docsLanding") { %>
+  <%= partial("docs/landing.html", {title: "Directory structure"}) %>
+<% } %>
 
 Buffalo provides you **a minimal directory structure** to work on your project. This structure **keeps the project clean**, and allow the [generators](/docs/generators) to work. Don't try to reinvent the wheel, and **let Buffalo buy you more time** to do the interesting part of your app! :)
 

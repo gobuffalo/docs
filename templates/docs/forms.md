@@ -1,4 +1,6 @@
-# Forms
+<% contentFor("docsLanding") { %>
+  <%= partial("docs/landing.html", {title: "Forms"}) %>
+<% } %>
 
 Buffalo uses the [`github.com/gobuffalo/tags`](https://github.com/gobuffalo/tags) package to make form building easier.
 

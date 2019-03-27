@@ -1,4 +1,6 @@
-# Testing
+<% contentFor("docsLanding") { %>
+  <%= partial("docs/landing.html", {title: "Testing"}) %>
+<% } %>
 
 ## Running Tests
 

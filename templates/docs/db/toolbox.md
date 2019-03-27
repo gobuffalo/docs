@@ -1,7 +1,9 @@
 <% seoDescription("Soda CLI") %>
 <% seoKeywords(["buffalo", "go", "golang", "database", "utils", "pop", "toolbox", "CLI", "soda"]) %>
 
-<%= h1("Soda CLI") %>
+<% contentFor("docsLanding") { %>
+  <%= partial("docs/landing.html", {title: "Soda CLI"}) %>
+<% } %>
 
 Pop helps you to manage database connections, but it also provides `soda`, a small CLI toolbox to manage your database. It can help you to create a new database, drop existing ones, and so on.
 

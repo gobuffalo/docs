@@ -1,4 +1,6 @@
-# Partials
+<% contentFor("docsLanding") { %>
+  <%= partial("docs/landing.html", {title: "Partials"}) %>
+<% } %>
 
 <%= partial("docs/disclaimer.html") %>
 

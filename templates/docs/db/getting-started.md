@@ -1,7 +1,9 @@
 <% seoDescription("Getting started with Pop") %>
 <% seoKeywords(["buffalo", "go", "golang", "database", "ORM", "pop", "migrations"]) %>
 
-<%= h1("Getting started with Pop") %>
+<% contentFor("docsLanding") { %>
+  <%= partial("docs/landing.html", {title: "Getting started with Pop"}) %>
+<% } %>
 
 The [pop](https://godoc.org/github.com/gobuffalo/pop) package is included with Buffalo by default, but you can use it outside of Buffalo. It wraps the absolutely amazing https://github.com/jmoiron/sqlx library, cleans up some of the common patterns and work flows usually associated with dealing with databases in Go.
 

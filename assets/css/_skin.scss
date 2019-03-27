@@ -35,39 +35,10 @@ h3 a:before {
   color: #125B96
 }
 
-.carousel.indicators-out .carousel-indicators .active,
-.pagination>.active>a,
-.pagination>.active>a:focus,
-.pagination>.active>a:hover,
-.pagination>.active>span,
-.pagination>.active>span:focus,
-.pagination>.active>span:hover,
-.sidebar-line .sidenav a.active:before,
-.sidebar-line .sidenav li.active>a:before,
-.sidenav>li>ul a.active:before,
-.sidenav>li>ul li.active a:before,
-.site-header .navbar {
-  background-color: #62a8ea
-}
-
-.carousel.indicators-out .carousel-indicators li {
-  border-color: #62a8ea
-}
-
-.tabs-text .nav-tabs>li.active {
-  border-bottom-color: #62a8ea
-}
-
-.grid-view li {
-  border-top-color: #62a8ea
-}
-
-@media screen and (max-width:767px) {
-  .navbar {
-    background-color: #62a8ea!important
-  }
-}
-
 .hljs {
 	color: #eee;
+}
+
+mark, .mark {
+  background-color: #ffecdf;
 }

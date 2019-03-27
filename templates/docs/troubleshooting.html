@@ -1,4 +1,6 @@
-<%= h1("Trouble Shooting") %>
+<% contentFor("docsLanding") { %>
+    <%= partial("docs/landing.html", {title: "Trouble Shooting"}) %>
+<% } %>
 
 <div class="faq">
   <input class="faq-search" type="text" placeholder="Type to search...">

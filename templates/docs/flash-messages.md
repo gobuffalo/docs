@@ -1,4 +1,6 @@
-# Flash Messages
+<% contentFor("docsLanding") { %>
+  <%= partial("docs/landing.html", {title: "Flash Messages"}) %>
+<% } %>
 
 ## What are Flash Messages?
 

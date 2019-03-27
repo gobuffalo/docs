@@ -1,7 +1,9 @@
 <% seoDescription("How to create and use database migrations with Pop") %>
 <% seoKeywords(["buffalo", "go", "golang", "database", "ORM", "pop", "migration"]) %>
 
-<%= h1("Migrations") %>
+<% contentFor("docsLanding") { %>
+  <%= partial("docs/landing.html", {title: "Migrations"}) %>
+<% } %>
 
 Software maintenance is a hard task, and you'll probably need to patch your database to add, modify or remove some fields. The way to handle that with Pop is to use **migrations**.
 

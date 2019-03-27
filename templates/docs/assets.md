@@ -1,4 +1,6 @@
-# Assets
+<% contentFor("docsLanding") { %>
+  <%= partial("docs/landing.html", {title: "Assets"}) %>
+<% } %>
 
 By default when a new Buffalo application is generated via the `buffalo new` command, a [Webpack](https://webpack.github.io) configuration file is generated, and the application is set up to use Webpack as the asset pipeline for the application.
 

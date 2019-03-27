@@ -1,7 +1,9 @@
 <% seoDescription("Buffalo releases") %>
 <% seoKeywords(["buffalo", "go", "golang", "releases", "github", "blog", "version", "framework", "web"]) %>
 
-<%= h1(t("releases.title")) %>
+<% contentFor("docsLanding") { %>
+    <%= partial("docs/landing.html", {title: t("releases.title")}) %>
+<% } %>
 
 <div class="table-responsive">
     <table>

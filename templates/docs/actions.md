@@ -1,7 +1,9 @@
 <% seoDescription("How to define and use Action Controllers?") %>
 <% seoKeywords(["buffalo", "go", "golang", "actions", "controller", "generator"]) %>
 
-<%= h1("Action Controller") %>
+<% contentFor("docsLanding") { %>
+  <%= partial("docs/landing.html", {title: "Actions"}) %>
+<% } %>
 
 In this chapter, you'll learn how action controllers work; and how you can generate them using the built-in generators.
 

@@ -1,4 +1,6 @@
-# Template Engines
+<% contentFor("docsLanding") { %>
+  <%= partial("docs/landing.html", {title: "Template Engines"}) %>
+<% } %>
 
 ## Map Template Engines by Extension
 <%= sinceVersion("0.10.0") %>

@@ -1,7 +1,9 @@
 <% seoDescription("Packing a Buffalo application") %>
 <% seoKeywords(["buffalo", "go", "golang", "pack", "binary", "build"]) %>
 
-<%= h1("Packing") %>
+<% contentFor("docsLanding") { %>
+  <%= partial("docs/landing.html", {title: "Packing"}) %>
+<% } %>
 
 Now, your project is ready to be deployed. In this section, you will learn how to package a version of your app to deploy it on a server.
 

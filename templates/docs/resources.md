@@ -1,6 +1,10 @@
 <% seoDescription("Resources") %>
 <% seoKeywords(["buffalo", "go", "golang", "resources", "routing", "generator"]) %>
 
+<% contentFor("docsLanding") { %>
+  <%= partial("docs/landing.html", {title: "Resources"}) %>
+<% } %>
+
 <%= partial("docs/resources/intro.md") %>
 <%= partial("docs/resources/using.md") %>
 <%= partial("docs/resources/optional.md") %>

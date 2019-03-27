@@ -1,7 +1,9 @@
 <% seoDescription("Fizz") %>
 <% seoKeywords(["buffalo", "go", "golang", "database", "fizz", "pop", "DSL"]) %>
 
-<%= h1("Fizz") %>
+<% contentFor("docsLanding") { %>
+  <%= partial("docs/landing.html", {title: "Fizz"}) %>
+<% } %>
 
 Fizz is a common DSL for migrating databases. It tries to be as database-agnostic as possible. This is the language used by defaut by Pop to define [database migrations](/en/docs/db/migrations).
 

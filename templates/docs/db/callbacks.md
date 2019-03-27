@@ -1,7 +1,9 @@
 <% seoDescription("Attach callbacks to database operations") %>
 <% seoKeywords(["buffalo", "go", "golang", "callback", "hook", "database", "pop"]) %>
 
-# Callbacks
+<% contentFor("docsLanding") { %>
+  <%= partial("docs/landing.html", {title: "Callbacks"}) %>
+<% } %>
 
 Pop provides a means to execute code before and after database operations. This is done by defining specific methods for your models.
 

@@ -1,7 +1,9 @@
 <% seoDescription("Tasks") %>
 <% seoKeywords(["buffalo", "go", "golang", "tasks", "scripts", "grift"]) %>
 
-<%= h1("Tasks") %>
+<% contentFor("docsLanding") { %>
+  <%= partial("docs/landing.html", {title: "Tasks"}) %>
+<% } %>
 
 Tasks are small scripts that are often needed when writing an application. These tasks might be along the lines of seeding a database, parsing a log file, or even a release script. Buffalo uses the [grift](https://github.com/markbates/grift) package to make writing these tasks simple.
 

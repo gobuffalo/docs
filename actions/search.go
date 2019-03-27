@@ -44,6 +44,8 @@ func StartSearch() {
 
 // Search handles the search queries.
 func Search(c buffalo.Context) error {
+	c.Set("sourceRoot", docsRepoBase)
+
 	if c.Param("query") != "" {
 		res, err := search.Fetch(search.Query{
 			Text: c.Param("query"),
@@ -54,5 +56,5 @@ func Search(c buffalo.Context) error {
 		c.Set("results", res)
 	}
 
-	return c.Render(200, r.HTML("search.html"))
+	return c.Render(200, r.HTML("search.html", "docs-layout.html"))
 }

@@ -1,7 +1,9 @@
 <% seoDescription("Cloud Providers") %>
 <% seoKeywords(["buffalo", "go", "golang", "providers", "cloud", "deploy", "azure", "digital ocean", "heroku"]) %>
 
-<%= h1("Cloud Providers") %>
+<% contentFor("docsLanding") { %>
+  <%= partial("docs/landing.html", {title: "Cloud Providers"}) %>
+<% } %>
 
 Even if you can deploy a Buffalo app by hand, some (cloud) hosting solutions already have a plugin for Buffalo! These plugins are supported by the community, and allow you to quickly deploy your app using a single command.
 

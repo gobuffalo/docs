@@ -1,7 +1,9 @@
 <% seoDescription("Querying a Database with Pop") %>
 <% seoKeywords(["buffalo", "go", "golang", "database", "querying", "pop", "finders"]) %>
 
-<%= h1("Querying") %>
+<% contentFor("docsLanding") { %>
+  <%= partial("docs/landing.html", {title: "Querying"}) %>
+<% } %>
 
 In this chapter, you'll learn how to retrieve data from your database using Pop.
 

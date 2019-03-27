@@ -1,4 +1,6 @@
-# Plugins
+<% contentFor("docsLanding") { %>
+  <%= partial("docs/landing.html", {title: "Plugins"}) %>
+<% } %>
 
 <%= sinceVersion("0.9.1") %>
 

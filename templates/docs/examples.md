@@ -1,4 +1,6 @@
-<%= h1("Examples and Tutorials") %>
+<% contentFor("docsLanding") { %>
+  <%= partial("docs/landing.html", {title: "Examples and Tutorials"}) %>
+<% } %>
 
 <div class="row">
   <div class="col-md-6">

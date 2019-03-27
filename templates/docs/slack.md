@@ -1,7 +1,9 @@
 <% seoDescription("Buffalo Slack channel") %>
 <% seoKeywords(["buffalo", "go", "golang", "slack", "channel", "gophers", "join", "framework", "web"]) %>
 
-<%= h1("Slack") %>
+<% contentFor("docsLanding") { %>
+  <%= partial("docs/landing.html", {title: "Slack"}) %>
+<% } %>
 
 The `#buffalo` Slack channel on [gophers.slack.com](https://gophers.slack.com/messages/buffalo/) is great place to ask for help from a variety of Buffalo developers and Gophers.
 

@@ -1,7 +1,9 @@
 <% seoDescription("Third Party Authentication") %>
 <% seoKeywords(["buffalo", "go", "golang", "users", "oauth2", "authentication", "third-party", "google", "facebook"]) %>
 
-<%= h1("Third Party Authentication") %>
+<% contentFor("docsLanding") { %>
+  <%= partial("docs/landing.html", {title: "Third Party Authentication"}) %>
+<% } %>
 
 In many use-cases, you'll need to implement user authentication in your apps. [Goth](https://github.com/markbates/goth) provides a simple, clean, and idiomatic way to write authentication packages for Go web applications.
 

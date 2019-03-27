@@ -1,28 +1,31 @@
-<h1><%= t("search.title") %></h1>
+<% seoDescription("Search") %>
+<% seoKeywords(["buffalo", "go", "golang", "search"]) %>
 
-<div class="row">
-  <%= form({action: "/en/search", method: "GET"}) { %>
-    <div class="col-md-3">
-      <%= f.InputTag({name: "query", placeholder: "enter search query here", value: params["query"]}) %>
-    </div>
-    <div class="col-md-1">
-      <button class="btn btn-primary"><%= t("search.button") %></button>
-    </div>
+<div class="search-wrapper">
+  <% contentFor("docsLanding") { %>
+    <%= partial("docs/landing.html", {title: t("search.title")}) %>
   <% } %>
-</div>
 
-<%= if (results) { %>
+  <div>
+    <%= if (results) { %>
+      <h2 class="m-0"><%= results.Total %> <%= pluralize_uint("match", results.Total) %> for <code><%= params["query"] %></code></h2>
 
-<h2><%= results.Total %> <%= pluralize_uint("match", results.Total) %> for <code><%= params["query"] %></code></h2>
+      <ul class="results-list p-0">
+        <%= for (hit) in results.Hits { %>
+          <li>
+            <a href="<%= hit.ID %>" class="d-flex justify-content-between align-items-center">
+              <div>
+                <span class="results-list-item-title"><%= hit.ID %></span>
+                <%= for (body) in hit.Fragments["body"] { %>
+                  <%= debug(body) %>
+                <% } %>
+              </div>
 
-<ol>
-  <%= for (hit) in results.Hits { %>
-  <li>
-    <a href="<%= hit.ID %>"><%= hit.ID %></a> (<%= score(hit.Score) %>)
-    <%= for (body) in hit.Fragments["body"] { %>
-      <%= debug(body) %>
+              <img src="<%= assetPath("/images/arrow-right.svg") %>" alt="">
+            </a>
+          </li>
+        <% } %>
+      </ul>
     <% } %>
-  </li>
-  <% } %>
-</ol>
-<% } %>
+  </div>
+</div>

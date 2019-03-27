@@ -1,4 +1,6 @@
-# Layouts
+<% contentFor("docsLanding") { %>
+  <%= partial("docs/landing.html", {title: "Layouts"}) %>
+<% } %>
 
 <%= partial("docs/disclaimer.html") %>
 

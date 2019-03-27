@@ -1,7 +1,9 @@
 <% seoDescription("Local authentication") %>
 <% seoKeywords(["buffalo", "go", "golang", "users", "password", "authentication"]) %>
 
-<%= h1("Local Authentication") %>
+<% contentFor("docsLanding") { %>
+  <%= partial("docs/landing.html", {title: "Local Authentication"}) %>
+<% } %>
 
 In many use-cases, you'll need to implement user authentication in your apps.
 

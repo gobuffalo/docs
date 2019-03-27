@@ -1,7 +1,9 @@
 <% seoDescription("Listening for events in a Buffalo application") %>
 <% seoKeywords(["buffalo", "go", "golang", "events", "plugins"]) %>
 
-# Events
+<% contentFor("docsLanding") { %>
+  <%= partial("docs/landing.html", {title: "Events"}) %>
+<% } %>
 
 <%= sinceVersion("0.13.0-beta.2") %>
 

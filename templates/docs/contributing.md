@@ -1,7 +1,9 @@
 <% seoDescription("Contribute to Buffalo") %>
 <% seoKeywords(["buffalo", "go", "golang", "contribute", "docs", "funding", "community", "framework", "web"]) %>
 
-<%= h1("Contributing") %>
+<% contentFor("docsLanding") { %>
+  <%= partial("docs/landing.html", {title: "Contributing"}) %>
+<% } %>
 
 The Buffalo team needs, and wants your help! We're doing our best to make the world a better place for Go web development, but we can't do it alone.
 

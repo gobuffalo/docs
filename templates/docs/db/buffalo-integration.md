@@ -1,7 +1,9 @@
 <% seoDescription("How to use Pop with Buffalo?") %>
 <% seoKeywords(["buffalo", "go", "golang", "pop", "buffalo", "integration"]) %>
 
-<%= h1("Buffalo Integration") %>
+<% contentFor("docsLanding") { %>
+  <%= partial("docs/landing.html", {title: "Buffalo Integration"}) %>
+<% } %>
 
 Buffalo provides a Pop middleware to ease database usage within Buffalo: https://github.com/gobuffalo/buffalo-pop
 

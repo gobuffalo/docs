@@ -1,5 +1,14 @@
 <!-- Sidebar -->
 <aside class="col-md-3 sidebar sidebar-boxed sidebar-dark">
+  <div class="docs-logo-wrapper d-flex justify-content-between align-items-center">
+    <div class="docs-logo d-flex align-items-center justify-content-center">
+      <a class="d-flex align-items-center" href="/<%= lang %>">
+        <img src="/assets/images/logo_top.png" alt="logo" class="mr-2"> 
+        <span><%= raw(t("top.title")) %></span>
+      </a> &nbsp;&nbsp; / Docs
+    </div>
+  </div>
+  
   <ul class="sidenav dropable pt-1">
     <li>
       <a href="#"><%= t("menu.getting-started") %></a>

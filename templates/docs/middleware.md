@@ -1,4 +1,6 @@
-# Middleware
+<% contentFor("docsLanding") { %>
+  <%= partial("docs/landing.html", {title: "Middleware"}) %>
+<% } %>
 
 Middleware allows for the interjection of code in the request/response cycle. Common use cases for middleware are things like logging (which Buffalo already does), authentication requests, etc.
 

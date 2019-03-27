@@ -1,15 +1,9 @@
 <% seoDescription("Tooling Integration") %>
 <% seoKeywords(["tooling", "ide", "integration", "buffalo", "bash", "zsh"]) %>
 
-<div>
-  <% contentFor("docsLanding") { %>
-    <div class="d-flex justify-content-between align-items-center">
-      <div class="landing-info">
-        <h1 class="landing-title">Tooling Integration</h1>  
-      </div>
-    </div>
-  <% } %>
-</div>
+<% contentFor("docsLanding") { %>
+  <%= partial("docs/landing.html", {title: "Tooling Integration"}) %>
+<% } %>
 
 You can work with Buffalo using your preferred tools. Here is a list of contributed integrations for shells, IDEs and other tools.
 

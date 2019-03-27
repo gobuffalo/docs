@@ -1,4 +1,6 @@
-# Go Modules
+<% contentFor("docsLanding") { %>
+  <%= partial("docs/landing.html", {title: "Go Modules"}) %>
+<% } %>
 
 **NOTE**: Please read [https://github.com/golang/go/wiki/Modules](https://github.com/golang/go/wiki/Modules) to understand more about Go Modules **before** using them.
 

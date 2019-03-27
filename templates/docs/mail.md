@@ -1,4 +1,6 @@
-<%= h1("Mailers") %>
+<% contentFor("docsLanding") { %>
+  <%= partial("docs/landing.html", {title: "Mailers"}) %>
+<% } %>
 
 E-mails are part of most (web) systems. It's a standard way to inform users about platform news, confirmations, marketing stuff, and so on.
 

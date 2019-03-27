@@ -36,4 +36,4 @@ a.POST("/some/path", func (c buffalo.Context) error {
 // etc...
 ```
 
-As you can see, you can use inline handlers if you want. For more readability though, it's often better to separate your handlers into multiple files. If you have many handlers managing users stuff, you can group them into a `users.go` file in the [`actions`](/en/docs/directory-structure) folder, for instance.
+As you can see, you can use inline handlers if you want. For more readability though, it's often better to separate your handlers into multiple files. If you have many handlers managing users stuff, you can group them into a `users.go` file in the [`actions`](/en/docs/getting-started/directory-structure) folder, for instance.

@@ -108,4 +108,4 @@ This file bootstraps your app and starts it.
 
 ## Next Steps
 
-* [Configuration](/en/docs/config-vars) - Manage your app configuration.
+* [Configuration](/en/docs/getting-started/config-vars) - Manage your app configuration.

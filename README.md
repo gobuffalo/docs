@@ -5,7 +5,7 @@
 This is the repository for https://www.gobuffalo.io, the official website of the [Buffalo ecosystem](https://github.com/gobuffalo).
 
 This documentation contains:
-* The [Buffalo Documentation](https://gobuffalo.io/docs/installation)
+* The [Buffalo Documentation](https://gobuffalo.io/docs/getting-started/installation)
 * The [Pop Documentation](https://gobuffalo.io/docs/db/getting-started)
 
 ## Contributing

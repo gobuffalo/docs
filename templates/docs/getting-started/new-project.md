@@ -83,9 +83,9 @@ Sometimes you will already have an app working on the 3000 port. You can configu
 $ PORT=3001 buffalo dev
 ```
 
-You can also take a look at the [Env Variables](/en/docs/config-vars) chapter for further information on Buffalo configuration.
+You can also take a look at the [Env Variables](/en/docs/getting-started/config-vars) chapter for further information on Buffalo configuration.
 
 ## Next Steps
 
-* [Directory Structure](/en/docs/directory-structure) - Learn more about Buffalo structure.
-* [Configuration](/en/docs/config-vars) - Manage your app configuration.
+* [Directory Structure](/en/docs/getting-started/directory-structure) - Learn more about Buffalo structure.
+* [Configuration](/en/docs/getting-started/config-vars) - Manage your app configuration.

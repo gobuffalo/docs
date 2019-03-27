@@ -14,7 +14,7 @@
 
 * **January 9th, 2018** - GoBuffalo Nested Resources [http://www.candland.net/gobuffalo/2018/01/09/gobuffalo_nested_resources.html](http://www.candland.net/gobuffalo/2018/01/09/gobuffalo_nested_resources.html)
 
-* **January 1st, 2018** - Web Apps with Buffalo - Part I [https://mmikael.com/post/buffalo-part1/](https://mmikael.com/post/buffalo-part1/) - Part II [https://mmikael.com/post/buffalo-part2/](https://mmikael.com/post/buffalo-part2/)
+* **January 1st, 2018** - Web Apps with Buffalo - Part I [https://mmikael.com/posts/buffalo-part1/](https://mmikael.com/posts/buffalo-part1/) - Part II [https://mmikael.com/posts/buffalo-part2/](https://mmikael.com/posts/buffalo-part2/)
 
 * **December 2nd, 2017** - Golang Buffalo Tutorial To Create A Web Site With Authentication [https://blog.john-pfeiffer.com/golang-buffalo-tutorial-to-create-a-web-site-with-authentication/](https://blog.john-pfeiffer.com/golang-buffalo-tutorial-to-create-a-web-site-with-authentication/)
 

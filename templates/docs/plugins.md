@@ -10,5 +10,4 @@ Plugins allow for 3rd party code to extend the `buffalo` command as well as its 
 <%= partial("docs/plugins/installing.md") %>
 <%= partial("docs/plugins/removing.md") %>
 <%= partial("docs/plugins/writing.md") %>
-
 <%= partial("docs/plugins/no_go.md") %>

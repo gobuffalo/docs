@@ -4,10 +4,6 @@
 
 Plugins allow for 3rd party code to extend the `buffalo` command as well as its sub-commands.
 
-## Video
-
-[Buffalo: Managing Plugins](https://www.gopherguides.tv/buffalo-resources/videos/buffalo-managing-plugins)
-
 <%= partial("docs/plugins/installation.md") %>
 <%= partial("docs/plugins/finding.md") %>
 <%= partial("docs/plugins/search_paths.md") %>

@@ -10,7 +10,7 @@ jobs:
   strategy:
     matrix:
       go 1.11 (on):
-        go_version: "1.11"
+        go_version: "1.12"
         GO111MODULE: "on"
   steps:
     - template: azure-tests.yml
@@ -21,7 +21,7 @@ jobs:
   strategy:
     matrix:
       go 1.11 (on):
-        go_version: "1.11"
+        go_version: "1.12"
         GO111MODULE: "on"
   steps:
     - template: azure-tests.yml
@@ -32,7 +32,7 @@ jobs:
   strategy:
     matrix:
       go 1.11 (on):
-        go_version: "1.11"
+        go_version: "1.12"
         GO111MODULE: "on"
   steps:
     - template: azure-tests.yml

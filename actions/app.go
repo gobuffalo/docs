@@ -23,6 +23,7 @@ var app *buffalo.App
 var supportedLanguages = map[string]string{
 	"en": "English",
 	"fr": "Français",
+	"it": "Italiano",
 }
 
 // T is used to provide translations
@@ -84,16 +85,26 @@ func App() *buffalo.App {
 		enableProfiling(app)
 		bindRedirects(app)
 
-		app.GET("/{lang:fr|en}/search", Search)
-		app.GET("/{lang:fr|en}/docs/{name:.+}", Docs)
-
 		app.POST("/lang", ChangeLanguage)
-		app.GET("/{lang:fr|en}/sponsors", Sponsors)
-		app.GET("/{lang:fr|en}", HomeHandler)
+
+		languagesKey := createLanguagesKey()
+
+		app.GET(fmt.Sprintf("/{lang:%s}/search", languagesKey), Search)
+		app.GET(fmt.Sprintf("/{lang:%s}/docs/{name:.+}", languagesKey), Docs)
+		app.GET(fmt.Sprintf("/{lang:%s}/sponsors", languagesKey), Sponsors)
+		app.GET(fmt.Sprintf("/{lang:%s}", languagesKey), HomeHandler)
 
 		app.ServeFiles("/", assetBox)
 	}
 	return app
+}
+
+func createLanguagesKey() string {
+	allKeys := ""
+	for key := range supportedLanguages {
+		allKeys = fmt.Sprintf("%s|%s", allKeys, key)
+	}
+	return allKeys
 }
 
 // translations will load locale files, set up the translator `actions.T`,

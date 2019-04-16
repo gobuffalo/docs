@@ -87,3 +87,20 @@ func ContactFormHandler(c buffalo.Context) error {
 }
 ...
 ```
+
+You can add your own custom plush functions by binding them in as data.
+
+```go
+func UUIDToString(u uuid.UUID) string {
+  return fmt.Sprintf("%s", u)
+}
+
+  m := mail.NewMessage()
+  ...
+  
+  // Data that will be used inside the templates when rendering.
+  data := map[string]interface{}{
+    "contact": c,
+    "UUIDToString": UUIDToStringHelper,
+  }
+```

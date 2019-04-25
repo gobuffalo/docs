@@ -1,5 +1,9 @@
 ## Articles About Buffalo
 
+* **March 27th, 2019** - Buffalo test and lint workflow with reflex [https://dan.cardamore.ca/gobuffalo_reflex/](https://dan.cardamore.ca/gobuffalo_reflex/)
+
+* **March 26th, 2019** - Automated buffalo deployments to kubernetes using gitlab-ci [https://dan.cardamore.ca/gobuffalo-gitlab-kubernetes-deploy](https://dan.cardamore.ca/gobuffalo-gitlab-kubernetes-deploy)
+
 * **January 15th, 2019** - Cara Bisa Install Buffalo pada Windows 10 [https://kangmicin.com/2018/12/30/cara-install-buffalo-di-windows/](https://kangmicin.com/2018/12/30/cara-install-buffalo-di-windows/)
 
 * **November 17th, 2018** - Setting Up Windows For Go And Buffalo [http://www.stuartellis.name/articles/windows-golang-setup/](http://www.stuartellis.name/articles/windows-golang-setup/)

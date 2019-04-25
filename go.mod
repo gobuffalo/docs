@@ -21,16 +21,17 @@ require (
 	github.com/glycerine/go-unsnap-stream v0.0.0-20181221182339-f9677308dec2 // indirect
 	github.com/glycerine/goconvey v0.0.0-20180728074245-46e3a41ad493 // indirect
 	github.com/gobuffalo/buffalo v0.14.0
+	github.com/gobuffalo/buffalo-plugins v1.14.0 // indirect
 	github.com/gobuffalo/envy v1.6.15
 	github.com/gobuffalo/events v1.2.0
-	github.com/gobuffalo/genny v0.0.0-20190131190646-008a76242145
+	github.com/gobuffalo/genny v0.0.0-20190315124720-e16e52a93c79
 	github.com/gobuffalo/github_flavored_markdown v1.0.7
 	github.com/gobuffalo/httptest v1.1.0
 	github.com/gobuffalo/makr v1.1.5 // indirect
 	github.com/gobuffalo/mw-forcessl v0.0.0-20180802152810-73921ae7a130
 	github.com/gobuffalo/mw-i18n v0.0.0-20190129204410-552713a3ebb4
 	github.com/gobuffalo/mw-paramlogger v0.0.0-20190129202837-395da1998525
-	github.com/gobuffalo/packr/v2 v2.0.1
+	github.com/gobuffalo/packr/v2 v2.0.7
 	github.com/gobuffalo/plush v3.7.33+incompatible
 	github.com/gobuffalo/tags v2.0.15+incompatible
 	github.com/gobuffalo/x v0.0.0-20181110221217-14085ca3e1a9

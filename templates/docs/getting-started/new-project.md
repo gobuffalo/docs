@@ -58,7 +58,7 @@ with-dep: true
 Before starting Buffalo for the first time, please head over to the [Database](/docs/db) docs and read a little bit about setting up your databases.
 <% } %>
 
-One of the downsides to Go development is the lack of code “reloading”. This means as you change your code **you need to manually stop** your application, rebuild it, then restart it. Buffalo finds this is annoying, and wants to make life better for you.
+One of the downsides to Go development is the lack of code “reloading”. This means as you change your code **you need to manually stop** your application, rebuild it, then restart it. Buffalo finds this annoying, and wants to make life better for you.
 
 ```bash
 $ buffalo dev

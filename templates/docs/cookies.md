@@ -28,6 +28,39 @@ func MyHandler(c buffalo.Context) error {
 }
 ```
 
+## Setting a Cookie with Path
+
+```go
+func MyHandler(c buffalo.Context) error {
+  // ...
+  c.Cookies().SetWithPath("user_id", user.ID, "/user")
+  // ...
+}
+```
+
+## Advanced setting a Cookie way
+
+```go
+import "net/http"
+```
+
+```go
+func MyHandler(c buffalo.Context) error {
+  // ...
+  ck := http.Cookie{
+    Name:    "token",
+    Value:   token,
+    Path:    "/",
+    Expires: time.Now().Add(30 * 24 * time.Hour), // expire in 1 month
+  }
+
+  http.SetCookie(c.Response(), &ck)
+  // ...
+}
+```
+
+See [Cookie struct](https://golang.org/src/net/http/cookie.go) for other parameters.
+
 ## Getting a Cookie
 
 ```go

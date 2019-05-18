@@ -52,7 +52,7 @@ func (as *ActionSuite) Test_WidgetsResource_Create() {
   w := &models.Widget{Name: "My Widget"} // make a POST /widgets request
   res := as.HTML("/widgets").Post(w)
   // assert that the response status code was 302 as.Equal(302, res.Code)
-  // retreive the first Widget from the database
+  // retrieve the first Widget from the database
   err := as.DB.First(w)
   as.NoError(err)
   as.NotZero(w.ID)

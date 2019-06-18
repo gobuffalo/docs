@@ -1,12 +1,12 @@
 ## Testing File Uploads
 
-The HTTP testing library, [`github.com/markbates/willie`](https://github.com/markbates/willie) (which is included in the [`github.com/gobuffalo/suite`](https://github.com/gobuffalo/suite) package that Buffalo uses for testing) has been updated to include two new functions: [`MultiPartPost`](https://godoc.org/github.com/markbates/willie#Request.MultiPartPost) and [`MultiPartPut`](https://godoc.org/github.com/markbates/willie#Request.MultiPartPut).
+The HTTP testing library, [`github.com/gobuffalo/httptest`](https://github.com/gobuffalo/httptest) (which is included in the [`github.com/gobuffalo/suite`](https://github.com/gobuffalo/suite) package that Buffalo uses for testing) has been updated to include two new functions: [`MultiPartPost`](https://godoc.org/github.com/gobuffalo/httptest#Request.MultiPartPost) and [`MultiPartPut`](https://godoc.org/github.com/gobuffalo/httptest#Request.MultiPartPut).
 
 These methods work just like the `Post` and `Put` methods, but instead they submit a multipart form, and can accept files for upload.
 
-Like `Post` and `Put`, `MultiPartPost` and `MultiPartPut`, take a struct, or map, as the first argument: this is the equivalent of the HTML form you would post. The methods take a variadic second argument, [`willie.File`](https://godoc.org/github.com/markbates/willie#File).
+Like `Post` and `Put`, `MultiPartPost` and `MultiPartPut`, take a struct, or map, as the first argument: this is the equivalent of the HTML form you would post. The methods take a variadic second argument, [`httptest.File`](https://godoc.org/github.com/gobuffalo/httptest#File).
 
-A `willie.File` requires the name of the form parameter, `ParamName`; the name of the file, `FileName`; and an `io.Reader`, presumably the file you want to upload.
+A `httptest.File` requires the name of the form parameter, `ParamName`; the name of the file, `FileName`; and an `io.Reader`, presumably the file you want to upload.
 
 <%= codeTabs() { %>
 ```go
@@ -22,8 +22,8 @@ func (as *ActionSuite) Test_WidgetsResource_Create() {
   // find the file we want to upload
   r, err := os.Open("./logo.svg")
   as.NoError(err)
-  // setup a new willie.File to hold the file information
-  f := willie.File{
+  // setup a new httptest.File to hold the file information
+  f := httptest.File{
     // ParamName is the name of the form parameter
     ParamName: "someFile",
     // FileName is the name of the file being uploaded

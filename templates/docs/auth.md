@@ -12,7 +12,7 @@ Buffalo had a native support for Auth until version `v0.9.4`. Since then, it was
 To install the `buffalo-auth` plugin, run the following command:
 
 ```bash
-$ go get -u github.com/gobuffalo/buffalo-auth
+$ go get -u -v github.com/gobuffalo/buffalo-auth
 $ buffalo plugins install github.com/gobuffalo/buffalo-auth
 ```
 

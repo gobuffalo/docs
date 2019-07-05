@@ -20,23 +20,29 @@ require (
 	github.com/facebookgo/subset v0.0.0-20150612182917-8dac2c3c4870 // indirect
 	github.com/glycerine/go-unsnap-stream v0.0.0-20181221182339-f9677308dec2 // indirect
 	github.com/glycerine/goconvey v0.0.0-20180728074245-46e3a41ad493 // indirect
+	github.com/gobuffalo/attrs v0.0.0-20190224210810-a9411de4debd // indirect
 	github.com/gobuffalo/buffalo v0.14.0
-	github.com/gobuffalo/buffalo-plugins v1.14.0 // indirect
-	github.com/gobuffalo/envy v1.6.15
-	github.com/gobuffalo/events v1.2.0
-	github.com/gobuffalo/genny v0.0.0-20190315124720-e16e52a93c79
+	github.com/gobuffalo/buffalo-plugins v1.15.0 // indirect
+	github.com/gobuffalo/depgen v0.0.0-20190315122043-8442b3fa16db // indirect
+	github.com/gobuffalo/envy v1.7.0
+	github.com/gobuffalo/events v1.4.0
+	github.com/gobuffalo/genny v0.2.0
 	github.com/gobuffalo/github_flavored_markdown v1.0.7
+	github.com/gobuffalo/helpers v0.2.3 // indirect
 	github.com/gobuffalo/httptest v1.1.0
 	github.com/gobuffalo/makr v1.1.5 // indirect
+	github.com/gobuffalo/mw-csrf v0.0.0-20190129204204-25460a055517 // indirect
 	github.com/gobuffalo/mw-forcessl v0.0.0-20180802152810-73921ae7a130
 	github.com/gobuffalo/mw-i18n v0.0.0-20190129204410-552713a3ebb4
 	github.com/gobuffalo/mw-paramlogger v0.0.0-20190129202837-395da1998525
-	github.com/gobuffalo/packr/v2 v2.0.7
-	github.com/gobuffalo/plush v3.7.33+incompatible
-	github.com/gobuffalo/tags v2.0.15+incompatible
+	github.com/gobuffalo/packr/v2 v2.4.0
+	github.com/gobuffalo/plush v3.8.2+incompatible
+	github.com/gobuffalo/suite v2.7.0+incompatible // indirect
+	github.com/gobuffalo/tags v2.1.0+incompatible
 	github.com/gobuffalo/x v0.0.0-20181110221217-14085ca3e1a9
 	github.com/golang/gddo v0.0.0-20181116215533-9bd4a3295021
 	github.com/golang/snappy v0.0.0-20180518054509-2e65f85255db // indirect
+	github.com/google/go-cmp v0.3.0 // indirect
 	github.com/gopherjs/gopherjs v0.0.0-20181103185306-d547d1d9531e // indirect
 	github.com/grokify/html-strip-tags-go v0.0.0-20180907063347-e9e44961e26f
 	github.com/jmhodges/levigo v0.0.0-20161115193449-c42d9e0ca023 // indirect

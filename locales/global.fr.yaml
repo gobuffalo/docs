@@ -48,6 +48,9 @@
 - id: menu.language
   translation: Langue
 
+- id: menu.overview
+  translation: Vue d'ensemble
+
 - id: menu.getting-started
   translation: Prise en main
 

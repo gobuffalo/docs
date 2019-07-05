@@ -1,9 +1,4 @@
 {
-  "name": "buffalo",
-  "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
-  "repository": "github.com/gobuffalo/gobuffalo",
   "dependencies": {
     "anchor-js": "^4.2.0",
     "bootstrap": "^4.3.1",
@@ -38,5 +33,14 @@
     "webpack-cli": "3.1.0",
     "webpack-livereload-plugin": "2.1.1",
     "webpack-manifest-plugin": "~2.0.3"
-  }
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "name": "gobuffalo.io",
+  "repository": "github.com/gobuffalo/gobuffalo",
+  "scripts": {
+    "build": "webpack -p --progress",
+    "dev": "webpack --watch"
+  },
+  "version": "1.0.0"
 }

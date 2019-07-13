@@ -9,7 +9,7 @@ a.GET("/coke", CokeHandler) // cokePath()
 These names become the name of the route helpers in your templates.
 
 ```html
-&lt;a href="\<%= cokePath() %>">Coke&lt;/a>
+<a href="\<%= cokePath() %>">Coke</a>
 ```
 
 You can inspect all of your paths by running `buffalo routes` from the command line.

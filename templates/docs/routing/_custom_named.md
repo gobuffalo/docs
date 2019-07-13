@@ -9,6 +9,6 @@ a.GET("/coke", CokeHandler).Name("customPath")
 This route is now called `customPath` and you can reference it as such in your templates.
 
 ```html
-&lt;a href="\<%= customPath() %>">Coke&lt;/a>
+<a href="\<%= customPath() %>">Coke</a>
 ```
 

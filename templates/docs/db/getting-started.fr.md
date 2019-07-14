@@ -14,7 +14,7 @@ Pop, par défaut, suit des conventions influencées par la gem Ruby ActiveRecord
 * Si une colonne `updated_at` de type timestamp est définie, et que la structure Go correspondante possède un attribut `UpdatedAt time.Time` ; la valeur de ce champ sera automatiquement modifiée avec le temps courant à chaque fois que l'entrée sera modifiée dans la base.
 * Les noms des tables dans la base de données sont par défaut en minuscules, au pluriel et en notation [snake_case](https://fr.wikipedia.org/wiki/Snake_case). Par exemple : `User{}` donne « users », `FooBar{}` donne « foo_bars », etc.
 
-Buffalo a une intégration forte avec Pop, et la boîte à outils vous aidera à générer tout ce qui est nécessaire pour démarrer. Vous pouvez toujours utiliser une autre biliothèque pour communiquer avec vos bases de données, mais vous devrez vous débrouiller sans notre aide. :)
+Buffalo a une intégration forte avec Pop, et la boîte à outils vous aidera à générer tout ce qui est nécessaire pour démarrer. Vous pouvez toujours utiliser une autre bibliothèque pour communiquer avec vos bases de données, mais vous devrez vous débrouiller sans notre aide. :)
 
 ### Bases de données supportées
 
@@ -23,24 +23,6 @@ Pop supporte les bases de données suivantes :
 * [CockroachDB](https://www.cockroachlabs.com/) (>= 1.1.1)
 * [MySQL](https://www.mysql.com/) (>= 5.7)
 * [SQLite3](https://sqlite.org/) (>= 3.x)
-
-### Intégration avec Buffalo
-
-Lorsque vous générez une nouvelle application Buffalo, vous pouvez choisir la base de données à utiliser à l'aide de l'option `--db-type`. Par exemple, pour générer une nouvelle application avec le support de MySQL, vous pouvez utiliser la commande suivante :
-
-```bash
-$ buffalo new coke --db-type mysql
-```
-
-**Si vous ne choisissez pas le type de base de données, Buffalo utilisera le support pour PostgreSQL par défaut.**
-
-#### Ignorer la configuration de base de données
-
-Si vous souhaitez gérer la base de données par vous-même (sans utiliser Pop), ou si vous ne souhaitez pas utiliser de base de données, il est possible d'ignorer la génération du code associé aux bases de données : il suffit d'utiliser l'option `--skip-pop` pour cela.
-
-```bash
-$ buffalo new coke --skip-pop
-```
 
 ## Installation
 

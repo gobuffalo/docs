@@ -97,8 +97,20 @@ Le nom de la base de données à utiliser.
 Le dialecte de base de données à utiliser avec la connection. Les valeurs acceptées sont :
 * Pilote MySQL : « mysql »
 * Pilote PostgreSQL : « postgres », « postgresql » ou « pg »
-* Pilote Cockroach : « cockroach », « cockroachdb » ou « crdb »
+* Pilote Cockroach DB : « cockroach », « cockroachdb » ou « crdb »
 * Pilote SQLite : « sqlite » ou « sqlite3 »
+
+### driver
+
+<%= sinceVersion("4.11.2") %>
+
+Vous pouvez utiliser cette option pour personnaliser le pilote de base de données utilisé.
+
+Voici les pilotes utilisés par défaut :
+* MySQL : [github.com/go-sql-driver/mysql](https://github.com/go-sql-driver/mysql)
+* PostgreSQL : [github.com/lib/pq](https://github.com/lib/pq)
+* Cockroach DB : [github.com/cockroachdb/cockroach-go/crdb](https://github.com/cockroachdb/cockroach-go/crdb)
+* SQLite : [github.com/mattn/go-sqlite3](https://github.com/mattn/go-sqlite3)
 
 ### encoding
 

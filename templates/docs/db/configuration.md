@@ -98,6 +98,18 @@ The database dialect to use with the connection. Accepted values are:
 * Cockroach driver: "cockroach", "cockroachdb" or "crdb"
 * SQLite driver: "sqlite" or "sqlite3"
 
+### driver
+
+<%= sinceVersion("4.11.2") %>
+
+Use this option to customize the database driver and override the default one used by Pop.
+
+Here is the list of the default SQL drivers:
+* MySQL: [github.com/go-sql-driver/mysql](https://github.com/go-sql-driver/mysql)
+* PostgreSQL: [github.com/lib/pq](https://github.com/lib/pq)
+* Cockroach DB: [github.com/cockroachdb/cockroach-go/crdb](https://github.com/cockroachdb/cockroach-go/crdb)
+* SQLite: [github.com/mattn/go-sqlite3](https://github.com/mattn/go-sqlite3)
+
 ### encoding
 
 <%= sinceVersion("4.6.0") %>

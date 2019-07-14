@@ -16,7 +16,7 @@ Pop, by default, follows conventions that were influenced by the ActiveRecord Ru
 
 Buffalo has a deep integration with Pop, and it'll help you to generate all the stuff you need to get started. You can still use another package if you want, but you'll be by yourself. :)
 
-### Supported Databases
+## Supported Databases
 
 Pop supports the following databases:
 * [PostgreSQL](https://www.postgresql.org/) (>= 9.3)
@@ -32,4 +32,5 @@ $ go get github.com/gobuffalo/pop/...
 
 ## Next Steps
 
+* [CLI Soda](/en/docs/db/toolbox) - Install the Soda CLI.
 * [Configuration](/en/docs/db/configuration) - Configure your database connections.

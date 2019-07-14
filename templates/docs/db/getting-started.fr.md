@@ -16,7 +16,7 @@ Pop, par défaut, suit des conventions influencées par la gem Ruby ActiveRecord
 
 Buffalo a une intégration forte avec Pop, et la boîte à outils vous aidera à générer tout ce qui est nécessaire pour démarrer. Vous pouvez toujours utiliser une autre bibliothèque pour communiquer avec vos bases de données, mais vous devrez vous débrouiller sans notre aide. :)
 
-### Bases de données supportées
+## Bases de données supportées
 
 Pop supporte les bases de données suivantes :
 * [PostgreSQL](https://www.postgresql.org/) (>= 9.3)
@@ -32,4 +32,5 @@ $ go get github.com/gobuffalo/pop/...
 
 ## Prochaines étapes
 
+* [CLI Soda](/fr/docs/db/toolbox) - Installer la CLI Soda.
 * [Configuration](/fr/docs/db/configuration) - Configurer vos connexions de base de données.

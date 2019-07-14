@@ -1,10 +1,10 @@
-# Scoping
+# Factorisation des requêtes
 
-Scoping is a way to structure your DB calls, when it needs the same "base" query. Let's say you want to create a book store: the store provides books for everyone, but some special editions are reserved to customers with a registered account. It means that for the whole store, you'll need to filter the books, so the "guest" customers can only see the restricted list of books.
+La factorisation est une façon de structurer vos requêtes lorsqu'elles partagent une composante commune. Prenons par exemple une librairie : celle-ci fournit des livres pour tout le monde, mais certaines éditions ne sont accessibles qu'aux clients disposant d'un compte de fidélité. Cela signifie que pour l'ensemble de la librairie, vous allez devoir filtrer les livres de manière à appliquer la règle « seuls les clients disposant d'un compte fidélité peuvent avoir accès à l'ensemble des livres ».
 
-## The usual way
+## La manière normale
 
-A "naive" way can be writing each full query.
+Sans trop réfléchir, on peut écrire chaque requête en entier.
 
 ```go
 type Book struct {
@@ -17,7 +17,7 @@ type Books []Book
 ```
 
 ```go
-// Get available books list
+// On cherche à récupérer la liste des livres
 books := Books{}
 tx := c.Value("tx").(*pop.Connection)
 
@@ -26,7 +26,7 @@ var err error
 if !registeredAccount {
     err = tx.Where("is_restricted = false").All(&books)
 } else {
-    // Create an empty query
+    // On récupère l'ensemble des livres sans filtre
     err = tx.All(&books)
 }
 
@@ -36,7 +36,7 @@ if err != nil {
     fmt.Printf("%v\n", books)
 }
 
-// Get a specific book
+// On récupère un livre en particulier
 book := Book{}
 bookID := "6ba7b810-9dad-11d1-80b4-00c04fd430c8"
 tx := c.Value("tx").(*pop.Connection)
@@ -56,9 +56,9 @@ if err != nil {
 }
 ```
 
-## The scoped way
+## La manière factorisée
 
-The scope factorizes the common part of the query:
+En utilisant un *scope*, on peut réécrire nos requêtes de la manière suivante :
 
 ```go
 type Book struct {
@@ -71,7 +71,7 @@ type Books []Book
 ```
 
 ```go
-// restrictedScope defines a base query which shares the common constraint.
+// restrictedScope définit une requête de base qui applique notre contrainte partagée.
 func restrictedScope(registeredAccount bool) pop.ScopeFunc {
   return func(q *pop.Query) *pop.Query {
     if !registeredAccount {
@@ -83,7 +83,7 @@ func restrictedScope(registeredAccount bool) pop.ScopeFunc {
 ```
 
 ```go
-// Get available books list
+// On cherche à récupérer la liste des livres
 books := Books{}
 
 if err := tx.Scope(restrictedScope(registeredAccount)).All(&books); err != nil {
@@ -92,7 +92,7 @@ if err := tx.Scope(restrictedScope(registeredAccount)).All(&books); err != nil {
     fmt.Printf("%v\n", books)
 }
 
-// Get a specific book
+// On récupère un livre en particulier
 book := Book{}
 bookID := "6ba7b810-9dad-11d1-80b4-00c04fd430c8"
 tx := c.Value("tx").(*pop.Connection)
@@ -106,4 +106,4 @@ if err := tx.Scope(restrictedScope(registeredAccount)).Find(&book, bookID) != ni
 }
 ```
 
-See how we factorized the common restriction for each query, using the `restrictedScope` function?
+Et voilà comment factoriser une (ou plusieurs) conditions communes entre plusieurs requêtes !

@@ -108,6 +108,9 @@
 - id: menu.db-callbacks
   translation: Callbacks
 
+- id: menu.db-scoping
+  translation: Factorisation des requêtes
+
 - id: menu.db-buffalo-integration
   translation: Intégration avec Buffalo
 

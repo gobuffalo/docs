@@ -1,7 +1,7 @@
 <% seoDescription("Démarrer avec Pop") %>
 <% seoKeywords(["buffalo", "go", "golang", "bdd", "ORM", "pop", "migrations"]) %>
 
-<%= h1("Démarrer avec Pop") %>
+# Démarrer avec Pop
 
 Le paquet [pop](https://godoc.org/github.com/gobuffalo/pop) est fourni par défaut avec Buffalo, mais vous pouvez l'utiliser en dehors de l'écosystème Buffalo. Pop se sert du fantastique paquet https://github.com/jmoiron/sqlx, normalise quelques patterns courants et workflows généralement associés à la manipulation de bases de données en Go.
 
@@ -16,7 +16,7 @@ Pop, par défaut, suit des conventions influencées par la gem Ruby ActiveRecord
 
 Buffalo a une intégration forte avec Pop, et la boîte à outils vous aidera à générer tout ce qui est nécessaire pour démarrer. Vous pouvez toujours utiliser une autre biliothèque pour communiquer avec vos bases de données, mais vous devrez vous débrouiller sans notre aide. :)
 
-## Bases de données supportées
+### Bases de données supportées
 
 Pop supporte les bases de données suivantes :
 * [PostgreSQL](https://www.postgresql.org/) (>= 9.3)
@@ -24,7 +24,7 @@ Pop supporte les bases de données suivantes :
 * [MySQL](https://www.mysql.com/) (>= 5.7)
 * [SQLite3](https://sqlite.org/) (>= 3.x)
 
-## Intégration avec Buffalo
+### Intégration avec Buffalo
 
 Lorsque vous générez une nouvelle application Buffalo, vous pouvez choisir la base de données à utiliser à l'aide de l'option `--db-type`. Par exemple, pour générer une nouvelle application avec le support de MySQL, vous pouvez utiliser la commande suivante :
 
@@ -34,12 +34,18 @@ $ buffalo new coke --db-type mysql
 
 **Si vous ne choisissez pas le type de base de données, Buffalo utilisera le support pour PostgreSQL par défaut.**
 
-### Ignorer la configuration de base de données
+#### Ignorer la configuration de base de données
 
 Si vous souhaitez gérer la base de données par vous-même (sans utiliser Pop), ou si vous ne souhaitez pas utiliser de base de données, il est possible d'ignorer la génération du code associé aux bases de données : il suffit d'utiliser l'option `--skip-pop` pour cela.
 
 ```bash
 $ buffalo new coke --skip-pop
+```
+
+## Installation
+
+```bash
+$ go get github.com/gobuffalo/pop/...
 ```
 
 ## Prochaines étapes

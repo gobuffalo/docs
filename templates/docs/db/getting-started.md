@@ -1,7 +1,7 @@
 <% seoDescription("Getting started with Pop") %>
 <% seoKeywords(["buffalo", "go", "golang", "database", "ORM", "pop", "migrations"]) %>
 
-<%= h1("Getting started with Pop") %>
+# Getting started with Pop
 
 The [pop](https://godoc.org/github.com/gobuffalo/pop) package is included with Buffalo by default, but you can use it outside of Buffalo. It wraps the absolutely amazing https://github.com/jmoiron/sqlx library, cleans up some of the common patterns and work flows usually associated with dealing with databases in Go.
 
@@ -16,7 +16,7 @@ Pop, by default, follows conventions that were influenced by the ActiveRecord Ru
 
 Buffalo has a deep integration with Pop, and it'll help you to generate all the stuff you need to get started. You can still use another package if you want, but you'll be by yourself. :)
 
-## Supported Databases
+### Supported Databases
 
 Pop supports the following databases:
 * [PostgreSQL](https://www.postgresql.org/) (>= 9.3)
@@ -24,7 +24,7 @@ Pop supports the following databases:
 * [MySQL](https://www.mysql.com/) (>= 5.7)
 * [SQLite3](https://sqlite.org/) (>= 3.x)
 
-## Buffalo Integration
+### Buffalo Integration
 
 When you generate a new Buffalo application you can choose the target database with the `--db-type` flag. For instance, to generate a new app with MySQL database support, you can write the following:
 
@@ -34,12 +34,18 @@ $ buffalo new coke --db-type mysql
 
 **By default, Buffalo will generate an app with PostgreSQL as the backing database.**
 
-### Skip database support
+#### Skip database support
 
 If you want to handle the database without using Pop, or if you're building an app without database, it's also possible to skip generation of all database components with the `--skip-pop` flag.
 
 ```bash
 $ buffalo new coke --skip-pop
+```
+
+## Installation
+
+```bash
+$ go get github.com/gobuffalo/pop/...
 ```
 
 ## Next Steps

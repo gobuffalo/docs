@@ -51,6 +51,9 @@
 - id: menu.overview
   translation: Vue d'ensemble
 
+- id: menu.release-notes
+  translation: Release Notes
+
 - id: menu.getting-started
   translation: Prise en main
 

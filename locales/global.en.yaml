@@ -51,6 +51,9 @@
 - id: menu.overview
   translation: Overview
 
+- id: menu.release-notes
+  translation: Release Notes
+
 - id: menu.getting-started
   translation: Getting Started
 

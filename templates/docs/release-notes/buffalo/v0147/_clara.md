@@ -1,4 +1,4 @@
-### Clara
+## Improved Buffalo Info Output
 
 The Go/Buffalo tool for checking a system environment for Go and/or Buffalo development, [https://github.com/gobuffalo/clara](https://github.com/gobuffalo/clara), has been added to the `buffalo info` command to help users understand/diagnosis common environmental issues.
 

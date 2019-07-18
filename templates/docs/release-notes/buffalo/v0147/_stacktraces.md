@@ -1,4 +1,4 @@
-### Removing Stack Traces from Errors
+## Removing Stack Traces from Errors
 
 Since the beginning Buffalo has used the [`github.com/pkg/errors`](https://godoc.org/github.com/pkg/errors) package to provide "stack traces" to developers to help them gain more context to the error.
 

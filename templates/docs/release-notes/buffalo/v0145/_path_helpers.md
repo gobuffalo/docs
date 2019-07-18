@@ -1,6 +1,6 @@
-## New Path Helpers
+## New PathFor Helper
 
-`PathFor` takes an `interface{}`, or a `slice` of them, and tries to convert it to a `/foos/{id}` style URL path.
+The new [`github.com/gobuffalo/helpers/paths#PathFor`](https://godoc.org/github.com/gobuffalo/helpers/paths#PathFor) helper takes an `interface{}`, or a `slice` of them, and tries to convert it to a `/foos/{id}` style URL path.
 
 Rules:
 

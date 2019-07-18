@@ -1,10 +1,10 @@
 $titles-orange: #CC471E;
 
 .navbar-collapse.collapse.in {
-    display: block!important;
+    display: block !important;
 }
 
-.navbar a{
+.navbar a {
     text-decoration: none;
 }
 
@@ -16,12 +16,11 @@ $titles-orange: #CC471E;
     border-radius: 4px;
 }
 
-
 .main-content {
     padding-top: 40px;
     margin-bottom: 100px;
 }
-  
+
 .sidebar-boxed .sidenav ul ul {
     padding-left: 0px;
 }
@@ -64,7 +63,7 @@ h2 {
 .faq {
     h6 {
         p {
-        display: inline;
+            display: inline;
         }
     }
 }
@@ -96,7 +95,7 @@ h2 {
 
     .container {
         & > #global-footer {
-        margin-left: 0;
+            margin-left: 0;
         }
     }
 }
@@ -129,6 +128,7 @@ h2 {
 
 .feature {
     @extend .col-12;
+
     @extend .col-3;
 
     h4 {
@@ -137,10 +137,10 @@ h2 {
         font-variant: small-caps;
 
         i.fa {
-        color: #3b4b5b;
-        display: block;
-        font-size: 2em;
-        margin-bottom: 0.6em;
+            color: #3b4b5b;
+            display: block;
+            font-size: 2em;
+            margin-bottom: 0.6em;
         }
     }
 
@@ -190,15 +190,15 @@ h2 {
         background-color: #212529;
         border-color: #32383e;
     }
-    }
+}
 
-    a {
+a {
     code {
         text-decoration: underline;
         text-decoration-color: #125B96;
 
         &:hover {
-        text-decoration: none;
+            text-decoration: none;
         }
     }
 }
@@ -221,11 +221,12 @@ h2 {
 
 .feedback-row {
     @extend .row;
+
     border-bottom: solid 1px #dfdfdf;
     margin-bottom: 20px;
     padding-bottom: 20px;
 
-    &:last-child{
+    &:last-child {
         border-bottom: none;
         margin-bottom: 0;
         padding-bottom: 7px;

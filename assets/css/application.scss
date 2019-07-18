@@ -16,3 +16,39 @@ p {
         font-size: 20px;
     }
 }
+
+.container-fluid {
+    .main-content {
+        max-width: 1400px;
+    }
+}
+
+h1::after, h2::after, h3::after {
+    width: 100%;
+}
+
+h2::after, h3::after {
+    border-bottom: 0px solid #e0562e;
+}
+
+h2 {
+    font-weight: bold;
+}
+
+h2, h3 {
+    text-align: left;
+    margin-bottom: 0px;
+}
+
+h1::before, h2::before, h3::before {
+    content: '';
+    border-top: 1px solid #e0562e;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    padding-top: 15px;
+}
+
+.since-version {
+    font-size: 12px;
+}

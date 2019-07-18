@@ -17,7 +17,7 @@ $ go get -u github.com/gobuffalo/buffalo/buffalo
 ```bash
 $ go get github.com/gobuffalo/buffalo
 $ cd $GOPATH/src/github.com/gobuffalo/buffalo
-$ git checkout tags/<%= version %> -b <%= version %>
+$ git checkout tags/<%= to %> -b <%= to %>
 $ make install
 ```
 

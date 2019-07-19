@@ -3,7 +3,6 @@ module github.com/gobuffalo/gobuffalo
 go 1.12
 
 require (
-	cloud.google.com/go v0.36.0 // indirect
 	github.com/PuerkitoBio/goquery v1.5.0 // indirect
 	github.com/RoaringBitmap/roaring v0.4.18 // indirect
 	github.com/Smerity/govarint v0.0.0-20150407073650-7265e41f48f1 // indirect
@@ -32,12 +31,14 @@ require (
 	github.com/gobuffalo/mw-forcessl v0.0.0-20190224202501-6d1ef7ffb276
 	github.com/gobuffalo/mw-i18n v0.0.0-20190224203426-337de00e4c33
 	github.com/gobuffalo/mw-paramlogger v0.0.0-20190224201358-0d45762ab655
+	github.com/gobuffalo/packd v0.3.0
 	github.com/gobuffalo/packr v1.25.0 // indirect
 	github.com/gobuffalo/packr/v2 v2.5.2
 	github.com/gobuffalo/plush v3.8.3+incompatible
 	github.com/gobuffalo/tags v2.1.0+incompatible
 	github.com/gobuffalo/x v0.1.0
 	github.com/golang/gddo v0.0.0-20190419222130-af0f2af80721
+	github.com/google/go-cmp v0.3.0
 	github.com/grokify/html-strip-tags-go v0.0.0-20190424092004-025bd760b278
 	github.com/jackc/fake v0.0.0-20150926172116-812a484cc733 // indirect
 	github.com/jackc/pgx v3.5.0+incompatible // indirect

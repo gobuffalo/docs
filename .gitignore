@@ -12,6 +12,7 @@ nuapp
 .vscode/
 .grifter/
 .env
+/gobuffalo
 
 # Search engine
 gobuffalo.search/

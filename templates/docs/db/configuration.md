@@ -1,7 +1,7 @@
 <% seoDescription("How to configure my database with Pop?") %>
 <% seoKeywords(["buffalo", "go", "golang", "database", "ORM", "pop", "configuration"]) %>
 
-<%= h1("Database Configuration") %>
+# Database Configuration
 
 Pop configuration is managed by a `database.yml` file, located at the root of your project. This file is generated for you if you use Buffalo &#8211; if you choose to use Pop &#8211; and contains a basic configuration for the database you selected on generation with the `--db-type` flag. PostgreSQL is considered as the default.
 
@@ -30,7 +30,7 @@ You can see three connections defined:
 
 Of course, you can configure any new connection you want, but Buffalo won't pick them by default.
 
-### Generator
+## Generator
 
 <%= partial("docs/db/soda_buffalo_note.md") %>
 
@@ -42,7 +42,7 @@ $ soda g config
 
 The default will generate a `database.yml` file in the current directory for a PostgreSQL database. You can override the type of database using the `-t` flag and passing in any of the supported database types: `postgres`, `cockroach`, `mysql`, or `sqlite3`.
 
-### database.yml
+## Config file location
 
 The Pop configuration file &#8211; `database.yml` &#8211; can be found either:
 * At your project root (default).
@@ -56,7 +56,7 @@ You can also customize the file name:
 pop.ConfigName = "my_pop_config.yml"
 ```
 
-### Env vs detailed configuration
+## Env vs detailed configuration
 
 <%= note() { %>
 Note that the `database.yml` file is also a Go template, so you can use Go template syntax. There are two special functions that are included, `env` and `envOr`.
@@ -97,6 +97,18 @@ The database dialect to use with the connection. Accepted values are:
 * PostgreSQL driver: "postgres", "postgresql" or "pg"
 * Cockroach driver: "cockroach", "cockroachdb" or "crdb"
 * SQLite driver: "sqlite" or "sqlite3"
+
+### driver
+
+<%= sinceVersion("4.11.2") %>
+
+Use this option to customize the database driver and override the default one used by Pop.
+
+Here is the list of the default SQL drivers:
+* MySQL: [github.com/go-sql-driver/mysql](https://github.com/go-sql-driver/mysql)
+* PostgreSQL: [github.com/lib/pq](https://github.com/lib/pq)
+* Cockroach DB: [github.com/cockroachdb/cockroach-go/crdb](https://github.com/cockroachdb/cockroach-go/crdb)
+* SQLite: [github.com/mattn/go-sqlite3](https://github.com/mattn/go-sqlite3)
 
 ### encoding
 

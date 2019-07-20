@@ -39,6 +39,7 @@ type Address struct {
   HouseNumber  int
 }
 
+type Books []Book
 type Addresses []Address
 ```
 
@@ -177,3 +178,4 @@ In the case that you feed the eager create with associate models that already ex
 ## Related Content
 
 * [Associations with Pop: 1 to 1](https://blog.gobuffalo.io/associations-with-pop-1-to-1-592f02e2bdd8) - An article about 1 to 1 associations in Pop.
+* [Associations with Pop: 1 to n](https://blog.gobuffalo.io/associations-with-pop-1-to-n-2fb3e1c3833f) - An article about 1 to n associations in Pop.

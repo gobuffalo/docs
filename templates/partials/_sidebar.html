@@ -1,5 +1,5 @@
 <!-- Sidebar -->
-<aside class="col-md-3 col-sm-3 sidebar sidebar-boxed sidebar-dark">
+<aside class="col-md-3 sidebar sidebar-boxed sidebar-dark">
 
   <ul class="sidenav dropable ">
 
@@ -19,22 +19,39 @@
     </li>
 
     <li>
+      <a href="<%= docPath({name: "overview", lang: lang}) %>"><%= t("menu.overview") %></a>
+    </li>
+
+    <li>
+      <a href="#"><%= t("menu.release-notes") %></a>
+      <ul class="sidenav dropable">
+        <li>
+          <!-- <a href="<%= docPath({name: "release&#45;notes/buffalo/v0147", lang: lang}) %>" hreflang="<%= lang %>">Buffalo@v0.14.7</a> -->
+          <a href="<%= docPath({name: "release-notes/buffalo/v0146", lang: lang}) %>" hreflang="<%= lang %>">Buffalo@v0.14.6</a>
+          <a href="<%= docPath({name: "release-notes/buffalo/v0145", lang: lang}) %>" hreflang="<%= lang %>">Buffalo@v0.14.5</a>
+          <a href="<%= docPath({name: "release-notes/buffalo/v0144", lang: lang}) %>" hreflang="<%= lang %>">Buffalo@v0.14.4</a>
+          <a href="<%= docPath({name: "release-notes/buffalo/v0143", lang: lang}) %>" hreflang="<%= lang %>">Buffalo@v0.14.3</a>
+        </li>
+      </ul>
+    </li>
+
+    <li>
       <a href="#"><%= t("menu.getting-started") %></a>
       <ul class="sidenav dropable">
         <li>
-          <a href="<%= docPath({name: "installation", lang: lang}) %>" hreflang="<%= lang %>"><%= t("menu.installation") %></a>
+          <a href="<%= docPath({name: "getting-started/installation", lang: lang}) %>" hreflang="<%= lang %>"><%= t("menu.installation") %></a>
         </li>
         <li>
-          <a href="<%= docPath({name: "integrations", lang: lang}) %>" hreflang="<%= lang %>"><%= t("menu.integrations") %></a>
+          <a href="<%= docPath({name: "getting-started/integrations", lang: lang}) %>" hreflang="<%= lang %>"><%= t("menu.integrations") %></a>
         </li>
         <li>
-          <a href="<%= docPath({name: "new-project", lang: lang}) %>" hreflang="<%= lang %>"><%= t("menu.new-project") %></a>
+          <a href="<%= docPath({name: "getting-started/new-project", lang: lang}) %>" hreflang="<%= lang %>"><%= t("menu.new-project") %></a>
         </li>
         <li>
-          <a href="<%= docPath({name: "directory-structure", lang: lang}) %>" hreflang="<%= lang %>"><%= t("menu.directory-structure") %></a>
+          <a href="<%= docPath({name: "getting-started/directory-structure", lang: lang}) %>" hreflang="<%= lang %>"><%= t("menu.directory-structure") %></a>
         </li>
         <li>
-          <a href="<%= docPath({name: "config-vars", lang: lang}) %>" hreflang="<%= lang %>"><%= t("menu.config-variables") %></a>
+          <a href="<%= docPath({name: "getting-started/config-vars", lang: lang}) %>" hreflang="<%= lang %>"><%= t("menu.config-variables") %></a>
         </li>
       </ul>
     </li>
@@ -133,10 +150,10 @@
           <a href="<%= docPath({name: "db/getting-started", lang: lang}) %>"><%= t("menu.db-getting-started") %></a>
         </li>
         <li>
-          <a href="<%= docPath({name: "db/configuration", lang: lang}) %>"><%= t("menu.db-configuration") %></a>
+          <a href="<%= docPath({name: "db/toolbox", lang: lang}) %>"><%= t("menu.db-toolbox") %></a>
         </li>
         <li>
-          <a href="<%= docPath({name: "db/toolbox", lang: lang}) %>"><%= t("menu.db-toolbox") %></a>
+          <a href="<%= docPath({name: "db/configuration", lang: lang}) %>"><%= t("menu.db-configuration") %></a>
         </li>
         <li>
           <a href="<%= docPath({name: "db/models", lang: lang}) %>"><%= t("menu.db-models") %></a>
@@ -151,13 +168,16 @@
           <a href="<%= docPath({name: "db/querying", lang: lang}) %>"><%= t("menu.db-querying") %></a>
         </li>
         <li>
+          <a href="/en/docs/db/mutations">Mutations</a>
+        </li>
+        <li>
           <a href="/en/docs/db/relations">Associations and Relationships</a>
         </li>
         <li>
           <a href="<%= docPath({name: "db/callbacks", lang: lang}) %>"><%= t("menu.db-callbacks") %></a>
         </li>
         <li>
-          <a href="/en/docs/db/scoping">Scoping</a>
+          <a href="<%= docPath({name: "db/scoping", lang: lang}) %>"><%= t("menu.db-scoping") %></a>
         </li>
         <li>
           <a href="<%= docPath({name: "db/buffalo-integration", lang: lang}) %>"><%= t("menu.db-buffalo-integration") %></a>

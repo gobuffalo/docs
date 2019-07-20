@@ -71,6 +71,7 @@ type Books []Book
 ```
 
 ```go
+// restrictedScope defines a base query which shares the common constraint.
 func restrictedScope(registeredAccount bool) pop.ScopeFunc {
   return func(q *pop.Query) *pop.Query {
     if !registeredAccount {

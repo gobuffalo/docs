@@ -106,4 +106,4 @@ Ce fichier se charge d'amorcer votre application et de la démarrer.
 
 ## Prochaines étapes
 
-* [Configuration](/fr/docs/config-vars) - Comment gérer la configuration de mon application ?
+* [Configuration](/fr/docs/getting-started/config-vars) - Comment gérer la configuration de mon application ?

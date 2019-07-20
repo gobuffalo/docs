@@ -61,7 +61,7 @@ WantedBy=multi-user.target
 
 ## Déclarer les variables d'environment
 
-La manière officielle de gérer la configuration avec Buffalo est à travers les [variables d'environment](/fr/docs/config-vars). En utilisant Systemd, vous pouvez les définir avec un fichier de surcharge.
+La manière officielle de gérer la configuration avec Buffalo est à travers les [variables d'environment](/fr/docs/getting-started/config-vars). En utilisant Systemd, vous pouvez les définir avec un fichier de surcharge.
 
 Notre fichier de surcharge est situé dans  `/etc/systemd/system/myapp.service.d/`, et se nomme `override.conf`.
 

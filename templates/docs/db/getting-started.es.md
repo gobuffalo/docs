@@ -24,24 +24,6 @@ Pop es compatible con las siguientes bases de datos:
 * [MySQL](https://www.mysql.com/) (>= 5.7)
 * [SQLite3](https://sqlite.org/) (>= 3.x)
 
-## Integración de Buffalo
-
-Cuando genera una nueva aplicación Buffalo, puede elegir la base de datos de destino con el indicador `--db-type`. Por ejemplo, para generar una nueva aplicación con soporte de base de datos MySQL, puede escribir lo siguiente:
-
-```bash
-$ buffalo new coke --db-type mysql
-```
-
-**Por defecto, Buffalo generará una aplicación con PostgreSQL como base de datos.**
-
-### Proceder sin soporte de base de datos
-
-Si desea manejar la base de datos sin utilizar Pop, o si está creando una aplicación sin base de datos, también es posible omitir la generación de todos los componentes de la base de datos con el indicador `--skip-pop`.
-
-```bash
-$ buffalo new coke --skip-pop
-```
-
 ## Siguientes pasos
 
 * [Configuración](/es/docs/db/configuration) - Configure sus conexiones a la base de datos..

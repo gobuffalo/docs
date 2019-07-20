@@ -58,7 +58,7 @@ with-dep: true
 Before starting Buffalo for the first time, please head over to the [Database](/docs/db) docs and read a little bit about setting up your databases.
 <% } %>
 
-One of the downsides to Go development is the lack of code “reloading”. This means as you change your code **you need to manually stop** your application, rebuild it, then restart it. Buffalo finds this is annoying, and wants to make life better for you.
+One of the downsides to Go development is the lack of code “reloading”. This means as you change your code **you need to manually stop** your application, rebuild it, then restart it. Buffalo finds this annoying, and wants to make life better for you.
 
 ```bash
 $ buffalo dev
@@ -81,9 +81,9 @@ Sometimes you will already have an app working on the 3000 port. You can configu
 $ PORT=3001 buffalo dev
 ```
 
-You can also take a look at the [Env Variables](/en/docs/config-vars) chapter for further information on Buffalo configuration.
+You can also take a look at the [Env Variables](/en/docs/getting-started/config-vars) chapter for further information on Buffalo configuration.
 
 ## Next Steps
 
-* [Directory Structure](/en/docs/directory-structure) - Learn more about Buffalo structure.
-* [Configuration](/en/docs/config-vars) - Manage your app configuration.
+* [Directory Structure](/en/docs/getting-started/directory-structure) - Learn more about Buffalo structure.
+* [Configuration](/en/docs/getting-started/config-vars) - Manage your app configuration.

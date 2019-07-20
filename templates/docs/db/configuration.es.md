@@ -1,7 +1,7 @@
 <% seoDescription("¿Cómo configurar mi base de datos con Pop?") %>
 <% seoKeywords(["buffalo", "go", "golang", "base de datos", "ORM", "pop", "configuración"]) %>
 
-<%= h1("Configuración de la base de datos") %>
+# Configuración de la base de datos
 
 La configuración Pop se gestiona mediante un archivo `database.yml`, ubicado en la raíz de su proyecto. Este archivo se genera para usted si utiliza Buffalo &#8211; si elige usar Pop &#8211; y contiene una configuración básica para la base de datos que seleccionó en la generación con el _flag_ `--db-type`. PostgreSQL se usa como base de datos predeterminada.
 
@@ -30,7 +30,7 @@ Puede ver tres conexiones definidas:
 
 Por supuesto, puede configurar cualquier conexión nueva que desee, pero Buffalo no los seleccionará por defecto.
 
-### Generador
+## Generador
 
 <%= partial("docs/db/soda_buffalo_note.md") %>
 
@@ -42,7 +42,7 @@ $ soda g config
 
 El valor predeterminado generará un archivo `database.yml` en el directorio actual para una base de datos PostgreSQL. Puede anular el tipo de base de datos usando el indicador `-t` y pasar cualquiera de los tipos de bases de datos compatibles:` postgres`, `cockroach`,` mysql`, o `sqlite3`.
 
-### database.yml
+## Personalizar la ubicación de configuración
 
 El archivo de configuración Pop &#8211; `database.yml` &#8211; se puede encontrar:
 * En su raíz del proyecto (predeterminado).
@@ -56,7 +56,7 @@ También puedes personalizar el nombre del archivo:
 pop.ConfigName = "my_pop_config.yml"
 ```
 
-### Env vs configuración detallada
+## Env vs configuración detallada
 
 <%= note() { %>
 Tenga en cuenta que el archivo `database.yml` también es una plantilla Go, que permite el uso de la sintaxis de la plantilla Go. Hay dos funciones especiales que se incluyen, `env` y` envOr`.

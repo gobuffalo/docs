@@ -23,6 +23,7 @@ var app *buffalo.App
 var supportedLanguages = map[string]string{
 	"en": "English",
 	"fr": "Français",
+	"it": "Italiano",
 }
 
 // T is used to provide translations
@@ -52,7 +53,7 @@ func App() *buffalo.App {
 		app.Use(func(next buffalo.Handler) buffalo.Handler {
 			return func(c buffalo.Context) error {
 				c.Set("version", buffaloVersion)
-				c.Set("goMinVersion", "1.9.7")
+				c.Set("goMinVersion", "1.10.8")
 				c.Set("year", time.Now().Year())
 				c.Set("trainingURL", "http://www.gopherguides.com")
 				c.Set("videoList", vimeo.Videos)
@@ -84,16 +85,26 @@ func App() *buffalo.App {
 		enableProfiling(app)
 		bindRedirects(app)
 
-		app.GET("/{lang:fr|en}/search", Search)
-		app.GET("/{lang:fr|en}/docs/{name:.+}", Docs)
-
 		app.POST("/lang", ChangeLanguage)
-		app.GET("/{lang:fr|en}/sponsors", Sponsors)
-		app.GET("/{lang:fr|en}", HomeHandler)
+
+		languagesKey := createLanguagesKey()
+
+		app.GET(fmt.Sprintf("/{lang:%s}/search", languagesKey), Search)
+		app.GET(fmt.Sprintf("/{lang:%s}/docs/{name:.+}", languagesKey), Docs)
+		app.GET(fmt.Sprintf("/{lang:%s}/sponsors", languagesKey), Sponsors)
+		app.GET(fmt.Sprintf("/{lang:%s}", languagesKey), HomeHandler)
 
 		app.ServeFiles("/", assetBox)
 	}
 	return app
+}
+
+func createLanguagesKey() string {
+	allKeys := ""
+	for key := range supportedLanguages {
+		allKeys = fmt.Sprintf("%s|%s", allKeys, key)
+	}
+	return allKeys
 }
 
 // translations will load locale files, set up the translator `actions.T`,
@@ -126,27 +137,66 @@ func forceSSL() buffalo.MiddlewareFunc {
 }
 
 func bindRedirects(app *buffalo.App) {
+	// Deleted pages
 	app.GET("/en/docs/generators", func(c buffalo.Context) error {
 		return c.Render(http.StatusGone, nil)
 	})
 
-	app.GET("/docs/db", func(c buffalo.Context) error {
-		return c.Redirect(http.StatusMovedPermanently, fmt.Sprintf("/%s/docs/db/getting-started", c.Value("lang").(string)))
-	})
-	app.GET("/{lang:fr|en}/docs/db", func(c buffalo.Context) error {
-		return c.Redirect(http.StatusMovedPermanently, fmt.Sprintf("/%s/docs/db/getting-started", c.Value("lang").(string)))
-	})
-
-	oldURLs := []string{"systemd", "proxy", "building"}
-	for _, url := range oldURLs {
-		app.GET(fmt.Sprintf("/docs/%s", url), func(c buffalo.Context) error {
-			return c.Redirect(http.StatusMovedPermanently, fmt.Sprintf("/%s/docs/deploy/%s", c.Value("lang").(string), url))
-		})
-		app.GET(fmt.Sprintf("/{lang:fr|en}/docs/%s", url), func(c buffalo.Context) error {
-			return c.Redirect(http.StatusMovedPermanently, fmt.Sprintf("/%s/docs/deploy/%s", c.Value("lang").(string), url))
-		})
+	// Remapped pages
+	redirectsTable := []struct {
+		From string
+		To   string
+	}{
+		{
+			From: "/docs/db",
+			To:   "/docs/db/getting-started",
+		},
+		{
+			From: "/docs/systemd",
+			To:   "/docs/deploy/systemd",
+		},
+		{
+			From: "/docs/proxy",
+			To:   "/docs/deploy/proxy",
+		},
+		{
+			From: "/docs/building",
+			To:   "/docs/deploy/building",
+		},
+		{
+			From: "/docs/installation",
+			To:   "/docs/getting-started/installation",
+		},
+		{
+			From: "/docs/integrations",
+			To:   "/docs/getting-started/integrations",
+		},
+		{
+			From: "/docs/new-project",
+			To:   "/docs/getting-started/new-project",
+		},
+		{
+			From: "/docs/directory-structure",
+			To:   "/docs/getting-started/directory-structure",
+		},
+		{
+			From: "/docs/config-vars",
+			To:   "/docs/getting-started/config-vars",
+		},
 	}
 
+	for _, route := range redirectsTable {
+		func(from string, to string) {
+			app.GET(from, func(c buffalo.Context) error {
+				return c.Redirect(http.StatusMovedPermanently, fmt.Sprintf("/%s%s", c.Value("lang").(string), to))
+			})
+			app.GET(fmt.Sprintf("/{lang:fr|en}%s", from), func(c buffalo.Context) error {
+				return c.Redirect(http.StatusMovedPermanently, fmt.Sprintf("/%s%s", c.Value("lang").(string), to))
+			})
+		}(route.From, route.To)
+	}
+
+	// Specific cases
 	app.GET("/search", func(c buffalo.Context) error {
 		return c.Redirect(http.StatusFound, fmt.Sprintf("/%s/search", c.Value("lang").(string)))
 	})

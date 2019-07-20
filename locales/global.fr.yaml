@@ -31,6 +31,9 @@
 - id: top.store
   translation: Boutique
 
+- id: top.support
+  translation: Support
+
 # Footer
 - id: footer.copyright
   translation: Copyright &copy; {{ .year }} Buffalo. Tous droits réservés.
@@ -44,6 +47,12 @@
 
 - id: menu.language
   translation: Langue
+
+- id: menu.overview
+  translation: Vue d'ensemble
+
+- id: menu.release-notes
+  translation: Release Notes
 
 - id: menu.getting-started
   translation: Prise en main
@@ -102,6 +111,9 @@
 - id: menu.db-callbacks
   translation: Callbacks
 
+- id: menu.db-scoping
+  translation: Factorisation des requêtes
+
 - id: menu.db-buffalo-integration
   translation: Intégration avec Buffalo
 
@@ -128,6 +140,9 @@
 
 - id: menu.troubleshooting
   translation: Problèmes fréquents
+
+- id: menu.support
+  translation: Support
 
 - id: menu.training-and-consulting
   translation: Formation et consulting

@@ -1,11 +1,29 @@
 <% seoDescription("Comment utiliser Pop avec Buffalo ?") %>
 <% seoKeywords(["buffalo", "go", "golang", "pop", "buffalo", "intégration"]) %>
 
-<%= h1("Intégration avec Buffalo") %>
+# Intégration avec Buffalo
 
-Buffalo fournit un middleware pour Pop, afin de rendre plus facile l'utilisation des bases de données au sein de Buffalo : https://github.com/gobuffalo/buffalo-pop
+## Génération d'une nouvelle application
+
+Lorsque vous générez une nouvelle application Buffalo, vous pouvez choisir la base de données à utiliser à l'aide de l'option `--db-type`. Par exemple, pour générer une nouvelle application avec le support de MySQL, vous pouvez utiliser la commande suivante :
+
+```bash
+$ buffalo new coke --db-type mysql
+```
+
+**Si vous ne choisissez pas le type de base de données, Buffalo utilisera le support pour PostgreSQL par défaut.**
+
+### Ignorer la configuration de base de données
+
+Si vous souhaitez gérer la base de données par vous-même (sans utiliser Pop), ou si vous ne souhaitez pas utiliser de base de données, il est possible d'ignorer la génération du code associé aux bases de données : il suffit d'utiliser l'option `--skip-pop` pour cela.
+
+```bash
+$ buffalo new coke --skip-pop
+```
 
 ## Le middleware Pop pour les transactions
+
+Buffalo fournit un middleware pour Pop, afin de rendre plus facile l'utilisation des bases de données au sein de Buffalo : https://github.com/gobuffalo/buffalo-pop
 
 ### Installation
 

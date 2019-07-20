@@ -1,7 +1,7 @@
 <% seoDescription("Comment configurer ma base de données avec Pop ?") %>
 <% seoKeywords(["buffalo", "go", "golang", "base de données", "bdd", "ORM", "pop", "configuration"]) %>
 
-<%= h1("Configuration de base de données") %>
+# Configuration de base de données
 
 La configuration de Pop est gérée par le fichier `database.yml`, qui se trouve à la racine de votre projet. Ce fichier est généré par Buffalo si vous avez choisi de travailler avec Pop : il contient une configuration basique pour la base de données que vous avez sélectionnée lors de la génération de votre application, avec l'option `--db-type`. PostgreSQL est considéré comme le choix par défaut, comme indiqué précédement.
 
@@ -30,9 +30,11 @@ Comme vous pouvez le voir, trois connexions sont définies :
 
 Bien entendu, vous pouvez configurer autant de connexions que vous le désirez, mais Buffalo ne les utilisera pas par défaut.
 
-### Générateur
+## Générateur
 
-<%= partial("docs/db/soda_buffalo_note.md") %>
+<%= note() { %>
+**Note pour les utilisateurs de Buffalo** : les commandes de `soda` sont intégrées à la commande `buffalo`, sous la commande `pop`. À chaque fois que vous souhaitez utiliser une commande de `soda`, utilisez `buffalo pop` à la place.
+<% } %>
 
 Vous pouvez générer un fichier de configuration par défaut en utilisant la commande d'initialisation:
 
@@ -42,7 +44,7 @@ $ soda g config
 
 Cette commande génère un fichier `database.yml` dans le répertoire courant, pour une base de données PostgreSQL. Vous pouvez choisir le type de base de données en utilisant l'option `-t` et en passant l'un des types supportés : `postgres`, `cockroach`, `mysql` ou `sqlite3`.
 
-### database.yml
+## Emplacement du fichier de configuration
 
 Le fichier de configuration de Pop, `database.yml` peut se situer :
 * À la racine de votre projet (défaut).
@@ -56,7 +58,7 @@ Il est également possible de personnaliser le nom de ce fichier :
 pop.ConfigName = "ma_config_pop.yml"
 ```
 
-### Configuration par environnement vs détaillée
+## Configuration par environnement vs détaillée
 
 <%= note() { %>
 Notez que le fichier `database.yml` est aussi un template Go, vous pouvez donc utiliser la syntaxe de ces templates. Deux fonctions spéciales sont disponibles, `env` et `envOr`.
@@ -95,8 +97,20 @@ Le nom de la base de données à utiliser.
 Le dialecte de base de données à utiliser avec la connection. Les valeurs acceptées sont :
 * Pilote MySQL : « mysql »
 * Pilote PostgreSQL : « postgres », « postgresql » ou « pg »
-* Pilote Cockroach : « cockroach », « cockroachdb » ou « crdb »
+* Pilote Cockroach DB : « cockroach », « cockroachdb » ou « crdb »
 * Pilote SQLite : « sqlite » ou « sqlite3 »
+
+### driver
+
+<%= sinceVersion("4.11.2") %>
+
+Vous pouvez utiliser cette option pour personnaliser le pilote de base de données utilisé.
+
+Voici les pilotes utilisés par défaut :
+* MySQL : [github.com/go-sql-driver/mysql](https://github.com/go-sql-driver/mysql)
+* PostgreSQL : [github.com/lib/pq](https://github.com/lib/pq)
+* Cockroach DB : [github.com/cockroachdb/cockroach-go/crdb](https://github.com/cockroachdb/cockroach-go/crdb)
+* SQLite : [github.com/mattn/go-sqlite3](https://github.com/mattn/go-sqlite3)
 
 ### encoding
 

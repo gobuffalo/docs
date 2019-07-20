@@ -6,7 +6,7 @@
           A Go web development eco-system, <br/> designed to make the life of a Go web<br> developer easier.
         </h2>
         <p style="margin-bottom: 1.4em;">
-          <a href="/en/docs/installation" class="btn btn-primary btn-lg btn-buffalo">Get started</a>
+          <a href="/en/docs/getting-started/installation" class="btn btn-primary btn-lg btn-buffalo">Get started</a>
         </p>
         <div class="last-info">
         <p>Latest release:</p>
@@ -17,9 +17,9 @@
           <span class="badge badge-pill">Go <%= goMinVersion %>+</span>
         </div>
       </div>
-      <div class="col-md-6 col-lg-4 text-center hidden-xs">
-        <img src="/assets/images/logo_med.png" alt="buffalo" class="logo-presentation center-block"/>
-        <a class="buffalo-video center-block" href="#" data-toggle="modal" data-target="#videoModal">
+      <div class="col-md-6 col-lg-4 hidden-xs text-center d-none d-md-block">
+        <img src="/assets/images/logo_med.png" alt="buffalo" class="logo-presentation text-centered ml-auto mr-auto mb-3"/>
+        <a class="buffalo-video text-center" href="#" data-toggle="modal" data-target="#videoModal">
           <img src="<%= assetPath("images/landing_icons/play_button.svg") %>" alt="play_button">
           <span>Play video</span>
         </a>
@@ -33,7 +33,7 @@
   <h2 class="title">Main Features</h2>
   <div class="container">
     <div class="row">
-      <div class="col-lg-3 col-sm-6">
+      <div class="col-xl-3 col-md-6 col-sm-12">
         <div class="feature">
           <a href="/docs/routing">
             <img src="<%= assetPath("images/landing_icons/routing.svg") %>" alt="routing">
@@ -43,7 +43,7 @@
           <p>There might be faster routers out there, but this one is definitely the most powerful!</p>
         </div>
       </div>
-      <div class="col-lg-3 col-sm-6">
+      <div class="col-xl-3 col-md-6 col-sm-12">
         <div class="feature">
           <a href="/docs/templating">
             <img src="<%= assetPath("images/landing_icons/templating.svg") %>" alt="templating">
@@ -53,7 +53,7 @@
           <p>If you don't like it, you can use <code>html/template</code> or even bring your own!</p>
         </div>
       </div>
-      <div class="col-lg-3 col-sm-6">
+      <div class="col-xl-3 col-md-6 col-sm-12">
         <div class="feature">
           <a href="/docs/generators">
             <img src="<%= assetPath("images/landing_icons/toolbox.svg") %>" alt="buffalo-toolbox">
@@ -63,7 +63,7 @@
           <p>Extend the toolbox with plugins, using the language you want!</p>
         </div>
       </div>
-      <div class="col-lg-3 col-sm-6">
+      <div class="col-xl-3 col-md-6 col-sm-12">
         <div class="feature">
           <a href="/docs/testing">
             <img src="<%= assetPath("images/landing_icons/testing.svg") %>" alt="testing">
@@ -75,16 +75,16 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-lg-3 col-sm-6">
+      <div class="col-xl-3 col-md-6 col-sm-12">
         <div class="feature">
-          <a href="/docs/new-project#running-your-application-in-development">
-            <img src="<%= assetPath("images/landing_icons/routing.svg") %>" alt="hot-reload">
+          <a href="/docs/getting-started/new-project#running-your-application-in-development">
+            <img src="<%= assetPath("images/landing_icons/hotreload.svg") %>" alt="hot-reload">
             <h4>Hot Code Reload</h4>
           </a>
           <p>Code, save, refresh. Use the <code>buffalo dev</code> command to rebuild your app, from backend to frontend, and just see the changes live!</p>
         </div>
       </div>
-      <div class="col-lg-3 col-sm-6">
+      <div class="col-xl-3 col-md-6 col-sm-12">
         <div class="feature">
           <a href="/docs/assets">
             <span class="optional-label">Optional</span>
@@ -94,7 +94,7 @@
           <p>Use the Webpack-generated configuration to build your frontend assets, so you can optimize both backend and frontend.</p>
         </div>
       </div>
-      <div class="col-lg-3 col-sm-6">
+      <div class="col-xl-3 col-md-6 col-sm-12">
         <div class="feature">
           <a href="/docs/db/models">
             <span class="optional-label">Optional</span>
@@ -105,7 +105,7 @@
           <p>Supported databases: MySQL/MariaDB, PostgreSQL, CockroachDB, SQLite.</p>
         </div>
       </div>
-      <div class="col-lg-3 col-sm-6">
+      <div class="col-xl-3 col-md-6 col-sm-12">
         <div class="feature">
           <a href="/docs/tasks">
             <span class="optional-label">Optional</span>
@@ -118,7 +118,7 @@
       </div>
       <div class="col-md-12">
         <p class="get-started-btn">
-          <a href="/docs/installation" class="btn btn-primary btn-lg btn-buffalo"><strong>Get started</strong> with Buffalo</a>
+          <a href="/docs/getting-started/installation" class="btn btn-primary btn-lg btn-buffalo"><strong>Get started</strong> with Buffalo</a>
         </p>
       </div>
     </div>
@@ -152,7 +152,7 @@
 </section>
 
 <section class="sponsors">
-  <%= partial("platinum_sponsors.html") %>
+  <%= partial("partials/platinum_sponsors.html") %>
 </section>
 
 <section class="buffalo-at-work">
@@ -182,11 +182,4 @@
   </div>
 </section>
 
-<div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <%= partial("docs/youtube.html") %>
-  </div>
-</div>
+<%= partial("partials/video_modal.html") %>

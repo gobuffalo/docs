@@ -48,6 +48,12 @@
 - id: menu.language
   translation: Language
 
+- id: menu.overview
+  translation: Overview
+
+- id: menu.release-notes
+  translation: Release Notes
+
 - id: menu.getting-started
   translation: Getting Started
 
@@ -104,6 +110,9 @@
 
 - id: menu.db-callbacks
   translation: Callbacks
+
+- id: menu.db-scoping
+  translation: Scoping
 
 - id: menu.db-buffalo-integration
   translation: Buffalo Integration

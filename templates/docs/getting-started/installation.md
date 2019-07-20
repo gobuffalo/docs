@@ -48,7 +48,7 @@ Since `v0.10.3`, pre-compiled archives are provided with each release. If you do
 ```bash
 $ wget https://github.com/gobuffalo/buffalo/releases/download/v<%= version %>/buffalo_<%= version %>_linux_amd64.tar.gz
 $ tar -xvzf buffalo_<%= version %>_linux_amd64.tar.gz
-$ sudo mv buffalo-no-sqlite /usr/local/bin/buffalo
+$ sudo mv buffalo /usr/local/bin/buffalo
 ```
 
 ### MacOS
@@ -56,9 +56,9 @@ $ sudo mv buffalo-no-sqlite /usr/local/bin/buffalo
 ```bash
 $ curl -OL https://github.com/gobuffalo/buffalo/releases/download/v<%= version %>/buffalo_<%= version %>_darwin_amd64.tar.gz
 $ tar -xvzf buffalo_<%= version %>_darwin_amd64.tar.gz
-$ sudo mv buffalo-no-sqlite /usr/local/bin/buffalo
+$ sudo mv buffalo /usr/local/bin/buffalo
 # or if you have ~/bin folder setup in the environment PATH variable
-$ mv buffalo-no-sqlite ~/bin/buffalo
+$ mv buffalo ~/bin/buffalo
 ```
 
 ## Scoop (Windows)
@@ -154,5 +154,5 @@ If you have a similar output, your Buffalo toolbox is ready to work!
 
 ## Next Steps
 
-* [Tooling Integration](/en/docs/integrations) - Work with Buffalo, using existing tools.
-* [Generate a New Project](/en/docs/new-project) - Create your first Buffalo project!
+* [Tooling Integration](/en/docs/getting-started/integrations) - Work with Buffalo, using existing tools.
+* [Generate a New Project](/en/docs/getting-started/new-project) - Create your first Buffalo project!

@@ -47,6 +47,7 @@ require (
 	github.com/mmcdole/goxpp v0.0.0-20181012175147-0068e33feabf // indirect
 	github.com/pkg/errors v0.8.1
 	github.com/remyoudompheng/bigfft v0.0.0-20190512091148-babf20351dd7 // indirect
+	github.com/spf13/afero v1.2.1 // indirect
 	github.com/steveyen/gtreap v0.0.0-20150807155958-0abe01ef9be2 // indirect
 	github.com/stretchr/testify v1.3.0
 	github.com/stvp/slug v0.0.0-20150928221549-5ab8191bb1fe

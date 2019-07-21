@@ -13,11 +13,7 @@ type releaseNotes struct {
 	box packd.Box
 }
 
-<<<<<<< HEAD
 func (releaseNotes) Path(key string, v string, ps ...string) string {
-=======
-func (releaseNotes) Path(key, v string, ps ...string) string {
->>>>>>> master
 	args := []string{
 		"docs",
 		"release-notes",

@@ -1,8 +1,123 @@
 ## Improved Buffalo Info Output
 
-The Go/Buffalo tool for checking a system environment for Go and/or Buffalo development, [https://github.com/gobuffalo/clara](https://github.com/gobuffalo/clara), has been added to the `buffalo info` command to help users understand/diagnosis common environmental issues.
+The `buffalo info` command can be useful for helper developers gather information about their application and environment to help, or help others, diagnosis issues that may arise.
 
-In addition, the cleaner, and more expressive output of `buffalo info` will be very helpful to those helping to assist on issues.
+In previous versions of Buffalo the output would look something like the follow:
+
+```plain
+### Buffalo Version
+v0.14.0
+
+### App Information
+Pwd=$GOPATH/src/github.com/markbates/coke
+Root=$GOPATH/src/github.com/markbates/coke
+GoPath=$GOPATH
+PackagePkg=github.com/markbates/coke
+ActionsPkg=github.com/markbates/coke/actions
+ModelsPkg=github.com/markbates/coke/models
+GriftsPkg=github.com/markbates/coke/grifts
+WithModules=true
+Name=coke
+Bin=bin/coke
+VCS=git
+WithPop=true
+WithSQLite=false
+WithDep=false
+WithWebpack=true
+WithNodeJs=true
+WithYarn=true
+WithDocker=true
+WithGrifts=true
+AsWeb=true
+AsAPI=false
+PackageJSON={map[]}
+
+### Go Version
+go version go1.12.3 darwin/amd64
+
+### Go Env
+GOARCH="amd64"
+GOBIN=""
+GOCACHE="$HOME/Library/Caches/go-build"
+GOEXE=""
+GOFLAGS=""
+GOHOSTARCH="amd64"
+GOHOSTOS="darwin"
+GOOS="darwin"
+GOPATH="$GOPATH"
+GOPROXY=""
+GORACE=""
+GOROOT="$GOROOT"
+GOTMPDIR=""
+GOTOOLDIR="$GOROOT/pkg/tool/darwin_amd64"
+GCCGO="gccgo"
+CC="clang"
+CXX="clang++"
+CGO_ENABLED="1"
+GOMOD="$GOPATH/src/github.com/markbates/coke/go.mod"
+CGO_CFLAGS="-g -O2"
+CGO_CPPFLAGS=""
+CGO_CXXFLAGS="-g -O2"
+CGO_FFLAGS="-g -O2"
+CGO_LDFLAGS="-g -O2"
+PKG_CONFIG="pkg-config"
+GOGCCFLAGS="-fPIC -m64 -pthread -fno-caret-diagnostics -Qunused-arguments -fmessage-length=0 -fdebug-prefix-map=/var/folders/zj/ktv0trrj4l79dfq0dkm1b6d40000gn/T/go-build329153793=/tmp/go-build -gno-record-gcc-switches -fno-common"
+
+### Node Version
+v10.11.0
+
+### NPM Version
+6.4.1
+
+### Yarn Version
+1.10.1
+
+### PostgreSQL Version
+pg_ctl (PostgreSQL) 10.5
+
+### MySQL Version
+mysql  Ver 8.0.12 for osx10.13 on x86_64 (Homebrew)
+
+### SQLite Version
+3.24.0 2018-06-04 14:10:15 95fbac39baaab1c3a84fdfc82ccb7f42398b2e92f18a2a57bce1d4a713cbaapl
+
+### Dep Version
+could not find a Gopkg.toml file
+
+### Dep Status
+could not find a Gopkg.toml file
+
+### go.mod
+module github.com/markbates/coke
+
+go 1.12
+
+require (
+	cloud.google.com/go v0.36.0 // indirect
+	github.com/codegangsta/negroni v1.0.0 // indirect
+	github.com/gobuffalo/buffalo v0.14.7-beta.2
+	github.com/gobuffalo/buffalo-docker v1.0.7 // indirect
+	github.com/gobuffalo/buffalo-pop v1.16.0
+	github.com/gobuffalo/envy v1.7.0
+	github.com/gobuffalo/mw-csrf v0.0.0-20190129204204-25460a055517
+	github.com/gobuffalo/mw-forcessl v0.0.0-20190224202501-6d1ef7ffb276
+	github.com/gobuffalo/mw-i18n v0.0.0-20190224203426-337de00e4c33
+	github.com/gobuffalo/mw-paramlogger v0.0.0-20190224201358-0d45762ab655
+	github.com/gobuffalo/packr v1.30.1
+	github.com/gobuffalo/packr/v2 v2.5.2
+	github.com/gobuffalo/pop v4.11.2+incompatible
+	github.com/gobuffalo/suite v2.8.1+incompatible
+	github.com/gobuffalo/x v0.0.0-20190224155809-6bb134105960 // indirect
+	github.com/markbates/grift v1.1.0
+	github.com/unrolled/secure v1.0.0
+)
+```
+
+While all of that information is helpful to members of the core team, few others understand it and offers little of value to them.
+
+The [Clara](https://github.com/gobuffalo/clara) tool was built as a way of helping developers check their environment for common setup issues for both Go and Buffalo. It then provides simple troubleshooting tips and links.
+
+The `buffalo info` command now uses Clara, as well as custom checks, to, hopefully, help developers with issues.
 
 ```plain
 -> Go: Checking installation
@@ -12,10 +127,19 @@ In addition, the cleaner, and more expressive output of `buffalo info` will be v
 ✓ Your version of Go, 1.12.6, meets the minimum requirements.
 
 -> Go: Checking GOPATH
-✓ You are using Go Modules, so no need to worry about the GOPATH.
+✓ You appear to be operating inside of your GOPATH.
 
 -> Go: Checking Package Management
-✓ You are using Go Modules (`go`) for package management.
+⚠ You do not appear to be using a package management system.
+
+It is strongly suggested that you use one of the following package management systems:
+
+* Go Modules (Recommended) - https://gobuffalo.io/en/docs/gomods
+* Dep - https://github.com/golang/dep
+
+For help setting up your Go environment please follow the instructions for you platform at:
+
+https://www.gopherguides.com/courses/preparing-your-environment-for-go-development
 
 -> Go: Checking PATH
 ✓ Your PATH contains $GOPATH/bin.
@@ -84,7 +208,7 @@ PackagePkg  github.com/markbates/coke
 ActionsPkg  github.com/markbates/coke/actions
 ModelsPkg   github.com/markbates/coke/models
 GriftsPkg   github.com/markbates/coke/grifts
-WithModules true
+WithModules false
 Name        coke
 Bin         bin/coke
 VCS         git
@@ -127,10 +251,10 @@ module github.com/markbates/coke
 go 1.12
 
 require (
-	github.com/cockroachdb/apd v1.1.0 // indirect
-	github.com/cockroachdb/cockroach-go v0.0.0-20181001143604-e0a95dfd547c // indirect
+	cloud.google.com/go v0.36.0 // indirect
 	github.com/codegangsta/negroni v1.0.0 // indirect
 	github.com/gobuffalo/buffalo v0.14.7-beta.2
+	github.com/gobuffalo/buffalo-docker v1.0.7 // indirect
 	github.com/gobuffalo/buffalo-pop v1.16.0
 	github.com/gobuffalo/envy v1.7.0
 	github.com/gobuffalo/mw-csrf v0.0.0-20190129204204-25460a055517
@@ -141,10 +265,8 @@ require (
 	github.com/gobuffalo/packr/v2 v2.5.2
 	github.com/gobuffalo/pop v4.11.2+incompatible
 	github.com/gobuffalo/suite v2.8.1+incompatible
-	github.com/jackc/fake v0.0.0-20150926172116-812a484cc733 // indirect
+	github.com/gobuffalo/x v0.0.0-20190224155809-6bb134105960 // indirect
 	github.com/markbates/grift v1.1.0
-	github.com/satori/go.uuid v1.2.0 // indirect
-	github.com/shopspring/decimal v0.0.0-20180709203117-cd690d0c9e24 // indirect
 	github.com/unrolled/secure v1.0.0
 )
 ```

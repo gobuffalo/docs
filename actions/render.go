@@ -82,6 +82,7 @@ func init() {
 		AssetsBox:    assetBox,
 	})
 	r.Helpers["exampleDir"] = helpers.ExampleDir(r)
+	r.Helpers["rn"] = releaseNotes{box: r.TemplatesBox}
 }
 
 const vimeoTmpl = `<div class="video">

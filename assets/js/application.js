@@ -36,7 +36,7 @@ $(() => {
           act = "active";
         }
         ul.append(
-          `<li role="presentation" class="${act}"><a href="#${lid}" role="tab" data-toggle="tab">${name}</a></li>`
+          `<li role="presentation" class="nav-item ${act}"><a href="#${lid}" role="tab" data-toggle="tab" class="nav-link ${act}">${name}</a></li>`
         );
         tc.append(
           $(
@@ -69,9 +69,9 @@ $(() => {
     });
   });
 
-  $('.highlight pre').each(function(_, block) {
-    highlighter.highlightBlock(block);
-  });
+  // $('.highlight pre').each(function(_, block) {
+  //   highlighter.highlightBlock(block);
+  // });
 
   $(".faq h6").on("click", (e) => {
     let a = $(e.currentTarget).find("a[name]");

@@ -4,17 +4,26 @@
 
 These are changes to the Buffalo library, as well as the `buffalo` binary.
 
-#### `github.com/gobuffalo/buffalo@<%= to %>/go.mod`
+<%= codeTabs() { %>
 
 ```go
-<%= partial(rn.Path("buffalo", to, "buffalo", "go.mod")) %>
+// gobuffalo/buffalo/go.mod@<%= to %>
+
+<%= partial(rn.Path("buffalo", to, "buffalo", "go.mod") ) %>
 ```
 
-#### Diff `<%= from %>...<%= to %>`
+```go
+// gobuffalo/buffalo/go.mod@<%= from %>
+
+<%= partial(rn.Path("buffalo", from, "buffalo", "go.mod") ) %>
+```
 
 ```diff
+// DIFF
 <%= rn.Diff("buffalo", from, to, "buffalo", "_go.mod") %>
 ```
+
+<% } %>
 
 ---
 
@@ -26,14 +35,24 @@ These are changes for a brand new application `@<%= to %>` with the following co
 $ buffalo new coke
 ```
 
-#### `<your-app>@<%= to %>/go.mod`
+<%= codeTabs() { %>
 
 ```go
+// <your-app>@<%= to %>/go.mod
+
 <%= partial(rn.Path("buffalo", to, "coke", "go.mod")) %>
 ```
 
-#### Diff `<%= from %>...<%= to %>`
+```go
+// <your-app>@<%= from %>/go.mod
+
+<%= partial(rn.Path("buffalo", from, "coke", "go.mod")) %>
+```
 
 ```diff
+// DIFF
 <%= rn.Diff("buffalo", from, to, "coke", "_go.mod") %>
 ```
+
+<% } %>
+

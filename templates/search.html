@@ -2,10 +2,10 @@
 
 <div class="row">
   <%= form({action: "/en/search", method: "GET"}) { %>
-    <div class="col-md-3">
+    <div class="">
       <%= f.InputTag({name: "query", placeholder: "enter search query here", value: params["query"]}) %>
     </div>
-    <div class="col-md-1">
+    <div class="">
       <button class="btn btn-primary"><%= t("search.button") %></button>
     </div>
   <% } %>

@@ -23,7 +23,7 @@
     }
 
     // .sidebar-boxed ~ main .main-content {
-    //     padding: 0px;
+        //     padding: 0px;
     // }
     //
     h1::after, h2::after, h3::after {
@@ -54,5 +54,30 @@
 
     .since-version {
         font-size: 12px;
+    }
+
+    .highlight pre {
+        background-color: #000;
+        color: #fff;
+        padding: 10px;
+    }
+
+    .codetabs {
+        .nav-item {
+            // background-color: #2a3542;
+            border: 1px solid #62a8ea;
+            border-bottom: 0px;
+            border-radius: 5px 5px 0px 0px;
+            .active {
+                background-color: #62a8ea;
+            }
+
+            .nav-link {
+                color: #62a8ea;
+                &.active {
+                    color: #fff;
+                }
+            }
+        }
     }
 }

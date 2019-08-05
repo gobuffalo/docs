@@ -69,9 +69,9 @@ $(() => {
     });
   });
 
-  // $('.highlight pre').each(function(_, block) {
-  //   highlighter.highlightBlock(block);
-  // });
+  $('.highlight pre').each(function(_, block) {
+    highlighter.highlightBlock(block);
+  });
 
   $(".faq h6").on("click", (e) => {
     let a = $(e.currentTarget).find("a[name]");

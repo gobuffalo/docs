@@ -2,6 +2,8 @@
 # https://docs.docker.com/engine/userguide/eng-image/multistage-build/
 FROM gobuffalo/buffalo:development as builder
 
+ENV GOPROXY="https://proxy.golang.org"
+ENV GO111MODULE="on"
 ARG GITHUB_TOKEN=local
 ENV GITHUB_TOKEN ${GITHUB_TOKEN}
 
@@ -13,7 +15,7 @@ ADD package.json .
 ADD yarn.lock .
 RUN yarn install --no-progress
 ADD . .
-RUN GO111MODULE=on buffalo build --static -o /bin/app -v --environment=production --skip-template-validation
+RUN buffalo build --static -o /bin/app -v --environment=production --skip-template-validation
 
 FROM alpine
 RUN apk add --no-cache curl

@@ -2,88 +2,148 @@ package godoc
 
 import (
 	"bytes"
-	"context"
 	"fmt"
+	"go/ast"
+	"go/parser"
+	"go/token"
 	"io/ioutil"
-	"net/http"
-	"sort"
+	"path/filepath"
 	"strings"
-	"sync"
-	"time"
 
 	"github.com/gobuffalo/buffalo"
 	"github.com/gobuffalo/gobuffalo/search"
-	gd "github.com/golang/gddo/doc"
-	"github.com/pkg/errors"
+	"github.com/gobuffalo/here"
 )
 
-var godoc = &GoDoc{
-	moot: &sync.RWMutex{},
-	data: map[string]*gd.Package{},
+type Doc struct {
+	here.Info
+	Readme string
+	Funcs  []Func
 }
 
-const tk = "GITHUB_TOKEN"
-
-type GoDoc struct {
-	moot  *sync.RWMutex
-	data  map[string]*gd.Package
-	udata map[string]*gd.Package
+func (d Doc) Link() string {
+	return "https://godoc.org/" + d.ImportPath
 }
 
-func (g *GoDoc) List() []*gd.Package {
-	g.moot.RLock()
-	var list []*gd.Package
-	for _, v := range g.data {
-		list = append(list, v)
+type Func struct {
+	Package string
+	Recv    string
+	Name    string
+	Doc     string
+}
+
+func (f Func) String() string {
+	bb := &strings.Builder{}
+	if len(f.Recv) > 0 {
+		bb.WriteString(fmt.Sprintf("(%s) ", f.Recv))
 	}
-	g.moot.RUnlock()
-	sort.Slice(list, func(a, b int) bool {
-		return list[a].Name < list[b].Name
-	})
-	return list
+	bb.WriteString(f.Name)
+	return bb.String()
 }
 
-func (g *GoDoc) Get(pkg string) (*gd.Package, error) {
-	g.moot.RLock()
-	if p, ok := g.data[pkg]; ok {
-		g.moot.RUnlock()
+func (f Func) Link() string {
+	if len(f.Recv) > 0 {
+		return fmt.Sprintf("https://godoc.org/%s#%s.%s", f.Package, f.Recv, f.Name)
+	}
+	return fmt.Sprintf("https://godoc.org/%s#%s", f.Package, f.Name)
+}
+
+var cache = &docsMap{}
+
+func Indexer(app *buffalo.App) search.Indexer {
+	return func() error {
+		return Update(app)
+	}
+}
+
+func Update(app *buffalo.App) error {
+	for _, p := range Pkgs {
+		go load(p)
+	}
+	return nil
+}
+
+func Get(name string) (*Doc, error) {
+	p, ok := cache.Load(name)
+	if ok {
 		return p, nil
 	}
-	g.moot.RUnlock()
+	return load(name)
+}
 
-	p := &gd.Package{
-		ProjectName: pkg,
-		ImportPath:  pkg,
-		ProjectURL:  "https://" + pkg,
+func load(name string) (*Doc, error) {
+	info, err := here.Package(name)
+	if err != nil {
+		return nil, err
 	}
-	g.add(p)
 
+	p := &Doc{
+		Info:   info,
+		Readme: readme(info.Dir),
+	}
+
+	for _, f := range info.GoFiles {
+		fset := token.NewFileSet()
+
+		node, err := parser.ParseFile(fset, filepath.Join(info.Dir, f), nil, parser.ParseComments)
+		if err != nil {
+			return nil, err
+		}
+		for _, f := range node.Decls {
+			fn, ok := f.(*ast.FuncDecl)
+			if !ok {
+				continue
+			}
+			df := Func{
+				Name:    fn.Name.Name,
+				Package: info.ImportPath,
+			}
+			if fn.Doc != nil {
+				df.Doc = fn.Doc.Text()
+			}
+
+			if fn.Recv != nil {
+				for _, ld := range fn.Recv.List {
+					switch t := ld.Type.(type) {
+					case *ast.StarExpr:
+						if i, ok := t.X.(*ast.Ident); ok {
+							df.Recv = i.Name
+						}
+					case *ast.Ident:
+						df.Recv = t.Name
+					default:
+						continue
+					}
+				}
+			}
+			p.Funcs = append(p.Funcs, df)
+
+			d := search.Document{
+				URL:    df.Link(),
+				Body:   df.Doc,
+				Source: search.S_GODOC,
+			}
+			if err := search.Index(d); err != nil {
+				return nil, err
+			}
+		}
+	}
+	d := search.Document{
+		URL:    p.Link(),
+		Body:   p.Readme,
+		Source: search.S_GODOC,
+	}
+	if err := search.Index(d); err != nil {
+		return nil, err
+	}
+	cache.Store(name, p)
 	return p, nil
 }
 
-func (g *GoDoc) add(p *gd.Package) {
-	g.moot.Lock()
-	p.ProjectName = strings.TrimPrefix(p.ImportPath, "github.com/")
-	p.Doc = readme(p)
-	g.data[p.ImportPath] = p
-	g.moot.Unlock()
-}
-
-func readme(p *gd.Package) string {
-	if len(p.Doc) > 0 {
-		return p.Doc
-	}
-	if !strings.HasPrefix(p.ImportPath, "github.com") {
+func readme(dir string) string {
+	b, err := ioutil.ReadFile(filepath.Join(dir, "README.md"))
+	if err != nil {
 		return ""
-	}
-	u := "https://raw.githubusercontent.com/" + p.ProjectName + "/master/README.md"
-	res, err := http.Get(u)
-	if err != nil {
-		return p.Doc
-	}
-	b, err := ioutil.ReadAll(res.Body)
-	if err != nil {
-		return p.Doc
 	}
 	s := string(b)
 
@@ -102,90 +162,4 @@ func readme(p *gd.Package) string {
 	}
 
 	return strings.TrimSpace(bb.String())
-}
-
-func (g *GoDoc) Update(ctx context.Context) error {
-	g.moot.Lock()
-	g.udata = map[string]*gd.Package{}
-	g.moot.Unlock()
-	for _, l := range Pkgs {
-		if err := g.indexGodoc(ctx, l); err != nil {
-			// it's fine if there's an error, just log it and move on
-			fmt.Println("### err ->", err)
-		}
-	}
-	g.moot.Lock()
-	if len(g.udata) != 0 {
-		g.data, g.udata = g.udata, g.data
-	}
-	g.moot.Unlock()
-	return nil
-}
-
-func (g *GoDoc) indexGodoc(ctx context.Context, pkg string) error {
-	if strings.Contains(pkg, "vendor") {
-		return nil
-	}
-	ctx, _ = context.WithTimeout(ctx, 5*time.Second)
-
-	c := &http.Client{
-		Transport: githubTrans{},
-	}
-	dpkg, err := gd.Get(ctx, c, pkg, "")
-	if err != nil {
-		return errors.WithStack(err)
-	}
-	g.add(dpkg)
-	for _, sd := range dpkg.Subdirectories {
-		sd = pkg + "/" + sd
-		go func(sd string, ctx context.Context) {
-			err := g.indexGodoc(ctx, sd)
-			if err != nil {
-				fmt.Println(sd, err)
-			}
-		}(sd, ctx)
-	}
-
-	ub := func(name string) string {
-		return "https://godoc.org/" + dpkg.ImportPath + "#" + name
-	}
-
-	for _, t := range dpkg.Funcs {
-		d := search.Document{
-			URL:    ub(t.Name),
-			Body:   t.Doc,
-			Source: search.S_GODOC,
-		}
-		if err := search.Index(d); err != nil {
-			return errors.WithStack(err)
-		}
-	}
-	for _, t := range dpkg.Types {
-		d := search.Document{
-			URL:    ub(t.Name),
-			Body:   t.Doc,
-			Source: search.S_GODOC,
-		}
-		if err := search.Index(d); err != nil {
-			return errors.WithStack(err)
-		}
-		for _, m := range t.Methods {
-			d := search.Document{
-				URL:    ub(t.Name + "." + m.Name),
-				Body:   m.Doc,
-				Source: search.S_GODOC,
-			}
-			if err := search.Index(d); err != nil {
-				return errors.WithStack(err)
-			}
-		}
-	}
-
-	return nil
-}
-
-func Indexer(app *buffalo.App) search.Indexer {
-	return func() error {
-		return godoc.Update(app.Context)
-	}
 }

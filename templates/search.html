@@ -1,7 +1,8 @@
-<h1><%= t("search.title") %></h1>
+<h1>
+<%= results.Total %> <%= pluralize_uint("match", results.Total) %> for <code><%= params["query"] %></code>
+</h1>
 
-<div class="row">
-  <%= form({action: "/en/search", method: "GET"}) { %>
+  <%= form({action: "/en/search", method: "GET", class: "form-inline" }) { %>
     <div class="">
       <%= f.InputTag({name: "query", placeholder: "enter search query here", value: params["query"]}) %>
     </div>
@@ -9,11 +10,10 @@
       <button class="btn btn-primary"><%= t("search.button") %></button>
     </div>
   <% } %>
-</div>
 
 <%= if (results) { %>
 
-<h2><%= results.Total %> <%= pluralize_uint("match", results.Total) %> for <code><%= params["query"] %></code></h2>
+<h2>Results</h2>
 
 <ol>
   <%= for (hit) in results.Hits { %>

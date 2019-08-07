@@ -1,10 +1,5 @@
 package search
 
-import (
-	"github.com/gobuffalo/events"
-	"github.com/markbates/oncer"
-)
-
 const (
 	UNKNOWN int = iota
 	S_SITE
@@ -24,18 +19,6 @@ type Indexer func() error
 var indexers = []Indexer{}
 
 func AddIndex(i Indexer) {
+	go i()
 	indexers = append(indexers, i)
-}
-
-func init() {
-	oncer.Do("github.com/gobuffalo/search.init", func() {
-		events.Listen(func(e events.Event) {
-			if e.Kind != E_INDEX {
-				return
-			}
-			for _, i := range indexers {
-				go i()
-			}
-		})
-	})
 }

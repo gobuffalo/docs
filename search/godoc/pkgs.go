@@ -14,7 +14,6 @@ var Pkgs = []string{
 	"github.com/gobuffalo/plush",
 	"github.com/gobuffalo/packr",
 	"github.com/gobuffalo/genny",
-	"github.com/gobuffalo/buffalo-plugins",
 	"github.com/gobuffalo/buffalo-pop",
 	"github.com/gobuffalo/buffalo-goth",
 	"github.com/gobuffalo/buffalo-auth",
@@ -44,5 +43,7 @@ var Pkgs = []string{
 	"github.com/gobuffalo/validate",
 	"github.com/gobuffalo/clara",
 	"github.com/gobuffalo/release",
+	"github.com/gobuffalo/lush",
 	"github.com/markbates/grift",
+	"github.com/markbates/pkger",
 }

@@ -1,10 +1,7 @@
 package actions
 
 import (
-	"time"
-
 	"github.com/gobuffalo/buffalo"
-	"github.com/gobuffalo/events"
 	"github.com/gobuffalo/gobuffalo/search"
 	"github.com/gobuffalo/gobuffalo/search/blog"
 	"github.com/gobuffalo/gobuffalo/search/godoc"
@@ -13,33 +10,11 @@ import (
 	"github.com/pkg/errors"
 )
 
-func init() {
-	StartSearch()
-}
-
 func StartSearch() {
 	search.AddIndex(site.Indexer(App(), r))
 	search.AddIndex(blog.Indexer(App()))
 	search.AddIndex(vimeo.Indexer(App()))
 	search.AddIndex(godoc.Indexer(App()))
-
-	// Start indexing routine on app start
-	events.Listen(func(e events.Event) {
-		if e.Kind != buffalo.EvtAppStart {
-			return
-		}
-		go func() {
-			events.EmitPayload(search.E_INDEX, events.Payload{})
-			for {
-				select {
-				case <-App().Context.Done():
-					return
-				default:
-					time.Sleep(60 * time.Minute)
-				}
-			}
-		}()
-	})
 }
 
 // Search handles the search queries.
@@ -51,8 +26,10 @@ func Search(c buffalo.Context) error {
 		if err != nil {
 			return errors.WithStack(err)
 		}
+
+		c.Set("sourceRoot", docsRepoBase)
 		c.Set("results", res)
 	}
 
-	return c.Render(200, r.HTML("search.html"))
+	return c.Render(200, r.HTML("search.html", "docs-layout.html"))
 }

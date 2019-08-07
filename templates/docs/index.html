@@ -12,7 +12,7 @@
   <i class="fa fa-file-code-o" aria-hidden="true"></i> <code><%= pkg.ImportPath %></code>
   </li>
   <li>
-    <i class="fa fa-github" aria-hidden="true"></i> <a href="<%= pkg.ProjectURL %>" target="_blank"><%= pkg.ProjectURL %></a>
+    <i class="fa fa-github" aria-hidden="true"></i> <a href="https://<%= pkg.ImportPath %>" target="_blank"><%= pkg.ImportPath %></a>
   </li>
   <li>
     <i class="fa fa-book" aria-hidden="true"></i> <a href="https://godoc.org/<%= pkg.ImportPath %>" target="_blank">https://godoc.org/<%= pkg.ImportPath %></a>
@@ -21,14 +21,12 @@
 <p align="center">
 
 <a href="https://godoc.org/<%= pkg.ImportPath %>"><img src="https://godoc.org/<%= pkg.ImportPath %>?status.svg" alt="GoDoc" /></a>
-<a href="https://travis-ci.org/<%= pkg.ProjectName %>"><img src="https://travis-ci.org/<%= pkg.ProjectName %>.svg?branch=master" alt="Build Status" /></a>
-<a href="https://codecov.io/gh/<%= pkg.ProjectName %>"><img src="https://codecov.io/gh/<%= pkg.ProjectName %>/branch/master/graph/badge.svg" alt="Code coverage status" /></a>
 <a href="https://goreportcard.com/report/<%= pkg.ImportPath %>"><img src="https://goreportcard.com/badge/<%= pkg.ImportPath %>" alt="Go Report Card" /></a>
 </p>
 
-<%= if (pkg.Doc) { %>
+<%= if (pkg.Readme) { %>
   <div id="" class="well" style="overflow:scroll; height:400px;">
-    <%= markdown(pkg.Doc) %>
+    <%= markdown(pkg.Readme) %>
   </div>
 <% } %>
 

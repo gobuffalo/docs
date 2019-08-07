@@ -34,6 +34,7 @@ var T *i18n.Translator
 // application.
 func App() *buffalo.App {
 	if app == nil {
+		defer StartSearch()
 		app = buffalo.New(buffalo.Options{
 			SessionName:  "_gobuffalo_session",
 			Env:          ENV,

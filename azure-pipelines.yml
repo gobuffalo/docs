@@ -10,7 +10,7 @@ jobs:
   strategy:
     matrix:
       go 1.12 (on):
-        go_version: "1.12.y.y.y"
+        go_version: "1.12.7"
         GO111MODULE: "on"
         GOPROXY: "https://proxy.golang.org"
   steps:
@@ -22,7 +22,7 @@ jobs:
   strategy:
     matrix:
       go 1.12 (on):
-        go_version: "1.12.y"
+        go_version: "1.12.7"
         GO111MODULE: "on"
         GOPROXY: "https://proxy.golang.org"
   steps:

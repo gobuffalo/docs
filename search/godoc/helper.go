@@ -2,7 +2,9 @@ package godoc
 
 import (
 	"bytes"
+	"fmt"
 	"html/template"
+	"os"
 	"strings"
 
 	"github.com/gobuffalo/plush"
@@ -11,6 +13,7 @@ import (
 )
 
 func Helper(help plush.HelperContext) (template.HTML, error) {
+	fmt.Println(">>>> PATH ", os.Getenv("PATH"))
 	if !help.HasBlock() {
 		return "", errors.New("a block is required")
 	}

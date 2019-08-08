@@ -1,6 +1,9 @@
 package actions
 
 import (
+	"sync"
+	"time"
+
 	"github.com/gobuffalo/buffalo"
 	"github.com/gobuffalo/gobuffalo/search"
 	"github.com/gobuffalo/gobuffalo/search/blog"
@@ -10,11 +13,23 @@ import (
 	"github.com/pkg/errors"
 )
 
+var searchOnce = &sync.Once{}
+
 func StartSearch(app *buffalo.App) {
-	search.AddIndex(site.Indexer(app, r))
-	search.AddIndex(blog.Indexer(app))
-	search.AddIndex(vimeo.Indexer(app))
-	search.AddIndex(godoc.Indexer(app))
+	searchOnce.Do(func() {
+		for {
+			select {
+			case <-app.Context.Done():
+				break
+			default:
+				go site.Indexer(app, r)()
+				go blog.Indexer(app)()
+				go vimeo.Indexer(app)()
+				go godoc.Indexer(app)()
+				time.Sleep(60 * time.Minute)
+			}
+		}
+	})
 }
 
 // Search handles the search queries.

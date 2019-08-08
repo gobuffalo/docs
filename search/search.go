@@ -15,10 +15,3 @@ const (
 )
 
 type Indexer func() error
-
-var indexers = []Indexer{}
-
-func AddIndex(i Indexer) {
-	go i()
-	indexers = append(indexers, i)
-}

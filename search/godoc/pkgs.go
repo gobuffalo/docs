@@ -12,7 +12,7 @@ var Pkgs = []string{
 	"github.com/gobuffalo/fizz",
 	"github.com/gobuffalo/tags",
 	"github.com/gobuffalo/plush",
-	"github.com/gobuffalo/packr",
+	"github.com/gobuffalo/packr/v2",
 	"github.com/gobuffalo/genny",
 	"github.com/gobuffalo/buffalo-pop",
 	"github.com/gobuffalo/buffalo-goth",

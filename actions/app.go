@@ -39,7 +39,9 @@ func App() *buffalo.App {
 			Env:          ENV,
 			SessionStore: sessions.Null{},
 		})
-		defer StartSearch(app)
+		defer func() {
+			go StartSearch(app)
+		}()
 
 		// Automatically redirect to SSL
 		app.Use(forceSSL())

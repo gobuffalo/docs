@@ -2,6 +2,7 @@
 # https://docs.docker.com/engine/userguide/eng-image/multistage-build/
 FROM gobuffalo/buffalo:development as builder
 
+RUN go version
 ENV GOPROXY="https://proxy.golang.org"
 ENV GO111MODULE="on"
 ARG GITHUB_TOKEN=local

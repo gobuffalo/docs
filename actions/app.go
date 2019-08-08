@@ -39,6 +39,9 @@ func App() *buffalo.App {
 			Env:          ENV,
 			SessionStore: sessions.Null{},
 		})
+		defer func() {
+			go StartSearch(app)
+		}()
 
 		// Automatically redirect to SSL
 		app.Use(forceSSL())
@@ -56,7 +59,7 @@ func App() *buffalo.App {
 				c.Set("goMinVersion", "1.10.8")
 				c.Set("year", time.Now().Year())
 				c.Set("trainingURL", "http://www.gopherguides.com")
-				c.Set("videoList", vimeo.Videos)
+				c.Set("videoList", vimeo.Videos())
 
 				c.Set("lang", "en")
 				c.Set("current_path", strings.TrimRight(c.Value("current_path").(string), "/"))

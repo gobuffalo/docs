@@ -1,6 +1,9 @@
 package blog
 
-var LastPosts [3]Item
+import "sync"
+
+var lastPosts [3]Item
+var mu = &sync.RWMutex{}
 
 type Item struct {
 	Title       string `json:"title"`
@@ -14,4 +17,10 @@ type Item struct {
 	Enclosure   struct {
 	} `json:"enclosure"`
 	Categories []string `json:"categories"`
+}
+
+func LastPosts() [3]Item {
+	mu.RLock()
+	defer mu.RUnlock()
+	return lastPosts
 }

@@ -16,9 +16,9 @@
                     <i class="fa fa-ellipsis-v"></i>
                 </button>
             </div>
-            
+
             <div class="collapse navbar-collapse" id="navbarToggler">
-                <ul class="navbar-nav ml-auto align-items-lg-center align-items-start py-1">  
+                <ul class="navbar-nav ml-auto align-items-lg-center align-items-start py-1">
                     <li class="nav-item p-0 <%= if (current_path == "/en/docs/examples" || current_path == "/fr/docs/examples") { %> active<% } %>">
                         <a class="d-block p-lg-2" href="/docs/examples"><%= t("top.examples-tutorials") %></a>
                     </li>
@@ -26,27 +26,29 @@
                     <li class="nav-item p-0 <%= if (current_path == "/docs/support" || current_path == "/fr/docs/examples") { %> active<% } %>">
                         <a class="d-block p-lg-2" href="/docs/support"><%= t("top.support") %></a>
                     </li>
-        
+
                     <li class="nav-item p-0">
                         <a class="d-block p-lg-2" href="<%= docPath({name: "index", lang: lang}) %>">
                             <%= t("top.docs") %>
                         </a>
                     </li>
-        
+
                     <li class="nav-item p-0">
                         <a class="d-block p-lg-2" href="https://github.com/gobuffalo" target="_blank" rel="noopener noreferrer">GitHub</a>
                     </li>
-        
+
                     <li class="nav-item p-0">
                         <a class="d-block p-lg-2" href="https://blog.gobuffalo.io" target="_blank" rel="noopener noreferrer"><%= t("top.blog") %></a>
                     </li>
-        
+
                     <li class="nav-item p-0">
                         <a class="d-block p-lg-2" href="http://store.gobuffalo.io" target="_blank" rel="noopener noreferrer"><%= t("top.store") %> </a>
                     </li>
-        
-                    <li class="nav-item hero pt-sm-3 p-lg-0">
-                        <a class="btn btn-buffalo d-block p-lg-2 m-0" href="http://patreon.com/buffalo" target="_blank" rel="noopener noreferrer"><%= t("top.become-a-patreon") %></a>
+
+                    <li class="nav-item p-0">
+  <%= form({action: searchPath({lang: lang}), method: "GET"}) { %>
+      <%= f.InputTag({name: "query", placeholder: t("menu.search"), value: params["query"]}) %>
+  <% } %>
                     </li>
                 </ul>
             </div>

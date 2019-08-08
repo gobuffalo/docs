@@ -22,10 +22,6 @@
         max-width: 1400px;
     }
 
-    // .sidebar-boxed ~ main .main-content {
-        //     padding: 0px;
-    // }
-    //
     h1::after, h2::after, h3::after {
         width: 100%;
     }
@@ -68,16 +64,38 @@
             border: 1px solid #62a8ea;
             border-bottom: 0px;
             border-radius: 5px 5px 0px 0px;
+
             .active {
                 background-color: #62a8ea;
             }
 
             .nav-link {
                 color: #62a8ea;
+
                 &.active {
                     color: #fff;
                 }
             }
         }
+    }
+}
+
+.form-group {
+    margin-bottom: 0;
+
+    .form-control {
+        border-radius: 5px;
+        margin: 0px;
+    }
+}
+
+.form-inline {
+    .form-control {
+        border-radius: 5px 0px 0px 5px;
+        width: 300px;
+    }
+
+    .btn {
+        border-radius: 0px 5px 5px 0px;
     }
 }

@@ -18,7 +18,7 @@ func Helper(help plush.HelperContext) (template.HTML, error) {
 	bb := &bytes.Buffer{}
 
 	for _, pkg := range Pkgs {
-		p, err := godoc.Get(pkg)
+		p, err := Get(pkg)
 		if err != nil {
 			return "", errors.WithStack(err)
 		}

@@ -73,7 +73,9 @@ func index(app *buffalo.App) error {
 			bp.Description = bp.Description[:ip]
 		}
 		bp.Description = truncateString(p.Sanitize(bp.Description), 143)
-		LastPosts[i] = bp
+		mu.Lock()
+		lastPosts[i] = bp
+		mu.Unlock()
 	}
 
 	return nil

@@ -9,9 +9,10 @@ jobs:
     vmImage: "vs2017-win2016"
   strategy:
     matrix:
-      go 1.11 (on):
-        go_version: "1.12"
+      go 1.12 (on):
+        go_version: "1.12.7"
         GO111MODULE: "on"
+        GOPROXY: "https://proxy.golang.org"
   steps:
     - template: azure-tests.yml
 
@@ -20,9 +21,10 @@ jobs:
     vmImage: "macOS-10.13"
   strategy:
     matrix:
-      go 1.11 (on):
-        go_version: "1.12"
+      go 1.12 (on):
+        go_version: "1.12.7"
         GO111MODULE: "on"
+        GOPROXY: "https://proxy.golang.org"
   steps:
     - template: azure-tests.yml
 
@@ -31,8 +33,9 @@ jobs:
     vmImage: "ubuntu-16.04"
   strategy:
     matrix:
-      go 1.11 (on):
-        go_version: "1.12"
+      go 1.12 (on):
+        go_version: "1.12.7"
         GO111MODULE: "on"
+        GOPROXY: "https://proxy.golang.org"
   steps:
     - template: azure-tests.yml

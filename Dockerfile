@@ -17,15 +17,6 @@ RUN yarn install --no-progress
 ADD . .
 RUN buffalo build --static -o /bin/app -v --environment=production --skip-template-validation
 
-FROM alpine
-RUN apk add --no-cache curl
-RUN apk add --no-cache bash
-RUN apk add --no-cache ca-certificates
-
-WORKDIR /bin/
-
-COPY --from=builder /bin/app .
-
 # Comment out to run the binary in "production" mode:
 # ENV GO_ENV=production
 

@@ -10,11 +10,11 @@ import (
 	"github.com/pkg/errors"
 )
 
-func StartSearch() {
-	search.AddIndex(site.Indexer(App(), r))
-	search.AddIndex(blog.Indexer(App()))
-	search.AddIndex(vimeo.Indexer(App()))
-	search.AddIndex(godoc.Indexer(App()))
+func StartSearch(app *buffalo.App) {
+	search.AddIndex(site.Indexer(app, r))
+	search.AddIndex(blog.Indexer(app))
+	search.AddIndex(vimeo.Indexer(app))
+	search.AddIndex(godoc.Indexer(app))
 }
 
 // Search handles the search queries.

@@ -2,6 +2,7 @@ package vimeo
 
 import (
 	"fmt"
+	"sync"
 	"time"
 
 	"github.com/gobuffalo/buffalo"
@@ -17,7 +18,14 @@ type Video struct {
 	Published   time.Time
 }
 
-var Videos []Video
+var videos []Video
+var mu = &sync.RWMutex{}
+
+func Videos() []Video {
+	mu.RLock()
+	defer mu.RUnlock()
+	return videos
+}
 
 const FeedURL = "https://vimeo.com/channels/gobuffalo/videos/rss"
 
@@ -56,6 +64,8 @@ func indexVideos(app *buffalo.App) error {
 			return errors.WithStack(err)
 		}
 	}
-	Videos = vl
+	mu.Lock()
+	videos = vl
+	mu.Unlock()
 	return nil
 }

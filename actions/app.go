@@ -34,12 +34,12 @@ var T *i18n.Translator
 // application.
 func App() *buffalo.App {
 	if app == nil {
-		defer StartSearch()
 		app = buffalo.New(buffalo.Options{
 			SessionName:  "_gobuffalo_session",
 			Env:          ENV,
 			SessionStore: sessions.Null{},
 		})
+		defer StartSearch(app)
 
 		// Automatically redirect to SSL
 		app.Use(forceSSL())
@@ -57,7 +57,7 @@ func App() *buffalo.App {
 				c.Set("goMinVersion", "1.10.8")
 				c.Set("year", time.Now().Year())
 				c.Set("trainingURL", "http://www.gopherguides.com")
-				c.Set("videoList", vimeo.Videos)
+				c.Set("videoList", vimeo.Videos())
 
 				c.Set("lang", "en")
 				c.Set("current_path", strings.TrimRight(c.Value("current_path").(string), "/"))

@@ -15,7 +15,7 @@ ADD package.json .
 ADD yarn.lock .
 RUN yarn install --no-progress
 ADD . .
-RUN buffalo build --static -o /bin/app -v --environment=production --skip-template-validation
+RUN buffalo build --static -o /bin/app -v --skip-template-validation
 
 # Comment out to run the binary in "production" mode:
 # ENV GO_ENV=production

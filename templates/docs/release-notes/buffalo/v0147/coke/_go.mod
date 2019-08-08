@@ -6,7 +6,7 @@ require (
 	github.com/cockroachdb/apd v1.1.0 // indirect
 	github.com/cockroachdb/cockroach-go v0.0.0-20181001143604-e0a95dfd547c // indirect
 	github.com/codegangsta/negroni v1.0.0 // indirect
-	github.com/gobuffalo/buffalo v0.14.7-beta.2
+	github.com/gobuffalo/buffalo v0.14.7
 	github.com/gobuffalo/buffalo-pop v1.16.0
 	github.com/gobuffalo/envy v1.7.0
 	github.com/gobuffalo/mw-csrf v0.0.0-20190129204204-25460a055517

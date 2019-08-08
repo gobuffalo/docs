@@ -7,9 +7,6 @@ ENV GO111MODULE="on"
 ARG GITHUB_TOKEN=local
 ENV GITHUB_TOKEN ${GITHUB_TOKEN}
 
-RUN mkdir -p /tmp/gobuffalo
-WORKDIR /tmp/gobuffalo
-
 # this will cache the npm install step, unless package.json changes
 ADD package.json .
 ADD yarn.lock .

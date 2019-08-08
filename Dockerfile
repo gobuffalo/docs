@@ -3,6 +3,8 @@
 FROM gobuffalo/buffalo:development as builder
 
 RUN go version
+RUN which go
+RUN echo $PATH
 ENV GOPROXY="https://proxy.golang.org"
 ENV GO111MODULE="on"
 ARG GITHUB_TOKEN=local

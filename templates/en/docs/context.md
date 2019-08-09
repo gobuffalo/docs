@@ -90,6 +90,8 @@ func App() *buffalo.App {
 The `buffalo.Context#Params` method returns [`buffalo.ParamValues`](https://godoc.org/github.com/gobuffalo/buffalo#ParamValues) which is an interface around [`url.Values`](https://golang.org/pkg/net/url/#Values). You can cast to this type in a handler to range over the parameter values.
 
 ```go
+import "net/url"
+
 func HomeHandler(c buffalo.Context) error {
   if m, ok := c.Params().(url.Values); ok {
     for k, v := range m {

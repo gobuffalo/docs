@@ -20,19 +20,19 @@ func Helper(help plush.HelperContext) (template.HTML, error) {
 
 	bb := &bytes.Buffer{}
 
-	for _, pkg := range Pkgs {
-		p, err := Get(pkg)
-		if err != nil {
-			return "", errors.WithStack(err)
-		}
-		ctx := help.Context.New()
-		ctx.Set("pkg", p)
-		s, err := help.BlockWith(ctx)
-		if err != nil {
-			return "", errors.WithStack(err)
-		}
-		bb.WriteString(s)
-	}
+	// for _, pkg := range Pkgs {
+	// 	p, err := Get(pkg)
+	// 	if err != nil {
+	// 		return "", errors.WithStack(err)
+	// 	}
+	// 	ctx := help.Context.New()
+	// 	ctx.Set("pkg", p)
+	// 	s, err := help.BlockWith(ctx)
+	// 	if err != nil {
+	// 		return "", errors.WithStack(err)
+	// 	}
+	// 	bb.WriteString(s)
+	// }
 	return template.HTML(bb.String()), nil
 }
 

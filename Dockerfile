@@ -2,29 +2,20 @@
 # https://docs.docker.com/engine/userguide/eng-image/multistage-build/
 FROM gobuffalo/buffalo:development as builder
 
+RUN go version
+RUN which go
+RUN echo $PATH
 ENV GOPROXY="https://proxy.golang.org"
 ENV GO111MODULE="on"
 ARG GITHUB_TOKEN=local
 ENV GITHUB_TOKEN ${GITHUB_TOKEN}
-
-RUN mkdir -p /tmp/gobuffalo
-WORKDIR /tmp/gobuffalo
 
 # this will cache the npm install step, unless package.json changes
 ADD package.json .
 ADD yarn.lock .
 RUN yarn install --no-progress
 ADD . .
-RUN buffalo build --static -o /bin/app -v --environment=production --skip-template-validation
-
-FROM alpine
-RUN apk add --no-cache curl
-RUN apk add --no-cache bash
-RUN apk add --no-cache ca-certificates
-
-WORKDIR /bin/
-
-COPY --from=builder /bin/app .
+RUN buffalo build --static -o /bin/app -v --skip-template-validation
 
 # Comment out to run the binary in "production" mode:
 # ENV GO_ENV=production

@@ -9,12 +9,12 @@
 
 #docs-main {
     p {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .summary {
         li {
-            font-size: 20px;
+            font-size: 18px;
         }
     }
 
@@ -24,30 +24,15 @@
         }
     }
 
-    h1::after, h2::after, h3::after {
-        width: 100%;
-    }
-
-    h2::after, h3::after {
-        border-bottom: 0px solid #e0562e;
-    }
-
-    h2 {
+    h1, h2, h3 {
         font-weight: bold;
-    }
-
-    h2, h3 {
         text-align: left;
-        margin-bottom: 0px;
+        margin-bottom: 0;
     }
 
-    h1::before, h2::before, h3::before {
+    h1::after, h2::after, h3::after {
         content: '';
-        border-top: 1px solid #e0562e;
-        width: 100%;
-        display: block;
-        margin: 0 auto;
-        padding-top: 15px;
+        border: none;
     }
 
     .since-version {

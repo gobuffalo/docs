@@ -75,6 +75,9 @@
 - id: menu.request-handling
   translation: Traitement des requêtes
 
+- id: menu.request-binding
+  translation: Associer les données d'une requête à une struct
+
 - id: menu.errors-handling
   translation: Traitement des erreurs
 

@@ -75,6 +75,9 @@
 - id: menu.request-handling
   translation: Request Handling
 
+- id: menu.request-binding
+  translation: Request Binding
+
 - id: menu.errors-handling
   translation: Errors Handling
 

@@ -71,6 +71,11 @@
         <div class="row">
             <!-- Main content -->
             <article class="main-content" role="main">
+                <%= if (is_fallback_version) { %>
+<%= warning() { %>
+We couldn't find a version of this page in your language, so here is the english version.
+<% } %>
+                <% } %>
                 <%= yield %>
                 <%= partial("partials/feedback_footer.html") %>
             </article>

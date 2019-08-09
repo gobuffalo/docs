@@ -18,8 +18,10 @@
         }
     }
 
-    .main-content {
-        max-width: 1400px;
+    @media (min-width: 1400px){
+        .main-content {
+            max-width: 1400px;
+        }
     }
 
     h1::after, h2::after, h3::after {

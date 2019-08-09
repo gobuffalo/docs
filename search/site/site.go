@@ -42,7 +42,7 @@ func (ind indexer) Index() error {
 			return nil
 		}
 
-		if !strings.HasPrefix(path, "docs/") {
+		if !strings.HasPrefix(path, "en/docs/") {
 			return nil
 		}
 
@@ -52,7 +52,7 @@ func (ind indexer) Index() error {
 			}
 		}
 
-		u := "/en/" + path
+		u := "/" + path
 		ext := filepath.Ext(u)
 		for ext != "" {
 			u = strings.TrimSuffix(u, ext)

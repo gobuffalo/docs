@@ -15,6 +15,7 @@ type releaseNotes struct {
 
 func (releaseNotes) Path(key, v string, ps ...string) string {
 	args := []string{
+		"en",
 		"docs",
 		"release-notes",
 		key,

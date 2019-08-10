@@ -1,6 +1,6 @@
 ## Creating a new API Application
 
-When creating a new Buffalo application using the `buffalo new` command, the optional `--api` flag will generate an application that is better suited to serving JSON APIs than a stock Buffalo application.
+When creating a new Buffalo application using the `buffalo new` command, the optional `--api` flag will generate an application that is better suited to serving APIs than a stock Buffalo application.
 
 ```bash
 $ buffalo new --api coke
@@ -23,7 +23,7 @@ Applications generated with the `--api` flag don't contain any front systems. Th
 
 ### Tuned `actions/app.go actions/render.go` Files
 
-API applications have `actions/app.go` and `actions/render.go` files that are a good starting point for JSON API applications.
+API applications have `actions/app.go` and `actions/render.go` files that are a good starting point for API applications.
 
 <h5><code>buffalo new coke --api</code></h5>
 

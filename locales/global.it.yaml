@@ -126,6 +126,9 @@
 - id: menu.local-authentication
   translation: Local Authentication
 
+- id: menu.apis
+  translation: APIs
+
 - id: menu.template-engines
   translation: Template Engines
 

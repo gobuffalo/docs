@@ -22,6 +22,7 @@ require (
 	github.com/facebookgo/stack v0.0.0-20160209184415-751773369052 // indirect
 	github.com/facebookgo/subset v0.0.0-20150612182917-8dac2c3c4870 // indirect
 	github.com/gobuffalo/buffalo v0.14.8
+	github.com/gobuffalo/buffalo-auth v1.0.5 // indirect
 	github.com/gobuffalo/buffalo-heroku v1.0.6 // indirect
 	github.com/gobuffalo/buffalo-plugins v1.14.1 // indirect
 	github.com/gobuffalo/envy v1.7.0

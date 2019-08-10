@@ -132,6 +132,9 @@
 - id: menu.local-authentication
   translation: Authentification locale
 
+- id: menu.apis
+  translation: APIs
+
 - id: menu.template-engines
   translation: Moteurs de templates
 

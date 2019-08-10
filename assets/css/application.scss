@@ -7,15 +7,9 @@
 @import "custom.scss";
 @import "general";
 
-#docs-main {
-    p {
+.docs {
+    p, li, .feedback {
         font-size: 18px;
-    }
-
-    .summary {
-        li {
-            font-size: 18px;
-        }
     }
 
     @media (min-width: 1400px){

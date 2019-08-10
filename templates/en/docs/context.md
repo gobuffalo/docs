@@ -50,7 +50,7 @@ func Hello(c buffalo.Context) error {
 
 ## Implementing the Interface
 
-The `buffalo.Context` is never meant to be "fully" implemented. Instead it is recommended that you use composition and implement only the functions that you want to provide custom implementations of.
+The `buffalo.Context` is never meant to be "fully" implemented. Instead it is recommended that you use [composition](https://www.ardanlabs.com/blog/2015/09/composition-with-go.html) and implement only the functions that you want to provide custom implementations of.
 
 Below is an example of changing the `Error` function to log the error and kill application:
 

@@ -78,6 +78,9 @@
 - id: menu.request-binding
   translation: Request Binding
 
+- id: menu.context
+  translation: Context
+
 - id: menu.errors-handling
   translation: Errors Handling
 

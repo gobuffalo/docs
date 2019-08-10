@@ -78,6 +78,9 @@
 - id: menu.errors-handling
   translation: Gestione Errori
 
+- id: menu.context
+  translation: Context
+
 - id: menu.sessions
   translation: Sessioni
 

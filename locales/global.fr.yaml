@@ -78,6 +78,9 @@
 - id: menu.request-binding
   translation: Associer les données d'une requête à une struct
 
+- id: menu.context
+  translation: Contexte
+
 - id: menu.errors-handling
   translation: Traitement des erreurs
 

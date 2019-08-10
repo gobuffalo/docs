@@ -10,7 +10,7 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-const docsTemplatesDirectory = "../templates/docs/"
+const docsTemplatesDirectory = "../templates/en/docs/"
 
 func Test_EnDocsHandler(t *testing.T) {
 	r := require.New(t)
@@ -40,7 +40,7 @@ func Test_FrDocsHandler(t *testing.T) {
 	r.NoError(err)
 
 	for _, file := range files {
-		if strings.HasSuffix(file.Name(), ".fr.md") {
+		if strings.HasSuffix(file.Name(), ".md") {
 			name := strings.Split(file.Name(), ".")[0]
 			res := w.HTML("/fr/docs/" + name).Get()
 			r.Equal(200, res.Code)

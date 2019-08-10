@@ -115,6 +115,14 @@ Any types can be used that adhere to the [Scanner](https://golang.org/pkg/databa
 |time.Time              |nulls.Time       | ------      |
 |map[string]interface{} | ---------       |slices.Map   |
 
+<%= note() { %>
+**Note**: Any `slices.Map` typed fields will need to be initialized before `Bind`ing or accessing.
+
+```go
+widget := &models.Widget{Data: slices.Map{}}
+```
+<% } %>
+
 ### Read Only Fields
 
 It is often necessary to read a field from a database, but not want to write that field to the database. This can be done using the `rw` struct  tag.

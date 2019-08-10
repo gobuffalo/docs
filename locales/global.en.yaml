@@ -114,7 +114,7 @@
 - id: menu.db-querying
   translation: Querying
 
-- it: menu.db-mutations
+- id: menu.db-mutations
   translation: Mutations
 
 - id: menu.db-callbacks

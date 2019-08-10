@@ -28,6 +28,8 @@ vErrors, err := c.ValidateAndCreate(fruit)
 
 ## Update
 
+### Without validation
+
 ```go
 c, err := pop.Connect("development")
 // [...]
@@ -50,6 +52,8 @@ vErrors, err := c.ValidateAndUpdate(fruit)
 
 Save checks for the ID in you model: if the ID is the zero value of the type (so for example if it's an `int` and its value is `0`), `Save` calls `Create`.
 Otherwise, it calls `Update`.
+
+### Without validation
 
 ```go
 c, err := pop.Connect("development")

@@ -116,7 +116,11 @@ Any types can be used that adhere to the [Scanner](https://golang.org/pkg/databa
 |map[string]interface{} | ---------       |slices.Map   |
 
 <%= note() { %>
-**Note**: Any `slices.Map` typed fields will need to be initialized before `Bind`ing or accessing. (i.e. `widget := &models.Widget{Data: slices.Map{}}`)
+**Note**: Any `slices.Map` typed fields will need to be initialized before `Bind`ing or accessing.
+
+```go
+widget := &models.Widget{Data: slices.Map{}}
+```
 <% } %>
 
 ### Read Only Fields

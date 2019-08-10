@@ -34,6 +34,7 @@ require (
 	github.com/gobuffalo/lush v0.0.0-20190603211534-6068a55747dc // indirect
 	github.com/gobuffalo/mw-basicauth v1.0.7 // indirect
 	github.com/gobuffalo/mw-contenttype v0.0.0-20190224202710-36c73cc938f3 // indirect
+	github.com/gobuffalo/mw-csrf v0.0.0-20190129204204-25460a055517 // indirect
 	github.com/gobuffalo/mw-forcessl v0.0.0-20190224202501-6d1ef7ffb276
 	github.com/gobuffalo/mw-i18n v0.0.0-20190224203426-337de00e4c33
 	github.com/gobuffalo/mw-paramlogger v0.0.0-20190224201358-0d45762ab655

@@ -114,6 +114,15 @@ Tout type implémentant les interfaces [Scanner](https://golang.org/pkg/database
 |time.Time              |nulls.Time       | ------      |
 |map[string]interface{} | ---------       |slices.Map   |
 
+<%= note() { %>
+**Note** : Il est nécessaire d'initialiser les types `slices.Map` avant de pouvoir les utiliser (avant de pouvoir appeler `Bind` par exemple).
+
+```go
+widget := &models.Widget{Data: slices.Map{}}
+```
+<% } %>
+
+
 ### Champs en lecture seule
 
 Il est souvent nécessaire de lire un champ de la base de données, mais de ne pas vouloir écrire ce champ dans la base. C'est possible, grâce au tag `rw`.

@@ -55,6 +55,11 @@ func App() *buffalo.App {
 		// Setup and use translations:
 		app.Use(translations())
 
+		langCache := map[string]struct{}{}
+		for _, v := range supportedLanguages {
+			langCache[v] = struct{}{}
+		}
+
 		app.Use(func(next buffalo.Handler) buffalo.Handler {
 			return func(c buffalo.Context) error {
 				c.Set("version", buffaloVersion)
@@ -68,7 +73,13 @@ func App() *buffalo.App {
 				if !ok {
 					return errors.New("could not get user languages")
 				}
-				c.Set("lang", langs[0])
+				c.Set("lang", "en")
+				for _, l := range langs {
+					if _, ok := langCache[l]; ok {
+						c.Set("lang", l)
+						break
+					}
+				}
 
 				c.Set("supported_languages", supportedLanguages)
 

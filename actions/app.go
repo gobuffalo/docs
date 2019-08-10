@@ -15,15 +15,17 @@ import (
 	paramlogger "github.com/gobuffalo/mw-paramlogger"
 	"github.com/gobuffalo/packr/v2"
 	"github.com/gobuffalo/x/sessions"
+	"github.com/pkg/errors"
 	"github.com/unrolled/secure"
 )
 
 var ENV = envy.Get("GO_ENV", "development")
 var app *buffalo.App
 var supportedLanguages = map[string]string{
-	"en": "English",
-	"fr": "Français",
-	"it": "Italiano",
+	"English":  "en",
+	"Español":  "es",
+	"Français": "fr",
+	"Italiano": "it",
 }
 
 // T is used to provide translations
@@ -61,15 +63,14 @@ func App() *buffalo.App {
 				c.Set("trainingURL", "http://www.gopherguides.com")
 				c.Set("videoList", vimeo.Videos())
 
-				c.Set("lang", "en")
 				c.Set("current_path", strings.TrimRight(c.Value("current_path").(string), "/"))
-				langs := c.Value("languages").([]string)
-				for _, l := range langs {
-					if _, ok := supportedLanguages[l]; ok {
-						c.Set("lang", l)
-						break
-					}
+				langs, ok := c.Value("languages").([]string)
+				if !ok {
+					return errors.New("could not get user languages")
 				}
+				c.Set("lang", langs[0])
+
+				c.Set("supported_languages", supportedLanguages)
 
 				c.Set("localized_current_path", func(lang string) string {
 					cp := c.Value("current_path").(string)
@@ -104,8 +105,8 @@ func App() *buffalo.App {
 
 func createLanguagesKey() string {
 	allKeys := ""
-	for key := range supportedLanguages {
-		allKeys = fmt.Sprintf("%s|%s", allKeys, key)
+	for _, code := range supportedLanguages {
+		allKeys = fmt.Sprintf("%s|%s", allKeys, code)
 	}
 	return allKeys
 }

@@ -45,10 +45,13 @@ require (
 	github.com/gobuffalo/packr v1.25.0 // indirect
 	github.com/gobuffalo/packr/v2 v2.5.2
 	github.com/gobuffalo/plush v3.8.3+incompatible
+	github.com/gobuffalo/pop v4.11.2+incompatible
 	github.com/gobuffalo/suite v2.8.1+incompatible // indirect
 	github.com/gobuffalo/syncx v0.0.0-20190224160051-33c29581e754 // indirect
 	github.com/gobuffalo/tags v2.1.0+incompatible
+	github.com/gobuffalo/validate v2.0.3+incompatible
 	github.com/gobuffalo/x v0.1.0
+	github.com/gofrs/uuid v3.2.0+incompatible
 	github.com/google/go-cmp v0.3.1
 	github.com/grokify/html-strip-tags-go v0.0.0-20190424092004-025bd760b278
 	github.com/jackc/fake v0.0.0-20150926172116-812a484cc733 // indirect

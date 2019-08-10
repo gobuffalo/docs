@@ -117,6 +117,9 @@
 - id: menu.db-mutations
   translation: Mutations
 
+- id: menu.db-raw-queries
+  translation: Requêtes brutes
+
 - id: menu.db-callbacks
   translation: Callbacks
 

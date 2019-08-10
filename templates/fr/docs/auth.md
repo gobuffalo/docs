@@ -1,21 +1,21 @@
-<% seoDescription("Local authentication") %>
-<% seoKeywords(["buffalo", "go", "golang", "users", "password", "authentication"]) %>
+<% seoDescription("Authentification locale") %>
+<% seoKeywords(["buffalo", "go", "golang", "utilisateurs", "mot de passe", "authentificationn"]) %>
 
-<%= h1("Local Authentication") %>
+<%= h1("Authentification locale") %>
 
-In many use-cases, you'll need to implement user authentication in your apps.
+Dans bien des cas, vous allez devoir implémenter un système d'authentification et de gestion d'utilisateurs dans vos applications.
 
-Buffalo had a native support for Auth until version `v0.9.4`. Since then, it was moved into it's own plugin, [https://github.com/gobuffalo/buffalo-auth](https://github.com/gobuffalo/buffalo-auth).
+Buffalo avait un support natif de cette fonctionnalité jusqu'à la version `v0.9.4`. Depuis, elle a été déplacée dans son propre plugin, [https://github.com/gobuffalo/buffalo-auth](https://github.com/gobuffalo/buffalo-auth).
 
 ## Installation
 
-To install the `buffalo-auth` plugin, run the following command at your project route:
+Pour installer le plugin `buffalo-auth`, exécutez la commande suivante à la racine de votre projet :
 
 ```bash
 $ buffalo plugins install github.com/gobuffalo/buffalo-auth
 ```
 
-## Generator
+## Générateur
 ```bash
 $ buffalo g auth
 
@@ -35,7 +35,7 @@ create  templates/index.html
 create  templates/users/new.html
 ```
 
-## Example Usage
+## Exemple d'utilisation
 
 ### Actions
 <%= codeTabs() { %>

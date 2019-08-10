@@ -123,6 +123,9 @@
 - id: menu.third-party-auth
   translation: 3<sup>rd</sup> Party Authentication
 
+- id: menu.local-authentication
+  translation: Local Authentication
+
 - id: menu.template-engines
   translation: Template Engines
 

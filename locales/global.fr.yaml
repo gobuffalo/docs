@@ -129,6 +129,9 @@
 - id: menu.third-party-auth
   translation: Authentification tierce
 
+- id: menu.local-authentication
+  translation: Authentification locale
+
 - id: menu.template-engines
   translation: Moteurs de templates
 

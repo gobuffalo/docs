@@ -171,6 +171,9 @@
 - id: menu.building-binaries
   translation: Empaquetage
 
+- id: menu.cross-compiling
+  translation: Cross-compilation
+
 - id: menu.using-proxy
   translation: Utilisation d'un proxy
 

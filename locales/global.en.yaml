@@ -168,6 +168,9 @@
 - id: menu.building-binaries
   translation: Packing
 
+- id: menu.cross-compiling
+  translation: Cross-compiling
+
 - id: menu.using-proxy
   translation: Using a proxy
 

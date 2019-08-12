@@ -6,6 +6,17 @@ $titles-orange: #CC471E;
     font-weight: 300;
 }
 
+.presentation-banner .title {
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
+    font-size: 36px;
+    font-weight: bold;
+    letter-spacing: -0.34px;
+    line-height: 51px;
+
+    &:after{ display: none; }
+}
+
 .landing-page {
     h2 {
         margin-top: initial;
@@ -529,7 +540,7 @@ $titles-orange: #CC471E;
 
     .landing-page .main-content section.presentation-banner {
         padding: 80px 0;
-        h2 {
+        h1 {
 
             br {
                 display: none;

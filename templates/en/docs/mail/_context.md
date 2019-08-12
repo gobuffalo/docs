@@ -2,7 +2,7 @@
 
 <%= sinceVersion("0.13.0-rc1") %>
 
-To use context variables such as [RouteHelpers](/docs/routing#using-route-helpers-in-templates) or those set with
+To use context variables such as [RouteHelpers](/en/docs/routing#using-route-helpers-in-templates) or those set with
 `c.Set(...)`, `mail.New` accepts a `buffalo.Context`.
 
 ```go

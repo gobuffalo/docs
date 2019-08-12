@@ -44,7 +44,7 @@ $ buffalo task hello
 
 ### From a Built Binary
 
-After a binary has been [built](/docs/building), the tasks can be run with the `task` subcommand:
+After a binary has been [built](/en/docs/deploy/building), the tasks can be run with the `task` subcommand:
 
 ```bash
 $ myapp task hello

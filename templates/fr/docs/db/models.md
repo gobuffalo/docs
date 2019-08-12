@@ -95,7 +95,7 @@ type User struct {
 
 Avec ce changement, les noms recherchés en base sont `id`, `email` et `password`.
 
-À titre de comparaison, c'est très similaire à la manière dont fonctionne l'[association d'un formulaire à une structure](/docs/bind).
+À titre de comparaison, c'est très similaire à la manière dont fonctionne l'[association d'un formulaire à une structure](/fr/docs/bind).
 
 Tout type implémentant les interfaces [Scanner](https://golang.org/pkg/database/sql/#Scanner) et [Valuer](https://golang.org/pkg/database/sql/driver/#Valuer) peut être utilisé. Cependant, il est recommandé d'utiliser les types suivants si vous ne voulez pas vous fatiguer à les écrire vous-même :
 

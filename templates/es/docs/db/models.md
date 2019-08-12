@@ -79,7 +79,7 @@ type User struct {
 
 Ahora se espera que los nombres de las columnas sean `id`, `email` y `password`.
 
-Esto es muy similar a cómo funciona [el enlace de formulario](/docs/bind).
+Esto es muy similar a cómo funciona [el enlace de formulario](/es/docs/bind).
 
 Se puede usar cualquier tipo que se adhiera a las interfaces [Scanner](https://golang.org/pkg/database/sql/#Scanner) y [Valuer](https://golang.org/pkg/database/sql/driver/#Valuer) interfaces, sin embargo, para que no tenga que escribir estos usted mismo, se recomienda que se adhiera a los siguientes tipos:
 

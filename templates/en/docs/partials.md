@@ -32,7 +32,7 @@ All partial file names must start with an `_`. For example: `_form.html`. This h
 
 ## Context
 
-All [rendering context](/docs/rendering) from the parent template will automatically pass through to the partial, and any partials that partial may call. (see also [context](/docs/context))
+All [rendering context](/en/docs/rendering) from the parent template will automatically pass through to the partial, and any partials that partial may call. (see also [context](/en/docs/context))
 
 
 ```go
@@ -70,7 +70,7 @@ func UsersEdit(c buffalo.Context) error {
 
 ## Local Context
 
-In addition to have the [context](/docs/context) of the parent template, partials can also be sent additional information as "local" variables.
+In addition to have the [context](/en/docs/context) of the parent template, partials can also be sent additional information as "local" variables.
 
 ```go
 // actions/users.go
@@ -110,4 +110,4 @@ func UsersIndex(c buffalo.Context) error {
 
 ## Helpers
 
-Partials are not much different from standard [templates](/docs/templating) in Buffalo. They include all of the same [helpers](/docs/helpers) as well.
+Partials are not much different from standard [templates](/en/docs/templating) in Buffalo. They include all of the same [helpers](/en/docs/helpers) as well.

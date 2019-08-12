@@ -37,7 +37,7 @@ La méthode `Websocket() (*websocket.Conn, error)` a été retirée de `buffalo.
 
 ## Contexte et rendu
 
-Dans l'interface `Context`, on peut trouver une méthode `Render` de type `render.Renderer`. Consultez le chapitre sur le [rendu](/docs/fr/rendering) pour plus d'informations.
+Dans l'interface `Context`, on peut trouver une méthode `Render` de type `render.Renderer`. Consultez le chapitre sur le [rendu](/fr/docs/rendering) pour plus d'informations.
 
 Toutes les valeurs données au contexte sont automatiquement disponibles pour le `render.Renderer` passé à la méthode `Render`.
 
@@ -120,4 +120,4 @@ Buffalo remplit le contexte de chaque requête avec tout plein d'informations ut
 | `request`       | [`*http.Request`](https://godoc.org/net/http#Request)                               | La requête courante.                                                                                                                    |
 | `tx`            | [`*pop.Connection`](https://godoc.org/github.com/gobuffalo/pop#Connection)          | Seulement disponible si vous utilisez le middleware `github.com/gobuffalo/buffalo/middleware.PopTransaction` (c'est le cas par défaut).                              |
 
-Consultez le chapitre [Helpers](/fr/docs/helpers#builtin-helpers/docs/helpers#builtin-helpers) pour une liste de helpers disponibles de base dans vos templates.
+Consultez le chapitre [Helpers](/fr/docs/helpers#builtin-helpers) pour une liste de helpers disponibles de base dans vos templates.

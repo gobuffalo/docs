@@ -10,7 +10,7 @@ func (c buffalo.Context) error {
 
 If you already know about **MVC pattern**, `buffalo.Handler` functions manages the Controller part: this is the place where all the app logic goes. The handler function takes a `buffalo.Context` struct, which contains everything you need about the current request.
 
-See the [context](/docs/context) to understand the `buffalo.Context` interface.
+See the [context](/en/docs/context) to understand the `buffalo.Context` interface.
 
 ##### Supported HTTP Methods
 

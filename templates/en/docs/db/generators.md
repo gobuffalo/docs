@@ -4,4 +4,4 @@
 
 ## Migrations
 
-For information on generating migrations see [/docs/db/migrations](/docs/db/migrations).
+For information on generating migrations see [/en/docs/db/migrations](/en/docs/db/migrations).

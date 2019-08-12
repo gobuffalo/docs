@@ -27,7 +27,7 @@ Avant d'installer Buffalo, assurez-vous d'avoir installé les dépendances suiva
 Les pré-requis suivants sont optionnels. Vous n'en aurez pas besoin si vous souhaitez créer une API, ou si vous préférez construire votre application d'une manière plus traditionnelle.
 
 * [node](https://github.com/nodejs/node) version `8` ou supérieure
-* [yarn](https://yarnpkg.com/en/) ou [npm](https://github.com/npm/npm) pour la [gestion des ressources](/docs/assets) avec [webpack](https://github.com/webpack/webpack).
+* [yarn](https://yarnpkg.com/en/) ou [npm](https://github.com/npm/npm) pour la [gestion des ressources](/fr/docs/assets) avec [webpack](https://github.com/webpack/webpack).
 
 ##### Prérequis spécifiques aux bases de données
 

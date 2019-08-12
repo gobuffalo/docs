@@ -55,7 +55,7 @@ with-dep: true
 ## Lancer votre application en mode développement
 
 <%= note() { %>
-Avant de démarrer Buffalo pour la première fois, veuillez consulter la documentation sur les [bases de données](/docs/db) pour paramétrer votre application correctement.
+Avant de démarrer Buffalo pour la première fois, veuillez consulter la documentation sur les [bases de données](/fr/docs/db) pour paramétrer votre application correctement.
 <% } %>
 
 L'un des inconvénients du développement en Go est l'absence de «&nbsp;rechargement&nbsp;» de code. Cela signifie qu'à chaque fois que vous modifiez votre code, **vous devez stopper manuellement** votre application, la recompiler et enfin la redémarrer. Buffalo trouve cela ennuyeux, et veut vous faciliter la vie.
@@ -64,7 +64,7 @@ L'un des inconvénients du développement en Go est l'absence de «&nbsp;recharg
 $ buffalo dev
 ```
 
-La commande `dev` surveille les fichiers `.go`, `.html` et le dossier des [ressources graphiques](/docs/assets) par défaut. Elle se charge de **recompiler et redémarrer votre application** automatiquement, pour que vous n'ayez pas à vous en soucier.
+La commande `dev` surveille les fichiers `.go`, `.html` et le dossier des [ressources graphiques](/fr/docs/assets) par défaut. Elle se charge de **recompiler et redémarrer votre application** automatiquement, pour que vous n'ayez pas à vous en soucier.
 
 Lancez la commande `buffalo dev` et affichez la page [localhost:3000/](http://localhost:3000/) pour voir tous vos changements en direct&nbsp;!
 

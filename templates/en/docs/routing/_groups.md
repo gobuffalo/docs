@@ -1,6 +1,6 @@
 ## Groups
 
-Buffalo apps allow for the grouping of end-points. This allows for common functionality, such as [middleware](/docs/middleware) to be collected together. A great example of this would be an API end-point.
+Buffalo apps allow for the grouping of end-points. This allows for common functionality, such as [middleware](/en/docs/middleware) to be collected together. A great example of this would be an API end-point.
 
 ```go
 g := a.Group("/api/v1")
@@ -18,4 +18,4 @@ g := a.Group("/api/v1")
 g.Use(APIAuthorizer)
 ```
 
-In the above example the `/api/v1` group will use both `SomeMiddleware` and `APIAuthorizer`. See [middleware](/docs/middleware) for more information about using, skipping, and clearing middleware.
+In the above example the `/api/v1` group will use both `SomeMiddleware` and `APIAuthorizer`. See [middleware](/en/docs/middleware) for more information about using, skipping, and clearing middleware.

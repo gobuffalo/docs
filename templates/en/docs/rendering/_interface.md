@@ -1,6 +1,6 @@
 ## Renderer Interface
 
-In order for a renderer to be able to be used with [`Context#Render`](/docs/context) it must implement the following interface:
+In order for a renderer to be able to be used with [`Context#Render`](/en/docs/context) it must implement the following interface:
 
 ```go
 // Renderer interface that must be satisified to be used with

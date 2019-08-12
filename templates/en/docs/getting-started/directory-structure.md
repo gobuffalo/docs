@@ -3,7 +3,7 @@
 
 <%= h1("Directory structure") %>
 
-Buffalo provides you **a minimal directory structure** to work on your project. This structure **keeps the project clean**, and allow the [generators](/docs/generators) to work. Don't try to reinvent the wheel, and **let Buffalo buy you more time** to do the interesting part of your app! :)
+Buffalo provides you **a minimal directory structure** to work on your project. This structure **keeps the project clean**, and allow the generators to work. Don't try to reinvent the wheel, and **let Buffalo buy you more time** to do the interesting part of your app! :)
 
 Now that you have a minimal new project, let's go through its contents.
 
@@ -43,10 +43,10 @@ This directory contains **raw** assets which will be compiled/compressed & put i
 ### grifts
 
 <%= note() { %>
-This directory is optional. If you don't need to use [tasks](/docs/tasks), you can remove it.
+This directory is optional. If you don't need to use [tasks](/en/docs/tasks), you can remove it.
 <% } %>
 
-This directory contains the [tasks](/docs/tasks) powered by [grift](https://github.com/markbates/grift).
+This directory contains the [tasks](/en/docs/tasks) powered by [grift](https://github.com/markbates/grift).
 
 ### locales
 

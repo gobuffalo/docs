@@ -20,14 +20,14 @@
             <div class="collapse navbar-collapse" id="navbarToggler">
                 <ul class="navbar-nav ml-auto align-items-lg-center align-items-start py-1">
                     <li class="nav-item p-0 <%= if (current_path == "/en/docs/examples" || current_path == "/fr/docs/examples") { %> active<% } %>">
-                        <a class="d-block p-lg-2" href="/docs/examples"><%= t("top.examples-tutorials") %></a>
+                        <a class="d-block p-lg-2" href="<%= docPath({name: "examples", lang: lang}) %>"><%= t("top.examples-tutorials") %></a>
                     </li>
 
-                    <li class="nav-item p-0 <%= if (current_path == "/docs/support" || current_path == "/fr/docs/examples") { %> active<% } %>">
-                        <a class="d-block p-lg-2" href="/docs/support"><%= t("top.support") %></a>
+                    <li class="nav-item p-0 <%= if (current_path == "/en/docs/support" || current_path == "/fr/docs/support") { %> active<% } %>">
+                        <a class="d-block p-lg-2" href="<%= docPath({name: "support", lang: lang}) %>"><%= t("top.support") %></a>
                     </li>
 
-                    <li class="nav-item p-0">
+                    <li class="nav-item p-0 <%= if (current_path == "/en/docs/index" || current_path == "/fr/docs/index") { %> active<% } %>">
                         <a class="d-block p-lg-2" href="<%= docPath({name: "index", lang: lang}) %>">
                             <%= t("top.docs") %>
                         </a>

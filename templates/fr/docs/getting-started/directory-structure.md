@@ -3,7 +3,7 @@
 
 <%= h1("Structure d'un projet") %>
 
-Buffalo utilise **une structure minimale de dossiers**  pour travailler sur votre projet. Cette structure permet de **ranger le projet proprement**, et est intimement liée aux [générateurs](/docs/generators). N'essayez pas de réinventer la roue, et **laissez Buffalo vous faire gagner du temps** pour travailler sur la partie la plus intéressante&nbsp;! :)
+Buffalo utilise **une structure minimale de dossiers**  pour travailler sur votre projet. Cette structure permet de **ranger le projet proprement**, et est intimement liée aux générateurs. N'essayez pas de réinventer la roue, et **laissez Buffalo vous faire gagner du temps** pour travailler sur la partie la plus intéressante&nbsp;! :)
 
 Maintenant que vous disposez d'un projet minimal, voyons sa composition.
 
@@ -43,10 +43,10 @@ Ce dossier contient les composants graphiques **non-optimisés** qui seront comp
 ### grifts
 
 <%= note() { %>
-Ce répertoire est facultatif. Si vous n'avez pas besoin d'utiliser les [tâches](/docs/tasks), vous pouvez le supprimer.
+Ce répertoire est facultatif. Si vous n'avez pas besoin d'utiliser les [tâches](/fr/docs/tasks), vous pouvez le supprimer.
 <% } %>
 
-Ce dossier contient les [tâches](/docs/tasks) basées sur [grift](https://github.com/markbates/grift).
+Ce dossier contient les [tâches](/fr/docs/tasks) basées sur [grift](https://github.com/markbates/grift).
 
 ### locales
 

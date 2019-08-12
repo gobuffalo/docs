@@ -24,7 +24,7 @@ Both types of form helpers have the following features in common:
 
 ### How Do I Map a Form to a Model/Struct?
 
-See the [Request Binding](/docs/bind) page for more information on request binding.
+See the [Request Binding](/en/docs/bind) page for more information on request binding.
 
 ### Can I Change the Name of the `f` Variable in My Template?
 

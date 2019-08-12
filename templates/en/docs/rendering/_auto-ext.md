@@ -13,5 +13,5 @@ func Beatles(c buffalo.Context) error {
 }
 ```
 
-This works with [partials](/docs/partials) too.
+This works with [partials](/en/docs/partials) too.
 

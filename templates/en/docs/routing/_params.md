@@ -1,6 +1,6 @@
 ## Parameters
 
-Query string and other parameters are available from the [`buffalo.Context`](/docs/context) that is passed into the `buffalo.Handler`.
+Query string and other parameters are available from the [`buffalo.Context`](/en/docs/context) that is passed into the `buffalo.Handler`.
 
 ```go
 a.GET("/users", func (c buffalo.Context) error {

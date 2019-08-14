@@ -168,7 +168,18 @@
           <a href="<%= docPath({name: "db/raw-queries", lang: lang}) %>" hreflang="<%= lang %>"><%= t("menu.db-raw-queries") %></a>
         </li>
         <li>
-          <a href="<%= docPath({name: "db/relations", lang: lang}) %>" hreflang="<%= lang %>">Associations and Relationships</a>
+          <a href="#">Associations and Relationships</a>
+          <ul class="sidenav dropable">
+            <li>
+              <a href="<%= docPath({name: "db/relations", lang: lang}) %>" hreflang="<%= lang %>">Introduction</a>
+            </li>
+            <li>
+              <a href="<%= docPath({name: "db/relations/onetoone", lang: lang}) %>" hreflang="<%= lang %>">One to one</a>
+            </li>
+            <li>
+              <a href="<%= docPath({name: "db/relations/onetomany", lang: lang}) %>" hreflang="<%= lang %>">One to many</a>
+            </li>
+          </ul>
         </li>
         <li>
           <a href="<%= docPath({name: "db/callbacks", lang: lang}) %>" hreflang="<%= lang %>"><%= t("menu.db-callbacks") %></a>

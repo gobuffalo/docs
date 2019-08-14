@@ -175,7 +175,7 @@ tx.Eager().Create(&book)
 
 In the case that you feed the eager create with associate models that already exist it will, instead of creating duplicates of them or updating the contents of them, simply create/update the associations with them.
 
-## Related Content
+## Next steps
 
-* [Associations with Pop: 1 to 1](https://blog.gobuffalo.io/associations-with-pop-1-to-1-592f02e2bdd8) - An article about 1 to 1 associations in Pop.
-* [Associations with Pop: 1 to n](https://blog.gobuffalo.io/associations-with-pop-1-to-n-2fb3e1c3833f) - An article about 1 to n associations in Pop.
+* [One to one relations](/en/docs/db/relations/onetoone/)
+* [One to many relations](/en/docs/db/relations/onetomany/)

@@ -90,8 +90,13 @@ xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <priority>0.64</priority>
 </url>
 <url>
+  <loc>https://gobuffalo.io/en/docs/release-notes/buffalo/v0149/</loc>
+  <lastmod>2019-08-14</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
   <loc>https://gobuffalo.io/en/docs/release-notes/buffalo/v0148/</loc>
-  <lastmod>2019-08-12</lastmod>
+  <lastmod>2019-08-14</lastmod>
   <priority>0.64</priority>
 </url>
 <url>

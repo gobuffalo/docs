@@ -29,4 +29,4 @@ Once you have an upgraded binary you can run the following command to attempt to
 $ buffalo fix
 ```
 
-Note: While we have done our best to make this update command work well, please understand that it might not get you to a complete upgrade depending on your application and its complexities, but it will get you pretty close.
+**Note**: While we have done our best to make this update command work well, please understand that it might not get you to a complete upgrade depending on your application and its complexities, but it will get you pretty close.

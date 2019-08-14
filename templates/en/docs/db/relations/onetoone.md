@@ -5,6 +5,12 @@
 
 In this chapter, you'll learn how to write a one to one [association](/en/docs/db/relations/) in Pop.
 
+## Tags
+
+One to one associations works using a pair of tags:
+* `belongs_to` for the model with the foreign key.
+* `has_one` for the model without the foreign key.
+
 ## Example
 
 ```go

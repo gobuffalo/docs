@@ -81,6 +81,9 @@
 - id: menu.context
   translation: Contexte
 
+- id: menu.actions
+  translation: Actions
+
 - id: menu.errors-handling
   translation: Traitement des erreurs
 

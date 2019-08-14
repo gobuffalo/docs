@@ -81,6 +81,9 @@
 - id: menu.context
   translation: Context
 
+- id: menu.actions
+  translation: Actions
+
 - id: menu.sessions
   translation: Sessioni
 

@@ -78,6 +78,9 @@
 - id: menu.request-binding
   translation: Request Binding
 
+- id: menu.actions
+  translation: Actions
+
 - id: menu.context
   translation: Context
 

@@ -31,11 +31,15 @@ In some cases you will need to generate an action with an HTTP method different 
 $ buffalo g actions users message --method POST
 ```
 
-In some other scenarios you will need to generate an action without generating an HTML template. To skip the generation of the HTML template for creating an action you can pass the `--skip-template` flag to the generator, i.e:
+In some other scenarios you will need to generate an action without generating an HTML template (e.g. for an API). To skip the generation of the HTML template for creating an action you can pass the `--skip-template` flag to the generator, i.e:
 
 ```bash
 $ buffalo g actions users update --skip-template
 ```
+
+<%= note() { %>
+That's the default behavior for applications generated with the `--api` flag. See [APIs](/en/docs/apis/) for further informations.
+<% } %>
 
 ## Destroying Actions
 

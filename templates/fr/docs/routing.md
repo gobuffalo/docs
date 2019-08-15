@@ -9,6 +9,7 @@ Buffalo utilise le paquet [github.com/gorilla/mux](http://www.gorillatoolkit.org
 <%= partial("fr/docs/routing/mapping.md") %>
 <%= partial("fr/docs/routing/named_routes.md") %>
 <%= partial("fr/docs/routing/templates.md") %>
+<%= partial("en/docs/routing/path_for.md") %>
 <%= partial("fr/docs/routing/actions.md") %>
 <%= partial("fr/docs/routing/custom_named.md") %>
 <%= partial("fr/docs/routing/params.md") %>

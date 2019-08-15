@@ -40,6 +40,8 @@ func (rn releaseNotes) Diff(key, c1, c2 string, ps ...string) (template.HTML, er
 	}
 
 	d := cmp.Diff(string(b1), string(b2))
-
+	d = strings.TrimSpace(d)
+	d = strings.TrimPrefix(d, "strings.Join({\n")
+	d = strings.TrimSuffix(d, `}, "\n")`)
 	return template.HTML(d), nil
 }

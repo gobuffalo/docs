@@ -1,3 +1,6 @@
+<% seoDescription("Buffalo framework overview") %>
+<% seoKeywords(["buffalo", "framework", "overview", "go", "golang", "mux", "bootstrap", "jquery"]) %>
+
 <%= h1("Overview") %>
 
 Welcome aboard!

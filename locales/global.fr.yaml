@@ -8,6 +8,9 @@
 - id: head.description
   translation: Retrouvez le plaisir d'écrire des applications Web en Go ! Un framework inspiré de Ruby on Rails, idiomatique et écrit en Go.
 
+- id: head.meta.keywords
+  translation: framework, go, buffalo, pop, golang, rails, développement, générateur, javascript, web, rapide, facile
+
 # Helpers
 - id: helpers.since
   translation: depuis {{.name}}<strong>{{.version}}</strong>

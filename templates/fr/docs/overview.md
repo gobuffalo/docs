@@ -1,3 +1,6 @@
+<% seoDescription("Vue d'ensemble de Buffalo") %>
+<% seoKeywords(["buffalo", "framework", "composants", "go", "golang", "mux", "bootstrap", "jquery"]) %>
+
 <%= h1("Vue d'ensemble") %>
 
 Bienvenue à bord !

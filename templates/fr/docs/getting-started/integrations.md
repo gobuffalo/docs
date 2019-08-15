@@ -1,5 +1,5 @@
 <% seoDescription("Intégrations") %>
-<% seoKeywords(["integrations", "ide", "buffalo", "bash", "zsh"]) %>
+<% seoKeywords(["intégrations", "ide", "buffalo", "bash", "zsh"]) %>
 
 <%= h1("Intégrations") %>
 

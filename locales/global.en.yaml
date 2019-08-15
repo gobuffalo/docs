@@ -8,6 +8,9 @@
 - id: head.description
   translation: Put the fun back in writing Go web applications! A Ruby on Rails inspired, idiomatic, web framework written in Go.
 
+- id: head.meta.keywords
+  translation: framework, go, buffalo, pop, golang, rails, development, generator, javascript, web, rapid, easy
+
 # Helpers
 - id: helpers.since
   translation: since {{.name}}<strong>{{.version}}</strong>

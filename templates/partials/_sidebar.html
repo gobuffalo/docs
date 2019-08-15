@@ -1,7 +1,7 @@
 <!-- Sidebar -->
 <aside class="col-md-3 sidebar sidebar-boxed sidebar-dark">
 
-  <ul class="sidenav dropable ">
+  <ul class="sidenav dropable sidebar-root">
     <li class="sidebar-form">
       <%= form({action: "/lang"}) { %>
         <%= f.SelectTag({name: "language", options: supported_languages, id: "language", value: lang, label: t("menu.language")}) %>

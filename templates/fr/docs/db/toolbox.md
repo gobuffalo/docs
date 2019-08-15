@@ -11,6 +11,21 @@ Pop est une bibliothèque permettant de communiquer avec des bases de données, 
 
 ## Installer la CLI
 
+### Depuis une archive pré-compilée
+
+Les archives pré-compilées contiennent Soda **avec support pour SQLite**.
+
+Téléchargez la version appropriée pour votre plate-forme depuis les [versions de Pop](https://github.com/gobuffalo/pop/releases).
+
+Placez-la quelque part dans votre `PATH`, et assurez-vous que le binaire `soda` est exécutable.
+
+### Homebrew (macOS)
+
+```bash
+$ brew install gobuffalo/tap/pop
+```
+
+### Depuis les sources
 **Sans** support pour sqlite 3 :
 
 ```bash

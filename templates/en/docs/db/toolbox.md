@@ -11,6 +11,21 @@ Pop helps you to manage database connections, but it also provides `soda`, a sma
 
 ## Installing CLI Support
 
+### From a release archive
+
+Pre-compiled archives contain Soda **with SQLite support**.
+
+Download the appropriate version for your platform from [Pop releases](https://github.com/gobuffalo/pop/releases).
+
+Place it somewhere in your `PATH`, and ensure the `soda` binary is executable.
+
+### Homebrew (macOS)
+
+```bash
+$ brew install gobuffalo/tap/pop
+```
+
+### From source
 **Without** sqlite 3 support:
 
 ```bash

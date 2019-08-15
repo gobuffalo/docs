@@ -28,10 +28,12 @@ var buildToc = () => {
 var activateSideNav = () => {
     let loc = window.location;
     let path = loc.pathname === "/" ? "/docs/overview" : loc.pathname;
-    $(".sidebar li").removeClass("active");
-    let item = $(`.sidebar a[href="${path}"], .sidebar a[href="${path.substr(-1)}"]`);
-    item.closest("li").addClass("active");
-    let sn = item.closest("ul.sidenav");
+    if (path[path.length - 1] !== "/") {
+        path += "/";
+    }
+    $(".sidebar-root li").removeClass("active");
+    let item = $(`.sidebar a[href="${path}"]`);
+    item.parentsUntil("ul.sidebar-root", "li").addClass("active");
+    let sn = item.parentsUntil("ul.sidebar-root");
     sn.addClass("open");
-    sn.prev().addClass("open");
 };

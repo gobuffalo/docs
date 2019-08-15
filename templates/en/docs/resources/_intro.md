@@ -14,9 +14,9 @@ type Resource interface {
 }
 ```
 
-The [`github.com/gobuffalo/buffalo#Resource`](https://godoc.org/github.com/gobuffalo/buffalo#Resource) interface was made smaller in release `v0.14.1`.
+The [`github.com/gobuffalo/buffalo#Resource`](https://godoc.org/github.com/gobuffalo/buffalo#Resource) interface was made smaller in release `v0.14.1`. The `New` and `Edit` methods, which serve the HTML forms to edit the resource, are now optional.
 
-<%= sinceVersion("0.5.0") %>
+Here's what the interface looked like before:
 
 ```go
 type Resource interface {

@@ -16,8 +16,3 @@ func (v BaseResource) Edit(c Context) error {
   return c.Error(404, errors.New("resource not implemented"))
 }
 ```
-
-## Video Presentation
-
-<%= vimeo("212302823") %>
-

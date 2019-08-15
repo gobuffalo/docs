@@ -1,5 +1,5 @@
 <% seoDescription("Pop one to one associations") %>
-<% seoKeywords(["buffalo", "go", "golang", "pop", "one to one", "associations"]) %>
+<% seoKeywords(["orm", "buffalo", "go", "golang", "pop", "one to one", "associations"]) %>
 
 <%= h1("One to one associations") %>
 

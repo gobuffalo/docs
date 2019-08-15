@@ -1,7 +1,7 @@
 <% seoDescription("How to handle routes in Buffalo?") %>
-<% seoKeywords(["buffalo", "go", "golang", "http", "route", "gorilla", "router"]) %>
+<% seoKeywords(["buffalo", "go", "golang", "http", "route", "gorilla", "mux", "router"]) %>
 
-# Routing
+<%= h1("Routing") %>
 
 Buffalo uses the [github.com/gorilla/mux](http://www.gorillatoolkit.org/pkg/mux) package under the covers, to handle routing within Buffalo applications. With that said, Buffalo wraps the `mux` API with its own. This guide walks you through all you'll need to know about how Buffalo handles routing.
 

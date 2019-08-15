@@ -1,5 +1,5 @@
 <% seoDescription("Cross-compiling a Buffalo application") %>
-<% seoKeywords(["buffalo", "go", "golang", "cross-compile", "linux", "arm", "windows", "mac"]) %>
+<% seoKeywords(["buffalo", "go", "golang", "cross-compile", "GOOS", "GOARCH", "linux", "arm", "windows", "mac"]) %>
 
 <%= h1("Cross-compiling a Buffalo application") %>
 

@@ -37,9 +37,10 @@
 
     <title>
         <%= if (pageTitle) { %>
-            <%= pageTitle %> &#183;
+            <%= pageTitle %> &#183; Buffalo
+        <% } else { %>
+            <%= raw(t("head.title")) %>
         <% } %>
-        <%= raw(t("head.title")) %>
     </title>
 
     <!-- Styles -->

@@ -222,7 +222,7 @@ func bindRedirects(app *buffalo.App) {
 		return c.Redirect(http.StatusFound, fmt.Sprintf("/%s/docs/%s", c.Value("lang").(string), c.Param("name")))
 	})
 	app.GET("/", func(c buffalo.Context) error {
-		return c.Redirect(http.StatusFound, fmt.Sprintf("/%s", c.Value("lang").(string)))
+		return c.Redirect(http.StatusFound, fmt.Sprintf("/%s/", c.Value("lang").(string)))
 	})
 }
 

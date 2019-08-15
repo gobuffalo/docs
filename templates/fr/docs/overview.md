@@ -1,6 +1,8 @@
-# Vue d'ensemble
+<%= h1("Vue d'ensemble") %>
 
-Bienvenue à bord ! Bien que Buffalo puisse être considéré comme un framework, on parlera plutôt d'un écosystème de biliothèques Go et Javascript testées pour travailler ensemble. La plupart de ces composants peut être remplacé par un autre, mais nous ne fournirons un support que pour les composants par défaut.
+Bienvenue à bord !
+
+Bien que Buffalo puisse être considéré comme un framework, on parlera plutôt d'un écosystème de biliothèques Go et Javascript testées pour travailler ensemble. La plupart de ces composants peut être remplacé par un autre, mais nous ne fournirons un support que pour les composants par défaut.
 
 Dans ce chapitre, nous allons faire un petit tour des briques par défaut proposées dans votre application Buffalo.
 

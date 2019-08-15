@@ -1,4 +1,4 @@
-# Contexte
+<%= h1("Contexte") %>
 
 Dans toutes les actions Buffalo, on retrouve le paramètre `Context`. Ce contexte permet d'avoir une définition simple et efficace de vos actions, tout en étant puissante.
 

@@ -28,10 +28,10 @@
   <meta name="description" content="<%= if(metaDescription) { %><%= metaDescription %><% } else { %><%= raw(t("head.description")) %><% } %>" />
   <meta name="twitter:description" content="<%= if(metaDescription) { %><%= metaDescription %><% } else { %><%= raw(t("head.description")) %><% } %>" />
 
-  <link rel="canonical" href="https://gobuffalo.io<%= current_path %>" />
-  <link rel="alternate" href="https://gobuffalo.io<%= localized_current_path("en") %>" hreflang="x-default" />
+  <link rel="canonical" href="https://gobuffalo.io<%= current_path %>/" />
+  <link rel="alternate" href="https://gobuffalo.io<%= localized_current_path("en") %>/" hreflang="x-default" />
   <%= for(lang, code) in supported_languages { %> 
-  <link rel="alternate" href="https://gobuffalo.io<%= localized_current_path(code) %>" hreflang="<%= code %>" title="<%= lang %>" />
+  <link rel="alternate" href="https://gobuffalo.io<%= localized_current_path(code) %>/" hreflang="<%= code %>" title="<%= lang %>" />
   <% } %>
   <meta name="google-site-verification" content="GwQmhkMw9KUTJYJUgsYTP47viiXEYKCHot3aW4Po4AI" />
 

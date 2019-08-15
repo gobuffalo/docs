@@ -1,5 +1,3 @@
-<%= h1("Resources") %>
-
 Often web applications need to build very similar "CRUD" end-points. To help reduce the amount of thought and complexity involved in this, Buffalo supports the concept of a "Resource".
 
 The [`github.com/gobuffalo/buffalo#Resource`](https://godoc.org/github.com/gobuffalo/buffalo#Resource) interface allows Buffalo to map common routes and respond to common requests.

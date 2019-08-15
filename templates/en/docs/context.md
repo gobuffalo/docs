@@ -1,4 +1,4 @@
-# Context
+<%= h1("Context") %>
 
 At the heart of every Buffalo request handler is the `Context`. This context gives handlers a simple, and clean, function definition, while being immensely powerful.
 

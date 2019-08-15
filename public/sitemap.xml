@@ -4,9 +4,11 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
 xmlns:xhtml="http://www.w3.org/1999/xhtml">
 <url>
-  <loc>https://gobuffalo.io/en</loc>
-  <xhtml:link rel="alternate" hreflang="fr" href="https://gobuffalo.io/fr" />
-  <xhtml:link rel="alternate" hreflang="en" href="https://gobuffalo.io/en" />
+  <loc>https://gobuffalo.io/en/</loc>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://gobuffalo.io/fr/" />
+  <xhtml:link rel="alternate" hreflang="en" href="https://gobuffalo.io/en/" />
+  <xhtml:link rel="alternate" hreflang="es" href="https://gobuffalo.io/es/" />
+  <xhtml:link rel="alternate" hreflang="it" href="https://gobuffalo.io/it/" />
   <lastmod>2019-08-12</lastmod>
   <changefreq>daily</changefreq>
   <priority>1.00</priority>
@@ -85,7 +87,7 @@ xmlns:xhtml="http://www.w3.org/1999/xhtml">
 </url>
 <url>
   <loc>https://gobuffalo.io/en/docs/overview</loc>
-  <lastmod>2019-08-12</lastmod>
+  <lastmod>2019-08-15</lastmod>
   <changefreq>daily</changefreq>
   <priority>0.64</priority>
 </url>

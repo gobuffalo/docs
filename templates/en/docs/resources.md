@@ -1,6 +1,8 @@
 <% seoDescription("Resources") %>
 <% seoKeywords(["buffalo", "go", "golang", "resources", "routing", "generator"]) %>
 
+<%= h1("Resources") %>
+
 <%= partial("en/docs/resources/intro.md") %>
 <%= partial("en/docs/resources/using.md") %>
 <%= partial("en/docs/resources/optional.md") %>

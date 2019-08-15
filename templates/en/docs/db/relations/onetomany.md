@@ -69,7 +69,41 @@ type Tree struct {
 }
 ```
 
-The format to use is `order_by:"<column_name> <asc | desc>"`.
+The format to use is `order_by:"&lt;column_name> &lt;asc | desc>"`.
+
+## Customize foreign keys lookup
+
+By default, `has_many` will fetch related records using a convention for the foreign key column. In our previous example, the `fruits` table (mapped to the `Fruit` struct) contains a `tree_id` foreign key column which references the ID of the tree the fruit is attached to.
+
+You can use the `fk_id` tag to customize this foreign key column:
+
+```go
+type Tree struct {
+    ID     int     `json:"id" db:"id"`
+    Name   string  `json:"name" db:"name"`
+    Fruits []Fruit `json:"fruits,omitempty" has_many:"fruits" fk_id:"custom_tree_id"`
+}
+```
+
+Here, the relation will be looked up using the column `custom_tree_id` in the `fruits` table, instead of the default `tree_id` one.
+
+This can be really useful when you have structs with multiple fields pointing to the same model:
+
+```go
+type Player struct {
+    ID            int     `json:"id" db:"id"`
+    Name          string  `json:"name" db:"name"`
+    CurrentBandID int     `json:"current_band_id" db:"current_band_id"`
+    FormerBandID  int     `json:"former_band_id" db:"former_band_id"`
+}
+
+type Band struct {
+    ID             int      `json:"id" db:"id"`
+    Name           string   `json:"name" db:"name"`
+    CurrentPlayers []Player `json:"current_players,omitempty" has_many:"players" fk_id:"current_band_id"`
+    FormerPlayers  []Player `json:"former_players,omitempty" has_many:"players" fk_id:"former_band_id"`
+}
+```
 
 ## Related Content
 

@@ -87,6 +87,9 @@
 - id: menu.actions
   translation: Actions
 
+- id: menu.resources
+  translation: Ressources
+
 - id: menu.errors-handling
   translation: Traitement des erreurs
 

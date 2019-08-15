@@ -84,6 +84,9 @@
 - id: menu.context
   translation: Contexte
 
+- id: menu.routing
+  translation: Routage
+
 - id: menu.actions
   translation: Actions
 

@@ -81,6 +81,9 @@
 - id: menu.request-binding
   translation: Request Binding
 
+- id: menu.routing
+  translation: Routing
+
 - id: menu.actions
   translation: Actions
 

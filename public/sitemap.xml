@@ -332,13 +332,13 @@ xmlns:xhtml="http://www.w3.org/1999/xhtml">
 </url>
 <url>
   <loc>https://gobuffalo.io/en/docs/db/relations/onetoone</loc>
-  <lastmod>2019-08-14</lastmod>
+  <lastmod>2019-08-15</lastmod>
   <changefreq>daily</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://gobuffalo.io/en/docs/db/relations/onetomany</loc>
-  <lastmod>2019-08-14</lastmod>
+  <lastmod>2019-08-15</lastmod>
   <changefreq>daily</changefreq>
   <priority>0.64</priority>
 </url>

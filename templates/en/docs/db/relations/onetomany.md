@@ -57,6 +57,20 @@ if err := c.Eager().All(trees); err != nil {
 log.Printf("eager fetch: %v", trees)
 ```
 
+## Custom association order
+
+Since `has_many` is mapped to a slice, you'll probably want to customize the order of this slice. `has_many` tag allows you to indicate the order for the association when loading it:
+
+```go
+type Tree struct {
+    ID     int     `json:"id" db:"id"`
+    Name   string  `json:"name" db:"name"`
+    Fruits []Fruit `json:"fruits,omitempty" has_many:"fruits" order_by:"id desc"`
+}
+```
+
+The format to use is `order_by:"<column_name> <asc | desc>"`.
+
 ## Related Content
 
 * [Associations with Pop: 1 to n](https://blog.gobuffalo.io/associations-with-pop-1-to-n-2fb3e1c3833f) - An article about 1 to n associations in Pop.

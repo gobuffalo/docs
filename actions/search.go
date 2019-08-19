@@ -5,11 +5,11 @@ import (
 	"time"
 
 	"github.com/gobuffalo/buffalo"
-	"github.com/gobuffalo/gobuffalo/search"
-	"github.com/gobuffalo/gobuffalo/search/blog"
-	"github.com/gobuffalo/gobuffalo/search/godoc"
-	"github.com/gobuffalo/gobuffalo/search/site"
-	"github.com/gobuffalo/gobuffalo/search/vimeo"
+	"github.com/gobuffalo/docs/search"
+	"github.com/gobuffalo/docs/search/blog"
+	"github.com/gobuffalo/docs/search/godoc"
+	"github.com/gobuffalo/docs/search/site"
+	"github.com/gobuffalo/docs/search/vimeo"
 	"github.com/pkg/errors"
 )
 

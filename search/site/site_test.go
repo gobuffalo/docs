@@ -3,9 +3,9 @@ package site_test
 import (
 	"testing"
 
-	"github.com/gobuffalo/gobuffalo/actions"
-	"github.com/gobuffalo/gobuffalo/search"
-	"github.com/gobuffalo/gobuffalo/search/site"
+	"github.com/gobuffalo/docs/actions"
+	"github.com/gobuffalo/docs/search"
+	"github.com/gobuffalo/docs/search/site"
 	"github.com/stretchr/testify/require"
 )
 

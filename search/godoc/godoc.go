@@ -11,7 +11,7 @@ import (
 	"strings"
 
 	"github.com/gobuffalo/buffalo"
-	"github.com/gobuffalo/gobuffalo/search"
+	"github.com/gobuffalo/docs/search"
 	"github.com/gobuffalo/here"
 )
 

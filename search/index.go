@@ -8,7 +8,7 @@ import (
 	"github.com/pkg/errors"
 )
 
-const indexName = "gobuffalo.search"
+const indexName = "docs.search"
 
 var _index bleve.Index
 

@@ -20,7 +20,7 @@ If you want to contribute, please read this article first: [Contributing to Open
 
 Contributing to this documentation site is a great, and easy, way to help make Buffalo better.
 
-[https://github.com/gobuffalo/gobuffalo](https://github.com/gobuffalo/gobuffalo)
+[https://github.com/gobuffalo/docs](https://github.com/gobuffalo/docs)
 
 ## Funding
 

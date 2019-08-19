@@ -684,8 +684,8 @@ github.com/markbates/oncer v0.0.0-20181014194634-05fccaae8fc4/go.mod h1:Ld9puTsI
 github.com/markbates/oncer v0.0.0-20181203154359-bf2de49a0be2/go.mod h1:Ld9puTsIW75CHf65OeIOkyKbteujpZVXDpWK6YGZbxE=
 github.com/markbates/oncer v1.0.0 h1:E83IaVAHygyndzPimgUYJjbshhDTALZyXxvk9FOlQRY=
 github.com/markbates/oncer v1.0.0/go.mod h1:Z59JA581E9GP6w96jai+TGqafHPW+cPfRxz2aSZ0mcI=
-github.com/markbates/pkger v0.0.0-20190804211327-76afe6eed936 h1:4kh71jeg6qa0e0bq9MuAbPqqJITpk4GvzuodJQgQ6aM=
-github.com/markbates/pkger v0.0.0-20190804211327-76afe6eed936/go.mod h1:6dZzTf5DqcN7cplLAKkxQ2ML6vsFzpt1Vr/2PsR4ho4=
+github.com/markbates/pkger v0.0.0-20190818163821-eda2fccb1d90 h1:QQWGsLMrYbiNAAO9bJxW4wWJz2ntDYirYQGCBaic+DU=
+github.com/markbates/pkger v0.0.0-20190818163821-eda2fccb1d90/go.mod h1:oLf6JO2TJYLl461HjjX1FKxcK4Z3oaS5P+Yni6lbBw0=
 github.com/markbates/refresh v1.4.10/go.mod h1:NDPHvotuZmTmesXxr95C9bjlw1/0frJwtME2dzcVKhc=
 github.com/markbates/refresh v1.4.11/go.mod h1:awpJuyo4zgexB/JaHfmBX0sRdvOjo2dXwIayWIz9i3g=
 github.com/markbates/refresh v1.5.0/go.mod h1:ZYMLkxV+x7wXQ2Xd7bXAPyF0EXiEWAMfiy/4URYb1+M=

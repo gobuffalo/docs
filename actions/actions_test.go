@@ -5,7 +5,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/gobuffalo/gobuffalo/actions"
+	"github.com/gobuffalo/docs/actions"
 	"github.com/gobuffalo/httptest"
 	"github.com/stretchr/testify/require"
 )

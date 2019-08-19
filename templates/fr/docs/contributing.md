@@ -17,7 +17,7 @@ Si vous souhaitez contribuer, veuillez lire cet article avant toute chose&nbsp;:
 
 Contribuer à la documentation proposée sur ce site est une manière simple (mais non moins géniale) de nous aider à rendre Buffalo meilleur.
 
-[https://github.com/gobuffalo/gobuffalo](https://github.com/gobuffalo/gobuffalo)
+[https://github.com/gobuffalo/docs](https://github.com/gobuffalo/docs)
 
 ## Financer Buffalo
 

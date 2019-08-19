@@ -1,5 +1,5 @@
-name = "gobuffalo"
-bin = "bin/gobuffalo"
+name = "docs"
+bin = "bin/docs"
 vcs = "git"
 with_pop = false
 with_sqlite = false

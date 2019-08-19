@@ -8,8 +8,8 @@ import (
 	"time"
 
 	"github.com/gobuffalo/buffalo"
+	"github.com/gobuffalo/docs/search/vimeo"
 	"github.com/gobuffalo/envy"
-	"github.com/gobuffalo/gobuffalo/search/vimeo"
 	forcessl "github.com/gobuffalo/mw-forcessl"
 	i18n "github.com/gobuffalo/mw-i18n"
 	paramlogger "github.com/gobuffalo/mw-paramlogger"

@@ -11,7 +11,7 @@ const (
 	L_FR
 	L_ES
 
-	E_INDEX string = "gobuffalo:search:index"
+	E_INDEX string = "docs:search:index"
 )
 
 type Indexer func() error

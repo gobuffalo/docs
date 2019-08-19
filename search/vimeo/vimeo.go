@@ -6,7 +6,7 @@ import (
 	"time"
 
 	"github.com/gobuffalo/buffalo"
-	"github.com/gobuffalo/gobuffalo/search"
+	"github.com/gobuffalo/docs/search"
 	"github.com/mmcdole/gofeed"
 	"github.com/pkg/errors"
 )

@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"github.com/gobuffalo/gobuffalo/actions"
+	"github.com/gobuffalo/docs/actions"
 )
 
 func main() {

@@ -6,7 +6,7 @@ import (
 	"strings"
 
 	"github.com/gobuffalo/buffalo"
-	"github.com/gobuffalo/gobuffalo/search"
+	"github.com/gobuffalo/docs/search"
 	strip "github.com/grokify/html-strip-tags-go"
 	"github.com/microcosm-cc/bluemonday"
 	"github.com/pkg/errors"

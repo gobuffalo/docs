@@ -78,4 +78,4 @@
 
 ---
 
-If you have an article, podcast, slideshow, video, etc... about Buffalo and want it listed here, please add an issue to [https://github.com/gobuffalo/gobuffalo](https://github.com/gobuffalo/gobuffalo) or better yet, why not open a PR?
+If you have an article, podcast, slideshow, video, etc... about Buffalo and want it listed here, please add an issue to [https://github.com/gobuffalo/docs](https://github.com/gobuffalo/docs) or better yet, why not open a PR?

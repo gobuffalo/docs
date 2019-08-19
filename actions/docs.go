@@ -8,7 +8,7 @@ import (
 	"github.com/pkg/errors"
 )
 
-const docsRepoBase = "https://github.com/gobuffalo/gobuffalo/edit/master/templates/"
+const docsRepoBase = "https://github.com/gobuffalo/docs/edit/master/templates/"
 
 // Docs serves documentation pages
 func Docs(c buffalo.Context) error {

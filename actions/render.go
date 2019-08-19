@@ -7,9 +7,9 @@ import (
 	"strings"
 
 	"github.com/gobuffalo/buffalo/render"
-	"github.com/gobuffalo/gobuffalo/actions/helpers"
-	"github.com/gobuffalo/gobuffalo/search/godoc"
-	"github.com/gobuffalo/gobuffalo/search/vimeo"
+	"github.com/gobuffalo/docs/actions/helpers"
+	"github.com/gobuffalo/docs/search/godoc"
+	"github.com/gobuffalo/docs/search/vimeo"
 	"github.com/gobuffalo/packr/v2"
 	"github.com/gobuffalo/plush"
 	"github.com/markbates/inflect"

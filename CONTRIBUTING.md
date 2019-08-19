@@ -32,7 +32,7 @@ See https://gobuffalo.io/docs/localization for further info about this two tools
 
 ## Hack the code
 
-The site is powered by [Buffalo](https://github.com/gobuffalo/buffalo) itself, so if you're reading the docs, you'll be able to run them and make the changes you want! (If you can't, the docs are not good enough, and are waiting for a [PR](https://github.com/gobuffalo/gobuffalo/pulls)! ;))
+The site is powered by [Buffalo](https://github.com/gobuffalo/buffalo) itself, so if you're reading the docs, you'll be able to run them and make the changes you want! (If you can't, the docs are not good enough, and are waiting for a [PR](https://github.com/gobuffalo/docs/pulls)! ;))
 
 ### Requirements
 
@@ -43,8 +43,8 @@ The site is powered by [Buffalo](https://github.com/gobuffalo/buffalo) itself, s
 
 ### Run the website for dev
 ```bash
-$ go get github.com/gobuffalo/gobuffalo
-$ cd $GOPATH/github.com/gobuffalo/gobuffalo
+$ git clone git@github.com:gobuffalo/docs.git
+$ cd docs
 $ buffalo setup
 $ buffalo dev
 ```

@@ -31,7 +31,7 @@ func UserIPMiddleware(next buffalo.Handler) buffalo.Handler {
       return next(c)
     }
 
-    h, _, err := net.SplitHostPort(r.RemoteAddr)
+    h, _, err := net.SplitHostPort(c.Request().RemoteAddr)
     if err != nil {
       return err
     }

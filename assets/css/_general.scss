@@ -67,6 +67,9 @@ h2 {
         }
     }
 }
+#content-wrapper {
+    min-height: calc(100vh - 216px);
+}
 
 #global-footer {
     background-color: #010a2c;

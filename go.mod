@@ -3,7 +3,6 @@ module github.com/gobuffalo/docs
 go 1.12
 
 require (
-	cloud.google.com/go v0.36.0 // indirect
 	github.com/PuerkitoBio/goquery v1.5.0 // indirect
 	github.com/RoaringBitmap/roaring v0.4.18 // indirect
 	github.com/blevesearch/bleve v0.8.0

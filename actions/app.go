@@ -19,7 +19,6 @@ import (
 	"github.com/unrolled/secure"
 )
 
-var ENV = envy.Get("GO_ENV", "development")
 var app *buffalo.App
 var supportedLanguages = map[string]string{
 	"English":  "en",
@@ -36,9 +35,10 @@ var T *i18n.Translator
 // application.
 func App() *buffalo.App {
 	if app == nil {
+		env := envy.Get("GO_ENV", "development")
 		app = buffalo.New(buffalo.Options{
 			SessionName:  "_gobuffalo_session",
-			Env:          ENV,
+			Env:          env,
 			SessionStore: sessions.Null{},
 		})
 		defer func() {
@@ -46,9 +46,9 @@ func App() *buffalo.App {
 		}()
 
 		// Automatically redirect to SSL
-		app.Use(forceSSL())
+		app.Use(forceSSL(env))
 
-		if ENV == "development" {
+		if env == "development" {
 			app.Use(paramlogger.ParameterLogger)
 		}
 
@@ -144,9 +144,9 @@ func translations() buffalo.MiddlewareFunc {
 // This middleware does **not** enable SSL. for your application. To do that
 // we recommend using a proxy: https://gobuffalo.io/en/docs/proxy
 // for more information: https://github.com/unrolled/secure/
-func forceSSL() buffalo.MiddlewareFunc {
+func forceSSL(env string) buffalo.MiddlewareFunc {
 	return forcessl.Middleware(secure.Options{
-		SSLRedirect:     ENV == "production",
+		SSLRedirect:     env == "production",
 		SSLProxyHeaders: map[string]string{"X-Forwarded-Proto": "https"},
 	})
 }

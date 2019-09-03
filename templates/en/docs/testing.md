@@ -31,7 +31,7 @@ Debugging a specific test is a difficult task, if you must execute all existing 
 $ buffalo test -m "FooMethod"
 ```
 
-This will iterate through all packages and run any test that matches "FooMethod" in any package. To limit to one package,
+This will iterate through all packages and run any test that matches `FooMethod` in any package. To limit to one package,
 specify the package name:
 
 ```bash

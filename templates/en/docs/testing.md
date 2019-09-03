@@ -31,6 +31,15 @@ Debugging a specific test is a difficult task, if you must execute all existing 
 $ buffalo test -m "FooMethod"
 ```
 
+This will iterate through all packages and run any test that matches "FooMethod" in any package. To limit to one package,
+use `go test` with the `testify.m` flag:
+
+```bash
+$ go test -testify.m "FooMethod"
+```
+
+This will, however, bypass the buffalo fixture setup.
+
 ## Test Suites
 
 Buffalo uses the [`github.com/gobuffalo/suite`](https://github.com/gobuffalo/suite) package to create test suites.

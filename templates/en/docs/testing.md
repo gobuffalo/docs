@@ -32,13 +32,11 @@ $ buffalo test -m "FooMethod"
 ```
 
 This will iterate through all packages and run any test that matches "FooMethod" in any package. To limit to one package,
-use `go test` with the `testify.m` flag:
+specify the package name:
 
 ```bash
-$ go test -testify.m "FooMethod"
+$ buffalo test models -m "FooMethod"
 ```
-
-This will, however, bypass the buffalo fixture setup.
 
 ## Test Suites
 

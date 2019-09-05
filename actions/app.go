@@ -8,6 +8,7 @@ import (
 	"time"
 
 	"github.com/gobuffalo/buffalo"
+	"github.com/gobuffalo/clara/genny/rx"
 	"github.com/gobuffalo/docs/search/vimeo"
 	"github.com/gobuffalo/envy"
 	forcessl "github.com/gobuffalo/mw-forcessl"
@@ -63,7 +64,7 @@ func App() *buffalo.App {
 		app.Use(func(next buffalo.Handler) buffalo.Handler {
 			return func(c buffalo.Context) error {
 				c.Set("version", buffaloVersion)
-				c.Set("goMinVersion", "1.10.8")
+				c.Set("goMinVersion", rx.GoMinimums[0])
 				c.Set("year", time.Now().Year())
 				c.Set("trainingURL", "http://www.gopherguides.com")
 				c.Set("videoList", vimeo.Videos())

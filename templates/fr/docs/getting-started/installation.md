@@ -20,7 +20,7 @@ Avant d'installer Buffalo, assurez-vous d'avoir installé les dépendances suiva
 
 * [En environnement fonctionnel pour Go (EN)](http://gopherguides.com/before-you-come-to-class).
 * [Une variable d'environnement `$PATH` correctement configurée, incluant `$GOPATH/bin`](https://golang.org/doc/code.html#GOPATH).
-* [Go](https://golang.org) version `<%= goMinVersion %>` ou supérieure.
+* [Go](https://golang.org) version `<%= goMinVersion %>`.
 
 ##### Prérequis pour le frontend
 

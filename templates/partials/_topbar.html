@@ -27,8 +27,8 @@
                         <a class="d-block p-lg-2" href="<%= docPath({name: "support", lang: lang}) %>"><%= t("top.support") %></a>
                     </li>
 
-                    <li class="nav-item p-0 <%= if (current_path == "/en/docs/index" || current_path == "/fr/docs/index") { %> active<% } %>">
-                        <a class="d-block p-lg-2" href="<%= docPath({name: "index", lang: lang}) %>">
+                    <li class="nav-item p-0 <%= if (current_path == "/en/docs/overview" || current_path == "/fr/docs/overview") { %> active<% } %>">
+                        <a class="d-block p-lg-2" href="<%= docPath({name: "overview", lang: lang}) %>">
                             <%= t("top.docs") %>
                         </a>
                     </li>
@@ -46,9 +46,9 @@
                     </li>
 
                     <li class="nav-item p-0">
-  <%= form({action: searchPath({lang: lang}), method: "GET"}) { %>
-      <%= f.InputTag({name: "query", placeholder: t("menu.search"), value: params["query"]}) %>
-  <% } %>
+                        <%= form({action: searchPath({lang: lang}), method: "GET"}) { %>
+                            <%= f.InputTag({name: "query", placeholder: t("menu.search"), value: params["query"]}) %>
+                        <% } %>
                     </li>
                 </ul>
             </div>

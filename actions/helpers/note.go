@@ -54,5 +54,5 @@ func Warning(help plush.HelperContext) (template.HTML, error) {
 	return t.HTML(), nil
 }
 
-const note = `<p><i class="fa fa-info-circle" aria-hidden="true"></i>%s`
+const note = `<i class="fa fa-info-circle" aria-hidden="true"></i>%s`
 const warning = `<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>%s`

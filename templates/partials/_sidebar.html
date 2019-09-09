@@ -3,7 +3,7 @@
 
   <ul class="sidenav dropable sidebar-root">
     <li class="sidebar-form">
-      <%= form({action: "/lang"}) { %>
+      <%= form({action: "/lang", class: "pb-3"}) { %>
         <%= f.SelectTag({name: "language", options: supported_languages, id: "language", value: lang, label: t("menu.language")}) %>
         <%= f.InputTag({type: "hidden", value: current_path, name: "url"}) %>
         <%= f.InputTag({type: "hidden", value: lang, name: "oldLanguage"}) %>

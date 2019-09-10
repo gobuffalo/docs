@@ -74,16 +74,17 @@
             <!-- Main content -->
             <article class="main-content" role="main">
                 <%= if (is_fallback_version) { %>
-<%= warning() { %>
-<%= t("docs.page-not-available-in-your-language") %>
-<% } %>
+                    <%= warning() { 
+                        return t("docs.page-not-available-in-your-language") 
+                    } %>
                 <% } %>
                 <%= yield %>
                 <%= partial("partials/feedback_footer.html") %>
             </article>
             <!-- END Main content -->
         </div>
-        <%= partial("partials/footer.html") %>
+        
+        <%= partial("partials/footer.html", {class: "left-oriented"}) %>
     </main>
 
 

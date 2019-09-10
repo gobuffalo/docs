@@ -18,8 +18,10 @@ require (
 	github.com/facebookgo/ensure v0.0.0-20160127193407-b4ab57deab51 // indirect
 	github.com/facebookgo/stack v0.0.0-20160209184415-751773369052 // indirect
 	github.com/facebookgo/subset v0.0.0-20150612182917-8dac2c3c4870 // indirect
-	github.com/gobuffalo/buffalo v0.14.8
+	github.com/gobuffalo/buffalo v0.14.9
 	github.com/gobuffalo/buffalo-auth v1.0.5 // indirect
+	github.com/gobuffalo/buffalo-goth v1.0.3 // indirect
+	github.com/gobuffalo/buffalo-heroku v1.0.8 // indirect
 	github.com/gobuffalo/clara v0.8.2
 	github.com/gobuffalo/envy v1.7.0
 	github.com/gobuffalo/events v1.4.0
@@ -27,12 +29,15 @@ require (
 	github.com/gobuffalo/github_flavored_markdown v1.1.0
 	github.com/gobuffalo/here v0.2.3
 	github.com/gobuffalo/httptest v1.4.0
+	github.com/gobuffalo/lush v0.0.0-20190603211534-6068a55747dc // indirect
 	github.com/gobuffalo/mw-forcessl v0.0.0-20190224202501-6d1ef7ffb276
 	github.com/gobuffalo/mw-i18n v0.0.0-20190224203426-337de00e4c33
 	github.com/gobuffalo/mw-paramlogger v0.0.0-20190224201358-0d45762ab655
+	github.com/gobuffalo/mw-poptx v0.0.0-20181001105033-060021f87978 // indirect
 	github.com/gobuffalo/packd v0.3.0
 	github.com/gobuffalo/packr/v2 v2.6.0
 	github.com/gobuffalo/plush v3.8.3+incompatible
+	github.com/gobuffalo/suite v2.8.2+incompatible // indirect
 	github.com/gobuffalo/tags v2.1.0+incompatible
 	github.com/gobuffalo/x v0.1.0
 	github.com/google/go-cmp v0.3.1

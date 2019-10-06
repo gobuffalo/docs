@@ -31,6 +31,16 @@ Debugging a specific test is a difficult task, if you must execute all existing 
 $ buffalo test -m "FooMethod"
 ```
 
+This will iterate through all packages and run any test that matches `FooMethod` in any package. 
+
+<%= sinceVersion("0.14.10") %>
+
+To limit to one package, specify the package name:
+
+```bash
+$ buffalo test models -m "FooMethod"
+```
+
 ## Test Suites
 
 Buffalo uses the [`github.com/gobuffalo/suite`](https://github.com/gobuffalo/suite) package to create test suites.

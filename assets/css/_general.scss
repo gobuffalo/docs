@@ -42,6 +42,10 @@ h2 {
     i.fa {
         margin-right: 1em;
     }
+
+    p:last-child {
+        margin-bottom: 0;
+    }
 }
 
 .warning {
@@ -51,6 +55,10 @@ h2 {
 
     i.fa {
         margin-right: 1em;
+    }
+
+    p:last-child {
+        margin-bottom: 0;
     }
 }
 
@@ -83,6 +91,14 @@ h2 {
     a {
         color: #fff;
         text-decoration: underline #fff;
+    }
+
+    &.left-oriented {
+        padding-top: 30px;
+
+        .container {
+            margin-left: 90px;
+        }
     }
 }
 

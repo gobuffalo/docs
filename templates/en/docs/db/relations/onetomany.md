@@ -7,7 +7,7 @@ In this chapter, you'll learn how to write a one to many [association](/en/docs/
 
 ## Tags
 
-One to one associations work using a pair of tags:
+One to many associations work using a pair of tags:
 * `belongs_to` for the model with the foreign key.
 * `has_many` for the model without the foreign key (the one with the slice).
 

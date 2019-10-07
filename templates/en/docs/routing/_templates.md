@@ -6,7 +6,7 @@ Route helpers can be used directly in templates using the name of the helper:
 \<%= widgetsPath() %> // /widgets
 ```
 
-Routes that require named parameters, must be feed a map of those parameters.
+Routes that require named parameters, must be fed a map of those parameters.
 
 ```html
 \<%= editWidgetPath({widget_id: 1}) %> // /widgets/1/edit

@@ -222,7 +222,7 @@ func (u User) TableName() string {
 
 If you define the `CreatedAt` and `UpdatedAt` fields in your model struct (and they are created by default when you use the model generator), Pop will manage them for you. It means when you create a new entity in the database, the `CreatedAt` field will be set to the current datetime, and `UpdatedAt` will be set each time you update an existing entity.
 
-These fields are defined as time.Time, but now you can define them as int and handle them as UNIX timestamps.
+These fields are defined as time.Time, but now you can define them as `int` and handle them as UNIX timestamps.
 
 ```go
 type User struct {

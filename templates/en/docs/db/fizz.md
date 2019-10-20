@@ -50,7 +50,7 @@ The `t.Column` method takes the following arguments: name of the column, the typ
 
 Any other type passed it will be be passed straight through to the underlying database.
 
-For example for PostgreSQL you could pass `jsonb`and it will be supported, however, SQLite will yell very loudly at you if you do the same thing!
+For example for PostgreSQL you could pass `jsonb` and it will be supported, however, SQLite will yell very loudly at you if you do the same thing!
 
 #### Supported Options:
 

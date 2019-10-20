@@ -139,7 +139,7 @@ In this example all fields will be read **from** the database and all fields, **
 
 ### Write Only Fields
 
-Write only fields are the reverse of read only fields. These are fields that you want to write to the database, but never retreive. Again, this makes use of the `rw` struct tag.
+Write only fields are the reverse of read only fields. These are fields that you want to write to the database, but never retrieve. Again, this makes use of the `rw` struct tag.
 
 ```go
 type User struct {
@@ -163,7 +163,7 @@ type User struct {
 }
 ```
 
-As you may see the `Password` field is marked as `db:"-"` that means Pop will neither **_store_** nor **_retreive_** this field from the database.
+As you may see the `Password` field is marked as `db:"-"` that means Pop will neither **_store_** nor **_retrieve_** this field from the database.
 
 ### Changing the Select Clause for a Column
 

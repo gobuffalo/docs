@@ -27,7 +27,8 @@ Pop supports the following databases:
 ## Installation
 
 ```bash
-$ go get github.com/gobuffalo/pop/...
+$ go get github.com/gobuffalo/buffalo-pop
+$ go get github.com/gobuffalo/pop
 ```
 
 ## Next Steps

@@ -35,6 +35,7 @@ The available callbacks include:
 * [BeforeCreate](https://godoc.org/github.com/gobuffalo/pop#BeforeCreateable)
 * [BeforeUpdate](https://godoc.org/github.com/gobuffalo/pop#BeforeUpdateable)
 * [BeforeDestroy](https://godoc.org/github.com/gobuffalo/pop#BeforeDestroyable)
+* [BeforeValidate](https://godoc.org/github.com/gobuffalo/pop#BeforeValidateable)
 * [AfterSave](https://godoc.org/github.com/gobuffalo/pop#AfterSaveable)
 * [AfterCreate](https://godoc.org/github.com/gobuffalo/pop#AfterCreateable)
 * [AfterUpdate](https://godoc.org/github.com/gobuffalo/pop#AfterUpdateable)

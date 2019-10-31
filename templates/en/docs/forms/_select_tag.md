@@ -1,6 +1,6 @@
 ## Select Tags
 
-To build your `&lt;select&gt;` tags inside forms Tags provide 3 convenient ways to add your `&lt;select&gt;` options: `form.SelectOptions`, `map[string]interface{}` or `[]string`, all of them by passing an `options` field into the `form.SelectTag` options like:
+To build your `<select>` tags inside forms Tags provide 3 convenient ways to add your `<select>` options: `form.SelectOptions`, `map[string]interface{}` or `[]string`, all of them by passing an `options` field into the `form.SelectTag` options like:
 
 ```erb
 \<%= f.SelectTag("TalkFormatID", {options: talkFormats}) %>

@@ -78,7 +78,7 @@ tx.Load(&u) // load all associations for user, i.e Books, Houses and FavoriteSon
 tx.Load(&u, "Books") // load only the Books associations for user
 ```
 
-The `Load` method will not retreive the `User` from the database only its associations.
+The `Load` method will not retrieve the `User` from the database only its associations.
 
 ## Flat Nested Creation
 

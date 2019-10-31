@@ -6,7 +6,7 @@ At the heart of every Buffalo request handler is the `Context`. This context giv
 
 The `buffalo.Context` interface supports `context.Context` so it can be passed around and used as a "standard" Go Context.
 
-Since `buffalo.Context` is an interface it is possible to create an application specific implementation that is tailor suited to the needs of the application being built.
+Since `buffalo.Context` is an interface it is possible to create an application specific implementation that is tailored to the needs of the application being built.
 
 <%= sinceVersion("0.12.0") %>
 

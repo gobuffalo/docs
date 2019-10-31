@@ -29,6 +29,10 @@ Buffalo provides a Pop middleware to ease database usage within Buffalo: https:/
 
 This middleware is configured for you by default, if you choose to use Pop when creating a new project.
 
+```bash
+$ go get github.com/gobuffalo/buffalo-pop
+```
+
 **actions/app.go**
 
 ```go

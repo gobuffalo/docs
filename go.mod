@@ -18,6 +18,7 @@ require (
 	github.com/facebookgo/stack v0.0.0-20160209184415-751773369052 // indirect
 	github.com/facebookgo/subset v0.0.0-20150612182917-8dac2c3c4870 // indirect
 	github.com/gobuffalo/buffalo v0.15.0
+	github.com/gobuffalo/buffalo-goth v1.0.3 // indirect
 	github.com/gobuffalo/clara v0.9.1
 	github.com/gobuffalo/envy v1.7.1
 	github.com/gobuffalo/events v1.4.0
@@ -28,6 +29,7 @@ require (
 	github.com/gobuffalo/mw-forcessl v0.0.0-20190224202501-6d1ef7ffb276
 	github.com/gobuffalo/mw-i18n v0.0.0-20190224203426-337de00e4c33
 	github.com/gobuffalo/mw-paramlogger v0.0.0-20190224201358-0d45762ab655
+	github.com/gobuffalo/mw-poptx v0.0.0-20181001105033-060021f87978 // indirect
 	github.com/gobuffalo/packd v0.3.0
 	github.com/gobuffalo/packr/v2 v2.7.1
 	github.com/gobuffalo/plush v3.8.3+incompatible
@@ -40,6 +42,7 @@ require (
 	github.com/markbates/going v1.0.3
 	github.com/markbates/inflect v1.0.4
 	github.com/markbates/oncer v1.0.0
+	github.com/markbates/pkger v0.8.1 // indirect
 	github.com/microcosm-cc/bluemonday v1.0.2
 	github.com/mmcdole/gofeed v1.0.0-beta2
 	github.com/mmcdole/goxpp v0.0.0-20181012175147-0068e33feabf // indirect

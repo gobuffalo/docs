@@ -68,6 +68,13 @@ Buffalo peut être installé en utilisant le gestionnaire de paquets [Scoop](htt
 PS C:\> scoop install buffalo
 ```
 
+## Chocolatey (Windows)
+Buffalo peut être installé en utilisant le gestionnaire de paquets [Chocolatey](https://chocolatey.org/packages/buffalo) :
+
+```powershell
+PS C:\> choco install buffalo
+```
+
 ## Homebrew (macOS)
 
 Sur macOS, vous pouvez également installer Buffalo avec [Homebrew](https://brew.sh/). Après avoir [installé](https://docs.brew.sh/Installation) Homebrew, vous pouvez installer Buffalo en une simple ligne de commande :

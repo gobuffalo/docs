@@ -68,6 +68,13 @@ Buffalo can be installed using the [Scoop](http://scoop.sh/) package manager:
 PS C:\> scoop install buffalo
 ```
 
+## Chocolatey (Windows)
+Buffalo can be installed using the [Chocolatey](https://chocolatey.org/packages/buffalo) package manager:
+
+```powershell
+PS C:\> choco install buffalo
+```
+
 ## Homebrew (macOS)
 
 On macOS, you can also install Buffalo with [Homebrew](https://brew.sh/). After you have Homebrew [installed](https://docs.brew.sh/Installation), you can easily install Buffalo:

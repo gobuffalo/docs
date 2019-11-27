@@ -216,6 +216,16 @@ func (u User) TableName() string {
 }
 ```
 
+It is recommended to use a value receiver over a pointer receiver if the struct is used as a value anywhere in the code.
+
+```
+// recommended:
+func (u User) TableName() string {
+
+// can cause issues:
+func (u *User) TableName() string {
+```
+
 ### UNIX Timestamps
 
 <%= sinceVersion("v4.7.0") %>

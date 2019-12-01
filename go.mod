@@ -18,7 +18,7 @@ require (
 	github.com/facebookgo/stack v0.0.0-20160209184415-751773369052 // indirect
 	github.com/facebookgo/subset v0.0.0-20150612182917-8dac2c3c4870 // indirect
 	github.com/gobuffalo/buffalo v0.15.3
-	github.com/gobuffalo/clara v0.9.1
+	github.com/gobuffalo/clara v0.10.0
 	github.com/gobuffalo/envy v1.8.1
 	github.com/gobuffalo/events v1.4.0
 	github.com/gobuffalo/genny v0.4.1
@@ -39,7 +39,6 @@ require (
 	github.com/markbates/going v1.0.3
 	github.com/markbates/inflect v1.0.4
 	github.com/markbates/oncer v1.0.0
-	github.com/markbates/pkger v0.12.8 // indirect
 	github.com/microcosm-cc/bluemonday v1.0.2
 	github.com/mmcdole/gofeed v1.0.0-beta2
 	github.com/mmcdole/goxpp v0.0.0-20181012175147-0068e33feabf // indirect

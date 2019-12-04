@@ -46,16 +46,16 @@ Since `v0.10.3`, pre-compiled archives are provided with each release. If you do
 ### GNU / Linux
 
 ```bash
-$ wget https://github.com/gobuffalo/buffalo/releases/download/v<%= version %>/buffalo_<%= version %>_linux_amd64.tar.gz
-$ tar -xvzf buffalo_<%= version %>_linux_amd64.tar.gz
+$ wget https://github.com/gobuffalo/buffalo/releases/download/v<%= version %>/buffalo_<%= version %>_Linux_x86_64.tar.gz
+$ tar -xvzf buffalo_<%= version %>_Linux_x86_64.tar.gz
 $ sudo mv buffalo /usr/local/bin/buffalo
 ```
 
 ### MacOS
 
 ```bash
-$ curl -OL https://github.com/gobuffalo/buffalo/releases/download/v<%= version %>/buffalo_<%= version %>_darwin_amd64.tar.gz
-$ tar -xvzf buffalo_<%= version %>_darwin_amd64.tar.gz
+$ curl -OL https://github.com/gobuffalo/buffalo/releases/download/v<%= version %>/buffalo_<%= version %>_Darwin_x86_64.tar.gz
+$ tar -xvzf buffalo_<%= version %>_Darwin_x86_64.tar.gz
 $ sudo mv buffalo /usr/local/bin/buffalo
 # or if you have ~/bin folder setup in the environment PATH variable
 $ mv buffalo ~/bin/buffalo

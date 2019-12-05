@@ -69,7 +69,7 @@ PS C:\> scoop install buffalo
 ```
 
 ## Chocolatey (Windows)
-Buffalo can be installed using the [Chocolatey](https://chocolatey.org/packages/buffalo) package manager:
+Buffalo can be installed using the [Chocolatey](https://chocolatey.org/packages/buffalo) package manager. Versions on Chocolatey are published with a potential delay and must go through moderation before they are available:
 
 ```powershell
 PS C:\> choco install buffalo

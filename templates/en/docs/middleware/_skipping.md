@@ -37,6 +37,8 @@ GET /users/{id} -> AuthorizeUser -> ShowUser
 m1 := MyMiddleware()
 m2 := MyMiddleware()
 
+app.Use(m1)
+
 app.Skip(m2, Foo, Bar) // WON'T WORK m2 != m1
 app.Skip(m1, Foo, Bar) // WORKS
 ```

@@ -46,16 +46,16 @@ Since `v0.10.3`, pre-compiled archives are provided with each release. If you do
 ### GNU / Linux
 
 ```bash
-$ wget https://github.com/gobuffalo/buffalo/releases/download/v<%= version %>/buffalo_<%= version %>_linux_amd64.tar.gz
-$ tar -xvzf buffalo_<%= version %>_linux_amd64.tar.gz
+$ wget https://github.com/gobuffalo/buffalo/releases/download/v<%= version %>/buffalo_<%= version %>_Linux_x86_64.tar.gz
+$ tar -xvzf buffalo_<%= version %>_Linux_x86_64.tar.gz
 $ sudo mv buffalo /usr/local/bin/buffalo
 ```
 
 ### MacOS
 
 ```bash
-$ curl -OL https://github.com/gobuffalo/buffalo/releases/download/v<%= version %>/buffalo_<%= version %>_darwin_amd64.tar.gz
-$ tar -xvzf buffalo_<%= version %>_darwin_amd64.tar.gz
+$ curl -OL https://github.com/gobuffalo/buffalo/releases/download/v<%= version %>/buffalo_<%= version %>_Darwin_x86_64.tar.gz
+$ tar -xvzf buffalo_<%= version %>_Darwin_x86_64.tar.gz
 $ sudo mv buffalo /usr/local/bin/buffalo
 # or if you have ~/bin folder setup in the environment PATH variable
 $ mv buffalo ~/bin/buffalo
@@ -66,6 +66,13 @@ Buffalo can be installed using the [Scoop](http://scoop.sh/) package manager:
 
 ```powershell
 PS C:\> scoop install buffalo
+```
+
+## Chocolatey (Windows)
+Buffalo can be installed using the [Chocolatey](https://chocolatey.org/packages/buffalo) package manager. Versions on Chocolatey are published with a potential delay and must go through moderation before they are available:
+
+```powershell
+PS C:\> choco install buffalo
 ```
 
 ## Homebrew (macOS)

@@ -17,13 +17,13 @@ require (
 	github.com/facebookgo/ensure v0.0.0-20160127193407-b4ab57deab51 // indirect
 	github.com/facebookgo/stack v0.0.0-20160209184415-751773369052 // indirect
 	github.com/facebookgo/subset v0.0.0-20150612182917-8dac2c3c4870 // indirect
-	github.com/gobuffalo/buffalo v0.15.0
-	github.com/gobuffalo/clara v0.9.1
-	github.com/gobuffalo/envy v1.7.1
+	github.com/gobuffalo/buffalo v0.15.3
+	github.com/gobuffalo/clara v0.10.0
+	github.com/gobuffalo/envy v1.8.1
 	github.com/gobuffalo/events v1.4.0
 	github.com/gobuffalo/genny v0.4.1
 	github.com/gobuffalo/github_flavored_markdown v1.1.0
-	github.com/gobuffalo/here v0.2.3
+	github.com/gobuffalo/here v0.5.1
 	github.com/gobuffalo/httptest v1.4.0
 	github.com/gobuffalo/mw-forcessl v0.0.0-20190224202501-6d1ef7ffb276
 	github.com/gobuffalo/mw-i18n v0.0.0-20190224203426-337de00e4c33
@@ -31,8 +31,7 @@ require (
 	github.com/gobuffalo/packd v0.3.0
 	github.com/gobuffalo/packr/v2 v2.7.1
 	github.com/gobuffalo/plush v3.8.3+incompatible
-	github.com/gobuffalo/suite v2.8.2+incompatible // indirect
-	github.com/gobuffalo/tags v2.1.6+incompatible
+	github.com/gobuffalo/tags v2.1.7+incompatible
 	github.com/gobuffalo/x v0.1.0
 	github.com/google/go-cmp v0.3.1
 	github.com/grokify/html-strip-tags-go v0.0.0-20190921062105-daaa06bf1aaf
@@ -49,6 +48,6 @@ require (
 	github.com/stretchr/testify v1.4.0
 	github.com/stvp/slug v0.0.0-20150928221549-5ab8191bb1fe
 	github.com/syndtr/goleveldb v1.0.0 // indirect
-	github.com/tecbot/gorocksdb v0.0.0-20191019123150-400c56251341 // indirect
-	github.com/unrolled/secure v1.0.4
+	github.com/tecbot/gorocksdb v0.0.0-20191122205208-eb0a0d0d32b3 // indirect
+	github.com/unrolled/secure v1.0.6
 )

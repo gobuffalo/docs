@@ -69,7 +69,7 @@ func MyAction(c buffalo.Context) error {
 }
 ```
 
-The default mapping between the form and struct is the name of the attribute on the struct should match the `name` attribute of the form field. Notice the `Email` field in the examples matches both the struct attribute and the `name` attribute on the form field.
+The default mapping between the form and struct is the name of the attribute on the struct, and should match the `name` attribute of the form field. Notice the `Email` field in the examples matches both the struct attribute and the `name` attribute on the form field.
 
 By using the `form` struct tags we can map the fields in the HTML form to the `User` struct, including ignoring the `Password` by using a `-`.
 

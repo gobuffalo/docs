@@ -30,7 +30,7 @@
 
     <link rel="canonical" href="https://gobuffalo.io<%= current_path %>" />
     <link rel="alternate" href="https://gobuffalo.io<%= localized_current_path("en") %>" hreflang="x-default" />
-    <%= for(lang, code) in supported_languages { %> 
+    <%= for(lang, code) in supported_languages { %>
     <link rel="alternate" href="https://gobuffalo.io<%= localized_current_path(code) %>" hreflang="<%= code %>" title="<%= lang %>" />
     <% } %>
     <meta name="google-site-verification" content="GwQmhkMw9KUTJYJUgsYTP47viiXEYKCHot3aW4Po4AI" />
@@ -60,6 +60,7 @@
     <main class="container">
         <!-- Main content -->
         <article class="main-content" role="main">
+            <%= partial("partials/gopath.html") %>
             <%= yield %>
         </article>
         <!-- END Main content -->

@@ -32,11 +32,11 @@ DELETE | /api/v1/users/{user_id}      |         | apiV1UserPath     | github.com
 GET    | /api/v1/users/{user_id}/edit |         | editApiV1UserPath | github.com/gobuffalo/coke/actions.UsersResource.Edit
 ```
 
-Going down this list we start with the path *NAME*d `rootPath` which represents *PATH* `/` or the root route of the server and as a bonus with all of these we can even see exactly which *HANDLER* code is being run for this METHOD+PATH combination.
+Going down this list we start with the path *NAME*d `rootPath` which represents *PATH* `/` or the root route of the server and as a bonus, with all of these we can even see exactly which *HANDLER* code is being run for this METHOD+PATH combination.
 
 Next we have a standard `app.GET("/about", AboutHandler)` which generates to `aboutPath`.
 
-Then we use a resource `app.Resource("/drinks", DrinksResource{})` which generates a path for each of our standard actions, and for each of those a helper to be used in templates. Those that take a parameter can be used like this `\<%= drinkPath({drink_id: drink.ID}) %>`. All helpers take a `map[string]interface{}` that is used to fill-in parameters.
+Then we use a resource `app.Resource("/drinks", DrinksResource{})`, which generates a path for each of our standard actions, and for each of those a helper to be used in templates. Those that take a parameter can be used like this `\<%= drinkPath({drink_id: drink.ID}) %>`. All helpers take a `map[string]interface{}` that is used to fill-in parameters.
 
 Finally, when we use a group we can see that this changes the generated helpers. Here is the routing for those last paths:
 

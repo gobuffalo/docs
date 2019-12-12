@@ -69,6 +69,23 @@ By default `Eager` will load all the assigned associations for the model. To spe
 err  = tx.Eager("Books").Where("name = 'Mark'").All(&u) // preload only Books association for user with name 'Mark'.
 ```
 
+Pop also allows you to eager loading nested associations by using `.` character to concatenate them. Take a look at the example bellow.
+
+```go
+// will load all Books for u and for every Book will load the user which will be the same as u.
+tx.Eager("Books.User").First(&u)
+```
+
+```go
+// will load all Books for u and for every Book will load all Writers and for every writer will load the Book association.
+tx.Eager("Books.Writers.Book").First(&u)
+```
+
+```go
+// will load all Books for u and for every Book will load all Writers. And Also it will load the favorite song for user.
+tx.Eager("Books.Writers").Eager("FavoriteSong").First(&u)
+```
+
 ## Loading Associations for an Existing Model
 
 The [`pop.Connection.Load()`](https://godoc.org/github.com/gobuffalo/pop#Connection.Load) method takes a model struct, that has already been populated from the database, and an optional list of associations to load.
@@ -78,7 +95,7 @@ tx.Load(&u) // load all associations for user, i.e Books, Houses and FavoriteSon
 tx.Load(&u, "Books") // load only the Books associations for user
 ```
 
-The `Load` method will not retreive the `User` from the database only its associations.
+The `Load` method will not retrieve the `User` from the database only its associations.
 
 ## Flat Nested Creation
 

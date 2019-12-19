@@ -21,6 +21,7 @@ Before installing make sure you have the required dependencies installed:
 * [A working Go environment](http://gopherguides.com/before-you-come-to-class)
 * [A configured `$PATH` environment variable that includes `$GOPATH/bin`.](https://golang.org/doc/code.html#GOPATH)
 * [Go](https://golang.org) version `<%= goMinVersion %>`.
+* [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) including going through the [first time setup](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup) instructions to configure your name and email address.
 
 ##### Frontend Requirements
 

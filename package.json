@@ -1,4 +1,16 @@
 {
+  "license": "MIT",
+  "main": "index.js",
+  "name": "gobuffalo.io",
+  "repository": "github.com/gobuffalo/docs",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "webpack -p --progress",
+    "dev": "webpack --watch"
+  },
+  "engines": {
+    "npm": "please-use-yarn"
+  },
   "dependencies": {
     "anchor-js": "^4.2.0",
     "bootstrap": "^4.3.1",
@@ -33,14 +45,5 @@
     "webpack-cli": "^3.3.10",
     "webpack-livereload-plugin": "2.2.0",
     "webpack-manifest-plugin": "~2.2.0"
-  },
-  "license": "MIT",
-  "main": "index.js",
-  "name": "gobuffalo.io",
-  "repository": "github.com/gobuffalo/docs",
-  "scripts": {
-    "build": "webpack -p --progress",
-    "dev": "webpack --watch"
-  },
-  "version": "1.0.0"
+  }
 }

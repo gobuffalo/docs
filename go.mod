@@ -23,7 +23,7 @@ require (
 	github.com/gobuffalo/events v1.4.0
 	github.com/gobuffalo/genny v0.4.1
 	github.com/gobuffalo/github_flavored_markdown v1.1.0
-	github.com/gobuffalo/here v0.5.1
+	github.com/gobuffalo/here v0.6.0
 	github.com/gobuffalo/httptest v1.4.0
 	github.com/gobuffalo/mw-forcessl v0.0.0-20190224202501-6d1ef7ffb276
 	github.com/gobuffalo/mw-i18n v0.0.0-20190224203426-337de00e4c33
@@ -39,6 +39,7 @@ require (
 	github.com/markbates/going v1.0.3
 	github.com/markbates/inflect v1.0.4
 	github.com/markbates/oncer v1.0.0
+	github.com/markbates/pkger v0.14.0 // indirect
 	github.com/microcosm-cc/bluemonday v1.0.2
 	github.com/mmcdole/gofeed v1.0.0-beta2
 	github.com/mmcdole/goxpp v0.0.0-20181012175147-0068e33feabf // indirect

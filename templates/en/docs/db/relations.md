@@ -69,7 +69,7 @@ By default `Eager` will load all the assigned associations for the model. To spe
 err  = tx.Eager("Books").Where("name = 'Mark'").All(&u) // preload only Books association for user with name 'Mark'.
 ```
 
-Pop also allows you to eager loading nested associations by using `.` character to concatenate them. Take a look at the example bellow.
+Pop also allows you to eager load nested associations by using `.` character to concatenate them. Take a look at the example below.
 
 ```go
 // will load all Books for u and for every Book will load the user which will be the same as u.

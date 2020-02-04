@@ -1,5 +1,7 @@
 ## Articles About Buffalo
 
+* **January 29th, 2020** - Converting A Static Site To Buffalo [https://www.gopherguides.com/articles/converting-a-static-website-to-golang-buffalo/](https://www.gopherguides.com/articles/converting-a-static-website-to-golang-buffalo/)
+
 * **July 4th, 2019** - GO Buffalo: working with emails in DEV environment [https://medium.com/@francescodonzello/go-buffalo-working-with-emails-in-dev-environment-48897c390c7a](https://medium.com/@francescodonzello/go-buffalo-working-with-emails-in-dev-environment-48897c390c7a)
 
 * **June 6th, 2019** - Deploying GoBuffalo app using Dokku [https://www.ribice.ba/buffalo-dokku/](https://www.ribice.ba/buffalo-dokku/)

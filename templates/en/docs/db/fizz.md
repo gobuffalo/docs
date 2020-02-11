@@ -54,7 +54,7 @@ For example for PostgreSQL you could pass `jsonb` and it will be supported, howe
 
 #### Supported Options:
 
-* `size` - The size of the column. For example if you wanted a `varchar(50)` in Postgres you would do: `t.Column("column_name", "string", {"size": 50})`
+* `size` - The size of the column. For example if you wanted a `varchar(50)` in Postgres you would do: `t.Column("column_name", "string", {"size": 50})`. The default value for a string column is 255 (or 191 for MariaDB).
 * `scale`, `precision` - The scale and the precision for a float column. `example: {"scale": 4, "precision": 2}`
 * `null` - By default columns are not allowed to be `null`.
 * `default` - The default value you want for this column. By default this is `null`.

@@ -55,7 +55,7 @@ Par exemple, pour PostgreSQL, vous pouvez passer le type `jsonb` et il sera supp
 
 #### Options supportées :
 
-* `size` - La taille de la colonne. Par exemple, si vous voulez un `varchar(50)` avec PostgreSQL, vous procéderiez de la façon suivante : `t.Column("column_name", "string", {"size": 50})`
+* `size` - La taille de la colonne. Par exemple, si vous voulez un `varchar(50)` avec PostgreSQL, vous procéderiez de la façon suivante : `t.Column("column_name", "string", {"size": 50})`. La valeur par défaut pour une colonne de type `string` est 255 (ou 191 pour MariaDB).
 * `scale`, `precision` - L'échelle et la précision, pour une colonne de type float. Exemple : `{"scale": 4, "precision": 2}`
 * `null` - Par défaut, les colonnes ne peuvent pas être `null`.
 * `default` - La valeur par défaut de la colonne. La valeur par défaut est `null`.

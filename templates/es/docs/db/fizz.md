@@ -54,7 +54,7 @@ Por ejemplo, para PostgreSQL puede pasar `jsonb` y será compatible, sin embargo
 
 #### Opciones compatibles:
 
-* `size` - El tamaño de la columna. Por ejemplo, si quisiera un `varchar (50)` en Postgres, haría: `t.Column (" column_name "," string ", {" size ": 50})`
+* `size` - El tamaño de la columna. Por ejemplo, si quisiera un `varchar (50)` en Postgres, haría: `t.Column (" column_name "," string ", {" size ": 50})`. El valor por defecto de para una columna tipo string es 255 (o 191 para MariaDB).
 * `scale`, `precision` - Ejemplo: `{"scale": 4, "precision": 2}`
 * `null` - Por defecto, las columnas no pueden ser` null`.
 * `default` - El valor predeterminado que desea para esta columna. Por defecto, esto es `nulo`.

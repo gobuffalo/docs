@@ -20,7 +20,7 @@ Buffalo a une intégration forte avec Pop, et la boîte à outils vous aidera à
 
 Pop supporte les bases de données suivantes :
 * [PostgreSQL](https://www.postgresql.org/) (>= 9.3)
-* [CockroachDB](https://www.cockroachlabs.com/) (>= 1.1.1)
+* [CockroachDB](https://www.cockroachlabs.com/) (>= 2.1.0)
 * [MySQL](https://www.mysql.com/) (>= 5.7)
 * [SQLite3](https://sqlite.org/) (>= 3.x)
 

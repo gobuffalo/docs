@@ -47,26 +47,107 @@ type Addresses []Address
 
 Using the above [example](#example) code below is a list of available struct tags and how to use them.
 
-* `has_many`: Will load all records from the `books` table that have a column named `user_id`, or the column specified with `fk_id` that matches the `User.ID` value.
-* `belongs_to`: Will load a record from the `users` table that have a column named `id` that matches with `Book.UserID` value.
-* `has_one`: Will load a record from the `songs` table that have a column named `user_id`, or the column specified with `fk_id` that matches the `User.ID` value.
-* `many_to_many`: Will load all records from the `addresses` table through the table `users_addresses`. Table `users_addresses` **MUST** define `address_id` and `user_id` columns to match `User.ID` and `Address.ID` values. You can also define a `fk_id` tag that will be used in the target association i.e. `addresses` table.
-* `fk_id`: Defines the column name in the target association that matches model ID. In the example above `Song` has a column named `u_id` that represents the id of the `users` table. When loading `FavoriteSong`, `u_id` will be used instead of `user_id`.
-* `order_by`: Used in `has_many` and `many_to_many` to indicate the order for the association when loading. The format to use is `order_by:"&lt;column_name> &lt;asc | desc>"`
+* `has_many`: This tag is used to describe [one-to-many](https://en.wikipedia.org/wiki/One-to-many_(data_model)) relationships in the database. In the example, `User` type defines a one-to-many relation with `Books` slice type through the use of `has_many` tag, meaning a `User` can own many `Books`. When querying to the database, Pop will load all records from the `books` table that have a column named `user_id`, or the column specified with `fk_id` that matches the `User.ID` value.
 
-## Eager Loading Associations
+* `belongs_to`: This tag is used to describe the owner in the relationship. An owner represents a highly coupled dependency between the model and the target association field where `belongs_to` tag was defined. This tag is mostly used to indicate that model owns its "existence" to the association field with `belongs_to`. In the example above, `Book` type use `belongs_to` to indicate that it is owned by a `User` type. When querying to the database, Pop will load a record from the `users` table with `id` that matches with `Book.UserID` value.
 
-The [`pop.Connection.Eager()`](https://godoc.org/github.com/gobuffalo/pop#Connection.Eager) method tells Pop to load the associations for a model when that model is loaded from the database.
+* `has_one`: This tag is used to describe [one-to-one](https://en.wikipedia.org/wiki/One-to-one_(data_model)) relationships in the database. In the example above, there is only one `FavoriteSong` within all songs records that `User` type like the most. When querying to the database, Pop will load a record from the `songs` table that have a column named `user_id`, or the column specified with `fk_id` that matches the `User.ID` field value.
+
+* `many_to_many`: This tag is used to describe [many-to-many](https://en.wikipedia.org/wiki/Many-to-many_(data_model)) relationships in the database. In the example above, the relationship between `User` type and `Addresses` slice type exists to indicate an `User` can own many `Houses` and a `House` can be owned by many `Users`. It is important to notice that value for `many_to_many` tag is the associative table that connects both sides in the relationship; in the example above this value is defined as `users_addresses`. When querying to the database, Pop will load all records from the `addresses` table through the associative table `users_addresses`. Table `users_addresses` **MUST** define `address_id` and `user_id` columns to match `User.ID` and `Address.ID` field values. You can also define a `fk_id` tag that will be used in the target association i.e. `addresses` table.
+
+* `fk_id`: This tag can be used to define the column name in the target association that matches model ID. In the example above, `Song` has a column named `u_id` that references the id of the `users` table. When loading `FavoriteSong`, `u_id` column will be used instead of `user_id`.
+
+* `order_by`: This tag can be used in combination with `has_many` and `many_to_many` tags to indicate the order for the association when loading. The format to use is `order_by:"&lt;column_name> &lt;asc | desc>"`
+
+## Loading Associations
+Pop currently provides two modes for loading associations; each mode will affect the way pop loads associations and queries to the database.
+
+[Eager](#eager-mode). Default mode. By enabling this mode, pop will perform "n" queries for every association defined in the model. This means more hits to the database in order to not affect memory use.
+
+[EagerPreload](#eagerpreload-mode). Optional mode. By enabling this mode, pop will perform one query for every association defined in the model. This mode will hit the database with a reduced frequency by sacrifing more memory space.
+
+* `pop.SetEagerMode`: Pop allows enabling any of these modes globally which will affect **ALL** queries handle performance. Use `EagerDefault` or `EagerPreload` as parameter to activate any of these modes.
+
+
+* `tx.EagerPreload | q.EagerPreload`: Pop allows developers to take control in which situations they want Pop to perform any of these modes when necessary. This method will activate `EagerPreload` mode only for the query in action.
+
+* `tx.Eager | q.Eager`: Pop allows developers to take control in which situations they want Pop to perform any of these modes when necessary. This method will activate `Eager` mode only for the query in action.
+
+
+## Eager Mode
+
+The [`pop.Connection.Eager()`](https://godoc.org/github.com/gobuffalo/pop#Connection.Eager) method tells Pop to load the associations for a model once that model is loaded from the database. This mode will perform "n" queries for every association defined in the model.
+
+```go
+for i := 0; i < 3; i++ {
+  user := User{ID: i + 1}
+  tx.Create(&user)
+}
+
+for i := 0; i < 3; i++ {
+  book := Book{UserID: i +1}
+  tx.Create(&book)
+}
+```
 
 ```go
 u := Users{}
-err := tx.Eager().Where("name = 'Mark'").All(&u)  // preload all associations for user with name 'Mark', i.e Books, Houses and FavoriteSong
+err := tx.Eager().All(&u)  // loads all associations for every user registered, i.e Books, Houses and FavoriteSong
 ```
 
-By default `Eager` will load all the assigned associations for the model. To specify which associations should be loaded you can pass in the names of those fields to the `Eager` method and only those associations will be loaded.
+`Eager` mode will:
+ 1. Load all users.  
+```
+ SELECT * FROM users;
+```
+2. Iterate on every user and load its associations:  
+```
+ SELECT * FROM books WHERE user_id=1)
+```  
+```
+ SELECT * FROM books WHERE user_id=2)  
+```  
+```
+ SELECT * FROM books WHERE user_id=3)
+``` 
+
+## EagerPreload Mode
+The [`pop.Connection.EagerPreload()`](https://github.com/gobuffalo/pop/pull/146/files#diff-f49e947ec94f65964b0845af2b62845aR180) method tells Pop to load the associations for a model once that model is loaded from the database. This mode will hit the database with a reduced frequency by sacrifing more memory space.
 
 ```go
-err  = tx.Eager("Books").Where("name = 'Mark'").All(&u) // preload only Books association for user with name 'Mark'.
+for i := 0; i < 3; i++ {
+  user := User{ID: i + 1}
+  tx.Create(&user)
+}
+
+for i := 0; i < 3; i++ {
+  book := Book{UserID: i +1}
+  tx.Create(&book)
+}
+```
+
+```go
+u := Users{}
+err := tx.EagerPreload().All(&u)  // loads all associations for every user registered, i.e Books, Houses and FavoriteSong
+```
+
+`EagerPreload` mode will:
+ 1. Load all users.  
+ ```
+  SELECT * FROM users;
+ ```
+2. Load associations for all users in one single query.  
+```
+  SELECT * FROM books WHERE user_id IN (1,2,3))
+``` 
+
+## Load Specific Associations
+By default `Eager` and `EagerPreload` will load all the assigned associations for the model. To specify which associations should be loaded you can pass in the names of those fields to the `Eager` or `EagerPreload` methods and only those associations will be loaded.
+
+```go
+err  = tx.Eager("Books").Where("name = 'Mark'").All(&u) // load only Books association for user with name 'Mark'.
+// OR
+err  = tx.EagerPreload("Books").Where("name = 'Mark'").All(&u) // load only Books association for user with name 'Mark'.
 ```
 
 Pop also allows you to eager load nested associations by using the `.` character to concatenate them. Take a look at the example below.
@@ -74,16 +155,22 @@ Pop also allows you to eager load nested associations by using the `.` character
 ```go
 // will load all Books for u and for every Book will load the user which will be the same as u.
 tx.Eager("Books.User").First(&u)
+// OR
+tx.EagerPreload("Books.User").First(&u)
 ```
 
 ```go
 // will load all Books for u and for every Book will load all Writers and for every writer will load the Book association.
 tx.Eager("Books.Writers.Book").First(&u)
+// OR
+tx.EagerPreload("Books.Writers.Book").First(&u)
 ```
 
 ```go
 // will load all Books for u and for every Book will load all Writers. And Also it will load the favorite song for user.
 tx.Eager("Books.Writers").Eager("FavoriteSong").First(&u)
+// OR
+tx.EagerPreload("Books.Writers").EagerPreload("FavoriteSong").First(&u)
 ```
 
 ## Loading Associations for an Existing Model

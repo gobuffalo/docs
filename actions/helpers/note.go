@@ -5,8 +5,8 @@ import (
 	"html/template"
 
 	"github.com/gobuffalo/github_flavored_markdown"
-	"github.com/gobuffalo/plush"
-	"github.com/gobuffalo/tags"
+	"github.com/gobuffalo/plush/v4"
+	"github.com/gobuffalo/tags/v3"
 	"github.com/pkg/errors"
 )
 

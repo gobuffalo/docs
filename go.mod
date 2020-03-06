@@ -30,8 +30,8 @@ require (
 	github.com/gobuffalo/mw-paramlogger v0.0.0-20190224201358-0d45762ab655
 	github.com/gobuffalo/packd v0.3.0
 	github.com/gobuffalo/packr/v2 v2.7.1
-	github.com/gobuffalo/plush v3.8.3+incompatible
-	github.com/gobuffalo/tags v2.1.7+incompatible
+	github.com/gobuffalo/plush/v4 v4.0.0
+	github.com/gobuffalo/tags/v3 v3.1.0
 	github.com/gobuffalo/x v0.1.0
 	github.com/google/go-cmp v0.3.1
 	github.com/grokify/html-strip-tags-go v0.0.0-20190921062105-daaa06bf1aaf

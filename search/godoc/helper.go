@@ -6,8 +6,8 @@ import (
 	"strings"
 
 	"github.com/gobuffalo/here"
-	"github.com/gobuffalo/plush"
-	"github.com/gobuffalo/tags"
+	"github.com/gobuffalo/plush/v4"
+	"github.com/gobuffalo/tags/v3"
 	"github.com/pkg/errors"
 )
 

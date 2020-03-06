@@ -4,7 +4,7 @@ import (
 	"html/template"
 
 	"github.com/gobuffalo/buffalo/render"
-	"github.com/gobuffalo/plush"
+	"github.com/gobuffalo/plush/v4"
 	"github.com/pkg/errors"
 )
 

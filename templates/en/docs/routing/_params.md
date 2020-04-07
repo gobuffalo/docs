@@ -8,4 +8,4 @@ a.GET("/users", func (c buffalo.Context) error {
 })
 ```
 
-Given the above code sample, if we make a request with `GET /users?name=ringo`, the response should should be `200: ringo`.
+Given the above code sample, if we make a request with `GET /users?name=ringo`, the response should be `200: ringo`.

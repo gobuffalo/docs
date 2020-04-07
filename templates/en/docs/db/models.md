@@ -265,7 +265,7 @@ If you want to use a model with more than one table, defining a view is probably
 
 ### Example
 
-The following example use the PostgreSQL syntax. We'll start by creating two tables:
+The following example uses the PostgreSQL syntax. We'll start by creating two tables:
 
 ```sql
 -- Create a sodas table

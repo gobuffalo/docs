@@ -446,8 +446,8 @@ github.com/gobuffalo/mw-forcessl v0.0.0-20200131175327-94b2bd771862/go.mod h1:tA
 github.com/gobuffalo/mw-i18n v0.0.0-20180802152014-e3060b7e13d6/go.mod h1:91AQfukc52A6hdfIfkxzyr+kpVYDodgAeT5cjX1UIj4=
 github.com/gobuffalo/mw-i18n v0.0.0-20181027200759-09e0c99be4d3/go.mod h1:1PpGPgqP8VsfUppgBA9FrTOXjI6X9gjqhh/8dmg48lg=
 github.com/gobuffalo/mw-i18n v0.0.0-20190129204410-552713a3ebb4/go.mod h1:rBg2eHxsyxVjtYra6fGy4GSF5C8NysOvz+Znnzk42EM=
-github.com/gobuffalo/mw-i18n v1.0.0 h1:P3RZXYojzM4nozLVfbvmZGvglYK82+VNoBwYzZztnrQ=
-github.com/gobuffalo/mw-i18n v1.0.0/go.mod h1:Dkd9LRLkPhi7eugqvIrZk5nBrVZ5r1jZ0MBbY06XQr0=
+github.com/gobuffalo/mw-i18n v1.1.0 h1:hqEiOaYhDZWjTP5bI7MkClfptQjF8475TRwkl8dqOQE=
+github.com/gobuffalo/mw-i18n v1.1.0/go.mod h1:td5/G3I0EI7D7UgRXUDVS0lS3O9rRj6juqbP0utc420=
 github.com/gobuffalo/mw-paramlogger v0.0.0-20181005191442-d6ee392ec72e/go.mod h1:6OJr6VwSzgJMqWMj7TYmRUqzNe2LXu/W1rRW4MAz/ME=
 github.com/gobuffalo/mw-paramlogger v0.0.0-20190129202837-395da1998525/go.mod h1:gEo/ABCsKqvpp/KCxN2AIzDEe0OJUXbJ9293FYrXw+w=
 github.com/gobuffalo/mw-paramlogger v1.0.0 h1:6dQKwAKNX++syXe5s1G7BDq5Hw6QxW5+QYgY7k4wbcU=

@@ -29,7 +29,7 @@ require (
 	github.com/gobuffalo/here v0.6.0
 	github.com/gobuffalo/httptest v1.5.0
 	github.com/gobuffalo/mw-forcessl v0.0.0-20200131175327-94b2bd771862
-	github.com/gobuffalo/mw-i18n v1.0.0
+	github.com/gobuffalo/mw-i18n v1.1.0
 	github.com/gobuffalo/mw-paramlogger v1.0.0
 	github.com/gobuffalo/packd v1.0.0
 	github.com/gobuffalo/packr/v2 v2.8.0

@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"html/template"
 
-	"github.com/gobuffalo/plush"
+	"github.com/gobuffalo/plush/v4"
 	"github.com/stvp/slug"
 )
 

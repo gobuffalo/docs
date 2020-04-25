@@ -8,10 +8,10 @@ import (
 	"strings"
 
 	"github.com/gobuffalo/buffalo/render"
-	"github.com/gobuffalo/genny"
+	"github.com/gobuffalo/genny/v2"
 	"github.com/gobuffalo/github_flavored_markdown"
 	"github.com/gobuffalo/packr/v2"
-	"github.com/gobuffalo/plush"
+	"github.com/gobuffalo/plush/v4"
 	"github.com/gobuffalo/tags"
 	"github.com/markbates/going/randx"
 	"github.com/pkg/errors"

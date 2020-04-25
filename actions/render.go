@@ -11,7 +11,7 @@ import (
 	"github.com/gobuffalo/docs/search/godoc"
 	"github.com/gobuffalo/docs/search/vimeo"
 	"github.com/gobuffalo/packr/v2"
-	"github.com/gobuffalo/plush"
+	"github.com/gobuffalo/plush/v4"
 	"github.com/markbates/inflect"
 )
 

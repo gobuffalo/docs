@@ -54,6 +54,7 @@ For example for PostgreSQL you could pass `jsonb` and it will be supported, howe
 
 #### Supported Options:
 
+* `primary` - Whether the column is the primary key. To have a composite key look [below](#composite-primary-key). `example: {"primary": true}`
 * `size` - The size of the column. For example if you wanted a `varchar(50)` in Postgres you would do: `t.Column("column_name", "string", {"size": 50})`. The default value for a string column is 255 (or 191 for MariaDB).
 * `scale`, `precision` - The scale and the precision for a float column. `example: {"scale": 4, "precision": 2}`
 * `null` - By default columns are not allowed to be `null`.
@@ -119,6 +120,14 @@ rename_column("table_name", "old_column_name", "new_column_name")
 ``` javascript
 drop_column("table_name", "column_name")
 ```
+
+## <a name="composite-primary-key"></a> Composite Primary Keys
+
+``` javascript
+t.PrimaryKey("column_1", "column_2")
+```
+
+Please note that the `t.PrimaryKey` statement MUST be after the columns definitions.
 
 ## Add an Index
 

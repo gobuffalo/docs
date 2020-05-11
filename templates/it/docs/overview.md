@@ -49,4 +49,4 @@ Webpack è configurato di default per versionare e minimizzare i tuoi asset.
 
 ## Prossimi passi
 
-* [Installazione](/en/docs/getting-started/installation) - Installa Buffalo!
+* [Installazione](/it/docs/getting-started/installation) - Installa Buffalo!

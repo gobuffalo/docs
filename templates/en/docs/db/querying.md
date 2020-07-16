@@ -20,6 +20,14 @@ err := db.All(&users)
 err = db.Where("id in (?)", 1, 2, 3).All(&users)
 ```
 
+### Find All with Order
+
+```go
+// To retrieve records from the database in a specific order, you can use the Order method
+users := []User{}
+err := db.Order("id desc").All(&users)
+```
+
 #### Find Last
 
 ```go

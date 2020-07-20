@@ -40,6 +40,18 @@ Writing the files by hand is not the most efficient way to work. Soda (and Buffa
 
 <%= partial("en/docs/db/model.md") %>
 
+You can specify each column of the model to soda in order for it to generate the code for you, like this:
+
+```bash
+$ soda generate model [name] [column1]:[type] [column2]:[type]
+```
+
+This is how you would generate a person-model with columns for the persons name, age and bio:
+
+```bash
+$ soda generate model person name:string age:int bio:text
+```
+
 You can remove generated model by running:
 
 ```bash

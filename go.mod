@@ -21,6 +21,8 @@ require (
 	github.com/fsnotify/fsnotify v1.4.9 // indirect
 	github.com/glycerine/go-unsnap-stream v0.0.0-20190901134440-81cf024a9e0a // indirect
 	github.com/gobuffalo/buffalo v0.16.8
+	github.com/gobuffalo/buffalo-goth v1.3.0 // indirect
+	github.com/gobuffalo/buffalo-heroku v1.0.9 // indirect
 	github.com/gobuffalo/clara v0.10.1
 	github.com/gobuffalo/envy v1.9.0
 	github.com/gobuffalo/events v1.4.1
@@ -28,22 +30,25 @@ require (
 	github.com/gobuffalo/github_flavored_markdown v1.1.0
 	github.com/gobuffalo/here v0.6.0
 	github.com/gobuffalo/httptest v1.5.0
+	github.com/gobuffalo/lush v0.0.0-20200714143058-6ae00330270d // indirect
 	github.com/gobuffalo/mw-forcessl v0.0.0-20200131175327-94b2bd771862
 	github.com/gobuffalo/mw-i18n v1.1.0
 	github.com/gobuffalo/mw-paramlogger v1.0.0
+	github.com/gobuffalo/mw-poptx v0.0.0-20181001105033-060021f87978 // indirect
 	github.com/gobuffalo/packd v1.0.0
 	github.com/gobuffalo/packr/v2 v2.8.0
 	github.com/gobuffalo/plush/v4 v4.0.0
 	github.com/gobuffalo/tags v2.1.7+incompatible
 	github.com/gobuffalo/x v0.1.0
 	github.com/golang/protobuf v1.3.5 // indirect
-	github.com/google/go-cmp v0.4.0
+	github.com/google/go-cmp v0.5.0
 	github.com/grokify/html-strip-tags-go v0.0.0-20190921062105-daaa06bf1aaf
 	github.com/jackc/pgconn v1.4.0 // indirect
 	github.com/jmhodges/levigo v1.0.0 // indirect
 	github.com/markbates/going v1.0.3
 	github.com/markbates/inflect v1.0.4
 	github.com/markbates/oncer v1.0.0
+	github.com/markbates/pkger v0.17.0 // indirect
 	github.com/mattn/go-colorable v0.1.6 // indirect
 	github.com/microcosm-cc/bluemonday v1.0.2
 	github.com/mmcdole/gofeed v1.0.0-beta2
@@ -51,7 +56,7 @@ require (
 	github.com/pkg/errors v0.9.1
 	github.com/remyoudompheng/bigfft v0.0.0-20190728182440-6a916e37a237 // indirect
 	github.com/steveyen/gtreap v0.0.0-20150807155958-0abe01ef9be2 // indirect
-	github.com/stretchr/testify v1.5.1
+	github.com/stretchr/testify v1.6.1
 	github.com/stvp/slug v0.0.0-20150928221549-5ab8191bb1fe
 	github.com/syndtr/goleveldb v1.0.0 // indirect
 	github.com/tecbot/gorocksdb v0.0.0-20191122205208-eb0a0d0d32b3 // indirect

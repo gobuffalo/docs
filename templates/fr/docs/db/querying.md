@@ -12,12 +12,20 @@ user := User{}
 err := db.Find(&user, id)
 ```
 
-### Rechercher toutes les occurences
+### Rechercher toutes les occurrences
 
 ```go
 users := []User{}
 err := db.All(&users)
 err = db.Where("id in (?)", 1, 2, 3).All(&users)
+```
+
+### Rechercher toutes les occurrences et ordonner les résultats
+
+```go
+// Vous pouvez utiliser la méthode Order pour ordonner les résultats.
+users := []User{}
+err := db.Order("id desc").All(&users)
 ```
 
 #### Rechercher le dernier résultat

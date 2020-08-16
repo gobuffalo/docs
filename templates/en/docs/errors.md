@@ -41,7 +41,7 @@ In "development" mode (`GO_ENV=development`), Buffalo will generate some helpful
   <figcaption>An example of a `500` error in development mode.</figcaption>
 </figure>
 
-If you use a JSON or a XML content type, the error is returned in the proper type:
+If you use a JSON or an XML content type, the error is returned in the proper type:
 
 ```json
 {
@@ -58,7 +58,7 @@ If you use a JSON or a XML content type, the error is returned in the proper typ
 &lt;/response>
 ```
 
-In "production" mode (`GO_ENV=production`), Buffalo will not generate pages that have developer style information, because this would give precious informations to hackers. Instead the pages are simpler.
+In "production" mode (`GO_ENV=production`), Buffalo will not generate pages that have developer style information, because this would give precious information to hackers. Instead the pages are simpler.
 
 ## Custom Error Handling
 

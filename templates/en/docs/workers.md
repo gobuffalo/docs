@@ -39,7 +39,7 @@ The following Worker implementations are provided by Buffalo users (no official 
 
 ## The Job type
 
-A Job is an unit of work for a given Worker implementation.
+A Job is a unit of work for a given Worker implementation.
 
 ```go
 // Args are the arguments passed into a job

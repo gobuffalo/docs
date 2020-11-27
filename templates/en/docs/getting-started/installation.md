@@ -102,7 +102,7 @@ $ gofish install buffalo
 To install Buffalo, ensure your `GOPATH` is defined, then:
 
 ```bash
-$ go get -u -v -tags sqlite github.com/gobuffalo/buffalo/buffalo
+$ GO111MODULE=on go get -u -v -tags sqlite github.com/gobuffalo/buffalo/buffalo
 ```
 
 **Windows Users**: Follow the installation guide at [https://blog.gobuffalo.io/install-buffalo-on-windows-10-e08b3aa304a3](https://blog.gobuffalo.io/install-buffalo-on-windows-10-e08b3aa304a3) to install a GCC for Windows 10. Alternatively, GCC can be installed with the [Scoop](http://scoop.sh/) package manager:
@@ -118,7 +118,7 @@ These instructions can also be used for upgrading to a newer version of Buffalo.
 ## Custom installation **without** SQLite3 Support
 
 ```bash
-$ go get -u -v github.com/gobuffalo/buffalo/buffalo
+$ GO111MODULE=on go get -u -v github.com/gobuffalo/buffalo/buffalo
 ```
 
 <%= note() { %>

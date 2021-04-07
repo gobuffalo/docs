@@ -52,6 +52,8 @@ Any other type passed it will be be passed straight through to the underlying da
 
 For example for PostgreSQL you could pass `jsonb` and it will be supported, however, SQLite will yell very loudly at you if you do the same thing!
 
+To use PostgreSQL array types, the brackets must be before the type rather than after, e.g.: `[]string`
+
 #### Supported Options:
 
 * `primary` - Whether the column is the primary key. To have a composite key look [below](#composite-primary-key). `example: {"primary": true}`

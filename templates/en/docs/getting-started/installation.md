@@ -76,7 +76,6 @@ Buffalo can be installed _(w/o [_Sqlite support_](#custom-installation-with-sqli
 ```powershell
 PS C:\> choco install buffalo
 ```
-If you need Sqlite support use a [custom installation](#custom-installation-with-sqlite3-support).
 
 ## Homebrew (macOS)
 

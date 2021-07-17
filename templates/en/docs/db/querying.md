@@ -9,15 +9,15 @@ In this chapter, you'll learn how to retrieve data from your database using Pop.
 
 ```go
 user := User{}
-err := db.Find(&user, id)
+err := models.DB.Find(&user, id)
 ```
 
 ### Find All
 
 ```go
 users := []User{}
-err := db.All(&users)
-err = db.Where("id in (?)", 1, 2, 3).All(&users)
+err := models.DB.All(&users)
+err = models.DB.Where("id in (?)", 1, 2, 3).All(&users)
 ```
 
 ### Find All with Order
@@ -25,7 +25,7 @@ err = db.Where("id in (?)", 1, 2, 3).All(&users)
 ```go
 // To retrieve records from the database in a specific order, you can use the Order method
 users := []User{}
-err := db.Order("id desc").All(&users)
+err := models.DB.Order("id desc").All(&users)
 ```
 
 #### Find Last
@@ -33,45 +33,45 @@ err := db.Order("id desc").All(&users)
 ```go
 // Last() orders by created_at
 user := models.User{}
-err := tx.Last(&user)
+err := models.DB.Last(&user)
 ```
 
 ### Find Where
 
 ```go
 users := []models.User{}
-query := db.Where("id = 1").Where("name = 'Mark'")
+query := models.DB.Where("id = 1").Where("name = 'Mark'")
 err := query.All(&users)
 
-err = tx.Where("id in (?)", 1, 2, 3).All(&users)
+err = models.DB.Where("id in (?)", 1, 2, 3).All(&users)
 ```
 
 #### Using `in` Queries
 
 ```go
-err = db.Where("id in (?)", 1, 2, 3).All(&users)
-err = db.Where("id in (?)", 1, 2, 3).Where("foo = ?", "bar").All(&users)
+err = models.DB.Where("id in (?)", 1, 2, 3).All(&users)
+err = models.DB.Where("id in (?)", 1, 2, 3).Where("foo = ?", "bar").All(&users)
 ```
 
 Unfortunately, for a variety of reasons you can't use an `and` query in the same `Where` call as an `in` query.
 
 ```go
 // does not work:
-err = db.Where("id in (?) and foo = ?", 1, 2, 3, "bar").All(&users)
+err = models.DB.Where("id in (?) and foo = ?", 1, 2, 3, "bar").All(&users)
 // works:
-err = db.Where("id in (?)", 1, 2, 3).Where("foo = ?", "bar").All(&users)
+err = models.DB.Where("id in (?)", 1, 2, 3).Where("foo = ?", "bar").All(&users)
 ```
 
 ### Select specific columns
 `Select` allows you to load specific columns from a table. Useful when you don't want all columns from a table to be loaded in a query.
 ```go
-err = db.Select("name").All(&users)
+err = models.DB.Select("name").All(&users)
 // SELECT name FROM users
 
-err = db.Select("max(age)").All(&users)
+err = models.DB.Select("max(age)").All(&users)
 // SELECT max(age) FROM users
 
-err = db.Select("age", "name").All(&users)
+err = models.DB.Select("age", "name").All(&users)
 // SELECT age, name FROM users
 ```
 

@@ -23,7 +23,7 @@ func init() {
 // templates/application.html
 &lt;html>
   &lt;head>
-    &lt;title>My App</title>
+    &lt;title>My App&lt;/title>
   &lt;/head>
   &lt;body>
     &lt;div id="main">
@@ -35,7 +35,7 @@ func init() {
 
 ```html
 // templates/hello.html
-&lt;h1>Hello!!</h1>
+&lt;h1>Hello!!&lt;/h1>
 ```
 
 ```go
@@ -51,11 +51,11 @@ func Hello(c buffalo.Context) error {
 // output
 &lt;html>
   &lt;head>
-    &lt;title>My App</title>
+    &lt;title>My App&lt;/title>
   &lt;/head>
   &lt;body>
     &lt;div id="main">
-      &lt;h1>Hello!!</h1>
+      &lt;h1>Hello!!&lt;/h1>
     &lt;/div>
   &lt;/body>
 &lt;/html>

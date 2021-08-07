@@ -14,6 +14,7 @@ Contributing to this documentation site is a great, and easy, way to help make B
 
 Note that this repository is only about Buffalo ecosystem documentation. If you want to contribute to the ecosystem itself, please refer to the concerned repository:
 * [Buffalo](https://github.com/gobuffalo/buffalo)
+* [Buffalo CLI](https://github.com/gobuffalo/cli)
 * [Pop](https://github.com/gobuffalo/pop)
 * [Plush](https://github.com/gobuffalo/plush)
 

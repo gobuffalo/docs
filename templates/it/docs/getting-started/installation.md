@@ -118,7 +118,7 @@ Queste istruzioni possono essere usate anche per aggiornare Buffalo a una nuova 
 ## Installazione personalizzata **senza** supporto a SQLite3
 
 ```bash
-$ go install github.com/gobuffalo/cli/cmd/buffalo@<%= version %>
+$ go install github.com/gobuffalo/cli/cmd/buffalo@v<%= version %>
 ```
 
 <%= note() { %>

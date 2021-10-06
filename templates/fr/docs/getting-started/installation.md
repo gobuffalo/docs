@@ -46,15 +46,15 @@ Depuis la version `v0.10.3`, des archives contenant une version pré-compilée d
 ### GNU / Linux
 
 ```bash
-$ wget https://github.com/gobuffalo/buffalo/releases/download/v<%= version %>/buffalo_<%= version %>_Linux_x86_64.tar.gz
+$ wget https://github.com/gobuffalo/cli/releases/download/v<%= version %>/buffalo_<%= version %>_Linux_x86_64.tar.gz
 $ tar -xvzf buffalo_<%= version %>_Linux_x86_64.tar.gz
-$ sudo mv buffalo-no-sqlite /usr/local/bin/buffalo
+$ sudo mv buffalo /usr/local/bin/buffalo
 ```
 
 ### MacOS
 
 ```bash
-$ curl -OL https://github.com/gobuffalo/buffalo/releases/download/v<%= version %>/buffalo_<%= version %>_Darwin_x86_64.tar.gz
+$ curl -OL https://github.com/gobuffalo/cli/releases/download/v<%= version %>/buffalo_<%= version %>_Darwin_x86_64.tar.gz
 $ tar -xvzf buffalo_<%= version %>_Darwin_x86_64.tar.gz
 $ sudo mv buffalo /usr/local/bin/buffalo
 # ou si vous avez configuré votre PATH pour inclure le dossier ~/bin
@@ -102,7 +102,7 @@ $ gofish install buffalo
 Pour installer Buffalo, assurez-vous que le `GOPATH` est défini, puis&nbsp;:
 
 ```bash
-$ GO111MODULE=on go get -u -v -tags sqlite github.com/gobuffalo/buffalo/buffalo
+$ go get -u -v -tags sqlite github.com/gobuffalo/cli/cmd/buffalo@v<%= version %>
 ```
 
 **Utilisateurs de Windows**&nbsp;: Suivez le guide d'installation [https://blog.gobuffalo.io/install-buffalo-on-windows-10-e08b3aa304a3 (EN)](https://blog.gobuffalo.io/install-buffalo-on-windows-10-e08b3aa304a3) pour installer GCC sur Windows 10. GCC peut également être installé via le gestionnaire de paquets [Scoop](http://scoop.sh/) :
@@ -118,7 +118,7 @@ Ces instructions peuvent aussi être utilisées pour mettre à jour votre versio
 ## Installation personnalisée **sans** support pour SQLite3
 
 ```bash
-$ GO111MODULE=on go get -u -v github.com/gobuffalo/buffalo/buffalo
+$ go install github.com/gobuffalo/cli/cmd/buffalo@v<%= version %>
 ```
 
 <%= note() { %>

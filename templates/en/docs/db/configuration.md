@@ -107,7 +107,7 @@ Use this option to customize the database driver and override the default one us
 Here is the list of the default SQL drivers:
 * MySQL: [github.com/go-sql-driver/mysql](https://github.com/go-sql-driver/mysql)
 * PostgreSQL: [github.com/lib/pq](https://github.com/lib/pq)
-* Cockroach DB: [github.com/cockroachdb/cockroach-go/crdb](https://github.com/cockroachdb/cockroach-go/crdb)
+* Cockroach DB: [github.com/cockroachdb/cockroach-go/crdb](https://github.com/cockroachdb/cockroach-go/tree/master/crdb)
 * SQLite: [github.com/mattn/go-sqlite3](https://github.com/mattn/go-sqlite3)
 
 ### encoding

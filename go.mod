@@ -1,6 +1,6 @@
 module github.com/gobuffalo/docs
 
-go 1.13
+go 1.16
 
 require (
 	github.com/PuerkitoBio/goquery v1.5.1 // indirect
@@ -12,17 +12,10 @@ require (
 	github.com/cockroachdb/cockroach-go v0.0.0-20200312223839-f565e4789405 // indirect
 	github.com/couchbase/vellum v0.0.0-20190829182332-ef2e028c01fd // indirect
 	github.com/cznic/b v0.0.0-20181122101859-a26611c4d92d // indirect
-	github.com/cznic/mathutil v0.0.0-20181122101859-297441e03548 // indirect
-	github.com/cznic/strutil v0.0.0-20181122101858-275e90344537 // indirect
 	github.com/etcd-io/bbolt v1.3.3 // indirect
-	github.com/facebookgo/ensure v0.0.0-20160127193407-b4ab57deab51 // indirect
-	github.com/facebookgo/stack v0.0.0-20160209184415-751773369052 // indirect
-	github.com/facebookgo/subset v0.0.0-20150612182917-8dac2c3c4870 // indirect
 	github.com/fsnotify/fsnotify v1.4.9 // indirect
 	github.com/glycerine/go-unsnap-stream v0.0.0-20190901134440-81cf024a9e0a // indirect
 	github.com/gobuffalo/buffalo v0.16.8
-	github.com/gobuffalo/buffalo-goth v1.3.0 // indirect
-	github.com/gobuffalo/buffalo-heroku v1.0.9 // indirect
 	github.com/gobuffalo/clara v0.10.1
 	github.com/gobuffalo/envy v1.9.0
 	github.com/gobuffalo/events v1.4.1
@@ -30,11 +23,9 @@ require (
 	github.com/gobuffalo/github_flavored_markdown v1.1.0
 	github.com/gobuffalo/here v0.6.0
 	github.com/gobuffalo/httptest v1.5.0
-	github.com/gobuffalo/lush v0.0.0-20200714143058-6ae00330270d // indirect
 	github.com/gobuffalo/mw-forcessl v0.0.0-20200131175327-94b2bd771862
 	github.com/gobuffalo/mw-i18n v1.1.0
 	github.com/gobuffalo/mw-paramlogger v1.0.0
-	github.com/gobuffalo/mw-poptx v0.0.0-20181001105033-060021f87978 // indirect
 	github.com/gobuffalo/packd v1.0.0
 	github.com/gobuffalo/packr/v2 v2.8.0
 	github.com/gobuffalo/plush/v4 v4.0.0
@@ -48,13 +39,11 @@ require (
 	github.com/markbates/going v1.0.3
 	github.com/markbates/inflect v1.0.4
 	github.com/markbates/oncer v1.0.0
-	github.com/markbates/pkger v0.17.0 // indirect
 	github.com/mattn/go-colorable v0.1.6 // indirect
-	github.com/microcosm-cc/bluemonday v1.0.2
+	github.com/microcosm-cc/bluemonday v1.0.5
 	github.com/mmcdole/gofeed v1.0.0-beta2
 	github.com/mmcdole/goxpp v0.0.0-20181012175147-0068e33feabf // indirect
 	github.com/pkg/errors v0.9.1
-	github.com/remyoudompheng/bigfft v0.0.0-20190728182440-6a916e37a237 // indirect
 	github.com/steveyen/gtreap v0.0.0-20150807155958-0abe01ef9be2 // indirect
 	github.com/stretchr/testify v1.6.1
 	github.com/stvp/slug v0.0.0-20150928221549-5ab8191bb1fe

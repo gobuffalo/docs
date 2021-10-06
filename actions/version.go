@@ -8,7 +8,7 @@ import (
 	"time"
 )
 
-const latestURL = "https://api.github.com/repos/gobuffalo/buffalo/releases/latest"
+const latestURL = "https://api.github.com/repos/gobuffalo/cli/releases/latest"
 
 var buffaloVersion = findLatestVersion()
 

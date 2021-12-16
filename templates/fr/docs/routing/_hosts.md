@@ -10,10 +10,6 @@ app := buffalo.New(buffalo.Options{
     SessionName: "_coke_session",
 })
 
-app.GET("/", func (c buffalo.Context) error {
-  return c.Render(http.StatusOK, r.String("Main App Homepage"))
-})
-
 subApp := app.Host("docs.domain.com")
 subApp.GET("/", func (c buffalo.Context) error {
   return c.Render(http.StatusOK, r.String("docs.domain.com Homepage"))
@@ -22,6 +18,10 @@ subApp.GET("/", func (c buffalo.Context) error {
 domainApp := app.Host("example.com")
 domainApp.GET("/", func (c buffalo.Context) error {
   return c.Render(http.StatusOK, r.String("example.com Homepage"))
+})
+
+app.GET("/", func (c buffalo.Context) error {
+  return c.Render(http.StatusOK, r.String("Main App Homepage"))
 })
 ```
 

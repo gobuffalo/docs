@@ -15,4 +15,5 @@ Buffalo uses the [github.com/gorilla/mux](http://www.gorillatoolkit.org/pkg/mux)
 <%= partial("en/docs/routing/params.md") %>
 <%= partial("en/docs/routing/named_params.md") %>
 <%= partial("en/docs/routing/groups.md") %>
+<%= partial("en/docs/routing/hosts.md") %>
 <%= partial("en/docs/routing/mounting.md") %>

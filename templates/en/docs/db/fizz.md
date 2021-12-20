@@ -3,7 +3,7 @@
 
 <%= h1("Fizz") %>
 
-Fizz is a common DSL for migrating databases. It tries to be as database-agnostic as possible. This is the language used by defaut by Pop to define [database migrations](/en/docs/db/migrations).
+Fizz is a common DSL for migrating databases. It tries to be as database-agnostic as possible. This is the default language used by Pop to define [database migrations](/en/docs/db/migrations).
 
 ## Create a Table
 

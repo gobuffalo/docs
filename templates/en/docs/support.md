@@ -1,6 +1,6 @@
 # Support
 
-If you are looking for support, [training](https://www.gopherguides.com/in-person-training/), or [consulting](https://www.gopherguides.com/consulting/) for your Buffalo project, the [Gopher Guides](https://www.gopherguides.com) (founded by Mark Bates - founder of Buffalo) are the official trainers and consultants for the Buffalo eco-system.
+If you are looking for support, [training](https://www.gopherguides.com/in-person-training/), or [consulting](https://www.gopherguides.com/consulting/) for your Buffalo project, the [Gopher Guides](https://www.gopherguides.com) (founded by Mark Bates - founder of Buffalo) are the official trainers and consultants for the Buffalo ecosystem.
 
 ## Buffalo Project Audit
 

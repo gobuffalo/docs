@@ -28,6 +28,13 @@ user := models.User{}
 err := tx.Last(&user)
 ```
 
+### Encontrar el último y ordena los resultados
+
+```go
+users := []User{}
+err := db.Order("id desc").All(&users)
+```
+
 ### Encontrar dónde
 
 ```go

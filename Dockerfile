@@ -12,8 +12,8 @@ ENV GITHUB_TOKEN ${GITHUB_TOKEN}
 
 # this will cache the npm install step, unless package.json changes
 ADD package.json .
-ADD yarn.lock .
-RUN yarn install --no-progress
+ADD package-lock.json .
+RUN npm install --no-progress
 ADD . .
 RUN buffalo build --static -o /bin/app -v --skip-template-validation
 

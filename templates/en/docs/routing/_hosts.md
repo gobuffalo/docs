@@ -2,7 +2,7 @@
 
 <%= sinceVersion("0.18.2") %>
 
-Buffalo apps also support grouping of end-points by host. Host creates a new group that matches the domain passed. This is useful for creating groups of end-points for different domains or subdomains.
+Buffalo apps also support grouping of end-points by host. `Host` creates a new group that matches the domain passed. This is useful for creating groups of end-points for different domains or subdomains.
 
 ```go
 app := buffalo.New(buffalo.Options{

@@ -2,7 +2,7 @@
 
 <%= sinceVersion("0.18.2") %>
 
-Buffalo prennent également en charge le regroupement des points de terminaison par hôte. L'hôte crée un nouveau groupe qui correspond au domaine transmis. Ceci est utile pour créer des groupes de points de terminaison pour différents domaines ou sous-domaines.
+Buffalo supporte également le regroupement d'APIs par domaine. La méthode `Host` crée un nouveau groupe pour le nom de domaine passé en paramètre, ce qui peut être une méthode pratique pour regrouper des APIs appartenant au même domaine (voire gérer plusieurs sous-domaines sur une même application).
 
 ```go
 app := buffalo.New(buffalo.Options{
@@ -25,7 +25,7 @@ app.GET("/", func (c buffalo.Context) error {
 })
 ```
 
-Les variables mappées aux paramètres sont également prises en charge:
+Les variables associéees aux paramètres sont également prises en charge :
 
 ```go
 app.Host("{subdomain}.example.com")

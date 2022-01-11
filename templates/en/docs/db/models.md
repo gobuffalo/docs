@@ -153,7 +153,7 @@ type User struct {
 
 Sometimes you need to let Pop know that certain field should not be stored in the database table. Perhaps it's just a field you use in-memory or other logical reason related with the application you're building.
 
-The way you let Pop know about this is by usind the `db` struct tag on your model and setting it to be `-` like the following example:
+The way you let Pop know about this is by using the `db` struct tag on your model and setting it to be `-` like the following example:
 
 ```go
 type User struct {

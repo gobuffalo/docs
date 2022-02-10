@@ -39,18 +39,18 @@ m2 := MyMiddleware()
 
 app.Use(m1)
 
-app.Skip(m2, Foo, Bar) // WON'T WORK m2 != m1
-app.Skip(m1, Foo, Bar) // WORKS
+app.Middleware.Skip(m2, Foo, Bar) // WON'T WORK m2 != m1
+app.Middleware.Skip(m1, Foo, Bar) // WORKS
 ```
 
 ```go
 // EXAMPLE 2
 app.Resource("/widgets", WidgetResource{})
-app.Skip(mw, WidgetResource{}.Show) // WON'T WORK
+app.Middleware.Skip(mw, WidgetResource{}.Show) // WON'T WORK
 
 wr := WidgetResource{}
 app.Resource("/widgets", wr)
-app.Skip(mw, wr.Show) // WORKS
+app.Middleware.Skip(mw, wr.Show) // WORKS
 ```
 
 <% } %>

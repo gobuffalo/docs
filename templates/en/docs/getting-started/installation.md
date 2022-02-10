@@ -38,7 +38,7 @@ Again, if you don't need a database, you won't need these.
 ## Installation from a release archive - 64 bits
 
 <%= note() { %>
-The release packages contain Buffalo without SQLite support.
+The release packages contain Buffalo without SQLite support. For SQLite support use a [custom installation](#custom-installation-with-sqlite3-support).
 <% } %>
 
 Since `v0.10.3`, pre-compiled archives are provided with each release. If you don't need the latest cutting-edge version, you'll probably prefer to install this version.
@@ -50,6 +50,7 @@ $ wget https://github.com/gobuffalo/cli/releases/download/v<%= version %>/buffal
 $ tar -xvzf buffalo_<%= version %>_Linux_x86_64.tar.gz
 $ sudo mv buffalo /usr/local/bin/buffalo
 ```
+If you need Sqlite support use a [custom installation](#custom-installation-with-sqlite3-support).
 
 ### MacOS
 
@@ -60,16 +61,17 @@ $ sudo mv buffalo /usr/local/bin/buffalo
 # or if you have ~/bin folder setup in the environment PATH variable
 $ mv buffalo ~/bin/buffalo
 ```
+If you need Sqlite support use a [custom installation](#custom-installation-with-sqlite3-support).
 
 ## Scoop (Windows)
-Buffalo can be installed using the [Scoop](http://scoop.sh/) package manager:
+Buffalo can be installed _(w/o [_Sqlite support_](#custom-installation-with-sqlite3-support))_ using the [Scoop](http://scoop.sh/) package manager:
 
 ```powershell
 PS C:\> scoop install buffalo
 ```
 
 ## Chocolatey (Windows)
-Buffalo can be installed using the [Chocolatey](https://chocolatey.org/packages/buffalo) package manager. Versions on Chocolatey are published with a potential delay and must go through moderation before they are available:
+Buffalo can be installed _(w/o [_Sqlite support_](#custom-installation-with-sqlite3-support))_ using the [Chocolatey](https://chocolatey.org/packages/buffalo) package manager. Versions on Chocolatey are published with a potential delay and must go through moderation before they are available:
 
 ```powershell
 PS C:\> choco install buffalo
@@ -77,7 +79,7 @@ PS C:\> choco install buffalo
 
 ## Homebrew (macOS)
 
-On macOS, you can also install Buffalo with [Homebrew](https://brew.sh/). After you have Homebrew [installed](https://docs.brew.sh/Installation), you can easily install Buffalo:
+On macOS, you can also install Buffalo _(w/o [_Sqlite support_](#custom-installation-with-sqlite3-support))_ using [Homebrew](https://brew.sh/). After you have Homebrew [installed](https://docs.brew.sh/Installation), you can easily install Buffalo:
 
 ```bash
 brew install gobuffalo/tap/buffalo
@@ -87,13 +89,14 @@ brew install gobuffalo/tap/buffalo
 
 [GoFish](https://gofi.sh/index.html) is a cross-platform systems package manager, that works across Windows, MacOSX and Linux.
 
-After you have GoFish [installed](https://gofi.sh/index.html#install), you can very simply install Buffalo:
+After you have GoFish [installed](https://gofi.sh/index.html#install), you can install Buffalo _(w/o [_Sqlite support_](#custom-installation-with-sqlite3-support))_ very simply with:
 
 ```bash
 $ gofish install buffalo
 ==> Installing buffalo...
 🐠  buffalo <%= version %>: installed in 3.223672926s
 ```
+
 
 ## Custom installation **with** SQLite3 Support
 

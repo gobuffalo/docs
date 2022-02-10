@@ -130,26 +130,27 @@ Ces instructions peuvent également être utilisées pour mettre à jour votre v
 Vous pouvez vérifier que votre installation fonctionne, en exécutant la commande `buffalo` dans un terminal (ou console) :
 
 ```bash
-$ buffalo
-Helps you build your Buffalo applications that much easier!
+$ buffalo help
+Build Buffalo applications with ease
 
 Usage:
   buffalo [command]
 
 Available Commands:
-  build       Builds a Buffalo binary, including bundling of assets (packr & webpack)
-  db          A tasty treat for all your database needs
-  destroy     Allows to destroy generated code.
-  dev         Runs your Buffalo app in 'development' mode
-  generate    A collection of generators to make life easier
+  build       Build the application binary, including bundling of assets (packr & webpack)
+  destroy     Destroy generated components
+  dev         Run the Buffalo app in 'development' mode
+  fix         Attempt to fix a Buffalo application's API to match version v0.16.17
+  generate    Generate application components
   help        Help about any command
-  info        Prints off diagnostic information useful for debugging.
+  info        Print diagnostic information (useful for debugging)
   new         Creates a new Buffalo application
-  setup       Setups a newly created, or recently checked out application.
-  task        Runs your grift tasks
-  test        Runs the tests for your Buffalo app
-  update      will attempt to upgrade a Buffalo application to version v<%= version %>
-  version     Print the version number of buffalo
+  plugins     tools for working with buffalo plugins
+  routes      Print all defined routes
+  setup       Setup a newly created, or recently checked out application.
+  task        Run grift tasks
+  test        Run the tests for the Buffalo app. Use --force-migrations to skip schema load.
+  version     Print the version information
 
 Flags:
   -h, --help   help for buffalo

@@ -26,18 +26,19 @@ $ brew install gobuffalo/tap/pop
 ```
 
 ### Depuis les sources
+
+Pour go version 1.16 et versions ultérieures,
+
 **Sans** support pour sqlite 3 :
 
 ```bash
-$ go get github.com/gobuffalo/pop/...
-$ go install github.com/gobuffalo/pop/soda
+$ go install github.com/gobuffalo/pop/v6/soda@latest
 ```
 
 **Avec** support pour sqlite 3 (nécessite un compilateur C, GCC ou équivalent) :
 
 ```bash
-$ go get -u -v -tags sqlite github.com/gobuffalo/pop/...
-$ go install -tags sqlite github.com/gobuffalo/pop/soda
+$ go install -tags sqlite github.com/gobuffalo/pop/v6/soda@latest
 ```
 
 Si vous ne compilez pas votre code avec `buffalo build` (donc vous n'utilisez probablement pas Buffalo), vous devrez aussi passer l'option `-tags sqlite` à `go build` lors de la compilation.

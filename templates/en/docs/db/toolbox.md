@@ -21,23 +21,24 @@ Place it somewhere in your `PATH`, and ensure the `soda` binary is executable.
 
 ### Homebrew (macOS)
 
-```bash
+```console
 $ brew install gobuffalo/tap/pop
 ```
 
 ### From source
+
+For go version 1.16 and later,
+
 **Without** sqlite 3 support:
 
-```bash
-$ go get github.com/gobuffalo/pop/...
-$ go install github.com/gobuffalo/pop/soda
+```console
+$ go install github.com/gobuffalo/pop/v6/soda@latest
 ```
 
 **With** sqlite 3 support (requires GCC or equivalent C compiler):
 
-```bash
-$ go get -u -v -tags sqlite github.com/gobuffalo/pop/...
-$ go install -tags sqlite github.com/gobuffalo/pop/soda
+```console
+$ go install -tags sqlite github.com/gobuffalo/pop/v6/soda@latest
 ```
 
 If you're not building your code with `buffalo build`, you'll also have to pass `-tags sqlite` to `go build` when building your program.
@@ -46,13 +47,13 @@ If you're not building your code with `buffalo build`, you'll also have to pass 
 
 Once the `database.yml` has been configured with the appropriate settings, and the database server is running, Soda can create all of the databases in the `database.yml` file with a simple command:
 
-```bash
+```console
 $ soda create -a
 ```
 
 You can also create just one of the configured databases by using the `-e` flag and the name of the database:
 
-```bash
+```console
 $ soda create -e test
 ```
 
@@ -60,12 +61,12 @@ $ soda create -e test
 
 Soda can drop all of your databases, should you want to, with one command:
 
-```bash
+```console
 $ soda drop -a
 ```
 
 You can also drop just one of the configured databases by using the `-e` flag and the name of the database:
 
-```bash
+```console
 $ soda drop -e test
 ```

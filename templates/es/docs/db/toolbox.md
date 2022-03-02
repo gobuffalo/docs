@@ -11,18 +11,18 @@ Pop le ayuda a administrar las conexiones a la base de datos, pero también prop
 
 ## Instalar soporte CLI
 
+Para go versión 1.16 y posteriores,
+
 **Sin** compatibilidad con sqlite 3:
 
 ```bash
-$ go get github.com/gobuffalo/pop/...
-$ go install github.com/gobuffalo/pop/soda
+$ go install github.com/gobuffalo/pop/v6/soda@latest
 ```
 
 **Con** compatibilidad con sqlite 3 (requiere GCC o compilador de C equivalente):
 
 ```bash
-$ go get -u -v -tags sqlite github.com/gobuffalo/pop/...
-$ go install -tags sqlite github.com/gobuffalo/pop/soda
+$ go install -tags sqlite github.com/gobuffalo/pop/v6/soda@latest
 ```
 
 Si no está construyendo su código con `buffalo build`, también tendrás que pasar `-tags sqlite` a `go build` cuando construya su programa.

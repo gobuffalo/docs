@@ -45,7 +45,7 @@ Since `v0.10.3`, pre-compiled archives are provided with each release. If you do
 
 ### GNU / Linux
 
-```bash
+```console
 $ wget https://github.com/gobuffalo/cli/releases/download/v<%= version %>/buffalo_<%= version %>_Linux_x86_64.tar.gz
 $ tar -xvzf buffalo_<%= version %>_Linux_x86_64.tar.gz
 $ sudo mv buffalo /usr/local/bin/buffalo
@@ -53,7 +53,7 @@ $ sudo mv buffalo /usr/local/bin/buffalo
 
 ### MacOS
 
-```bash
+```console
 $ curl -OL https://github.com/gobuffalo/cli/releases/download/v<%= version %>/buffalo_<%= version %>_Darwin_x86_64.tar.gz
 $ tar -xvzf buffalo_<%= version %>_Darwin_x86_64.tar.gz
 $ sudo mv buffalo /usr/local/bin/buffalo
@@ -79,7 +79,7 @@ PS C:\> choco install buffalo
 
 On macOS, you can also install Buffalo with [Homebrew](https://brew.sh/). After you have Homebrew [installed](https://docs.brew.sh/Installation), you can easily install Buffalo:
 
-```bash
+```console
 brew install gobuffalo/tap/buffalo
 ```
 
@@ -89,7 +89,7 @@ brew install gobuffalo/tap/buffalo
 
 After you have GoFish [installed](https://gofi.sh/index.html#install), you can very simply install Buffalo:
 
-```bash
+```console
 $ gofish install buffalo
 ==> Installing buffalo...
 🐠  buffalo <%= version %>: installed in 3.223672926s
@@ -101,8 +101,8 @@ $ gofish install buffalo
 
 To install Buffalo, ensure your `GOPATH` is defined, then:
 
-```bash
-$ go get -u -v -tags sqlite github.com/gobuffalo/cli/cmd/buffalo@v<%= version %>
+```console
+$ go install -tags sqlite github.com/gobuffalo/cli/cmd/buffalo@v<%= version %>
 ```
 
 **Windows Users**: Follow the installation guide at [https://blog.gobuffalo.io/install-buffalo-on-windows-10-e08b3aa304a3](https://blog.gobuffalo.io/install-buffalo-on-windows-10-e08b3aa304a3) to install a GCC for Windows 10. Alternatively, GCC can be installed with the [Scoop](http://scoop.sh/) package manager:
@@ -117,7 +117,7 @@ These instructions can also be used for upgrading to a newer version of Buffalo.
 
 ## Custom installation **without** SQLite3 Support
 
-```bash
+```console
 $ go install github.com/gobuffalo/cli/cmd/buffalo@v<%= version %>
 ```
 
@@ -129,7 +129,7 @@ These instructions can also be used for upgrading to a newer version of Buffalo.
 
 You can check if your installation is working, by executing the `buffalo` command in a terminal/command prompt:
 
-```bash
+```console
 $ buffalo
 Helps you build your Buffalo applications that much easier!
 

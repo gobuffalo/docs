@@ -1,0 +1,66 @@
+baseURL = "https://gobuffalo.io/"
+languageCode = "en-us"
+title = "The Buffalo Framework"
+defaultContentLanguage = 'en'
+
+[languages]
+  [languages.en]
+    languageName = "English"
+    languageCode = "en-us"
+    weight = 2
+    [languages.en.menu]
+    [[languages.en.menu.landing]]
+        name = 'Tutorials'
+        url = '/tutorials/'
+        weight = 1
+    [[languages.en.menu.landing]]
+        name = 'Support'
+        url = '/support/'
+        weight = 2
+    [[languages.en.menu.landing]]
+        name = 'Documentation'
+        url = '/documentation/'
+        weight = 3
+    [[languages.en.menu.landing]]
+        name = 'Github'
+        url = '/github/'
+        weight = 4
+    [[languages.en.menu.Blog]]
+        name = 'Blog'
+        url = '/blog/'
+        weight = 5
+    [[languages.en.menu.Store]]
+        name = 'Store'
+        url = '/store/'
+        weight = 6
+  
+  [languages.fr]
+    languageName = "English"
+    languageCode = "fr-fr"
+    weight = 1
+
+    [languages.fr.menu]
+        [[languages.fr.menu.landing]]
+            name = 'Tutoriels FR'
+            url = '/tutorials/'
+            weight = 1
+        [[languages.fr.menu.landing]]
+            name = 'Support'
+            url = '/support/'
+            weight = 2
+        [[languages.fr.menu.landing]]
+            name = 'Documentation'
+            url = '/documentation/'
+            weight = 3
+        [[languages.fr.menu.landing]]
+            name = 'GitHub'
+            url = '/github/'
+            weight = 4
+        [[languages.fr.menu.landing]]
+            name = 'Blog'
+            url = '/blog/'
+            weight = 5
+        [[languages.fr.menu.landing]]
+            name = 'Boutique'
+            url = '/store/'
+            weight = 6

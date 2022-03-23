@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#" lang="{{ .Language }}">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="robots" content="index,follow">
+
+		{{ $styles := resources.Get "css/home.css" | postCSS }}
+
+		{{ if .Site.IsServer }}
+		<link rel="stylesheet" href="{{ $styles.RelPermalink }}"/>
+		{{ else }}
+			{{ $styles := $styles | minify | fingerprint | resources.PostProcess }}
+			<link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}"/>
+		{{ end }}
+	
+	
+		<!-- Styles -->
+		<!-- <%= stylesheetTag("application.css") %>
+		<%= stylesheetTag("home.css") %> -->
+		<!-- Fonts -->
+		<!-- <link href="//fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet" type="text/css"> -->
+	  
+		<!-- Favicons -->
+		<!-- <link rel="icon" href="/assets/images/favicon.ico">
+		<link rel="apple-touch-icon-precomposed" sizes="57x57" href="/assets/images/apple-touch-icon-57x57.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/apple-touch-icon-114x114.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/images/apple-touch-icon-72x72.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/apple-touch-icon-144x144.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="120x120" href="/assets/images/apple-touch-icon-120x120.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="152x152" href="/assets/images/apple-touch-icon-152x152.png" />
+		<link rel="icon" type="image/png" href="/assets/images/favicon-32x32.png" sizes="32x32" />
+		<link rel="icon" type="image/png" href="/assets/images/favicon-16x16.png" sizes="16x16" /> -->
+	</head>
+
+	<body>
+		<div class="max-w-7xl mx-auto">
+			{{ block "header" . }}{{ end }}
+			{{ block "main" . }}{{end }}
+			{{ block "footer" . }}{{end }}
+		</div>		
+	</body>
+</html>

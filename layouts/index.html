@@ -1,0 +1,111 @@
+{{ define "header" }}
+    <header class="flex flex-row space-x-3 py-5">
+        <span class="flex-grow">
+            <a href="/">logo</a>
+        </span>
+        
+        <ul class="flex flex-row space-x-2">
+            {{ $currentPage := . }}
+            {{ range .Site.Menus.landing }}
+                {{ $menuItemURL := .URL | relLangURL }}
+                {{ $pageURL := $currentPage.RelPermalink | relLangURL }}
+                <li>
+                    <a href="{{ .URL }}" class="{{ if eq $menuItemURL $pageURL }}active{{ end }}">{{ .Name }}</a>
+                </li>
+                
+            {{ end }}    
+        </ul>
+        <span class="ml-5">
+            <a href="">Get started</a>
+        </span>
+    </header>
+{{ end }}
+
+{{ define "main" }}
+    <section>
+        <div>
+            <h1 class="text-5xl font-bold">{{ .Params.Tagline }}</h1>
+            <a href="#">{{.Params.topCTA}}</a>
+            <dl>
+                <dt>{{.Params.latestVersionLabel}}</dt>
+                <dd>v0.18.x</dd>
+
+                <dt>{{.Params.RequiresLabel}}</dt>
+                <dd>Go 1.16+</dd>
+            </dl>
+        </div>
+        <div>
+            video
+        </div>
+    </section>
+
+    <section>
+        <h2 class="text-2xl">{{.Params.FeaturesTitle}}</h2>
+        <ul>
+            {{ range where .Site.Pages "Params.type" "feature" }}
+                <li>   
+                    <h3>{{.Params.Title}}</h3>
+                    <p>{{.Content}}</p>
+                </li>
+            {{end}}
+        </ul>
+
+        <a href="#">{{.Params.FeaturesCTA}}</a>
+    </section>
+
+    <section>
+        This is the blog section
+    </section>
+
+    <section>
+        <h2 class="text-2xl">{{.Params.SponsorsTitle}}</h2>
+        <ul>
+            {{ range where .Site.Pages "Params.type" "sponsor" }}
+                <li>   
+                    <a href="{{.Params.Website}}">
+                        <img src="" alt="sponsor-logo">
+                        <h3>{{.Params.Name}}</h3>
+                    </a>
+                </li>
+            {{end}}
+        </ul>
+    </section>
+
+    <section>
+        <h2>{{.Params.CommunityTitle}}</h2>
+        <ul>
+            {{ range where .Site.Pages "Params.type" "community" }}
+                <li>   
+                    <a href="{{.Params.Website}}">
+                        <img src="" alt="community-logo">
+                        <h3>{{.Params.Name}}</h3>
+                    </a>
+                </li>
+            {{end}}
+        </ul>
+    </section>
+
+    
+{{ end }}
+
+{{ define "footer" }}
+    <footer>
+        <p>
+            <strong>{{.Params.Copyright}}</strong>
+        </p>
+        <p>
+            {{.Params.LogoCredits}}
+        </p>
+        <a href="">
+            <img src="https://github.com/gobuffalo/buffalo/workflows/Tests/badge.svg" alt="Build Status">
+        </a>
+
+
+        <a href="https://goreportcard.com/report/github.com/gobuffalo/buffalo" target="_blank" rel="noopener noreferrer">
+            <img src="https://goreportcard.com/badge/github.com/gobuffalo/buffalo" alt="Go Report Card">
+        </a>
+        <a href="https://www.codetriage.com/gobuffalo/buffalo" target="_blank" rel="noopener noreferrer">
+            <img src="https://www.codetriage.com/gobuffalo/buffalo/badges/users.svg" alt="Open Source Helpers">
+        </a>
+    </footer>
+{{ end }}

@@ -1,7 +1,7 @@
 ---
 type: feature
 title: Background Workers
-icon: "fa-check-square-o"
+icon: "images/landing_icons/task.svg"
 ---
 If you're familiar with Rake tasks from Ruby, you'll be right at home using Grift. Seeding a database, running a cleaning job are now at hand!
 

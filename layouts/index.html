@@ -57,7 +57,11 @@
             <h2 class="text-center text-4xl mb-5 font-bold">{{.Params.FeaturesTitle}}</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 py-10 gap-x-5 gap-y-5">
                 {{ range where .Site.Pages "Params.type" "feature" }}
+                    
                     <div class="bg-white p-8 text-center rounded-lg shadow-lg">   
+                        {{- $image := resources.Get .Params.Icon -}}  
+                        <img src="{{ $image.RelPermalink }}" alt="feature-icon" class="mx-auto mb-4"> 
+
                         <h3 class="uppercase text-md text-red-500 font-bold mb-2">{{.Params.Title}}</h3>
                         <p class="text-x">{{.Content}}</p>
                     </div>

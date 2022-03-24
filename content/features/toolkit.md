@@ -1,7 +1,7 @@
 ---
 type: feature
 title: Buffalo Toolkit
-icon: "fa-check-square-o"
+icon: "images/landing_icons/toolbox.svg"
 ---
 Writing a web application module always begins with the same tasks. Buffalo provides you a simple toolbox, the buffalo command, to generate many parts of your app and run usual tasks.
 

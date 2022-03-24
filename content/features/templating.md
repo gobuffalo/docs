@@ -1,7 +1,7 @@
 ---
 type: feature
 title: Templating
-icon: "fa-database"
+icon: "images/landing_icons/templating.svg"
 ---
 
 Write your templates with Plush, using a Rails-like syntax. Extend its features using custom helpers.

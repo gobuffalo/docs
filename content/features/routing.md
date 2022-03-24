@@ -1,7 +1,7 @@
 ---
 type: feature
 title: Routing
-icon: "fa-code"
+icon: "images/landing_icons/routing.svg"
 ---
 
 Buffalo uses Gorilla toolkit to manage routes, sessions, cookies...

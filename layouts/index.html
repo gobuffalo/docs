@@ -33,20 +33,21 @@
         <div class="flex flex-row">
             <div class="max-w-2xl">
                 <h1 class="text-6xl font-bold mb-10">{{ .Params.Tagline }}</h1>
-                <a href="#" class="bg-red-500 p-4 px-6 inline-block rounded-full text-white mb-5">{{.Params.topCTA}}</a>
+                <a href="#" class="bg-red-500 p-4 px-6 inline-block rounded-full text-white mb-8">{{.Params.topCTA}}</a>
                 <ul class="space-y-3">
                     <li>
-                        <span class="bg-gray-300 rounded-full inline-block p-4 py-2 mr-2">{{.Params.latestVersionLabel}}</span>
-                        <span class="inlineblock">v0.18.x</span>
+                        <span class="w-36 inline-block">{{.Params.latestVersionLabel}}</span>
+                        <span class="bg-gray-300 rounded-full inline-block p-4 py-1.5">v0.18.x</span>
                     </li>
                     <li>
-                        <span class="bg-gray-300 rounded-full inline-block p-4 py-2 mr-2">{{.Params.RequiresLabel}}</span>
-                        <span class="inlineblock">Go 1.16+</span>
+                        <span class="w-36 inline-block">{{.Params.RequiresLabel}}</span>
+                        <span class="bg-gray-300 rounded-full inline-block p-4 py-1.5">Go 1.16+</span>
                     </li>
                 </ul>
             </div>
-            <div>
-                video
+            <div class="flex-grow justify-center">
+                {{- $image := (resources.Get "images/logo.svg") -}}  
+                <img src="{{$image.RelPermalink}}" alt="sponsor-logo" class="w-96 mx-auto">
             </div>
         </div>
     </section>
@@ -54,7 +55,7 @@
     <section class="bg-gray-100">
         <div class="container py-20 text-center">
             <h2 class="text-center text-4xl mb-5 font-bold">{{.Params.FeaturesTitle}}</h2>
-            <div class="grid grid-cols-4 py-10 gap-x-5 gap-y-5">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 py-10 gap-x-5 gap-y-5">
                 {{ range where .Site.Pages "Params.type" "feature" }}
                     <div class="bg-white p-8 text-center rounded-lg shadow-lg">   
                         <h3 class="uppercase text-md text-red-500 font-bold mb-2">{{.Params.Title}}</h3>
@@ -105,7 +106,7 @@
     <section class="text-center py-20">
         <h3 class="text-4xl font-bold mb-4">Use Buffalo at work?</h3>
         <p class="mb-3 text-xl">Ask your manager or marketing team if they'd help support our project.</p>
-        <a href="/" class="bg-red-500 py-2 px-3 inline-block rounded-full text-white">Become a patreon</a>
+        <a href="/" class="bg-red-500 py-2 px-4 inline-block rounded-full text-white">Become a patreon</a>
     </section>
 
     <section class="bg-blue-900 text-white text-center py-20">

@@ -41,7 +41,7 @@ defaultContentLanguage = 'en'
 
     [languages.fr.menu]
         [[languages.fr.menu.landing]]
-            name = 'Tutoriels FR'
+            name = 'Tutoriels'
             url = '/tutorials/'
             weight = 1
         [[languages.fr.menu.landing]]

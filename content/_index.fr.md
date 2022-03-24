@@ -12,5 +12,5 @@ sponsorsTitle: "Sponsors Platine"
 
 
 copyRight: "Copyright © 2022 Buffalo. Tous droits réservés."
-logoCredits: "Gopher Buffalo conçu par (Ashley McNamara)[https://twitter.com/ashleymcnamara] — Gopher originel conçu par Renee French."
+logoCredits: "Gopher Buffalo conçu par [Ashley McNamara](https://twitter.com/ashleymcnamara) — Gopher originel conçu par Renee French."
 ---

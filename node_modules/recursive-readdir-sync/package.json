@@ -1,0 +1,33 @@
+{
+  "name": "recursive-readdir-sync",
+  "version": "1.0.6",
+  "description": "NodeJS library to recursively read a directory path's contents synchronously",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/battlejj/recursive-readdir-sync"
+  },
+  "keywords": [
+    "readdir",
+    "recursive",
+    "readdir",
+    "directory",
+    "sync",
+    "read",
+    "sync"
+  ],
+  "author": "Jeremy Battle",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/battlejj/recursive-readdir-sync/issues"
+  },
+  "devDependencies": {
+    "chai": "^1.9.1",
+    "lodash": "^3.3.0",
+    "mocha": "^2.1.0"
+  },
+  "homepage": "https://github.com/battlejj/recursive-readdir-sync"
+}

@@ -8,6 +8,13 @@
     max-width: 1500px;
 }
 
+.hero {
+    background-image: url('/images/bg.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center top;
+}
+
 .sponsors {
     background-color: #FFFBF9;
 }

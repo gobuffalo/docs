@@ -29,27 +29,30 @@
 {{ end }}
 
 {{ define "main" }}
-    <section class="container py-20">
-        <div class="flex flex-row">
-            <div class="max-w-2xl">
-                <h1 class="text-6xl font-bold mb-10">{{ .Params.Tagline }}</h1>
-                <a href="#" class="bg-red-500 p-3 px-6 inline-block rounded-full text-white mb-8 uppercase font-bold">{{.Params.topCTA}}</a>
-                <ul class="space-y-3">
-                    <li>
-                        <span class="w-36 inline-block">{{.Params.latestVersionLabel}}</span>
-                        <span class="bg-gray-300 rounded-full inline-block p-4 py-1.5">v0.18.x</span>
-                    </li>
-                    <li>
-                        <span class="w-36 inline-block">{{.Params.RequiresLabel}}</span>
-                        <span class="bg-gray-300 rounded-full inline-block p-4 py-1.5">Go 1.16+</span>
-                    </li>
-                </ul>
-            </div>
-            <div class="flex-grow justify-center">
-                {{- $image := (resources.Get "images/logo.svg") -}}  
-                <img src="{{$image.RelPermalink}}" alt="sponsor-logo" class="w-96 mx-auto">
+    <section class="py-20 hero">
+        <div class="container">
+            <div class="flex flex-row">
+                <div class="max-w-2xl text-white">
+                    <h1 class="text-6xl font-bold mb-10 ">{{ .Params.Tagline }}</h1>
+                    <a href="#" class="bg-red-500 p-3 px-6 inline-block rounded-full text-white mb-8 uppercase font-bold">{{.Params.topCTA}}</a>
+                    <ul class="space-y-3">
+                        <li>
+                            <span class="w-36 inline-block text-xl">{{.Params.latestVersionLabel}}:</span>
+                            <span class="bg-gray-300 rounded-full inline-block p-4 py-1.5 font-bold text-gray-800">v0.18.5</span>
+                        </li>
+                        <li>
+                            <span class="w-36 inline-block text-xl">{{.Params.RequiresLabel}}:</span>
+                            <span class="bg-gray-300 rounded-full inline-block p-4 py-1.5 font-bold text-gray-800">Go 1.16+</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex-grow justify-center">
+                    {{- $image := (resources.Get "images/logo.svg") -}}  
+                    <img src="{{$image.RelPermalink}}" alt="sponsor-logo" class="w-96 mx-auto">
+                </div>
             </div>
         </div>
+
     </section>
 
     <section class="bg-gray-100">

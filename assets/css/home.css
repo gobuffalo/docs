@@ -9,10 +9,11 @@
 }
 
 .hero {
-    background-image: url('/images/bg.png');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center top;
+    background: #0a193f url('/images/bg.png') no-repeat left bottom;
+    background-size: cover;
+    box-sizing: border-box;
+    padding: 150px 0px;
+    position: relative;
 }
 
 .sponsors {

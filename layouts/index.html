@@ -1,6 +1,6 @@
 {{ define "header" }}
 
-    <header class="bg-blue-900 ">
+    <header class="bg-gray-800">
         <div class="container flex flex-row items-center space-x-8 py-5 ">
             <span class="flex-grow text-white">
                 <a href="/" class="flex flex-row items-center">
@@ -32,9 +32,9 @@
     <section class="py-20 hero">
         <div class="container">
             <div class="flex flex-row">
-                <div class="max-w-2xl text-white">
-                    <h1 class="text-6xl font-bold mb-10 ">{{ .Params.Tagline }}</h1>
-                    <a href="#" class="bg-red-500 p-3 px-6 inline-block rounded-full text-white mb-8 uppercase font-bold">{{.Params.topCTA}}</a>
+                <div class="max-w-2xl text-white text-center md:text-left">
+                    <h1 class="text-center md:text-left text-6xl font-bold mb-10 ">{{ .Params.Tagline }}</h1>
+                    <a href="#" class=" bg-red-500 p-3 px-6 inline-block rounded-full text-white mb-8 uppercase font-bold">{{.Params.topCTA}}</a>
                     <ul class="space-y-3">
                         <li>
                             <span class="w-48 inline-block text-xl">{{.Params.latestVersionLabel}}:</span>
@@ -46,7 +46,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="flex-grow justify-center">
+                <div class="hidden lg:flex lg:flex-grow justify-center">
                     {{- $image := (resources.Get "images/logo.svg") -}}  
                     <img src="{{$image.RelPermalink}}" alt="sponsor-logo" class="w-96 mx-auto">
                 </div>

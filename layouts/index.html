@@ -29,18 +29,18 @@
 {{ end }}
 
 {{ define "main" }}
-    <section class="container py-10">
+    <section class="container py-20">
         <div class="flex flex-row">
             <div class="max-w-2xl">
-                <h1 class="text-5xl font-bold mb-3">{{ .Params.Tagline }}</h1>
+                <h1 class="text-6xl font-bold mb-10">{{ .Params.Tagline }}</h1>
                 <a href="#" class="bg-red-500 p-4 px-6 inline-block rounded-full text-white mb-5">{{.Params.topCTA}}</a>
                 <ul class="space-y-3">
                     <li>
-                        <span class="bg-gray-300 rounded-full inline-block p-3 py-2 mr-2">{{.Params.latestVersionLabel}}</span>
+                        <span class="bg-gray-300 rounded-full inline-block p-4 py-2 mr-2">{{.Params.latestVersionLabel}}</span>
                         <span class="inlineblock">v0.18.x</span>
                     </li>
                     <li>
-                        <span class="bg-gray-300 rounded-full inline-block p-3 py-2 mr-2">{{.Params.RequiresLabel}}</span>
+                        <span class="bg-gray-300 rounded-full inline-block p-4 py-2 mr-2">{{.Params.RequiresLabel}}</span>
                         <span class="inlineblock">Go 1.16+</span>
                     </li>
                 </ul>
@@ -49,57 +49,71 @@
                 video
             </div>
         </div>
-        
     </section>
 
-    <section class="container">
-
-        <h2 class="text-center text-3xl mb-10 font-bold">{{.Params.FeaturesTitle}}</h2>
-        <ul>
-            {{ range where .Site.Pages "Params.type" "feature" }}
-                <li>   
-                    <h3>{{.Params.Title}}</h3>
-                    <p>{{.Content}}</p>
-                </li>
-            {{end}}
-        </ul>
-
-        <a href="#">{{.Params.FeaturesCTA}}</a>
+    <section class="bg-gray-100">
+        <div class="container py-20 text-center">
+            <h2 class="text-center text-4xl mb-5 font-bold">{{.Params.FeaturesTitle}}</h2>
+            <div class="grid grid-cols-4 py-10 gap-x-5 gap-y-5">
+                {{ range where .Site.Pages "Params.type" "feature" }}
+                    <div class="bg-white p-8 text-center rounded-lg shadow-lg">   
+                        <h3 class="uppercase text-md text-red-500 font-bold mb-2">{{.Params.Title}}</h3>
+                        <p class="text-x">{{.Content}}</p>
+                    </div>
+                {{end}}
+            </div>
+            
+            <a href="#" class="bg-red-500 p-4 px-6 inline-block rounded-full text-white mb-5">{{.Params.FeaturesCTA}}</a>
+        </div>
     </section>
 
-    <section>
-        This is the blog section
+    <section class="bg-blue-800 py-10">
+        <div class="container text-white text-center">
+            This is the blog section
+        </div>
     </section>
 
-    <section class="container py-10 text-center">
-        <h2 class="text-3xl mb-10 font-bold">{{.Params.SponsorsTitle}}</h2>
-        <ul class="flex flex-row space-x-10 justify-center">
-            {{ range where .Site.Pages "Params.type" "sponsor" }}
-                <li class="">   
-                    <a href="{{.Params.Website}}" class="flex flex-col items-center space-y-3">
-                        {{- $image := (resources.Get .Params.Image).Resize "400x webp" -}}  
-                        <img src="{{$image.RelPermalink}}" alt="sponsor-logo" class="w-52">
-                        <h3 class="text-xl">{{.Params.Name}}</h3>
-                    </a>
-                </li>
-            {{end}}
-        </ul>
-    </section>
-
-    <section >
+    <section class="pt-12 pb-10 text-center sponsors">
         <div class="container">
-            <h2>{{.Params.CommunityTitle}}</h2>
-            <ul>
-                {{ range where .Site.Pages "Params.type" "community" }}
-                    <li>   
-                        <a href="{{.Params.Website}}">
-                            <img src="" alt="community-logo">
-                            <h3>{{.Params.Name}}</h3>
+            <h2 class="text-3xl mb-10 font-bold">{{.Params.SponsorsTitle}}</h2>
+            <ul class="flex flex-row space-x-10 justify-center">
+                {{ range where .Site.Pages "Params.type" "sponsor" }}
+                    <li class="">   
+                        <a href="{{.Params.Website}}" class="flex flex-col items-center space-y-3">
+                            {{- $image := (resources.Get .Params.Image).Resize "400x webp" -}}  
+                            <img src="{{$image.RelPermalink}}" alt="sponsor-logo" class="w-36">
+                            <h3 class="text-xl font-medium">{{.Params.Name}}</h3>
                         </a>
                     </li>
                 {{end}}
+
+                <li class="">   
+                    <a href="/" class="flex flex-col items-center space-y-3">
+                        <div class="w-36 text-blue-400 border-2 border-dashed border-blue-400"> 
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-36 w-36" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+                            </svg>
+                        </div>
+                        
+                        <h3 class="text-xl font-medium">Your company</h3>
+                    </a>
+                </li>
             </ul>
         </div>
+    </section>
+
+    <section class="text-center py-20">
+        <h3 class="text-4xl font-bold mb-4">Use Buffalo at work?</h3>
+        <p class="mb-3 text-xl">Ask your manager or marketing team if they'd help support our project.</p>
+        <a href="/" class="bg-red-500 py-2 px-3 inline-block rounded-full text-white">Become a patreon</a>
+    </section>
+
+    <section class="bg-blue-900 text-white text-center py-20">
+        <div class="container">
+            <h3 class="text-4xl font-bold mb-4">Want to know more about Buffalo?</h3>
+            <p class="mb-3 text-xl">Get all the support and resources in our documentation.</p>
+            <a href="/" class="bg-red-500 py-2 px-3 text-sm inline-block rounded-full text-white">GO TO THE DOCUMENTATION</a> 
+        </div> 
     </section>
 
     

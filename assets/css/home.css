@@ -3,5 +3,11 @@
 @tailwind utilities;
 
 .container {
-    @apply max-w-7xl mx-auto;
+    @apply px-10;
+    @apply mx-auto;
+    max-width: 1500px;
+}
+
+.sponsors {
+    background-color: #FFFBF9;
 }

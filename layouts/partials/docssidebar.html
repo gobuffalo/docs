@@ -18,19 +18,19 @@
             
         {{ end }}    
     </ul>
-    
+
     {{ with .Site.GetPage "section" "getting_started" }}
         {{ $section := . }}
         <h2 class="text-gray-800 font-bold">{{ .Title }}</h2>
         <ul class="mb-3 pl-3 py-2 space-y-2 ">
             {{ range .Site.Pages }}     
-                {{ if .InSection $section  }}   
+                {{ if .InSection $section }}   
                     <li><a href="{{.RelPermalink}}">{{ .Params.Name }}</a></li>
                 {{ end }}
             {{ end }}
         </ul>    
     {{ end }}
-
+    
     {{ with .Site.GetPage "section" "request_handling" }}
         {{ $section := . }}
         <h2 class="text-gray-800 font-bold">{{ .Title }}</h2>

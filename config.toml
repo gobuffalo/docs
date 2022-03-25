@@ -3,6 +3,8 @@ languageCode = "en-us"
 title = "The Buffalo Framework"
 defaultContentLanguage = 'en'
 
+[params]
+    docsSections = ["getting_started", "request_handling"]
 [languages]
   [languages.en]
     languageName = "English"

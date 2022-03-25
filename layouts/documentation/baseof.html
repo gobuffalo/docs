@@ -30,7 +30,7 @@
 				
 				<ul class="flex flex-row space-x-5 text-white">
 					{{ $currentPage := . }}
-					{{ range .Site.Menus.landing }}
+					{{ range .Site.Menus.top }}
 						{{ $menuItemURL := .URL | relLangURL }}
 						{{ $pageURL := $currentPage.RelPermalink | relLangURL }}
 						<li>
@@ -48,8 +48,8 @@
 		<main class="bg-gray-100 py-7">
 			<div class="container flex gap-6">
 				{{partial "docssidebar" .}}
-				<div class="flex-grow bg-white rounded-md p-7 ">
-					<div class="max-w-5xl content">
+				<div class="flex-grow bg-white rounded-md p-9 ">
+					<div class="max-w-5xl content mt-2">
 						{{ block "main" . }}{{end }}
 					</div>
 				</div>

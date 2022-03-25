@@ -12,7 +12,7 @@
             
             <ul class="flex flex-row space-x-5 text-white">
                 {{ $currentPage := . }}
-                {{ range .Site.Menus.landing }}
+                {{ range .Site.Menus.top }}
                     {{ $menuItemURL := .URL | relLangURL }}
                     {{ $pageURL := $currentPage.RelPermalink | relLangURL }}
                     <li>

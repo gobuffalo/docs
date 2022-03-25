@@ -51,6 +51,18 @@
         </ul>    
     {{ end }}
 
+    {{ with .Site.GetPage "section" "database" }}
+    {{ $section := . }}
+    <h2 class="text-gray-800 font-bold">{{ .Title }}</h2>
+    <ul class="mb-3 pl-2 py-2 space-y-2 ">
+        {{ range .Site.Pages }}     
+            {{ if .InSection $section }}   
+                <li><a href="{{.RelPermalink}}">{{ .Params.Name }}</a></li>
+            {{ end }}
+        {{ end }}
+    </ul>    
+{{ end }}
+
     
     
 

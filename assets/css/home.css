@@ -69,3 +69,7 @@
 .content ul li {
     @apply ml-6;
 }
+
+.content a {
+    @apply text-blue-500 underline;
+}

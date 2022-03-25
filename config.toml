@@ -23,15 +23,15 @@ defaultContentLanguage = 'en'
         weight = 3
     [[languages.en.menu.landing]]
         name = 'Github'
-        url = '/github/'
+        url = 'https://github.com/gobuffalo'
         weight = 4
     [[languages.en.menu.Blog]]
         name = 'Blog'
-        url = '/blog/'
+        url = 'https://blog.gobuffalo.io'
         weight = 5
     [[languages.en.menu.Store]]
         name = 'Store'
-        url = '/store/'
+        url = 'https://store.gobuffalo.io'
         weight = 6
   
   [languages.fr]
@@ -54,13 +54,13 @@ defaultContentLanguage = 'en'
             weight = 3
         [[languages.fr.menu.landing]]
             name = 'GitHub'
-            url = '/github/'
+            url = 'https://github.com/gobuffalo'
             weight = 4
         [[languages.fr.menu.landing]]
             name = 'Blog'
-            url = '/blog/'
+            url = 'https://blog.gobuffalo.io'
             weight = 5
         [[languages.fr.menu.landing]]
             name = 'Boutique'
-            url = '/store/'
+            url = 'https://store.gobuffalo.io'
             weight = 6

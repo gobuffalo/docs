@@ -14,24 +14,20 @@
 			{{ $styles := $styles | minify | fingerprint | resources.PostProcess }}
 			<link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}"/>
 		{{ end }}
-	
-	
-		<!-- Styles -->
-		<!-- <%= stylesheetTag("application.css") %>
-		<%= stylesheetTag("home.css") %> -->
-		<!-- Fonts -->
-		<!-- <link href="//fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet" type="text/css"> -->
 	  
 		<!-- Favicons -->
-		<!-- <link rel="icon" href="/assets/images/favicon.ico">
-		<link rel="apple-touch-icon-precomposed" sizes="57x57" href="/assets/images/apple-touch-icon-57x57.png" />
-		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/apple-touch-icon-114x114.png" />
-		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/images/apple-touch-icon-72x72.png" />
-		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/apple-touch-icon-144x144.png" />
-		<link rel="apple-touch-icon-precomposed" sizes="120x120" href="/assets/images/apple-touch-icon-120x120.png" />
-		<link rel="apple-touch-icon-precomposed" sizes="152x152" href="/assets/images/apple-touch-icon-152x152.png" />
-		<link rel="icon" type="image/png" href="/assets/images/favicon-32x32.png" sizes="32x32" />
-		<link rel="icon" type="image/png" href="/assets/images/favicon-16x16.png" sizes="16x16" /> -->
+		<link rel="icon" href="{{(resources.Get "images/favicon.ico" ).RelPermalink }}" />
+		<link rel="icon" type="image/png" href="{{ (resources.Get "images/favicon-32x32.png" ).RelPermalink }}" sizes="32x32" />
+
+		<link rel="apple-touch-icon-precomposed" sizes="57x57" href="{{ (resources.Get "images/apple-touch-icon-57x57.png" ).RelPermalink }}" />
+		<link rel="apple-touch-icon-precomposed" sizes="57x57" href="{{ (resources.Get "images/apple-touch-icon-57x57.png" ).RelPermalink }}" />
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ (resources.Get "images/apple-touch-icon-114x114.png" ).RelPermalink }}" />
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ (resources.Get "images/apple-touch-icon-72x72.png" ).RelPermalink }}" />
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ (resources.Get "images/apple-touch-icon-144x144.png" ).RelPermalink }}" />
+		<link rel="apple-touch-icon-precomposed" sizes="120x120" href="{{ (resources.Get "images/apple-touch-icon-120x120.png" ).RelPermalink }}" />
+		<link rel="apple-touch-icon-precomposed" sizes="152x152" href="{{ (resources.Get "images/apple-touch-icon-152x152.png" ).RelPermalink }}" />
+		
+		<link rel="icon" type="image/png" href="{{ (resources.Get "images/favicon-16x16.png" ).RelPermalink }}" sizes="16x16" />
 	</head>
 
 	<body>

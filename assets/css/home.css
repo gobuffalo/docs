@@ -24,3 +24,48 @@
 .docssidebar {
     width: 300px;
 }
+
+.content h1 {
+    @apply text-4xl font-bold mb-3;
+}
+
+.content h2 {
+    @apply text-2xl font-bold mb-3;
+}
+
+.content h3 {
+    @apply text-xl font-bold mb-3;
+}
+
+.content h4 {
+    @apply text-lg font-bold mb-3;
+}
+
+.content p {
+    @apply text-lg font-light mb-3;
+}
+
+.content .highlight {
+    @apply mb-3;
+}
+
+.content .highlight pre {
+    @apply p-3;
+}
+
+.content pre {
+    @apply p-3 overflow-scroll;
+}
+
+.content p code {
+    @apply bg-gray-200 p-1 rounded-md text-base;
+}
+
+
+.content ul {
+    @apply list-disc pl-3 mb-3;
+}
+
+.content ul li {
+    @apply ml-6;
+}

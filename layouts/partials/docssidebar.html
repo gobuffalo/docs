@@ -1,4 +1,4 @@
-<aside class="w-200 bg-gray-200 rounded-md p-5 docssidebar">
+<aside class="w-200 bg-gray-200 rounded-md p-7 docssidebar">
     <ul class="mb-5 space-y-1">
         {{ $currentPage := . }}
         {{ range .Site.Menus.landing }}
@@ -22,7 +22,7 @@
     {{ with .Site.GetPage "section" "getting_started" }}
         {{ $section := . }}
         <h2 class="text-gray-800 font-bold">{{ .Title }}</h2>
-        <ul class="mb-3 pl-3 py-2 space-y-2 ">
+        <ul class="mb-3 pl-2 py-2 space-y-2 ">
             {{ range .Site.Pages }}     
                 {{ if .InSection $section }}   
                     <li><a href="{{.RelPermalink}}">{{ .Params.Name }}</a></li>
@@ -34,7 +34,7 @@
     {{ with .Site.GetPage "section" "request_handling" }}
         {{ $section := . }}
         <h2 class="text-gray-800 font-bold">{{ .Title }}</h2>
-        <ul class="mb-3 pl-3 py-2 space-y-2 ">
+        <ul class="mb-3 pl-2 py-2 space-y-2 ">
             {{ range .Site.Pages }}     
                 {{ if .InSection $section }}   
                     <li><a href="{{.RelPermalink}}">{{ .Params.Name }}</a></li>
@@ -46,7 +46,7 @@
     {{ with .Site.GetPage "section" "frontend-layer" }}
         {{ $section := . }}
         <h2 class="text-gray-800 font-bold">{{ .Title }}</h2>
-        <ul class="mb-3 pl-3 py-2 space-y-2 ">
+        <ul class="mb-3 pl-2 py-2 space-y-2 ">
             {{ range .Site.Pages }}     
                 {{ if .InSection $section }}   
                     <li><a href="{{.RelPermalink}}">{{ .Params.Name }}</a></li>

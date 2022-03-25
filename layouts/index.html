@@ -63,7 +63,10 @@
                     
                     <div class="bg-white p-8 text-center rounded-lg shadow-lg">   
                         {{- $image := resources.Get .Params.Icon -}}  
-                        <img src="{{ $image.RelPermalink }}" alt="feature-icon" class="mx-auto mb-4"> 
+                        <div class="h-20 my-4">
+                            <img src="{{ $image.RelPermalink }}" alt="feature-icon" class="mx-auto my-auto"> 
+                        </div>
+                        
 
                         <h3 class="uppercase text-md text-red-500 font-bold mb-2">{{.Params.Title}}</h3>
                         <p class="text-x">{{.Content}}</p>
@@ -84,20 +87,20 @@
     <section class="pt-12 pb-10 text-center sponsors">
         <div class="container">
             <h2 class="text-3xl mb-10 font-bold">{{.Params.SponsorsTitle}}</h2>
-            <ul class="flex flex-row space-x-10 justify-center">
+            <ul class="flex flex-col md:flex-row gap-16 justify-center">
                 {{ range where .Site.Pages "Params.type" "sponsor" }}
                     <li class="">   
-                        <a href="{{.Params.Website}}" class="flex flex-col items-center space-y-3">
+                        <a href="{{.Params.Website}}" class="flex flex-col items-center space-y-3 mb-10">
                             {{- $image := (resources.Get .Params.Image).Resize "400x webp" -}}  
-                            <img src="{{$image.RelPermalink}}" alt="sponsor-logo" class="w-36">
-                            <h3 class="text-xl font-medium">{{.Params.Name}}</h3>
+                            <img src="{{$image.RelPermalink}}" alt="sponsor-logo" class="w-40 md:w-36 mb-5">
+                            <h3 class="text-xl font-bold">{{.Params.Name}}</h3>
                         </a>
                     </li>
                 {{end}}
 
                 <li class="">   
                     <a href="/" class="flex flex-col items-center space-y-3">
-                        <div class="w-36 text-blue-400 border-2 border-dashed border-blue-400"> 
+                        <div class="w-36 text-blue-400 border-2 border-dashed border-blue-400 mb-4"> 
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-36 w-36" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
                             </svg>

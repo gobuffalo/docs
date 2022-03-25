@@ -10,6 +10,11 @@ defaultContentLanguage = 'en'
     languageName = "English"
     languageCode = "en-us"
     weight = 2
+
+    [languages.en.params]
+      copyRight = "Copyright © 2022 Buffalo. All rights reserved."
+      logoCredits = "Buffalo Gopher designed by [Ashley McNamara](https://twitter.com/ashleymcnamara) — Original Gopher designed by Renee French"
+
     [languages.en.menu]
     [[languages.en.menu.top]]
         name = 'Tutorials'
@@ -52,6 +57,10 @@ defaultContentLanguage = 'en'
     languageName = "English"
     languageCode = "fr-fr"
     weight = 1
+
+    [languages.fr.params]
+      copyRight = "Copyright © 2022 Buffalo. Tous droits réservés."
+      logoCredits = "Gopher Buffalo conçu par [Ashley McNamara](https://twitter.com/ashleymcnamara) — Gopher originel conçu par Renee French."
 
     [languages.fr.menu]
         [[languages.fr.menu.top]]

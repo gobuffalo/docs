@@ -1,0 +1,24 @@
+<footer class="bg-gray-800">
+    <div class="container flex py-5">
+        <div class="text-white">
+            <p>
+                <strong>{{.Site.Params.Copyright}}</strong>
+            </p>
+            <p>
+                {{.Site.Params.LogoCredits | markdownify }}
+            </p>
+        </div>
+
+        <div class="flex flex-row flex-grow space-x-6 justify-end">
+            <a href="https://github.com/gobuffalo/buffalo" alt="buffalo-repo">
+                <img src="https://github.com/gobuffalo/buffalo/workflows/Tests/badge.svg" alt="Build Status">
+            </a>
+            <a href="https://goreportcard.com/report/github.com/gobuffalo/buffalo" target="_blank" rel="noopener noreferrer">
+                <img src="https://goreportcard.com/badge/github.com/gobuffalo/buffalo" alt="Go Report Card">
+            </a>
+            <a href="https://www.codetriage.com/gobuffalo/buffalo" target="_blank" rel="noopener noreferrer">
+                <img src="https://www.codetriage.com/gobuffalo/buffalo/badges/users.svg" alt="Open Source Helpers">
+            </a>
+        </div>
+    </div>
+</footer>

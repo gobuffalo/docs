@@ -17,7 +17,7 @@
 	  
 		{{partial "favicons" .}}
 	</head>
-	<body>
+	<body class="flex flex-col min-h-screen">
 		<header class="bg-gray-800">
 			<div class="container flex flex-row items-center space-x-8 py-5 ">
 				<span class="flex-grow text-white">
@@ -45,7 +45,7 @@
 			</div>
 		</header>
 		
-		<main class="bg-gray-100 py-7">
+		<main class="bg-gray-100 py-7 flex-grow">
 			<div class="container flex gap-6">
 				{{partial "docssidebar" .}}
 				<div class="flex-grow bg-white rounded-md p-9 ">
@@ -58,6 +58,6 @@
 		</main>
 
 		
-		{{ block "footer" . }}{{end }}
+		{{ partial "footer.html" . }}
 	</body>
 </html>

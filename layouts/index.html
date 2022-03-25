@@ -114,16 +114,16 @@
     </section>
 
     <section class="text-center py-20">
-        <h3 class="text-4xl font-bold mb-4">Use Buffalo at work?</h3>
-        <p class="mb-3 text-xl">Ask your manager or marketing team if they'd help support our project.</p>
-        <a href="/" class="bg-red-500 py-2 px-4 inline-block rounded-full text-white uppercase font-bold">Become a patreon</a>
+        <h3 class="text-4xl font-bold mb-4">{{.Params.PatreonTitle}}</h3>
+        <p class="mb-3 text-xl">{{.Params.PatreonContent}}</p>
+        <a href="/" class="bg-red-500 py-2 px-4 inline-block rounded-full text-white uppercase font-bold">{{.Params.PatreonCTA}}</a>
     </section>
 
     <section class="bg-blue-900 text-white text-center py-20">
         <div class="container">
-            <h3 class="text-4xl font-bold mb-4">Want to know more about Buffalo?</h3>
-            <p class="mb-3 text-xl">Get all the support and resources in our documentation.</p>
-            <a href="/" class="bg-red-500 py-2 px-4 text-sm inline-block rounded-full text-white uppercase font-bold">GO TO THE DOCUMENTATION</a> 
+            <h3 class="text-4xl font-bold mb-4">{{.Params.DocsTitle}}</h3>
+            <p class="mb-3 text-xl">{{.Params.DocsContent}}</p>
+            <a href="/" class="bg-red-500 py-2 px-4 text-sm inline-block rounded-full text-white uppercase font-bold">{{.Params.DocsCTA}}</a> 
         </div> 
     </section>
 

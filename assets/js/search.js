@@ -2,6 +2,8 @@
 document.addEventListener('DOMContentLoaded', ()=>{  
   document.getElementById("search-button").addEventListener('click', showSearch);
   document.getElementById("search-overlay").addEventListener('click', hideSearch);
+  document.getElementById("close-search").addEventListener('click', hideSearch);
+
   document.getElementById("search-input").addEventListener('keyup', searchTerm);
   document.addEventListener('keydown', handleKeyCodes)
 });

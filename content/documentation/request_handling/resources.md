@@ -10,7 +10,7 @@ Often web applications need to build very similar ["CRUD"](https://en.wikipedia.
 
 The [`github.com/gobuffalo/buffalo#Resource`](https://godoc.org/github.com/gobuffalo/buffalo#Resource) interface allows Buffalo to map common routes and respond to common requests.
 
-<%= sinceVersion("0.14.1") %>
+{{< since "0.14.1" >}}
 
 ```go
 type Resource interface {
@@ -94,7 +94,7 @@ DELETE | /users/{user_id}/      | userPath     | coke/actions.UsersResource.Dest
 
 ## Optional Resource Methods
 
-<%= sinceVersion("0.14.1") %>
+{{< since "0.14.1" >}}
 
 In `v0.14.1` the [`github.com/gobuffalo/buffalo#Resource`](https://godoc.org/github.com/gobuffalo/buffalo#Resource) was made smaller with the following methods now being optional:
 
@@ -239,7 +239,7 @@ func (v BaseResource) Edit(c Context) error {
 
 ## Video Presentation
 
-<%= vimeo("212302823") %>
+{{< vimeo 212302823>}}
 
 ## Related Content
 

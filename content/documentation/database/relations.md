@@ -8,7 +8,7 @@ name: Associations and Relationships
 
 Associations are the Pop way to define **a relation between two objects in the database**. In this chapter, you'll learn how to define associations using struct tags; and how to manipulate them with the `Eager()` modifier.
 
-<%= vimeo("253683926") %>
+{{< vimeo 253683926>}}
 
 ## Example
 

@@ -36,6 +36,9 @@ Of course, you can configure any new connection you want, but Buffalo won't pick
 ## Generator
 
 <%= partial("en/docs/db/soda_buffalo_note.md") %>
+{{< note >}}
+**Note for Buffalo users**: `soda` commands are embedded into the `buffalo` command, behind the `pop` namespace. So every time you want to use a command from `soda`, just execute `buffalo pop` instead.
+{{< /note >}}
 
 You can generate a default configuration file using the init command:
 
@@ -61,9 +64,9 @@ pop.ConfigName = "my_pop_config.yml"
 
 ## Env vs detailed configuration
 
-<%= note() { %>
+{{< note >}}
 Note that the `database.yml` file is also a Go template, so you can use Go template syntax. There are two special functions that are included, `env` and `envOr`.
-<% } %>
+{{< /note >}}
 
 As you can see, you have two ways to configure a new connection:
 * The one used by the `development` connection is the most detailed. It allows you to set each available parameter, one by one.
@@ -79,9 +82,9 @@ Tries to get the `TEST_DATABASE_URL` value from environment, and defaults to `po
 
 This way, you can provide a default value for development purposes, and allow to reconfigure the database settings from an environment variable!
 
-<%= warning() { %>
+{{< warning >}}
 The `url` param for a connection will override any other connection param. Make sure you set all the settings you want from the URL string.
-<% } %>
+{{< /warning >}}
 
 For additional details, check the documentation for [github.com/gobuffalo/pop](https://github.com/gobuffalo/pop).
 
@@ -103,7 +106,7 @@ The database dialect to use with the connection. Accepted values are:
 
 ### driver
 
-<%= sinceVersion("4.11.2") %>
+{{< since "4.11.2" >}}
 
 Use this option to customize the database driver and override the default one used by Pop.
 
@@ -115,7 +118,7 @@ Here is the list of the default SQL drivers:
 
 ### encoding
 
-<%= sinceVersion("4.6.0") %>
+{{< since "4.6.0" >}}
 
 This option is currently only supported by the **mysql dialect**. This encoding will be used to create the database (if you create it using `soda`), and as the `collation` parameter for the connection string. If this option is omitted, the default value is `utf8mb4_general_ci`.
 

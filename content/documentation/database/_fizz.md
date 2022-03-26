@@ -38,6 +38,6 @@ Global Flags:
   -p, --path string     Path to the migrations folder (default "./migrations")
 ```
 
-<%= warning() { %>
+{{< warning >}}
 By default, the migration will create an UUID `id` that serves as the primary key, as well as `created_at` and `updated_at` datetime columns, so there is no need to create your own. These are the default, but you can override them if you want.
-<% } %>
+{{< /warning >}}

@@ -150,9 +150,9 @@ with-dep: true
 
 ## Running Your Application in Development
 
-<%= note() { %>
+{{< note >}}
 Before starting Buffalo for the first time, please head over to the [Database](/en/docs/db) docs and read a little bit about setting up your databases.
-<% } %>
+{{< /note >}}
 
 One of the downsides to Go development is the lack of code “reloading”. This means as you change your code **you need to manually stop** your application, rebuild it, then restart it. Buffalo finds this annoying, and wants to make life better for you.
 

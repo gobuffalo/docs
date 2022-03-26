@@ -49,9 +49,9 @@ Again, if you don't need a database, you won't need these.
 
 ## Installation from a release archive - 64 bits
 
-<%= note() { %>
+{{< note >}}
 The release packages contain Buffalo without SQLite support.
-<% } %>
+{{< /note >}}
 
 Since `v0.10.3`, pre-compiled archives are provided with each release. If you don't need the latest cutting-edge version, you'll probably prefer to install this version.
 
@@ -123,9 +123,9 @@ $ go install -tags sqlite github.com/gobuffalo/cli/cmd/buffalo@v<%= version %>
 PS C:\> scoop install gcc
 ```
 
-<%= note() { %>
+{{< note >}}
 These instructions can also be used for upgrading to a newer version of Buffalo.
-<% } %>
+{{< /note >}}
 
 ## Custom installation **without** SQLite3 Support
 
@@ -133,9 +133,9 @@ These instructions can also be used for upgrading to a newer version of Buffalo.
 $ go install github.com/gobuffalo/cli/cmd/buffalo@v<%= version %>
 ```
 
-<%= note() { %>
+{{< note >}}
 These instructions can also be used for upgrading to a newer version of Buffalo.
-<% } %>
+{{< /note >}}
 
 ## Verify your installation
 

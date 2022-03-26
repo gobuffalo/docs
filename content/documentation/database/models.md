@@ -23,23 +23,68 @@ A model file defines a mapping for the database table, validation methods and Po
 
 Let's take the following SQL table definition, and write a matching structure:
 
-<%= partial("en/docs/db/models_sodas_sql.md") %>
+```sql
+CREATE TABLE sodas (
+    id uuid NOT NULL,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL,
+    label character varying(255)
+);
+
+ALTER TABLE sodas ADD CONSTRAINT sodas_pkey PRIMARY KEY (id);
+```
 
 We'll start by creating a new file in the `models` directory, called `soda.go` (the convention used here is to take the singular form of the word). In this file, we'll create the structure for the `sodas` table (the structure is singular too, since it will contain a single line of the table):
 
-<%= partial("en/docs/db/models_sodas_go.md") %>
+```go
+package models
+
+import (
+	"time"
+
+	"github.com/gobuffalo/pop/nulls"
+	"github.com/gobuffalo/uuid"
+)
+
+type Soda struct {
+	ID                   uuid.UUID    `db:"id"`
+	CreatedAt            time.Time    `db:"created_at"`
+	UpdatedAt            time.Time    `db:"updated_at"`
+	Label                nulls.String `db:"label"`
+}
+```
 
 That's it! You don't need anything else to work with Pop! Note, for each table field, we defined a `pop` tag matching the field name, but it's not required. If you don't provide a name, Pop will use the name of the struct field to generate one.
 
 ## Using the generator
 
-<%= note() { %>
+{{< note >}}
 **Note for Buffalo users**: `soda` commands are embedded into the `buffalo` command, behind the `pop` namespace. So everytime you want to use a command from `soda`, just execute `buffalo pop` instead.
-<% } %>
+{{< /note >}}
 
 Writing the files by hand is not the most efficient way to work. Soda (and Buffalo, if you followed the chapter about Soda) provides a generator to help you:
 
-<%= partial("en/docs/db/model.md") %>
+```bash
+$ soda g model --help
+
+Generates a model for your database
+
+Usage:
+  soda generate model [name] [flags]
+
+Aliases:
+  model, m
+
+
+Flags:
+  -s, --skip-migration   Skip creating a new fizz migration for this model.
+
+Global Flags:
+  -c, --config string   The configuration file you would like to use.
+  -d, --debug           Use debug/verbose mode
+  -e, --env string      The environment you want to run migrations against. Will use $GO_ENV if set. (default "development")
+  -p, --path string     Path to the migrations folder (default "./migrations")
+```
 
 You can remove generated model by running:
 
@@ -116,13 +161,12 @@ Any types can be used that adhere to the [Scanner](https://golang.org/pkg/databa
 |time.Time              |nulls.Time       | ------      |
 |map[string]interface{} | ---------       |slices.Map   |
 
-<%= note() { %>
+{{< note >}}
 **Note**: Any `slices.Map` typed fields will need to be initialized before `Bind`ing or accessing.
-
-```go
+```go 
 widget := &models.Widget{Data: slices.Map{}}
 ```
-<% } %>
+{{< /note >}}
 
 ### Read Only Fields
 
@@ -229,7 +273,7 @@ func (u *User) TableName() string {
 
 ### UNIX Timestamps
 
-<%= sinceVersion("v4.7.0") %>
+{{< since "v4.7.0" >}}
 
 If you define the `CreatedAt` and `UpdatedAt` fields in your model struct (and they are created by default when you use the model generator), Pop will manage them for you. It means when you create a new entity in the database, the `CreatedAt` field will be set to the current datetime, and `UpdatedAt` will be set each time you update an existing entity.
 

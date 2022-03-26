@@ -10,13 +10,98 @@ Software maintenance is a hard task, and you'll probably need to patch your data
 You can create new migrations using `fizz`, a custom language describing the database changes in the most database-agnostic way; or use SQL statements if you prefer.
 
 ## Writing Migrations
-<%= partial("en/docs/db/soda_buffalo_note.md") %>
+{{< note >}}
+**Note for Buffalo users**: `soda` commands are embedded into the `buffalo` command, behind the `pop` namespace. So every time you want to use a command from `soda`, just execute `buffalo pop` instead.
+{{< /note >}}
 
-<%= partial("en/docs/db/fizz.md") %>
-<%= partial("en/docs/db/sql.md") %>
+
+### Fizz Migrations
+
+The `soda` command will generate SQL migrations (both the up and down) files for you.
+
+```bash
+$ soda generate fizz name_of_migration
+```
+
+Running this command will generate the **empty** following files:
+
+```text
+./migrations/20160815134952_name_of_migration.up.fizz
+./migrations/20160815134952_name_of_migration.down.fizz
+```
+
+The generated files are `fizz` files. Pop uses [Fizz](https://github.com/gobuffalo/fizz/blob/master/README.md) to generate migrations that are both easy to work with and work across multiple types of databases.
+
+Further info about this command can be found by using the `--help` flag:
+
+```bash
+$ soda g migration --help
+
+Generates Up/Down migrations for your database using fizz.
+
+Usage:
+  soda generate fizz [name] [flags]
+
+Aliases:
+  fizz, migration
+
+Flags:
+  -h, --help   help for fizz
+
+Global Flags:
+  -c, --config string   The configuration file you would like to use.
+  -d, --debug           Use debug/verbose mode
+  -e, --env string      The environment you want to run migrations against. Will use $GO_ENV if set. (default "development")
+  -p, --path string     Path to the migrations folder (default "./migrations")
+```
+
+{{< warning >}}
+By default, the migration will create an UUID `id` that serves as the primary key, as well as `created_at` and `updated_at` datetime columns, so there is no need to create your own. These are the default, but you can override them if you want.
+{{< /warning >}}
+
+### SQL Migrations
+
+If you don't want to use Fizz, or you have a complicated query you want to execute, you can use SQL.
+
+To generate a new **empty** migration, use the following command:
+
+```bash
+$ soda generate sql name_of_migration
+```
+
+Running this command will generate the following files:
+
+```text
+./migrations/20160815134952_name_of_migration.up.sql
+./migrations/20160815134952_name_of_migration.down.sql
+```
+
+Further info about this command can be found by using the `--help` flag:
+
+```bash
+$ soda g sql --help
+
+Generates Up/Down migrations for your database using SQL.
+
+Usage:
+  soda generate sql [name] [flags]
+
+Flags:
+  -h, --help   help for sql
+
+Global Flags:
+  -c, --config string   The configuration file you would like to use.
+  -d, --debug           Use debug/verbose mode
+  -e, --env string      The environment you want to run migrations against. Will use $GO_ENV if set. (default "development")
+  -p, --path string     Path to the migrations folder (default "./migrations")
+```
+
 
 ## Running Migrations
-<%= partial("en/docs/db/soda_buffalo_note.md") %>
+{{< note >}}
+**Note for Buffalo users**: `soda` commands are embedded into the `buffalo` command, behind the `pop` namespace. So every time you want to use a command from `soda`, just execute `buffalo pop` instead.
+{{< /note >}}
+
 
 ### Apply Migrations
 Once migrations have been created they can be run with either of the following commands:
@@ -94,4 +179,21 @@ development:
     migration_table_name: migrations
 ```
 
-<%= partial("en/docs/db/deployed_app.md") %>
+## Migrations Once Deployed
+
+{{< note "This section is only for Buffalo users.">}}
+
+
+When you build your app, the migrations are stored inside your binary. Your binary has a hidden `migrate` command baked in that performs the migrations, just like it does when you use `buffalo pop migrate`:
+
+```bash
+$ ./myapp migrate
+DEBU[2018-01-12T06:14:20Z] select count(*) as row_count from (SELECT schema_migration.* FROM schema_migration AS schema_migration WHERE version = ?) a $1=20171213171622
+DEBU[2018-01-12T06:14:20Z] select count(*) as row_count from (SELECT schema_migration.* FROM schema_migration AS schema_migration WHERE version = ?) a $1=20171213172104
+DEBU[2018-01-12T06:14:20Z] select count(*) as row_count from (SELECT schema_migration.* FROM schema_migration AS schema_migration WHERE version = ?) a $1=20171213172249
+DEBU[2018-01-12T06:14:20Z] select count(*) as row_count from (SELECT schema_migration.* FROM schema_migration AS schema_migration WHERE version = ?) a $1=20171213173148
+DEBU[2018-01-12T06:14:20Z] select count(*) as row_count from (SELECT schema_migration.* FROM schema_migration AS schema_migration WHERE version = ?) a $1=20171219070903
+DEBU[2018-01-12T06:14:20Z] select count(*) as row_count from (SELECT schema_migration.* FROM schema_migration AS schema_migration WHERE version = ?) a $1=20171219071524
+
+0.0010 seconds
+```

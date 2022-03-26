@@ -14,7 +14,7 @@ The [https://github.com/gobuffalo/buffalo/render](https://github.com/gobuffalo/b
 
 ## Render Auto
 
-<%= sinceVersion("0.11.0") %>
+{{< since "0.11.0" >}}
 
 In many cases, you'll have to provide the same contents in different formats: JSON, XML, HTML... Buffalo provides an easy way to do that using a single statement.
 
@@ -26,7 +26,7 @@ func Beatles(c buffalo.Context) error {
 }
 ```
 
-<%= vimeo("257736901") %>
+{{< vimeo 257736901>}}
 
 ## JSON and XML
 
@@ -82,7 +82,7 @@ func Beatles(c buffalo.Context) error {
 
 
 ## JavaScript
-<%= sinceVersion("0.10.0") %>
+{{< since "0.10.0" >}}
 
 The [`render`](https://godoc.org/github.com/gobuffalo/buffalo/render) package has a new implementation of [`render.Renderer`](https://godoc.org/github.com/gobuffalo/buffalo/render#Renderer), [`render.JavaScript`](https://godoc.org/github.com/gobuffalo/buffalo/render#JavaScript).
 
@@ -105,7 +105,7 @@ $("#new-goal-form").replaceWith("&lt;%= partial("goals/new.html") %&gt;");
 
 ## Automatic extensions
 
-<%= sinceVersion("0.10.2") %>
+{{< since "0.10.2" >}}
 
 You can use HTML, Javascript and Markdown renderers without specifying the file extension:
 

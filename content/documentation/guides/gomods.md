@@ -8,7 +8,7 @@ name: Go Modules
 
 ## Enabling Go Module Support
 
-<%= sinceVersion("v0.13.0") %>
+{{< since "v0.13.0" >}}
 
 The support for Go Modules in "Buffalo" packages is experimental, as are Go Modules (as of `v1.11.x`). To "opt-in" to using Go Modules you need to turn them using the `GO111MODULE` environment variable and setting it to `on`.
 

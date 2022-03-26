@@ -8,9 +8,9 @@ name: Soda CLI
 
 Pop helps you to manage database connections, but it also provides `soda`, a small CLI toolbox to manage your database. It can help you to create a new database, drop existing ones, and so on.
 
-<%= note() { %>
+{{< note >}}
 **Note for Buffalo users**: `soda` commands are embedded into the `buffalo` command, behind the `pop` namespace. So every time you want to use a command from `soda`, just execute `buffalo pop` instead. You don't need to install `soda` CLI.
-<% } %>
+{{< /note >}}
 
 ## Installing CLI Support
 

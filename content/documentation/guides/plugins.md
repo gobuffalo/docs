@@ -4,7 +4,7 @@ name: Plugins
 
 # Plugins
 
-<%= sinceVersion("0.9.1") %>
+{{< since "0.9.1" >}}
 
 Plugins allow for 3rd party code to extend the `buffalo` command as well as its sub-commands.
 
@@ -52,7 +52,7 @@ The `buffalo plugins list` command will print a table of plugins that Buffalo se
 
 ## With Configuration
 
-<%= sinceVersion("1.1.0", {pkg: "github.com/gobuffalo/buffalo-plugins"}) %>
+{{< since "1.1.0" >}}
 
 When a `config/buffalo-plugins.toml` file is present, Buffalo will scope the list of plugins that are "available" to those listed in the configuration file.
 
@@ -99,7 +99,7 @@ buffalo-upgradex |buffalo upgradex           |updates Buffalo and/or Pop/Soda as
 
 ## Installing Plugins
 
-<%= sinceVersion("1.1.0", {pkg: "github.com/gobuffalo/buffalo-plugins"}) %>
+{{< since "1.1.0" >}}
 
 To add support for the plugin manager, one can either manually edit `./config/buffalo-plugins.toml` or let `buffalo plugins install` create it for you.
 
@@ -178,7 +178,7 @@ buffalo-trash  |buffalo trash         |destroys and recreates a buffalo app
 
 ## Removing Plugins
 
-<%= sinceVersion("1.1.0", {pkg: "github.com/gobuffalo/buffalo-plugins"}) %>
+{{< since "1.1.0" >}}
 
 Plugins can be removed with the `remove` command. This only removes them from the config file, not from the users system.
 

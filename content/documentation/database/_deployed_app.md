@@ -1,8 +1,7 @@
 ## Migrations Once Deployed
 
-<%= note() { %>
-This section is only for Buffalo users.
-<% } %>
+{{< note "This section is only for Buffalo users.">}}
+
 
 When you build your app, the migrations are stored inside your binary. Your binary has a hidden `migrate` command baked in that performs the migrations, just like it does when you use `buffalo pop migrate`:
 

@@ -11,7 +11,7 @@ Name: "Custom Helpers"
 
 No templating package would be complete without allowing for you to build your own, custom, helper functions.
 
-<%= vimeo("229572343") %>
+{{< vimeo 229572343>}}
 
 ## Registering Helpers
 

@@ -196,7 +196,7 @@ func MyHandler(c buffalo.Context) error {
 
 ### Finding/Calling a Route Helper
 
-<%= sinceVersion("0.13.0-beta.1") %>
+{{< since "0.13.0-beta.1" >}}
 
 The [`buffalo.RouteList#Lookup`](https://godoc.org/github.com/gobuffalo/buffalo#RouteList.Lookup) allows you to look up a route by its name from the application. With the `RouteInfo` value for the given route you can generate the path for the route.
 
@@ -301,7 +301,7 @@ In the above example the `/api/v1` group will use both `SomeMiddleware` and `API
 
 ## Hosts
 
-<%= sinceVersion("0.18.2") %>
+{{< since "0.18.2" >}}
 
 Buffalo apps also support grouping of end-points by host. `Host` creates a new group that matches the domain passed. This is useful for creating groups of end-points for different domains or subdomains.
 
@@ -335,7 +335,7 @@ app.Host("{subdomain:[a-z]+}.example.com")
 
 ## Mounting http.Handler Apps
 
-<%= sinceVersion("0.9.4") %>
+{{< since "0.9.4" >}}
 
 Sometimes, you'll want to reuse some components from other apps. Using the [`Mount`](https://godoc.org/github.com/gobuffalo/buffalo#App.Mount) method, you can bind a standard [`http.Handler`](https://golang.org/pkg/net/http/#Handler) to a route, just like you'll do with a normal route handler.
 

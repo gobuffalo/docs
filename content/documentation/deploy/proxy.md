@@ -107,7 +107,7 @@ server {
 
 ### Using a UNIX domain socket
 
-<%= sinceVersion("0.10.3") %>
+{{< since "0.10.3" >}}
 
 [UNIX sockets](https://en.wikipedia.org/wiki/Unix_domain_socket) are a common way to do inter-process communication (IPC) on UNIX systems. This means a program **A** can talk to a program **B**, using a file descriptor, just like they do using the TCP stack.
 

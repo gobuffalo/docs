@@ -69,9 +69,9 @@ In some other scenarios you will need to generate an action without generating a
 $ buffalo g actions users update --skip-template
 ```
 
-<%= note() { %>
+{{< note >}}
 That's the default behavior for applications generated with the `--api` flag. See [APIs](/en/docs/apis/) for further informations.
-<% } %>
+{{< /note >}}
 
 ## Destroying Actions
 

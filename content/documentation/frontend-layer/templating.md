@@ -13,10 +13,10 @@ Buffalo defaults to using [plush](https://github.com/gobuffalo/plush) as its tem
 
 <div class="row">
   <div class="col-md-6">
-    <%= vimeo("207200621") %>
+    {{< vimeo 207200621>}}
   </div>
   <div class="col-md-6">
-    <%= vimeo("267643588") %>
+    {{< vimeo 267643588>}}
   </div>
 </div>
 

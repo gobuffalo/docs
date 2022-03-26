@@ -11,7 +11,7 @@ The `buffalo.Context` interface supports `context.Context` so it can be passed a
 
 Since `buffalo.Context` is an interface it is possible to create an application specific implementation that is tailored to the needs of the application being built.
 
-<%= sinceVersion("0.12.0") %>
+{{< since "0.12.0" >}}
 
 ```go
 type Context interface {

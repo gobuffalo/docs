@@ -6,6 +6,8 @@ params:
   docsSections:
     - getting_started
     - request_handling
+outputs:
+    home: ["HTML", "RSS", "JSON"]
 languages:
   en:
     languageName: English

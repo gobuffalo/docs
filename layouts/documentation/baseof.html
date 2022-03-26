@@ -14,6 +14,10 @@
 			{{ $styles := $styles | minify | fingerprint | resources.PostProcess }}
 			<link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}"/>
 		{{ end }}
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.0/fuse.min.js"></script>
+		{{ $searchJS := resources.Get "js/search.js" }}
+		<script src="{{ $searchJS.RelPermalink }}"></script>
 	  
 		{{partial "favicons" .}}
 	</head>
@@ -34,5 +38,6 @@
 
 		
 		{{ partial "footer.html" . }}
+		{{ partial "search" .}}
 	</body>
 </html>

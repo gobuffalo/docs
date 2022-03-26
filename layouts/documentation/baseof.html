@@ -18,32 +18,7 @@
 		{{partial "favicons" .}}
 	</head>
 	<body class="flex flex-col min-h-screen">
-		<header class="bg-gray-800">
-			<div class="container flex flex-row items-center space-x-8 py-5 ">
-				<span class="flex-grow text-white">
-					<a href="/" class="flex flex-row items-center">
-						{{- $image := (resources.Get "images/logo_top.png").Resize "150x webp" -}}  
-						<img src="{{$image.RelPermalink}}" alt="logo" class="w-10 mr-2"/>
-						<span class="text-2xl font-medium">Buffalo</span>
-					</a>
-				</span>
-				
-				<ul class="flex flex-row space-x-5 text-white">
-					{{ $currentPage := . }}
-					{{ range .Site.Menus.top }}
-						{{ $menuItemURL := .URL | relLangURL }}
-						{{ $pageURL := $currentPage.RelPermalink | relLangURL }}
-						<li>
-							<a href="{{ .URL }}" class="hover:underline {{ if eq $menuItemURL $pageURL }}active{{ end }}">{{ .Name }}</a>
-						</li>
-						
-					{{ end }}    
-				</ul>
-				<span class="ml-5">
-					<input type="text" placeholder="Search" class="h-8 p-2 text-gray shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
-				</span>
-			</div>
-		</header>
+		{{ partial "header" .}}
 		
 		<main class="bg-gray-100 py-7 flex-grow">
 			<div class="container flex gap-6">

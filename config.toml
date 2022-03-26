@@ -17,41 +17,21 @@ defaultContentLanguage = 'en'
 
     [languages.en.menu]
     [[languages.en.menu.top]]
-        name = 'Tutorials'
-        url = '/tutorials/'
-        weight = 1
-        [languages.en.menu.top.params] 
-            image = "images/tutorials.svg"
-    [[languages.en.menu.top]]
-        name = 'Support'
-        url = '/support/'
-        weight = 2
-        [languages.en.menu.top.params] 
-            image = "images/support.svg"
-    [[languages.en.menu.top]]
         name = 'Documentation'
         url = '/documentation/'
         weight = 3
-        [languages.en.menu.top.params] 
-            image = "images/documentation.svg"
     [[languages.en.menu.top]]
         name = 'Github'
         url = 'https://github.com/gobuffalo'
         weight = 4
-        [languages.en.menu.top.params] 
-            image = "images/link.svg"
     [[languages.en.menu.top]]
         name = 'Blog'
         url = 'https://blog.gobuffalo.io'
         weight = 5
-        [languages.en.menu.top.params] 
-            image = "images/blog.svg"
     [[languages.en.menu.top]]
         name = 'Store'
         url = 'https://store.gobuffalo.io'
         weight = 6
-        [languages.en.menu.top.params] 
-            image = "images/store.svg"
   
   [languages.fr]
     languageName = "English"
@@ -64,32 +44,18 @@ defaultContentLanguage = 'en'
 
     [languages.fr.menu]
         [[languages.fr.menu.top]]
-            name = 'Tutoriels'
-            url = '/tutorials/'
-            weight = 1
-            icon = "images/tutorials.svg"
-        [[languages.fr.menu.top]]
-            name = 'Support'
-            url = '/support/'
-            weight = 2
-            icon = "images/tutorials.svg"
-        [[languages.fr.menu.top]]
             name = 'Documentation'
             url = '/documentation/'
             weight = 3
-            icon = "images/tutorials.svg"
         [[languages.fr.menu.top]]
             name = 'GitHub'
             url = 'https://github.com/gobuffalo'
             weight = 4
-            icon = "images/tutorials.svg"
         [[languages.fr.menu.top]]
             name = 'Blog'
             url = 'https://blog.gobuffalo.io'
             weight = 5
-            icon = "images/tutorials.svg"
         [[languages.fr.menu.top]]
             name = 'Boutique'
             url = 'https://store.gobuffalo.io'
             weight = 6
-            icon = "images/tutorials.svg"

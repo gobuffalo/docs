@@ -27,8 +27,36 @@ API applications have `actions/app.go` and `actions/render.go` files that are a 
 
 <h5><code>buffalo new coke --api</code></h5>
 
-<%= partial("en/docs/apis/api_app.md") %>
-<%= partial("en/docs/apis/api_render.md") %>
+```go
+func App() *buffalo.App {
+	if app == nil {
+		app = buffalo.New(buffalo.Options{
+			Env:          ENV,
+			SessionStore: sessions.Null{},
+			PreWares: []buffalo.PreWare{
+				cors.Default().Handler,
+			},
+			SessionName: "_coke_session",
+		})
+		app.Use(forceSSL())
+		app.Use(middleware.SetContentType("application/json"))
+
+		if ENV == "development" {
+			app.Use(middleware.ParameterLogger)
+		}
+
+		app.Use(middleware.PopTransaction(models.DB))
+		app.GET("/", HomeHandler)
+	}
+	return app
+}
+```
+
+```go
+func init() {
+	r = render.New(render.Options{})
+}
+```
 
 <h5><code>buffalo new coke</code></h5>
 

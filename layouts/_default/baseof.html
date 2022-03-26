@@ -19,7 +19,8 @@
 	</head>
 
 	<body>
-		{{ block "header" . }}{{ end }}
+		{{ partial "header.html" . }}
+
 		{{ block "main" . }}{{end }}
 		{{ partial "footer.html" . }}
 	</body>

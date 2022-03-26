@@ -1,32 +1,3 @@
-{{ define "header" }}
-
-    <header class="bg-gray-800">
-        <div class="container flex flex-row items-center space-x-8 py-5 ">
-            <span class="flex-grow text-white">
-                <a href="/" class="flex flex-row items-center">
-                    {{- $image := (resources.Get "images/logo_top.png").Resize "150x webp" -}}  
-                    <img src="{{$image.RelPermalink}}" alt="logo" class="w-10 mr-2"/>
-                    <span class="text-2xl font-medium">Buffalo</span>
-                </a>
-            </span>
-            
-            <ul class="flex flex-row space-x-5 text-white">
-                {{ $currentPage := . }}
-                {{ range .Site.Menus.top }}
-                    {{ $menuItemURL := .URL | relLangURL }}
-                    {{ $pageURL := $currentPage.RelPermalink | relLangURL }}
-                    <li>
-                        <a href="{{ .URL }}" class="hover:underline {{ if eq $menuItemURL $pageURL }}active{{ end }}">{{ .Name }}</a>
-                    </li>
-                    
-                {{ end }}    
-            </ul>
-            <span class="ml-5">
-                <input type="text" placeholder="Search" class="h-8 p-2 text-gray shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
-            </span>
-        </div>
-    </header>
-{{ end }}
 
 {{ define "main" }}
     <section class="py-20 hero">
@@ -34,7 +5,9 @@
             <div class="flex flex-row">
                 <div class="max-w-2xl text-white text-center md:text-left">
                     <h1 class="text-center md:text-left text-6xl font-bold mb-10 ">{{ .Params.Tagline }}</h1>
-                    <a href="#" class=" bg-red-500 p-3 px-6 inline-block rounded-full text-white mb-8 uppercase font-bold">{{.Params.topCTA}}</a>
+                    {{ $started := .Site.GetPage "/documentation/getting_started/installation" }}
+                    <a href="{{$started.RelPermalink}}" class=" bg-red-500 p-3 px-6 inline-block rounded-full text-white mb-8 uppercase font-bold">{{.Params.topCTA}}</a>
+
                     <ul class="space-y-3">
                         <li>
                             <span class="w-48 inline-block text-xl">{{.Params.latestVersionLabel}}:</span>
@@ -74,7 +47,8 @@
                 {{end}}
             </div>
             
-            <a href="#" class="bg-red-500 p-4 px-6 inline-block rounded-full text-white mb-5 uppercase font-bold">{{.Params.FeaturesCTA}}</a>
+            {{ $started := .Site.GetPage "/documentation/getting_started/installation" }}
+            <a href="{{$started.RelPermalink}}" class="bg-red-500 p-4 px-6 inline-block rounded-full text-white mb-5 uppercase font-bold">{{.Params.FeaturesCTA}}</a>
         </div>
     </section>
 
@@ -89,7 +63,7 @@
             <h2 class="text-3xl mb-10 font-bold">{{.Params.SponsorsTitle}}</h2>
             <ul class="flex flex-col md:flex-row gap-16 justify-center">
                 {{ range where .Site.Pages "Params.type" "sponsor" }}
-                    <li class="">   
+                    <li>   
                         <a href="{{.Params.Website}}" class="flex flex-col items-center space-y-3 mb-10">
                             {{- $image := (resources.Get .Params.Image).Resize "400x webp" -}}  
                             <img src="{{$image.RelPermalink}}" alt="sponsor-logo" class="w-40 md:w-36 mb-5">
@@ -98,7 +72,7 @@
                     </li>
                 {{end}}
 
-                <li class="">   
+                <li>   
                     <a href="/" class="flex flex-col items-center space-y-3">
                         <div class="w-36 text-blue-400 border-2 border-dashed border-blue-400 mb-4"> 
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-36 w-36" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -116,14 +90,15 @@
     <section class="text-center py-20">
         <h3 class="text-4xl font-bold mb-4">{{.Params.PatreonTitle}}</h3>
         <p class="mb-3 text-xl">{{.Params.PatreonContent}}</p>
-        <a href="/" class="bg-red-500 py-2 px-4 inline-block rounded-full text-white uppercase font-bold">{{.Params.PatreonCTA}}</a>
+        <a href="https://patreon.com/buffalo" class="bg-red-500 py-2 px-4 inline-block rounded-full text-white uppercase font-bold">{{.Params.PatreonCTA}}</a>
     </section>
 
     <section class="bg-blue-900 text-white text-center py-20">
         <div class="container">
             <h3 class="text-4xl font-bold mb-4">{{.Params.DocsTitle}}</h3>
             <p class="mb-3 text-xl">{{.Params.DocsContent}}</p>
-            <a href="/" class="bg-red-500 py-2 px-4 text-sm inline-block rounded-full text-white uppercase font-bold">{{.Params.DocsCTA}}</a> 
+            {{ $docs := .Site.GetPage "/documentation" }}
+            <a href="{{$docs.RelPermalink}}" class="bg-red-500 py-2 px-4 text-sm inline-block rounded-full text-white uppercase font-bold">{{.Params.DocsCTA}}</a> 
         </div> 
     </section>
 

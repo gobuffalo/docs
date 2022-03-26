@@ -1,18 +1,20 @@
 <aside class="w-200 bg-gray-200 rounded-md p-7 docssidebar">
     <ul class="mb-5 space-y-1.5">
-        {{ $currentPage := . }}
-        {{ range .Site.Menus.top }}
-            {{- $menuItemURL := .URL | relLangURL -}}
-            {{- $image := (resources.Get .Params.Image) -}} 
-            {{ $pageURL := $currentPage.RelPermalink | relLangURL }}
-            <li>
-                <a href="{{ .URL }}" class="hover:underline {{ if eq $menuItemURL $pageURL }}active{{ end }} flex items-center">
-                    <img src="{{$image.RelPermalink}}" class="h-5 w-5 mr-2" alt="icon">
-                    {{ .Name }}
-                </a>
-            </li>
-            
-        {{ end }}    
+
+        {{ with .Site.GetPage "section" "documentation" }}
+            {{ $section := . }}
+            {{ range .Site.Pages }}     
+                {{ if .InSection $section }}   
+                    <li>
+                        <a href="{{ .RelPermalink }}" class="hover:underline flex items-center">
+                            {{- $image := (resources.Get .Params.Icon) -}} 
+                            <img src="{{$image.RelPermalink}}" class="w5 h-5 mr-1.5" alt="">
+                            {{ .Params.Name }}
+                        </a>
+                    </li>
+                {{ end }}
+            {{ end }}
+        {{ end }} 
     </ul>
 
     {{ with .Site.GetPage "section" "getting_started" }}
@@ -53,27 +55,38 @@
 
     {{ with .Site.GetPage "section" "database" }}
     {{ $section := . }}
-    <h2 class="text-gray-800 font-bold">{{ .Title }}</h2>
-    <ul class="mb-3 pl-2 py-2 space-y-2 ">
-        {{ range .Site.Pages }}     
-            {{ if .InSection $section }}   
-                <li><a href="{{.RelPermalink}}">{{ .Params.Name }}</a></li>
+        <h2 class="text-gray-800 font-bold">{{ .Title }}</h2>
+        <ul class="mb-3 pl-2 py-2 space-y-2 ">
+            {{ range .Site.Pages }}     
+                {{ if .InSection $section }}   
+                    <li><a href="{{.RelPermalink}}">{{ .Params.Name }}</a></li>
+                {{ end }}
             {{ end }}
-        {{ end }}
-    </ul>    
-{{ end }}
-
+        </ul>  
+    {{ end }}
     
-    
+    {{ with .Site.GetPage "section" "guides" }}
+    {{ $section := . }}
+        <h2 class="text-gray-800 font-bold">{{ .Title }}</h2>
+        <ul class="mb-3 pl-2 py-2 space-y-2 ">
+            {{ range .Site.Pages }}     
+                {{ if .InSection $section }}   
+                    <li><a href="{{.RelPermalink}}">{{ .Params.Name }}</a></li>
+                {{ end }}
+            {{ end }}
+        </ul>  
+    {{ end }}
 
-    <!-- <h2 class="text-gray-800 font-bold">Getting started</h2>
-    <ul class="mb-3 pl-3 py-2 space-y-2 ">
-        <li>Installation</li>
-        <li>Tooling integration</li>
-        <li>Generate New project</li>
-        <li>Directory Structure</li>
-        <li>Configuration</li>
-    </ul> -->
-
+    {{ with .Site.GetPage "section" "deploy" }}
+    {{ $section := . }}
+        <h2 class="text-gray-800 font-bold">{{ .Title }}</h2>
+        <ul class="mb-3 pl-2 py-2 space-y-2 ">
+            {{ range .Site.Pages }}     
+                {{ if .InSection $section }}   
+                    <li><a href="{{.RelPermalink}}">{{ .Params.Name }}</a></li>
+                {{ end }}
+            {{ end }}
+        </ul>  
+    {{ end }}
 
 </aside>

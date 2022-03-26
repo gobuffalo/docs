@@ -19,6 +19,12 @@ languages:
         Buffalo Gopher designed by [Ashley
         McNamara](https://twitter.com/ashleymcnamara) — Original Gopher designed
         by Renee French
+      documentation: "Documentation"
+      tutorials: "Tutorials"
+      support: "Support"
+      troubleshooting: "Troubleshooting"
+      searchPlaceholder: "Search the Buffalo docs"
+      noResultsCopy: "We couldn't find any guides or documents with that term. Please try again. You can also visit the documentation site and navigate for more details."
     menu:
       top:
         - name: Documentation
@@ -40,6 +46,12 @@ languages:
         Gopher Buffalo conçu par [Ashley
         McNamara](https://twitter.com/ashleymcnamara) — Gopher originel conçu
         par Renee French.
+      documentation: "Documentation"
+      tutorials: "Tutoriels"
+      support: "Support"
+      troubleshooting: "Dépannage"
+      searchPlaceholder: "Rechercher dans les documents Buffalo"
+      noResultsCopy: "Nous n'avons trouvé aucun guide ou document contenant ce terme. Veuillez réessayer. Vous pouvez également visiter le site de documentation et naviguer pour plus de détails."
     menu:
       top:
         - name: Documentation

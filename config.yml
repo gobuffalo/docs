@@ -1,0 +1,51 @@
+baseURL: 'https://gobuffalo.io/'
+languageCode: en-us
+title: The Buffalo Framework
+defaultContentLanguage: en
+params:
+  docsSections:
+    - getting_started
+    - request_handling
+languages:
+  en:
+    languageName: English
+    languageCode: en-us
+    weight: 2
+    params:
+      copyRight: Copyright © 2022 Buffalo. All rights reserved.
+      logoCredits: >-
+        Buffalo Gopher designed by [Ashley
+        McNamara](https://twitter.com/ashleymcnamara) — Original Gopher designed
+        by Renee French
+    menu:
+      top:
+        - name: Documentation
+          url: /documentation/
+          weight: 3
+        - name: Blog
+          url: 'https://blog.gobuffalo.io'
+          weight: 5
+        - name: Store
+          url: 'https://store.gobuffalo.io'
+          weight: 6
+  fr:
+    languageName: French
+    languageCode: fr-fr
+    weight: 1
+    params:
+      copyRight: Copyright © 2022 Buffalo. Tous droits réservés.
+      logoCredits: >-
+        Gopher Buffalo conçu par [Ashley
+        McNamara](https://twitter.com/ashleymcnamara) — Gopher originel conçu
+        par Renee French.
+    menu:
+      top:
+        - name: Documentation
+          url: /fr/documentation/
+          weight: 3
+        - name: Blog
+          url: 'https://blog.gobuffalo.io'
+          weight: 5
+        - name: Boutique
+          url: 'https://store.gobuffalo.io'
+          weight: 6

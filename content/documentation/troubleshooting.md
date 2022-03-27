@@ -1,6 +1,6 @@
 ---
 name: Troubleshooting
-icon: "images/support.svg"
+icon: "images/troubleshoot.svg"
 ---
 
 # TroubleShooting

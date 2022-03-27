@@ -1,15 +1,16 @@
+{{ $currentPage := . | relLangURL }}
 <aside class="w-200 bg-gray-200 rounded-md p-7 docssidebar">
-    <ul class="mb-5 space-y-1.5">
-
+    <ul class="mb-5 space-y-1">
         {{ with .Site.GetPage "section" "documentation" }}
             {{ $section := . }}
             {{ range .Site.Pages }}     
                 {{ if .InSection $section }}   
-                    <li>
+                    {{ $active := eq $currentPage (. | relLangURL)  }}
+                    <li class="px-2 {{if $active}} bg-blue-200 py-1.5 rounded-sm border-l border-blue-800 {{end}} p-0.5">
                         <a href="{{ .RelPermalink }}" class="hover:underline flex items-center">
                             {{- $image := (resources.Get .Params.Icon) -}} 
-                            <img src="{{$image.RelPermalink}}" class="w5 h-5 mr-1.5" alt="">
-                            {{ .Params.Name }}
+                            <img src="{{$image.RelPermalink}}" class="w5 h-5 mr-1.5" alt="page-icon">
+                            <span>{{ .Params.Name }}</span>
                         </a>
                     </li>
                 {{ end }}
@@ -23,7 +24,10 @@
         <ul class="mb-3 pl-2 py-2 space-y-2 ">
             {{ range .Site.Pages }}     
                 {{ if .InSection $section }}   
-                    <li><a href="{{.RelPermalink}}">{{ .Params.Name }}</a></li>
+                    {{ $active := eq $currentPage (. | relLangURL)  }}
+                    <li class="px-2 {{if $active}} bg-blue-200 py-1.5 rounded-sm border-l border-blue-800 {{end}} p-0.5">
+                        <a href="{{.RelPermalink}}">{{ .Params.Name }}</a>
+                    </li>
                 {{ end }}
             {{ end }}
         </ul>    
@@ -34,8 +38,11 @@
         <h2 class="text-gray-800 font-bold">{{ .Title }}</h2>
         <ul class="mb-3 pl-2 py-2 space-y-2 ">
             {{ range .Site.Pages }}     
-                {{ if .InSection $section }}   
-                    <li><a href="{{.RelPermalink}}">{{ .Params.Name }}</a></li>
+                {{ if .InSection $section }} 
+                    {{ $active := eq $currentPage (. | relLangURL)  }}  
+                    <li class="px-2 {{if $active}} bg-blue-200 py-1.5 rounded-sm border-l border-blue-800 {{end}} p-0.5">
+                        <a href="{{.RelPermalink}}">{{ .Params.Name }}</a>
+                    </li>
                 {{ end }}
             {{ end }}
         </ul>    
@@ -47,7 +54,10 @@
         <ul class="mb-3 pl-2 py-2 space-y-2 ">
             {{ range .Site.Pages }}     
                 {{ if .InSection $section }}   
-                    <li><a href="{{.RelPermalink}}">{{ .Params.Name }}</a></li>
+                    {{ $active := eq $currentPage (. | relLangURL)  }}
+                    <li class="px-2 {{if $active}} bg-blue-200 py-1.5 rounded-sm border-l border-blue-800 {{end}} p-0.5">
+                        <a href="{{.RelPermalink}}">{{ .Params.Name }}</a>
+                    </li>
                 {{ end }}
             {{ end }}
         </ul>    
@@ -59,7 +69,10 @@
         <ul class="mb-3 pl-2 py-2 space-y-2 ">
             {{ range .Site.Pages }}     
                 {{ if .InSection $section }}   
-                    <li><a href="{{.RelPermalink}}">{{ .Params.Name }}</a></li>
+                    {{ $active := eq $currentPage (. | relLangURL)  }}
+                    <li class="px-2 {{if $active}} bg-blue-200 py-1.5 rounded-sm border-l border-blue-800 {{end}} p-0.5">
+                        <a href="{{.RelPermalink}}">{{ .Params.Name }}</a>
+                    </li>
                 {{ end }}
             {{ end }}
         </ul>  
@@ -71,7 +84,10 @@
         <ul class="mb-3 pl-2 py-2 space-y-2 ">
             {{ range .Site.Pages }}     
                 {{ if .InSection $section }}   
-                    <li><a href="{{.RelPermalink}}">{{ .Params.Name }}</a></li>
+                    {{ $active := eq $currentPage (. | relLangURL)  }}
+                    <li class="px-2 {{if $active}} bg-blue-200 py-1.5 rounded-sm border-l border-blue-800 {{end}} p-0.5">
+                        <a href="{{.RelPermalink}}">{{ .Params.Name }}</a>
+                    </li>
                 {{ end }}
             {{ end }}
         </ul>  
@@ -83,7 +99,10 @@
         <ul class="mb-3 pl-2 py-2 space-y-2 ">
             {{ range .Site.Pages }}     
                 {{ if .InSection $section }}   
-                    <li><a href="{{.RelPermalink}}">{{ .Params.Name }}</a></li>
+                    {{ $active := eq $currentPage (. | relLangURL)  }}
+                    <li class="px-2 {{if $active}} bg-blue-200 py-1.5 rounded-sm border-l border-blue-800 {{end}} p-0.5">
+                        <a href="{{.RelPermalink}}">{{ .Params.Name }}</a>
+                    </li>
                 {{ end }}
             {{ end }}
         </ul>  

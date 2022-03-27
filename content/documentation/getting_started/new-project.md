@@ -9,6 +9,7 @@ seoKeywords:
   - "generator"
   - "framework"
   - "web"
+weight: 2
 ---
 
 # Generating a New Project

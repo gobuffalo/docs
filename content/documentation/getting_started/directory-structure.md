@@ -9,6 +9,7 @@ seoKeywords:
   - "directory"
   - "framework"
   - "web"
+weight: 3
 ---
 
 # Directory structure

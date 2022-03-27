@@ -25,9 +25,11 @@
             {{ $currentPage := . }}
             {{ range .Site.Menus.top }}
                 {{ $menuItemURL := .URL | relLangURL }}
+                {{ $page := site.GetPage .URL }}
                 {{ $pageURL := $currentPage.RelPermalink | relLangURL }}
+                {{ $active := $currentPage.IsDescendant $page }}
                 <li>
-                    <a href="{{ .URL }}" class="hover:underline {{ if eq $menuItemURL $pageURL }}active{{ end }}">{{ .Name }}</a>
+                    <a href="{{ .URL }}" class="hover:underline {{ if $active }}text-blue-800 font-bold p-2.5 px-4 bg-white rounded-full {{ end }}">{{ .Name }}</a>
                 </li>
             {{ end }}    
         </ul>

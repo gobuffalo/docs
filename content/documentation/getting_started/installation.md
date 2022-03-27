@@ -11,6 +11,7 @@ seoKeywords:
   - "mac"
   - "windows"
   - "linux"
+weight: 1
 ---
 
 # Install Buffalo

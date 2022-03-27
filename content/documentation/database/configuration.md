@@ -3,7 +3,6 @@ name: Database Configuration
 seoDescription: "How to configure my database with Pop?"
 seoKeywords: ["buffalo", "go", "golang", "database", "ORM", "pop", "configuration"]
 ---
-
 # Database Configuration
 
 Pop configuration is managed by a `database.yml` file, located at the root of your project. This file is generated for you if you use Buffalo &#8211; if you choose to use Pop &#8211; and contains a basic configuration for the database you selected on generation with the `--db-type` flag. PostgreSQL is considered as the default.
@@ -35,7 +34,6 @@ Of course, you can configure any new connection you want, but Buffalo won't pick
 
 ## Generator
 
-<%= partial("en/docs/db/soda_buffalo_note.md") %>
 {{< note >}}
 **Note for Buffalo users**: `soda` commands are embedded into the `buffalo` command, behind the `pop` namespace. So every time you want to use a command from `soda`, just execute `buffalo pop` instead.
 {{< /note >}}

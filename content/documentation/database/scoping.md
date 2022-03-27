@@ -1,3 +1,6 @@
+---
+name: Scoping
+---
 # Scoping
 
 Scoping is a way to structure your DB calls, when it needs the same "base" query. Let's say you want to create a book store: the store provides books for everyone, but some special editions are reserved to customers with a registered account. It means that for the whole store, you'll need to filter the books, so the "guest" customers can only see the restricted list of books.

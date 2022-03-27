@@ -1,3 +1,6 @@
+---
+name: Generators
+---
 # Generators
 
 ```bash

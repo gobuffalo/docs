@@ -16,6 +16,9 @@
 		{{ end }}
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.0/fuse.min.js"></script>
+		
+		{{ $searchJS := resources.Get "js/main.js" }}
+		<script src="{{ $searchJS.RelPermalink }}"></script>
 		{{ $searchJS := resources.Get "js/search.js" }}
 		<script src="{{ $searchJS.RelPermalink }}"></script>
 	  

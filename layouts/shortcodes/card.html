@@ -1,4 +1,6 @@
+{{ $page := .Site.GetPage (.Get 2) }}
 <div class="{{.Get 0}} rounded-lg p-5 pt-4" >
     <h4 class="mt-0 mb-0"> {{.Get 1}}</h4>
     {{.Inner | markdownify}}
+    <a href="{{ $page.RelPermalink }}" class="card hover:border-2 hover:border-blue-500">Read</a>
 </div>

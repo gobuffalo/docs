@@ -2,11 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+    scroll-padding-top: 94px;
+}
+
 .container {
     @apply px-10;
     @apply mx-auto;
     max-width: 1500px;
 }
+
 
 .hero {
     background: #0a193f url('/images/bg.png') no-repeat left bottom;
@@ -15,7 +20,6 @@
     padding: 150px 0px;
     position: relative;
 }
-
 
 .sponsors {
     background-color: #FFFBF9;

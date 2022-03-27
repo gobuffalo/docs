@@ -8,7 +8,7 @@
         {{ if $addIt }}
             {{ $active := eq $currentPage (. | relLangURL)  }}
             <li class="px-2 py-1.5 {{if $active}} bg-blue-200 rounded-sm border-l border-blue-800 {{end}} p-0.5">
-                <a href="{{.RelPermalink}}">{{ .Params.Name }}</a>
+                <a href="{{.RelPermalink}}" class="hover:underline">{{ .Params.Name }}</a>
             </li>
         {{ end }}
     {{ end }}

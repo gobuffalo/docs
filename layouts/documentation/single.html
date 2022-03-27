@@ -1,3 +1,15 @@
 {{ define "main" }}
+    {{ $parent := .Parent.Name }}
+    
+    {{ if eq $parent "" }}
+        {{ $parent = .Parent.Params.Name }}
+    {{ end }}
+
+    {{ if eq $parent "" }}
+        {{ $parent = .Params.Name }}
+    {{ end }}
+
+    <h6 class="capitalize font-medium text-sm text-red-700">{{ $parent }}</h6> 
+
     {{.Content}}
 {{ end }}

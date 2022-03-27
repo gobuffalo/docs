@@ -1,3 +1,10 @@
 {{ define "main" }}
+    {{ $parent := .Parent.Name }}
+    
+    {{ if eq $parent "" }}
+        {{ $parent = .Parent.Params.Name }}
+    {{ end }}
+
+    <h6 data-parent="{{$parent}}" class="capitalize font-medium text-sm text-gray-700">{{ $parent }}</h6> 
     {{.Content}}
 {{ end }}

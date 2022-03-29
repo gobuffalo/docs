@@ -7,9 +7,10 @@ html {
 }
 
 .container {
-    @apply px-10;
-    @apply mx-auto;
+    width: 100%;
     max-width: 1500px;
+
+    @apply mx-auto md:px-10;
 }
 
 
@@ -29,6 +30,9 @@ html {
     width: 300px;
 }
 
+.content {
+    overflow: wrap;
+}
 .content h1 {
     @apply text-4xl font-bold mb-3;
 }
@@ -46,7 +50,7 @@ html {
 }
 
 .content p {
-    @apply text-lg font-light mb-3 mt-2;
+    @apply text-lg font-light mb-3 mt-2 break-normal;
 }
 
 .content .highlight {
@@ -65,6 +69,10 @@ html {
     @apply bg-gray-200 p-1 rounded-md text-base;
 }
 
+.content code {
+    @apply break-all;
+}
+
 
 .content ul {
     @apply list-disc pl-3 mb-3;
@@ -76,6 +84,10 @@ html {
 
 .content a {
     @apply text-blue-500 underline;
+}
+
+.content table {
+    @apply w-full mb-3;
 }
 
 .content thead th {

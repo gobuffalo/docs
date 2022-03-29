@@ -28,11 +28,11 @@
 	<body class="flex flex-col min-h-screen">
 		{{ partial "header" .}}
 		
-		<main class="bg-gray-100 py-7 flex-grow">
-			<div class="container flex gap-6">
+		<main class="bg-gray-100 md:py-7 flex-grow">
+			<div class="container md:flex md:gap-6">
 				{{partial "docssidebar" .}}
-				<div class="flex-grow bg-white rounded-md p-9 ">
-					<div class="max-w-5xl content mt-2">
+				<div class="w-full p-5 md:flex-grow md:p-9  bg-white rounded-md  ">
+					<div class="max-w-4xl content mt-2">
 						{{ block "main" . }}{{end }}
 					</div>
 				</div>

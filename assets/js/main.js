@@ -55,12 +55,12 @@ function loadBlogContent() {
                 desc = desc.replace(/&nbsp;/g, "");
                 desc = desc.replace(/&#8217;/g, "'");
                 desc = desc.slice(0, 200) + "...";
-                
-                // let readMore = 
 
                 container.innerHTML += `
                 <div class="mb-7">
-                    <h4 class="text-2xl font-bold" >${item.title}</h4>
+                    <h4 class="text-2xl font-bold text-ellipsis overflow-hidden">
+                        ${item.title}
+                    </h4>
                     <p class="text-xs mb-3">${item.categories.join(", ")}</p>
                     <p class="text-center md:text-left">
                         ${desc} 

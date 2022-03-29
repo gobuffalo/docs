@@ -11,7 +11,7 @@ Welcome to the Buffalo documentation. In here you will find a collection of usef
 Get started with Buffalo, learn the basics and get up and running with the framework.
 {{< /card >}}
 
-{{< grid "grid-cols-3 gap-x-3" >}}
+{{< grid "grid-cols-1 md:grid-cols-3 gap-x-3" >}}
 
 {{< card "bg-blue-100 mb-4" "Database" "documentation/database/buffalo-integration">}}
 The persistence layer of the Buffalo framework.

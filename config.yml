@@ -35,9 +35,9 @@ languages:
         - name: Blog
           url: 'https://blog.gobuffalo.io'
           weight: 5
-        - name: Store
-          url: 'https://store.gobuffalo.io'
-          weight: 6
+        # - name: Store
+        #   url: 'https://store.gobuffalo.io'
+        #   weight: 6
   fr:
     languageName: French
     languageCode: fr-fr
@@ -64,6 +64,6 @@ languages:
         - name: Blog
           url: 'https://blog.gobuffalo.io'
           weight: 5
-        - name: Boutique
-          url: 'https://store.gobuffalo.io'
-          weight: 6
+        # - name: Boutique
+        #   url: 'https://store.gobuffalo.io'
+        #   weight: 6

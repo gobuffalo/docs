@@ -3,18 +3,18 @@ weight: 1
 name: Documentation
 icon: "images/documentation.svg"
 ---
-# The Buffalo Documentation
+# La documentation de Buffalo
 
-Welcome to the Buffalo documentation. In here you will find a collection of useful information for getting started with Buffalo in aim to help you get the most out of the Buffalo framework and its features.
+Bienvenue dans la documentation Buffalo. Vous trouverez ici une collection d'informations utiles pour démarrer avec Buffalo dans le but de vous aider à tirer le meilleur parti du framework Buffalo et de ses fonctionnalités.
 
 {{< card "bg-blue-100 mb-4 mt-6 hover:border hover:border-blue-500" "Getting Started" "documentation/getting_started/installation" >}}
-Get started with Buffalo, learn the basics and get up and running with the framework.
+Démarrez avec Buffalo, apprenez les bases et soyez opérationnel avec le framework.
 {{< /card >}}
 
 {{< grid "grid-cols-3 gap-x-3" >}}
 
 {{< card "bg-blue-100 mb-4" "Database" "documentation/database/buffalo-integration">}}
-The persistence layer of the Buffalo framework.
+La couche de persistance du framework Buffalo.
 {{< /card >}}
 
 {{< card "bg-blue-100 mb-4" "Request" "documentation/request_handling/routing">}}
@@ -22,13 +22,13 @@ Request handling and routing. The core of the framework.
 {{< /card >}}
 
 {{< card "bg-blue-100 mb-4" "Deployment" "documentation/deploy/building">}}
-Guides and thoughts on how to deploy your Buffalo application.
+Traitement et routage des demandes. Le cœur du cadre.
 {{< /card >}}
 
 {{< /grid >}}
 
 ## Community
 
-The Buffalo community is a vibrant and growing community of developers and users. There is an ongoing conversation about tips and tricks, new features and ideas which takes place in the [Gophers Slack #buffalo channel](https://gophers.slack.com/messages/buffalo/).
+La communauté Buffalo est une communauté dynamique et croissante de développeurs et d'utilisateurs. Il y a une conversation en cours sur les trucs et astuces, les nouvelles fonctionnalités et les idées qui ont lieu dans le [Gophers Slack #buffalo channel](https://gophers.slack.com/messages/buffalo/).
 
-Besides the documentation itself, you can also get in touch with us on our [GitHub](https://github.com/gobuffalo/buffalo) or [Twitter](https://twitter.com/gobuffalo) accounts.
+Outre la documentation elle-même, vous pouvez également nous contacter sur nos comptes [GitHub](https://github.com/gobuffalo/buffalo) ou [Twitter](https://twitter.com/gobuffalo).

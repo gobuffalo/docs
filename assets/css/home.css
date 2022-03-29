@@ -73,6 +73,10 @@ html {
     @apply break-all;
 }
 
+.content .card h4 {
+    margin-bottom: 0 !important;
+}
+
 
 .content ul {
     @apply list-disc pl-3 mb-3;

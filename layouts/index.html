@@ -56,9 +56,7 @@
         <div class="container text-white text-center">
             <h2 class="text-center text-4xl font-bold mb-8">{{.Site.Params.FromOurBlog}}</h2>
 
-            <div id="blog-content" class="grid grid-cols-3 gap-10 mb-10">
-
-            </div>
+            <div id="blog-content" class="md:grid md:grid-cols-3 gap-10 mb-10" data-read-more="{{.Site.Params.ReadMore}}"></div>
 
             <a href="https://blog.gobuffalo.io" class="bg-blue-700 border border-white p-3 px-6 inline-block rounded text-white mb-5 uppercase font-bold">{{.Site.Params.LearnMore}}</a>
         </div>

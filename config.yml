@@ -27,6 +27,7 @@ languages:
       noResultsCopy: "We couldn't find any guides or documents with that term. Please try again. You can also visit the documentation site and navigate for more details."
       fromOurBlog: "From our blog"
       learnMore: "Learn more"
+      readMore: "Read more"
     menu:
       top:
         - name: Documentation
@@ -56,6 +57,7 @@ languages:
       noResultsCopy: "Nous n'avons trouvé aucun guide ou document contenant ce terme. Veuillez réessayer. Vous pouvez également visiter le site de documentation et naviguer pour plus de détails."
       fromOurBlog: "De notre blog"
       learnMore: "Apprendre encore plus"
+      readMore: "Lire la suite"
     menu:
       top:
         - name: Documentation

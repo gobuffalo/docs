@@ -1,4 +1,29 @@
 document.addEventListener('DOMContentLoaded', () =>{
+    loadMobileNav();
+    addHeaderLinks();
+    loadBlogContent();
+});
+
+function loadMobileNav() {
+    let mobileMenu = document.querySelector("#mobile-menu")
+    document.querySelector("#mobile-menu-control").addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+    })
+
+    document.querySelectorAll("#mobile-menu #close, .search-button").forEach(el => {
+        el.addEventListener("click", () => {
+            mobileMenu.classList.add("hidden");
+        })  
+    })
+
+    document.addEventListener('keydown', e => {
+        if (e.keyCode === 27) {
+            mobileMenu.classList.add("hidden");
+        }
+    })
+}
+
+function addHeaderLinks() {
     document.querySelectorAll("h1, h2, h3, h4, h5, h6").forEach(h => {
         if (h.id == ""){
             return
@@ -11,13 +36,20 @@ document.addEventListener('DOMContentLoaded', () =>{
 
         h.innerHTML += link.outerHTML;
     })
+}
+
+function loadBlogContent() {
+    let container = document.querySelector("#blog-content");
+    if (container == null) {
+        return
+    }
 
     fetch("https://api.rss2json.com/v1/api.json?rss_url=https://blog.gobuffalo.io/feed").then(response => {
         response.json().then(data => {
             let items = data.items.slice(0, 3);
             items.forEach(item => {
-                container = document.querySelector("#blog-content");
-
+                
+    
                 let desc = item.description.replace(/<img[^>]*>/g, "");
                 desc = desc.replace(/<\/?[^>]+(>|$)/g, "");
                 desc = desc.replace(/&nbsp;/g, "");
@@ -43,4 +75,4 @@ document.addEventListener('DOMContentLoaded', () =>{
 
         })
     })
-});
+}

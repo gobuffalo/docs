@@ -1,6 +1,9 @@
 
 document.addEventListener('DOMContentLoaded', ()=>{  
-  document.getElementById("search-button").addEventListener('click', showSearch);
+  document.querySelectorAll(".search-button").forEach(element => {
+    element.addEventListener('click', showSearch);
+  })
+    
   document.getElementById("search-overlay").addEventListener('click', hideSearch);
   document.getElementById("close-search").addEventListener('click', hideSearch);
 
@@ -16,6 +19,8 @@ function showSearch() {
   document.querySelector("header").classList.toggle("z-10");
   document.getElementById("search-palette").classList.toggle("hidden");
   document.getElementById("search-input").focus();
+
+  
 }
 
 function hideSearch() {

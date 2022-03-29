@@ -21,7 +21,7 @@
             </a>					
         </span>
         
-        <ul class="flex flex-grow justify-end flex-row space-x-5 text-white ">
+        <ul class="hidden md:flex flex-grow justify-end flex-row space-x-5 text-white ">
             {{ $currentPage := . }}
             {{ range .Site.Menus.top }}
                 {{ $menuItemURL := .URL | relLangURL }}
@@ -34,13 +34,47 @@
             {{ end }}    
         </ul>
 
-        <span>
-            <button id="search-button" type="button" class="hidden sm:flex items-center w-72 text-left space-x-3 px-3 h-10 bg-gray-400 ring-1 ring-slate-900/10 hover:ring-slate-300 hover:bg-white focus:outline-none focus:ring-2 focus:ring-sky-500 shadow-sm rounded-lg text-slate-400 dark:bg-slate-800 dark:ring-0 dark:text-slate-300 dark:highlight-white/5 dark:hover:bg-slate-700">
+        <span class="hidden md:flex">
+            <button type="button" class="search-button hidden sm:flex items-center w-72 text-left space-x-3 px-3 h-10 bg-gray-400 ring-1 ring-slate-900/10 hover:ring-slate-300 hover:bg-white focus:outline-none focus:ring-2 focus:ring-sky-500 shadow-sm rounded-lg text-slate-400 dark:bg-slate-800 dark:ring-0 dark:text-slate-300 dark:highlight-white/5 dark:hover:bg-slate-700">
                 <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="flex-none text-slate-300 dark:text-slate-400" aria-hidden="true">
                     <path d="m19 19-3.5-3.5"></path><circle cx="11" cy="11" r="6"></circle>
                 </svg>
                 <span class="flex-auto">Quick search...</span><kbd class="font-sans font-semibold dark:text-slate-500"><abbr title="Command" class="no-underline text-slate-300 dark:text-slate-500">⌘</abbr> K</kbd>
             </button>
         </span>
+        <span class="flex flex-row flex-grow md:hidden text-white justify-end"> 
+            <a href="#" id="mobile-menu-control" class="hover:bg-gray-700 p-1.5 rounded-md ">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </a>
+        </span>
     </div>
 </header>
+
+<div id="mobile-menu" class="text-white tex-xl fixed hidden top-0 bottom-0 left-0 right-0 z-10 bg-gray-800 bg-opacity-90 text-center md:hidden ">
+    <a id="close" class="fixed right-11 top-7 cursor-pointer">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+    </a>
+
+    <div class="flex flex-col py-20 pt-36 gap-8">
+        <div class="text-center mx-auto">
+            <button type="button" class="search-button border border-white p-4 px-6  flex items-center text-center text-2xl hover:ring-slate-300 focus:outline-none rounded-lg ">
+                <svg class="w-7 h-7 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                <span>Quick search</span></kbd>
+            </button>
+        </div>
+        
+        {{ $currentPage := . }}
+            {{ range .Site.Menus.top }}
+                {{ $menuItemURL := .URL | relLangURL }}
+                {{ $page := site.GetPage .URL }}
+                {{ $pageURL := $currentPage.RelPermalink | relLangURL }}
+                {{ $active := $currentPage.IsDescendant $page }}
+                <div>
+                    <a href="{{ .URL }}" class="text-3xl {{ if $active }}text-blue-800 font-bold p-2.5 px-6 bg-white rounded-full {{ end }}">{{ .Name }}</a>
+                </div>
+            {{ end }}    
+        
+    </div>
+    
+</div>
+

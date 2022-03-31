@@ -5,7 +5,7 @@ ADD package.json .
 RUN npm install .
 
 ADD . .
-RUN hugo -b "https://buffalodocs.herokuapp.com"
+RUN hugo -b "https://gobuffalo.io"
 
 FROM nginx:alpine
 

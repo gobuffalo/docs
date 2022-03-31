@@ -6,6 +6,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="robots" content="index,follow">
 
+		{{ partial "seo" . }}
+
 		{{ $styles := resources.Get "css/home.css" | postCSS }}
 
 		{{ if .Site.IsServer }}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#" lang="{{ .Language }}">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="robots" content="index,follow">
+
+		{{ $styles := resources.Get "css/home.css" | postCSS }}
+
+		{{ if .Site.IsServer }}
+		<link rel="stylesheet" href="{{ $styles.RelPermalink }}"/>
+		{{ else }}
+			{{ $styles := $styles | minify | fingerprint | resources.PostProcess }}
+			<link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}"/>
+		{{ end }}
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.0/fuse.min.js"></script>
+		
+		{{ $searchJS := resources.Get "js/main.js" }}
+		<script src="{{ $searchJS.RelPermalink }}"></script>
+		{{ $searchJS := resources.Get "js/search.js" }}
+		<script src="{{ $searchJS.RelPermalink }}"></script>
+	  
+		{{partial "favicons" .}}
+	</head>
+
+	<body>
+		{{ partial "header.html" . }}
+
+		{{ block "main" . }}{{end }}
+		{{ partial "footer" . }}
+		{{ partial "search" .}}
+	</body>
+</html>

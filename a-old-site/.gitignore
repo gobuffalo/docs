@@ -1,0 +1,18 @@
+/vendor/
+**/*.log
+**/*.sqlite
+.idea/
+bin/
+tmp/
+node_modules/
+.sass-cache/
+*-packr.go
+public/assets/
+.vscode/
+.grifter/
+.env
+/docs
+
+# Search engine
+docs.search/
+.grifter/

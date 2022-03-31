@@ -1,31 +1,15 @@
-# This is a multi-stage Dockerfile and requires >= Docker 17.05
-# https://docs.docker.com/engine/userguide/eng-image/multistage-build/
-FROM gobuffalo/buffalo:development as builder
+FROM klakegg/hugo:ext-alpine-ci as builder
 
-RUN go version
-RUN which go
-RUN echo $PATH
-ENV GOPROXY="https://proxy.golang.org"
-ENV GO111MODULE="on"
-ARG GITHUB_TOKEN=local
-ENV GITHUB_TOKEN ${GITHUB_TOKEN}
-
-# this will cache the npm install step, unless package.json changes
-ADD package.json .
 ADD package-lock.json .
-RUN npm install --no-progress
+ADD package.json .
+RUN npm install .
+
 ADD . .
-RUN buffalo build --static -o /bin/app -v --skip-template-validation
+RUN hugo -b "https://buffalodocs.herokuapp.com"
 
-# Comment out to run the binary in "production" mode:
-# ENV GO_ENV=production
+FROM nginx:alpine
 
-# Bind the app to 0.0.0.0 so it can be seen from outside the container
-ENV ADDR=0.0.0.0
+COPY --from=builder /src/public /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-EXPOSE 3000
-
-# Comment out to run the migrations before running the binary:
-# CMD /bin/app migrate; /bin/app
-CMD exec /bin/app
-
+CMD sed -i -e 's/$PORT/'"$PORT"'/g' /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'

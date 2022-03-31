@@ -1,46 +1,9 @@
 {
-  "license": "MIT",
-  "main": "index.js",
-  "name": "gobuffalo.io",
-  "repository": "github.com/gobuffalo/docs",
-  "version": "1.0.0",
-  "scripts": {
-    "build": "webpack -p --progress",
-    "dev": "webpack --watch"
-  },
-  "dependencies": {
-    "anchor-js": "^4.2.2",
-    "bootstrap": "^4.5.2",
-    "font-awesome": "~4.7.0",
-    "highlight.js": "^10.4.1",
-    "jquery": "^3.5.1",
-    "jquery-ujs": "~1.2.2",
-    "popper.js": "^1.16.1"
-  },
-  "devDependencies": {
-    "babel-cli": "~6.26.0",
-    "babel-core": "~6.26.3",
-    "babel-loader": "^7.1.5",
-    "babel-preset-env": "~1.7.0",
-    "babel-preset-stage-2": "^6.24.1",
-    "copy-webpack-plugin": "^6.0.3",
-    "css-loader": "~1.0.0",
-    "empty-module": "0.0.2",
-    "expose-loader": "~0.7.5",
-    "file-loader": "~1.1.11",
-    "gopherjs-loader": "^0.0.1",
-    "mini-css-extract-plugin": "^0.4.1",
-    "node-sass": "^4.14.1",
-    "npm-install-webpack-plugin": "4.0.5",
-    "purgecss-webpack-plugin": "^1.6.0",
-    "sass-loader": "~7.1.0",
-    "style-loader": "~0.22.1",
-    "terser-webpack-plugin": "^2.3.8",
-    "url-loader": "~1.0.1",
-    "webpack": "^4.41.6",
-    "webpack-cleanup-plugin": "^0.5.1",
-    "webpack-cli": "^3.3.12",
-    "webpack-livereload-plugin": "2.2.0",
-    "webpack-manifest-plugin": "~2.2.0"
+    "dependencies": {
+      "autoprefixer": "^10.3.4",
+      "postcss": "^8.3.6",
+      "postcss-cli": "^8.3.1",
+      "tailwindcss": "^2.2.19"
+    }
   }
-}
+  

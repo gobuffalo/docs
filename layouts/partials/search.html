@@ -1,0 +1,79 @@
+<div id="search-palette" class="hidden fixed inset-0 z-51 overflow-y-auto p-4 sm:p-6 md:p-20" role="dialog" aria-modal="true">
+    <div id="search-overlay" class="fixed z-60 inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+  
+    <div class="mx-auto max-w-2xl transform divide-y divide-gray-100 overflow-hidden rounded-xl bg-white shadow-2xl ring-1 ring-black ring-opacity-5 transition-all">
+      <div class="relative">
+        <svg class="pointer-events-none absolute top-3.5 left-4 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+        </svg>
+        <input id="search-input" type="text" class="h-12 w-full border-0 bg-transparent pl-11 pr-4 text-gray-800 placeholder-gray-400 focus:ring-0 outline-none sm:text-sm" placeholder="{{.Site.Params.SearchPlaceholder}}">
+        <button id="close-search" class="bg-gray-200 h-8 w-8 text-xs text-gray-600 rounded-md inline-block absolute right-2 top-2">esc</button>
+      </div>
+  
+      <!-- Default state, show/hide based on command palette state. -->
+      <ul id="search-quick-actions" class="max-h-80 scroll-py-2 divide-y divide-gray-100 overflow-y-auto">
+        <li class="p-2">
+          <h2 class="sr-only">Quick actions</h2>
+          <ul class="text-sm text-gray-700">
+            <!-- Active: "bg-indigo-600 text-white" -->
+            <li class="group cursor-default select-none items-center rounded-md px-3 py-2">
+                {{$page := .Site.GetPage "documentation"}}
+                <a href="{{ $page.RelPermalink }}" class="flex flex-row items-center group hover:text-blue-500">
+                    <svg class="h-6 w-6 flex-none" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                    <span class="ml-3 flex-auto truncate">{{.Site.Params.Documentation}}</span>
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                </a>
+            </li>
+
+            <li class="group cursor-default select-none items-center rounded-md px-3 py-2">
+                {{$page := .Site.GetPage "documentation/tutorials"}}
+                <a href="{{$page.RelPermalink}}" class="flex flex-row items-center group hover:text-blue-500">
+                    <svg class="h-6 w-6 flex-none " fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 14l9-5-9-5-9 5 9 5z"></path><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"></path></svg>
+                    <span class="ml-3 flex-auto truncate">{{.Site.Params.Tutorials}}</span>
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                </a>
+            </li>
+            
+            <li class="group cursor-default select-none items-center rounded-md px-3 py-2">
+                {{$page := .Site.GetPage "documentation/support"}}
+                <a href="{{ $page.RelPermalink }}" class="flex flex-row items-center group hover:text-blue-500">
+                    <svg class="h-6 w-6 flex-none" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    <span class="ml-3 flex-auto truncate">{{.Site.Params.Support}}</span>
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                </a>
+            </li>
+            <li class="group cursor-default select-none items-center rounded-md px-3 py-2">
+                {{$page := .Site.GetPage "documentation/troubleshooting"}}
+                <a href="{{ $page.RelPermalink }}" class="flex flex-row items-center group hover:text-blue-500">
+                    <svg class="h-6 w-6 flex-none" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span class="ml-3 flex-auto truncate">{{.Site.Params.Troubleshooting}}</span>
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+  
+      <!-- Results, show/hide based on command palette state. -->
+      <ul id="search-results" class="hidden max-h-96 overflow-y-auto p-2 text-sm text-gray-700"></ul>
+  
+      <!-- Empty state, show/hide based on command palette state. -->
+      <div id="search-no-results" class="hidden py-14 px-6 text-center sm:px-14">
+        <svg class="mx-auto h-6 w-6 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+        </svg>
+        <p class="mt-4 text-sm text-gray-900">{{.Site.Params.NoResultsCopy}}</p>
+      </div>
+    </div>
+
+    <script id="search-result-template" type="text/x-js-template">
+        <li class="text-gray-700 group cursor-default select-none items-center rounded-md px-3 py-2 hover:text-blue-500">
+            <a class="flex items-center" href="${link}">
+                <svg class="h-6 w-6 flex-none" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                <span class="ml-3 flex-grow flex-auto truncate">${title}</span>
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                <span class="ml-3 hidden flex-none text-indigo-100">Jump to...</span>
+            </a>
+        </li>
+    </script>
+</div>

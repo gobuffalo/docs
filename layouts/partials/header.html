@@ -1,0 +1,80 @@
+<header class="bg-gray-800 sticky top-0 z-10">
+    <div class="container px-10 flex flex-row items-center space-x-8 py-5 ">
+        <span class="text-white">
+            <a href="/" class="inline">
+                <span class="flex flex-row items-center">
+                    {{- $image := (resources.Get "images/logo_top.png").Resize "150x webp" -}}  
+                    <img src="{{$image.RelPermalink}}" alt="logo" class="w-6 sm:w-10 mr-1 sm:mr-2"/>
+                    <span class="text-xl sm:text-2xl font-medium">Buffalo</span>
+                </span>
+            </a>
+        </span>
+
+        <span class="flex flex-row gap-1">
+            <a href="https://gophers.slack.com/messages/buffalo/" class="p-2 hover:bg-blue-800 rounded-full">
+                {{- $image := (resources.Get "images/slack.png") -}}  
+                <img src="{{$image.RelPermalink}}" alt="slack logo" class="w-6 h-6 sm:w-7 sm:h-7">
+            </a>
+
+            <a href="https://github.com/gobuffalo/buffalo" class="text-white hover:opacity-95 hover:bg-blue-800 p-2 rounded-full">
+                <svg viewBox="0 0 16 16" class="w-6 h-6 sm:w-7 sm:h-7" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+            </a>					
+        </span>
+        
+        <ul class="hidden md:flex flex-grow justify-end flex-row space-x-5 text-white ">
+            {{ $currentPage := . }}
+            {{ range .Site.Menus.top }}
+                {{ $menuItemURL := .URL | relLangURL }}
+                {{ $page := site.GetPage .URL }}
+                {{ $pageURL := $currentPage.RelPermalink | relLangURL }}
+                {{ $active := $currentPage.IsDescendant $page }}
+                <li>
+                    <a href="{{ .URL }}" class="hover:underline {{ if $active }}text-blue-800 font-bold p-2.5 px-4 bg-white rounded-full {{ end }}">{{ .Name }}</a>
+                </li>
+            {{ end }}    
+        </ul>
+
+        <span class="hidden md:flex">
+            <button type="button" class="search-button hidden sm:flex items-center w-44 lg:w-72 text-left space-x-3 px-3 h-10 bg-gray-400 ring-1 ring-slate-900/10 hover:ring-slate-300 hover:bg-white focus:outline-none focus:ring-2 focus:ring-sky-500 shadow-sm rounded-lg text-slate-400 dark:bg-slate-800 dark:ring-0 dark:text-slate-300 dark:highlight-white/5 dark:hover:bg-slate-700">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="flex-none text-slate-300 dark:text-slate-400" aria-hidden="true">
+                    <path d="m19 19-3.5-3.5"></path><circle cx="11" cy="11" r="6"></circle>
+                </svg>
+                <span class="flex-auto">Search...</span><kbd class="font-sans font-semibold dark:text-slate-500"><abbr title="Command" class="no-underline text-slate-300 dark:text-slate-500">⌘</abbr> K</kbd>
+            </button>
+        </span>
+        <span class="flex flex-row flex-grow md:hidden text-white justify-end"> 
+            <a href="#" id="mobile-menu-control" class="hover:bg-gray-700 p-1.5 rounded-md ">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </a>
+        </span>
+    </div>
+</header>
+
+<div id="mobile-menu" class="text-white tex-xl fixed hidden top-0 bottom-0 left-0 right-0 z-10 bg-gray-800 bg-opacity-90 text-center md:hidden ">
+    <a id="close" class="fixed right-11 top-7 cursor-pointer">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+    </a>
+
+    <div class="flex flex-col py-20 pt-36 gap-8">
+        <div class="text-center mx-auto">
+            <button type="button" class="search-button border border-white p-4 px-6  flex items-center text-center text-2xl hover:ring-slate-300 focus:outline-none rounded-lg ">
+                <svg class="w-7 h-7 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                <span>Quick search</span></kbd>
+            </button>
+        </div>
+        
+        {{ $currentPage := . }}
+            {{ range .Site.Menus.top }}
+                {{ $menuItemURL := .URL | relLangURL }}
+                {{ $page := site.GetPage .URL }}
+                {{ $pageURL := $currentPage.RelPermalink | relLangURL }}
+                {{ $active := $currentPage.IsDescendant $page }}
+                <div>
+                    <a href="{{ .URL }}" class="text-3xl {{ if $active }}text-blue-800 font-bold p-2.5 px-6 bg-white rounded-full {{ end }}">{{ .Name }}</a>
+                </div>
+            {{ end }}    
+        
+    </div>
+    
+</div>
+

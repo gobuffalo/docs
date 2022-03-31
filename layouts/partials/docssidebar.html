@@ -1,0 +1,66 @@
+{{ $currentPage := . | relLangURL }}
+{{ .Scratch.Set "currentPage" $currentPage }}
+
+<aside class="hidden md:block bg-gray-200 rounded-md p-7 docssidebar ">
+    <ul class="mb-5">
+        {{ with .Site.GetPage "section" "documentation" }}
+            {{ $section := . }}
+            {{ range .Site.Pages }}     
+                {{ if .InSection $section }}   
+                    {{ $active := eq $currentPage (. | relLangURL)  }}
+                    <li class="px-2 py-1.5 {{if $active}} bg-blue-200 rounded-sm border-l border-blue-800 {{end}}">
+                        <a href="{{ .RelPermalink }}" class="hover:underline flex items-center">
+                            {{- $image := (resources.Get .Params.Icon) -}} 
+                            <img src="{{$image.RelPermalink}}" class="w5 h-5 mr-1.5" alt="page-icon">
+                            <span>{{ .Params.Name }}</span>
+                        </a>
+                    </li>
+                {{ end }}
+            {{ end }}
+        {{ end }} 
+    </ul>
+
+    {{ with .Site.GetPage "section" "getting_started" }}
+        {{ .Scratch.Set "currentPage" $currentPage }}
+        {{ .Scratch.Set "section" . }}
+
+        {{ partial "sidebargroup" . }}
+    {{ end }}
+
+    {{ with .Site.GetPage "section" "request_handling" }}
+    {{ .Scratch.Set "currentPage" $currentPage }}
+        {{ .Scratch.Set "section" . }}
+
+        {{ partial "sidebargroup" . }}
+    {{ end }}
+
+    {{ with .Site.GetPage "section" "frontend-layer" }}
+        {{ .Scratch.Set "currentPage" $currentPage }}
+        {{ .Scratch.Set "section" . }}
+
+        {{ partial "sidebargroup" . }}
+    {{ end }}
+
+
+    {{ with .Site.GetPage "section" "database" }}
+        {{ .Scratch.Set "currentPage" $currentPage }}
+        {{ .Scratch.Set "section" . }}
+
+        {{ partial "sidebargroup" .}}   
+    {{ end }}
+
+    {{ with .Site.GetPage "section" "guides" }}
+        {{ .Scratch.Set "currentPage" $currentPage }}
+        {{ .Scratch.Set "section" . }}
+
+        {{ partial "sidebargroup" .}}   
+    {{ end }}
+
+    {{ with .Site.GetPage "section" "deploy" }}
+        {{ .Scratch.Set "currentPage" $currentPage }}
+        {{ .Scratch.Set "section" . }}
+
+        {{ partial "sidebargroup" .}}   
+    {{ end }}
+
+</aside>

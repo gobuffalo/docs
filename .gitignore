@@ -1,18 +1,14 @@
-/vendor/
-**/*.log
-**/*.sqlite
-.idea/
-bin/
-tmp/
-node_modules/
-.sass-cache/
-*-packr.go
-public/assets/
-.vscode/
-.grifter/
-.env
-/docs
+# Generated files by hugo
+/public/
+/resources/_gen/
+/assets/jsconfig.json
+hugo_stats.json
 
-# Search engine
-docs.search/
-.grifter/
+# Executable may be added to repository
+hugo.exe
+hugo.darwin
+hugo.linux
+
+# Temporary lock file while building
+/.hugo_build.lock
+node_modules

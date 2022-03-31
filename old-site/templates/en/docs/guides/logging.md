@@ -28,6 +28,6 @@ func JSONLogger(lvl logger.Level) logger.FieldLogger {
 
 app = buffalo.New(buffalo.Options{
 // ...
-    Logger:       CustomLogger(logger.DebugLevel),
+    Logger:       JSONLogger(logger.DebugLevel),
 }
 ```

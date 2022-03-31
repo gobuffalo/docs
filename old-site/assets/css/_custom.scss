@@ -1,0 +1,72 @@
+.glyphicons-list {
+  list-style: none;
+  padding: 0
+}
+
+.glyphicons-list li {
+  display: inline-block;
+  float: left;
+  width: 12.5%;
+  height: 115px;
+  background-color: #f8f8f8;
+  border: 1px solid #fff;
+  padding: 10px;
+  -webkit-transition: .3s ease;
+  -o-transition: .3s ease;
+  transition: .3s ease
+}
+
+.glyphicons-list li:hover {
+  background-color: #eee
+}
+
+.glyphicons-list .glyphicon {
+  display: block;
+  text-align: center;
+  font-size: 25px;
+  color: #222
+}
+
+.glyphicons-list .glyphicon-class {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  line-height: 16px;
+  font-size: 13px
+}
+
+.fa-page-header {
+  font-size: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #f1f1f1
+}
+
+.fontawesome-icon-list .fa-hover {
+  margin-bottom: 5px;
+  -webkit-transition: .3s ease;
+  -o-transition: .3s ease;
+  transition: .3s ease
+}
+
+.fontawesome-icon-list .fa-hover:hover {
+  background-color: #f8f8f8
+}
+
+.fontawesome-icon-list .fa-hover .fa {
+  width: 25px;
+  color: #222
+}
+
+@media (max-width:767px) {
+  .glyphicons-list li {
+    width: 25%
+  }
+}
+
+.window-content .btn {
+  margin-bottom: 6px
+}
+
+.hljs {
+  max-height: 30em;
+}

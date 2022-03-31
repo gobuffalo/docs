@@ -1,0 +1,1 @@
+This is the old Buffalo site for the docs. The content in here will stay here until we have translated all of it into the new Hugo website.

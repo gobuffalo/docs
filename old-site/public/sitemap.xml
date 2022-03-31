@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
+xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<url>
+  <loc>https://gobuffalo.io/en/</loc>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://gobuffalo.io/fr/" />
+  <xhtml:link rel="alternate" hreflang="en" href="https://gobuffalo.io/en/" />
+  <xhtml:link rel="alternate" hreflang="es" href="https://gobuffalo.io/es/" />
+  <xhtml:link rel="alternate" hreflang="it" href="https://gobuffalo.io/it/" />
+  <lastmod>2019-08-15</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/examples</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/support</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/index</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/getting-started/installation</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/routing</loc>
+  <lastmod>2019-08-15</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/templating</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/getting-started/new-project</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/testing</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/assets</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/db/models</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/tasks</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/sponsors</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/overview</loc>
+  <lastmod>2019-08-15</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/release-notes/buffalo/v0149</loc>
+  <lastmod>2019-08-14</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/release-notes/buffalo/v0148</loc>
+  <lastmod>2019-08-14</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/release-notes/buffalo/v0147</loc>
+  <lastmod>2019-08-12</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/release-notes/buffalo/v0146</loc>
+  <lastmod>2019-08-12</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/release-notes/buffalo/v0145</loc>
+  <lastmod>2019-08-12</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/release-notes/buffalo/v0144</loc>
+  <lastmod>2019-08-12</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/release-notes/buffalo/v0143</loc>
+  <lastmod>2019-08-12</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/getting-started/installation</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/getting-started/integrations</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/getting-started/new-project</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/getting-started/directory-structure</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/getting-started/config-vars</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/routing</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/actions</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/resources</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/context</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/bind</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/middleware</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/errors</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/sessions</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/cookies</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/rendering</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/templating</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/layouts</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/iterating</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/partials</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/helpers</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/custom-helpers</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/flash-messages</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/forms</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/assets</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/db/getting-started</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/db/toolbox</loc>
+  <lastmod>2019-08-15</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/db/configuration</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/db/models</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/db/migrations</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/db/fizz</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/db/querying</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/db/mutations</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/db/raw-queries</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/db/relations</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/db/relations/onetoone</loc>
+  <lastmod>2019-08-15</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/db/relations/onetomany</loc>
+  <lastmod>2019-08-15</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/db/callbacks</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/db/scoping</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/db/buffalo-integration</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/gomods</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/goth</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/auth</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/apis</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/file-uploads</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/tasks</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/workers</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/mail</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/plugins</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/template-engines</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/localization</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/testing</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/events</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/videos</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/deploy/building</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/deploy/cross-compiling</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/deploy/proxy</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/deploy/systemd</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/deploy/providers</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/troubleshooting</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/slack</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/contributing</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/sponsors</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://gobuffalo.io/en/docs/releases</loc>
+  <lastmod>2019-08-12</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.64</priority>
+</url>
+</urlset>

@@ -1,0 +1,242 @@
+##########################################################
+# English translations
+##########################################################
+
+- id: head.title
+  translation: Buffalo &ndash; Rapid Web Development in Go
+
+- id: head.description
+  translation: Put the fun back in writing Go web applications! A Ruby on Rails inspired, idiomatic, web framework written in Go.
+
+- id: head.meta.keywords
+  translation: framework, go, buffalo, pop, golang, rails, development, generator, javascript, web, rapid, easy
+
+# Helpers
+- id: helpers.since
+  translation: since {{.name}}<strong>{{.version}}</strong>
+
+# Top
+- id: top.title
+  translation: Buffalo
+
+- id: top.examples-tutorials
+  translation: Tutorials
+
+- id: top.docs
+  translation: Documentation
+
+- id: top.blog
+  translation: Blog
+
+- id: top.become-a-patreon
+  translation: Become a Patreon
+
+- id: top.store
+  translation: Store
+
+- id: top.support
+  translation: Support
+
+# Footer
+- id: footer.copyright
+  translation: Copyright &copy; {{ .year }} Buffalo. All rights reserved.
+
+- id: footer.gopher
+  translation: Buffalo Gopher designed by <a href="https://twitter.com/ashleymcnamara" target="_blank" rel="noopener noreferrer">Ashley McNamara</a> &mdash; Original Gopher designed by Renee French.
+
+# Menu
+- id: menu.search
+  translation: Search...
+
+- id: menu.language
+  translation: Language
+
+- id: menu.overview
+  translation: Overview
+
+- id: menu.release-notes
+  translation: Release Notes
+
+- id: menu.getting-started
+  translation: Getting Started
+
+- id: menu.installation
+  translation: Installation
+
+- id: menu.integrations
+  translation: Tooling Integration
+
+- id: menu.new-project
+  translation: Generate a New Project
+
+- id: menu.directory-structure
+  translation: Directory structure
+
+- id: menu.config-variables
+  translation: Configuration
+
+- id: menu.request-handling
+  translation: Request Handling
+
+- id: menu.request-binding
+  translation: Request Binding
+
+- id: menu.routing
+  translation: Routing
+
+- id: menu.actions
+  translation: Actions
+
+- id: menu.resources
+  translation: Resources
+
+- id: menu.context
+  translation: Context
+
+- id: menu.errors-handling
+  translation: Errors Handling
+
+- id: menu.sessions
+  translation: Sessions
+
+- id: menu.cookies
+  translation: Cookies
+
+- id: menu.db
+  translation: Database
+
+- id: menu.db-getting-started
+  translation: Getting Started with Pop
+
+- id: menu.db-configuration
+  translation: Configuration
+
+- id: menu.db-toolbox
+  translation: Soda CLI
+
+- id: menu.db-models
+  translation: Models
+
+- id: menu.db-migrations
+  translation: Migrations
+
+- id: menu.db-fizz
+  translation: Fizz
+
+- id: menu.db-querying
+  translation: Querying
+
+- id: menu.db-mutations
+  translation: Mutations
+
+- id: menu.db-raw-queries
+  translation: Raw Queries
+
+- id: menu.db-callbacks
+  translation: Callbacks
+
+- id: menu.db-scoping
+  translation: Scoping
+
+- id: menu.db-buffalo-integration
+  translation: Buffalo Integration
+
+- id: menu.gomods
+  translation: Go Modules
+
+- id: menu.third-party-auth
+  translation: 3<sup>rd</sup> Party Authentication
+
+- id: menu.local-authentication
+  translation: Local Authentication
+
+- id: menu.apis
+  translation: APIs
+
+- id: menu.template-engines
+  translation: Template Engines
+
+- id: menu.contributing
+  translation: Contributing
+
+- id: menu.releases
+  translation: Releases
+
+- id: menu.sponsors
+  translation: Sponsors
+
+- id: menu.help
+  translation: Help
+
+- id: menu.troubleshooting
+  translation: Trouble Shooting
+
+- id: menu.support
+  translation: Support
+
+- id: menu.deploy
+  translation: Deploy
+
+- id: menu.building-binaries
+  translation: Packing
+
+- id: menu.cross-compiling
+  translation: Cross-compiling
+
+- id: menu.using-proxy
+  translation: Using a proxy
+
+- id: menu.systemd-service
+  translation: Systemd service
+
+- id: menu.deploy-providers-solutions
+  translation: Cloud Providers
+
+# Releases page
+- id: releases.title
+  translation: Releases
+
+- id: releases.date
+  translation: Date
+
+- id: releases.version
+  translation: Version
+
+- id: releases.blog
+  translation: Blog
+
+- id: releases.github
+  translation: GitHub
+
+# Sponsors
+- id: sponsors.platinum-title
+  translation: Platinum Sponsors
+
+- id: sponsors.your-company-here
+  translation: Your Company Here
+
+# Search
+- id: search.title
+  translation: Search
+
+- id: search.button
+  translation: Search
+
+# Docs
+- id: docs.improve-page-button
+  translation: Improve this page
+
+- id: docs.new-issue-button
+  translation: Open a new issue
+
+- id: docs.feedback.title
+  translation: Feedback
+
+- id: docs.feedback.edit
+  translation: "If you found an error or something which needs to be improved, and you want to contribute to fix it:"
+
+- id: docs.feedback.issue
+  translation: "If you'd like to suggest something to improve this page:"
+
+- id: docs.page-not-available-in-your-language
+  translation: This page is not available in your language yet, you'll find the original english version instead.

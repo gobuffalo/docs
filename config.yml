@@ -3,9 +3,7 @@ languageCode: en-us
 title: The Buffalo Framework
 defaultContentLanguage: en
 params:
-  docsSections:
-    - getting_started
-    - request_handling
+  goMinVersion: v1.16.0
 outputs:
     home: ["HTML", "RSS", "JSON"]
 languages:

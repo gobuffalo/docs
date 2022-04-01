@@ -57,14 +57,14 @@ The names of the "keys", in this example, "success", are left up to your applica
 ### Looping Over a Specific Flash Message Key
 
 ```html
-&lt;div class="row">
-  &lt;div class="col-md-12">
-    \<%= for (message) in flash["success"] { %>
-      &lt;div class="alert alert-success" role="alert">
-        &lt;button type="button" class="close" data-dismiss="alert" aria-label="Close">&lt;span aria-hidden="true">&times;</span></button>
-        \<%= message %>
-      &lt;/div>
-    \<% } %>
-  &lt;/div>
-&lt;/div>
+<div class="row">
+  <div class="col-md-12">
+    <%= for (message) in flash["success"] { %>
+      <div class="alert alert-success" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <%= message %>
+      </div>
+    <% } %>
+  </div>
+</div>
 ```

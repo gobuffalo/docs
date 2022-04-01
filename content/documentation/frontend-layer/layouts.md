@@ -28,21 +28,21 @@ func init() {
 
 ```html
 // templates/application.html
-&lt;html>
-  &lt;head>
-    &lt;title>My App&lt;/title>
-  &lt;/head>
-  &lt;body>
-    &lt;div id="main">
-      \<%= yield %>
-    &lt;/div>
-  &lt;/body>
-&lt;/html>
+<html>
+  <head>
+    <title>My App</title>
+  </head>
+  <body>
+    <div id="main">
+      <%= yield %>
+    </div>
+  </body>
+</html>
 ```
 
 ```html
 // templates/hello.html
-&lt;h1>Hello!!&lt;/h1>
+<h1>Hello!!</h1>
 ```
 
 ```go
@@ -56,16 +56,16 @@ func Hello(c buffalo.Context) error {
 
 ```html
 // output
-&lt;html>
-  &lt;head>
-    &lt;title>My App&lt;/title>
-  &lt;/head>
-  &lt;body>
-    &lt;div id="main">
-      &lt;h1>Hello!!&lt;/h1>
-    &lt;/div>
-  &lt;/body>
-&lt;/html>
+<html>
+  <head>
+    <title>My App</title>
+  </head>
+  <body>
+    <div id="main">
+      <h1>Hello!!</h1>
+    </div>
+  </body>
+</html>
 ```
 
 
@@ -88,21 +88,21 @@ func init() {
 
 ```html
 // templates/custom.html
-&lt;html>
-  &lt;head>
-    &lt;title>My Custom Layout&lt;/title>
-  &lt;/head>
-  &lt;body>
-    &lt;div id="main">
-      \<%= yield %>
-    &lt;/div>
-  &lt;/body>
-&lt;/html>
+<html>
+  <head>
+    <title>My Custom Layout</title>
+  </head>
+  <body>
+    <div id="main">
+      <%= yield %>
+    </div>
+  </body>
+</html>
 ```
 
 ```html
 // templates/hello.html
-&lt;h1>Hello!!&lt;/h1>
+<h1>Hello!!</h1>
 ```
 
 ```go
@@ -116,14 +116,14 @@ func Hello(c buffalo.Context) error {
 
 ```html
 // output
-&lt;html>
-  &lt;head>
-    &lt;title>My Custom Layout&lt;/title>
-  &lt;/head>
-  &lt;body>
-    &lt;div id="main">
-      &lt;h1>Hello!!&lt;/h1>
-    &lt;/div>
-  &lt;/body>
-&lt;/html>
+<html>
+  <head>
+    <title>My Custom Layout</title>
+  </head>
+  <body>
+    <div id="main">
+      <h1>Hello!!</h1>
+    </div>
+  </body>
+</html>
 ```

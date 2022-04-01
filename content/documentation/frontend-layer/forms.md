@@ -23,84 +23,84 @@ The `form` helper can be used to generate HTML forms. Since this type of form is
 
 <%= codeTabs() { %>
 
-```erb
+```html
 // templates/talks/edit.html
 
-&lt;%= form({action: talkPath({id: 3}), method: "PUT"}) { %&gt;
-  &lt;div class="row"&gt;
-    &lt;div class="col-md-12"&gt;
-      &lt;%= f.InputTag({name:"Title", value: talk.Title }) %&gt;
-    &lt;/div&gt;
+<%= form({action: talkPath({id: 3}), method: "PUT"}) { %>
+  <div class="row">
+    <div class="col-md-12">
+      <%= f.InputTag({name:"Title", value: talk.Title }) %>
+    </div>
 
-    &lt;div class="col-md-6"&gt;
-      &lt;%= f.TextArea({value: talk.Abstract, hide_label: true }) %&gt;
-    &lt;/div&gt;
+    <div class="col-md-6">
+      <%= f.TextArea({value: talk.Abstract, hide_label: true }) %>
+    </div>
 
-    &lt;div class="col-md-6"&gt;
-      &lt;%= f.SelectTag({name: "TalkFormatID", value: talk.TalkFormatID, options: talk_formats}) %&gt;
-      &lt;%= f.SelectTag({name: "AudienceLevel", value: talk.AudienceLevel, options: audience_levels }) %&gt;
-    &lt;/div&gt;
+    <div class="col-md-6">
+      <%= f.SelectTag({name: "TalkFormatID", value: talk.TalkFormatID, options: talk_formats}) %>
+      <%= f.SelectTag({name: "AudienceLevel", value: talk.AudienceLevel, options: audience_levels }) %>
+    </div>
 
-    &lt;div class="col-md-12"&gt;
-      &lt;%= f.TextArea({name: "Description", value: talk.Description, rows: 10}) %&gt;
-    &lt;/div&gt;
-    &lt;div class="col-md-12"&gt;
-      &lt;%= f.TextArea({notes:"Notes", value: talk.Notes, rows: 10 }) %&gt;
-    &lt;/div&gt;
+    <div class="col-md-12">
+      <%= f.TextArea({name: "Description", value: talk.Description, rows: 10}) %>
+    </div>
+    <div class="col-md-12">
+      <%= f.TextArea({notes:"Notes", value: talk.Notes, rows: 10 }) %>
+    </div>
 
-  &lt;/div&gt;
-&lt;% } %&gt;
+  </div>
+<% } %>
 ```
 
 ```html
 // OUTPUT
-&lt;form action="/talks/3" method="POST"&gt;
-  &lt;input name="authenticity_token" type="hidden" value="e0c536b7a1a7d752066727b771f1e5d02220ceff5143f6c77b"&gt;
-  &lt;input name="_method" type="hidden" value="PUT"&gt;
-  &lt;div class="row"&gt;
-    &lt;div class="col-md-12"&gt;
-      &lt;div class="form-group"&gt;
-        &lt;input class=" form-control" name="Title" type="text" value="My Title"&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class="col-md-6"&gt;
-      &lt;div class="form-group"&gt;
-        &lt;textarea class=" form-control"&gt;some data here&lt;/textarea&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
+<form action="/talks/3" method="POST">
+  <input name="authenticity_token" type="hidden" value="e0c536b7a1a7d752066727b771f1e5d02220ceff5143f6c77b">
+  <input name="_method" type="hidden" value="PUT">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="form-group">
+        <input class=" form-control" name="Title" type="text" value="My Title">
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <textarea class=" form-control">some data here</textarea>
+      </div>
+    </div>
 
-    &lt;div class="col-md-6"&gt;
-      &lt;div class="form-group"&gt;
-        &lt;select class=" form-control" name="TalkFormatID"&gt;
-          &lt;option value="0" selected&gt;Talk&lt;/option&gt;
-          &lt;option value="1"&gt;Lightning Talk&lt;/option&gt;
-          &lt;option value="2"&gt;Workshop&lt;/option&gt;
-          &lt;option value="3"&gt;Other&lt;/option&gt;
-        &lt;/select&gt;
-      &lt;/div&gt;
-      &lt;div class="form-group"&gt;
-        &lt;select class=" form-control" name="AudienceLevel"&gt;
-          &lt;option value="All" selected&gt;All&lt;/option&gt;
-          &lt;option value="Beginner"&gt;Beginner&lt;/option&gt;
-          &lt;option value="Intermediate"&gt;Intermediate&lt;/option&gt;
-          &lt;option value="Advanced"&gt;Advanced&lt;/option&gt;
-        &lt;/select&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
+    <div class="col-md-6">
+      <div class="form-group">
+        <select class=" form-control" name="TalkFormatID">
+          <option value="0" selected>Talk</option>
+          <option value="1">Lightning Talk</option>
+          <option value="2">Workshop</option>
+          <option value="3">Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <select class=" form-control" name="AudienceLevel">
+          <option value="All" selected>All</option>
+          <option value="Beginner">Beginner</option>
+          <option value="Intermediate">Intermediate</option>
+          <option value="Advanced">Advanced</option>
+        </select>
+      </div>
+    </div>
 
-    &lt;div class="col-md-12"&gt;
-      &lt;div class="form-group"&gt;
-        &lt;textarea class=" form-control" name="Description" rows="10"&gt;some data here&lt;/textarea&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
+    <div class="col-md-12">
+      <div class="form-group">
+        <textarea class=" form-control" name="Description" rows="10">some data here</textarea>
+      </div>
+    </div>
 
-    &lt;div class="col-md-12"&gt;
-      &lt;div class="form-group"&gt;
-        &lt;textarea class=" form-control" notes="Notes" rows="10"&gt;some data here&lt;/textarea&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/form&gt;
+    <div class="col-md-12">
+      <div class="form-group">
+        <textarea class=" form-control" notes="Notes" rows="10">some data here</textarea>
+      </div>
+    </div>
+  </div>
+</form>
 ```
 <% } %>
 
@@ -135,88 +135,88 @@ type Talk struct {
 }
 ```
 
-```erb
+```html
 // templates/talks/edit.html
-&lt;%= form_for( talk, {action: talkPath({id: 3}), method: "PUT"}) { %&gt;
-  &lt;div class="row"&gt;
-    &lt;div class="col-md-12"&gt;
-      &lt;%= f.InputTag("Title") %&gt;
-    &lt;/div&gt;
-    &lt;div class="col-md-6"&gt;
-      &lt;%= f.TextArea("Abstract", {hide_label: true}) %&gt;
-    &lt;/div&gt;
+<%= form_for( talk, {action: talkPath({id: 3}), method: "PUT"}) { %>
+  <div class="row">
+    <div class="col-md-12">
+      <%= f.InputTag("Title") %>
+    </div>
+    <div class="col-md-6">
+      <%= f.TextArea("Abstract", {hide_label: true}) %>
+    </div>
 
 
-    &lt;div class="col-md-6"&gt;
-      &lt;%= f.SelectTag("TalkFormatID", {options: talk_formats}) %&gt;
-      &lt;%= f.SelectTag("AudienceLevel", , {options: audience_levels}) %&gt;
-    &lt;/div&gt;
+    <div class="col-md-6">
+      <%= f.SelectTag("TalkFormatID", {options: talk_formats}) %>
+      <%= f.SelectTag("AudienceLevel", , {options: audience_levels}) %>
+    </div>
 
-    &lt;div class="col-md-12"&gt;
-      &lt;%= f.TextArea("Description", {rows: 10}) %&gt;
-    &lt;/div&gt;
+    <div class="col-md-12">
+      <%= f.TextArea("Description", {rows: 10}) %>
+    </div>
 
-    &lt;div class="col-md-12"&gt;
-      &lt;%= f.TextArea("Notes", {rows: 10}) %&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;% } %&gt;
+    <div class="col-md-12">
+      <%= f.TextArea("Notes", {rows: 10}) %>
+    </div>
+  </div>
+<% } %>
 ```
 
 ```html
 // OUTPUT
-&lt;form action="/talks/3" id="talk-form" method="POST"&gt;
-  &lt;input name="authenticity_token" type="hidden" value="cd998be98a99b452481c43fd3e4715e4e85333a45b982ac999"&gt;
-  &lt;input name="_method" type="hidden" value="PUT"&gt;
-  &lt;div class="row"&gt;
-    &lt;div class="col-md-12"&gt;
-      &lt;div class="form-group"&gt;
-        &lt;label&gt;Title&lt;/label&gt;
-        &lt;input class="form-control" id="talk-Title" name="Title" type="text" value="My Title"&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class="col-md-6"&gt;
-      &lt;div class="form-group"&gt;
-        &lt;textarea class="form-control" id="talk-Abstract" name="Abstract"&gt;some data here&lt;/textarea&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
+<form action="/talks/3" id="talk-form" method="POST">
+  <input name="authenticity_token" type="hidden" value="cd998be98a99b452481c43fd3e4715e4e85333a45b982ac999">
+  <input name="_method" type="hidden" value="PUT">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="form-group">
+        <label>Title</label>
+        <input class="form-control" id="talk-Title" name="Title" type="text" value="My Title">
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <textarea class="form-control" id="talk-Abstract" name="Abstract">some data here</textarea>
+      </div>
+    </div>
 
-    &lt;div class="col-md-6"&gt;
-      &lt;div class="form-group"&gt;
-      &lt;label&gt;TalkFormatID&lt;/label&gt;
-        &lt;select class="form-control" id="talk-TalkFormatID" name="TalkFormatID"&gt;
-          &lt;option value="0" selected&gt;Talk&lt;/option&gt;
-          &lt;option value="1"&gt;Lightning Talk&lt;/option&gt;
-          &lt;option value="2"&gt;Workshop&lt;/option&gt;
-          &lt;option value="3"&gt;Other&lt;/option&gt;
-        &lt;/select&gt;
-      &lt;/div&gt;
-      &lt;div class="form-group"&gt;
-        &lt;label&gt;AudienceLevel&lt;/label&gt;
-        &lt;select class=" form-control" id="talk-AudienceLevel" name="AudienceLevel"&gt;
-          &lt;option value="All" selected&gt;All&lt;/option&gt;
-          &lt;option value="Beginner"&gt;Beginner&lt;/option&gt;
-          &lt;option value="Intermediate"&gt;Intermediate&lt;/option&gt;
-          &lt;option value="Advanced"&gt;Advanced&lt;/option&gt;
-        &lt;/select&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
+    <div class="col-md-6">
+      <div class="form-group">
+      <label>TalkFormatID</label>
+        <select class="form-control" id="talk-TalkFormatID" name="TalkFormatID">
+          <option value="0" selected>Talk</option>
+          <option value="1">Lightning Talk</option>
+          <option value="2">Workshop</option>
+          <option value="3">Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>AudienceLevel</label>
+        <select class=" form-control" id="talk-AudienceLevel" name="AudienceLevel">
+          <option value="All" selected>All</option>
+          <option value="Beginner">Beginner</option>
+          <option value="Intermediate">Intermediate</option>
+          <option value="Advanced">Advanced</option>
+        </select>
+      </div>
+    </div>
 
-    &lt;div class="col-md-12"&gt;
-      &lt;div class="form-group"&gt;
-        &lt;label&gt;Description&lt;/label&gt;
-        &lt;textarea class=" form-control" id="talk-Description" name="Description" rows="10"&gt;some data here&lt;/textarea&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
+    <div class="col-md-12">
+      <div class="form-group">
+        <label>Description</label>
+        <textarea class=" form-control" id="talk-Description" name="Description" rows="10">some data here</textarea>
+      </div>
+    </div>
 
-    &lt;div class="col-md-12"&gt;
-      &lt;div class="form-group"&gt;
-        &lt;label&gt;Notes&lt;/label&gt;
-        &lt;textarea class=" form-control" id="talk-Notes" name="Notes" rows="10"&gt;some data here&lt;/textarea&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/form&gt;
+    <div class="col-md-12">
+      <div class="form-group">
+        <label>Notes</label>
+        <textarea class=" form-control" id="talk-Notes" name="Notes" rows="10">some data here</textarea>
+      </div>
+    </div>
+  </div>
+</form>
 ```
 <% } %>
 
@@ -225,19 +225,21 @@ type Talk struct {
 
 To build your `<select>` tags inside forms Tags provide 3 convenient ways to add your `<select>` options: `form.SelectOptions`, `map[string]interface{}` or `[]string`, all of them by passing an `options` field into the `form.SelectTag` options like:
 
+
 ```erb
-\<%= f.SelectTag("TalkFormatID", {options: talkFormats}) %>
+<%= f.SelectTag("TalkFormatID", {options: talkFormats}) %>
 ```
+
 or
 
 ```erb
-\<%= f.SelectTag("TalkFormatID", {options: ["one", "two"]}) %>
+<%= f.SelectTag("TalkFormatID", {options: ["one", "two"]}) %>
 ```
 
 Which will use the same value for the `value` attribute and the body of the option, or:
 
 ```erb
-\<%= f.SelectTag("TalkFormatID", {options: {"one": 1, "two": 2}}) %>
+<%= f.SelectTag("TalkFormatID", {options: {"one": 1, "two": 2}}) %>
 ```
 
 Which allows us to define the options map inside the view.
@@ -263,7 +265,7 @@ By implementing this interface tags will call `SelectValue` and `SelectLabel` to
 Tags will add the `selected` attribute to the option that has the same value than the one it receives on the `value` option of the `form.SelectTag`, so you don't have to look for the option that has equal value than the selected one manually, p.e:
 
 ```erb
-\<%= f.SelectTag("TalkFormatID", {options: {"one": 1, "two": 2}, value: 2}) %>
+<%= f.SelectTag("TalkFormatID", {options: {"one": 1, "two": 2}, value: 2}) %>
 ```
 
 Produces:
@@ -281,7 +283,7 @@ Produces:
 And similarly with the `form.SelectOptions` slice:
 
 ```erb
-\<%= f.SelectTag("TalkFormatID", {options: talkFormats, value: 2}) %>
+<%= f.SelectTag("TalkFormatID", {options: talkFormats, value: 2}) %>
 ```
 
 ## Checkbox Tags
@@ -289,7 +291,7 @@ And similarly with the `form.SelectOptions` slice:
 Tags provide a convenient way to build an HTML `<input>` element with `type="checkbox"`:
 
 ```erb
-\<%= f.CheckboxTag("IsPublic") %>
+<%= f.CheckboxTag("IsPublic") %>
 ```
 
 That produces:
@@ -306,7 +308,7 @@ That produces:
 You can easily change the label content with
 
 ```erb
-\<%= f.CheckboxTag("IsPublic", {label: "Is the talk public?"}) %>
+<%= f.CheckboxTag("IsPublic", {label: "Is the talk public?"}) %>
 ```
 
 That produces:
@@ -325,7 +327,7 @@ That produces:
 By default when a checkbox is not "checked" no value will be sent to the server. Often, it is useful to send a value indicating a non-checked checkbox. This can be set by passing in a `unchecked` value.
 
 ```go
-\<%= f.CheckboxTag("IsPublic", {unchecked: false}) %>
+<%= f.CheckboxTag("IsPublic", {unchecked: false}) %>
 ```
 
 ```html
@@ -372,25 +374,25 @@ func (v WidgetsResource) Create(c buffalo.Context) error {
 
 ```html
 // templates/widgets/new.html
-&lt;%= form_for(widget, {action: widgetsPath(), method: "POST"}) { %&gt;
-  &lt;%= f.InputTag("Name") %&gt;
-  &lt;button class="btn btn-success" role="submit"&gt;Save&lt;/button&gt;
-  &lt;a href="&lt;%= widgetsPath() %&gt;" class="btn btn-warning" data-confirm="Are you sure?"&gt;Cancel&lt;/a&gt;
-&lt;% } %&gt;
+<%= form_for(widget, {action: widgetsPath(), method: "POST"}) { %>
+  <%= f.InputTag("Name") %>
+  <button class="btn btn-success" role="submit">Save</button>
+  <a href="<%= widgetsPath() %>" class="btn btn-warning" data-confirm="Are you sure?">Cancel</a>
+<% } %>
 ```
 
 ```html
 // OUTPUT
-&lt;form action="/widgets" id="widget-form" method="POST"&gt;
-  &lt;input name="authenticity_token" type="hidden" value="AI0pb5YFBw2xU/EfcS6FaEOwTLWaGv58Y+w0ArfJoknfqu7l/j6tRLWybbcm+YZqXbBmi7f80l3Sf0WfnR7COA=="&gt;
-  &lt;div class="form-group has-error"&gt;
-    &lt;label&gt;Widget&lt;/label&gt;
-    &lt;input class=" form-control" id="widget-Widget" name="Widget" type="text" value=""&gt;
-    &lt;span class="help-block"&gt;Widget can not be blank.&lt;/span&gt;
-  &lt;/div&gt;
-  &lt;button class="btn btn-success" role="submit"&gt;Save&lt;/button&gt;
-  &lt;a href="/widgets" class="btn btn-warning" data-confirm="Are you sure?"&gt;Cancel&lt;/a&gt;
-&lt;/form&gt;
+<form action="/widgets" id="widget-form" method="POST">
+  <input name="authenticity_token" type="hidden" value="AI0pb5YFBw2xU/EfcS6FaEOwTLWaGv58Y+w0ArfJoknfqu7l/j6tRLWybbcm+YZqXbBmi7f80l3Sf0WfnR7COA==">
+  <div class="form-group has-error">
+    <label>Widget</label>
+    <input class=" form-control" id="widget-Widget" name="Widget" type="text" value="">
+    <span class="help-block">Widget can not be blank.</span>
+  </div>
+  <button class="btn btn-success" role="submit">Save</button>
+  <a href="/widgets" class="btn btn-warning" data-confirm="Are you sure?">Cancel</a>
+</form>
 ```
 <% } %>
 
@@ -419,23 +421,23 @@ func init() {
 
 ```erb
 // templates/widgets/new.html
-&lt;%= form_for(widget, {action: widgetsPath(), method: "POST"}) { %&gt;
-  &lt;%= f.InputTag("Name") %&gt;
-  &lt;%= f.InputTag("Body") %&gt;
-  &lt;button class="btn btn-success" role="submit"&gt;Save&lt;/button&gt;
-  &lt;a href="&lt;%= widgetsPath() %&gt;" class="btn btn-warning" data-confirm="Are you sure?"&gt;Cancel&lt;/a&gt;
-&lt;% } %&gt;
+<%= form_for(widget, {action: widgetsPath(), method: "POST"}) { %>
+  <%= f.InputTag("Name") %>
+  <%= f.InputTag("Body") %>
+  <button class="btn btn-success" role="submit">Save</button>
+  <a href="<%= widgetsPath() %>" class="btn btn-warning" data-confirm="Are you sure?">Cancel</a>
+<% } %>
 ```
 
 ```html
 // OUTPUT
-&lt;form action="/widgets" id="widget-form" method="POST"&gt;
-  &lt;input name="authenticity_token" type="hidden" value="jN3nYOhCTqxZvmYnO9v1maso2VMs8fslj3rmKg1TS281W6JKpMd6Uezqp1dd3VBu2su41nKRBkd5AWDyCM4BzQ=="&gt;
-  &lt;input id="widget-Name" name="Name" type="text" value=""&gt;
-  &lt;input id="widget-Body" name="Body" type="text" value=""&gt;
-  &lt;button class="btn btn-success" role="submit"&gt;Save&lt;/button&gt;
-  &lt;a href="/widgets" class="btn btn-warning" data-confirm="Are you sure?"&gt;Cancel&lt;/a&gt;
-&lt;/form&gt;
+<form action="/widgets" id="widget-form" method="POST">
+  <input name="authenticity_token" type="hidden" value="jN3nYOhCTqxZvmYnO9v1maso2VMs8fslj3rmKg1TS281W6JKpMd6Uezqp1dd3VBu2su41nKRBkd5AWDyCM4BzQ==">
+  <input id="widget-Name" name="Name" type="text" value="">
+  <input id="widget-Body" name="Body" type="text" value="">
+  <button class="btn btn-success" role="submit">Save</button>
+  <a href="/widgets" class="btn btn-warning" data-confirm="Are you sure?">Cancel</a>
+</form>
 ```
 <% } %>
 
@@ -451,21 +453,21 @@ See the [Request Binding](/en/docs/bind) page for more information on request bi
 By default the form value inside the block is given the name `f`, however this can be changed when creating the form and passing the `var` option.
 
 ```html
-&lt;%= form({var: "xyz"}) { %&gt;
-  &lt;%= xyz.InputTag({name: "Foo"}) %&gt;
-&lt;% } %&gt;
+<%= form({var: "xyz"}) { %>
+  <%= xyz.InputTag({name: "Foo"}) %>
+<% } %>
 ```
 
 ### How Do I Create a Multipart Form?
 
 ```html
-&lt;%= form({multipart: true}) { %&gt;
-&lt;% } %&gt;
+<%= form({multipart: true}) { %>
+<% } %>
 ```
 
 ```html
-&lt;form enctype="multipart/form-data" method="POST"&gt;
-&lt;/form&gt;
+<form enctype="multipart/form-data" method="POST">
+</form>
 ```
 
 ### Can I Just Use My Own Form (Without the Use of the Form Helper)?
@@ -473,8 +475,8 @@ By default the form value inside the block is given the name `f`, however this c
 Yes! You most definitely can create and use your own form! The forms provided from having Buffalo generate your resources are simply a placeholder to get you up and running quickly! It is important to note, however, that asking Buffalo to generate your resources, using the supplied generators, will also generate the resource's CRUD related routes.  This is important to note since the route associated with the UPDATE action makes use of the PUT method and is not a valid value for an HTML form method according to the [HTML Standard](https://www.w3.org/TR/html5/forms.html#association-of-controls-and-forms). That being said, you need to ensure that you structure your form (for editing a resource) to use the POST method to tunnel the HTTP method, while using a hidden input to indicate your intention to make use of the PUT method server side.  An example of this would look like the follow:
 
 ```html
-&lt;form method="POST" ...&gt;
-  &lt;input type="hidden" name="_method" value="PUT" /&gt;
+<form method="POST" ...>
+  <input type="hidden" name="_method" value="PUT" />
 ...
 ```
 
@@ -485,9 +487,9 @@ If you do decide to use your own forms you are going to need a way to provide th
 The first way is to use the `authenticity_token` directly in form, since it is already in the context.
 
 ```html
-&lt;form method="POST" ...&gt;
-  &lt;input name="authenticity_token" type="hidden" value="&lt;%= authenticity_token %&gt;"&gt;
-&lt;/form&gt;
+<form method="POST" ...>
+  <input name="authenticity_token" type="hidden" value="<%= authenticity_token %>">
+</form>
 ```
 
 Another way is to write a helper to generate that line of code for you.
@@ -507,11 +509,11 @@ Another way is to write a helper to generate that line of code for you.
 },
 ```
 
-Now that you have defined a helper to use in your templates you can use your helper inside your form with `&lt;%= csrf() %&gt;`. So your custom form should end up looking like this:
+Now that you have defined a helper to use in your templates you can use your helper inside your form with `<%= csrf() %>`. So your custom form should end up looking like this:
 
 ```html
-&lt;form method="POST" ...&gt;
-  &lt;%= csrf() %&gt;
-&lt;/form&gt;
+<form method="POST" ...>
+  <%= csrf() %>
+</form>
 ```
 

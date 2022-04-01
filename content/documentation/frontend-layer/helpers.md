@@ -43,11 +43,11 @@ Going down this list we start with the path *NAME*d `rootPath` which represents 
 
 Next we have a standard `app.GET("/about", AboutHandler)` which generates to `aboutPath`.
 
-Then we use a resource `app.Resource("/drinks", DrinksResource{})`, which generates a path for each of our standard actions, and for each of those a helper to be used in templates. Those that take a parameter can be used like this `\<%= drinkPath({drink_id: drink.ID}) %>`. All helpers take a `map[string]interface{}` that is used to fill-in parameters.
+Then we use a resource `app.Resource("/drinks", DrinksResource{})`, which generates a path for each of our standard actions, and for each of those a helper to be used in templates. Those that take a parameter can be used like this `<%= drinkPath({drink_id: drink.ID}) %>`. All helpers take a `map[string]interface{}` that is used to fill-in parameters.
 
 Finally, when we use a group we can see that this changes the generated helpers. Here is the routing for those last paths:
 
-```
+```go
 api := app.Group("/api/v1")
 api.Resource("/users", UsersResource{})
 ```
@@ -81,27 +81,27 @@ If given a block it will be interrupted and appended inside of the `<a>` tag.
 #### Example 1:
 
 ```html
-&lt;%= linkTo([user, widget], {class: "btn"}) %&gt;
+<%= linkTo([user, widget], {class: "btn"}) %>
 
-&lt;a class="btn" href="/users/id/widget/slug"&gt;&lt;/a&gt;
+<a class="btn" href="/users/id/widget/slug"></a>
 ```
 
 #### Example 2:
 
 ```html
-&lt;%= linkTo("foo", {class: "btn"}) %&gt;
+<%= linkTo("foo", {class: "btn"}) %>
 
-&lt;a class="btn" href="/foo"&gt;&lt;/a&gt;
+<a class="btn" href="/foo"></a>
 ```
 
 #### Example 3:
 
 ```html
-&lt;%= linkTo(user, {class: "btn"}) { %&gt;
+<%= linkTo(user, {class: "btn"}) { %>
 Click Me!
-&lt;% } %&gt;
+<% } %>
 
-&lt;a class="btn" href="/users/id"&gt;Click Me!&lt;/a&gt;
+<a class="btn" href="/users/id">Click Me!</a>
 ```
 
 ### RemoteLinkTo
@@ -113,27 +113,27 @@ The [`github.com/gobuffalo/helpers/tags#RemoteLinkTo`](https://godoc.org/github.
 #### Example 1:
 
 ```html
-&lt;%= remoteLinkTo([user, widget], {class: "btn"}) %&gt;
+<%= remoteLinkTo([user, widget], {class: "btn"}) %>
 
-&lt;a class="btn" data-remote="true" href="/users/id/widget/slug"&gt;&lt;/a&gt;
+<a class="btn" data-remote="true" href="/users/id/widget/slug"></a>
 ```
 
 #### Example 2:
 
 ```html
-&lt;%= remoteLinkTo("foo", {class: "btn"}) %&gt;
+<%= remoteLinkTo("foo", {class: "btn"}) %>
 
-&lt;a class="btn" data-remote="true" href="/foo"&gt;&lt;/a&gt;
+<a class="btn" data-remote="true" href="/foo"></a>
 ```
 
 #### Example 3:
 
 ```html
-&lt;%= remoteLinkTo(user, {class: "btn"}) { %&gt;
+<%= remoteLinkTo(user, {class: "btn"}) { %>
 Click Me!
-&lt;% } %&gt;
+<% } %>
 
-&lt;a class="btn" data-remote="true" href="/users/id"&gt;Click Me!&lt;/a&gt;
+<a class="btn" data-remote="true" href="/users/id">Click Me!</a>
 ```
 
 ## Content Helpers
@@ -144,45 +144,45 @@ Plush ships with two complementary helpers that let you create dynamic HTML snip
 
 The `contentFor` helper takes a block of HTML and holds on to it using the given name. This block can then be used elsewhere in a template file, even when the content defined in a `contentFor` block is in a yielded-to template and is expanded into a `contentOf` block in a `yield`-calling template. The default `templates/application.html` calls `yield` like this.
 
-Take the following example: suppose we have a `templates/application.html` that fully specifies everything in `&lt;head>` and the outermost contents of `&lt;body>`. This template yields to other subtemplates, like `templates/users/show.html`, to fill `&lt;body>`. However, if we want to add or override something in the `&lt;head>` from a subtemplate, we'll need to use `contentFor`. In this example, we'll add a way for subtemplates to add an extra chunk of CSS to the `&lt;head>` of `application.html`:
+Take the following example: suppose we have a `templates/application.html` that fully specifies everything in `<head>` and the outermost contents of `<body>`. This template yields to other subtemplates, like `templates/users/show.html`, to fill `<body>`. However, if we want to add or override something in the `<head>` from a subtemplate, we'll need to use `contentFor`. In this example, we'll add a way for subtemplates to add an extra chunk of CSS to the `<head>` of `application.html`:
 
 ```html
-&lt;!DOCTYPE html>
-&lt;html>
-  &lt;head>
-    &lt;meta charset="utf-8">
-    &lt;title>My Site&lt;/title>
-    \<%= stylesheetTag("application.css") %>
-    \<%= contentOf("extraStyle") %>
-  &lt;/head>
-  &lt;body>
-    &lt;div class="container">
-      \<%= partial("flash.html") %>
-      \<%= yield %>
-    &lt;/div>
-  &lt;/body>
-&lt;/html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My Site</title>
+    <%= stylesheetTag("application.css") %>
+    <%= contentOf("extraStyle") %>
+  </head>
+  <body>
+    <div class="container">
+      <%= partial("flash.html") %>
+      <%= yield %>
+    </div>
+  </body>
+</html>
 ```
 
 As it turns out, our `users/index.html` template could use a little page-wide styling instead of adding a bunch of `style` attributes to different elements, so it defines a block of CSS that doesn't show up anywhere inside the template:
 
 ```html
-&lt;div class="page-header">
-  &lt;h1>Users&lt;/h1>
-&lt;/div>
-&lt;table class="table table-striped">
-  &lt;thead>
-    &lt;th>Username&lt;/th> &lt;th>Password&lt;/th> &lt;th>Email&lt;/th> &lt;th>Admin?&lt;/th> &lt;th>&nbsp;&lt;/th>
-  &lt;/thead>
-  &lt;tbody>
-    \<%= for (user) in users { %>
-      &lt;!-- … -->
-    \<% } %>
-  &lt;/tbody>
-&lt;/table>
+<div class="page-header">
+  <h1>Users</h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <th>Username</th> <th>Password</th> <th>Email</th> <th>Admin?</th> <th>&nbsp;</th>
+  </thead>
+  <tbody>
+    <%= for (user) in users { %>
+      <!-- … -->
+    <% } %>
+  </tbody>
+</table>
 
-\<% contentFor("extraStyle") { %>
-  &lt;style>
+<% contentFor("extraStyle") { %>
+  <style>
     .online {
       color: limegreen;
       background: black;
@@ -192,11 +192,11 @@ As it turns out, our `users/index.html` template could use a little page-wide st
       color: lightgray;
       background: darkgray;
     }
-  &lt;/style>
-\<% } %>
+  </style>
+<% } %>
 ```
 
-The styling for the `online` and `offline` classes then appears at the end of `&lt;head>` in `/users`. In other pages, nothing is added.
+The styling for the `online` and `offline` classes then appears at the end of `<head>` in `/users`. In other pages, nothing is added.
 
-Of course, if you'd rather do extensive processing on what goes into a chunk that goes on a webpage, you may want to do your processing in Go code instead of in templates. In that case, call, say, `c.Set("moonPhase", mp)` where `c` is a `buffalo.Context` in a function in an action like in `actions/users.go`, and `mp` is some string or object. Then, in your templates, refer to `\<%= moonPhase %>` to display your expertly-calculated phase of the moon.
+Of course, if you'd rather do extensive processing on what goes into a chunk that goes on a webpage, you may want to do your processing in Go code instead of in templates. In that case, call, say, `c.Set("moonPhase", mp)` where `c` is a `buffalo.Context` in a function in an action like in `actions/users.go`, and `mp` is some string or object. Then, in your templates, refer to `<%= moonPhase %>` to display your expertly-calculated phase of the moon.
 

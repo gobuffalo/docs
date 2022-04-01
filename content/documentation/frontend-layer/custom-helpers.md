@@ -108,13 +108,13 @@ The `greet` function is now available to all templates that use that `render.Eng
 // actions/greet.go
 func Greeter(c buffalo.Context) error {
   c.Set("name", "Mark")
-  return c.Render(200, r.String("&lt;h1>\<%= greet(name) %></h1>"))
+  return c.Render(200, r.String("<h1><%= greet(name) %></h1>"))
 }
 ```
 
 ```go
 // output
-&lt;h1>Hi Mark!&lt;/h1>
+<h1>Hi Mark!</h1>
 ```
 
 ## Block Helpers
@@ -153,9 +153,9 @@ func Upper(c buffalo.Context) error {
 
 ```html
 // templates/up.html
-\<%= upblock() { %>
+<%= upblock() { %>
   hello world
-\<% } %>
+<% } %>
 ```
 
 ```html
@@ -196,9 +196,9 @@ func Show(c buffalo.Context) error {
 
 ```html
 // templates/users/show.html
-\<%= if (is_logged_in()) { %>
-  Hello \<%= current_user.Name %>
-\<% } %>
+<%= if (is_logged_in()) { %>
+  Hello <%= current_user.Name %>
+<% } %>
 ```
 
 ```html

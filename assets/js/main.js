@@ -82,24 +82,25 @@ function loadBlogContent() {
 function setupCodeTabs(){
     document.querySelectorAll(".codetab .tab").forEach(el => {
         let title = el.dataset.title
-        let tabs = el.closest(".codetab").querySelector(`ul`)
-        tabs.insertAdjacentHTML("beforeend", `<li class="px-2 inline-block ml-0" data-tab="${title}">${title}</li>`)
+        let tabs = el.parentNode.querySelector(".tabs-container")
+        tabs.insertAdjacentHTML("beforeend", `<div class="button px-2 ml-0" data-tab="${title}">${title}</div>`)
 
         el.classList.add("hidden")
     });
 
     document.querySelectorAll(".codetab").forEach(el => {
         el.querySelectorAll(".tab")[0].classList.remove("hidden")
-        el.querySelectorAll("ul li")[0].classList.add("active")
+        el.querySelectorAll(".tabs-container .button")[0].classList.add("active")
     })
 
-    document.querySelectorAll(".codetab ul li").forEach(el => {
+    document.querySelectorAll(".codetab .tabs-container div").forEach(el => {
         el.addEventListener("click", e => {
             let tabs = e.target.closest(".codetab")
-            tabs.querySelectorAll("li").forEach(el => {
+            tabs.querySelectorAll(".tabs-container > div").forEach(el => {
                 el.classList.remove("active")
             })
-            tabs.querySelectorAll("div.tab").forEach(el => {
+            
+            tabs.querySelectorAll(".tab").forEach(el => {
                 el.classList.add("hidden")
             })
 

@@ -8,23 +8,31 @@
 		
 		{{ partial "seo" . }}
 
-		{{ $styles := resources.Get "css/home.css" | postCSS }}
-
-		{{ if .Site.IsServer }}
-		<link rel="stylesheet" href="{{ $styles.RelPermalink }}"/>
-		{{ else }}
-			{{ $styles := $styles | minify | fingerprint | resources.PostProcess }}
-			<link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}"/>
-		{{ end }}
-		
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/monokai.min.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js" integrity="sha512-BNc7saQYlxCL10lykUYhFBcnzdKMnjx5fp5s5wPucDyZ7rKNwCoqJh1GwEAIhuePEK4WM9askJBRsu7ma0Rzvg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/languages/erb.min.js"></script>	
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.0/fuse.min.js"></script>
 		
+		{{ $styles := resources.Get "css/home.css" | postCSS }}
 		{{ $searchJS := resources.Get "js/search.js" }}
-		<script src="{{ $searchJS.RelPermalink }}"></script>
+		{{ $mainJS := resources.Get "js/main.js" }}
 
-		{{ $searchJS := resources.Get "js/main.js" }}
-		<script src="{{ $searchJS.RelPermalink }}"></script>
-	  
+		{{ if .Site.IsServer }}
+			<link rel="stylesheet" href="{{ $styles.RelPermalink }}"/>
+
+			<script src="{{ $searchJS.RelPermalink }}"></script>
+			<script src="{{ $mainJS.RelPermalink }}"></script>
+		{{ else }}
+			{{ $styles = $styles | minify | fingerprint | resources.PostProcess }}
+			<link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}"/>
+			
+			{{ $searchJS = $searchJS | minify | fingerprint | resources.PostProcess }}
+			<link rel="stylesheet" href="{{ $searchJS.RelPermalink }}" integrity="{{ $searchJS.Data.Integrity }}"/>
+			
+			{{ $mainJS = $mainJS | minify | fingerprint | resources.PostProcess }}
+			<link rel="stylesheet" href="{{ $mainJS.RelPermalink }}" integrity="{{ $mainJS.Data.Integrity }}"/>
+		{{ end }}
+		
 		{{partial "favicons" .}}
 	</head>
 	<body class="flex flex-col min-h-screen">

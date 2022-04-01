@@ -1,10 +1,18 @@
+
 document.addEventListener('DOMContentLoaded', () =>{
+
     loadMobileNav();
     addHeaderLinks();
     loadBlogContent();
     setupCodeTabs();
-
+    colorizeCode();
 });
+
+function colorizeCode() {
+    document.querySelectorAll('code[data-lang="erb"]').forEach((el) => {
+        hljs.highlightElement(el);
+    });
+}
 
 function loadMobileNav() {
     let mobileMenu = document.querySelector("#mobile-menu")

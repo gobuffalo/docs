@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', () =>{
     loadMobileNav();
     addHeaderLinks();
     loadBlogContent();
+    setupCodeTabs();
+
 });
 
 function loadMobileNav() {
@@ -73,6 +75,37 @@ function loadBlogContent() {
             })
 
 
+        })
+    })
+}
+
+function setupCodeTabs(){
+    document.querySelectorAll(".codetab .tab").forEach(el => {
+        let title = el.dataset.title
+        let tabs = el.parentNode.querySelector(".tabs-container")
+        tabs.insertAdjacentHTML("beforeend", `<div class="button px-2 ml-0" data-tab="${title}">${title}</div>`)
+
+        el.classList.add("hidden")
+    });
+
+    document.querySelectorAll(".codetab").forEach(el => {
+        el.querySelectorAll(".tab")[0].classList.remove("hidden")
+        el.querySelectorAll(".tabs-container .button")[0].classList.add("active")
+    })
+
+    document.querySelectorAll(".codetab .tabs-container div").forEach(el => {
+        el.addEventListener("click", e => {
+            let tabs = e.target.closest(".codetab")
+            tabs.querySelectorAll(".tabs-container > div").forEach(el => {
+                el.classList.remove("active")
+            })
+            
+            tabs.querySelectorAll(".tab").forEach(el => {
+                el.classList.add("hidden")
+            })
+
+            e.target.classList.add("active")
+            tabs.querySelector(`div[data-title="${e.target.dataset.tab}"]`).classList.remove("hidden")
         })
     })
 }

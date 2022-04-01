@@ -1,0 +1,15 @@
+{{- $description := "Put the fun back in writing Go web applications! A Ruby on Rails inspired, idiomatic, web framework written in Go."}}
+{{ if .Params.SeoDescription }}
+    {{- $description = .Params.SeoDescription }}
+{{ end }}
+
+<meta property="og:description" content="{{ $description}}" />
+<meta name="description" content="{{$description}}" />
+<meta name="twitter:description" content="{{$description}}" />
+
+{{- $keywords := "go, golang, web, buffalo, framework, html, javascript, ruby, rails, fast, easy"}}
+{{ if .Params.SeoKeywords }}
+    {{- $keywords = delimit .Params.SeoKeywords ", " }}
+{{ end }}
+
+<meta name="keywords" content="{{$keywords}}">

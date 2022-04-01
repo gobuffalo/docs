@@ -82,7 +82,9 @@ Like `Post` and `Put`, `MultiPartPost` and `MultiPartPut`, take a struct, or map
 
 A `httptest.File` requires the name of the form parameter, `ParamName`; the name of the file, `FileName`; and an `io.Reader`, presumably the file you want to upload.
 
-<%= codeTabs() { %>
+
+{{< codetabs >}}
+{{< tab "actions/widgets_test.go" >}}
 ```go
 // actions/widgets_test.go
 
@@ -121,7 +123,9 @@ func (as *ActionSuite) Test_WidgetsResource_Create() {
   as.NotZero(w.ID)
 }
 ```
+{{< /tab >}}
 
+{{< tab "actions/widgets.go" >}}
 ```go
 // actions/widgets.go
 
@@ -167,7 +171,8 @@ func (v WidgetsResource) Create(c buffalo.Context) error {
   return c.Redirect(302, "/widgets/%s", widget.ID)
 }
 ```
-
+{{< /tab >}}
+{{< tab "models/widgets.go" >}}
 ```go
 // models/widgets.go
 
@@ -248,5 +253,6 @@ func (w *Widget) ValidateUpdate(tx *pop.Connection) (*validate.Errors, error) {
   return validate.NewErrors(), nil
 }
 ```
-<% } %>
 
+{{< /tab >}}
+{{< /codetabs >}}

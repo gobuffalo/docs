@@ -21,9 +21,10 @@ Both types of form helpers have the following features in common:
 
 The `form` helper can be used to generate HTML forms. Since this type of form isn't attached to any particular "model" all information must be passed as options to the form and it's methods.
 
-<%= codeTabs() { %>
 
-```html
+{{< codetabs >}}
+{{< tab "templates/talks/edit.html" >}}
+```erb
 // templates/talks/edit.html
 
 <%= form({action: talkPath({id: 3}), method: "PUT"}) { %>
@@ -52,6 +53,8 @@ The `form` helper can be used to generate HTML forms. Since this type of form is
 <% } %>
 ```
 
+{{< /tab >}}
+{{< tab "OUTPUT" >}}
 ```html
 // OUTPUT
 <form action="/talks/3" method="POST">
@@ -102,7 +105,8 @@ The `form` helper can be used to generate HTML forms. Since this type of form is
   </div>
 </form>
 ```
-<% } %>
+{{< /tab >}}
+{{<  /codetabs  >}}
 
 
 
@@ -116,7 +120,8 @@ The first difference is that the `form_for` takes a "model" as a first argument.
 
 The second difference is in the tag calls the models directly. These tags, such as `InputTag`, take the name of the attribute on the model you want to build a field for, then they take an optional set of options as the second argument.
 
-<%= codeTabs() { %>
+{{< codetabs >}}
+{{< tab "models/talk.go" >}}
 ```go
 // models/talk.go
 type Talk struct {
@@ -135,6 +140,8 @@ type Talk struct {
 }
 ```
 
+{{< /tab>}}
+{{< tab "templates/talks/edit.html" >}}
 ```html
 // templates/talks/edit.html
 <%= form_for( talk, {action: talkPath({id: 3}), method: "PUT"}) { %>
@@ -162,7 +169,8 @@ type Talk struct {
   </div>
 <% } %>
 ```
-
+{{< /tab>}}
+{{< tab "OUTPUT">}}
 ```html
 // OUTPUT
 <form action="/talks/3" id="talk-form" method="POST">
@@ -218,7 +226,8 @@ type Talk struct {
   </div>
 </form>
 ```
-<% } %>
+{{< /tab >}}
+{{< /codetabs >}}
 
 
 ## Select Tags
@@ -347,7 +356,8 @@ Both `form` and `form_for` helpers have support for handling errors from the [`g
 
 In an action simply set a value of type `*validate.Errors` on the context as `errors` and the form helpers will pick it up and add error messages to the appropriate form tags.
 
-<%= codeTabs() { %>
+{{< codetabs >}}
+{{< tab "actions/widgets.go" >}}
 ```go
 // actions/widgets.go
 func (v WidgetsResource) Create(c buffalo.Context) error {
@@ -371,7 +381,8 @@ func (v WidgetsResource) Create(c buffalo.Context) error {
   return c.Redirect(302, "/widgets/%s", widget.ID)
 }
 ```
-
+{{< /tab >}}
+{{< tab "templates/widgets/new.html" >}}
 ```html
 // templates/widgets/new.html
 <%= form_for(widget, {action: widgetsPath(), method: "POST"}) { %>
@@ -380,6 +391,8 @@ func (v WidgetsResource) Create(c buffalo.Context) error {
   <a href="<%= widgetsPath() %>" class="btn btn-warning" data-confirm="Are you sure?">Cancel</a>
 <% } %>
 ```
+{{< /tab >}}
+{{< tab "OUTPUT" >}}
 
 ```html
 // OUTPUT
@@ -394,7 +407,8 @@ func (v WidgetsResource) Create(c buffalo.Context) error {
   <a href="/widgets" class="btn btn-warning" data-confirm="Are you sure?">Cancel</a>
 </form>
 ```
-<% } %>
+{{< /tab >}}
+{{< /codetabs >}}
 
 
 ## Using Non-Bootstrap Form Helpers
@@ -403,7 +417,8 @@ The default form helpers, `form` and `form_for`, generate forms that are compati
 
 <em><small>Requires Plush version `v3.6.8` or greater</small></em>
 
-<%= codeTabs() { %>
+{{< codetabs >}}
+{{< tab "actions/render.go" >}}
 ```go
 // actions/render.go
 func init() {
@@ -418,7 +433,8 @@ func init() {
   })
 }
 ```
-
+{{< /tab >}}
+{{< tab "templates/widgets/new.html" >}}
 ```erb
 // templates/widgets/new.html
 <%= form_for(widget, {action: widgetsPath(), method: "POST"}) { %>
@@ -428,7 +444,8 @@ func init() {
   <a href="<%= widgetsPath() %>" class="btn btn-warning" data-confirm="Are you sure?">Cancel</a>
 <% } %>
 ```
-
+{{< /tab >}}
+{{< tab "OUTPUT" >}}
 ```html
 // OUTPUT
 <form action="/widgets" id="widget-form" method="POST">
@@ -439,7 +456,8 @@ func init() {
   <a href="/widgets" class="btn btn-warning" data-confirm="Are you sure?">Cancel</a>
 </form>
 ```
-<% } %>
+{{< /tab >}}
+{{< /codetabs >}}
 
 
 ## FAQs

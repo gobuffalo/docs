@@ -41,7 +41,9 @@ create  templates/users/new.html
 ## Example Usage
 
 ### Actions
-<%= codeTabs() { %>
+
+{{< codetabs >}}
+{{< tab "actions/app.go" >}}
 ```go
 // actions/app.go
 package actions
@@ -134,7 +136,8 @@ func forceSSL() buffalo.MiddlewareFunc {
   })
 }
 ```
-
+{{< /tab >}}
+{{< tab "actions/auth.go" >}}
 ```go
 // actions/auth.go
 package actions
@@ -204,7 +207,8 @@ func AuthDestroy(c buffalo.Context) error {
   return c.Redirect(302, "/")
 }
 ```
-
+{{< /tab >}}
+{{< tab "actions/auth_test.go" >}}
 ```go
 // actions/auth_test.go
 package actions
@@ -261,6 +265,8 @@ func (as *ActionSuite) Test_Auth_Create_BadPassword() {
 }
 ```
 
+{{< /tab >}}
+{{< tab "actions/home.go" >}}
 ```go
 // actions/home.go
 package actions
@@ -274,6 +280,8 @@ func HomeHandler(c buffalo.Context) error {
 }
 ```
 
+{{< /tab >}}
+{{< tab "actions/home_test.go" >}}
 ```go
 // actions/home_test.go
 package actions
@@ -308,6 +316,8 @@ func (as *ActionSuite) Test_HomeHandler_LoggedIn() {
 }
 ```
 
+{{< /tab >}}
+{{< tab "actions/users.go" >}}
 ```go
 // actions/users.go
 package actions
@@ -379,6 +389,8 @@ func Authorize(next buffalo.Handler) buffalo.Handler {
 }
 ```
 
+{{< /tab >}}
+{{< tab "actions/users_test.go">}}
 ```go
 // actions/users_test.go
 package actions
@@ -411,10 +423,14 @@ func (as *ActionSuite) Test_Users_Create() {
   as.Equal(1, count)
 }
 ```
-<% } %>
+
+{{< /tab >}}
+{{< /codetabs>}}
 
 ### Models
-<%= codeTabs() { %>
+
+{{< codetabs >}}
+{{< tab "models/user.go" >}}
 ```go
 // models/user.go
 package models
@@ -515,6 +531,8 @@ func (u *User) Create(tx *pop.Connection) (*validate.Errors, error) {
 }
 ```
 
+{{< /tab >}}
+{{< tab "models/user_test.go">}}
 ```go
 // models/user_test.go
 package models_test
@@ -598,15 +616,20 @@ func (ms *ModelSuite) Test_User_Create_UserExists() {
   ms.Equal(1, count)
 }
 ```
-<% } %>
+
+{{< /tab >}}
+{{< /codetabs >}}
 
 ### Migrations
-<%= codeTabs() { %>
+
+{{< codetabs >}}
+{{< tab "Create Users Down" >}}
 ```go
 // migrations/20180910062057_create_users.down.fizz
 drop_table("users")
 ```
-
+{{< /tab >}}
+{{< tab "Create Users Up" >}}
 ```go
 // migrations/20180910062057_create_users.up.fizz
 create_table("users") {
@@ -615,10 +638,14 @@ create_table("users") {
   t.Column("password_hash", "string", {})
 }
 ```
-<% } %>
+{{< /tab >}}
+{{< /codetabs>}}
 
 ### Templates
 
+
+{{< codetabs >}}
+{{< tab "templates/auth/new.html" >}}
 ```html
 // templates/auth/new.html
 &lt;style&gt;
@@ -650,8 +677,9 @@ create_table("users") {
   &lt;/div&gt;
 &lt;/div&gt;
 ```
+{{< /tab>}}
 
-
+{{< tab "templates/new/new.html">}}
 ```html
 // templates/new/new.html
 &lt;style&gt;
@@ -686,6 +714,8 @@ create_table("users") {
 &lt;/div&gt;
 ```
 
+{{< /tab>}}
+{{< tab "templates/index.html">}}
 ```html
 // templates/index.html
 &lt;style&gt;
@@ -710,3 +740,9 @@ create_table("users") {
   &lt;% } %&gt;
 &lt;/div&gt;
 ```
+{{< /tab >}}
+
+{{< /codetabs >}}
+
+
+

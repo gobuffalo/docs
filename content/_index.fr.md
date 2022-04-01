@@ -1,7 +1,6 @@
 ---
 tagline: "Un écosystème pour le développement Web en Go, conçu pour rendre votre vie plus facile."
 topCTA: "Démarrer"
-Requires: "Go >= 1.16"
 latestVersionLabel: "Dernière version"
 requiresLabel: "Nécessite"
 

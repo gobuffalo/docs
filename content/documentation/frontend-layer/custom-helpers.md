@@ -121,7 +121,8 @@ func Greeter(c buffalo.Context) error {
 
 Like the `if` or `for` statements, block helpers take a "block" of text that can be evaluated and potentially rendered, manipulated, or whatever you would like. To write a block helper, you have to take the `plush.HelperContext` as the last argument to your helper function. This will give you access to the block associated with that call.
 
-<%= codeTabs() { %>
+{{< codetabs >}}
+{{< tab "actions/render.go" >}}
 ```go
 // actions/render.go
 r := render.New(render.Options{
@@ -132,7 +133,8 @@ r := render.New(render.Options{
   // ...
 })
 ```
-
+{{< /tab >}}
+{{< tab "helper" >}}
 ```go
 // helper
 func upblock(help plush.HelperContext) (template.HTML, error) {
@@ -143,31 +145,37 @@ func upblock(help plush.HelperContext) (template.HTML, error) {
   return strings.ToUpper(s), nil
 }
 ```
-
+{{< /tab >}}
+{{< tab "actions/upper.go" >}}
 ```go
 // actions/upper.go
 func Upper(c buffalo.Context) error {
   return c.Render(200, r.HTML("up.html"))
 }
 ```
-
+{{< /tab >}}
+{{< tab "templates/up.html" >}}
 ```html
 // templates/up.html
 <%= upblock() { %>
   hello world
 <% } %>
 ```
+{{< /tab >}}
 
+{{< tab "Output" >}}
 ```html
 // output
 HELLO WORLD
 ```
-<% } %>
+{{< /tab >}}
+{{< /codetabs >}}
 
 
 ## Getting Values From the Context
 
-<%= codeTabs() { %>
+{{< codetabs >}}
+{{< tab "actions/render.go" >}}
 ```go
 // actions/render.go
 r := render.New(render.Options{
@@ -178,14 +186,17 @@ r := render.New(render.Options{
   // ...
 })
 ```
+{{< /tab >}}
 
+{{< tab "helper" >}}
 ```go
 // helper
 func isLoggedIn(help plush.HelperContext) bool {
   return help.Value("current_user") != nil
 }
 ```
-
+{{< /tab >}}
+{{< tab "action" >}}
 ```go
 // actions/users.go
 func Show(c buffalo.Context) error {
@@ -193,16 +204,19 @@ func Show(c buffalo.Context) error {
   return c.Render(200, r.HTML("users/show.html"))
 }
 ```
-
+{{< /tab >}}
+{{< tab "template" >}}
 ```html
 // templates/users/show.html
 <%= if (is_logged_in()) { %>
   Hello <%= current_user.Name %>
 <% } %>
 ```
-
+{{< /tab >}}
+{{< tab "Output" >}}
 ```html
 // output
 Hello Ringo
 ```
-<% } %>
+{{< /tab >}}
+{{< /codetabs >}}

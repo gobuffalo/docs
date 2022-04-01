@@ -103,14 +103,16 @@ buffalo-upgradex |buffalo upgradex           |updates Buffalo and/or Pop/Soda as
 
 To add support for the plugin manager, one can either manually edit `./config/buffalo-plugins.toml` or let `buffalo plugins install` create it for you.
 
-<%= codeTabs() { %>
+{{< codetabs >}}
+{{< tab "Install command" >}}
 ```bash
 // $ buffalo plugins install
 
 go get github.com/gobuffalo/buffalo-pop
 ./config/buffalo-plugins.toml
 ```
-
+{{< /tab >}}
+{{< tab "Config file" >}}
 ``` bash
 // ./config/buffalo-plugins.toml
 
@@ -118,7 +120,9 @@ go get github.com/gobuffalo/buffalo-pop
   binary = "buffalo-pop"
   go_get = "github.com/gobuffalo/buffalo-pop"
 ```
+{{< /tab >}}
 
+{{< tab "Resulting plugin list" >}}
 ```bash
 // $ buffalo plugins list
 
@@ -128,13 +132,16 @@ buffalo-pop |buffalo db            |[DEPRECATED] please use `buffalo pop` instea
 buffalo-pop |buffalo destroy model |Destroys model files.
 buffalo-pop |buffalo pop           |A tasty treat for all your database needs
 ```
-<% } %>
+{{< /tab >}}
+{{< /codetabs>}}
+
 
 The `buffalo-pop` plugin was automatically added because the application in this example is a Buffalo application that uses Pop.
 
 New plugins can be install in bulk with the `install` command
 
-<%= codeTabs() { %>
+{{< codetabs >}}
+{{< tab "Bulk Install command" >}}
 ```bash
 // $ buffalo plugins install
 $ buffalo plugins install github.com/markbates/buffalo-trash github.com/gobuffalo/buffalo-heroku
@@ -144,7 +151,8 @@ go get github.com/gobuffalo/buffalo-pop
 go get github.com/markbates/buffalo-trash
 ./config/buffalo-plugins.toml
 ```
-
+{{< /tab >}}
+{{< tab "Config file" >}}
 ``` bash
 // ./config/buffalo-plugins.toml
 
@@ -160,7 +168,9 @@ go get github.com/markbates/buffalo-trash
   binary = "buffalo-trash"
   go_get = "github.com/markbates/buffalo-trash"
 ```
+{{< /tab >}}
 
+{{< tab "Resulting plugin list" >}}
 ```bash
 // $ buffalo plugins list
 
@@ -172,8 +182,8 @@ buffalo-pop    |buffalo destroy model |Destroys model files.
 buffalo-pop    |buffalo pop           |A tasty treat for all your database needs
 buffalo-trash  |buffalo trash         |destroys and recreates a buffalo app
 ```
-
-<% } %>
+{{< /tab >}}
+{{< /codetabs>}}
 
 
 ## Removing Plugins
@@ -182,14 +192,16 @@ buffalo-trash  |buffalo trash         |destroys and recreates a buffalo app
 
 Plugins can be removed with the `remove` command. This only removes them from the config file, not from the users system.
 
-<%= codeTabs() { %>
+{{< codetabs >}}
+{{< tab "Remove command" >}}
 ```bash
 // $ buffalo plugins remove
 $ buffalo plugins remove github.com/gobuffalo/buffalo-heroku
 
 ./config/buffalo-plugins.toml
 ```
-
+{{< /tab >}}
+{{< tab "Config file" >}}
 ``` bash
 // ./config/buffalo-plugins.toml
 
@@ -201,7 +213,9 @@ $ buffalo plugins remove github.com/gobuffalo/buffalo-heroku
   binary = "buffalo-trash"
   go_get = "github.com/markbates/buffalo-trash"
 ```
+{{< /tab >}}
 
+{{< tab "Resulting plugin list" >}}
 ```bash
 // $ buffalo plugins list
 
@@ -213,7 +227,8 @@ buffalo-pop   |buffalo pop           |A tasty treat for all your database needs
 buffalo-trash |buffalo trash         |destroys and recreates a buffalo app
 ```
 <% } %>
-
+{{< /tab >}}
+{{< /codetabs>}}
 
 ## Writing a Plugin
 

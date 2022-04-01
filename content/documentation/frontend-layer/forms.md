@@ -137,10 +137,10 @@ type Talk struct {
   TalkFormatID  int          `json:"talk_format_id" db:"talk_format_id"`
 }
 ```
+
 {{< /tab>}}
 {{< tab "templates/talks/edit.html" >}}
-```erb
-// templates/talks/edit.html
+```html
 <%= form_for( talk, {action: talkPath({id: 3}), method: "PUT"}) { %>
   <div class="row">
     <div class="col-md-12">

@@ -47,7 +47,7 @@ Any values that are "set" on the context will automatically be available to the 
 ```go
 func Hello(c buffalo.Context) error {
   c.Set("name", "Mark")
-  return c.Render(200, render.String("Hi \<%= name %>"))
+  return c.Render(200, render.String("Hi <%= name %>"))
 }
 ```
 

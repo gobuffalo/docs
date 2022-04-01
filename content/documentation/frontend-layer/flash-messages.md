@@ -39,19 +39,19 @@ The names of the "keys", in this example, "success", are left up to your applica
 
 ### Looping Over all Flash Messages
 
-```html
-&lt;div class="row">
-  &lt;div class="col-md-12">
-    \<%= for (k, messages) in flash { %>
-      \<%= for (msg) in messages { %>
-        &lt;div class="alert alert-\<%= k %>" role="alert">
-          &lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          \<%= msg %>
-        &lt;/div>
-      \<% } %>
-    \<% } %>
-  &lt;/div>
-&lt;/div>
+```erb
+<div class="row">
+  <div class="col-md-12">
+    <%= for (k, messages) in flash { %>
+      <%= for (msg) in messages { %>
+        <div class="alert alert-<%= k %>" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+          <%= msg %>
+        </div>
+      <% } %>
+    <% } %>
+  </div>
+</div>
 ```
 
 ### Looping Over a Specific Flash Message Key

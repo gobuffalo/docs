@@ -6,7 +6,10 @@ document.addEventListener('DOMContentLoaded', () =>{
     loadBlogContent();
     setupCodeTabs();
     colorizeCode();
+    setupMobileSidebar();
+});
 
+function setupMobileSidebar() {
     document.querySelector('#mobile-open-menu-button').addEventListener("click", (e) => {
         document.querySelector("#mobile-docs-sidebar").classList.remove("hidden");
     });    
@@ -14,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () =>{
     document.querySelector('#mobile-docs-sidebar .close').addEventListener("click", (e) => {
         document.querySelector("#mobile-docs-sidebar").classList.add("hidden");
     });   
-});
+}
 
 function colorizeCode() {
     document.querySelectorAll('code[data-lang="erb"]').forEach((el) => {

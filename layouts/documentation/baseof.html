@@ -40,7 +40,45 @@
 		
 		<main class="bg-gray-100 md:py-7 flex-grow">
 			<div class="container md:flex md:gap-6">
-				{{partial "docssidebar" .}}
+				  <!-- Off-canvas menu for mobile, show/hide based on off-canvas menu state. -->
+				<div id="mobile-docs-sidebar" class="fixed inset-0 hidden flex z-40 lg:hidden" role="dialog" aria-modal="true">
+					<div class="fixed inset-0 bg-gray-600 bg-opacity-75" aria-hidden="true"></div>
+
+					<div class="relative flex-1 flex flex-col max-w-xs w-full bg-gray-100 focus:outline-none">
+					<div class="absolute top-0 right-0 -mr-12 pt-2">
+						<button type="button" class="close ml-1 flex items-center justify-center h-10 w-10 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+							<span class="sr-only">Close sidebar</span>
+							<!-- Heroicon name: outline/x -->
+							<svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+							</svg>
+						</button>
+					</div>
+
+					<div class="flex-1 h-0 pt-5 pb-4 overflow-y-auto px-5">
+						{{partial "docssidebar" .}}						
+					</div>
+					<div class="flex-shrink-0 p-4">
+						
+					</div>
+					</div>
+
+				</div>
+
+				<div class="bg-gray-300 px-5 p-2 flex items-center md:hidden">
+					<div id="mobile-open-menu-button">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 inline-block" viewBox="0 0 20 20" fill="currentColor">
+							<path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
+						</svg>
+						<span class="text-sm font-bold">{{ .Params.Name }}</span>
+					</div>
+					
+				</div>
+				
+				<aside class="bg-gray-200 rounded-md p-7 hidden md:block docssidebar">
+					{{partial "docssidebar" .}}
+				</aside>
+				
 				<div class="w-full p-5 md:flex-grow md:p-9  bg-white rounded-md  ">
 					<div class="max-w-4xl content mt-2">
 						{{ block "main" . }}{{end }}

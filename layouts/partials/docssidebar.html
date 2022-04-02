@@ -1,7 +1,7 @@
 {{ $currentPage := . | relLangURL }}
 {{ .Scratch.Set "currentPage" $currentPage }}
 
-<aside class="hidden md:block bg-gray-200 rounded-md p-7 docssidebar ">
+<div>
     <ul class="mb-5">
         {{ with .Site.GetPage "section" "documentation" }}
             {{ $section := . }}
@@ -63,4 +63,4 @@
         {{ partial "sidebargroup" .}}   
     {{ end }}
 
-</aside>
+</div>

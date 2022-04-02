@@ -60,7 +60,7 @@ Using the above [example](#example) code below is a list of available struct tag
 
 * `fk_id`: This tag can be used to define the column name in the target association that matches model ID. In the example above, `Song` has a column named `u_id` that references the id of the `users` table. When loading `FavoriteSong`, `u_id` column will be used instead of `user_id`.
 
-* `order_by`: This tag can be used in combination with `has_many` and `many_to_many` tags to indicate the order for the association when loading. The format to use is `order_by:"&lt;column_name> &lt;asc | desc>"`
+* `order_by`: This tag can be used in combination with `has_many` and `many_to_many` tags to indicate the order for the association when loading. The format to use is `order_by:"<column_name> <asc | desc>"`
 
 ## Loading Associations
 Pop currently provides two modes for loading associations; each mode will affect the way pop loads associations and queries to the database.
@@ -99,20 +99,21 @@ err := tx.Eager().All(&u)  // loads all associations for every user registered, 
 ```
 
 `Eager` mode will:
- 1. Load all users.  
-```
+ 1. Load all users.
+```text
  SELECT * FROM users;
 ```
-2. Iterate on every user and load its associations:  
-```
+2. Iterate on every user and load its associations:
+
+```erb
  SELECT * FROM books WHERE user_id=1)
-```  
 ```
- SELECT * FROM books WHERE user_id=2)  
-```  
+```erb
+ SELECT * FROM books WHERE user_id=2)
 ```
+```erb
  SELECT * FROM books WHERE user_id=3)
-``` 
+```
 
 ## EagerPreload Mode
 The [`pop.Connection.EagerPreload()`](https://github.com/gobuffalo/pop/pull/146/files#diff-f49e947ec94f65964b0845af2b62845aR180) method tells Pop to load the associations for a model once that model is loaded from the database. This mode will hit the database with a reduced frequency by sacrifing more memory space.
@@ -136,11 +137,11 @@ err := tx.EagerPreload().All(&u)  // loads all associations for every user regis
 
 `EagerPreload` mode will:
  1. Load all users.  
- ```
+ ```erb
   SELECT * FROM users;
  ```
 2. Load associations for all users in one single query.  
-```
+```erb
   SELECT * FROM books WHERE user_id IN (1,2,3))
 ``` 
 

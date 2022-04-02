@@ -142,7 +142,7 @@ The database host port for the database.
 **Defaults**:
 
 | Driver    | Port  |
-|-----------|-------|
+|:-----------|:-------|
 | PostgreSQL| 5432  |
 | MySQL     | 3306  |
 | Cockroach | 26257 |

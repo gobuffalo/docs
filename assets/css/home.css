@@ -65,7 +65,7 @@ html {
     @apply p-3 overflow-scroll;
 }
 
-.content p code {
+.content p code, li code {
     @apply bg-gray-200 p-1 rounded-md text-base;
 }
 

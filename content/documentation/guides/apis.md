@@ -19,7 +19,7 @@ $ buffalo new --api coke
 Applications generated with the `--api` flag don't contain any front systems. This means there is no templating, stylesheets, etc...
 
 #### <code>buffalo new coke --api</code>
-```
+```erb
 ├── Dockerfile
 ├── README.md
 ├── actions
@@ -42,7 +42,7 @@ Applications generated with the `--api` flag don't contain any front systems. Th
 ```
 
 #### <code>buffalo new coke</code>
-```
+```erb
 ├── Dockerfile
 ├── README.md
 ├── actions

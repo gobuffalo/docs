@@ -55,9 +55,9 @@ Files passed into the `render.HTML` or `render.Template` functions, that have an
 // beatles.md
 # The Beatles
 
-\<%= for (name) in names { %>
-* \<%= name %>
-\<% } %>
+<%= for (name) in names { %>
+* <%= name %>
+<% } %>
 ```
 
 ```go
@@ -99,7 +99,7 @@ The [`render.Options`](https://godoc.org/github.com/gobuffalo/buffalo/render#Opt
 The new JavaScript renderer also has it’s own implementation of the `partial` function. This new implementation behaves almost the same as the original implementation, but is smart enough to know that if you are rendering an `*.html` file inside of a `*.js` file that it will need to be escaped properly, and so it does it for you.
 
 ```javascript
-$("#new-goal-form").replaceWith("&lt;%= partial("goals/new.html") %&gt;");
+$("#new-goal-form").replaceWith("<%= partial("goals/new.html") %>");
 ```
 
 

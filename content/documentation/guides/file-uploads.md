@@ -11,13 +11,13 @@ Buffalo allows for the easily handling of files uploaded from a form. Storing th
 
 The `f.FileTag` form helper can be used to quickly add a file element to the form. When using this the `enctype` of the form is *automatically* switched to be `multipart/form-data`.
 
-```erb
-&lt;%= form_for(widget, {action: widgetsPath(), method: "POST"}) { %&gt;
-  &lt;%= f.InputTag("Name") %&gt;
-  &lt;%= f.FileTag("MyFile") %&gt;
-  &lt;button class="btn btn-success" role="submit"&gt;Save&lt;/button&gt;
-  &lt;a href="&lt;%= widgetsPath() %&gt;" class="btn btn-warning" data-confirm="Are you sure?"&gt;Cancel&lt;/a&gt;
-&lt;% } %&gt;
+```html
+<%= form_for(widget, {action: widgetsPath(), method: "POST"}) { %>
+  <%= f.InputTag("Name") %>
+  <%= f.FileTag("MyFile") %>
+  <button class="btn btn-success" role="submit">Save</button>
+  <a href="<%= widgetsPath() %>" class="btn btn-warning" data-confirm="Are you sure?">Cancel</a>
+<% } %>
 ```
 
 ## Accessing a Form File

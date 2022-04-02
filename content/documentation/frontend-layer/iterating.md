@@ -15,7 +15,7 @@ When looping through `arrays` or `slices`, the block being looped through will h
 
 The `for` statement takes 1 - 2 arguments. When using the two argument version, the first argument is the "index" of the loop and the second argument is the value from the array or slice.
 
-```html
+```erb
 <ul>
   <%= for (index, name) in names { %>
     <li><%= index %> - <%= name %></li>
@@ -25,7 +25,7 @@ The `for` statement takes 1 - 2 arguments. When using the two argument version, 
 
 When using the one argument version the index is omitted and just the value is returned:
 
-```html
+```erb
 <ul>
   <%= for (name) in names { %>
     <li><%= name %></li>
@@ -39,7 +39,7 @@ Looping through `maps` using the `each` helper is also supported, and follows ve
 
 When using the two argument version, the first argument is the key of the map and the second argument is the value from the map:
 
-```html
+```erb
 <ul>
   <%= for (key, value) in users { %>
     <li><%= key %> - <%= value %></li>
@@ -49,7 +49,7 @@ When using the two argument version, the first argument is the key of the map an
 
 When using the one argument version the key is omitted and just the value is returned:
 
-```html
+```erb
 <ul>
   <%= for (user) in users { %>
     <li><%= user %></li>

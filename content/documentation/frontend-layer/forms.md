@@ -140,7 +140,7 @@ type Talk struct {
 
 {{< /tab>}}
 {{< tab "templates/talks/edit.html" >}}
-```html
+```erb
 <%= form_for( talk, {action: talkPath({id: 3}), method: "PUT"}) { %>
   <div class="row">
     <div class="col-md-12">
@@ -332,7 +332,7 @@ That produces:
 
 By default when a checkbox is not "checked" no value will be sent to the server. Often, it is useful to send a value indicating a non-checked checkbox. This can be set by passing in a `unchecked` value.
 
-```go
+```erb
 <%= f.CheckboxTag("IsPublic", {unchecked: false}) %>
 ```
 
@@ -380,7 +380,7 @@ func (v WidgetsResource) Create(c buffalo.Context) error {
 ```
 {{< /tab >}}
 {{< tab "templates/widgets/new.html" >}}
-```html
+```erb
 // templates/widgets/new.html
 <%= form_for(widget, {action: widgetsPath(), method: "POST"}) { %>
   <%= f.InputTag("Name") %>
@@ -467,7 +467,7 @@ See the [Request Binding](/en/docs/bind) page for more information on request bi
 
 By default the form value inside the block is given the name `f`, however this can be changed when creating the form and passing the `var` option.
 
-```html
+```erb
 <%= form({var: "xyz"}) { %>
   <%= xyz.InputTag({name: "Foo"}) %>
 <% } %>
@@ -475,7 +475,7 @@ By default the form value inside the block is given the name `f`, however this c
 
 ### How Do I Create a Multipart Form?
 
-```html
+```erb
 <%= form({multipart: true}) { %>
 <% } %>
 ```
@@ -526,7 +526,7 @@ Another way is to write a helper to generate that line of code for you.
 
 Now that you have defined a helper to use in your templates you can use your helper inside your form with `<%= csrf() %>`. So your custom form should end up looking like this:
 
-```html
+```erb
 <form method="POST" ...>
   <%= csrf() %>
 </form>

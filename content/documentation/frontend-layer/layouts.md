@@ -26,7 +26,7 @@ func init() {
 }
 ```
 
-```html
+```erb
 // templates/application.html
 <html>
   <head>
@@ -40,7 +40,7 @@ func init() {
 </html>
 ```
 
-```html
+```erb
 // templates/hello.html
 <h1>Hello!!</h1>
 ```
@@ -54,7 +54,7 @@ func Hello(c buffalo.Context) error {
 }
 ```
 
-```html
+```erb
 // output
 <html>
   <head>
@@ -86,7 +86,7 @@ func init() {
 }
 ```
 
-```html
+```erb
 // templates/custom.html
 <html>
   <head>

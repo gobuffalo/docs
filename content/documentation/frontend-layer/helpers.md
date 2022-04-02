@@ -80,7 +80,7 @@ If given a block it will be interrupted and appended inside of the `<a>` tag.
 
 #### Example 1:
 
-```html
+```erb
 <%= linkTo([user, widget], {class: "btn"}) %>
 
 <a class="btn" href="/users/id/widget/slug"></a>
@@ -88,7 +88,7 @@ If given a block it will be interrupted and appended inside of the `<a>` tag.
 
 #### Example 2:
 
-```html
+```erb
 <%= linkTo("foo", {class: "btn"}) %>
 
 <a class="btn" href="/foo"></a>
@@ -96,7 +96,7 @@ If given a block it will be interrupted and appended inside of the `<a>` tag.
 
 #### Example 3:
 
-```html
+```erb
 <%= linkTo(user, {class: "btn"}) { %>
 Click Me!
 <% } %>
@@ -112,7 +112,7 @@ The [`github.com/gobuffalo/helpers/tags#RemoteLinkTo`](https://godoc.org/github.
 
 #### Example 1:
 
-```html
+```erb
 <%= remoteLinkTo([user, widget], {class: "btn"}) %>
 
 <a class="btn" data-remote="true" href="/users/id/widget/slug"></a>
@@ -120,7 +120,7 @@ The [`github.com/gobuffalo/helpers/tags#RemoteLinkTo`](https://godoc.org/github.
 
 #### Example 2:
 
-```html
+```erb
 <%= remoteLinkTo("foo", {class: "btn"}) %>
 
 <a class="btn" data-remote="true" href="/foo"></a>
@@ -128,7 +128,7 @@ The [`github.com/gobuffalo/helpers/tags#RemoteLinkTo`](https://godoc.org/github.
 
 #### Example 3:
 
-```html
+```erb
 <%= remoteLinkTo(user, {class: "btn"}) { %>
 Click Me!
 <% } %>
@@ -146,7 +146,7 @@ The `contentFor` helper takes a block of HTML and holds on to it using the given
 
 Take the following example: suppose we have a `templates/application.html` that fully specifies everything in `<head>` and the outermost contents of `<body>`. This template yields to other subtemplates, like `templates/users/show.html`, to fill `<body>`. However, if we want to add or override something in the `<head>` from a subtemplate, we'll need to use `contentFor`. In this example, we'll add a way for subtemplates to add an extra chunk of CSS to the `<head>` of `application.html`:
 
-```html
+```erb
 <!DOCTYPE html>
 <html>
   <head>
@@ -166,7 +166,7 @@ Take the following example: suppose we have a `templates/application.html` that 
 
 As it turns out, our `users/index.html` template could use a little page-wide styling instead of adding a bunch of `style` attributes to different elements, so it defines a block of CSS that doesn't show up anywhere inside the template:
 
-```html
+```erb
 <div class="page-header">
   <h1>Users</h1>
 </div>

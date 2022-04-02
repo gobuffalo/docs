@@ -56,7 +56,7 @@ The names of the "keys", in this example, "success", are left up to your applica
 
 ### Looping Over a Specific Flash Message Key
 
-```html
+```erb
 <div class="row">
   <div class="col-md-12">
     <%= for (message) in flash["success"] { %>

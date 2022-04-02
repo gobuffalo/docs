@@ -155,7 +155,7 @@ func Upper(c buffalo.Context) error {
 ```
 {{< /tab >}}
 {{< tab "templates/up.html" >}}
-```html
+```erb
 // templates/up.html
 <%= upblock() { %>
   hello world
@@ -164,7 +164,7 @@ func Upper(c buffalo.Context) error {
 {{< /tab >}}
 
 {{< tab "Output" >}}
-```html
+```text
 // output
 HELLO WORLD
 ```
@@ -206,7 +206,7 @@ func Show(c buffalo.Context) error {
 ```
 {{< /tab >}}
 {{< tab "template" >}}
-```html
+```erb
 // templates/users/show.html
 <%= if (is_logged_in()) { %>
   Hello <%= current_user.Name %>
@@ -214,7 +214,7 @@ func Show(c buffalo.Context) error {
 ```
 {{< /tab >}}
 {{< tab "Output" >}}
-```html
+```text
 // output
 Hello Ringo
 ```

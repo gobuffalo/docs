@@ -646,9 +646,9 @@ create_table("users") {
 
 {{< codetabs >}}
 {{< tab "templates/auth/new.html" >}}
-```html
+```erb
 // templates/auth/new.html
-&lt;style&gt;
+<style>
   .auth-wrapper{
     height: 100%;
     display: flex;
@@ -663,26 +663,26 @@ create_table("users") {
   }
 
   .auth-wrapper h1{margin-bottom: 20px;}
-&lt;/style&gt;
+</style>
 
-&lt;div class="auth-wrapper"&gt;
-  &lt;div class="sign-form"&gt;
-    &lt;h1&gt;Sign In&lt;/h1&gt;
+<div class="auth-wrapper">
+  <div class="sign-form">
+    <h1>Sign In</h1>
 
-    &lt;%= form_for(user, {action: signinPath()}) { %&gt;
-      &lt;%= f.InputTag("Email") %&gt;
-      &lt;%= f.InputTag("Password", {type: "password"}) %&gt;
-      &lt;button class="btn btn-success"&gt;Sign In!&lt;/button&gt;
-    &lt;% } %&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+    <%= form_for(user, {action: signinPath()}) { %>
+      <%= f.InputTag("Email") %>
+      <%= f.InputTag("Password", {type: "password"}) %>
+      <button class="btn btn-success">Sign In!</button>
+    <% } %>
+  </div>
+</div>
 ```
 {{< /tab>}}
 
 {{< tab "templates/new/new.html">}}
-```html
+```erb
 // templates/new/new.html
-&lt;style&gt;
+<style>
   .auth-wrapper{
     height: 100%;
     display: flex;
@@ -697,28 +697,28 @@ create_table("users") {
   }
 
   .auth-wrapper h1{margin-bottom: 20px;}
-&lt;/style&gt;
+</style>
 
-&lt;div class="auth-wrapper"&gt;
-  &lt;div class="sign-form"&gt;
-    &lt;h1&gt;register&lt;/h1&gt;
+<div class="auth-wrapper">
+  <div class="sign-form">
+    <h1>register</h1>
 
-    &lt;%= form_for(user, {action: userspath()}) { %&gt;
-      &lt;%= f.inputtag("email") %&gt;
-      &lt;%= f.inputtag("password", {type: "password"}) %&gt;
-      &lt;%= f.inputtag("passwordconfirmation", {type: "password"}) %&gt;
+    <%= form_for(user, {action: userspath()}) { %>
+      <%= f.inputtag("email") %>
+      <%= f.inputtag("password", {type: "password"}) %>
+      <%= f.inputtag("passwordconfirmation", {type: "password"}) %>
 
-      &lt;button class="btn btn-success"&gt;register!&lt;/button&gt;
-    &lt;% } %&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+      <button class="btn btn-success">register!</button>
+    <% } %>
+  </div>
+</div>
 ```
 
 {{< /tab>}}
 {{< tab "templates/index.html">}}
-```html
+```erb
 // templates/index.html
-&lt;style&gt;
+<style>
   .auth-center{
     display: flex;
     align-items: center;
@@ -728,17 +728,17 @@ create_table("users") {
   .sign-in-btn{
     margin-right: 10px;
   }
-&lt;/style&gt;
+</style>
 
-&lt;div class="auth-center"&gt;
-  &lt;%= if (current_user) { %&gt;
-    &lt;h1&gt;&lt;%= current_user.email %&gt;&lt;/h1&gt;
-    &lt;a href="/signout" data-method="delete"&gt;sign out&lt;/a&gt;
-  &lt;% } else { %&gt;
-    &lt;a href="/signin" class="btn btn-primary"&gt;sign in&lt;/a&gt;
-    &lt;a href="/users/new" class="btn btn-success"&gt;register&lt;/a&gt;
-  &lt;% } %&gt;
-&lt;/div&gt;
+<div class="auth-center">
+  <%= if (current_user) { %>
+    <h1><%= current_user.email %></h1>
+    <a href="/signout" data-method="delete">sign out</a>
+  <% } else { %>
+    <a href="/signin" class="btn btn-primary">sign in</a>
+    <a href="/users/new" class="btn btn-success">register</a>
+  <% } %>
+</div>
 ```
 {{< /tab >}}
 

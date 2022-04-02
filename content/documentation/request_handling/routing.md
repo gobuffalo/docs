@@ -76,7 +76,7 @@ a.GET("/coke", CokeHandler) // cokePath()
 These names become the name of the route helpers in your templates.
 
 ```html
-<a href="\<%= cokePath() %>">Coke</a>
+<a href="<%= cokePath() %>">Coke</a>
 ```
 
 You can inspect all of your paths by running `buffalo routes` from the command line.
@@ -125,14 +125,14 @@ See [`Custom Named Routes`](#custom-named-routes) for details on how to change t
 
 Route helpers can be used directly in templates using the name of the helper:
 
-```html
-\<%= widgetsPath() %> // /widgets
+```erb
+<%= widgetsPath() %> // /widgets
 ```
 
 Routes that require named parameters, must be fed a map of those parameters.
 
-```html
-\<%= editWidgetPath({widget_id: 1}) %> // /widgets/1/edit
+```erb
+<%= editWidgetPath({widget_id: 1}) %> // /widgets/1/edit
 ```
 
 
@@ -228,8 +228,8 @@ a.GET("/coke", CokeHandler).Name("customPath")
 
 This route is now called `customPath` and you can reference it as such in your templates.
 
-```html
-<a href="\<%= customPath() %>">Coke</a>
+```erb
+<a href="<%= customPath() %>">Coke</a>
 ```
 
 ## Parameters

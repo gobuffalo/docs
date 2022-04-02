@@ -13,27 +13,27 @@ Name: "Partials"
 
 All partial file names must start with an `_`. For example: `_form.html`. This helps to differentiate partials from other view templates in your application.
 
-```html
+```erb
 // templates/users/new.html
-&lt;h1>Create New User&lt;/h1>
+<h1>Create New User</h1>
 
-\<%= partial("users/form.html") %>
+<%= partial("users/form.html") %>
 ```
 
 ```html
 // templates/users/_form.html
-&lt;form action="/users">
-&lt;!-- form stuff here  -->
-&lt;form>
+<form action="/users">
+<!-- form stuff here  -->
+<form>
 ```
 
 ```html
 // output
-&lt;h1>Create New User&lt;/h1>
+<h1>Create New User</h1>
 
-&lt;form action="/users">
-&lt;!-- form stuff here  -->
-&lt;form>
+<form action="/users">
+<!-- form stuff here  -->
+<form>
 ```
 
 
@@ -51,27 +51,27 @@ func UsersEdit(c buffalo.Context) error {
 }
 ```
 
-```html
+```erb
 // templates/users/edit.hml
-&lt;h1>Edit \<%= user.Name %> (\<%= user.ID %>)&lt;/h1>
+<h1>Edit <%= user.Name %> (<%= user.ID %>)</h1>
 
-\<%= partial("users/form.html") %>
+<%= partial("users/form.html") %>
 ```
 
 ```html
 // templates/users/_form.html
-&lt;form action="/users/\<%= user.ID %>">
-&lt;!-- form stuff here  -->
-&lt;/form>
+<form action="/users/<%= user.ID %>">
+<!-- form stuff here  -->
+</form>
 ```
 
 ```html
 // output
-&lt;h1>Edit Mark Bates (1)&lt;/h1>
+<h1>Edit Mark Bates (1)</h1>
 
-&lt;form action="/users/1">
-&lt;!-- form stuff here  -->
-&lt;/form>
+<form action="/users/1">
+<!-- form stuff here  -->
+</form>
 ```
 
 
@@ -87,32 +87,32 @@ func UsersIndex(c buffalo.Context) error {
 }
 ```
 
-```html
+```erb
 // templates/users/index.html
-&lt;h1>All Users&lt;/h1>
+<h1>All Users</h1>
 
-&lt;ul>
-  \<%= for (u) in users { %>
-    \<%= partial("users/user.html", {user: u}) %>
-  \<% } %>
-&lt;/ul>
+<ul>
+  <%= for (u) in users { %>
+    <%= partial("users/user.html", {user: u}) %>
+  <% } %>
+</ul>
 ```
 
-```html
+```erb
 // templates/users/_user.html
-&lt;li>\<%= user.Name %>&lt;/li>
+<li><%= user.Name %></li>
 ```
 
 ```html
 // output
-&lt;h1>All Users&lt;/h1>
+<h1>All Users</h1>
 
-&lt;ul>
-  &lt;li>John Lennon</li>
-  &lt;li>Paul McCartney</li>
-  &lt;li>George Harrison</li>
-  &lt;li>Ringo Starr</li>
-&lt;/ul>
+<ul>
+  <li>John Lennon</li>
+  <li>Paul McCartney</li>
+  <li>George Harrison</li>
+  <li>Ringo Starr</li>
+</ul>
 ```
 
 ## Helpers

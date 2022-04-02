@@ -10,7 +10,8 @@ document.addEventListener('DOMContentLoaded', () =>{
 
 function colorizeCode() {
     document.querySelectorAll('code[data-lang="erb"]').forEach((el) => {
-        hljs.highlightElement(el);
+        el.parentNode.classList.add("language-erb");
+        hljs.highlightElement(el.parentNode);
     });
 }
 
@@ -23,7 +24,7 @@ function loadMobileNav() {
     document.querySelectorAll("#mobile-menu #close, .search-button").forEach(el => {
         el.addEventListener("click", () => {
             mobileMenu.classList.add("hidden");
-        })  
+        })
     })
 
     document.addEventListener('keydown', e => {
@@ -58,8 +59,8 @@ function loadBlogContent() {
         response.json().then(data => {
             let items = data.items.slice(0, 3);
             items.forEach(item => {
-                
-    
+
+
                 let desc = item.description.replace(/<img[^>]*>/g, "");
                 desc = desc.replace(/<\/?[^>]+(>|$)/g, "");
                 desc = desc.replace(/&nbsp;/g, "");
@@ -73,7 +74,7 @@ function loadBlogContent() {
                     </h4>
                     <p class="text-xs mb-3">${item.categories.join(", ")}</p>
                     <p class="text-center md:text-left">
-                        ${desc} 
+                        ${desc}
                         <a class="underline" href="${item.link}">
                             ${container.dataset.readMore}
                         </a>
@@ -107,7 +108,7 @@ function setupCodeTabs(){
             tabs.querySelectorAll(".tabs-container > div").forEach(el => {
                 el.classList.remove("active")
             })
-            
+
             tabs.querySelectorAll(".tab").forEach(el => {
                 el.classList.add("hidden")
             })

@@ -27,10 +27,10 @@
 			<link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}"/>
 			
 			{{ $searchJS = $searchJS | minify | fingerprint | resources.PostProcess }}
-			<link rel="stylesheet" href="{{ $searchJS.RelPermalink }}" integrity="{{ $searchJS.Data.Integrity }}"/>
+			<script src="{{ $searchJS.RelPermalink }}" integrity="{{ $searchJS.Data.Integrity }}"></script>
 			
 			{{ $mainJS = $mainJS | minify | fingerprint | resources.PostProcess }}
-			<link rel="stylesheet" href="{{ $mainJS.RelPermalink }}" integrity="{{ $mainJS.Data.Integrity }}"/>
+			<script src="{{ $mainJS.RelPermalink }}" integrity="{{ $mainJS.Data.Integrity }}"></script>
 		{{ end }}
 		
 		{{partial "favicons" .}}

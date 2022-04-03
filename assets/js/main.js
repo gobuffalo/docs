@@ -12,17 +12,24 @@ document.addEventListener('DOMContentLoaded', () =>{
 function setupMobileSidebar() {
     document.querySelector('#mobile-open-menu-button').addEventListener("click", (e) => {
         document.querySelector("#mobile-docs-sidebar").classList.remove("hidden");
-    });    
+    });
 
     document.querySelector('#mobile-docs-sidebar .close').addEventListener("click", (e) => {
         document.querySelector("#mobile-docs-sidebar").classList.add("hidden");
-    });   
+    });
 }
 
 function colorizeCode() {
     document.querySelectorAll('code[data-lang="erb"]').forEach((el) => {
-        el.parentNode.classList.add("language-erb");
-        hljs.highlightElement(el.parentNode);
+        let codeBlock = el.parentNode;
+        codeBlock.classList.add("language-erb");
+
+        let hl = document.createElement('div');
+        hl.classList.add('highlight')
+        codeBlock.parentNode.insertBefore(hl, codeBlock);
+        hl.append(codeBlock);
+
+        hljs.highlightElement(codeBlock);
     });
 }
 

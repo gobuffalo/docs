@@ -147,7 +147,7 @@ This is very similar to how [form binding](/docs/bind) works.
 Any types can be used that adhere to the [Scanner](https://golang.org/pkg/database/sql/#Scanner) and [Valuer](https://golang.org/pkg/database/sql/driver/#Valuer) interfaces, however, so that you don't have to write these yourself it is recommended you stick with the following types:
 
 | Base type             | Nullable        | Slice/Array |
-|-----------------------|:---------------:|------------:|
+|:-----------------------|:---------------|:------------|
 |int                    |nulls.Int        |slices.Int   |
 |int32                  |nulls.Int32      | ------      |
 |int64                  |nulls.Int64      | ------      |
@@ -163,7 +163,7 @@ Any types can be used that adhere to the [Scanner](https://golang.org/pkg/databa
 
 {{< note >}}
 **Note**: Any `slices.Map` typed fields will need to be initialized before `Bind`ing or accessing.
-```go 
+```go
 widget := &models.Widget{Data: slices.Map{}}
 ```
 {{< /note >}}
@@ -263,7 +263,7 @@ func (u User) TableName() string {
 
 It is recommended to use a value receiver over a pointer receiver if the struct is used as a value anywhere in the code.
 
-```
+```go
 // recommended:
 func (u User) TableName() string {
 

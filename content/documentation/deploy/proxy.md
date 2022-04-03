@@ -161,7 +161,7 @@ PORT=3000
 
 **Apache 2 config:**
 ```apache
-&lt;VirtualHost *:80&gt;
+<VirtualHost *:80>
     ProxyPreserveHost On
 
     # Proxy requests to Buffalo
@@ -169,5 +169,5 @@ PORT=3000
     ProxyPassReverse / http://0.0.0.0:3000/
 
     ServerName example.com
-&lt;/VirtualHost&gt;
+</VirtualHost>
 ```

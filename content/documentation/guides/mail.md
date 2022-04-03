@@ -141,7 +141,7 @@ func SendMail(c buffalo.Context) error {
 ```
 
 ```html
-&lt;a href="\<%= awesomePath() %>">Click here&lt;/a>
+<a href="\<%= awesomePath() %>">Click here</a>
 ```
 
 

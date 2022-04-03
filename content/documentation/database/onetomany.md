@@ -72,7 +72,7 @@ type Tree struct {
 }
 ```
 
-The format to use is `order_by:"&lt;column_name> &lt;asc | desc>"`.
+The format to use is `order_by:"<column_name> <asc | desc>"`.
 
 ## Customize foreign keys lookup
 

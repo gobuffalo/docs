@@ -37,7 +37,7 @@ Currently there are two official implementations of this interface:
 The following Worker implementations are provided by Buffalo users (no official support):
 
 | Name | Author | Description |
-|------|--------|-------------|
+|:------|:--------|:-------------|
 | [AMQP worker adapter](https://github.com/stanislas-m/amqp-work-adapter) | [@stanislas-m](https://github.com/stanislas-m) | A Worker implementation to use with AMQP-compatible brokers (such as [RabbitMQ](https://www.rabbitmq.com/)). |
 
 ## The Job type

@@ -646,7 +646,7 @@ create_table("users") {
 
 {{< codetabs >}}
 {{< tab "templates/auth/new.html" >}}
-```erb
+```html
 // templates/auth/new.html
 <style>
   .auth-wrapper{
@@ -662,7 +662,9 @@ create_table("users") {
     padding: 0 20px;
   }
 
-  .auth-wrapper h1{margin-bottom: 20px;}
+  .auth-wrapper h1{
+    margin-bottom: 20px;
+  }
 </style>
 
 <div class="auth-wrapper">
@@ -680,7 +682,7 @@ create_table("users") {
 {{< /tab>}}
 
 {{< tab "templates/new/new.html">}}
-```erb
+```html
 // templates/new/new.html
 <style>
   .auth-wrapper{
@@ -696,7 +698,9 @@ create_table("users") {
     padding: 0 20px;
   }
 
-  .auth-wrapper h1{margin-bottom: 20px;}
+  .auth-wrapper h1{
+    margin-bottom: 20px;
+  }
 </style>
 
 <div class="auth-wrapper">
@@ -716,7 +720,7 @@ create_table("users") {
 
 {{< /tab>}}
 {{< tab "templates/index.html">}}
-```erb
+```html
 // templates/index.html
 <style>
   .auth-center{

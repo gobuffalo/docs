@@ -1,6 +1,9 @@
 module.exports = {
-  purge: ['layouts/**/*.html'],
-  darkMode: false, // or 'media' or 'class'
+  purge: {
+    enabled: process.env.HUGO_ENVIRONMENT === "production",
+    content: ["./layouts/**/*.html", "./content/**/*.md", "./content/**/*.html"],
+  },
+  darkMode: false,
   theme: {
     extend: {},
   },

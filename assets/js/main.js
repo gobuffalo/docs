@@ -11,38 +11,40 @@ document.addEventListener('DOMContentLoaded', () =>{
     loadLatestCliVersion();
 });
 
-function latestRelease(repo) {
-    return fetch(`https://api.github.com/repos/${repo}/releases`, {
+function loadLatestLibVersion() {
+    let els = document.querySelectorAll(".latest-lib-release");
+    if (els.length == 0){
+        return
+    }
+
+    fetch(`https://api.rss2json.com/v1/api.json?rss_url=https://github.com/gobuffalo/buffalo/releases.atom`, {
         headers: {
           'Accept': 'application/json'
         }
     }).then(response => {
         return response.json();
-    })
-}
-
-function loadLatestLibVersion() {
-    latestRelease("gobuffalo/buffalo").then(data => {
-        let els = document.querySelectorAll(".latest-lib-release");
-        if (els.length == 0){
-            return
-        }
-
+    }).then(data => {
         els.forEach(el => {
-            el.innerHTML = data[0]["tag_name"];
+            el.innerHTML = data.items[0].title;
         })
     })
 }
 
 function loadLatestCliVersion() {
-    latestRelease("gobuffalo/cli").then(data => {
-        let els = document.querySelectorAll(".latest-cli-release");
-        if (els.length == 0){
-            return
-        }
+    let els = document.querySelectorAll(".latest-cli-release");
+    if (els.length == 0){
+        return
+    }
 
+    fetch(`https://api.rss2json.com/v1/api.json?rss_url=https://github.com/gobuffalo/cli/releases.atom`, {
+        headers: {
+          'Accept': 'application/json'
+        }
+    }).then(response => {
+        return response.json();
+    }).then(data => {
         els.forEach(el => {
-            el.innerHTML = data[0]["tag_name"];
+            el.innerHTML = data.items[0].title;
         })
     })
 }

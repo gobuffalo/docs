@@ -1,6 +1,8 @@
 ---
 tagline: "A Go web development eco-system, designed to make your life easier."
-latestVersionLabel: "Latest version"
+latestVersionLabel: "Package version"
+latestCLILabel: "CLI version"
+
 topCTA: "Get Started"
 featuresTitle: "Main Features"
 featuresCTA: "Get Started with Buffalo"

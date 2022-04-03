@@ -59,7 +59,7 @@ Since `v0.10.3`, pre-compiled archives are provided with each release. If you do
 ### GNU / Linux
 
 ```console
-$ wget https://github.com/gobuffalo/cli/releases/download/{{< latestclirelease >}}/buffalo_{{< latestclirelease >}}%>_Linux_x86_64.tar.gz
+$ wget https://github.com/gobuffalo/cli/releases/download/{{< latestclirelease >}}/buffalo_{{< latestclirelease >}}_Linux_x86_64.tar.gz
 $ tar -xvzf buffalo_{{< latestclirelease >}}_Linux_x86_64.tar.gz
 $ sudo mv buffalo /usr/local/bin/buffalo
 ```

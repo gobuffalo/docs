@@ -17,7 +17,7 @@ $ buffalo build
 ```
 
 ```bash
-Buffalo version <%= version %>
+Buffalo version {{< latestclirelease >}}
 
 --> cleaning up target dir
 --> running node_modules/.bin/webpack
@@ -43,7 +43,7 @@ $ buffalo help build
 ```
 
 ```bash
-Buffalo version <%= version %>
+Buffalo version {{< latestclirelease >}}
 
 Builds a Buffalo binary, including bundling of assets (packr & webpack)
 

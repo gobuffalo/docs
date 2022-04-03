@@ -1,15 +1,57 @@
 
 document.addEventListener('DOMContentLoaded', () =>{
-
     loadMobileNav();
     addHeaderLinks();
     loadBlogContent();
     setupCodeTabs();
     colorizeCode();
     setupMobileSidebar();
+
+    loadLatestLibVersion();
+    loadLatestCliVersion();
 });
 
+function latestRelease(repo) {
+    return fetch(`https://api.github.com/repos/${repo}/releases`, {
+        headers: {
+          'Accept': 'application/json'
+        }
+    }).then(response => {
+        return response.json();
+    })
+}
+
+function loadLatestLibVersion() {
+    latestRelease("gobuffalo/buffalo").then(data => {
+        let els = document.querySelectorAll(".latest-lib-release");
+        if (els.length == 0){
+            return
+        }
+
+        els.forEach(el => {
+            el.innerHTML = data[0]["tag_name"];
+        })
+    })
+}
+
+function loadLatestCliVersion() {
+    latestRelease("gobuffalo/cli").then(data => {
+        let els = document.querySelectorAll(".latest-cli-release");
+        if (els.length == 0){
+            return
+        }
+
+        els.forEach(el => {
+            el.innerHTML = data[0]["tag_name"];
+        })
+    })
+}
+
 function setupMobileSidebar() {
+    if (document.querySelector('#mobile-open-menu-button') == null) {
+        return
+    }
+
     document.querySelector('#mobile-open-menu-button').addEventListener("click", (e) => {
         document.querySelector("#mobile-docs-sidebar").classList.remove("hidden");
     });

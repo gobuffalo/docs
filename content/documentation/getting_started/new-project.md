@@ -40,7 +40,7 @@ That will generate a whole new Buffalo application called **coke**, all ready to
 
 ```bash
 $ buffalo new coke
-Buffalo version <%= version %>
+Buffalo version {{< latestclirelease >}}
 
       create  .buffalo.dev.yml
       create  assets/images/logo.svg

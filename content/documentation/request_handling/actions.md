@@ -15,10 +15,9 @@ Controllers are the *C* part of the [MVC pattern](https://en.wikipedia.org/wiki/
 For instance, if you request the `/` path of this website, the handler responsible of the home page will produce you the HTML home page as you see it. If you're building a REST API, the controller will fetch or save some data, then ask (politely) the render engine to produce the appropriate response.
 
 In Buffalo case, we commonly call controllers "actions".
-
 ## Define an Action
 
-Buffalo's actions (or controllers) are <%= doclink("github.com/gobuffalo/buffalo#Handler") %> functions:
+Buffalo's actions (or controllers) are {{< doclink href="github.com/gobuffalo/buffalo#Handler" message="Handler" >}} functions:
 
 ```go
 func Home(c buffalo.Context) error {

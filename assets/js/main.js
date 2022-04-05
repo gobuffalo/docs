@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', () =>{
 
     loadLatestLibVersion();
     loadLatestCliVersion();
+
+    setupLanguageSelector();
 });
 
 function loadLatestLibVersion() {
@@ -179,4 +181,18 @@ function setupCodeTabs(){
             tabs.querySelector(`div[data-title="${e.target.dataset.tab}"]`).classList.remove("hidden")
         })
     })
+}
+
+function setupLanguageSelector() {
+    let selector = document.querySelector("#languageSelector");
+
+    if (selector == null) {
+        return
+    }
+
+    selector.addEventListener('click', e => {
+        e.preventDefault();
+
+        document.querySelector('#languageDropdown').classList.toggle('hidden');
+    });
 }

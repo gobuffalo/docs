@@ -9,8 +9,6 @@ document.addEventListener('DOMContentLoaded', () =>{
 
     loadLatestLibVersion();
     loadLatestCliVersion();
-
-    setupLanguageSelector();
 });
 
 function loadLatestLibVersion() {

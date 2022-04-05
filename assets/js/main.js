@@ -182,17 +182,3 @@ function setupCodeTabs(){
         })
     })
 }
-
-function setupLanguageSelector() {
-    let selector = document.querySelector("#languageSelector");
-
-    if (selector == null) {
-        return
-    }
-
-    selector.addEventListener('click', e => {
-        e.preventDefault();
-
-        document.querySelector('#languageDropdown').classList.toggle('hidden');
-    });
-}

@@ -2,6 +2,7 @@
 tagline: "Un écosystème pour le développement Web en Go, conçu pour rendre votre vie plus facile."
 topCTA: "Démarrer"
 latestVersionLabel: "Dernière version"
+latestCLILabel: "Version CLI"
 requiresLabel: "Nécessite"
 
 

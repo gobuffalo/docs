@@ -37,10 +37,9 @@
 	</head>
 	<body class="flex flex-col min-h-screen">
 		{{ partial "header" .}}
-		{{ partial "languageselector.html" . }}
 
 		<main class="bg-gray-100 md:pb-7 flex-grow">
-			<div class="container md:flex md:gap-6">
+			<div class="container">
 				  <!-- Off-canvas menu for mobile, show/hide based on off-canvas menu state. -->
 				<div id="mobile-docs-sidebar" class="fixed inset-0 hidden flex z-40 lg:hidden" role="dialog" aria-modal="true">
 					<div class="fixed inset-0 bg-gray-600 bg-opacity-75" aria-hidden="true"></div>
@@ -73,18 +72,22 @@
 						</svg>
 						<span class="text-sm font-bold">{{ .Params.Name }}</span>
 					</div>
-
 				</div>
 
-				<aside class="bg-gray-200 rounded-md p-7 hidden md:block docssidebar">
-					{{partial "docssidebar" .}}
-				</aside>
+				{{ partial "languageselector.html" . }}
 
-				<div class="w-full p-5 md:flex-grow md:p-9  bg-white rounded-md  ">
-					<div class="max-w-4xl content mt-2">
-						{{ block "main" . }}{{end }}
+				<div class="flex md:gap-6">
+					<aside class="bg-gray-200 rounded-md p-7 hidden md:block docssidebar">
+						{{partial "docssidebar" .}}
+					</aside>
+
+					<div class="w-full p-5 md:flex-grow md:p-9 bg-white rounded-md">
+						<div class="max-w-4xl content mt-2">
+							{{ block "main" . }}{{end }}
+						</div>
 					</div>
 				</div>
+
 			</div>
 
 		</main>

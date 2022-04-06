@@ -1,7 +1,10 @@
 
 {{ define "main" }}
-    <section class="py-20 hero">
-        <div class="container">
+<section class="hero">
+        <div class="container text-white">
+            {{ partial "languageselector.html" . }}
+        </div>
+        <div class="container py-36">
             <div class="flex flex-row">
                 <div class="max-w-2xl text-white text-center md:text-left">
                     <h1 class="text-center md:text-left text-6xl font-bold mb-10 ">{{ .Params.Tagline }}</h1>

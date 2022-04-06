@@ -7,6 +7,8 @@ aliases:
   - /en/docs/mail
 ---
 
+# Mailers
+
 E-mails are part of most (web) systems. It's a standard way to inform users about platform news, confirmations, marketing stuff, and so on.
 
 Buffalo provides, out of the box, a mailer extension with a standard SMTP sender. A generator is included, to allow you to work with emails as fast as possible.

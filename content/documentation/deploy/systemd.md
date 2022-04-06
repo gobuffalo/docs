@@ -13,7 +13,7 @@ In this chapter, we'll see how to setup your Buffalo app as a Systemd service. S
 
 It allows you to configure an application in a standard way, and manage its lifecycle with `systemctl` commands. You can refer to the [systemd man page](https://www.freedesktop.org/software/systemd/man/systemd.service.html) for further information.
 
-## Install your Buffalo App
+## Install Your Buffalo App
 
 The first step is to place your app into the right folder: on Debian, the common place for executables installed by hand is `/usr/local/bin`. That's where we'll install the app.
 
@@ -28,7 +28,7 @@ $ sudo chown root: /usr/local/bin/myapp
 $ sudo chmod +x /usr/local/bin/myapp
 ```
 
-## Create the systemd config file
+## Create the Systemd Config File
 
 The systemd service files are located in `/lib/systemd/system/`, we'll create a new `myapp.service` file there for your app.
 
@@ -65,7 +65,7 @@ UMask=007
 WantedBy=multi-user.target
 ```
 
-## Set env variables
+## Set Env Variables
 
 The official way to handle config with Buffalo is through [environment variables](/documentation/getting_started/configuration). Using Systemd, you can set them with an override file.
 
@@ -80,7 +80,7 @@ Environment="SESSION_SECRET=kqdjmlkajdùméa]$"
 
 Each `Environment` line define an environment variable for your app.
 
-## Play with the service
+## Play with the Service
 
 The systemd service is now ready, you can test it with the `systemctl` and `journalctl` commands:
 
@@ -102,7 +102,7 @@ $ sudo systemctl stop myapp.service
 
 To stop the service, for a maintenance (for instance).
 
-## Enable the service on startup
+## Enable the Service on Startup
 
 Once the service is working as you want, you can enable it on startup. This way, if the server need to restart, your app will restart as well.
 

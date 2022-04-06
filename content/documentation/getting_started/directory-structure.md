@@ -15,13 +15,13 @@ aliases:
   - /en/docs/getting-started/directory-structure
 ---
 
-# Directory structure
+# Directory Structure
 
 Buffalo provides you **a minimal directory structure** to work on your project. This structure **keeps the project clean**, and allow the generators to work. Don't try to reinvent the wheel, and **let Buffalo buy you more time** to do the interesting part of your app! :)
 
 Now that you have a minimal new project, let's go through its contents.
 
-## The root directory
+## The Root Directory
 
 Here is the structure of a Buffalo project:
 

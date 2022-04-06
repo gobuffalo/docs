@@ -107,7 +107,7 @@ $("#new-goal-form").replaceWith("<%= partial("goals/new.html") %>");
 ```
 
 
-## Automatic extensions
+## Automatic Extensions
 
 {{< since "0.10.2" >}}
 

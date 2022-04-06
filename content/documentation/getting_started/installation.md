@@ -51,7 +51,7 @@ Again, if you don't need a database, you won't need these.
 
 * **SQLite 3**: GCC, or equivalent C compiler for [mattn/go-sqlite3](https://github.com/mattn/go-sqlite3).
 
-## Installation from a release archive - 64 bits
+## Installation from a Release Archive - 64 bits
 
 {{< note >}}
 The release packages contain Buffalo without SQLite support.
@@ -111,7 +111,7 @@ $ gofish install buffalo
 🐠  buffalo {{< latestclirelease >}}: installed in 3.223672926s
 ```
 
-## Custom installation **with** SQLite3 Support
+## Custom Installation **with** SQLite3 Support
 
 **SQLite 3** requires a GCC, or equivalent C compiler for [mattn/go-sqlite3](https://github.com/mattn/go-sqlite3) to compile. You **must** have a GCC installed **first** before installing Buffalo.
 
@@ -131,7 +131,7 @@ PS C:\> scoop install gcc
 These instructions can also be used for upgrading to a newer version of Buffalo.
 {{< /note >}}
 
-## Custom installation **without** SQLite3 Support
+## Custom Installation **without** SQLite3 Support
 
 ```console
 $ go install github.com/gobuffalo/cli/cmd/buffalo@{{< latestclirelease >}}
@@ -141,7 +141,7 @@ $ go install github.com/gobuffalo/cli/cmd/buffalo@{{< latestclirelease >}}
 These instructions can also be used for upgrading to a newer version of Buffalo.
 {{< /note >}}
 
-## Verify your installation
+## Verify Your Installation
 
 You can check if your installation is working, by executing the `buffalo` command in a terminal/command prompt:
 

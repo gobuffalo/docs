@@ -11,7 +11,7 @@ Middleware allows for the interjection of code in the request/response cycle. Co
 
 A list of "known" middleware packages can be found at [https://toolkit.gobuffalo.io/tools?topic=middleware](https://toolkit.gobuffalo.io/tools?topic=middleware).
 
-## Writing your own middleware
+## Writing Your Own Middleware
 
 The [`buffalo.MiddlewareFunc`](https://godoc.org/github.com/gobuffalo/buffalo#MiddlewareFunc) interface is any function that takes a `buffalo.Handler` and returns a `buffalo.Handler`.
 

@@ -767,7 +767,7 @@ $ buffalo d r users -y
 ```
 
 
-## Nesting resources
+## Nesting Resources
 
 To simplify creating resource hierarchies, Buffalo supports nesting resources.
 

@@ -19,7 +19,7 @@ aliases:
 
 You now have a working Buffalo installation. In this section, you will learn how to create **a brand new web application**, using the `buffalo` command. 
 
-## Create a new project
+## Create a New Project
 
 Buffalo aims to make building new web applications in Go as **quick and simple** as possible. What could be more simple than a *new application* generator?
 
@@ -105,7 +105,7 @@ Please read the README.md file in your new application for next steps on running
 ```
 
 
-## Create a customized app
+## Create a Customized App
 
 The default setup is great, but maybe it doesn't fit you. Buffalo provides several options as flags for the `new` command.
 

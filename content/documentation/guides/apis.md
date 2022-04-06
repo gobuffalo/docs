@@ -10,7 +10,7 @@ aliases:
 
 Applications that only serve API end-points, typically JSON, are very different from those that serve HTML, JavaScript, and CSS. In this guide, you'll learn how to build an API-only app, using Buffalo.
 
-## Creating a new API Application
+## Creating a New API Application
 
 When creating a new Buffalo application using the `buffalo new` command, the optional `--api` flag will generate an application that is better suited to serving APIs than a stock Buffalo application.
 

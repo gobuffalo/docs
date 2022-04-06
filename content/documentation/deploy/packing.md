@@ -13,7 +13,7 @@ aliases:
 
 Now, your project is ready to be deployed. In this section, you will learn how to package a version of your app to deploy it on a server.
 
-## The build command
+## The build Command
 
 Buffalo features a command, `build`, that will build a **full binary** of your application including, but not limited to; assets, migrations, templates, etc. If you buy into the “Buffalo Way”, things just work. It's a wonderful experience. :)
 
@@ -39,7 +39,7 @@ Buffalo version {{< latestclirelease >}}
 
 When the build finishes, you have a fresh baked binary in the `bin` folder. It will also have the **compilation time** and the **git commit SHA** burnt in, thus making the binaries “versioned”.
 
-## Customize the build
+## Customize the Build
 
 To get the list of available options, use the help command:
 

@@ -8,6 +8,9 @@ aliases:
   - /docs/db/relations/onetoone
   - /en/docs/db/relations/onetoone
 ---
+
+# One to Many Associations
+
 In this chapter, you'll learn how to write a one to one [association](/documentation/database/relations/) in Pop.
 
 ## Tags

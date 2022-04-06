@@ -63,7 +63,7 @@ type Job struct {
 }
 ```
 
-## How to use background tasks
+## How to Use Background Tasks
 
 To be able to use background tasks, you'll need to setup a worker adapter, register job handlers and trigger jobs.
 

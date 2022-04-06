@@ -34,6 +34,6 @@ err := db.RawQuery("UPDATE players SET instrument = ? WHERE id = ?", "guitar", 1
 err := db.RawQuery("DELETE FROM players WHERE id = ?", 1).Exec()
 ```
 
-## Tokens syntax
+## Tokens Syntax
 
 With `RawQuery`, you can continue to use the `?` tokens to secure your input values. You don't need to use the token syntax for your underlying database.

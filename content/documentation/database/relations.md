@@ -287,7 +287,7 @@ tx.Eager().Create(&book)
 
 In the case where you feed the eager create with associated models that already exist, it will, instead of creating duplicates of them or updating the contents of them, simply create/update the associations with them.
 
-## Next steps
+## Next Steps
 
 * [One to one relations](/documentation/database/relations-one-to-one)
 * [One to many relations](/documentation/database/relations-one-to-many)

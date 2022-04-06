@@ -9,7 +9,7 @@ aliases:
   - /en/docs/db/getting-started
 ---
 
-# Getting started with Pop
+# Getting Started with Pop
 
 The [pop](https://godoc.org/github.com/gobuffalo/pop) package is included with Buffalo by default, but you can use it outside of Buffalo. It wraps the absolutely amazing https://github.com/jmoiron/sqlx library, cleans up some of the common patterns and work flows usually associated with dealing with databases in Go.
 

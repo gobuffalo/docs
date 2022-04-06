@@ -9,7 +9,8 @@ aliases:
   - /en/docs/db/relations/onetomany
 ---
 
-# One to many associations
+# One to Many Associations
+
 In this chapter, you'll learn how to write a one to many [association](/documentation/database/relations/) in Pop.
 
 ## Tags
@@ -64,7 +65,7 @@ if err := c.Eager().All(trees); err != nil {
 log.Printf("eager fetch: %v", trees)
 ```
 
-## Custom association order
+## Custom Association Order
 
 Since `has_many` is mapped to a slice, you'll probably want to customize the order of this slice. `has_many` tag allows you to indicate the order for the association when loading it:
 
@@ -78,7 +79,7 @@ type Tree struct {
 
 The format to use is `order_by:"<column_name> <asc | desc>"`.
 
-## Customize foreign keys lookup
+## Customize Foreign Keys Lookup
 
 By default, `has_many` will fetch related records using a convention for the foreign key column. In our previous example, the `fruits` table (mapped to the `Fruit` struct) contains a `tree_id` foreign key column which references the ID of the tree the fruit is attached to.
 

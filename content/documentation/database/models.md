@@ -8,6 +8,8 @@ aliases:
   - /en/docs/db/models
 ---
 
+# Models
+
 Pop, as an ORM, allows you to translate database tables into Go structs. This way, you can manipulate Go structs instead of writing SQL statements. The Go code managing this part is named "models", as a reference to the MVC architecture.
 
 In this chapter, you'll learn how to work with models by hand; and how to improve your workflow using the provided generators.
@@ -60,7 +62,7 @@ type Soda struct {
 
 That's it! You don't need anything else to work with Pop! Note, for each table field, we defined a `pop` tag matching the field name, but it's not required. If you don't provide a name, Pop will use the name of the struct field to generate one.
 
-## Using the generator
+## Using the Generator
 
 {{< note >}}
 **Note for Buffalo users**: `soda` commands are embedded into the `buffalo` command, behind the `pop` namespace. So everytime you want to use a command from `soda`, just execute `buffalo pop` instead.
@@ -102,7 +104,7 @@ Or in short form:
 $ soda d m [name]
 ```
 
-## Nulls handling
+## Nulls Handling
 
 If you need to store `NULL` values in your table, you'll have to use special types: for instance, you can't store a `NULL` value if your type is `int`.
 
@@ -118,7 +120,7 @@ type User struct {
 }
 ```
 
-## Customize models
+## Customize Models
 
 ### Mapping Model Fields
 

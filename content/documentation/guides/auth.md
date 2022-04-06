@@ -1,7 +1,11 @@
 ---
+name: "Local Authentication"
 seoDescription: Local authentication
 seoKeywords: ["buffalo", "go", "golang", "users", "password", "authentication"]
-name: "Local Authentication"
+weight: 21
+aliases:
+  - /docs/auth
+  - /en/docs/auth
 ---
 
 # Local Authentication

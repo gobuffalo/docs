@@ -2,6 +2,8 @@
 weight: 2
 name: Tutorials
 icon: "images/tutorials.svg"
+aliases:
+  - /en/docs/examples
 ---
 
 # Tutorials
@@ -162,8 +164,6 @@ Source: [https://github.com/gobuffalo/simple-ajax-recipe](https://github.com/gob
 * **January 12th, 2017** - Go And Buffalo Live From Dunkin' Donuts [https://changelog.com/gotime/29](https://changelog.com/gotime/29)
 
 ## Videos About Buffalo
-
-* **Gopher Guides** - GopherGuides.tv [https://www.gopherguides.tv/buffalo-resources](https://www.gopherguides.tv/buffalo-resources)
 
 * **Go in 5 Minutes** - [https://www.goin5minutes.com/screencasts/](https://www.goin5minutes.com/screencasts/)
 

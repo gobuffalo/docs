@@ -1,5 +1,8 @@
 ---
 Name: "Assets"
+aliases:
+  - /docs/assets
+  - /en/docs/assets
 ---
 # Assets
 
@@ -62,4 +65,4 @@ The `buffalo dev` command, in addition to watching and rebuilding the applicatio
 
 ## Building Assets for Deployment
 
-The `buffalo build` command will build the asset pipeline, and properly attach it to the generated Go binary. One binary to run them all! See [/en/docs/building](/en/docs/building) for more options on building assets for deployment.
+The `buffalo build` command will build the asset pipeline, and properly attach it to the generated Go binary. One binary to run them all! See [Packing](/documentation/deploy/packing) for more options on building assets for deployment.

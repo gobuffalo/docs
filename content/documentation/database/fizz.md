@@ -2,10 +2,14 @@
 Name: Fizz
 seoDescription: "Fizz"
 seoKeywords: ["buffalo", "go", "golang", "database", "fizz", "pop", "DSL"]
+weight: 13
+aliases:
+  - /docs/db/fizz
+  - /en/docs/db/fizz
 ---
 
 # Fizz
-Fizz is a common DSL for migrating databases. It tries to be as database-agnostic as possible. This is the default language used by Pop to define [database migrations](/en/docs/db/migrations).
+Fizz is a common DSL for migrating databases. It tries to be as database-agnostic as possible. This is the default language used by Pop to define [database migrations](/documentation/database/migrations).
 
 ## Create a Table
 
@@ -41,7 +45,7 @@ By default, fizz will generate two `timestamp` columns: `created_at` and `update
 
 The `t.Column` method takes the following arguments: name of the column, the type of the field, and finally the last argument is any options you want to set on that column.
 
-#### <a name="column-info"></a> "Common" Types:
+#### "Common" Types:
 
 * `string`
 * `text`
@@ -56,7 +60,7 @@ For example for PostgreSQL you could pass `jsonb` and it will be supported, howe
 
 #### Supported Options:
 
-* `primary` - Whether the column is the primary key. To have a composite key look [below](#composite-primary-key). `example: {"primary": true}`
+* `primary` - Whether the column is the primary key. To have a composite key look [below](#composite-primary-keys). `example: {"primary": true}`
 * `size` - The size of the column. For example if you wanted a `varchar(50)` in Postgres you would do: `t.Column("column_name", "string", {"size": 50})`. The default value for a string column is 255 (or 191 for MariaDB).
 * `scale`, `precision` - The scale and the precision for a float column. `example: {"scale": 4, "precision": 2}`
 * `null` - By default columns are not allowed to be `null`.
@@ -103,7 +107,7 @@ rename_table("old_table_name", "new_table_name")
 add_column("table_name", "column_name", "string", {})
 ```
 
-See [above](#column-info) for more details on column types and options.
+See [above](#common-types) for more details on column types and options.
 
 ## Alter a column
 
@@ -123,7 +127,7 @@ rename_column("table_name", "old_column_name", "new_column_name")
 drop_column("table_name", "column_name")
 ```
 
-## <a name="composite-primary-key"></a> Composite Primary Keys
+## Composite Primary Keys
 
 ``` javascript
 t.PrimaryKey("column_1", "column_2")

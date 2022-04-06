@@ -1,7 +1,11 @@
 ---
+name: Tasks
+weight: 14
 seoDescription: Tasks
 seoKeywords: ["buffalo", "go", "golang", "tasks", "scripts", "grift"]
-name: Tasks
+aliases:
+  - /docs/tasks
+  - /en/docs/tasks
 ---
 # Tasks
 
@@ -71,7 +75,7 @@ $ buffalo task hello
 
 ### From a Built Binary
 
-After a binary has been [built](/en/docs/deploy/building), the tasks can be run with the `task` subcommand:
+After a binary has been [built](/documentation/deploy/packing), the tasks can be run with the `task` subcommand:
 
 ```bash
 $ myapp task hello

@@ -1,5 +1,8 @@
 ---
 name: Go Modules
+aliases:
+  - /docs/gomods
+  - /en/docs/gomods
 ---
 
 # Go Modules

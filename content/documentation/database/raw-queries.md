@@ -2,6 +2,10 @@
 name: Raw Queries
 seoDescription: "Writing raw queries with Pop"
 seoKeywords: ["buffalo", "go", "golang", "database", "raw", "query", "custom"]
+weight: 22
+aliases:
+  - /docs/db/raw-queries
+  - /en/docs/db/raw-queries
 ---
 
 # Raw Queries
@@ -30,6 +34,6 @@ err := db.RawQuery("UPDATE players SET instrument = ? WHERE id = ?", "guitar", 1
 err := db.RawQuery("DELETE FROM players WHERE id = ?", 1).Exec()
 ```
 
-## Tokens syntax
+## Tokens Syntax
 
 With `RawQuery`, you can continue to use the `?` tokens to secure your input values. You don't need to use the token syntax for your underlying database.

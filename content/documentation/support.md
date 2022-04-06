@@ -1,6 +1,8 @@
 ---
 name: Support
 icon: "images/support.svg"
+aliases:
+  - /en/docs/support
 ---
 
 # Support

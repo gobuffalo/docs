@@ -2,6 +2,10 @@
 name: Database Configuration
 seoDescription: "How to configure my database with Pop?"
 seoKeywords: ["buffalo", "go", "golang", "database", "ORM", "pop", "configuration"]
+weight: 3
+aliases:
+  - /docs/db/configuration
+  - /en/docs/db/configuration
 ---
 # Database Configuration
 
@@ -46,7 +50,7 @@ $ soda g config
 
 The default will generate a `database.yml` file in the current directory for a PostgreSQL database. You can override the type of database using the `-t` flag and passing in any of the supported database types: `postgres`, `cockroach`, `mysql`, or `sqlite3`.
 
-## Config file location
+## Config File Location
 
 The Pop configuration file &#8211; `database.yml` &#8211; can be found either:
 * At your project root (default).
@@ -60,7 +64,7 @@ You can also customize the file name:
 pop.ConfigName = "my_pop_config.yml"
 ```
 
-## Env vs detailed configuration
+## Env vs Detailed Configuration
 
 {{< note >}}
 Note that the `database.yml` file is also a Go template, so you can use Go template syntax. There are two special functions that are included, `env` and `envOr`.

@@ -1,9 +1,11 @@
 ---
 name: Troubleshooting
 icon: "images/troubleshoot.svg"
+aliases:
+  - /en/docs/troubleshooting
 ---
 
-# TroubleShooting
+# Troubleshooting
 
 {{< faq "App Crashes with `securecookie: hash key is not set`" "securecookie-hash-key-not-set">}}
 After a recent change in the [github.com/gorilla/sessions](http://www.gorillatoolkit.org/pkg/sessions) Buffalo applications will fail to start with the error `securecookie: hash key is not set`. To fix this you must set an environment variable named `SESSION_SECRET`.

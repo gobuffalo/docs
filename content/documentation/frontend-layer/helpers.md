@@ -1,5 +1,9 @@
 ---
 Name: "Helpers"
+weight: 6
+aliases:
+  - /docs/helpers
+  - /en/docs/helpers
 ---
 
 # Helpers

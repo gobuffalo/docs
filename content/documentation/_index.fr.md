@@ -2,6 +2,8 @@
 weight: 1
 name: Documentation
 icon: "images/documentation.svg"
+aliases:
+  - /fr/docs
 ---
 # La documentation de Buffalo
 

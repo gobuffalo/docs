@@ -1,5 +1,9 @@
 ---
 Name: "Partials"
+weight: 4
+aliases:
+  - /docs/partials
+  - /en/docs/partials
 ---
 
 # Partials
@@ -13,33 +17,33 @@ Name: "Partials"
 
 All partial file names must start with an `_`. For example: `_form.html`. This helps to differentiate partials from other view templates in your application.
 
-```html
+```erb
 // templates/users/new.html
-&lt;h1>Create New User&lt;/h1>
+<h1>Create New User</h1>
 
-\<%= partial("users/form.html") %>
+<%= partial("users/form.html") %>
 ```
 
 ```html
 // templates/users/_form.html
-&lt;form action="/users">
-&lt;!-- form stuff here  -->
-&lt;form>
+<form action="/users">
+<!-- form stuff here  -->
+<form>
 ```
 
 ```html
 // output
-&lt;h1>Create New User&lt;/h1>
+<h1>Create New User</h1>
 
-&lt;form action="/users">
-&lt;!-- form stuff here  -->
-&lt;form>
+<form action="/users">
+<!-- form stuff here  -->
+<form>
 ```
 
 
 ## Context
 
-All [rendering context](/en/docs/rendering) from the parent template will automatically pass through to the partial, and any partials that partial may call. (see also [context](/en/docs/context))
+All [rendering context](/documentation/frontend-layer/rendering) from the parent template will automatically pass through to the partial, and any partials that partial may call. (see also [Context](/documentation/request_handling/context))
 
 
 ```go
@@ -51,33 +55,33 @@ func UsersEdit(c buffalo.Context) error {
 }
 ```
 
-```html
+```erb
 // templates/users/edit.hml
-&lt;h1>Edit \<%= user.Name %> (\<%= user.ID %>)&lt;/h1>
+<h1>Edit <%= user.Name %> (<%= user.ID %>)</h1>
 
-\<%= partial("users/form.html") %>
+<%= partial("users/form.html") %>
 ```
 
 ```html
 // templates/users/_form.html
-&lt;form action="/users/\<%= user.ID %>">
-&lt;!-- form stuff here  -->
-&lt;/form>
+<form action="/users/<%= user.ID %>">
+<!-- form stuff here  -->
+</form>
 ```
 
 ```html
 // output
-&lt;h1>Edit Mark Bates (1)&lt;/h1>
+<h1>Edit Mark Bates (1)</h1>
 
-&lt;form action="/users/1">
-&lt;!-- form stuff here  -->
-&lt;/form>
+<form action="/users/1">
+<!-- form stuff here  -->
+</form>
 ```
 
 
 ## Local Context
 
-In addition to have the [context](/en/docs/context) of the parent template, partials can also be sent additional information as "local" variables.
+In addition to have the [context](/documentation/request_handling/context) of the parent template, partials can also be sent additional information as "local" variables.
 
 ```go
 // actions/users.go
@@ -87,34 +91,34 @@ func UsersIndex(c buffalo.Context) error {
 }
 ```
 
-```html
+```erb
 // templates/users/index.html
-&lt;h1>All Users&lt;/h1>
+<h1>All Users</h1>
 
-&lt;ul>
-  \<%= for (u) in users { %>
-    \<%= partial("users/user.html", {user: u}) %>
-  \<% } %>
-&lt;/ul>
+<ul>
+  <%= for (u) in users { %>
+    <%= partial("users/user.html", {user: u}) %>
+  <% } %>
+</ul>
 ```
 
-```html
+```erb
 // templates/users/_user.html
-&lt;li>\<%= user.Name %>&lt;/li>
+<li><%= user.Name %></li>
 ```
 
 ```html
 // output
-&lt;h1>All Users&lt;/h1>
+<h1>All Users</h1>
 
-&lt;ul>
-  &lt;li>John Lennon</li>
-  &lt;li>Paul McCartney</li>
-  &lt;li>George Harrison</li>
-  &lt;li>Ringo Starr</li>
-&lt;/ul>
+<ul>
+  <li>John Lennon</li>
+  <li>Paul McCartney</li>
+  <li>George Harrison</li>
+  <li>Ringo Starr</li>
+</ul>
 ```
 
 ## Helpers
 
-Partials are not much different from standard [templates](/en/docs/templating) in Buffalo. They include all of the same [helpers](/en/docs/helpers) as well.
+Partials are not much different from standard [templates](/documentation/frontend-layer/templating) in Buffalo. They include all of the same [helpers](/documentation/frontend-layer/helpers) as well.

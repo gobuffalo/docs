@@ -12,6 +12,9 @@ seoKeywords:
   - "windows"
   - "linux"
 weight: 1
+aliases:
+  - /docs/getting-started/installation
+  - /en/docs/getting-started/installation
 ---
 
 # Install Buffalo
@@ -33,14 +36,14 @@ Before installing make sure you have the required dependencies installed:
 
 * [A working Go environment](http://gopherguides.com/before-you-come-to-class)
 * [A configured `$PATH` environment variable that includes `$GOPATH/bin`.](https://golang.org/doc/code.html#GOPATH)
-* [Go](https://golang.org) version `<%= goMinVersion %>`.
+* [Go](https://golang.org) version `{{< mingoversion >}}`.
 
 ##### Frontend Requirements
 
 The following requirements are optional. You don't need them if you want to build an API or if you prefer to build your app in an old-fashioned way.
 
 * [node](https://github.com/nodejs/node) version `8` or greater
-* either [yarn](https://yarnpkg.com/en/) or [npm](https://github.com/npm/npm) for the [asset pipeline](/en/docs/assets) built upon [webpack](https://github.com/webpack/webpack).
+* either [yarn](https://yarnpkg.com/en/) or [npm](https://github.com/npm/npm) for the [asset pipeline](/documentation/frontend-layer/assets) built upon [webpack](https://github.com/webpack/webpack).
 
 ##### Database Specific Requirements
 
@@ -48,7 +51,7 @@ Again, if you don't need a database, you won't need these.
 
 * **SQLite 3**: GCC, or equivalent C compiler for [mattn/go-sqlite3](https://github.com/mattn/go-sqlite3).
 
-## Installation from a release archive - 64 bits
+## Installation from a Release Archive - 64 bits
 
 {{< note >}}
 The release packages contain Buffalo without SQLite support.
@@ -59,16 +62,16 @@ Since `v0.10.3`, pre-compiled archives are provided with each release. If you do
 ### GNU / Linux
 
 ```console
-$ wget https://github.com/gobuffalo/cli/releases/download/v<%= version %>/buffalo_<%= version %>_Linux_x86_64.tar.gz
-$ tar -xvzf buffalo_<%= version %>_Linux_x86_64.tar.gz
+$ wget https://github.com/gobuffalo/cli/releases/download/{{< latestclirelease >}}/buffalo_{{< latestclirelease >}}_Linux_x86_64.tar.gz
+$ tar -xvzf buffalo_{{< latestclirelease >}}_Linux_x86_64.tar.gz
 $ sudo mv buffalo /usr/local/bin/buffalo
 ```
 
 ### MacOS
 
 ```console
-$ curl -OL https://github.com/gobuffalo/cli/releases/download/v<%= version %>/buffalo_<%= version %>_Darwin_x86_64.tar.gz
-$ tar -xvzf buffalo_<%= version %>_Darwin_x86_64.tar.gz
+$ curl -OL https://github.com/gobuffalo/cli/releases/download/{{< latestclirelease >}}/buffalo_{{< latestclirelease >}}_Darwin_x86_64.tar.gz
+$ tar -xvzf buffalo_{{< latestclirelease >}}_Darwin_x86_64.tar.gz
 $ sudo mv buffalo /usr/local/bin/buffalo
 # or if you have ~/bin folder setup in the environment PATH variable
 $ mv buffalo ~/bin/buffalo
@@ -105,17 +108,17 @@ After you have GoFish [installed](https://gofi.sh/index.html#install), you can v
 ```console
 $ gofish install buffalo
 ==> Installing buffalo...
-🐠  buffalo <%= version %>: installed in 3.223672926s
+🐠  buffalo {{< latestclirelease >}}: installed in 3.223672926s
 ```
 
-## Custom installation **with** SQLite3 Support
+## Custom Installation **with** SQLite3 Support
 
 **SQLite 3** requires a GCC, or equivalent C compiler for [mattn/go-sqlite3](https://github.com/mattn/go-sqlite3) to compile. You **must** have a GCC installed **first** before installing Buffalo.
 
 To install Buffalo, ensure your `GOPATH` is defined, then:
 
 ```console
-$ go install -tags sqlite github.com/gobuffalo/cli/cmd/buffalo@v<%= version %>
+$ go install -tags sqlite github.com/gobuffalo/cli/cmd/buffalo@{{< latestclirelease >}}
 ```
 
 **Windows Users**: Follow the installation guide at [https://blog.gobuffalo.io/install-buffalo-on-windows-10-e08b3aa304a3](https://blog.gobuffalo.io/install-buffalo-on-windows-10-e08b3aa304a3) to install a GCC for Windows 10. Alternatively, GCC can be installed with the [Scoop](http://scoop.sh/) package manager:
@@ -128,17 +131,17 @@ PS C:\> scoop install gcc
 These instructions can also be used for upgrading to a newer version of Buffalo.
 {{< /note >}}
 
-## Custom installation **without** SQLite3 Support
+## Custom Installation **without** SQLite3 Support
 
 ```console
-$ go install github.com/gobuffalo/cli/cmd/buffalo@v<%= version %>
+$ go install github.com/gobuffalo/cli/cmd/buffalo@{{< latestclirelease >}}
 ```
 
 {{< note >}}
 These instructions can also be used for upgrading to a newer version of Buffalo.
 {{< /note >}}
 
-## Verify your installation
+## Verify Your Installation
 
 You can check if your installation is working, by executing the `buffalo` command in a terminal/command prompt:
 
@@ -161,7 +164,7 @@ Available Commands:
   setup       Setups a newly created, or recently checked out application.
   task        Runs your grift tasks
   test        Runs the tests for your Buffalo app
-  update      will attempt to upgrade a Buffalo application to version v<%= version %>
+  update      will attempt to upgrade a Buffalo application to version {{< latestclirelease >}}
   version     Print the version number of buffalo
 
 Flags:
@@ -174,5 +177,5 @@ If you have a similar output, your Buffalo toolbox is ready to work!
 
 ## Next Steps
 
-* [Tooling Integration](/en/docs/getting-started/integrations) - Work with Buffalo, using existing tools.
-* [Generate a New Project](/en/docs/getting-started/new-project) - Create your first Buffalo project!
+* [Tooling Integration](/documentation/getting_started/integrations) - Work with Buffalo, using existing tools.
+* [Generate a New Project](/documentation/getting_started/new-project) - Create your first Buffalo project!

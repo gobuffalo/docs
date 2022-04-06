@@ -1,8 +1,81 @@
+
 document.addEventListener('DOMContentLoaded', () =>{
     loadMobileNav();
     addHeaderLinks();
     loadBlogContent();
+    setupCodeTabs();
+    colorizeCode();
+    setupMobileSidebar();
+
+    loadLatestLibVersion();
+    loadLatestCliVersion();
 });
+
+function loadLatestLibVersion() {
+    let els = document.querySelectorAll(".latest-lib-release");
+    if (els.length == 0){
+        return
+    }
+
+    fetch(`https://api.rss2json.com/v1/api.json?rss_url=https://github.com/gobuffalo/buffalo/releases.atom`, {
+        headers: {
+          'Accept': 'application/json'
+        }
+    }).then(response => {
+        return response.json();
+    }).then(data => {
+        els.forEach(el => {
+            el.innerHTML = data.items[0].title;
+        })
+    })
+}
+
+function loadLatestCliVersion() {
+    let els = document.querySelectorAll(".latest-cli-release");
+    if (els.length == 0){
+        return
+    }
+
+    fetch(`https://api.rss2json.com/v1/api.json?rss_url=https://github.com/gobuffalo/cli/releases.atom`, {
+        headers: {
+          'Accept': 'application/json'
+        }
+    }).then(response => {
+        return response.json();
+    }).then(data => {
+        els.forEach(el => {
+            el.innerHTML = data.items[0].title;
+        })
+    })
+}
+
+function setupMobileSidebar() {
+    if (document.querySelector('#mobile-open-menu-button') == null) {
+        return
+    }
+
+    document.querySelector('#mobile-open-menu-button').addEventListener("click", (e) => {
+        document.querySelector("#mobile-docs-sidebar").classList.remove("hidden");
+    });
+
+    document.querySelector('#mobile-docs-sidebar .close').addEventListener("click", (e) => {
+        document.querySelector("#mobile-docs-sidebar").classList.add("hidden");
+    });
+}
+
+function colorizeCode() {
+    document.querySelectorAll('code[data-lang="erb"]').forEach((el) => {
+        let codeBlock = el.parentNode;
+        codeBlock.classList.add("language-erb");
+
+        let hl = document.createElement('div');
+        hl.classList.add('highlight')
+        codeBlock.parentNode.insertBefore(hl, codeBlock);
+        hl.append(codeBlock);
+
+        hljs.highlightElement(codeBlock);
+    });
+}
 
 function loadMobileNav() {
     let mobileMenu = document.querySelector("#mobile-menu")
@@ -13,7 +86,7 @@ function loadMobileNav() {
     document.querySelectorAll("#mobile-menu #close, .search-button").forEach(el => {
         el.addEventListener("click", () => {
             mobileMenu.classList.add("hidden");
-        })  
+        })
     })
 
     document.addEventListener('keydown', e => {
@@ -48,8 +121,8 @@ function loadBlogContent() {
         response.json().then(data => {
             let items = data.items.slice(0, 3);
             items.forEach(item => {
-                
-    
+
+
                 let desc = item.description.replace(/<img[^>]*>/g, "");
                 desc = desc.replace(/<\/?[^>]+(>|$)/g, "");
                 desc = desc.replace(/&nbsp;/g, "");
@@ -63,7 +136,7 @@ function loadBlogContent() {
                     </h4>
                     <p class="text-xs mb-3">${item.categories.join(", ")}</p>
                     <p class="text-center md:text-left">
-                        ${desc} 
+                        ${desc}
                         <a class="underline" href="${item.link}">
                             ${container.dataset.readMore}
                         </a>
@@ -73,6 +146,37 @@ function loadBlogContent() {
             })
 
 
+        })
+    })
+}
+
+function setupCodeTabs(){
+    document.querySelectorAll(".codetab .tab").forEach(el => {
+        let title = el.dataset.title
+        let tabs = el.parentNode.querySelector(".tabs-container")
+        tabs.insertAdjacentHTML("beforeend", `<div class="button px-2 ml-0" data-tab="${title}">${title}</div>`)
+
+        el.classList.add("hidden")
+    });
+
+    document.querySelectorAll(".codetab").forEach(el => {
+        el.querySelectorAll(".tab")[0].classList.remove("hidden")
+        el.querySelectorAll(".tabs-container .button")[0].classList.add("active")
+    })
+
+    document.querySelectorAll(".codetab .tabs-container div").forEach(el => {
+        el.addEventListener("click", e => {
+            let tabs = e.target.closest(".codetab")
+            tabs.querySelectorAll(".tabs-container > div").forEach(el => {
+                el.classList.remove("active")
+            })
+
+            tabs.querySelectorAll(".tab").forEach(el => {
+                el.classList.add("hidden")
+            })
+
+            e.target.classList.add("active")
+            tabs.querySelector(`div[data-title="${e.target.dataset.tab}"]`).classList.remove("hidden")
         })
     })
 }

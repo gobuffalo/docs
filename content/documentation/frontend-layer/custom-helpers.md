@@ -1,5 +1,9 @@
 ---
 Name: "Custom Helpers"
+weight: 7
+aliases:
+  - /docs/custom-helpers
+  - /en/docs/custom-helpers
 ---
 
 # Custom Helpers
@@ -74,7 +78,7 @@ func() string {
 
 #### `template.HTML`
 
-[https://golang.org/pkg/html/template/#HTML](https://golang.org/pkg/html/template/#HTMLlate/#HTML)
+[https://golang.org/pkg/html/template/#HTML](https://golang.org/pkg/html/template/#HTML)
 
 Return a `template.HTML` string. The `template.HTML` will **not** be HTML escaped, and will be deemed safe.
 
@@ -108,20 +112,21 @@ The `greet` function is now available to all templates that use that `render.Eng
 // actions/greet.go
 func Greeter(c buffalo.Context) error {
   c.Set("name", "Mark")
-  return c.Render(200, r.String("&lt;h1>\<%= greet(name) %></h1>"))
+  return c.Render(200, r.String("<h1><%= greet(name) %></h1>"))
 }
 ```
 
 ```go
 // output
-&lt;h1>Hi Mark!&lt;/h1>
+<h1>Hi Mark!</h1>
 ```
 
 ## Block Helpers
 
 Like the `if` or `for` statements, block helpers take a "block" of text that can be evaluated and potentially rendered, manipulated, or whatever you would like. To write a block helper, you have to take the `plush.HelperContext` as the last argument to your helper function. This will give you access to the block associated with that call.
 
-<%= codeTabs() { %>
+{{< codetabs >}}
+{{< tab "actions/render.go" >}}
 ```go
 // actions/render.go
 r := render.New(render.Options{
@@ -132,7 +137,8 @@ r := render.New(render.Options{
   // ...
 })
 ```
-
+{{< /tab >}}
+{{< tab "helper" >}}
 ```go
 // helper
 func upblock(help plush.HelperContext) (template.HTML, error) {
@@ -143,31 +149,37 @@ func upblock(help plush.HelperContext) (template.HTML, error) {
   return strings.ToUpper(s), nil
 }
 ```
-
+{{< /tab >}}
+{{< tab "actions/upper.go" >}}
 ```go
 // actions/upper.go
 func Upper(c buffalo.Context) error {
   return c.Render(200, r.HTML("up.html"))
 }
 ```
-
-```html
+{{< /tab >}}
+{{< tab "templates/up.html" >}}
+```erb
 // templates/up.html
-\<%= upblock() { %>
+<%= upblock() { %>
   hello world
-\<% } %>
+<% } %>
 ```
+{{< /tab >}}
 
-```html
+{{< tab "Output" >}}
+```text
 // output
 HELLO WORLD
 ```
-<% } %>
+{{< /tab >}}
+{{< /codetabs >}}
 
 
 ## Getting Values From the Context
 
-<%= codeTabs() { %>
+{{< codetabs >}}
+{{< tab "actions/render.go" >}}
 ```go
 // actions/render.go
 r := render.New(render.Options{
@@ -178,14 +190,17 @@ r := render.New(render.Options{
   // ...
 })
 ```
+{{< /tab >}}
 
+{{< tab "helper" >}}
 ```go
 // helper
 func isLoggedIn(help plush.HelperContext) bool {
   return help.Value("current_user") != nil
 }
 ```
-
+{{< /tab >}}
+{{< tab "action" >}}
 ```go
 // actions/users.go
 func Show(c buffalo.Context) error {
@@ -193,16 +208,19 @@ func Show(c buffalo.Context) error {
   return c.Render(200, r.HTML("users/show.html"))
 }
 ```
-
-```html
+{{< /tab >}}
+{{< tab "template" >}}
+```erb
 // templates/users/show.html
-\<%= if (is_logged_in()) { %>
-  Hello \<%= current_user.Name %>
-\<% } %>
+<%= if (is_logged_in()) { %>
+  Hello <%= current_user.Name %>
+<% } %>
 ```
-
-```html
+{{< /tab >}}
+{{< tab "Output" >}}
+```text
 // output
 Hello Ringo
 ```
-<% } %>
+{{< /tab >}}
+{{< /codetabs >}}

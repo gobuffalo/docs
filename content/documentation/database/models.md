@@ -2,7 +2,13 @@
 name: Models
 seoDescription: "Models"
 seoKeywords: ["buffalo", "go", "golang", "database", "ORM", "pop", "models"]
+weight: 10
+aliases:
+  - /docs/db/models
+  - /en/docs/db/models
 ---
+
+# Models
 
 Pop, as an ORM, allows you to translate database tables into Go structs. This way, you can manipulate Go structs instead of writing SQL statements. The Go code managing this part is named "models", as a reference to the MVC architecture.
 
@@ -10,7 +16,7 @@ In this chapter, you'll learn how to work with models by hand; and how to improv
 
 ## The Models Directory
 
-Pop model files are stored in the `models` directory, at your project root (see [the Directory Structure](/en/docs/getting-started/directory-structure) chapter for more info about the Buffalo way to organize your files).
+Pop model files are stored in the `models` directory, at your project root (see [the Directory Structure](/documentation/getting_started/directory-structure) chapter for more info about the Buffalo way to organize your files).
 
 This directory contains:
 
@@ -56,7 +62,7 @@ type Soda struct {
 
 That's it! You don't need anything else to work with Pop! Note, for each table field, we defined a `pop` tag matching the field name, but it's not required. If you don't provide a name, Pop will use the name of the struct field to generate one.
 
-## Using the generator
+## Using the Generator
 
 {{< note >}}
 **Note for Buffalo users**: `soda` commands are embedded into the `buffalo` command, behind the `pop` namespace. So everytime you want to use a command from `soda`, just execute `buffalo pop` instead.
@@ -98,7 +104,7 @@ Or in short form:
 $ soda d m [name]
 ```
 
-## Nulls handling
+## Nulls Handling
 
 If you need to store `NULL` values in your table, you'll have to use special types: for instance, you can't store a `NULL` value if your type is `int`.
 
@@ -114,7 +120,7 @@ type User struct {
 }
 ```
 
-## Customize models
+## Customize Models
 
 ### Mapping Model Fields
 
@@ -147,7 +153,7 @@ This is very similar to how [form binding](/docs/bind) works.
 Any types can be used that adhere to the [Scanner](https://golang.org/pkg/database/sql/#Scanner) and [Valuer](https://golang.org/pkg/database/sql/driver/#Valuer) interfaces, however, so that you don't have to write these yourself it is recommended you stick with the following types:
 
 | Base type             | Nullable        | Slice/Array |
-|-----------------------|:---------------:|------------:|
+|:-----------------------|:---------------|:------------|
 |int                    |nulls.Int        |slices.Int   |
 |int32                  |nulls.Int32      | ------      |
 |int64                  |nulls.Int64      | ------      |
@@ -163,7 +169,7 @@ Any types can be used that adhere to the [Scanner](https://golang.org/pkg/databa
 
 {{< note >}}
 **Note**: Any `slices.Map` typed fields will need to be initialized before `Bind`ing or accessing.
-```go 
+```go
 widget := &models.Widget{Data: slices.Map{}}
 ```
 {{< /note >}}
@@ -263,7 +269,7 @@ func (u User) TableName() string {
 
 It is recommended to use a value receiver over a pointer receiver if the struct is used as a value anywhere in the code.
 
-```
+```go
 // recommended:
 func (u User) TableName() string {
 
@@ -361,5 +367,5 @@ As we learned in this chapter, each attribute on the structure has a read-only t
 
 ## Related Content
 
-* [Migrations](/en/docs/db/migrations) - Write database migrations.
-* [Querying](/en/docs/db/querying) - Query data from your database.
+* [Migrations](/documentation/database/migrations) - Write database migrations.
+* [Querying](/documentation/database/querying) - Query data from your database.

@@ -1,5 +1,9 @@
 ---
 Name: "Templating"
+weight: 2
+aliases:
+  - /docs/templating
+  - /en/docs/templating
 ---
 
 # Templating
@@ -22,14 +26,14 @@ Buffalo defaults to using [plush](https://github.com/gobuffalo/plush) as its tem
 
 ## General Usage
 
-```html
+```erb
 // templates/index.html
-&lt;h1>\<%= name %></h1>
-&lt;ul>
-  \<%= for (name) in names { %>
-    &lt;li>\<%= name %></li>
-  \<% } %>
-&lt;/ul>
+<h1><%= name %></h1>
+<ul>
+  <%= for (name) in names { %>
+    <li><%= name %></li>
+  <% } %>
+</ul>
 ```
 
 ```go
@@ -43,31 +47,31 @@ func IndexHandler(c buffalo.Context) error {
 
 ```html
 // output
-&lt;h1>Mark</h1>
-&lt;ul>
-  &lt;li>John</li>
-  &lt;li>Paul</li>
-  &lt;li>George</li>
-  &lt;li>Ringo</li>
-&lt;/ul>
+<h1>Mark</h1>
+<ul>
+  <li>John</li>
+  <li>Paul</li>
+  <li>George</li>
+  <li>Ringo</li>
+</ul>
 ```
 
 ## If Statements
 
-```html
-\<%= if (true) { %>
-  &lt;!-- render this -->
-\<% } %>
+```erb
+<%= if (true) { %>
+  <!-- render this -->
+<% } %>
 ```
 
 
 
 ## Else Statements
 
-```html
-\<%= if (false) { %>
-  &lt;!-- won't render this -->
-\<% } else { %>
-  &lt;!-- render this -->
-\<% } %>
+```erb
+<%= if (false) { %>
+  <!-- won't render this -->
+<% } else { %>
+  <!-- render this -->
+<% } %>
 ```

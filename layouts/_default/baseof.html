@@ -6,12 +6,14 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="robots" content="index,follow">
 
-		{{ $styles := resources.Get "css/home.css" | postCSS }}
+		{{ partial "seo" . }}
+
+		{{ $styles := resources.Get "css/home.css" | postCSS (dict "inlineImports" true) }}
 
 		{{ if .Site.IsServer }}
-		<link rel="stylesheet" href="{{ $styles.RelPermalink }}"/>
+			<link rel="stylesheet" href="{{ $styles.RelPermalink }}"/>
 		{{ else }}
-			{{ $styles := $styles | minify | fingerprint | resources.PostProcess }}
+		{{ $styles := $styles | minify | fingerprint | resources.PostProcess }}
 			<link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}"/>
 		{{ end }}
 

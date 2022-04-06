@@ -2,6 +2,10 @@
 name: Action Controller
 seoDescription: "How to define and use Action Controllers?"
 seoKeywords: ["buffalo", "go", "golang", "actions", "controller", "generator"]
+weight: 2
+aliases:
+  - /docs/actions
+  - /en/docs/actions
 ---
 
 # Action Controller
@@ -27,7 +31,7 @@ func Home(c buffalo.Context) error {
 
 In this example, we defined a "Home" action, and asked the rendering engine to produce an HTML page using the "home.html" template, and to reply with an HTTP 200 code.
 
-Each action takes a `buffalo.Context` as parameter: see [Context](/en/docs/context) to learn more about all you can do with it.
+Each action takes a `buffalo.Context` as parameter: see [Context](/documentation/request_handling/context) to learn more about all you can do with it.
 
 ## Generating Actions
 
@@ -69,7 +73,7 @@ $ buffalo g actions users update --skip-template
 ```
 
 {{< note >}}
-That's the default behavior for applications generated with the `--api` flag. See [APIs](/en/docs/apis/) for further informations.
+That's the default behavior for applications generated with the `--api` flag. See [APIs](/documentation/guides/apis/) for further informations.
 {{< /note >}}
 
 ## Destroying Actions
@@ -88,5 +92,5 @@ $ buffalo d a users
 
 ## Next Steps
 
-* [Resources](/en/docs/resources) - Define CRUD-like action bundles.
-* [Context](/en/docs/context) - Learn more about Buffalo Context.
+* [Resources](/documentation/request_handling/resources) - Define CRUD-like action bundles.
+* [Context](/documentation/request_handling/context) - Learn more about Buffalo Context.

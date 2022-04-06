@@ -1,5 +1,9 @@
 ---
 Name: "Flash Messages"
+weight: 8
+aliases:
+  - /docs/flash-messages
+  - /en/docs/flash-messages
 ---
 
 # Flash Messages
@@ -18,7 +22,7 @@ Being able to set these messages in a Buffalo handler and then pass them down to
 
 ## Setting Flash Messages
 
-Creating flash messages can easily be done by using the `c.Flash()` function provided on the [`buffalo.Context`](/en/context).
+Creating flash messages can easily be done by using the `c.Flash()` function provided on the [`buffalo.Context`](/documentation/request_handling/context).
 
 ```go
 func WidgetsCreate(c buffalo.Context) error {
@@ -39,32 +43,32 @@ The names of the "keys", in this example, "success", are left up to your applica
 
 ### Looping Over all Flash Messages
 
-```html
-&lt;div class="row">
-  &lt;div class="col-md-12">
-    \<%= for (k, messages) in flash { %>
-      \<%= for (msg) in messages { %>
-        &lt;div class="alert alert-\<%= k %>" role="alert">
-          &lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          \<%= msg %>
-        &lt;/div>
-      \<% } %>
-    \<% } %>
-  &lt;/div>
-&lt;/div>
+```erb
+<div class="row">
+  <div class="col-md-12">
+    <%= for (k, messages) in flash { %>
+      <%= for (msg) in messages { %>
+        <div class="alert alert-<%= k %>" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+          <%= msg %>
+        </div>
+      <% } %>
+    <% } %>
+  </div>
+</div>
 ```
 
 ### Looping Over a Specific Flash Message Key
 
-```html
-&lt;div class="row">
-  &lt;div class="col-md-12">
-    \<%= for (message) in flash["success"] { %>
-      &lt;div class="alert alert-success" role="alert">
-        &lt;button type="button" class="close" data-dismiss="alert" aria-label="Close">&lt;span aria-hidden="true">&times;</span></button>
-        \<%= message %>
-      &lt;/div>
-    \<% } %>
-  &lt;/div>
-&lt;/div>
+```erb
+<div class="row">
+  <div class="col-md-12">
+    <%= for (message) in flash["success"] { %>
+      <div class="alert alert-success" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <%= message %>
+      </div>
+    <% } %>
+  </div>
+</div>
 ```

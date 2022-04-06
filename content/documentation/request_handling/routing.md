@@ -1,8 +1,11 @@
 ---
+Name: "Routing"
 seoDescription: "How to handle routes in Buffalo?"
 seoKeywords: ["buffalo", "go", "golang", "http", "route", "gorilla", "mux", "router"]
-
-Name: "Routing"
+weight: 1
+aliases:
+  - /docs/routing
+  - /en/docs/routing
 ---
 
 # Routing
@@ -36,7 +39,7 @@ func (c buffalo.Context) error {
 
 If you already know about **MVC pattern**, `buffalo.Handler` functions manages the Controller part: this is the place where all the app logic goes. The handler function takes a `buffalo.Context` struct, which contains everything you need about the current request.
 
-See the [context](/en/docs/context) to understand the `buffalo.Context` interface.
+See the [Context](/documentation/request_handling/context) to understand the `buffalo.Context` interface.
 
 ##### Supported HTTP Methods
 
@@ -62,7 +65,7 @@ a.POST("/some/path", func (c buffalo.Context) error {
 // etc...
 ```
 
-As you can see, you can use inline handlers if you want. For more readability though, it's often better to separate your handlers into multiple files. If you have many handlers managing users stuff, you can group them into a `users.go` file in the [`actions`](/en/docs/getting-started/directory-structure) folder, for instance.
+As you can see, you can use inline handlers if you want. For more readability though, it's often better to separate your handlers into multiple files. If you have many handlers managing users stuff, you can group them into a `users.go` file in the [`actions`](/documentation/getting_started/directory-structure#actions) folder, for instance.
 
 
 ## Named Routes
@@ -76,7 +79,7 @@ a.GET("/coke", CokeHandler) // cokePath()
 These names become the name of the route helpers in your templates.
 
 ```html
-<a href="\<%= cokePath() %>">Coke</a>
+<a href="<%= cokePath() %>">Coke</a>
 ```
 
 You can inspect all of your paths by running `buffalo routes` from the command line.
@@ -125,14 +128,14 @@ See [`Custom Named Routes`](#custom-named-routes) for details on how to change t
 
 Route helpers can be used directly in templates using the name of the helper:
 
-```html
-\<%= widgetsPath() %> // /widgets
+```erb
+<%= widgetsPath() %> // /widgets
 ```
 
 Routes that require named parameters, must be fed a map of those parameters.
 
-```html
-\<%= editWidgetPath({widget_id: 1}) %> // /widgets/1/edit
+```erb
+<%= editWidgetPath({widget_id: 1}) %> // /widgets/1/edit
 ```
 
 
@@ -228,13 +231,13 @@ a.GET("/coke", CokeHandler).Name("customPath")
 
 This route is now called `customPath` and you can reference it as such in your templates.
 
-```html
-<a href="\<%= customPath() %>">Coke</a>
+```erb
+<a href="<%= customPath() %>">Coke</a>
 ```
 
 ## Parameters
 
-Query string and other parameters are available from the [`buffalo.Context`](/en/docs/context) that is passed into the `buffalo.Handler`.
+Query string and other parameters are available from the [`buffalo.Context`](/documentation/request_handling/context) that is passed into the `buffalo.Handler`.
 
 ```go
 a.GET("/users", func (c buffalo.Context) error {
@@ -246,7 +249,7 @@ Given the above code sample, if we make a request with `GET /users?name=ringo`, 
 
 ## Named Parameters
 
-Since Buffalo is the [github.com/gorilla/mux](http://www.gorillatoolkit.org/pkg/mux) under the covers, it means we can get access to some of the goodness it provides. In this case, the ability to create pseudo-regular expression patterns in the mapped path that will get converted into parameters that can be accessed from a [`buffalo.Context`](/en/docs/context).
+Since Buffalo is the [github.com/gorilla/mux](http://www.gorillatoolkit.org/pkg/mux) under the covers, it means we can get access to some of the goodness it provides. In this case, the ability to create pseudo-regular expression patterns in the mapped path that will get converted into parameters that can be accessed from a [`buffalo.Context`](/documentation/request_handling/context).
 
 ```go
 a.GET("/users/{name}", func (c buffalo.Context) error {
@@ -280,7 +283,7 @@ a.GET("/articles/{id:[0-9]+}", func (c buffalo.Context) error {
 
 ## Groups
 
-Buffalo apps allow for the grouping of end-points. This allows for common functionality, such as [middleware](/en/docs/middleware) to be collected together. A great example of this would be an API end-point.
+Buffalo apps allow for the grouping of end-points. This allows for common functionality, such as [middleware](/documentation/request_handling/middleware) to be collected together. A great example of this would be an API end-point.
 
 ```go
 g := a.Group("/api/v1")
@@ -298,7 +301,7 @@ g := a.Group("/api/v1")
 g.Use(APIAuthorizer)
 ```
 
-In the above example the `/api/v1` group will use both `SomeMiddleware` and `APIAuthorizer`. See [middleware](/en/docs/middleware) for more information about using, skipping, and clearing middleware.
+In the above example the `/api/v1` group will use both `SomeMiddleware` and `APIAuthorizer`. See [middleware](/documentation/request_handling/middleware) for more information about using, skipping, and clearing middleware.
 
 
 ## Hosts

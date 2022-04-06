@@ -2,6 +2,10 @@
 name: Request Binding
 seoDescription: "Bind request parameters to Buffalo context"
 seoKeywords: ["buffalo", "go", "golang", "bind", "parameter", "context"]
+weight: 5
+aliases:
+  - /docs/bind
+  - /en/docs/bind
 ---
 
 # Request Binding
@@ -49,12 +53,12 @@ type User struct {
 ```
 
 ```html
-&lt;form&gt;
-  &lt;input type="text" value="ringo" name="name"/&gt;
-  &lt;input type="text" value="ringo@beatles.com" name="Email"/&gt;
-  &lt;input type="text" value="starr" name="Password"/&gt;
-  &lt;input type="submit"/&gt;
-&lt;/form&gt;
+<form>
+  <input type="text" value="ringo" name="name"/>
+  <input type="text" value="ringo@beatles.com" name="Email"/>
+  <input type="text" value="starr" name="Password"/>
+  <input type="submit"/>
+</form>
 ```
 
 In an action we can bind this HTML form to the `User` struct as follows:

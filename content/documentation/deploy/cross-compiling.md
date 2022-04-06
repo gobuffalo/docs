@@ -1,7 +1,11 @@
 ---
+name: Cross-compiling
 seoDescription: "Cross-compiling a Buffalo application"
 seoKeywords: ["buffalo", "go", "golang", "cross-compile", "GOOS", "GOARCH", "linux", "arm", "windows", "mac"]
-name: Cross-compiling
+weight: 2
+aliases:
+  - /docs/cross-compiling
+  - /en/docs/cross-compiling
 ---
 
 # Cross-compiling a Buffalo application
@@ -20,18 +24,18 @@ You can find the list of supported targets here: https://golang.org/doc/install/
 
 ### Build for AMD64 Linux
 
-```go
+```bash
 $ GOOS=linux GOARCH=amd64 buffalo build
 ```
 
 ### Build for ARM64 Linux
 
-```go
+```bash
 $ GOOS=linux GOARCH=arm64 buffalo build
 ```
 
 ### Build for i386 Windows
 
-```go
+```bash
 $ GOOS=windows GOARCH=386 buffalo build
 ```

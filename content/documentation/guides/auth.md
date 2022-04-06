@@ -1,7 +1,11 @@
 ---
+name: "Local Authentication"
 seoDescription: Local authentication
 seoKeywords: ["buffalo", "go", "golang", "users", "password", "authentication"]
-name: "Local Authentication"
+weight: 21
+aliases:
+  - /docs/auth
+  - /en/docs/auth
 ---
 
 # Local Authentication
@@ -41,7 +45,9 @@ create  templates/users/new.html
 ## Example Usage
 
 ### Actions
-<%= codeTabs() { %>
+
+{{< codetabs >}}
+{{< tab "actions/app.go" >}}
 ```go
 // actions/app.go
 package actions
@@ -134,7 +140,8 @@ func forceSSL() buffalo.MiddlewareFunc {
   })
 }
 ```
-
+{{< /tab >}}
+{{< tab "actions/auth.go" >}}
 ```go
 // actions/auth.go
 package actions
@@ -204,7 +211,8 @@ func AuthDestroy(c buffalo.Context) error {
   return c.Redirect(302, "/")
 }
 ```
-
+{{< /tab >}}
+{{< tab "actions/auth_test.go" >}}
 ```go
 // actions/auth_test.go
 package actions
@@ -261,6 +269,8 @@ func (as *ActionSuite) Test_Auth_Create_BadPassword() {
 }
 ```
 
+{{< /tab >}}
+{{< tab "actions/home.go" >}}
 ```go
 // actions/home.go
 package actions
@@ -274,6 +284,8 @@ func HomeHandler(c buffalo.Context) error {
 }
 ```
 
+{{< /tab >}}
+{{< tab "actions/home_test.go" >}}
 ```go
 // actions/home_test.go
 package actions
@@ -308,6 +320,8 @@ func (as *ActionSuite) Test_HomeHandler_LoggedIn() {
 }
 ```
 
+{{< /tab >}}
+{{< tab "actions/users.go" >}}
 ```go
 // actions/users.go
 package actions
@@ -379,6 +393,8 @@ func Authorize(next buffalo.Handler) buffalo.Handler {
 }
 ```
 
+{{< /tab >}}
+{{< tab "actions/users_test.go">}}
 ```go
 // actions/users_test.go
 package actions
@@ -411,10 +427,14 @@ func (as *ActionSuite) Test_Users_Create() {
   as.Equal(1, count)
 }
 ```
-<% } %>
+
+{{< /tab >}}
+{{< /codetabs>}}
 
 ### Models
-<%= codeTabs() { %>
+
+{{< codetabs >}}
+{{< tab "models/user.go" >}}
 ```go
 // models/user.go
 package models
@@ -515,6 +535,8 @@ func (u *User) Create(tx *pop.Connection) (*validate.Errors, error) {
 }
 ```
 
+{{< /tab >}}
+{{< tab "models/user_test.go">}}
 ```go
 // models/user_test.go
 package models_test
@@ -598,15 +620,20 @@ func (ms *ModelSuite) Test_User_Create_UserExists() {
   ms.Equal(1, count)
 }
 ```
-<% } %>
+
+{{< /tab >}}
+{{< /codetabs >}}
 
 ### Migrations
-<%= codeTabs() { %>
+
+{{< codetabs >}}
+{{< tab "Create Users Down" >}}
 ```go
 // migrations/20180910062057_create_users.down.fizz
 drop_table("users")
 ```
-
+{{< /tab >}}
+{{< tab "Create Users Up" >}}
 ```go
 // migrations/20180910062057_create_users.up.fizz
 create_table("users") {
@@ -615,13 +642,17 @@ create_table("users") {
   t.Column("password_hash", "string", {})
 }
 ```
-<% } %>
+{{< /tab >}}
+{{< /codetabs>}}
 
 ### Templates
 
+
+{{< codetabs >}}
+{{< tab "templates/auth/new.html" >}}
 ```html
 // templates/auth/new.html
-&lt;style&gt;
+<style>
   .auth-wrapper{
     height: 100%;
     display: flex;
@@ -635,26 +666,29 @@ create_table("users") {
     padding: 0 20px;
   }
 
-  .auth-wrapper h1{margin-bottom: 20px;}
-&lt;/style&gt;
+  .auth-wrapper h1{
+    margin-bottom: 20px;
+  }
+</style>
 
-&lt;div class="auth-wrapper"&gt;
-  &lt;div class="sign-form"&gt;
-    &lt;h1&gt;Sign In&lt;/h1&gt;
+<div class="auth-wrapper">
+  <div class="sign-form">
+    <h1>Sign In</h1>
 
-    &lt;%= form_for(user, {action: signinPath()}) { %&gt;
-      &lt;%= f.InputTag("Email") %&gt;
-      &lt;%= f.InputTag("Password", {type: "password"}) %&gt;
-      &lt;button class="btn btn-success"&gt;Sign In!&lt;/button&gt;
-    &lt;% } %&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+    <%= form_for(user, {action: signinPath()}) { %>
+      <%= f.InputTag("Email") %>
+      <%= f.InputTag("Password", {type: "password"}) %>
+      <button class="btn btn-success">Sign In!</button>
+    <% } %>
+  </div>
+</div>
 ```
+{{< /tab>}}
 
-
+{{< tab "templates/new/new.html">}}
 ```html
 // templates/new/new.html
-&lt;style&gt;
+<style>
   .auth-wrapper{
     height: 100%;
     display: flex;
@@ -668,27 +702,31 @@ create_table("users") {
     padding: 0 20px;
   }
 
-  .auth-wrapper h1{margin-bottom: 20px;}
-&lt;/style&gt;
+  .auth-wrapper h1{
+    margin-bottom: 20px;
+  }
+</style>
 
-&lt;div class="auth-wrapper"&gt;
-  &lt;div class="sign-form"&gt;
-    &lt;h1&gt;register&lt;/h1&gt;
+<div class="auth-wrapper">
+  <div class="sign-form">
+    <h1>register</h1>
 
-    &lt;%= form_for(user, {action: userspath()}) { %&gt;
-      &lt;%= f.inputtag("email") %&gt;
-      &lt;%= f.inputtag("password", {type: "password"}) %&gt;
-      &lt;%= f.inputtag("passwordconfirmation", {type: "password"}) %&gt;
+    <%= form_for(user, {action: userspath()}) { %>
+      <%= f.inputtag("email") %>
+      <%= f.inputtag("password", {type: "password"}) %>
+      <%= f.inputtag("passwordconfirmation", {type: "password"}) %>
 
-      &lt;button class="btn btn-success"&gt;register!&lt;/button&gt;
-    &lt;% } %&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+      <button class="btn btn-success">register!</button>
+    <% } %>
+  </div>
+</div>
 ```
 
+{{< /tab>}}
+{{< tab "templates/index.html">}}
 ```html
 // templates/index.html
-&lt;style&gt;
+<style>
   .auth-center{
     display: flex;
     align-items: center;
@@ -698,15 +736,21 @@ create_table("users") {
   .sign-in-btn{
     margin-right: 10px;
   }
-&lt;/style&gt;
+</style>
 
-&lt;div class="auth-center"&gt;
-  &lt;%= if (current_user) { %&gt;
-    &lt;h1&gt;&lt;%= current_user.email %&gt;&lt;/h1&gt;
-    &lt;a href="/signout" data-method="delete"&gt;sign out&lt;/a&gt;
-  &lt;% } else { %&gt;
-    &lt;a href="/signin" class="btn btn-primary"&gt;sign in&lt;/a&gt;
-    &lt;a href="/users/new" class="btn btn-success"&gt;register&lt;/a&gt;
-  &lt;% } %&gt;
-&lt;/div&gt;
+<div class="auth-center">
+  <%= if (current_user) { %>
+    <h1><%= current_user.email %></h1>
+    <a href="/signout" data-method="delete">sign out</a>
+  <% } else { %>
+    <a href="/signin" class="btn btn-primary">sign in</a>
+    <a href="/users/new" class="btn btn-success">register</a>
+  <% } %>
+</div>
 ```
+{{< /tab >}}
+
+{{< /codetabs >}}
+
+
+

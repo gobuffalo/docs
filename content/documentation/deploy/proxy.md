@@ -1,7 +1,11 @@
 ---
+name: Using a Proxy
 seoDescription: "Using a Proxy"
 seoKeywords: ["buffalo", "go", "golang", "proxy", "nginx", "apache"]
-name: Using a Proxy
+weight: 20
+aliases:
+  - /docs/proxy
+  - /en/docs/proxy
 ---
 # Using a Proxy
 
@@ -161,7 +165,7 @@ PORT=3000
 
 **Apache 2 config:**
 ```apache
-&lt;VirtualHost *:80&gt;
+<VirtualHost *:80>
     ProxyPreserveHost On
 
     # Proxy requests to Buffalo
@@ -169,5 +173,5 @@ PORT=3000
     ProxyPassReverse / http://0.0.0.0:3000/
 
     ServerName example.com
-&lt;/VirtualHost&gt;
+</VirtualHost>
 ```

@@ -2,11 +2,15 @@
 name: Buffalo Integration
 seoDescription: "How to use Pop with Buffalo?"
 seoKeywords: ["buffalo", "go", "golang", "pop", "buffalo", "integration"]
+weight: 4
+aliases:
+  - /docs/db/buffalo-ingetration
+  - /en/docs/db/buffalo-ingetration
 ---
 
 # Buffalo Integration
 
-## Generate a new app
+## Generate a New App
 
 When you generate a new Buffalo application you can choose the target database with the `--db-type` flag. For instance, to generate a new app with MySQL database support, you can write the following:
 
@@ -16,7 +20,7 @@ $ buffalo new coke --db-type mysql
 
 **By default, Buffalo will generate an app with PostgreSQL as the backing database.**
 
-### Skip database support
+### Skip Database Support
 
 If you want to handle the database without using Pop, or if you're building an app without database, it's also possible to skip generation of all database components with the `--skip-pop` flag.
 

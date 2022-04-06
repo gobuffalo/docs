@@ -1,5 +1,9 @@
 ---
 name: Middleware
+weight: 6
+aliases:
+  - /docs/middleware
+  - /en/docs/middleware
 ---
 # Middleware
 
@@ -7,7 +11,7 @@ Middleware allows for the interjection of code in the request/response cycle. Co
 
 A list of "known" middleware packages can be found at [https://toolkit.gobuffalo.io/tools?topic=middleware](https://toolkit.gobuffalo.io/tools?topic=middleware).
 
-## Writing your own middleware
+## Writing Your Own Middleware
 
 The [`buffalo.MiddlewareFunc`](https://godoc.org/github.com/gobuffalo/buffalo#MiddlewareFunc) interface is any function that takes a `buffalo.Handler` and returns a `buffalo.Handler`.
 
@@ -110,7 +114,9 @@ GET /api/users -> MyMiddleware -> AnotherPieceOfMiddleware -> AuthorizeAPIMiddle
 
 There are times when, in an application, you want to add middleware to the entire application, or a group, but not call that middleware on a few individual handlers. Buffalo allows you to create these sorts of mappings.
 
-<%= codeTabs() { %>
+
+{{< codetabs >}}
+{{< tab "actions/app.go" >}}
 ```go
 // actions/app.go
 a := buffalo.New(buffalo.Options{})
@@ -124,7 +130,8 @@ a.POST("/users", CreateUser)
 a.GET("/users", ListUsers)
 a.GET("/users/{id}", ShowUser)
 ```
-
+{{< /tab >}}
+{{< tab "OUTPUT" >}}
 ```text
 // OUTPUT
 GET /users/new -> NewUser
@@ -132,14 +139,16 @@ POST /users -> CreateUser
 GET /users -> AuthorizeUser -> ListUsers
 GET /users/{id} -> AuthorizeUser -> ShowUser
 ```
-<% } %>
+{{< /tab >}}
+{{< /codetabs>}}
 
 ---
 
 <div class="alert alert-warning" role="alert">
 <b>IMPORTANT:</b> The middleware function and the action functions you want to skip <b>MUST</b> be the same Go instance.
 
-<%= codeTabs() { %>
+{{< codetabs >}}
+{{< tab "EXAMPLE 1" >}}
 ```go
 // EXAMPLE 1
 m1 := MyMiddleware()
@@ -150,7 +159,8 @@ app.Use(m1)
 app.Skip(m2, Foo, Bar) // WON'T WORK m2 != m1
 app.Skip(m1, Foo, Bar) // WORKS
 ```
-
+{{< /tab >}}
+{{< tab "EXAMPLE 2" >}}
 ```go
 // EXAMPLE 2
 app.Resource("/widgets", WidgetResource{})
@@ -160,8 +170,8 @@ wr := WidgetResource{}
 app.Resource("/widgets", wr)
 app.Skip(mw, wr.Show) // WORKS
 ```
-
-<% } %>
+{{< /tab >}}
+{{< /codetabs>}}
 
 </div>
 
@@ -176,25 +186,30 @@ Understanding from the [Skipping Middleware](#skipping-middleware) section we ne
 
 The line that was generated in `actions/app.go` by `buffalo generate resource` will need to be changed to accommodate this requirement.
 
-<%= codeTabs() { %>
+{{< codetabs >}}
+{{< tab "Before" >}}
 ```go
 // BEFORE
 app.Resource("/widgets", WidgetResource{})
 ```
-
+{{< /tab >}}
+{{< tab "After" >}}
 ```go
 // AFTER
 res := WidgetResource{}
 wr := app.Resource("/widgets", res)
 wr.Middleware.Skip(Authorize, res.Index, res.Show)
 ```
-<% } %>
+{{< /tab >}}
+{{< /codetabs>}}
+
 
 ## Clearing Middleware
 
 Since middleware is [inherited](#using-middleware) from its parent, there maybe times when it is necessary to start with a "blank" set of middleware.
 
-<%= codeTabs() { %>
+{{< codetabs >}}
+{{< tab "actions/app.go" >}}
 ```go
 // actions/app.go
 a := buffalo.New(buffalo.Options{})
@@ -209,13 +224,15 @@ g.GET("/users", UsersHandler)
 
 a.GET("/foo", FooHandler)
 ```
-
+{{< /tab >}}
+{{< tab "OUTPUT" >}}
 ```text
 // OUTPUT
 GET /foo -> MyMiddleware -> AnotherPieceOfMiddleware -> FooHandler
 GET /api/users -> AuthorizeAPIMiddleware -> UsersHandler
 ```
-<% } %>
+{{< /tab >}}
+{{< /codetabs>}}
 
 
 ## Listing an Application's Middleware

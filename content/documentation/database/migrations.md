@@ -2,6 +2,10 @@
 name: Migrations
 seoDescription: "How to create and use database migrations with Pop"
 seoKeywords: ["buffalo", "go", "golang", "database", "ORM", "pop", "migration"]
+weight: 12
+aliases:
+  - /docs/db/migrations
+  - /en/docs/db/migrations
 ---
 # Migrations
 

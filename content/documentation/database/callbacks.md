@@ -2,6 +2,10 @@
 name: Callbacks
 seoDescription: "Attach callbacks to database operations"
 seoKeywords: ["buffalo", "go", "golang", "callback", "hook", "database", "pop"]
+weight: 30
+aliases:
+  - /docs/db/callbacks
+  - /en/docs/db/callbacks
 ---
 
 # Callbacks
@@ -47,4 +51,4 @@ The available callbacks include:
 
 ## Related Content
 
-* [Models](/en/docs/db/models) - Define a database model.
+* [Models](/documentation/database/models) - Define a database model.

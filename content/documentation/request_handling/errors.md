@@ -2,6 +2,9 @@
 name: Error Handling
 seoDescription: "Errors Handling"
 seoKeywords: ["buffalo", "go", "golang", "errors"]
+aliases:
+  - /docs/errors
+  - /en/docs/errors
 ---
 
 # Error Handling
@@ -55,10 +58,10 @@ If you use a JSON or an XML content type, the error is returned in the proper ty
 ```
 
 ```xml
-&lt;response code="404">
-  &lt;error>could not find test/&lt;/error>
-  &lt;trace>could not find test/&#xA;github.com/gobuffalo/docs/vendor/github.com/gobuffalo/buffalo.(*App).fileServer.func1&#xA;&#x9;/home/michalakst/go/src/github.com/gobuffalo/docs/vendor/github.com/gobuffalo/buffalo/route_mappings.go:97&#xA;net/http.HandlerFunc.ServeHTTP&#xA;&#x9;/usr/local/go/src/net/http/server.go:1947&#xA;net/http.StripPrefix.func1&#xA;&#x9;/usr/local/go/src/net/http/server.go:1986&#xA;net/http.HandlerFunc.ServeHTTP&#xA;&#x9;/usr/local/go/src/net/http/server.go:1947&#xA;github.com/gobuffalo/docs/vendor/github.com/gorilla/mux.(*Router).ServeHTTP&#xA;&#x9;/home/michalakst/go/src/github.com/gobuffalo/docs/vendor/github.com/gorilla/mux/mux.go:162&#xA;github.com/gobuffalo/docs/vendor/github.com/markbates/refresh/refresh/web.ErrorChecker.func1&#xA;&#x9;/home/michalakst/go/src/github.com/gobuffalo/docs/vendor/github.com/markbates/refresh/refresh/web/web.go:23&#xA;net/http.HandlerFunc.ServeHTTP&#xA;&#x9;/usr/local/go/src/net/http/server.go:1947&#xA;github.com/gobuffalo/docs/vendor/github.com/gobuffalo/buffalo.(*App).ServeHTTP&#xA;&#x9;/home/michalakst/go/src/github.com/gobuffalo/docs/vendor/github.com/gobuffalo/buffalo/server.go:127&#xA;net/http.serverHandler.ServeHTTP&#xA;&#x9;/usr/local/go/src/net/http/server.go:2694&#xA;net/http.(*conn).serve&#xA;&#x9;/usr/local/go/src/net/http/server.go:1830&#xA;runtime.goexit&#xA;&#x9;/usr/local/go/src/runtime/asm_amd64.s:2361&lt;/trace>
-&lt;/response>
+<response code="404">
+  <error>could not find test/</error>
+  <trace>could not find test/ github.com/gobuffalo/docs/vendor/github.com/gobuffalo/buffalo.(*App).fileServer.func1 /home/michalakst/go/src/github.com/gobuffalo/docs/vendor/github.com/gobuffalo/buffalo/route_mappings.go:97 net/http.HandlerFunc.ServeHTTP /usr/local/go/src/net/http/server.go:1947 net/http.StripPrefix.func1 /usr/local/go/src/net/http/server.go:1986 net/http.HandlerFunc.ServeHTTP /usr/local/go/src/net/http/server.go:1947 github.com/gobuffalo/docs/vendor/github.com/gorilla/mux.(*Router).ServeHTTP /home/michalakst/go/src/github.com/gobuffalo/docs/vendor/github.com/gorilla/mux/mux.go:162 github.com/gobuffalo/docs/vendor/github.com/markbates/refresh/refresh/web.ErrorChecker.func1 /home/michalakst/go/src/github.com/gobuffalo/docs/vendor/github.com/markbates/refresh/refresh/web/web.go:23 net/http.HandlerFunc.ServeHTTP /usr/local/go/src/net/http/server.go:1947 github.com/gobuffalo/docs/vendor/github.com/gobuffalo/buffalo.(*App).ServeHTTP /home/michalakst/go/src/github.com/gobuffalo/docs/vendor/github.com/gobuffalo/buffalo/server.go:127 net/http.serverHandler.ServeHTTP /usr/local/go/src/net/http/server.go:2694 net/http.(*conn).serve /usr/local/go/src/net/http/server.go:1830 runtime.goexit /usr/local/go/src/runtime/asm_amd64.s:2361</trace>
+</response>
 ```
 
 In "production" mode (`GO_ENV=production`), Buffalo will not generate pages that have developer style information, because this would give precious information to hackers. Instead the pages are simpler.

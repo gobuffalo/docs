@@ -5,6 +5,7 @@ ADD package.json .
 RUN npm install .
 
 ADD . .
+ENV NODE_ENV production
 RUN hugo -b "https://gobuffalo.io"
 
 FROM nginx:alpine

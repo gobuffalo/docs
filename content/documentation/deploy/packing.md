@@ -1,14 +1,19 @@
 ---
+name: Packing
 seoDescription: "Packing a Buffalo application"
 seoKeywords: ["buffalo", "go", "golang", "pack", "binary", "build"]
-name: Packing
+weight: 1
+aliases:
+  - /documentation/deploy/building
+  - /docs/building
+  - /en/docs/building
 ---
 
 # Packing
 
 Now, your project is ready to be deployed. In this section, you will learn how to package a version of your app to deploy it on a server.
 
-## The build command
+## The build Command
 
 Buffalo features a command, `build`, that will build a **full binary** of your application including, but not limited to; assets, migrations, templates, etc. If you buy into the “Buffalo Way”, things just work. It's a wonderful experience. :)
 
@@ -17,7 +22,7 @@ $ buffalo build
 ```
 
 ```bash
-Buffalo version <%= version %>
+Buffalo version {{< latestclirelease >}}
 
 --> cleaning up target dir
 --> running node_modules/.bin/webpack
@@ -34,7 +39,7 @@ Buffalo version <%= version %>
 
 When the build finishes, you have a fresh baked binary in the `bin` folder. It will also have the **compilation time** and the **git commit SHA** burnt in, thus making the binaries “versioned”.
 
-## Customize the build
+## Customize the Build
 
 To get the list of available options, use the help command:
 
@@ -43,7 +48,7 @@ $ buffalo help build
 ```
 
 ```bash
-Buffalo version <%= version %>
+Buffalo version {{< latestclirelease >}}
 
 Builds a Buffalo binary, including bundling of assets (packr & webpack)
 
@@ -203,6 +208,6 @@ Hello World!
 
 ## Next Steps
 
-* [Using a Proxy](/en/docs/deploy/proxy) - Integrate your app with a server like NGINX.
-* [Systemd Service](/en/docs/deploy/systemd) - Run your app as a systemd service.
-* [Cloud Providers](/en/docs/deploy/providers) - Deploy your app on a cloud provider.
+* [Using a Proxy](/documentation/deploy/proxy) - Integrate your app with a server like NGINX.
+* [Systemd Service](/documentation/deploy/systemd) - Run your app as a systemd service.
+* [Cloud Providers](/documentation/deploy/cloud-providers) - Deploy your app on a cloud provider.

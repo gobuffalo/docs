@@ -1,5 +1,8 @@
 ---
 Name: "Assets"
+aliases:
+  - /docs/assets
+  - /en/docs/assets
 ---
 # Assets
 
@@ -50,9 +53,11 @@ By default new applications are setup to fingerprint only JavaScript and CSS fil
 
 With the introduction of asset fingerprinting in `v0.9.5` it became difficult to find asset files because the name of the file kept changing. To help with this, three new helpers were introduced.
 
-1. `assetPath` - This helper will return the path of the requested asset. For example, `&lt;%= assetPath("application.js") %>` would return something like `/assets/application.a8adff90f4c6d47529c4.js`.
-1. `javascriptTag` - This helper will generate a `&lt;script src="xxx">&lt;/script>` style tag for the requested JavaScript file. Example: `&lt;%= javascriptTag("application.js") %>` would return something like `&lt;script src="/assets/application.bd76587ded82386f388f.js" type="text/javascript">&lt;/script>`
-1. `stylesheetTag` - This helper will generate a `&lt;link href="xxx">` style tag for the requested CSS file. Example: `&lt;%= stylesheetTag("application.css") %>` would return something like `&lt;link href="/assets/application.bd76587ded82386f388f.css" media="screen" rel="stylesheet" />`
+1. `assetPath` - This helper will return the path of the requested asset. For example, `<%= assetPath("application.js") %>` would return something like `/assets/application.a8adff90f4c6d47529c4.js`.
+
+2. `javascriptTag` - This helper will generate a `<script src="xxx"></script>` style tag for the requested JavaScript file. Example: `<%= javascriptTag("application.js") %>` would return something like `<script src="/assets/application.bd76587ded82386f388f.js" type="text/javascript"></script>`.
+
+3. `stylesheetTag` - This helper will generate a `<link href="xxx">` style tag for the requested CSS file. Example: `<%= stylesheetTag("application.css") %>` would return something like `<link href="/assets/application.bd76587ded82386f388f.css" media="screen" rel="stylesheet" />`.
 
 ## Building Assets in Development
 
@@ -60,4 +65,4 @@ The `buffalo dev` command, in addition to watching and rebuilding the applicatio
 
 ## Building Assets for Deployment
 
-The `buffalo build` command will build the asset pipeline, and properly attach it to the generated Go binary. One binary to run them all! See [/en/docs/building](/en/docs/building) for more options on building assets for deployment.
+The `buffalo build` command will build the asset pipeline, and properly attach it to the generated Go binary. One binary to run them all! See [Packing](/documentation/deploy/packing) for more options on building assets for deployment.

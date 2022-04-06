@@ -1,5 +1,9 @@
 ---
 name: Plugins
+weight: 20
+aliases:
+  - /docs/plugins
+  - /en/docs/plugins
 ---
 
 # Plugins
@@ -103,14 +107,16 @@ buffalo-upgradex |buffalo upgradex           |updates Buffalo and/or Pop/Soda as
 
 To add support for the plugin manager, one can either manually edit `./config/buffalo-plugins.toml` or let `buffalo plugins install` create it for you.
 
-<%= codeTabs() { %>
+{{< codetabs >}}
+{{< tab "Install command" >}}
 ```bash
 // $ buffalo plugins install
 
 go get github.com/gobuffalo/buffalo-pop
 ./config/buffalo-plugins.toml
 ```
-
+{{< /tab >}}
+{{< tab "Config file" >}}
 ``` bash
 // ./config/buffalo-plugins.toml
 
@@ -118,7 +124,9 @@ go get github.com/gobuffalo/buffalo-pop
   binary = "buffalo-pop"
   go_get = "github.com/gobuffalo/buffalo-pop"
 ```
+{{< /tab >}}
 
+{{< tab "Resulting plugin list" >}}
 ```bash
 // $ buffalo plugins list
 
@@ -128,13 +136,16 @@ buffalo-pop |buffalo db            |[DEPRECATED] please use `buffalo pop` instea
 buffalo-pop |buffalo destroy model |Destroys model files.
 buffalo-pop |buffalo pop           |A tasty treat for all your database needs
 ```
-<% } %>
+{{< /tab >}}
+{{< /codetabs>}}
+
 
 The `buffalo-pop` plugin was automatically added because the application in this example is a Buffalo application that uses Pop.
 
 New plugins can be install in bulk with the `install` command
 
-<%= codeTabs() { %>
+{{< codetabs >}}
+{{< tab "Bulk Install command" >}}
 ```bash
 // $ buffalo plugins install
 $ buffalo plugins install github.com/markbates/buffalo-trash github.com/gobuffalo/buffalo-heroku
@@ -144,7 +155,8 @@ go get github.com/gobuffalo/buffalo-pop
 go get github.com/markbates/buffalo-trash
 ./config/buffalo-plugins.toml
 ```
-
+{{< /tab >}}
+{{< tab "Config file" >}}
 ``` bash
 // ./config/buffalo-plugins.toml
 
@@ -160,7 +172,9 @@ go get github.com/markbates/buffalo-trash
   binary = "buffalo-trash"
   go_get = "github.com/markbates/buffalo-trash"
 ```
+{{< /tab >}}
 
+{{< tab "Resulting plugin list" >}}
 ```bash
 // $ buffalo plugins list
 
@@ -172,8 +186,8 @@ buffalo-pop    |buffalo destroy model |Destroys model files.
 buffalo-pop    |buffalo pop           |A tasty treat for all your database needs
 buffalo-trash  |buffalo trash         |destroys and recreates a buffalo app
 ```
-
-<% } %>
+{{< /tab >}}
+{{< /codetabs>}}
 
 
 ## Removing Plugins
@@ -182,14 +196,16 @@ buffalo-trash  |buffalo trash         |destroys and recreates a buffalo app
 
 Plugins can be removed with the `remove` command. This only removes them from the config file, not from the users system.
 
-<%= codeTabs() { %>
+{{< codetabs >}}
+{{< tab "Remove command" >}}
 ```bash
 // $ buffalo plugins remove
 $ buffalo plugins remove github.com/gobuffalo/buffalo-heroku
 
 ./config/buffalo-plugins.toml
 ```
-
+{{< /tab >}}
+{{< tab "Config file" >}}
 ``` bash
 // ./config/buffalo-plugins.toml
 
@@ -201,7 +217,9 @@ $ buffalo plugins remove github.com/gobuffalo/buffalo-heroku
   binary = "buffalo-trash"
   go_get = "github.com/markbates/buffalo-trash"
 ```
+{{< /tab >}}
 
+{{< tab "Resulting plugin list" >}}
 ```bash
 // $ buffalo plugins list
 
@@ -213,7 +231,8 @@ buffalo-pop   |buffalo pop           |A tasty treat for all your database needs
 buffalo-trash |buffalo trash         |destroys and recreates a buffalo app
 ```
 <% } %>
-
+{{< /tab >}}
+{{< /codetabs>}}
 
 ## Writing a Plugin
 
@@ -239,7 +258,205 @@ Flags:
       --with-gen            creates a generator plugin
 ```
 
-<%= exampleDir("docs/plugins/_example/standard") %>
+{{< codetabs>}}
+{{< tab "LICENSE" >}}
+```text
+The MIT License (MIT)
+
+Copyright (c) 2018 Mark Bates
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+{{< /tab >}}
+{{< tab "Makefile" >}}
+```makefile
+TAGS ?= "sqlite"
+GO_BIN ?= go
+
+install: deps
+	packr
+	$(GO_BIN) install -tags ${TAGS} -v ./.
+
+deps:
+	$(GO_BIN) get github.com/gobuffalo/release
+	$(GO_BIN) get github.com/gobuffalo/packr/packr
+	$(GO_BIN) get -tags ${TAGS} -t ./...
+ifeq ($(GO111MODULE),on)
+	$(GO_BIN) mod tidy
+endif
+
+build:
+	packr
+	$(GO_BIN) build -v .
+
+test:
+	packr
+	$(GO_BIN) test -tags ${TAGS} ./...
+
+ci-test:
+	$(GO_BIN) test -tags ${TAGS} -race ./...
+
+lint:
+	gometalinter --vendor ./... --deadline=1m --skip=internal
+
+update:
+	$(GO_BIN) get -u -tags ${TAGS}
+ifeq ($(GO111MODULE),on)
+	$(GO_BIN) mod tidy
+endif
+	packr
+	make test
+	make install
+ifeq ($(GO111MODULE),on)
+	$(GO_BIN) mod tidy
+endif
+
+release-test:
+	$(GO_BIN) test -tags ${TAGS} -race ./...
+
+release:
+	release -y -f bar/version.go
+```
+{{< /tab >}}
+{{< tab "main.go" >}}
+```go
+package main
+
+import "github.com/foo/buffalo-bar/cmd"
+
+func main() {
+	cmd.Execute()
+}
+```
+{{< /tab >}}
+{{< tab "bar/version.go" >}}
+```go
+package bar
+
+const Version = "v0.0.1"
+```
+{{< /tab >}}
+{{< tab "cmd/available.go" >}}
+```go
+package cmd
+
+import (
+	"encoding/json"
+	"os"
+
+	"github.com/gobuffalo/buffalo-plugins/plugins"
+	"github.com/spf13/cobra"
+)
+
+// availableCmd represents the available command
+var availableCmd = &cobra.Command{
+	Use:   "available",
+	Short: "a list of available buffalo plugins",
+	RunE: func(cmd *cobra.Command, args []string) error {
+		plugs := plugins.Commands{
+			// {Name: "bar", UseCommand: "generate", BuffaloCommand: "generate", Description: generateCmd.Short, Aliases: generateCmd.Aliases},
+		}
+		return json.NewEncoder(os.Stdout).Encode(plugs)
+	},
+}
+
+func init() {
+	rootCmd.AddCommand(availableCmd)
+}
+```
+{{< /tab >}}
+{{< tab "cmd/bar.go" >}}
+```go
+package cmd
+
+import (
+	"github.com/spf13/cobra"
+)
+
+// barCmd represents the bar command
+var barCmd = &cobra.Command{
+	Use:   "bar",
+	Short: "description about this plugin",
+	RunE: func(cmd *cobra.Command, args []string) error {
+		return nil
+	},
+}
+
+func init() {
+	rootCmd.AddCommand(barCmd)
+}
+```
+{{< /tab >}}
+{{< tab "cmd/root.go" >}}
+```go
+package cmd
+
+import (
+	"fmt"
+	"os"
+
+	"github.com/spf13/cobra"
+)
+
+// rootCmd represents the base command when called without any subcommands
+var rootCmd = &cobra.Command{
+	Use: "buffalo-bar",
+}
+
+// Execute adds all child commands to the root command and sets flags appropriately.
+// This is called by main.main(). It only needs to happen once to the rootCmd.
+func Execute() {
+	if err := rootCmd.Execute(); err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
+}
+```
+{{< /tab >}}
+{{< tab "cmd/version.go" >}}
+```go
+package cmd
+
+import (
+	"fmt"
+
+	"github.com/foo/buffalo-bar/bar"
+	"github.com/spf13/cobra"
+)
+
+// versionCmd represents the version command
+var versionCmd = &cobra.Command{
+	Use:   "version",
+	Short: "current version of bar",
+	RunE: func(cmd *cobra.Command, args []string) error {
+		fmt.Println("bar", bar.Version)
+		return nil
+	},
+}
+
+func init() {
+	barCmd.AddCommand(versionCmd)
+}
+```
+{{< /tab >}}
+{{< /codetabs>}}
+
 
 
 ## Writing Non-Go Plugins

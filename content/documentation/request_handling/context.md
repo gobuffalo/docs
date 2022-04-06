@@ -1,5 +1,9 @@
 ---
 Name: Context
+weight: 4
+aliases:
+  - /docs/context
+  - /en/docs/context
 ---
 # Context
 
@@ -40,14 +44,14 @@ The `Websocket() (*websocket.Conn, error)` function was removed from `buffalo.Co
 
 ## Context and Rendering
 
-As part of the context interface, there is a `Render` function that takes a type of `render.Renderer`. See [rendering](/en/docs/rendering) for more information.
+As part of the context interface, there is a `Render` function that takes a type of `render.Renderer`. See [rendering](/documentation/frontend-layer/rendering) for more information.
 
 Any values that are "set" on the context will automatically be available to the `render.Renderer` that is passed into the `Render` function.
 
 ```go
 func Hello(c buffalo.Context) error {
   c.Set("name", "Mark")
-  return c.Render(200, render.String("Hi \<%= name %>"))
+  return c.Render(200, render.String("Hi <%= name %>"))
 }
 ```
 
@@ -123,4 +127,4 @@ Buffalo stuffs the context of each request with a lot of information that could 
 | `request`       | [`*http.Request`](https://godoc.org/net/http#Request)                               | The current request.                                                                                                                    |
 | `tx`            | [`*pop.Connection`](https://godoc.org/github.com/gobuffalo/pop#Connection)          | Only set if using the `github.com/gobuffalo/buffalo/middleware.PopTransaction` middleware (on by default).                              |
 
-See [Helpers](/en/docs/helpers#builtin-helpers) for a list of built-in helper functions available inside of templates.
+See [Helpers](/documentation/frontend-layer/helpers#builtin-helpers) for a list of built-in helper functions available inside of templates.

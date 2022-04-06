@@ -10,13 +10,16 @@ seoKeywords:
   - "framework"
   - "web"
 weight: 2
+aliases:
+  - /docs/getting-started/new-project
+  - /en/docs/getting-started/new-project
 ---
 
 # Generating a New Project
 
 You now have a working Buffalo installation. In this section, you will learn how to create **a brand new web application**, using the `buffalo` command. 
 
-## Create a new project
+## Create a New Project
 
 Buffalo aims to make building new web applications in Go as **quick and simple** as possible. What could be more simple than a *new application* generator?
 
@@ -102,7 +105,7 @@ Please read the README.md file in your new application for next steps on running
 ```
 
 
-## Create a customized app
+## Create a Customized App
 
 The default setup is great, but maybe it doesn't fit you. Buffalo provides several options as flags for the `new` command.
 
@@ -152,7 +155,7 @@ with-dep: true
 ## Running Your Application in Development
 
 {{< note >}}
-Before starting Buffalo for the first time, please head over to the [Database](/en/docs/db) docs and read a little bit about setting up your databases.
+Before starting Buffalo for the first time, please head over to the [Database](/documentation/database/pop) docs and read a little bit about setting up your databases.
 {{< /note >}}
 
 One of the downsides to Go development is the lack of code “reloading”. This means as you change your code **you need to manually stop** your application, rebuild it, then restart it. Buffalo finds this annoying, and wants to make life better for you.
@@ -161,7 +164,7 @@ One of the downsides to Go development is the lack of code “reloading”. This
 $ buffalo dev
 ```
 
-The `dev` command will watch your `.go` and `.html` files and the [asset](/en/docs/assets) folder by default. It will **rebuild and restart your binary for you** automatically, so you don't have to worry about such things.
+The `dev` command will watch your `.go` and `.html` files and the [asset](/documentation/frontend-layer/assets) folder by default. It will **rebuild and restart your binary for you** automatically, so you don't have to worry about such things.
 
 Just run the `buffalo dev` command and go to [localhost:3000/](http://localhost:3000/) to see all changes live!
 
@@ -178,9 +181,9 @@ Sometimes you will already have an app working on the 3000 port. You can configu
 $ PORT=3001 buffalo dev
 ```
 
-You can also take a look at the [Env Variables](/en/docs/getting-started/config-vars) chapter for further information on Buffalo configuration.
+You can also take a look at the [Env Variables](/documentation/getting_started/configuration) chapter for further information on Buffalo configuration.
 
 ## Next Steps
 
-* [Directory Structure](/en/docs/getting-started/directory-structure) - Learn more about Buffalo structure.
-* [Configuration](/en/docs/getting-started/config-vars) - Manage your app configuration.
+* [Directory Structure](/documentation/getting_started/directory-structure) - Learn more about Buffalo structure.
+* [Configuration](/documentation/getting_started/configuration) - Manage your app configuration.

@@ -1,6 +1,10 @@
 ---
 name: Mutations
 seoDescription: "Handle mutations with Pop"
+weight: 20
+aliases:
+  - /docs/db/mutations
+  - /en/docs/db/mutations
 ---
 
 # Mutations
@@ -104,5 +108,5 @@ err := c.Destroy(fruit)
 
 ## Next Steps
 
-* [Querying](/en/docs/db/querying) - Fetch the data you inserted in the database.
-* [Associations and Relationships](/en/docs/db/relations) - Handle relations between models.
+* [Querying](/documentation/database/querying) - Fetch the data you inserted in the database.
+* [Associations and Relationships](/documentation/database/relations) - Handle relations between models.

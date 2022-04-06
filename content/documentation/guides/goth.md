@@ -2,6 +2,10 @@
 name: Third Party Authentication
 seoDescription: Third Party Authentication
 seoKeywords: ["buffalo", "go", "golang", "users", "oauth2", "authentication", "third-party", "google", "facebook"]
+weight: 22
+aliases:
+  - /docs/goth
+  - /en/docs/goth
 ---
 
 # Third Party Authentication
@@ -143,4 +147,4 @@ func AuthCallback(c buffalo.Context) error {
 
 ## See Also
 
-* [Local Authentication](/en/docs/auth) - Manage internal users auth.
+* [Local Authentication](/documentation/guides/auth) - Manage internal users auth.

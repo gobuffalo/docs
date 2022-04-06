@@ -2,6 +2,10 @@
 name: "Querying"
 seoDescription: "Querying a Database with Pop"
 seoKeywords: ["buffalo", "go", "golang", "database", "querying", "pop", "finders"]
+weight: 21
+aliases:
+  - /docs/db/querying
+  - /en/docs/db/querying
 ---
 # Querying
 

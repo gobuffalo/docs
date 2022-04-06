@@ -1,7 +1,11 @@
 ---
+name: Using a Proxy
 seoDescription: "Using a Proxy"
 seoKeywords: ["buffalo", "go", "golang", "proxy", "nginx", "apache"]
-name: Using a Proxy
+weight: 20
+aliases:
+  - /docs/proxy
+  - /en/docs/proxy
 ---
 # Using a Proxy
 

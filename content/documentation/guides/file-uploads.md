@@ -1,5 +1,9 @@
 ---
 name: File Uploads
+weight: 11
+aliases:
+  - /docs/file-uploads
+  - /en/docs/file-uploads
 ---
 
 # File Uploads

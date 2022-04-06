@@ -1,7 +1,11 @@
 ---
+name: Associations and Relationships
 seoDescription: "How to manage associations and relationships with Pop?"
 seoKeywords: ["buffalo", "go", "golang", "database", "ORM", "pop", "associations", "relations", "entity"]
-name: Associations and Relationships
+weight: 51
+aliases:
+  - /docs/db/relations
+  - /en/docs/db/relations
 ---
 
 # Associations and Relationships
@@ -283,7 +287,7 @@ tx.Eager().Create(&book)
 
 In the case where you feed the eager create with associated models that already exist, it will, instead of creating duplicates of them or updating the contents of them, simply create/update the associations with them.
 
-## Next steps
+## Next Steps
 
-* [One to one relations](/en/docs/db/relations/onetoone/)
-* [One to many relations](/en/docs/db/relations/onetomany/)
+* [One to one relations](/documentation/database/relations-one-to-one)
+* [One to many relations](/documentation/database/relations-one-to-many)

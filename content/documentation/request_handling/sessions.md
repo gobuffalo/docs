@@ -2,11 +2,14 @@
 Name: Sessions
 seoDescription: "Sessions"
 seoKeywords: ["buffalo", "go", "golang", "http", "session"]
+aliases:
+  - /docs/sessions
+  - /en/docs/sessions
 ---
 
 # Sessions
 
-An HTTP session is a non-persistent data storage, which is destroyed on browser shutdown (in the default browser configuration). It can be used to store flash messages, or any temporary user-specific data. Use [cookies](/en/docs/cookies) instead if you need a more persistent client side storage.
+An HTTP session is a non-persistent data storage, which is destroyed on browser shutdown (in the default browser configuration). It can be used to store flash messages, or any temporary user-specific data. Use [cookies](/documentation/request_handling/cookies) instead if you need a more persistent client side storage.
 
 The session is available directly from the `buffalo.Context` inside of a handler.
 
@@ -76,7 +79,7 @@ func init() {
 
 ## Saving a Session
 
-Buffalo automatically saves your session for you, so you don't have to. If there is an error when saving the session, Buffalo will return an error through the normal [ error handling ](/en/docs/errors) process.
+Buffalo automatically saves your session for you, so you don't have to. If there is an error when saving the session, Buffalo will return an error through the normal [ error handling ](/documentation/request_handling/errors) process.
 
 
 ## Null Sessions for APIs

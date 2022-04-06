@@ -1,11 +1,15 @@
 ---
 name: Scoping
+weight: 31
+aliases:
+  - /docs/db/scoping
+  - /en/docs/db/scoping
 ---
 # Scoping
 
 Scoping is a way to structure your DB calls, when it needs the same "base" query. Let's say you want to create a book store: the store provides books for everyone, but some special editions are reserved to customers with a registered account. It means that for the whole store, you'll need to filter the books, so the "guest" customers can only see the restricted list of books.
 
-## The usual way
+## The Usual Way
 
 A "naive" way can be writing each full query.
 
@@ -59,7 +63,7 @@ if err != nil {
 }
 ```
 
-## The scoped way
+## The Scoped Way
 
 The scope factorizes the common part of the query:
 

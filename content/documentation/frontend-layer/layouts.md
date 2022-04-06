@@ -1,5 +1,9 @@
 ---
 Name: "Layouts"
+weight: 3
+aliases:
+  - /docs/layouts
+  - /en/docs/layouts
 ---
 
 # Layouts

@@ -1,5 +1,9 @@
 ---
 Name: "Iterating"
+weight: 5
+aliases:
+  - /docs/iterating
+  - /en/docs/iterating
 ---
 
 # Iterating

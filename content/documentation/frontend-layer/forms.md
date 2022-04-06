@@ -1,5 +1,9 @@
 ---
 Name: "Forms"
+weight: 9
+aliases:
+  - /docs/forms
+  - /en/docs/forms
 ---
 
 # Forms
@@ -461,7 +465,7 @@ func init() {
 
 ### How Do I Map a Form to a Model/Struct?
 
-See the [Request Binding](/en/docs/bind) page for more information on request binding.
+See the [Request Binding](/documentation/request_handling/bind) page for more information on request binding.
 
 ### Can I Change the Name of the `f` Variable in My Template?
 

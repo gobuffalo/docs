@@ -1,5 +1,9 @@
 ---
 Name: "Flash Messages"
+weight: 8
+aliases:
+  - /docs/flash-messages
+  - /en/docs/flash-messages
 ---
 
 # Flash Messages
@@ -18,7 +22,7 @@ Being able to set these messages in a Buffalo handler and then pass them down to
 
 ## Setting Flash Messages
 
-Creating flash messages can easily be done by using the `c.Flash()` function provided on the [`buffalo.Context`](/en/context).
+Creating flash messages can easily be done by using the `c.Flash()` function provided on the [`buffalo.Context`](/documentation/request_handling/context).
 
 ```go
 func WidgetsCreate(c buffalo.Context) error {

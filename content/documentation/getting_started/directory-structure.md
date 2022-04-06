@@ -9,16 +9,19 @@ seoKeywords:
   - "directory"
   - "framework"
   - "web"
-weight: 3
+weight: 4
+aliases:
+  - /docs/getting-started/directory-structure
+  - /en/docs/getting-started/directory-structure
 ---
 
-# Directory structure
+# Directory Structure
 
 Buffalo provides you **a minimal directory structure** to work on your project. This structure **keeps the project clean**, and allow the generators to work. Don't try to reinvent the wheel, and **let Buffalo buy you more time** to do the interesting part of your app! :)
 
 Now that you have a minimal new project, let's go through its contents.
 
-## The root directory
+## The Root Directory
 
 Here is the structure of a Buffalo project:
 
@@ -55,10 +58,10 @@ This directory contains **raw** assets which will be compiled/compressed & put i
 ### grifts
 
 {{< note >}}
-This directory is optional. If you don't need to use [tasks](/en/docs/tasks), you can remove it.
+This directory is optional. If you don't need to use [tasks](/documentation/guides/tasks), you can remove it.
 {{< /note >}}
 
-This directory contains the [tasks](/en/docs/tasks) powered by [grift](https://github.com/markbates/grift).
+This directory contains the [tasks](/documentation/guides/tasks) powered by [grift](https://github.com/markbates/grift).
 
 ### locales
 
@@ -118,4 +121,4 @@ This file bootstraps your app and starts it.
 
 ## Next Steps
 
-* [Configuration](/en/docs/getting-started/config-vars) - Manage your app configuration.
+* [Configuration](/documentation/getting_started/configuration) - Manage your app configuration.

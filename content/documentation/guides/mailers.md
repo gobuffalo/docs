@@ -1,6 +1,13 @@
 ---
 name: Mailers
+weight: 13
+aliases:
+  - /documentation/guides/mail
+  - /docs/mail
+  - /en/docs/mail
 ---
+
+# Mailers
 
 E-mails are part of most (web) systems. It's a standard way to inform users about platform news, confirmations, marketing stuff, and so on.
 
@@ -127,7 +134,7 @@ func UUIDToString(u uuid.UUID) string {
 
 {{< since "0.13.0-rc1" >}}
 
-To use context variables such as [RouteHelpers](/en/docs/routing#using-route-helpers-in-templates) or those set with
+To use context variables such as [RouteHelpers](/documentation/request_handling/routing#using-route-helpers-in-templates) or those set with
 `c.Set(...)`, `mail.New` accepts a `buffalo.Context`.
 
 ```go

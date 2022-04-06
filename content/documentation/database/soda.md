@@ -1,7 +1,12 @@
 ---
+name: Soda CLI
 seoDescription: "Soda CLI"
 seoKeywords: ["buffalo", "go", "golang", "database", "utils", "pop", "toolbox", "CLI", "soda"]
-name: Soda CLI
+weight: 2
+aliases:
+  - /documentation/database/toolbox
+  - /docs/db/toolbox
+  - /en/docs/db/toolbox
 --- 
 
 # Soda CLI

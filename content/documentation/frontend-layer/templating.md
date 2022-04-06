@@ -1,5 +1,9 @@
 ---
 Name: "Templating"
+weight: 2
+aliases:
+  - /docs/templating
+  - /en/docs/templating
 ---
 
 # Templating

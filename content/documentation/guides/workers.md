@@ -1,11 +1,15 @@
 ---
 name: Background Job Workers
+weight: 12
+aliases:
+  - /docs/workers
+  - /en/docs/workers
 ---
 # Background Job Workers
 
 When building complex applications it is often nice to be able to run things in the “background”. While Go provides beautiful concurrency features, like the famed Goroutine, often one wants to run these on different machines, persist them using Redis, or any number of potential reasons why a simple Goroutine isn’t sufficient.
 
-Workers shouldn't be confused with [tasks](/en/docs/tasks): tasks are synchronous tools, whereas workers are intended to run asynchronously.
+Workers shouldn't be confused with [tasks](/documentation/guides/tasks): tasks are synchronous tools, whereas workers are intended to run asynchronously.
 
 ## The Worker Interface
 
@@ -59,7 +63,7 @@ type Job struct {
 }
 ```
 
-## How to use background tasks
+## How to Use Background Tasks
 
 To be able to use background tasks, you'll need to setup a worker adapter, register job handlers and trigger jobs.
 

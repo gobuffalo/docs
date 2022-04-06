@@ -2,9 +2,14 @@
 name: Getting started with Pop
 seoDescription: "Getting started with Pop"
 seoKeywords: ["buffalo", "go", "golang", "database", "ORM", "pop", "migrations"]
+weight: 1
+aliases:
+  - /documentation/database/getting-started
+  - /docs/db/getting-started
+  - /en/docs/db/getting-started
 ---
 
-# Getting started with Pop
+# Getting Started with Pop
 
 The [pop](https://godoc.org/github.com/gobuffalo/pop) package is included with Buffalo by default, but you can use it outside of Buffalo. It wraps the absolutely amazing https://github.com/jmoiron/sqlx library, cleans up some of the common patterns and work flows usually associated with dealing with databases in Go.
 
@@ -35,5 +40,5 @@ $ go get github.com/gobuffalo/pop/...
 
 ## Next Steps
 
-* [CLI Soda](/en/docs/db/toolbox) - Install the Soda CLI.
-* [Configuration](/en/docs/db/configuration) - Configure your database connections.
+* [CLI Soda](/documentation/database/soda) - Install the Soda CLI.
+* [Configuration](/documentation/database/configuration) - Configure your database connections.

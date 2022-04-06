@@ -1,11 +1,15 @@
-{{ if .IsTranslated }}
+{{- if .IsTranslated -}}
 <div class="container md:flex justify-end md:gap-6 bg-gray-100 py-2">
     <div class="inline-flex justify items-center gap-2">
-        <span class="text-blue-800 font-bold">{{ .Language.LanguageName }}</span>
-        {{ range $.Translations }}
+    {{- $currentLanguage := .Language -}}
+    {{- range $index, $page := sort .AllTranslations.Reverse -}}
+        {{ if ne $index 0 }}
         <span class="border-l-2 h-3/4"></span>
-            <a href="{{ .Permalink }}" title="{{ .Language.LanguageName }}" class="text-slate-300">{{ .Language.LanguageName }}</a>
-        {{ end }}
+        {{- end -}}
+        {{- $lang := $page.Language -}}
+        {{$active := eq $currentLanguage $lang }}
+        <a href="{{ $page.RelPermalink }}" title="{{ $lang.LanguageName }}" class="{{ if $active }}text-blue-800 font-bold{{ else }}text-slate-300{{ end }}">{{ $lang.LanguageName }}</a>
+    {{- end -}}
     </div>
 </div>
-{{ end }}
+{{- end -}}

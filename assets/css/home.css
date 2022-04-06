@@ -18,7 +18,6 @@ html {
     background: #0a193f url('/images/bg.png') no-repeat left bottom;
     background-size: cover;
     box-sizing: border-box;
-    padding: 150px 0px;
     position: relative;
 }
 

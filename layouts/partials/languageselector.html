@@ -1,15 +1,17 @@
-{{- if .IsTranslated -}}
-<div class="container md:flex justify-end md:gap-6 bg-gray-100 py-2">
-    <div class="inline-flex justify items-center gap-2">
-    {{- $currentLanguage := .Language -}}
-    {{- range $index, $page := sort .AllTranslations.Reverse -}}
-        {{ if ne $index 0 }}
-        <span class="border-l-2 h-3/4"></span>
+<div class="h-10 px-10 md:px-0">
+    <div class="flex justify-end items-center h-full p-2">
+        {{- if .IsTranslated -}}
+        <div class="inline-flex items-center gap-2">
+        {{- $currentLanguage := .Language -}}
+        {{- range $index, $page := sort .AllTranslations.Reverse -}}
+            {{ if ne $index 0 }}
+            <span class="border-l-2 h-5"></span>
+            {{- end -}}
+            {{- $lang := $page.Language -}}
+            {{$active := eq $currentLanguage $lang }}
+            <a href="{{ $page.RelPermalink }}" title="{{ $lang.LanguageName }}" class="px-2 py-0.5{{ if $active }} rounded-full bg-gray-100 text-blue-800 font-bold{{ end }}">{{ $lang.LanguageName }}</a>
         {{- end -}}
-        {{- $lang := $page.Language -}}
-        {{$active := eq $currentLanguage $lang }}
-        <a href="{{ $page.RelPermalink }}" title="{{ $lang.LanguageName }}" class="{{ if $active }}text-blue-800 font-bold{{ else }}text-slate-300{{ end }}">{{ $lang.LanguageName }}</a>
-    {{- end -}}
+        </div>
+        {{- end -}}
     </div>
 </div>
-{{- end -}}

@@ -84,7 +84,7 @@ Buffalo automatically saves your session for you, so you don't have to. If there
 
 ## Null Sessions for APIs
 
-When building API servers the default cookie session store is undesirable. The [`sessions.Null`](`sessions.Null`) type is the recommended replacement for the default session store.
+When building API servers the default cookie session store is undesirable. The `sessions.Null` type is the recommended replacement for the default session store.
 
 ```go
 app = buffalo.New(buffalo.Options{

@@ -5,14 +5,14 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="robots" content="index,follow">
-		
+
 		{{ partial "seo" . }}
 
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/monokai.min.css">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js" integrity="sha512-BNc7saQYlxCL10lykUYhFBcnzdKMnjx5fp5s5wPucDyZ7rKNwCoqJh1GwEAIhuePEK4WM9askJBRsu7ma0Rzvg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/languages/erb.min.js"></script>	
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/languages/erb.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.0/fuse.min.js"></script>
-		
+
 		{{ $styles := resources.Get "css/home.css" | postCSS }}
 		{{ $searchJS := resources.Get "js/search.js" }}
 		{{ $mainJS := resources.Get "js/main.js" }}
@@ -25,20 +25,21 @@
 		{{ else }}
 			{{ $styles = $styles | minify | fingerprint | resources.PostProcess }}
 			<link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}"/>
-			
+
 			{{ $searchJS = $searchJS | minify | fingerprint | resources.PostProcess }}
 			<script src="{{ $searchJS.RelPermalink }}" integrity="{{ $searchJS.Data.Integrity }}"></script>
-			
+
 			{{ $mainJS = $mainJS | minify | fingerprint | resources.PostProcess }}
 			<script src="{{ $mainJS.RelPermalink }}" integrity="{{ $mainJS.Data.Integrity }}"></script>
 		{{ end }}
-		
+
 		{{partial "favicons" .}}
 	</head>
 	<body class="flex flex-col min-h-screen">
 		{{ partial "header" .}}
-		
-		<main class="bg-gray-100 md:py-7 flex-grow">
+		{{ partial "languageselector.html" . }}
+
+		<main class="bg-gray-100 md:pb-7 flex-grow">
 			<div class="container md:flex md:gap-6">
 				  <!-- Off-canvas menu for mobile, show/hide based on off-canvas menu state. -->
 				<div id="mobile-docs-sidebar" class="fixed inset-0 hidden flex z-40 lg:hidden" role="dialog" aria-modal="true">
@@ -56,10 +57,10 @@
 					</div>
 
 					<div class="flex-1 h-0 pt-5 pb-4 overflow-y-auto px-5">
-						{{partial "docssidebar" .}}						
+						{{partial "docssidebar" .}}
 					</div>
 					<div class="flex-shrink-0 p-4">
-						
+
 					</div>
 					</div>
 
@@ -72,23 +73,23 @@
 						</svg>
 						<span class="text-sm font-bold">{{ .Params.Name }}</span>
 					</div>
-					
+
 				</div>
-				
+
 				<aside class="bg-gray-200 rounded-md p-7 hidden md:block docssidebar">
 					{{partial "docssidebar" .}}
 				</aside>
-				
+
 				<div class="w-full p-5 md:flex-grow md:p-9  bg-white rounded-md  ">
 					<div class="max-w-4xl content mt-2">
 						{{ block "main" . }}{{end }}
 					</div>
 				</div>
 			</div>
-			
+
 		</main>
 
-		
+
 		{{ partial "footer.html" . }}
 		{{ partial "search" .}}
 	</body>

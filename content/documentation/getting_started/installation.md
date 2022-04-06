@@ -43,7 +43,7 @@ Before installing make sure you have the required dependencies installed:
 The following requirements are optional. You don't need them if you want to build an API or if you prefer to build your app in an old-fashioned way.
 
 * [node](https://github.com/nodejs/node) version `8` or greater
-* either [yarn](https://yarnpkg.com/en/) or [npm](https://github.com/npm/npm) for the [asset pipeline](/en/docs/assets) built upon [webpack](https://github.com/webpack/webpack).
+* either [yarn](https://yarnpkg.com/en/) or [npm](https://github.com/npm/npm) for the [asset pipeline](/documentation/frontend-layer/assets) built upon [webpack](https://github.com/webpack/webpack).
 
 ##### Database Specific Requirements
 
@@ -177,5 +177,5 @@ If you have a similar output, your Buffalo toolbox is ready to work!
 
 ## Next Steps
 
-* [Tooling Integration](documentation/getting_started/integrations/) - Work with Buffalo, using existing tools.
-* [Generate a New Project](documentation/getting_started/new-project/) - Create your first Buffalo project!
+* [Tooling Integration](/documentation/getting_started/integrations) - Work with Buffalo, using existing tools.
+* [Generate a New Project](/documentation/getting_started/new-project) - Create your first Buffalo project!

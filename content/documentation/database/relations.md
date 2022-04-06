@@ -289,5 +289,5 @@ In the case where you feed the eager create with associated models that already 
 
 ## Next steps
 
-* [One to one relations](/en/docs/db/relations/onetoone/)
-* [One to many relations](/en/docs/db/relations/onetomany/)
+* [One to one relations](/documentation/database/relations-one-to-one)
+* [One to many relations](/documentation/database/relations-one-to-many)

@@ -4,12 +4,13 @@ seoDescription: "Pop one to many associations"
 seoKeywords: ["orm", "buffalo", "go", "golang", "pop", "one to many", "associations"]
 weight: 53
 aliases:
+  - /documentation/database/onetomany
   - /docs/db/relations/onetomany
   - /en/docs/db/relations/onetomany
 ---
 
 # One to many associations
-In this chapter, you'll learn how to write a one to many [association](/en/docs/db/relations/) in Pop.
+In this chapter, you'll learn how to write a one to many [association](/documentation/database/relations/) in Pop.
 
 ## Tags
 

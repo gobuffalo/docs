@@ -147,4 +147,4 @@ func AuthCallback(c buffalo.Context) error {
 
 ## See Also
 
-* [Local Authentication](/en/docs/auth) - Manage internal users auth.
+* [Local Authentication](/documentation/guides/auth) - Manage internal users auth.

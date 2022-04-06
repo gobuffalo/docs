@@ -14,7 +14,7 @@ In this chapter, you'll learn how to work with models by hand; and how to improv
 
 ## The Models Directory
 
-Pop model files are stored in the `models` directory, at your project root (see [the Directory Structure](/en/docs/getting-started/directory-structure) chapter for more info about the Buffalo way to organize your files).
+Pop model files are stored in the `models` directory, at your project root (see [the Directory Structure](/documentation/getting_started/directory-structure) chapter for more info about the Buffalo way to organize your files).
 
 This directory contains:
 
@@ -365,5 +365,5 @@ As we learned in this chapter, each attribute on the structure has a read-only t
 
 ## Related Content
 
-* [Migrations](/en/docs/db/migrations) - Write database migrations.
-* [Querying](/en/docs/db/querying) - Query data from your database.
+* [Migrations](/documentation/database/migrations) - Write database migrations.
+* [Querying](/documentation/database/querying) - Query data from your database.

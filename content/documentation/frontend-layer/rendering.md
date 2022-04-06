@@ -37,7 +37,7 @@ func Beatles(c buffalo.Context) error {
 When rendering JSON, or XML, using the [`r.JSON`](https://godoc.org/github.com/gobuffalo/buffalo/render#JSON) or [`r.XML`](https://godoc.org/github.com/gobuffalo/buffalo/render#XML), you pass the value that you would like to be marshaled and the appropriate marshaler will encode the value you passed and write it to the response with the correct content/type.
 
 **NOTE**: If you already have a string that contains JSON or XML do **NOT** use these methods as they will attempt to marshal the string into JSON or XML causing strange responses.
-What you could do instead is write a custom render function as explained in the [Custom Rendering](rendering#custom-rendering) section.
+What you could do instead is write a custom render function as explained in the [Custom Rendering](#custom-rendering) section.
 ```go
 func MyHandler(c buffalo.Context) error {
   return c.Render(200, r.JSON(User{}))
@@ -122,7 +122,7 @@ func Beatles(c buffalo.Context) error {
 }
 ```
 
-This works with [partials](/en/docs/partials) too.
+This works with [partials](/documentation/frontend-layer/partials) too.
 
 
 ## Custom Rendering
@@ -156,7 +156,7 @@ return c.Render(200, r.Func("application/json", func(w io.Writer, d render.Data)
 
 ## Renderer Interface
 
-In order for a renderer to be able to be used with [`Context#Render`](/en/docs/context) it must implement the following interface:
+In order for a renderer to be able to be used with [`Context#Render`](/documentation/request_handling/context#context-and-rendering) it must implement the following interface:
 
 ```go
 // Renderer interface that must be satisified to be used with

@@ -208,6 +208,6 @@ Hello World!
 
 ## Next Steps
 
-* [Using a Proxy](/en/docs/deploy/proxy) - Integrate your app with a server like NGINX.
-* [Systemd Service](/en/docs/deploy/systemd) - Run your app as a systemd service.
-* [Cloud Providers](/en/docs/deploy/providers) - Deploy your app on a cloud provider.
+* [Using a Proxy](/documentation/deploy/proxy) - Integrate your app with a server like NGINX.
+* [Systemd Service](/documentation/deploy/systemd) - Run your app as a systemd service.
+* [Cloud Providers](/documentation/deploy/cloud-providers) - Deploy your app on a cloud provider.

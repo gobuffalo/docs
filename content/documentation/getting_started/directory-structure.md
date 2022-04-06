@@ -58,10 +58,10 @@ This directory contains **raw** assets which will be compiled/compressed & put i
 ### grifts
 
 {{< note >}}
-This directory is optional. If you don't need to use [tasks](/en/docs/tasks), you can remove it.
+This directory is optional. If you don't need to use [tasks](/documentation/guides/tasks), you can remove it.
 {{< /note >}}
 
-This directory contains the [tasks](/en/docs/tasks) powered by [grift](https://github.com/markbates/grift).
+This directory contains the [tasks](/documentation/guides/tasks) powered by [grift](https://github.com/markbates/grift).
 
 ### locales
 
@@ -121,4 +121,4 @@ This file bootstraps your app and starts it.
 
 ## Next Steps
 
-* [Configuration](/en/docs/getting-started/config-vars) - Manage your app configuration.
+* [Configuration](/documentation/getting_started/configuration) - Manage your app configuration.

@@ -51,4 +51,4 @@ The available callbacks include:
 
 ## Related Content
 
-* [Models](/en/docs/db/models) - Define a database model.
+* [Models](/documentation/database/models) - Define a database model.

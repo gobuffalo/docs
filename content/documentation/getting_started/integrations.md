@@ -30,4 +30,4 @@ If you use `bash` shell, you can try this script, created by [@cippaciong](https
 
 ## Next Steps
 
-* [Generate a New Project](/en/docs/getting-started/new-project) - Create your first Buffalo project!
+* [Generate a New Project](/documentation/getting_started/new-project) - Create your first Buffalo project!

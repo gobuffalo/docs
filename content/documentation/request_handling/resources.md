@@ -247,4 +247,4 @@ func (v BaseResource) Edit(c Context) error {
 
 ## Related Content
 
-* [Actions](/en/docs/actions) - Learn more about Buffalo actions.
+* [Actions](/documentation/request_handling/actions) - Learn more about Buffalo actions.

@@ -23,7 +23,7 @@ The persistence layer of the Buffalo framework.
 Request handling and routing. The core of the framework.
 {{< /card >}}
 
-{{< card "card bg-blue-100 mb-4" "Deployment" "documentation/deploy/building">}}
+{{< card "card bg-blue-100 mb-4" "Deployment" "documentation/deploy/packing">}}
 Guides on how to deploy your Buffalo application.
 {{< /card >}}
 

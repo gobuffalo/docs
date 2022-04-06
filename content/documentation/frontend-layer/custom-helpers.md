@@ -78,7 +78,7 @@ func() string {
 
 #### `template.HTML`
 
-[https://golang.org/pkg/html/template/#HTML](https://golang.org/pkg/html/template/#HTMLlate/#HTML)
+[https://golang.org/pkg/html/template/#HTML](https://golang.org/pkg/html/template/#HTML)
 
 Return a `template.HTML` string. The `template.HTML` will **not** be HTML escaped, and will be deemed safe.
 

@@ -165,8 +165,6 @@ Source: [https://github.com/gobuffalo/simple-ajax-recipe](https://github.com/gob
 
 ## Videos About Buffalo
 
-* **Gopher Guides** - GopherGuides.tv [https://www.gopherguides.tv/buffalo-resources](https://www.gopherguides.tv/buffalo-resources)
-
 * **Go in 5 Minutes** - [https://www.goin5minutes.com/screencasts/](https://www.goin5minutes.com/screencasts/)
 
 * **August 28th, 2018** - Go on Azure: Part 7—Build a Go app with Buffalo and deploy to Azure [https://channel9.msdn.com/Shows/Azure-Friday/Go-on-Azure-Part-7-Build-a-Go-app-with-Buffalo-and-deploy-to-Azure](https://channel9.msdn.com/Shows/Azure-Friday/Go-on-Azure-Part-7-Build-a-Go-app-with-Buffalo-and-deploy-to-Azure)

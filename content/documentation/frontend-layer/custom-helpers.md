@@ -1,5 +1,9 @@
 ---
 Name: "Custom Helpers"
+weight: 7
+aliases:
+  - /docs/custom-helpers
+  - /en/docs/custom-helpers
 ---
 
 # Custom Helpers

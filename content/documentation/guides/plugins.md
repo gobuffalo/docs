@@ -1,5 +1,9 @@
 ---
 name: Plugins
+weight: 20
+aliases:
+  - /docs/plugins
+  - /en/docs/plugins
 ---
 
 # Plugins

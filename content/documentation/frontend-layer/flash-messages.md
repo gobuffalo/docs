@@ -1,5 +1,9 @@
 ---
 Name: "Flash Messages"
+weight: 8
+aliases:
+  - /docs/flash-messages
+  - /en/docs/flash-messages
 ---
 
 # Flash Messages

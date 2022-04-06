@@ -1,5 +1,9 @@
 ---
 name: API Applications
+weight: 10
+aliases:
+  - /docs/apis
+  - /en/docs/apis
 ---
 
 # API Applications

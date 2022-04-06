@@ -1,5 +1,8 @@
 ---
 Name: "Assets"
+aliases:
+  - /docs/assets
+  - /en/docs/assets
 ---
 # Assets
 

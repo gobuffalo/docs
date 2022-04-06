@@ -2,6 +2,9 @@
 Name: Sessions
 seoDescription: "Sessions"
 seoKeywords: ["buffalo", "go", "golang", "http", "session"]
+aliases:
+  - /docs/sessions
+  - /en/docs/sessions
 ---
 
 # Sessions

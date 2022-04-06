@@ -2,6 +2,10 @@
 name: Database Configuration
 seoDescription: "How to configure my database with Pop?"
 seoKeywords: ["buffalo", "go", "golang", "database", "ORM", "pop", "configuration"]
+weight: 3
+aliases:
+  - /docs/db/configuration
+  - /en/docs/db/configuration
 ---
 # Database Configuration
 

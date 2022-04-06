@@ -2,6 +2,10 @@
 name: Request Binding
 seoDescription: "Bind request parameters to Buffalo context"
 seoKeywords: ["buffalo", "go", "golang", "bind", "parameter", "context"]
+weight: 5
+aliases:
+  - /docs/bind
+  - /en/docs/bind
 ---
 
 # Request Binding

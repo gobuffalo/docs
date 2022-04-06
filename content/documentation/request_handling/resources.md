@@ -2,6 +2,10 @@
 name: Resources
 seoDescription: "How to use Buffalo's resources?"
 seoKeywords: ["buffalo", "go", "golang", "resources", "routing", "generator"]
+weight: 3
+aliases:
+  - /docs/resources
+  - /en/docs/resources
 ---
 
 # Resources

@@ -1,5 +1,9 @@
 ---
 Name: "Rendering"
+weight: 1
+aliases:
+  - /docs/rendering
+  - /en/docs/rendering
 ---
 
 # Rendering

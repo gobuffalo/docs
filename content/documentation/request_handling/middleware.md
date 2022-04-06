@@ -1,5 +1,9 @@
 ---
 name: Middleware
+weight: 6
+aliases:
+  - /docs/middleware
+  - /en/docs/middleware
 ---
 # Middleware
 

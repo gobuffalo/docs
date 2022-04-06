@@ -1,6 +1,10 @@
 ---
 name: Mutations
 seoDescription: "Handle mutations with Pop"
+weight: 20
+aliases:
+  - /docs/db/mutations
+  - /en/docs/db/mutations
 ---
 
 # Mutations

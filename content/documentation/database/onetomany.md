@@ -1,8 +1,11 @@
 ---
+name: One to many associations
 seoDescription: "Pop one to many associations"
 seoKeywords: ["orm", "buffalo", "go", "golang", "pop", "one to many", "associations"]
-
-name: One to many associations
+weight: 53
+aliases:
+  - /docs/db/relations/onetomany
+  - /en/docs/db/relations/onetomany
 ---
 
 # One to many associations

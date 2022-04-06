@@ -2,6 +2,10 @@
 Name: Fizz
 seoDescription: "Fizz"
 seoKeywords: ["buffalo", "go", "golang", "database", "fizz", "pop", "DSL"]
+weight: 13
+aliases:
+  - /docs/db/fizz
+  - /en/docs/db/fizz
 ---
 
 # Fizz

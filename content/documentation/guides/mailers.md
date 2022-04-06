@@ -1,5 +1,10 @@
 ---
 name: Mailers
+weight: 13
+aliases:
+  - /documentation/guides/mail
+  - /docs/mail
+  - /en/docs/mail
 ---
 
 E-mails are part of most (web) systems. It's a standard way to inform users about platform news, confirmations, marketing stuff, and so on.

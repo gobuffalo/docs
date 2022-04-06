@@ -1,8 +1,11 @@
 ---
+Name: "Routing"
 seoDescription: "How to handle routes in Buffalo?"
 seoKeywords: ["buffalo", "go", "golang", "http", "route", "gorilla", "mux", "router"]
-
-Name: "Routing"
+weight: 1
+aliases:
+  - /docs/routing
+  - /en/docs/routing
 ---
 
 # Routing

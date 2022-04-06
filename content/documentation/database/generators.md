@@ -1,5 +1,9 @@
 ---
 name: Generators
+weight: 11
+aliases:
+  - /docs/db/generators
+  - /en/docs/db/generators
 ---
 # Generators
 

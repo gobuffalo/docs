@@ -1,7 +1,11 @@
 ---
+name: Tasks
+weight: 14
 seoDescription: Tasks
 seoKeywords: ["buffalo", "go", "golang", "tasks", "scripts", "grift"]
-name: Tasks
+aliases:
+  - /docs/tasks
+  - /en/docs/tasks
 ---
 # Tasks
 

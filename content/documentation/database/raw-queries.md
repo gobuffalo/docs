@@ -2,6 +2,10 @@
 name: Raw Queries
 seoDescription: "Writing raw queries with Pop"
 seoKeywords: ["buffalo", "go", "golang", "database", "raw", "query", "custom"]
+weight: 22
+aliases:
+  - /docs/db/raw-queries
+  - /en/docs/db/raw-queries
 ---
 
 # Raw Queries

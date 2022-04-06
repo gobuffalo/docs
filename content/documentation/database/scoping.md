@@ -1,5 +1,9 @@
 ---
 name: Scoping
+weight: 31
+aliases:
+  - /docs/db/scoping
+  - /en/docs/db/scoping
 ---
 # Scoping
 

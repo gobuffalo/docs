@@ -1,5 +1,9 @@
 ---
 Name: Context
+weight: 4
+aliases:
+  - /docs/context
+  - /en/docs/context
 ---
 # Context
 

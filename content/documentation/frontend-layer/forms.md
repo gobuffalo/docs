@@ -1,5 +1,9 @@
 ---
 Name: "Forms"
+weight: 9
+aliases:
+  - /docs/forms
+  - /en/docs/forms
 ---
 
 # Forms

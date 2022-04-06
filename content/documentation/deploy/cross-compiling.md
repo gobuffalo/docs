@@ -1,7 +1,11 @@
 ---
+name: Cross-compiling
 seoDescription: "Cross-compiling a Buffalo application"
 seoKeywords: ["buffalo", "go", "golang", "cross-compile", "GOOS", "GOARCH", "linux", "arm", "windows", "mac"]
-name: Cross-compiling
+weight: 2
+aliases:
+  - /docs/cross-compiling
+  - /en/docs/cross-compiling
 ---
 
 # Cross-compiling a Buffalo application

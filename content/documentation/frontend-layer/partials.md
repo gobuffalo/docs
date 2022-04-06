@@ -1,5 +1,9 @@
 ---
 Name: "Partials"
+weight: 4
+aliases:
+  - /docs/partials
+  - /en/docs/partials
 ---
 
 # Partials

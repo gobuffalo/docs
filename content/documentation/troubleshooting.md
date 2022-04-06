@@ -1,6 +1,8 @@
 ---
 name: Troubleshooting
 icon: "images/troubleshoot.svg"
+aliases:
+  - /en/docs/troubleshooting
 ---
 
 # TroubleShooting

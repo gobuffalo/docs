@@ -2,6 +2,8 @@
 weight: 2
 name: Tutorials
 icon: "images/tutorials.svg"
+aliases:
+  - /en/docs/examples
 ---
 
 # Tutorials

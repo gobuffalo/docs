@@ -2,6 +2,10 @@
 name: Buffalo Integration
 seoDescription: "How to use Pop with Buffalo?"
 seoKeywords: ["buffalo", "go", "golang", "pop", "buffalo", "integration"]
+weight: 4
+aliases:
+  - /docs/db/buffalo-ingetration
+  - /en/docs/db/buffalo-ingetration
 ---
 
 # Buffalo Integration

@@ -1,7 +1,11 @@
 ---
+name: Associations and Relationships
 seoDescription: "How to manage associations and relationships with Pop?"
 seoKeywords: ["buffalo", "go", "golang", "database", "ORM", "pop", "associations", "relations", "entity"]
-name: Associations and Relationships
+weight: 51
+aliases:
+  - /docs/db/relations
+  - /en/docs/db/relations
 ---
 
 # Associations and Relationships

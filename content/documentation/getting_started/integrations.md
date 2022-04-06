@@ -10,6 +10,10 @@ seoKeywords:
   - "zsh"
   - "go"
   - "golang"
+weight: 9
+aliases:
+  - /docs/getting-started/integrations
+  - /en/docs/getting-started/integrations
 ---
 
 # Tooling Integration

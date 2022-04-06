@@ -1,5 +1,9 @@
 ---
 name: Background Job Workers
+weight: 12
+aliases:
+  - /docs/workers
+  - /en/docs/workers
 ---
 # Background Job Workers
 

@@ -2,6 +2,10 @@
 name: Models
 seoDescription: "Models"
 seoKeywords: ["buffalo", "go", "golang", "database", "ORM", "pop", "models"]
+weight: 10
+aliases:
+  - /docs/db/models
+  - /en/docs/db/models
 ---
 
 Pop, as an ORM, allows you to translate database tables into Go structs. This way, you can manipulate Go structs instead of writing SQL statements. The Go code managing this part is named "models", as a reference to the MVC architecture.

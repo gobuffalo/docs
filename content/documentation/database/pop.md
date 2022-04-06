@@ -2,6 +2,11 @@
 name: Getting started with Pop
 seoDescription: "Getting started with Pop"
 seoKeywords: ["buffalo", "go", "golang", "database", "ORM", "pop", "migrations"]
+weight: 1
+aliases:
+  - /documentation/database/getting-started
+  - /docs/db/getting-started
+  - /en/docs/db/getting-started
 ---
 
 # Getting started with Pop

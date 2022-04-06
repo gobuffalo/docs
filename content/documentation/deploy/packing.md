@@ -1,7 +1,12 @@
 ---
+name: Packing
 seoDescription: "Packing a Buffalo application"
 seoKeywords: ["buffalo", "go", "golang", "pack", "binary", "build"]
-name: Packing
+weight: 1
+aliases:
+  - /documentation/deploy/building
+  - /docs/building
+  - /en/docs/building
 ---
 
 # Packing

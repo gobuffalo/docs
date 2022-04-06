@@ -2,6 +2,10 @@
 name: Action Controller
 seoDescription: "How to define and use Action Controllers?"
 seoKeywords: ["buffalo", "go", "golang", "actions", "controller", "generator"]
+weight: 2
+aliases:
+  - /docs/actions
+  - /en/docs/actions
 ---
 
 # Action Controller

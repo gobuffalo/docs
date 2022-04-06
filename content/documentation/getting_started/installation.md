@@ -12,6 +12,9 @@ seoKeywords:
   - "windows"
   - "linux"
 weight: 1
+aliases:
+  - /docs/getting-started/installation
+  - /en/docs/getting-started/installation
 ---
 
 # Install Buffalo

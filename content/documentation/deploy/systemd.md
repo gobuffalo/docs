@@ -1,7 +1,11 @@
 ---
+name: Systemd Service
 seoDescription: "Systemd Service"
 seoKeywords: ["buffalo", "go", "golang", "service", "systemd", "debian", "redhat", "centos"]
-name: Systemd Service
+weight: 10
+aliases:
+  - /docs/systemd
+  - /en/docs/systemd
 ---
 # Systemd Service
 

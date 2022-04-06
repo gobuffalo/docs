@@ -23,7 +23,7 @@ La couche de persistance du framework Buffalo.
 Request handling and routing. The core of the framework.
 {{< /card >}}
 
-{{< card "card bg-blue-100 mb-4" "Deployment" "documentation/deploy/building">}}
+{{< card "card bg-blue-100 mb-4" "Deployment" "documentation/deploy/packing">}}
 Traitement et routage des demandes. Le cœur du cadre.
 {{< /card >}}
 

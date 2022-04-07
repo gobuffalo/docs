@@ -2,6 +2,7 @@
 name: Cookies
 seoDescription: "Cookies"
 seoKeywords: ["buffalo", "go", "golang", "http", "cookie"]
+weight: 9
 aliases:
   - /docs/cookies
   - /en/docs/cookies

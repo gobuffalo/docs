@@ -9,7 +9,7 @@ seoKeywords:
   - "env"
   - "framework"
   - "web"
-weight: 3
+weight: 4
 aliases:
   - /documentation/getting_started/config-vars
   - /docs/getting-started/config-vars

@@ -10,6 +10,7 @@ languages:
   en:
     languageName: English
     languageCode: en-us
+    title: 🇬🇧 EN
     weight: 2
     params:
       copyRight: Copyright © 2022 Buffalo. All rights reserved.
@@ -21,6 +22,7 @@ languages:
       tutorials: "Tutorials"
       support: "Support"
       troubleshooting: "Troubleshooting"
+      searchButtonText: "Search..."
       searchPlaceholder: "Search the Buffalo docs"
       noResultsCopy: "We couldn't find any guides or documents with that term. Please try again. You can also visit the documentation site and navigate for more details."
       fromOurBlog: "From our blog"
@@ -38,8 +40,9 @@ languages:
         #   url: 'https://store.gobuffalo.io'
         #   weight: 6
   fr:
-    languageName: French
+    languageName: Français
     languageCode: fr-fr
+    title: 🇫🇷 FR
     weight: 1
     params:
       copyRight: Copyright © 2022 Buffalo. Tous droits réservés.
@@ -51,6 +54,7 @@ languages:
       tutorials: "Tutoriels"
       support: "Support"
       troubleshooting: "Dépannage"
+      searchButtonText: "Rechercher..."
       searchPlaceholder: "Rechercher dans les documents Buffalo"
       noResultsCopy: "Nous n'avons trouvé aucun guide ou document contenant ce terme. Veuillez réessayer. Vous pouvez également visiter le site de documentation et naviguer pour plus de détails."
       fromOurBlog: "De notre blog"

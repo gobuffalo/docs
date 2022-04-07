@@ -2,6 +2,7 @@
 name: Error Handling
 seoDescription: "Errors Handling"
 seoKeywords: ["buffalo", "go", "golang", "errors"]
+weight: 7
 aliases:
   - /docs/errors
   - /en/docs/errors

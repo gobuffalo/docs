@@ -9,7 +9,7 @@ seoKeywords:
   - "directory"
   - "framework"
   - "web"
-weight: 4
+weight: 3
 aliases:
   - /docs/getting-started/directory-structure
   - /en/docs/getting-started/directory-structure

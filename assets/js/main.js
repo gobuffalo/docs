@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () =>{
 
     loadLatestLibVersion();
     loadLatestCliVersion();
+    loadLatestBinaryVersion();
 });
 
 function loadLatestLibVersion() {
@@ -26,6 +27,25 @@ function loadLatestLibVersion() {
     }).then(data => {
         els.forEach(el => {
             el.innerHTML = data.items[0].title;
+        })
+    })
+}
+
+function loadLatestBinaryVersion() {
+    let els = document.querySelectorAll(".latest-cli-binary-version");
+    if (els.length == 0){
+        return
+    }
+
+    fetch(`https://api.rss2json.com/v1/api.json?rss_url=https://github.com/gobuffalo/cli/releases.atom`, {
+        headers: {
+          'Accept': 'application/json'
+        }
+    }).then(response => {
+        return response.json();
+    }).then(data => {
+        els.forEach(el => {
+            el.innerHTML = data.items[0].title.replace("v", "");
         })
     })
 }

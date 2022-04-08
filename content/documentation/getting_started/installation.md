@@ -63,7 +63,7 @@ Since `v0.10.3`, pre-compiled archives are provided with each release. If you do
 
 ```console
 $ wget https://github.com/gobuffalo/cli/releases/download/{{< latestclirelease >}}/buffalo_{{< latestclibinaryversion >}}_Linux_x86_64.tar.gz
-$ tar -xvzf buffalo_{{< latestclirelease >}}_Linux_x86_64.tar.gz
+$ tar -xvzf buffalo_{{< latestclibinaryversion >}}_Linux_x86_64.tar.gz
 $ sudo mv buffalo /usr/local/bin/buffalo
 ```
 
@@ -71,7 +71,7 @@ $ sudo mv buffalo /usr/local/bin/buffalo
 
 ```console
 $ curl -OL https://github.com/gobuffalo/cli/releases/download/{{< latestclirelease >}}/buffalo_{{< latestclibinaryversion >}}_Darwin_x86_64.tar.gz
-$ tar -xvzf buffalo_{{< latestclirelease >}}_Darwin_x86_64.tar.gz
+$ tar -xvzf buffalo_{{< latestclibinaryversion >}}_Darwin_x86_64.tar.gz
 $ sudo mv buffalo /usr/local/bin/buffalo
 # or if you have ~/bin folder setup in the environment PATH variable
 $ mv buffalo ~/bin/buffalo

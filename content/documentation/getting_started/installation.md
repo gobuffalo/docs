@@ -61,7 +61,7 @@ Since `v0.10.3`, pre-compiled archives are provided with each release. If you do
 
 ### GNU / Linux
 
-```console
+```sh
 $ wget https://github.com/gobuffalo/cli/releases/download/{{< latestclirelease >}}/buffalo_{{< latestclibinaryversion >}}_Linux_x86_64.tar.gz
 $ tar -xvzf buffalo_{{< latestclibinaryversion >}}_Linux_x86_64.tar.gz
 $ sudo mv buffalo /usr/local/bin/buffalo
@@ -69,7 +69,7 @@ $ sudo mv buffalo /usr/local/bin/buffalo
 
 ### MacOS
 
-```console
+```sh
 $ curl -OL https://github.com/gobuffalo/cli/releases/download/{{< latestclirelease >}}/buffalo_{{< latestclibinaryversion >}}_Darwin_x86_64.tar.gz
 $ tar -xvzf buffalo_{{< latestclibinaryversion >}}_Darwin_x86_64.tar.gz
 $ sudo mv buffalo /usr/local/bin/buffalo
@@ -95,7 +95,7 @@ PS C:\> choco install buffalo
 
 On macOS, you can also install Buffalo with [Homebrew](https://brew.sh/). After you have Homebrew [installed](https://docs.brew.sh/Installation), you can easily install Buffalo:
 
-```console
+```sh
 brew install gobuffalo/tap/buffalo
 ```
 
@@ -105,7 +105,7 @@ brew install gobuffalo/tap/buffalo
 
 After you have GoFish [installed](https://gofi.sh/index.html#install), you can very simply install Buffalo:
 
-```console
+```sh
 $ gofish install buffalo
 ==> Installing buffalo...
 🐠  buffalo {{< latestclirelease >}}: installed in 3.223672926s
@@ -117,7 +117,7 @@ $ gofish install buffalo
 
 To install Buffalo, ensure your `GOPATH` is defined, then:
 
-```console
+```sh
 $ go install -tags sqlite github.com/gobuffalo/cli/cmd/buffalo@{{< latestclirelease >}}
 ```
 
@@ -133,7 +133,7 @@ These instructions can also be used for upgrading to a newer version of Buffalo.
 
 ## Custom Installation **without** SQLite3 Support
 
-```console
+```sh
 $ go install github.com/gobuffalo/cli/cmd/buffalo@{{< latestclirelease >}}
 ```
 
@@ -145,7 +145,7 @@ These instructions can also be used for upgrading to a newer version of Buffalo.
 
 You can check if your installation is working, by executing the `buffalo` command in a terminal/command prompt:
 
-```console
+```sh
 $ buffalo
 Helps you build your Buffalo applications that much easier!
 

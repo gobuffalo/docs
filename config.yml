@@ -71,3 +71,31 @@ languages:
         # - name: Boutique
         #   url: 'https://store.gobuffalo.io'
         #   weight: 6
+  es:
+    languageName: Spanish
+    languageCode: es-la
+    title: 🇪🇸 ES
+    weight: 1
+    params:
+      copyRight: Copyright © 2022 Buffalo. Todos los derechos reservados.
+      logoCredits: >-
+        El Roedor de Buffalo fué diseñado por [Ashley
+        McNamara](https://twitter.com/ashleymcnamara) — El roedor original de Go fué diseñado por Renee French
+      documentation: "Documentación"
+      tutorials: "Tutoriales"
+      support: "Soporte"
+      troubleshooting: "Solución de problemas"
+      searchButtonText: "Buscar..."
+      searchPlaceholder: "Buscarn en la documentación de Buffalo"
+      noResultsCopy: "No pudimos encontrar guías o documentos con ese término. Inténtalo de nuevo. También puede visitar el sitio de documentación y navegar para obtener más detalles."
+      fromOurBlog: "En nuestro Blog"
+      learnMore: "Aprender More"
+      readMore: "Leer más"
+    menu:
+      top:
+        - name: Documentación
+          url: /documentation/
+          weight: 3
+        - name: Blog
+          url: 'https://blog.gobuffalo.io'
+          weight: 5

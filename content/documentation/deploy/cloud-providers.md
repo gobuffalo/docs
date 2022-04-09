@@ -4,9 +4,9 @@ seoDescription: "Cloud Providers"
 seoKeywords: ["buffalo", "go", "golang", "providers", "cloud", "deploy", "azure", "digital ocean", "heroku"]
 weight: 30
 aliases:
-  - /documatation/deploy/providers
-  - /docs/providers
-  - /en/docs/providers
+  - /documentation/deploy/providers
+  - /docs/deploy/providers
+  - /en/docs/deploy/providers
 ---
 # Cloud Providers
 

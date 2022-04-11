@@ -4,6 +4,7 @@ name: Documentation
 icon: "images/documentation.svg"
 aliases:
   - /en/docs
+  - /en/docs/index
 ---
 # The Buffalo Documentation
 

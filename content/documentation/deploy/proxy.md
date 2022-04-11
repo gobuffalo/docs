@@ -4,8 +4,8 @@ seoDescription: "Using a Proxy"
 seoKeywords: ["buffalo", "go", "golang", "proxy", "nginx", "apache"]
 weight: 20
 aliases:
-  - /docs/proxy
-  - /en/docs/proxy
+  - /docs/deploy/proxy
+  - /en/docs/deploy/proxy
 ---
 # Using a Proxy
 

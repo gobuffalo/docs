@@ -5,8 +5,8 @@ seoKeywords: ["buffalo", "go", "golang", "pack", "binary", "build"]
 weight: 1
 aliases:
   - /documentation/deploy/building
-  - /docs/building
-  - /en/docs/building
+  - /docs/deploy/building
+  - /en/docs/deploy/building
 ---
 
 # Packing

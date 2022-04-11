@@ -4,8 +4,8 @@ seoDescription: "Systemd Service"
 seoKeywords: ["buffalo", "go", "golang", "service", "systemd", "debian", "redhat", "centos"]
 weight: 10
 aliases:
-  - /docs/systemd
-  - /en/docs/systemd
+  - /docs/deploy/systemd
+  - /en/docs/deploy/systemd
 ---
 # Systemd Service
 

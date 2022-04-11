@@ -1,0 +1,24 @@
+{{define "customheader"}} 
+	<meta http-equiv="refresh" content="10; url=/" />
+	<meta name="robots" content="noindex">
+{{end}}
+
+{{ define "main"}}
+	<div class="container py-36 hero h-full text-white">
+		<div class="flex flex-row">
+			<div>
+				<h1 class="md:text-left text-6xl font-bold mb-10">
+					Oops! Page not found.
+				</h1>
+				<div class="md:text-left text-5xl font-bold">
+					You will be redirected to the main page in 10 seconds.
+				</div>
+			</div>
+			<div class="lg:flex lg:flex-grow justify-center">
+				<img src="/images/logo.svg" class="w-96 mx-auto" alt="buffalo logo">
+			</div>
+		</div>
+	</div>
+{{ end }}
+
+

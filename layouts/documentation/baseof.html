@@ -77,12 +77,12 @@
 				{{ partial "languageselector.html" . }}
 
 				<div class="flex md:gap-6">
-					<aside class="bg-gray-200 rounded-md p-7 hidden md:block docssidebar">
+					<aside class="bg-gray-200 rounded-md p-5 pl-3 hidden md:block docssidebar">
 						{{partial "docssidebar" .}}
 					</aside>
 
 					<div class="w-full p-5 md:flex-grow md:p-9 bg-white rounded-md">
-						<div class="max-w-4xl content mt-2">
+						<div class="max-w-4xl md:max-w-3xl content mt-2">
 							{{ block "main" . }}{{end }}
 						</div>
 					</div>

@@ -1,10 +1,9 @@
 {{ $section := .Scratch.Get "section" }}
 {{ $currentPage := .Scratch.Get "currentPage" }}
-<h2 class="text-gray-800 font-bold">{{ .Title }}</h2>
-<ul class="mb-3 pl-2 py-2">
-    {{ range .Site.Pages }}     
+<h2 class="text-gray-800 font-bold pl-2">{{ .Title }}</h2>
+<ul class="mb-3 pl-4 py-2">
+    {{ range .RegularPages | lang.Merge .Sites.First.RegularPages }}
         {{ $addIt  := .InSection $section }}
-        {{ $addIt  = and $addIt (ne . $section) }}
         {{ if $addIt }}
             {{ $active := eq $currentPage (. | relLangURL)  }}
             <li class="px-2 py-1.5 {{if $active}} bg-blue-200 rounded-sm border-l border-blue-800 {{end}} p-0.5">
@@ -12,4 +11,4 @@
             </li>
         {{ end }}
     {{ end }}
-</ul>     
+</ul>

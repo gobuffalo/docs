@@ -11,7 +11,7 @@ languages:
     languageName: English
     languageCode: en-us
     title: 🇬🇧 EN
-    weight: 2
+    weight: 1
     params:
       copyRight: Copyright © 2022 Buffalo. All rights reserved.
       logoCredits: >-
@@ -43,7 +43,7 @@ languages:
     languageName: Français
     languageCode: fr-fr
     title: 🇫🇷 FR
-    weight: 1
+    weight: 2
     params:
       copyRight: Copyright © 2022 Buffalo. Tous droits réservés.
       logoCredits: >-

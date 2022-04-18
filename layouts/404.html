@@ -1,24 +1,26 @@
-{{define "customheader"}} 
-	<meta http-equiv="refresh" content="10; url=/" />
-	<meta name="robots" content="noindex">
-{{end}}
+{{ define "main" }}
+	<div class="flex items-center justify-center hero-404 text-white h-screen">
 
-{{ define "main"}}
-	<div class="container py-36 hero h-full text-white">
-		<div class="flex flex-row">
-			<div>
-				<h1 class="md:text-left text-6xl font-bold mb-10">
-					Oops! Page not found.
-				</h1>
-				<div class="md:text-left text-5xl font-bold">
-					You will be redirected to the main page in 10 seconds.
-				</div>
+		{{- $image := resources.Get "images/404.png" -}}
+
+		<div class="flex flex-col text-center my-32">
+			<div class="flex">
+				<img src="{{ $image.RelPermalink }}" class="w-80" width="400" alt="4 number">
+				<img src="/images/logo.svg" class="buffalo-logo -ml-20 -mr-16" width="250" alt="buffalo logo" />
+				<img src="{{ $image.RelPermalink }}" class="w-80" alt="4 number">
 			</div>
-			<div class="lg:flex lg:flex-grow justify-center">
-				<img src="/images/logo.svg" class="w-96 mx-auto" alt="buffalo logo">
-			</div>
+			<h1 class="xl:text-5xl lg:text-4xl md:text-3xl font-bold mb-4">Not Found.</h1>
+			<p class="xl:text-3xl md:text-xl">We could not find the address you’ve requested.</p>
+
+			<span class="hidden md:flex mt-6">
+				<button class="search-button hidden sm:flex items-center bg-white text-black w-4/5 text-left p-3 mx-auto space-x-3 ring-1 ring-slate-900/10 hover:ring-slate-300 focus:outline-none focus:ring-2 focus:ring-sky-500 shadow-sm rounded">
+					<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="flex-none text-slate-300 dark:text-slate-400" aria-hidden="true">
+						<path d="m19 19-3.5-3.5"></path><circle cx="11" cy="11" r="6"></circle>
+					</svg>
+					<span class="flex-auto">{{.Site.Params.SearchButtonText}}</span><kbd class="font-sans font-semibolb dark:text-slate-500"><abbr title="Command" class="no-underline text-black dark:text-slate-500">⌘</abbr> K</kbd>
+				</button>
+			</span>
 		</div>
+
 	</div>
 {{ end }}
-
-

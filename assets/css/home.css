@@ -13,9 +13,40 @@ html {
     @apply mx-auto md:px-10;
 }
 
+.buffalo-logo {
+    animation: logoBuffalo 2s alternate infinite linear;
+}
+
+@keyframes logoBuffalo {
+    from {
+      transform: translatey(.20em) scaley(.95);
+    }
+
+    to {
+      transform: translatey(-.20em);
+    }
+}
+
+.hero-404::before {
+    content: '';
+    background: url('/images/bg.png') no-repeat left bottom;
+    background-size: cover;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    opacity: .8;
+}
+
+.hero-404 {
+    position: relative;
+}
 
 .hero {
-    background: #0a193f url('/images/bg.png') no-repeat left bottom;
+    background: url('/images/bg.png') no-repeat left bottom;
     background-size: cover;
     box-sizing: border-box;
     position: relative;

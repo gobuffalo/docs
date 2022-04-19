@@ -36,9 +36,6 @@ languages:
         - name: Blog
           url: 'https://blog.gobuffalo.io'
           weight: 5
-        # - name: Store
-        #   url: 'https://store.gobuffalo.io'
-        #   weight: 6
   fr:
     languageName: Français
     languageCode: fr-fr
@@ -68,14 +65,11 @@ languages:
         - name: Blog
           url: 'https://blog.gobuffalo.io'
           weight: 5
-        # - name: Boutique
-        #   url: 'https://store.gobuffalo.io'
-        #   weight: 6
   es:
     languageName: Spanish
     languageCode: es-la
     title: 🇪🇸 ES
-    weight: 1
+    weight: 3
     params:
       copyRight: Copyright © 2022 Buffalo. Todos los derechos reservados.
       logoCredits: >-

@@ -144,7 +144,7 @@ func App() *buffalo.App {
 		app.Use(middleware.PopTransaction(models.DB))
 		app.Use(translations())
 		app.GET("/", HomeHandler)
-		app.ServeFiles("/", assetsBox) // serve files from the public directory
+		app.ServeFiles("/", http.FS(public.FS())) // serve files from the public directory
 	}
 	return app
 }
@@ -154,8 +154,8 @@ func App() *buffalo.App {
 func init() {
 	r = render.New(render.Options{
 		HTMLLayout:   "application.html",
-		TemplatesBox: packr.NewBox("../templates"),
-		AssetsBox:    assetsBox,
+		TemplatesFS: templates.FS(),
+		AssetsFS: public.FS(),
 		Helpers:      render.Helpers{},
 	})
 }

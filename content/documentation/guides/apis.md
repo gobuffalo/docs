@@ -157,7 +157,7 @@ func init() {
 	r = render.New(render.Options{
 		HTMLLayout:   "application.html",
 		TemplatesFS:  templates.FS(),
-		AssetsFS: 	  public.FS(),
+		AssetsFS:     public.FS(),
 		Helpers:      render.Helpers{},
 	})
 }

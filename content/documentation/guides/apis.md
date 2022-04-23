@@ -23,6 +23,7 @@ $ buffalo new --api coke
 Applications generated with the `--api` flag don't contain any front systems. This means there is no templating, stylesheets, etc...
 
 #### <code>buffalo new coke --api</code>
+
 ```erb
 ├── Dockerfile
 ├── README.md
@@ -46,6 +47,7 @@ Applications generated with the `--api` flag don't contain any front systems. Th
 ```
 
 #### <code>buffalo new coke</code>
+
 ```erb
 ├── Dockerfile
 ├── README.md
@@ -154,8 +156,8 @@ func App() *buffalo.App {
 func init() {
 	r = render.New(render.Options{
 		HTMLLayout:   "application.html",
-		TemplatesFS: templates.FS(),
-		AssetsFS: public.FS(),
+		TemplatesFS:  templates.FS(),
+		AssetsFS: 	  public.FS(),
 		Helpers:      render.Helpers{},
 	})
 }

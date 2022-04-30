@@ -4,16 +4,20 @@
 		{{- $image := resources.Get "images/404.png" -}}
 
 		<div class="flex flex-col text-center my-32">
-			<div class="flex">
-				<img src="{{ $image.RelPermalink }}" class="w-80" width="400" alt="4 number">
-				<img src="/images/logo.svg" class="buffalo-logo -ml-20 -mr-16" width="250" alt="buffalo logo" />
-				<img src="{{ $image.RelPermalink }}" class="w-80" alt="4 number">
+			<div class="flex justify-center">
+				<img src="{{ $image.RelPermalink }}" class="w-32 md:block md:w-64" alt="4 number">
+				<img src="/images/logo.svg" class="w-32 -ml-8 -mr-8 md:w-64 buffalo-logo md:-ml-20 md:-mr-16" alt="buffalo logo" />
+				<img src="{{ $image.RelPermalink }}" class="w-32 md:block md:w-64" alt="4 number">
 			</div>
-			<h1 class="xl:text-5xl lg:text-4xl md:text-3xl font-bold mb-4">Not Found.</h1>
-			<p class="xl:text-3xl md:text-xl">We could not find the address you’ve requested.</p>
 
-			<span class="hidden md:flex mt-6">
-				<button class="search-button hidden sm:flex items-center bg-white text-black w-4/5 text-left p-3 mx-auto space-x-3 ring-1 ring-slate-900/10 hover:ring-slate-300 focus:outline-none focus:ring-2 focus:ring-sky-500 shadow-sm rounded">
+			<div class="flex mx-12 flex-col">
+				<h1 class="text-2xl font-black md:text-3xl mb-4">Not Found.</h1>
+				<p class="xl:text-1xl md:text-xl">We could not find the address you’ve requested.</p>
+			</div>
+
+
+			<span class="block md:flex mt-6">
+				<button class="search-button flex items-center bg-white text-black w-4/5 text-left p-2 md:p-3 mx-auto space-x-3 ring-1 ring-slate-900/10 hover:ring-slate-300 focus:outline-none focus:ring-2 focus:ring-sky-500 shadow-sm rounded">
 					<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="flex-none text-slate-300 dark:text-slate-400" aria-hidden="true">
 						<path d="m19 19-3.5-3.5"></path><circle cx="11" cy="11" r="6"></circle>
 					</svg>

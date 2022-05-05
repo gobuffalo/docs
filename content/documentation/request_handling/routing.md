@@ -304,11 +304,11 @@ g.Use(APIAuthorizer)
 In the above example the `/api/v1` group will use both `SomeMiddleware` and `APIAuthorizer`. See [middleware](/documentation/request_handling/middleware) for more information about using, skipping, and clearing middleware.
 
 
-## Hosts
+## Virtual Hosts
 
 {{< since "0.18.2" >}}
 
-Buffalo apps also support grouping of end-points by host. `Host` creates a new group that matches the domain passed. This is useful for creating groups of end-points for different domains or subdomains.
+Buffalo apps also support grouping of end-points by host. `VirtualHost` creates a new group that matches the domain passed. This is useful for creating groups of end-points for different domains or subdomains.
 
 ```go
 app := buffalo.New(buffalo.Options{
@@ -316,12 +316,12 @@ app := buffalo.New(buffalo.Options{
     SessionName: "_coke_session",
 })
 
-subApp := app.Host("docs.domain.com")
+subApp := app.VirtualHost("docs.domain.com")
 subApp.GET("/", func (c buffalo.Context) error {
   return c.Render(http.StatusOK, r.String("docs.domain.com Homepage"))
 })
 
-domainApp := app.Host("example.com")
+domainApp := app.VirtualHost("example.com")
 domainApp.GET("/", func (c buffalo.Context) error {
   return c.Render(http.StatusOK, r.String("example.com Homepage"))
 })
@@ -334,8 +334,8 @@ app.GET("/", func (c buffalo.Context) error {
 Variables mapped to parameters are also supported:
 
 ```go
-app.Host("{subdomain}.example.com")
-app.Host("{subdomain:[a-z]+}.example.com")
+app.VirtualHost("{subdomain}.example.com")
+app.VirtualHost("{subdomain:[a-z]+}.example.com")
 ```
 
 ## Mounting http.Handler Apps
@@ -360,4 +360,3 @@ a.Mount("/admin", muxer())
 ```
 
 Since Buffalo `App` implements the `http.Handler` interface, you can also mount another Buffalo app and build modular apps.
-

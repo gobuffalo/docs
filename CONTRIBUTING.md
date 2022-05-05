@@ -38,15 +38,14 @@ The site is powered by [Buffalo](https://github.com/gobuffalo/buffalo) itself, s
 
 * Node.js >= 8.x
 * `npm` or `yarn` for the frontend pipeline.
-* A working Go (1.9.7 or greater) setup.
-* Go modules enabled (GO111MODULE set to `on`)
+* [Hugo](https://gohugo.io/getting-started/installing/)
 
 ### Run the website for dev
-```bash
+```console
 $ git clone git@github.com:gobuffalo/docs.git
 $ cd docs
-$ buffalo setup
-$ buffalo dev
+$ npm install
+$ hugo server -D
 ```
 
 And that's it!

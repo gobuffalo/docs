@@ -1,7 +1,7 @@
 ---
 name: Configuration
 seoDescription: "Handle configuration with Buffalo"
-seoKeywords: 
+seoKeywords:
   - "buffalo"
   - "go"
   - "golang"
@@ -28,14 +28,14 @@ The following variables are used by Buffalo:
 
 | Variable                 | Default                  | Usage                                                      |
 | ---                      | ---                      | ---                                                        |
-| `GO_ENV`                 | `development`            | The environment (dev, qa, production etc.) that Buffalo is run in                   |
-| `GO_BIN`                 | `go`                     | The Go compiler to use                                     |
-| `BUFFALO_PLUGIN_PATH`    | `$PATH`                  | Where Buffalo looks for plugins                            |
-| `BUFFALO_PLUGIN_TIMEOUT` | `1s`                     | How long Buffalo waits for a plugin to respond             |
-| `ADDR`                   | `127.0.0.1` or `0.0.0.0` | Which address to bind the server to                        |
-| `PORT`                   | `3000`                   | Which port to bind the server to                           |
-| `HOST`                   | `http://127.0.0.1:$PORT` | The "URL" of the application (i.e. what end users type in) |
-| `SESSION_SECRET`         | `""`                     | A salt used for securing sessions                          |
+| `GO_ENV`                 | `development`            | The environment (dev, qa, production etc.) that Buffalo is run in.                   |
+| `GO_BIN`                 | `go`                     | The Go compiler to use.                                     |
+| `BUFFALO_PLUGIN_PATH`    | `$PATH`                  | Where Buffalo looks for plugins.                            |
+| `BUFFALO_PLUGIN_TIMEOUT` | `1s`                     | How long Buffalo waits for a plugin to respond.             |
+| `ADDR`                   | `127.0.0.1` or `0.0.0.0` | Which address to bind the server to.                        |
+| `PORT`                   | `3000`                   | Which port to bind the server to.                           |
+| `HOST`                   | `http://127.0.0.1:$PORT` | The "URL" of the application (i.e. what end users type in). |
+| `SESSION_SECRET`         | `""`                     | A salt used for securing sessions.                          |
 
 ## Custom Configuration
 
@@ -71,3 +71,7 @@ APP_URL=https://myapp.com
 ```
 
 Generated apps (**with buffalo >= 0.10.3**) will also create a default `.env` file in your application root. This file will be watched by Buffalo for changes, but will be ignored by git (added in the `.gitignore`). This is a good way to prevent developers to push credentials by mistake.
+
+## Next Steps
+
+* [Tooling Integration](/documentation/getting_started/integrations) - Work with Buffalo, using existing tools.

@@ -77,13 +77,17 @@
 				{{ partial "languageselector.html" . }}
 
 				<div class="flex md:gap-6">
-					<aside class="bg-gray-200 rounded-md p-5 pl-3 hidden md:block docssidebar">
-						{{partial "docssidebar" .}}
+					<aside class="hidden md:block">
+						<div class="bg-gray-200 rounded-md p-5 pl-3 ">
+							{{partial "docssidebar" .}}
+						</div>
 					</aside>
 
-					<div class="w-full p-5 md:flex-grow md:p-9 bg-white rounded-md">
-						<div class="max-w-4xl md:max-w-3xl content mt-2">
-							{{ block "main" . }}{{end }}
+					<div class="overflow-x-auto md:flex-grow">
+						<div class="bg-white rounded-md p-5 md:p-9 mx-6 md:mx-0">
+							<div class="content mt-2">
+								{{ block "main" . }}{{end }}
+							</div>
 						</div>
 					</div>
 				</div>

@@ -177,5 +177,4 @@ If you have a similar output, your Buffalo toolbox is ready to work!
 
 ## Next Steps
 
-* [Tooling Integration](/documentation/getting_started/integrations) - Work with Buffalo, using existing tools.
 * [Generate a New Project](/documentation/getting_started/new-project) - Create your first Buffalo project!

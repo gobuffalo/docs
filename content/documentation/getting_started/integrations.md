@@ -28,6 +28,10 @@ If you use `zsh` shell, you can use this plugin, created by [@1995parham](https:
 
 If you use `bash` shell, you can try this script, created by [@cippaciong](https://github.com/cippaciong), which provides basic autocompletion: https://github.com/cippaciong/buffalo_bash_completion
 
+## Go extension for Visual Studio Code
+
+If you use `Visual Studio Code` as code editor, you can try this extension: [Go](https://code.visualstudio.com/docs/languages/go).
+
 ## Next Steps
 
 * [Generate a New Project](/documentation/getting_started/new-project) - Create your first Buffalo project!

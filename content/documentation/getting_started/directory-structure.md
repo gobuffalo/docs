@@ -25,27 +25,47 @@ Now that you have a minimal new project, let's go through its contents.
 
 Here is the structure of a Buffalo project:
 
-
-* `go/` &mdash; GOPATH root.
-	* `src/` &mdash; Go sources directory
-		* `github.com/username/myapp/` &mdash; your app root
-			* `actions/`
-			* `assets/`
-			* `grifts/`
-			* `locales/`
-			* `models/`
-			* `public/`
-			* `templates/`
-			* `tmp/`
-			* `database.yml`
-			* `main.go`
+``` erb
+├── actions/
+│	├── app.go
+│	└── render.go
+├── assets/
+├── cmd/
+│	└── app/
+│		└── main.go
+├── config/
+├── fixtures/
+├── grifts/
+├── locales/
+├── models/
+├── public/
+├── templates/
+├── .babelrc
+├── .buffalo.dev.yml
+├── .codeclimate.yml
+├── .docketignore
+├── .env
+├── .gitignore
+├── .pnp.loader.mjs
+├── .yarnrc.yml
+├── database.yml
+├── Dockerfile
+├── go.mod
+├── go.sum
+├── inflections.json
+├── package.json
+├── postcss.config.js
+├── README.md
+├── webpack.config.js
+└── yarn.lock
+```
 
 ### actions
 
 This directory handles the **Controller** part of the MVC pattern. It contains the handlers for your URLs, plus:
 
-* the `app.go` file to setup your app & routes,
-* the `render.go` file to setup the template engine(s).
+* The `app.go` file to setup your app & routes,
+* The `render.go` file to setup the template engine(s).
 
 ### assets
 
@@ -54,6 +74,10 @@ This directory is optional. If you don't need to use a frontend setup (API only,
 {{< /note >}}
 
 This directory contains **raw** assets which will be compiled/compressed & put in the [`public`](#public) directory.
+
+### cmd
+
+This folder contains the `main.go` file which bootstraps your app and starts it.
 
 ### grifts
 
@@ -115,10 +139,7 @@ This file is optional. If you don't need a database, or if you want to handle th
 
 This file contains the database configuration for [pop/soda](https://github.com/gobuffalo/pop).
 
-### main.go
-
-This file bootstraps your app and starts it.
-
 ## Next Steps
 
 * [Configuration](/documentation/getting_started/configuration) - Manage your app configuration.
+* [Tooling Integration](/documentation/getting_started/integrations) - Work with Buffalo, using existing tools.

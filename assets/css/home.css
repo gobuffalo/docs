@@ -56,10 +56,6 @@ html {
     background-color: #FFFBF9;
 }
 
-.docssidebar {
-    width: 350px;
-}
-
 .content {
     overflow: wrap;
 }
@@ -96,7 +92,7 @@ html {
     @apply p-3 overflow-scroll;
 }
 
-.content p code, li code {
+.content p code, li code, table code {
     @apply bg-gray-200 p-1 rounded-md text-base;
 }
 

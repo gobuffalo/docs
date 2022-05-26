@@ -35,7 +35,6 @@ Buffalo is currently available and tested on the following platforms:
 Before installing make sure you have the required dependencies installed:
 
 * [A working Go environment](http://gopherguides.com/before-you-come-to-class)
-* [A configured `$PATH` environment variable that includes `$GOPATH/bin`.](https://golang.org/doc/code.html#GOPATH)
 * [Go](https://golang.org) version `{{< mingoversion >}}`.
 
 ##### Frontend Requirements
@@ -114,8 +113,6 @@ $ gofish install buffalo
 ## Custom Installation **with** SQLite3 Support
 
 **SQLite 3** requires a GCC, or equivalent C compiler for [mattn/go-sqlite3](https://github.com/mattn/go-sqlite3) to compile. You **must** have a GCC installed **first** before installing Buffalo.
-
-To install Buffalo, ensure your `GOPATH` is defined, then:
 
 ```sh
 $ go install -tags sqlite github.com/gobuffalo/cli/cmd/buffalo@{{< latestclirelease >}}

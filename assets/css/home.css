@@ -97,7 +97,7 @@ html {
 }
 
 .content code {
-    @apply break-all;
+    @apply bg-gray-100 p-1 rounded-md text-base;
 }
 
 .content .card h4 {

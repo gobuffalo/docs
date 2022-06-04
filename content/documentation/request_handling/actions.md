@@ -43,10 +43,18 @@ $ buffalo g action --help
 Generates new action(s)
 
 Usage:
-  buffalo generate action [name] [actionName...] [flags]
+  buffalo generate action [name] [handler name...] [flags] 
 
 Aliases:
   action, a, actions
+
+Flags:
+  -d, --dry-run         dry run
+  -h, --help            help for action
+  -m, --method string   change the HTTP method for the generate action(s) (default "GET")
+      --skip-template   skip generation of templates for action(s)
+  -v, --verbose         verbosely run the generator
+
 ```
 
 ```bash

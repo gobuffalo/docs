@@ -110,10 +110,10 @@ Edit(Context) error
 When implemented the `New` and `Edit` methods will add the following to the routing table:
 
 ```bash
-METHOD | PATH                   | ALIASES | NAME         | HANDLER
------- | ----                   | ------- | ----         | -------
-GET    | /users/new/            |         | newUsersPath | coke/actions.UsersResource.New
-GET    | /users/{user_id}/edit/ |         | editUserPath | coke/actions.UsersResource.Edit
+METHOD | HOST                   | PATH                   | ALIASES | NAME         | HANDLER
+------ | ----                   | ----                   | ------- | ----         | -------
+GET    | http://127.0.0.1:3000  | /users/new             |         | newUsersPath | coke/actions.UsersResource.New
+GET    | http://127.0.0.1:3000  | /users/{user_id}/edit/ |         | editUserPath | coke/actions.UsersResource.Edit
 ```
 
 ## Generating Resources
@@ -788,23 +788,23 @@ This results in the following routes:
 
 ```bash
 $ buffalo routes
-METHOD | PATH                                    | ALIASES | NAME              | HANDLER
------- | ----                                    | ------- | ----              | -------
-GET    | /                                       |         | rootPath          | github.com/gobuffalo/coke/actions.HomeHandler
-GET    | /users                                  |         | usersPath         | github.com/gobuffalo/coke/actions.UsersResource.List
-POST   | /users                                  |         | usersPath         | github.com/gobuffalo/coke/actions.UsersResource.Create
-GET    | /users/new                              |         | newUsersPath      | github.com/gobuffalo/coke/actions.UsersResource.New
-GET    | /users/{user_id}                        |         | userPath          | github.com/gobuffalo/coke/actions.UsersResource.Show
-PUT    | /users/{user_id}                        |         | userPath          | github.com/gobuffalo/coke/actions.UsersResource.Update
-DELETE | /users/{user_id}                        |         | userPath          | github.com/gobuffalo/coke/actions.UsersResource.Destroy
-GET    | /users/{user_id}/edit                   |         | editUserPath      | github.com/gobuffalo/coke/actions.UsersResource.Edit
-GET    | /users/{user_id}/images                 |         | userImagesPath    | github.com/gobuffalo/coke/actions.ImagesResource.List
-POST   | /users/{user_id}/images                 |         | userImagesPath    | github.com/gobuffalo/coke/actions.ImagesResource.Create
-GET    | /users/{user_id}/images/new             |         | newUserImagesPath | github.com/gobuffalo/coke/actions.ImagesResource.New
-GET    | /users/{user_id}/images/{image_id}      |         | userImagePath     | github.com/gobuffalo/coke/actions.ImagesResource.Show
-PUT    | /users/{user_id}/images/{image_id}      |         | userImagePath     | github.com/gobuffalo/coke/actions.ImagesResource.Update
-DELETE | /users/{user_id}/images/{image_id}      |         | userImagePath     | github.com/gobuffalo/coke/actions.ImagesResource.Destroy
-GET    | /users/{user_id}/images/{image_id}/edit |         | editUserImagePath | github.com/gobuffalo/coke/actions.ImagesResource.Edit
+METHOD | HOST                   | PATH                                    | ALIASES | NAME              | HANDLER
+------ | ----                   | ----                                    | ------- | ----              | -------
+GET    | http://127.0.0.1:3000  | /                                       |         | rootPath          | github.com/gobuffalo/coke/actions.HomeHandler
+GET    | http://127.0.0.1:3000  | /users                                  |         | usersPath         | github.com/gobuffalo/coke/actions.UsersResource.List
+POST   | http://127.0.0.1:3000  | /users                                  |         | usersPath         | github.com/gobuffalo/coke/actions.UsersResource.Create
+GET    | http://127.0.0.1:3000  | /users/new                              |         | newUsersPath      | github.com/gobuffalo/coke/actions.UsersResource.New
+GET    | http://127.0.0.1:3000  | /users/{user_id}                        |         | userPath          | github.com/gobuffalo/coke/actions.UsersResource.Show
+PUT    | http://127.0.0.1:3000  | /users/{user_id}                        |         | userPath          | github.com/gobuffalo/coke/actions.UsersResource.Update
+DELETE | http://127.0.0.1:3000  | /users/{user_id}                        |         | userPath          | github.com/gobuffalo/coke/actions.UsersResource.Destroy
+GET    | http://127.0.0.1:3000  | /users/{user_id}/edit                   |         | editUserPath      | github.com/gobuffalo/coke/actions.UsersResource.Edit
+GET    | http://127.0.0.1:3000  | /users/{user_id}/images                 |         | userImagesPath    | github.com/gobuffalo/coke/actions.ImagesResource.List
+POST   | http://127.0.0.1:3000  | /users/{user_id}/images                 |         | userImagesPath    | github.com/gobuffalo/coke/actions.ImagesResource.Create
+GET    | http://127.0.0.1:3000  | /users/{user_id}/images/new             |         | newUserImagesPath | github.com/gobuffalo/coke/actions.ImagesResource.New
+GET    | http://127.0.0.1:3000  | /users/{user_id}/images/{image_id}      |         | userImagePath     | github.com/gobuffalo/coke/actions.ImagesResource.Show
+PUT    | http://127.0.0.1:3000  | /users/{user_id}/images/{image_id}      |         | userImagePath     | github.com/gobuffalo/coke/actions.ImagesResource.Update
+DELETE | http://127.0.0.1:3000  | /users/{user_id}/images/{image_id}      |         | userImagePath     | github.com/gobuffalo/coke/actions.ImagesResource.Destroy
+GET    | http://127.0.0.1:3000  | /users/{user_id}/images/{image_id}/edit |         | editUserImagePath | github.com/gobuffalo/coke/actions.ImagesResource.Edit
 ```
 
 ## buffalo.BaseResource

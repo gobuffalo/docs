@@ -84,16 +84,16 @@ a.PUT("/users/{user_id}", ur.Update)
 a.DELETE("/users/{user_id}", ur.Destroy)
 ```
 
-It will produce a routing table (`$ buffalo routes`) that looks similar to:
+It will produce a routing table (`$ buffalo routes`) that looks like:
 
 ```bash
-METHOD | PATH                   | NAME         | HANDLER
------- | ----                   | ----         | -------
-GET    | /users/                | usersPath    | coke/actions.UsersResource.List
-POST   | /users/                | usersPath    | coke/actions.UsersResource.Create
-GET    | /users/{user_id}/      | userPath     | coke/actions.UsersResource.Show
-PUT    | /users/{user_id}/      | userPath     | coke/actions.UsersResource.Update
-DELETE | /users/{user_id}/      | userPath     | coke/actions.UsersResource.Destroy
+METHOD | HOST                   | PATH                   | ALIASES | NAME         | HANDLER
+------ | ----                   | ----                   | ------- | ----         | -------
+GET    | http://127.0.0.1:3000  | /users/                |         | usersPath    | coke/actions.UsersResource.List
+POST   | http://127.0.0.1:3000  | /users/                |         | usersPath    | coke/actions.UsersResource.Create
+GET    | http://127.0.0.1:3000  | /users/{user_id}/      |         | userPath     | coke/actions.UsersResource.Show
+PUT    | http://127.0.0.1:3000  | /users/{user_id}/      |         | userPath     | coke/actions.UsersResource.Update
+DELETE | http://127.0.0.1:3000  | /users/{user_id}/      |         | userPath     | coke/actions.UsersResource.Destroy
 ```
 
 ## Optional Resource Methods

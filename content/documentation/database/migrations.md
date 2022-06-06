@@ -142,9 +142,8 @@ Aliases:
 
 Available Commands:
   down        Apply one or more of the 'down' migrations.
-  reset       The equivalent of running `migrate down` and then `migrate up`
   status      Displays the status of all migrations.
-  up          Apply all of the 'up' migrations.
+  up          Apply one or more of the 'up' migrations.
 
 Flags:
   -h, --help   help for migrate

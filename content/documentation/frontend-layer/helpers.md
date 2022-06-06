@@ -23,24 +23,24 @@ Buffalo will generate path helpers for all of the routes you add to the App. The
 
 ```text
 $ buffalo routes
-METHOD | PATH                         | ALIASES | NAME              | HANDLER
------- | ----                         | ------- | ----              | -------
-GET    | /                            |         | rootPath          | github.com/gobuffalo/coke/actions.HomeHandler
-GET    | /about                       |         | aboutPath         | github.com/gobuffalo/coke/actions.AboutHandler
-GET    | /drinks                      |         | drinksPath        | github.com/gobuffalo/coke/actions.DrinksResource.List
-POST   | /drinks                      |         | drinksPath        | github.com/gobuffalo/coke/actions.DrinksResource.Create
-GET    | /drinks/new                  |         | newDrinksPath     | github.com/gobuffalo/coke/actions.DrinksResource.New
-GET    | /drinks/{drink_id}           |         | drinkPath         | github.com/gobuffalo/coke/actions.DrinksResource.Show
-PUT    | /drinks/{drink_id}           |         | drinkPath         | github.com/gobuffalo/coke/actions.DrinksResource.Update
-DELETE | /drinks/{drink_id}           |         | drinkPath         | github.com/gobuffalo/coke/actions.DrinksResource.Destroy
-GET    | /drinks/{drink_id}/edit      |         | editDrinkPath     | github.com/gobuffalo/coke/actions.DrinksResource.Edit
-GET    | /api/v1/users                |         | apiV1UsersPath    | github.com/gobuffalo/coke/actions.UsersResource.List
-POST   | /api/v1/users                |         | apiV1UsersPath    | github.com/gobuffalo/coke/actions.UsersResource.Create
-GET    | /api/v1/users/new            |         | newApiV1UsersPath | github.com/gobuffalo/coke/actions.UsersResource.New
-GET    | /api/v1/users/{user_id}      |         | apiV1UserPath     | github.com/gobuffalo/coke/actions.UsersResource.Show
-PUT    | /api/v1/users/{user_id}      |         | apiV1UserPath     | github.com/gobuffalo/coke/actions.UsersResource.Update
-DELETE | /api/v1/users/{user_id}      |         | apiV1UserPath     | github.com/gobuffalo/coke/actions.UsersResource.Destroy
-GET    | /api/v1/users/{user_id}/edit |         | editApiV1UserPath | github.com/gobuffalo/coke/actions.UsersResource.Edit
+METHOD | HOST                   | PATH                         | ALIASES | NAME              | HANDLER
+------ | ----                   | ----                         | ------- | ----              | -------
+GET    | http://127.0.0.1:3000  | /                            |         | rootPath          | github.com/gobuffalo/coke/actions.HomeHandler
+GET    | http://127.0.0.1:3000  | /about                       |         | aboutPath         | github.com/gobuffalo/coke/actions.AboutHandler
+GET    | http://127.0.0.1:3000  | /drinks                      |         | drinksPath        | github.com/gobuffalo/coke/actions.DrinksResource.List
+POST   | http://127.0.0.1:3000  | /drinks                      |         | drinksPath        | github.com/gobuffalo/coke/actions.DrinksResource.Create
+GET    | http://127.0.0.1:3000  | /drinks/new                  |         | newDrinksPath     | github.com/gobuffalo/coke/actions.DrinksResource.New
+GET    | http://127.0.0.1:3000  | /drinks/{drink_id}           |         | drinkPath         | github.com/gobuffalo/coke/actions.DrinksResource.Show
+PUT    | http://127.0.0.1:3000  | /drinks/{drink_id}           |         | drinkPath         | github.com/gobuffalo/coke/actions.DrinksResource.Update
+DELETE | http://127.0.0.1:3000  | /drinks/{drink_id}           |         | drinkPath         | github.com/gobuffalo/coke/actions.DrinksResource.Destroy
+GET    | http://127.0.0.1:3000  | /drinks/{drink_id}/edit      |         | editDrinkPath     | github.com/gobuffalo/coke/actions.DrinksResource.Edit
+GET    | http://127.0.0.1:3000  | /api/v1/users                |         | apiV1UsersPath    | github.com/gobuffalo/coke/actions.UsersResource.List
+POST   | http://127.0.0.1:3000  | /api/v1/users                |         | apiV1UsersPath    | github.com/gobuffalo/coke/actions.UsersResource.Create
+GET    | http://127.0.0.1:3000  | /api/v1/users/new            |         | newApiV1UsersPath | github.com/gobuffalo/coke/actions.UsersResource.New
+GET    | http://127.0.0.1:3000  | /api/v1/users/{user_id}      |         | apiV1UserPath     | github.com/gobuffalo/coke/actions.UsersResource.Show
+PUT    | http://127.0.0.1:3000  | /api/v1/users/{user_id}      |         | apiV1UserPath     | github.com/gobuffalo/coke/actions.UsersResource.Update
+DELETE | http://127.0.0.1:3000  | /api/v1/users/{user_id}      |         | apiV1UserPath     | github.com/gobuffalo/coke/actions.UsersResource.Destroy
+GET    | http://127.0.0.1:3000  | /api/v1/users/{user_id}/edit |         | editApiV1UserPath | github.com/gobuffalo/coke/actions.UsersResource.Edit
 ```
 
 Going down this list we start with the path *NAME*d `rootPath` which represents *PATH* `/` or the root route of the server and as a bonus, with all of these we can even see exactly which *HANDLER* code is being run for this METHOD+PATH combination.

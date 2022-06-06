@@ -48,24 +48,31 @@ $ buffalo help build
 ```
 
 ```bash
-Buffalo version {{< latestclirelease >}}
-
-Builds a Buffalo binary, including bundling of assets (packr & webpack)
+Build the application binary, including bundling of webpack assets
 
 Usage:
   buffalo build [flags]
 
 Aliases:
-  build, b, bill
+  build, b, bill, install
 
 Flags:
-  -c, --compress         compress static files in the binary (default true)
-  -e, --extract-assets   extract the assets and put them in a distinct archive
-  -h, --help             help for build
-      --ldflags string   set any ldflags to be passed to the go build
-  -o, --output string    set the name of the binary (default "bin/coke")
-  -s, --static           build a static binary using  --ldflags '-linkmode external -extldflags "-static"' (USE FOR CGO)
-  -t, --tags string      compile with specific build tags
+      --build-flags strings        Additional comma-separated build flags to feed to go build
+      --clean-assets               will delete public/assets before calling webpack
+      --dry-run                    runs the build 'dry'
+      --environment string         set the environment for the binary (default "development")
+  -e, --extract-assets             extract the assets and put them in a distinct archive
+  -h, --help                       help for build
+      --ldflags string             set any ldflags to be passed to the go build
+      --mod string                 -mod flag for go build
+  -o, --output string              set the name of the binary
+  -k, --skip-assets                skip running webpack and building assets
+      --skip-build-deps            skip building dependencies
+      --skip-template-validation   skip validating templates
+  -s, --static                     build a static binary using  --ldflags '-linkmode external -extldflags "-static"'
+  -t, --tags string                compile with specific build tags
+  -v, --verbose                    print debugging information
+
 ```
 
 ### Binary name / location

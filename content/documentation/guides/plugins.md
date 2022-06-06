@@ -243,19 +243,24 @@ The `buffalo-plugins` plugin adds a new generator to `buffalo generate` to help 
 ```bash
 $ buffalo generate plugin -h
 
-buffalo generate plugin github.com/foo/buffalo-bar
+Generate application components
 
 Usage:
-  buffalo-plugins plugin [flags]
+  buffalo generate [command]
+
+Aliases:
+  generate, g
+
+Available Commands:
+  action      Generate new action(s)
+  mailer      Generate a new mailer for Buffalo
+  resource    Generate a new actions/resource file
+  task        Generate a grift task
 
 Flags:
-  -a, --author string       author's name
-  -d, --dry-run             run the generator without creating files or running commands
-  -f, --force               will delete the target directory if it exists
-  -h, --help                help for plugin
-  -l, --license string      choose a license from: [agpl, isc, lgpl-v2.1, mozilla, no-license, artistic, bsd, eclipse, lgpl-v3, mit, apache, bsd-3-clause, unlicense, cc0, gpl-v2, gpl-v3] (default "mit")
-  -s, --short-name string   a 'short' name for the package
-      --with-gen            creates a generator plugin
+  -h, --help   help for generate
+
+Use "buffalo generate [command] --help" for more information about a command.
 ```
 
 {{< codetabs>}}

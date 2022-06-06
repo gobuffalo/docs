@@ -25,69 +25,65 @@ Applications generated with the `--api` flag don't contain any front systems. Th
 #### <code>buffalo new coke --api</code>
 
 ```erb
-├── Dockerfile
-├── README.md
-├── actions
-│   ├── actions_test.go
-│   ├── app.go
-│   ├── home.go
-│   ├── home_test.go
-│   └── render.go
+├── actions/
+│	├── app.go
+│	└── render.go
+├── cmd/
+│	└── app/
+│		└── main.go
+├── config/
+├── fixtures/
+├── grifts/
+├── locales/
+├── models/
+├── .buffalo.dev.yml
+├── .codeclimate.yml
+├── .docketignore
+├── .env
+├── .gitignore
 ├── database.yml
-├── fixtures
-│   └── sample.toml
-├── grifts
-│   ├── db.go
-│   └── init.go
+├── Dockerfile
+├── go.mod
+├── go.sum
 ├── inflections.json
-├── main.go
-└── models
-    ├── models.go
-    └── models_test.go
+├── README.md
 ```
 
 #### <code>buffalo new coke</code>
 
 ```erb
-├── Dockerfile
-├── README.md
-├── actions
-│   ├── actions_test.go
-│   ├── app.go
-│   ├── home.go
-│   ├── home_test.go
-│   └── render.go
-├── assets
-│   ├── css
-│   │   └── application.scss
-│   ├── images
-│   │   ├── favicon.ico
-│   │   └── logo.svg
-│   └── js
-│       └── application.js
+├── .yarn/
+├── actions/
+│	├── app.go
+│	└── render.go
+├── assets/
+├── cmd/
+│	└── app/
+│		└── main.go
+├── config/
+├── fixtures/
+├── grifts/
+├── locales/
+├── models/
+├── public/
+├── templates/
+├── .babelrc
+├── .buffalo.dev.yml
+├── .codeclimate.yml
+├── .docketignore
+├── .env
+├── .gitignore
+├── .pnp.cjs
+├── .pnp.loader.mjs
+├── .yarnrc.yml
 ├── database.yml
-├── fixtures
-│   └── sample.toml
-├── grifts
-│   ├── db.go
-│   └── init.go
+├── Dockerfile
+├── go.mod
+├── go.sum
 ├── inflections.json
-├── locales
-│   └── all.en-us.yaml
-├── main.go
-├── models
-│   ├── models.go
-│   └── models_test.go
-├── node_modles
 ├── package.json
-├── public
-│   ├── assets
-│   │   └── .keep
-│   └── robots.txt
-├── templates
-│   ├── _flash.html
-│   ├── application.html
-│   └── index.html
+├── postcss.config.js
+├── README.md
 ├── webpack.config.js
 └── yarn.lock
 ```

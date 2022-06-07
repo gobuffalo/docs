@@ -26,6 +26,7 @@ Now that you have a minimal new project, let's go through its contents.
 Here is the structure of a Buffalo project:
 
 ``` erb
+├── .yarn/
 ├── actions/
 │	├── app.go
 │	└── render.go

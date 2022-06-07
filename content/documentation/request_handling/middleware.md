@@ -58,13 +58,18 @@ func UserIPMiddleware(next buffalo.Handler) buffalo.Handler {
 
 ```go
 a := buffalo.New(buffalo.Options{})
+
 a.Use(MyMiddleware)
 a.Use(AnotherPieceOfMiddleware)
+// or
+a.Use(MyMiddleware, AnotherPieceOfMiddleware)
 ```
 
 In the above example all requests will first go through the `MyMiddleware` middleware, and then through the `AnotherPieceOfMiddleware` middleware before first getting to their final handler.
 
-_NOTE: Middleware defined on an application is automatically inherited by all routes and groups in that application._
+{{<note>}}
+**NOTE**: Middleware defined on an application is automatically inherited by all routes and groups in that application.
+{{</note>}}
 
 
 ## Using Middleware with One Action
@@ -106,7 +111,7 @@ a.GET("/foo", FooHandler)
 In the above example the `MyMiddleware` and `AnotherPieceOfMiddleware` middlewares will be called on _all_ requests, but the `AuthorizeAPIMiddleware` middleware will only be called on the `/api/*` routes.
 
 ```text
-GET /foo -> MyMiddleware -> AnotherPieceOfMiddleware -> FooHandler
+GET /foo       -> MyMiddleware -> AnotherPieceOfMiddleware -> FooHandler
 GET /api/users -> MyMiddleware -> AnotherPieceOfMiddleware -> AuthorizeAPIMiddleware -> UsersHandler
 ```
 
@@ -134,9 +139,9 @@ a.GET("/users/{id}", ShowUser)
 {{< tab "OUTPUT" >}}
 ```text
 // OUTPUT
-GET /users/new -> NewUser
-POST /users -> CreateUser
-GET /users -> AuthorizeUser -> ListUsers
+GET /users/new  -> NewUser
+POST /users     -> CreateUser
+GET /users      -> AuthorizeUser -> ListUsers
 GET /users/{id} -> AuthorizeUser -> ShowUser
 ```
 {{< /tab >}}
@@ -144,8 +149,11 @@ GET /users/{id} -> AuthorizeUser -> ShowUser
 
 ---
 
-<div class="alert alert-warning" role="alert">
-<b>IMPORTANT:</b> The middleware function and the action functions you want to skip <b>MUST</b> be the same Go instance.
+{{<note>}}
+**IMPORTANT:** The middleware function and the action functions you want to skip **MUST** be the same Go instance.
+{{</note>}}
+
+### Examples
 
 {{< codetabs >}}
 {{< tab "EXAMPLE 1" >}}
@@ -189,16 +197,45 @@ The line that was generated in `actions/app.go` by `buffalo generate resource` w
 {{< codetabs >}}
 {{< tab "Before" >}}
 ```go
-// BEFORE
 app.Resource("/widgets", WidgetResource{})
 ```
 {{< /tab >}}
 {{< tab "After" >}}
 ```go
-// AFTER
 res := WidgetResource{}
 wr := app.Resource("/widgets", res)
 wr.Middleware.Skip(Authorize, res.Index, res.Show)
+```
+{{< /tab >}}
+{{< /codetabs>}}
+
+
+## Replace Middleware
+
+You can use the [`Middleware.Replace`](https://pkg.go.dev/github.com/gobuffalo/buffalo#MiddlewareStack.Replace) method that allows you to replace a middleware with another one keeping the same execution position.
+
+{{< codetabs >}}
+{{< tab "actions/app.go" >}}
+```go
+// actions/app.go
+
+app := buffalo.New(buffalo.Options{})
+app.Use(Middleware1, Middleware2, Middleware3)
+
+app.GET("/foo/", FooHandler)
+
+
+g := app.Group("/group")
+g.Middleware.Replace(Middleware1, Middleware4)
+
+g.GET("/", GroupListHandler)
+
+```
+{{< /tab >}}
+{{< tab "OUTPUT" >}}
+```text
+GET /foo    -> Middleware1 -> Middleware2 -> Middleware3 -> FooHandler
+GET /group/ -> Middleware4 -> Middleware2 -> Middleware3 -> GroupListHandler
 ```
 {{< /tab >}}
 {{< /codetabs>}}
@@ -212,23 +249,23 @@ Since middleware is [inherited](#using-middleware) from its parent, there maybe 
 {{< tab "actions/app.go" >}}
 ```go
 // actions/app.go
-a := buffalo.New(buffalo.Options{})
-a.Use(MyMiddleware)
-a.Use(AnotherPieceOfMiddleware)
+app := buffalo.New(buffalo.Options{})
+app.Use(MyMiddleware)
+app.Use(AnotherPieceOfMiddleware)
 
-g := a.Group("/api")
+app.GET("/foo", FooHandler)
+
+g := app.Group("/api")
 // clear out any previously defined middleware
 g.Middleware.Clear()
 g.Use(AuthorizeAPIMiddleware)
 g.GET("/users", UsersHandler)
 
-a.GET("/foo", FooHandler)
 ```
 {{< /tab >}}
 {{< tab "OUTPUT" >}}
 ```text
-// OUTPUT
-GET /foo -> MyMiddleware -> AnotherPieceOfMiddleware -> FooHandler
+GET /foo       -> MyMiddleware -> AnotherPieceOfMiddleware -> FooHandler
 GET /api/users -> AuthorizeAPIMiddleware -> UsersHandler
 ```
 {{< /tab >}}
@@ -239,56 +276,47 @@ GET /api/users -> AuthorizeAPIMiddleware -> UsersHandler
 
 To get a complete list of the middleware your application is using, broken down by grouping, can be found by running the `buffalo task middleware` command.
 
+{{<codetabs>}}
+{{<tab "actions/app.go">}}
+```go
+func App() *buffalo.App {
+	if app == nil {
+		app = buffalo.New(buffalo.Options{
+			Env:         ENV,
+			SessionName: "_coke_session",
+		})
+
+		app.Use(forceSSL())
+		app.Use(paramlogger.ParameterLogger)
+		app.Use(csrf.New)
+		app.Use(translations())
+		app.Use(Middleware1)
+		app.Use(Middleware2)
+
+		app.GET("/", HomeHandler)
+
+		app.ServeFiles("/", http.FS(public.FS()))
+	}
+
+	return app
+}
+```
+{{</tab>}}
+{{<tab "Middleware list">}}
 ```bash
 $ buffalo t middleware
-
--> /
-github.com/gobuffalo/buffalo.*App.defaultErrorMiddleware
-github.com/gobuffalo/buffalo.*App.PanicHandler
-github.com/gobuffalo/buffalo.RequestLoggerFunc
-github.com/gobuffalo/buffalo.sessionSaver
-github.com/gobuffalo/mw-forcessl.Middleware.func1
-github.com/markbates/coke/actions.App.func1
-github.com/markbates/coke/actions.trackLastURL
-github.com/markbates/coke/actions.TrackingCookie
-github.com/markbates/coke/actions.App.func3
-github.com/gobuffalo/mw-paramlogger.ParameterLogger
-github.com/gobuffalo/mw-csrf.glob..func1
-github.com/gobuffalo/buffalo-pop/pop/popmw.Transaction.func2
-github.com/markbates/coke/actions.SetCurrentUser
-github.com/markbates/coke/actions.SetPageTitle
--> /courses/{course_slug}
-github.com/gobuffalo/buffalo.*App.defaultErrorMiddleware
-github.com/gobuffalo/buffalo.*App.PanicHandler
-github.com/gobuffalo/buffalo.RequestLoggerFunc
-github.com/gobuffalo/buffalo.sessionSaver
-github.com/gobuffalo/mw-forcessl.Middleware.func1
-github.com/markbates/coke/actions.App.func1
-github.com/markbates/coke/actions.trackLastURL
-github.com/markbates/coke/actions.TrackingCookie
-github.com/markbates/coke/actions.App.func3
-github.com/gobuffalo/mw-paramlogger.ParameterLogger
-github.com/gobuffalo/mw-csrf.glob..func1
-github.com/gobuffalo/buffalo-pop/pop/popmw.Transaction.func2
-github.com/markbates/coke/actions.SetCurrentUser
-github.com/markbates/coke/actions.SetPageTitle
-github.com/markbates/coke/actions.FindCourse
--> /admin
-github.com/gobuffalo/buffalo.*App.defaultErrorMiddleware
-github.com/gobuffalo/buffalo.*App.PanicHandler
-github.com/gobuffalo/buffalo.RequestLoggerFunc
-github.com/gobuffalo/buffalo.sessionSaver
-github.com/gobuffalo/mw-forcessl.Middleware.func1
-github.com/markbates/coke/actions.App.func1
-github.com/markbates/coke/actions.trackLastURL
-github.com/markbates/coke/actions.TrackingCookie
-github.com/markbates/coke/actions.App.func3
-github.com/gobuffalo/mw-paramlogger.ParameterLogger
-github.com/gobuffalo/mw-csrf.glob..func1
-github.com/gobuffalo/buffalo-pop/pop/popmw.Transaction.func2
-github.com/markbates/coke/actions.SetCurrentUser
-github.com/markbates/coke/actions.SetPageTitle
-github.com/markbates/coke/actions.Authorize
-github.com/markbates/coke/actions.AuthorizeAdmin
+-> http://127.0.0.1:3000/
+	github.com/gobuffalo/buffalo.*App.defaultErrorMiddleware
+	github.com/gobuffalo/buffalo.*App.PanicHandler
+	github.com/gobuffalo/buffalo.RequestLoggerFunc
+	github.com/gobuffalo/mw-forcessl.Middleware.func1
+	github.com/gobuffalo/mw-paramlogger.ParameterLogger
+	github.com/gobuffalo/mw-csrf.glob..func1
+	github.com/gobuffalo/mw-i18n/v2.*Translator.Middleware.func1
+	coke/actions.Middleware1
+	coke/actions.Middleware2
 ```
 
+
+{{</tab>}}
+{{</codetabs>}}

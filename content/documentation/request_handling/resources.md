@@ -18,11 +18,11 @@ The [`github.com/gobuffalo/buffalo#Resource`](https://godoc.org/github.com/gobuf
 
 ```go
 type Resource interface {
-  List(Context) error
-  Show(Context) error
-  Create(Context) error
-  Update(Context) error
-  Destroy(Context) error
+	List(Context) error
+	Show(Context) error
+	Create(Context) error
+	Update(Context) error
+	Destroy(Context) error
 }
 ```
 
@@ -32,13 +32,13 @@ Here's what the interface looked like before:
 
 ```go
 type Resource interface {
-  List(Context) error
-  Show(Context) error
-  New(Context) error
-  Create(Context) error
-  Edit(Context) error
-  Update(Context) error
-  Destroy(Context) error
+	List(Context) error
+	Show(Context) error
+	New(Context) error
+	Create(Context) error
+	Edit(Context) error
+	Update(Context) error
+	Destroy(Context) error
 }
 ```
 
@@ -48,6 +48,7 @@ type Resource interface {
 After implementing the necessary methods on the [`github.com/gobuffalo/buffalo#Resource`](https://godoc.org/github.com/gobuffalo/buffalo#Resource) interface, the resource can then be mapped to the application using the [`github.com/gobuffalo/buffalo#App.Resource`](https://godoc.org/github.com/gobuffalo/buffalo#App.Resource) method.
 
 ```go
+// action/users.go
 type UsersResource struct{ }
 
 func (u UsersResource) List(c buffalo.Context) error {
@@ -69,31 +70,40 @@ func (u UsersResource) Update(c buffalo.Context) error {
 func (u UsersResource) Destroy(c buffalo.Context) error {
   // do work
 }
+```
 
-a.Resource("/users", UsersResource{})
+Mapping the Resource in app.go:
+
+```go
+// actions/app.go
+app.Resource("/users", UsersResource{})
 ```
 
 The above code example would be the equivalent of the following:
 
 ```go
+// actions/app.go
 ur := UsersResource{}
-a.GET("/users", ur.List)
-a.GET("/users/{user_id}", ur.Show)
-a.POST("/users", ur.Create)
-a.PUT("/users/{user_id}", ur.Update)
-a.DELETE("/users/{user_id}", ur.Destroy)
+
+app.GET("/users", ur.List)
+app.GET("/users/{user_id}", ur.Show)
+app.POST("/users", ur.Create)
+app.PUT("/users/{user_id}", ur.Update)
+app.DELETE("/users/{user_id}", ur.Destroy)
 ```
 
-It will produce a routing table (`$ buffalo routes`) that looks like:
+It will produce a routing table that looks similar to:
 
 ```bash
-METHOD | HOST                   | PATH                   | ALIASES | NAME         | HANDLER
------- | ----                   | ----                   | ------- | ----         | -------
-GET    | http://127.0.0.1:3000  | /users/                |         | usersPath    | coke/actions.UsersResource.List
-POST   | http://127.0.0.1:3000  | /users/                |         | usersPath    | coke/actions.UsersResource.Create
-GET    | http://127.0.0.1:3000  | /users/{user_id}/      |         | userPath     | coke/actions.UsersResource.Show
-PUT    | http://127.0.0.1:3000  | /users/{user_id}/      |         | userPath     | coke/actions.UsersResource.Update
-DELETE | http://127.0.0.1:3000  | /users/{user_id}/      |         | userPath     | coke/actions.UsersResource.Destroy
+$ buffalo routes
+
+METHOD | HOST                  | PATH                    | ALIASES | NAME                 | HANDLER
+------ | ----                  | ----                    | ------- | ----                 | -------
+GET    | http://127.0.0.1:3000 | /users/                 |         | usersPath            | coke/actions.UsersResource.List
+POST   | http://127.0.0.1:3000 | /users/                 |         | usersPath            | coke/actions.UsersResource.Create
+GET    | http://127.0.0.1:3000 | /users/{user_id}/       |         | userPath             | coke/actions.UsersResource.Show
+PUT    | http://127.0.0.1:3000 | /users/{user_id}/       |         | userPath             | coke/actions.UsersResource.Update
+DELETE | http://127.0.0.1:3000 | /users/{user_id}/       |         | userPath             | coke/actions.UsersResource.Destroy
 ```
 
 ## Optional Resource Methods
@@ -165,24 +175,30 @@ $ buffalo generate resource widget title description:nulls.Text
 package actions
 
 import (
+	"net/http"
+
+	"coke/locales"
+	"coke/models"
+	"coke/public"
+
 	"github.com/gobuffalo/buffalo"
+	"github.com/gobuffalo/buffalo-pop/v3/pop/popmw"
 	"github.com/gobuffalo/envy"
+	csrf "github.com/gobuffalo/mw-csrf"
 	forcessl "github.com/gobuffalo/mw-forcessl"
+	i18n "github.com/gobuffalo/mw-i18n/v2"
 	paramlogger "github.com/gobuffalo/mw-paramlogger"
 	"github.com/unrolled/secure"
-
-	"github.com/gobuffalo/buffalo-pop/pop/popmw"
-	csrf "github.com/gobuffalo/mw-csrf"
-	i18n "github.com/gobuffalo/mw-i18n"
-	"github.com/gobuffalo/packr"
-	"github.com/markbates/coke/models"
 )
 
 // ENV is used to help switch settings based on where the
 // application is being run. Default is "development".
 var ENV = envy.Get("GO_ENV", "development")
-var app *buffalo.App
-var T *i18n.Translator
+
+var (
+	app *buffalo.App
+	T   *i18n.Translator
+)
 
 // App is where all routes and middleware for buffalo
 // should be defined. This is the nerve center of your
@@ -215,17 +231,16 @@ func App() *buffalo.App {
 		app.Use(csrf.New)
 
 		// Wraps each request in a transaction.
-		//  c.Value("tx").(*pop.Connection)
+		//   c.Value("tx").(*pop.Connection)
 		// Remove to disable this.
 		app.Use(popmw.Transaction(models.DB))
-
 		// Setup and use translations:
 		app.Use(translations())
 
 		app.GET("/", HomeHandler)
 
 		app.Resource("/widgets", WidgetsResource{})
-		app.ServeFiles("/", assetsBox) // serve files from the public directory
+		app.ServeFiles("/", http.FS(public.FS())) // serve files from the public directory
 	}
 
 	return app
@@ -237,7 +252,7 @@ func App() *buffalo.App {
 // for more information: https://gobuffalo.io/en/docs/localization
 func translations() buffalo.MiddlewareFunc {
 	var err error
-	if T, err = i18n.New(packr.NewBox("../locales"), "en-US"); err != nil {
+	if T, err = i18n.New(locales.FS(), "en-US"); err != nil {
 		app.Stop(err)
 	}
 	return T.Middleware()
@@ -254,6 +269,7 @@ func forceSSL() buffalo.MiddlewareFunc {
 		SSLProxyHeaders: map[string]string{"X-Forwarded-Proto": "https"},
 	})
 }
+
 ```
 {{< /tab >}}
 {{< tab "actions/widgets.go" >}}
@@ -261,10 +277,14 @@ func forceSSL() buffalo.MiddlewareFunc {
 package actions
 
 import (
+	"fmt"
+	"net/http"
+
 	"github.com/gobuffalo/buffalo"
-	"github.com/gobuffalo/pop"
-	"github.com/markbates/coke/models"
-	"github.com/pkg/errors"
+	"github.com/gobuffalo/pop/v6"
+	"github.com/gobuffalo/x/responder"
+
+	"coke/models"
 )
 
 // This file is generated by Buffalo. It offers a basic structure for
@@ -290,7 +310,7 @@ func (v WidgetsResource) List(c buffalo.Context) error {
 	// Get the DB connection from the context
 	tx, ok := c.Value("tx").(*pop.Connection)
 	if !ok {
-		return errors.WithStack(errors.New("no transaction found"))
+		return fmt.Errorf("no transaction found")
 	}
 
 	widgets := &models.Widgets{}
@@ -301,13 +321,20 @@ func (v WidgetsResource) List(c buffalo.Context) error {
 
 	// Retrieve all Widgets from the DB
 	if err := q.All(widgets); err != nil {
-		return errors.WithStack(err)
+		return err
 	}
 
-	// Add the paginator to the context so it can be used in the template.
-	c.Set("pagination", q.Paginator)
+	return responder.Wants("html", func(c buffalo.Context) error {
+		// Add the paginator to the context so it can be used in the template.
+		c.Set("pagination", q.Paginator)
 
-	return c.Render(200, r.Auto(c, widgets))
+		c.Set("widgets", widgets)
+		return c.Render(http.StatusOK, r.HTML("widgets/index.plush.html"))
+	}).Wants("json", func(c buffalo.Context) error {
+		return c.Render(200, r.JSON(widgets))
+	}).Wants("xml", func(c buffalo.Context) error {
+		return c.Render(200, r.XML(widgets))
+	}).Respond(c)
 }
 
 // Show gets the data for one Widget. This function is mapped to
@@ -316,7 +343,7 @@ func (v WidgetsResource) Show(c buffalo.Context) error {
 	// Get the DB connection from the context
 	tx, ok := c.Value("tx").(*pop.Connection)
 	if !ok {
-		return errors.WithStack(errors.New("no transaction found"))
+		return fmt.Errorf("no transaction found")
 	}
 
 	// Allocate an empty Widget
@@ -324,16 +351,26 @@ func (v WidgetsResource) Show(c buffalo.Context) error {
 
 	// To find the Widget the parameter widget_id is used.
 	if err := tx.Find(widget, c.Param("widget_id")); err != nil {
-		return c.Error(404, err)
+		return c.Error(http.StatusNotFound, err)
 	}
 
-	return c.Render(200, r.Auto(c, widget))
+	return responder.Wants("html", func(c buffalo.Context) error {
+		c.Set("widget", widget)
+
+		return c.Render(http.StatusOK, r.HTML("widgets/show.plush.html"))
+	}).Wants("json", func(c buffalo.Context) error {
+		return c.Render(200, r.JSON(widget))
+	}).Wants("xml", func(c buffalo.Context) error {
+		return c.Render(200, r.XML(widget))
+	}).Respond(c)
 }
 
 // New renders the form for creating a new Widget.
 // This function is mapped to the path GET /widgets/new
 func (v WidgetsResource) New(c buffalo.Context) error {
-	return c.Render(200, r.Auto(c, &models.Widget{}))
+	c.Set("widget", &models.Widget{})
+
+	return c.Render(http.StatusOK, r.HTML("widgets/new.plush.html"))
 }
 
 // Create adds a Widget to the DB. This function is mapped to the
@@ -344,35 +381,49 @@ func (v WidgetsResource) Create(c buffalo.Context) error {
 
 	// Bind widget to the html form elements
 	if err := c.Bind(widget); err != nil {
-		return errors.WithStack(err)
+		return err
 	}
 
 	// Get the DB connection from the context
 	tx, ok := c.Value("tx").(*pop.Connection)
 	if !ok {
-		return errors.WithStack(errors.New("no transaction found"))
+		return fmt.Errorf("no transaction found")
 	}
 
 	// Validate the data from the html form
 	verrs, err := tx.ValidateAndCreate(widget)
 	if err != nil {
-		return errors.WithStack(err)
+		return err
 	}
 
 	if verrs.HasAny() {
-		// Make the errors available inside the html template
-		c.Set("errors", verrs)
+		return responder.Wants("html", func(c buffalo.Context) error {
+			// Make the errors available inside the html template
+			c.Set("errors", verrs)
 
-		// Render again the new.html template that the user can
-		// correct the input.
-		return c.Render(422, r.Auto(c, widget))
+			// Render again the new.html template that the user can
+			// correct the input.
+			c.Set("widget", widget)
+
+			return c.Render(http.StatusUnprocessableEntity, r.HTML("widgets/new.plush.html"))
+		}).Wants("json", func(c buffalo.Context) error {
+			return c.Render(http.StatusUnprocessableEntity, r.JSON(verrs))
+		}).Wants("xml", func(c buffalo.Context) error {
+			return c.Render(http.StatusUnprocessableEntity, r.XML(verrs))
+		}).Respond(c)
 	}
 
-	// If there are no errors set a success message
-	c.Flash().Add("success", "Widget was created successfully")
+	return responder.Wants("html", func(c buffalo.Context) error {
+		// If there are no errors set a success message
+		c.Flash().Add("success", T.Translate(c, "widget.created.success"))
 
-	// and redirect to the widgets index page
-	return c.Render(201, r.Auto(c, widget))
+		// and redirect to the show page
+		return c.Redirect(http.StatusSeeOther, "/widgets/%v", widget.ID)
+	}).Wants("json", func(c buffalo.Context) error {
+		return c.Render(http.StatusCreated, r.JSON(widget))
+	}).Wants("xml", func(c buffalo.Context) error {
+		return c.Render(http.StatusCreated, r.XML(widget))
+	}).Respond(c)
 }
 
 // Edit renders a edit form for a Widget. This function is
@@ -381,17 +432,18 @@ func (v WidgetsResource) Edit(c buffalo.Context) error {
 	// Get the DB connection from the context
 	tx, ok := c.Value("tx").(*pop.Connection)
 	if !ok {
-		return errors.WithStack(errors.New("no transaction found"))
+		return fmt.Errorf("no transaction found")
 	}
 
 	// Allocate an empty Widget
 	widget := &models.Widget{}
 
 	if err := tx.Find(widget, c.Param("widget_id")); err != nil {
-		return c.Error(404, err)
+		return c.Error(http.StatusNotFound, err)
 	}
 
-	return c.Render(200, r.Auto(c, widget))
+	c.Set("widget", widget)
+	return c.Render(http.StatusOK, r.HTML("widgets/edit.plush.html"))
 }
 
 // Update changes a Widget in the DB. This function is mapped to
@@ -400,40 +452,54 @@ func (v WidgetsResource) Update(c buffalo.Context) error {
 	// Get the DB connection from the context
 	tx, ok := c.Value("tx").(*pop.Connection)
 	if !ok {
-		return errors.WithStack(errors.New("no transaction found"))
+		return fmt.Errorf("no transaction found")
 	}
 
 	// Allocate an empty Widget
 	widget := &models.Widget{}
 
 	if err := tx.Find(widget, c.Param("widget_id")); err != nil {
-		return c.Error(404, err)
+		return c.Error(http.StatusNotFound, err)
 	}
 
 	// Bind Widget to the html form elements
 	if err := c.Bind(widget); err != nil {
-		return errors.WithStack(err)
+		return err
 	}
 
 	verrs, err := tx.ValidateAndUpdate(widget)
 	if err != nil {
-		return errors.WithStack(err)
+		return err
 	}
 
 	if verrs.HasAny() {
-		// Make the errors available inside the html template
-		c.Set("errors", verrs)
+		return responder.Wants("html", func(c buffalo.Context) error {
+			// Make the errors available inside the html template
+			c.Set("errors", verrs)
 
-		// Render again the edit.html template that the user can
-		// correct the input.
-		return c.Render(422, r.Auto(c, widget))
+			// Render again the edit.html template that the user can
+			// correct the input.
+			c.Set("widget", widget)
+
+			return c.Render(http.StatusUnprocessableEntity, r.HTML("widgets/edit.plush.html"))
+		}).Wants("json", func(c buffalo.Context) error {
+			return c.Render(http.StatusUnprocessableEntity, r.JSON(verrs))
+		}).Wants("xml", func(c buffalo.Context) error {
+			return c.Render(http.StatusUnprocessableEntity, r.XML(verrs))
+		}).Respond(c)
 	}
 
-	// If there are no errors set a success message
-	c.Flash().Add("success", "Widget was updated successfully")
+	return responder.Wants("html", func(c buffalo.Context) error {
+		// If there are no errors set a success message
+		c.Flash().Add("success", T.Translate(c, "widget.updated.success"))
 
-	// and redirect to the widgets index page
-	return c.Render(200, r.Auto(c, widget))
+		// and redirect to the show page
+		return c.Redirect(http.StatusSeeOther, "/widgets/%v", widget.ID)
+	}).Wants("json", func(c buffalo.Context) error {
+		return c.Render(http.StatusOK, r.JSON(widget))
+	}).Wants("xml", func(c buffalo.Context) error {
+		return c.Render(http.StatusOK, r.XML(widget))
+	}).Respond(c)
 }
 
 // Destroy deletes a Widget from the DB. This function is mapped
@@ -442,7 +508,7 @@ func (v WidgetsResource) Destroy(c buffalo.Context) error {
 	// Get the DB connection from the context
 	tx, ok := c.Value("tx").(*pop.Connection)
 	if !ok {
-		return errors.WithStack(errors.New("no transaction found"))
+		return fmt.Errorf("no transaction found")
 	}
 
 	// Allocate an empty Widget
@@ -450,19 +516,26 @@ func (v WidgetsResource) Destroy(c buffalo.Context) error {
 
 	// To find the Widget the parameter widget_id is used.
 	if err := tx.Find(widget, c.Param("widget_id")); err != nil {
-		return c.Error(404, err)
+		return c.Error(http.StatusNotFound, err)
 	}
 
 	if err := tx.Destroy(widget); err != nil {
-		return errors.WithStack(err)
+		return err
 	}
 
-	// If there are no errors set a flash message
-	c.Flash().Add("success", "Widget was destroyed successfully")
+	return responder.Wants("html", func(c buffalo.Context) error {
+		// If there are no errors set a flash message
+		c.Flash().Add("success", T.Translate(c, "widget.destroyed.success"))
 
-	// Redirect to the widgets index page
-	return c.Render(200, r.Auto(c, widget))
+		// Redirect to the index page
+		return c.Redirect(http.StatusSeeOther, "/widgets")
+	}).Wants("json", func(c buffalo.Context) error {
+		return c.Render(http.StatusOK, r.JSON(widget))
+	}).Wants("xml", func(c buffalo.Context) error {
+		return c.Render(http.StatusOK, r.XML(widget))
+	}).Respond(c)
 }
+
 ```
 {{< /tab >}}
 {{< tab "actions/widgets_test.go" >}}
@@ -477,15 +550,7 @@ func (as *ActionSuite) Test_WidgetsResource_Show() {
 	as.Fail("Not Implemented!")
 }
 
-func (as *ActionSuite) Test_WidgetsResource_New() {
-	as.Fail("Not Implemented!")
-}
-
 func (as *ActionSuite) Test_WidgetsResource_Create() {
-	as.Fail("Not Implemented!")
-}
-
-func (as *ActionSuite) Test_WidgetsResource_Edit() {
 	as.Fail("Not Implemented!")
 }
 
@@ -496,6 +561,15 @@ func (as *ActionSuite) Test_WidgetsResource_Update() {
 func (as *ActionSuite) Test_WidgetsResource_Destroy() {
 	as.Fail("Not Implemented!")
 }
+
+func (as *ActionSuite) Test_WidgetsResource_New() {
+	as.Fail("Not Implemented!")
+}
+
+func (as *ActionSuite) Test_WidgetsResource_Edit() {
+	as.Fail("Not Implemented!")
+}
+
 ```
 {{< /tab >}}
 {{< /codetabs >}}
@@ -510,81 +584,31 @@ func (as *ActionSuite) Test_WidgetsResource_Destroy() {
   translation: "Widget was successfully updated."
 - id: "widget.destroyed.success"
   translation: "Widget was successfully destroyed."
+
 ```
 {{< /tab >}}
 {{< /codetabs >}}
 
 {{< codetabs >}}
+{{< tab "migrations/20181005153028_create_widgets.up.fizz" >}}
+```erb
+create_table("widgets") {
+	t.Column("id", "uuid", {primary: true})
+	t.Column("title", "string", {})
+	t.Column("description", "text", {null: true})
+	t.Timestamps()
+}
+
+```
+{{< /tab >}}
 {{< tab "migrations/20181005153028_create_widgets.down.fizz" >}}
-```go
+```erb
 drop_table("widgets")
 ```
 {{< /tab >}}
-{{< tab "migrations/20181005153028_create_widgets.up.fizz" >}}
-```go
-create_table("widgets") {
-	t.Column("id", "uuid", {"primary": true})
-	t.Column("title", "string", {})
-	t.Column("description", "text", {"null": true})
-}```
-{{< /tab >}}
 {{< /codetabs >}}
 
 {{< codetabs >}}
-{{< tab "models/models.go" >}}
-```go
-package models
-
-import (
-	"log"
-
-	"github.com/gobuffalo/envy"
-	"github.com/gobuffalo/pop"
-)
-
-// DB is a connection to your database to be used
-// throughout your application.
-var DB *pop.Connection
-
-func init() {
-	var err error
-	env := envy.Get("GO_ENV", "development")
-	DB, err = pop.Connect(env)
-	if err != nil {
-		log.Fatal(err)
-	}
-	pop.Debug = env == "development"
-}
-```
-{{< /tab >}}
-{{< tab "models/models_test.go" >}}
-```go
-package models_test
-
-import (
-	"testing"
-
-	"github.com/gobuffalo/packr"
-	"github.com/gobuffalo/suite"
-)
-
-type ModelSuite struct {
-	*suite.Model
-}
-
-func Test_ModelSuite(t *testing.T) {
-	model, err := suite.NewModelWithFixtures(packr.NewBox("../fixtures"))
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	as := &ModelSuite{
-		Model: model,
-	}
-	suite.Run(t, as)
-}
-```
-{{< /tab >}}
 {{< tab "models/widget.go" >}}
 ```go
 package models
@@ -593,19 +617,20 @@ import (
 	"encoding/json"
 	"time"
 
-	"github.com/gobuffalo/pop"
-	"github.com/gobuffalo/pop/nulls"
-	"github.com/gobuffalo/validate"
-	"github.com/gobuffalo/validate/validators"
+	"github.com/gobuffalo/nulls"
+	"github.com/gobuffalo/pop/v6"
+	"github.com/gobuffalo/validate/v3"
+	"github.com/gobuffalo/validate/v3/validators"
 	"github.com/gofrs/uuid"
 )
 
+// Widget is used by pop to map your widgets database table to your go code.
 type Widget struct {
 	ID          uuid.UUID    `json:"id" db:"id"`
-	CreatedAt   time.Time    `json:"created_at" db:"created_at"`
-	UpdatedAt   time.Time    `json:"updated_at" db:"updated_at"`
 	Title       string       `json:"title" db:"title"`
 	Description nulls.String `json:"description" db:"description"`
+	CreatedAt   time.Time    `json:"created_at" db:"created_at"`
+	UpdatedAt   time.Time    `json:"updated_at" db:"updated_at"`
 }
 
 // String is not required by pop and may be deleted
@@ -642,64 +667,68 @@ func (w *Widget) ValidateCreate(tx *pop.Connection) (*validate.Errors, error) {
 func (w *Widget) ValidateUpdate(tx *pop.Connection) (*validate.Errors, error) {
 	return validate.NewErrors(), nil
 }
+
 ```
 {{< /tab >}}
 {{< tab "models/widget_test.go" >}}
 ```go
 package models
 
-import "testing"
-
-func Test_Widget(t *testing.T) {
-	t.Fatal("This test needs to be implemented!")
+func (ms *ModelSuite) Test_Widget() {
+	ms.Fail("This test needs to be implemented!")
 }
+
 ```
 {{< /tab >}}
 {{< /codetabs >}}
 
 {{< codetabs >}}
-{{< tab "templates/widgets/_form.html" >}}
+{{< tab "templates/widgets/_form.plush.html" >}}
 ```html
 <%= f.InputTag("Title") %>
 <%= f.TextAreaTag("Description", {rows: 10}) %>
 <button class="btn btn-success" role="submit">Save</button>
+
 ```
 {{< /tab >}}
-{{< tab "templates/widgets/edit.html" >}}
+{{< tab "templates/widgets/edit.plush.html" >}}
 ```html
-<div class="page-header">
-  <h1>Edit Widget</h1>
+<div class="py-4 mb-2">
+  <h3 class="d-inline-block">Edit Widget</h3>
 </div>
 
-<%= form_for(widget, {action: widgetPath({ widget_id: widget.ID }), method: "PUT"}) { %>
+<%= formFor(widget, {action: widgetPath({ widget_id: widget.ID }), method: "PUT"}) { %>
   <%= partial("widgets/form.html") %>
-  <a href="<%= widgetPath({ widget_id: widget.ID }) %>" class="btn btn-warning" data-confirm="Are you sure?">Cancel</a>
+  <%= linkTo(widgetPath({ widget_id: widget.ID }), {class: "btn btn-warning", "data-confirm": "Are you sure?", body: "Cancel"}) %>
 <% } %>
+
 ```
 {{< /tab >}}
-{{< tab "templates/widgets/index.html" >}}
+{{< tab "templates/widgets/index.plush.html" >}}
 ```html
-<div class="page-header">
-  <h1>Widgets</h1>
+<div class="py-4 mb-2">
+  <h3 class="d-inline-block">Widgets</h3>
+  <div class="float-end">
+    <%= linkTo(newWidgetsPath(), {class: "btn btn-primary"}) { %>
+      Create New Widget
+    <% } %>
+  </div>
 </div>
-<ul class="list-unstyled list-inline">
-  <li><a href="<%= newWidgetsPath() %>" class="btn btn-primary">Create New Widget</a></li>
-</ul>
 
-<table class="table table-striped">
-  <thead>
-  <th>Title</th>
+<table class="table table-hover table-bordered">
+  <thead class="thead-light">
+    <th>Title</th>
     <th>&nbsp;</th>
   </thead>
   <tbody>
     <%= for (widget) in widgets { %>
       <tr>
-      <td><%= widget.Title %></td>
+        <td class="align-middle"><%= widget.Title %></td>
         <td>
-          <div class="pull-right">
-            <a href="<%= widgetPath({ widget_id: widget.ID }) %>" class="btn btn-info">View</a>
-            <a href="<%= editWidgetPath({ widget_id: widget.ID }) %>" class="btn btn-warning">Edit</a>
-            <a href="<%= widgetPath({ widget_id: widget.ID }) %>" data-method="DELETE" data-confirm="Are you sure?" class="btn btn-danger">Destroy</a>
+          <div class="float-end">
+            <%= linkTo(widgetPath({ widget_id: widget.ID }), {class: "btn btn-info", body: "View"}) %>
+            <%= linkTo(editWidgetPath({ widget_id: widget.ID }), {class: "btn btn-warning", body: "Edit"}) %>
+            <%= linkTo(widgetPath({ widget_id: widget.ID }), {class: "btn btn-danger", "data-method": "DELETE", "data-confirm": "Are you sure?", body: "Destroy"}) %>
           </div>
         </td>
       </tr>
@@ -710,38 +739,56 @@ func Test_Widget(t *testing.T) {
 <div class="text-center">
   <%= paginator(pagination) %>
 </div>
+
 ```
 {{< /tab >}}
-{{< tab "templates/widgets/new.html" >}}
+{{< tab "templates/widgets/new.plush.html" >}}
 ```html
-<div class="page-header">
-  <h1>New Widget</h1>
+<div class="py-4 mb-2">
+  <h3 class="d-inline-block">New Widget</h3>
 </div>
 
-<%= form_for(widget, {action: widgetsPath(), method: "POST"}) { %>
+<%= formFor(widget, {action: widgetsPath(), method: "POST"}) { %>
   <%= partial("widgets/form.html") %>
-  <a href="<%= widgetsPath() %>" class="btn btn-warning" data-confirm="Are you sure?">Cancel</a>
+  <%= linkTo(widgetsPath(), {class: "btn btn-warning", "data-confirm": "Are you sure?", body: "Cancel"}) %>
 <% } %>
+
 ```
 {{< /tab >}}
-{{< tab "templates/widgets/show.html" >}}
+{{< tab "templates/widgets/show.plush.html" >}}
 ```html
-<div class="page-header">
-  <h1>Widget#Show</h1>
+<div class="py-4 mb-2">
+  <h3 class="d-inline-block">Widget Details</h3>
+
+  <div class="float-end">
+    <%= linkTo(widgetsPath(), {class: "btn btn-info"}) { %>
+      Back to all Widgets
+    <% } %>
+    <%= linkTo(editWidgetPath({ widget_id: widget.ID }), {class: "btn btn-warning", body: "Edit"}) %>
+    <%= linkTo(widgetPath({ widget_id: widget.ID }), {class: "btn btn-danger", "data-method": "DELETE", "data-confirm": "Are you sure?", body: "Destroy"}) %>
+  </div>
 </div>
 
-<ul class="list-unstyled list-inline">
-  <li class="list-inline-item"><a href="<%= widgetsPath() %>" class="btn btn-info">Back to all Widgets</a></li>
-  <li class="list-inline-item"><a href="<%= editWidgetPath({ widget_id: widget.ID })%>" class="btn btn-warning">Edit</a></li>
-  <li class="list-inline-item"><a href="<%= widgetPath({ widget_id: widget.ID })%>" data-method="DELETE" data-confirm="Are you sure?" class="btn btn-danger">Destroy</a>
+
+
+<ul class="list-group mb-2 ">
+
+
+  <li class="list-group-item pb-1">
+    <label class="small d-block">Title</label>
+    <p class="d-inline-block"><%= widget.Title %></p>
+  </li>
+
+
+
+  <li class="list-group-item pb-1">
+    <label class="small d-block">Description</label>
+    <p class="d-inline-block"><%= widget.Description %></p>
+  </li>
+
+
 </ul>
 
-<p>
-  <strong>Title</strong>: <%= widget.Title %>
-</p>
-<p>
-  <strong>Description</strong>: <%= widget.Description %>
-</p>
 ```
 {{< /tab >}}
 {{< /codetabs >}}
@@ -754,7 +801,7 @@ You can remove files generated by this generator by running:
 $ buffalo destroy resource users
 ```
 
-This command will ask you which files you want to remove, you can either answer each of the questions with y/n or you can pass the `-y` flag to the command like:
+This command will ask you which files you want to remove, you can either answer each of the questions with `y/n` or you can pass the `-y` flag to the command like:
 
 ```bash
 $ buffalo destroy resource users -y
@@ -772,39 +819,40 @@ $ buffalo d r users -y
 To simplify creating resource hierarchies, Buffalo supports nesting resources.
 
 ```go
-type UsersResource struct {
-  buffalo.Resource
+type WidgetsResource struct {
+	buffalo.Resource
 }
 
 type ImagesResource struct {
   buffalo.Resource
 }
 
-u := a.Resource("/users", UsersResource{})
-u.Resource("/images", ImagesResource{})
+w := app.Resource("/widgets", WidgetsResource{})
+w.Resource("/images", ImagesResource{})
 ```
 
 This results in the following routes:
 
 ```bash
 $ buffalo routes
-METHOD | HOST                   | PATH                                    | ALIASES | NAME              | HANDLER
------- | ----                   | ----                                    | ------- | ----              | -------
-GET    | http://127.0.0.1:3000  | /                                       |         | rootPath          | github.com/gobuffalo/coke/actions.HomeHandler
-GET    | http://127.0.0.1:3000  | /users                                  |         | usersPath         | github.com/gobuffalo/coke/actions.UsersResource.List
-POST   | http://127.0.0.1:3000  | /users                                  |         | usersPath         | github.com/gobuffalo/coke/actions.UsersResource.Create
-GET    | http://127.0.0.1:3000  | /users/new                              |         | newUsersPath      | github.com/gobuffalo/coke/actions.UsersResource.New
-GET    | http://127.0.0.1:3000  | /users/{user_id}                        |         | userPath          | github.com/gobuffalo/coke/actions.UsersResource.Show
-PUT    | http://127.0.0.1:3000  | /users/{user_id}                        |         | userPath          | github.com/gobuffalo/coke/actions.UsersResource.Update
-DELETE | http://127.0.0.1:3000  | /users/{user_id}                        |         | userPath          | github.com/gobuffalo/coke/actions.UsersResource.Destroy
-GET    | http://127.0.0.1:3000  | /users/{user_id}/edit                   |         | editUserPath      | github.com/gobuffalo/coke/actions.UsersResource.Edit
-GET    | http://127.0.0.1:3000  | /users/{user_id}/images                 |         | userImagesPath    | github.com/gobuffalo/coke/actions.ImagesResource.List
-POST   | http://127.0.0.1:3000  | /users/{user_id}/images                 |         | userImagesPath    | github.com/gobuffalo/coke/actions.ImagesResource.Create
-GET    | http://127.0.0.1:3000  | /users/{user_id}/images/new             |         | newUserImagesPath | github.com/gobuffalo/coke/actions.ImagesResource.New
-GET    | http://127.0.0.1:3000  | /users/{user_id}/images/{image_id}      |         | userImagePath     | github.com/gobuffalo/coke/actions.ImagesResource.Show
-PUT    | http://127.0.0.1:3000  | /users/{user_id}/images/{image_id}      |         | userImagePath     | github.com/gobuffalo/coke/actions.ImagesResource.Update
-DELETE | http://127.0.0.1:3000  | /users/{user_id}/images/{image_id}      |         | userImagePath     | github.com/gobuffalo/coke/actions.ImagesResource.Destroy
-GET    | http://127.0.0.1:3000  | /users/{user_id}/images/{image_id}/edit |         | editUserImagePath | github.com/gobuffalo/coke/actions.ImagesResource.Edit
+
+METHOD | HOST                  | PATH                                         | ALIASES | NAME                | HANDLER
+------ | ----                  | ----                                         | ------- | ----                | -------
+GET    | http://127.0.0.1:3000 | /                                            |         | rootPath            | coke/actions.HomeHandler
+GET    | http://127.0.0.1:3000 | /widgets/                                    |         | widgetsPath         | coke/actions.WidgetsResource.List
+POST   | http://127.0.0.1:3000 | /widgets/                                    |         | widgetsPath         | coke/actions.WidgetsResource.Create
+GET    | http://127.0.0.1:3000 | /widgets/new/                                |         | newWidgetsPath      | coke/actions.WidgetsResource.New
+GET    | http://127.0.0.1:3000 | /widgets/{widget_id}/                        |         | widgetPath          | coke/actions.WidgetsResource.Show
+PUT    | http://127.0.0.1:3000 | /widgets/{widget_id}/                        |         | widgetPath          | coke/actions.WidgetsResource.Update
+DELETE | http://127.0.0.1:3000 | /widgets/{widget_id}/                        |         | widgetPath          | coke/actions.WidgetsResource.Destroy
+GET    | http://127.0.0.1:3000 | /widgets/{widget_id}/edit/                   |         | editWidgetPath      | coke/actions.WidgetsResource.Edit
+GET    | http://127.0.0.1:3000 | /widgets/{widget_id}/images/                 |         | widgetImagesPath    | coke/actions.ImagesResource.List
+POST   | http://127.0.0.1:3000 | /widgets/{widget_id}/images/                 |         | widgetImagesPath    | coke/actions.ImagesResource.Create
+GET    | http://127.0.0.1:3000 | /widgets/{widget_id}/images/new/             |         | newWidgetImagesPath | coke/actions.ImagesResource.New
+GET    | http://127.0.0.1:3000 | /widgets/{widget_id}/images/{image_id}/      |         | widgetImagePath     | coke/actions.ImagesResource.Show
+PUT    | http://127.0.0.1:3000 | /widgets/{widget_id}/images/{image_id}/      |         | widgetImagePath     | coke/actions.ImagesResource.Update
+DELETE | http://127.0.0.1:3000 | /widgets/{widget_id}/images/{image_id}/      |         | widgetImagePath     | coke/actions.ImagesResource.Destroy
+GET    | http://127.0.0.1:3000 | /widgets/{widget_id}/images/{image_id}/edit/ |         | editWidgetImagePath | coke/actions.ImagesResource.Edit
 ```
 
 ## buffalo.BaseResource
@@ -822,7 +870,7 @@ The `buffalo.BaseResource` has basic implementations for all of the methods requ
 ```go
 // Edit default implementation. Returns a 404
 func (v BaseResource) Edit(c Context) error {
-  return c.Error(404, errors.New("resource not implemented"))
+  return c.Error(http.StatusNotFound, errors.New("resource not implemented"))
 }
 ```
 
@@ -833,3 +881,7 @@ func (v BaseResource) Edit(c Context) error {
 ## Related Content
 
 * [Actions](/documentation/request_handling/actions) - Learn more about Buffalo actions.
+
+## Next Steps
+
+* [Context](/documentation/request_handling/context/) - Learn more about Buffalo context.

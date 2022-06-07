@@ -19,24 +19,24 @@ Since `buffalo.Context` is an interface it is possible to create an application 
 
 ```go
 type Context interface {
-  context.Context
-  Response() http.ResponseWriter
-  Request() *http.Request
-  Session() *Session
-  Cookies() *Cookies
-  Params() ParamValues
-  Param(string) string
-  Set(string, interface{})
-  LogField(string, interface{})
-  LogFields(map[string]interface{})
-  Logger() Logger
-  Bind(interface{}) error
-  Render(int, render.Renderer) error
-  Error(int, error) error
-  Redirect(int, string, ...interface{}) error
-  Data() map[string]interface{}
-  Flash() *Flash
-  File(string) (binding.File, error)
+	context.Context
+	Response() http.ResponseWriter
+	Request() *http.Request
+	Session() *Session
+	Cookies() *Cookies
+	Params() ParamValues
+	Param(string) string
+	Set(string, interface{})
+	LogField(string, interface{})
+	LogFields(map[string]interface{})
+	Logger() Logger
+	Bind(interface{}) error
+	Render(int, render.Renderer) error
+	Error(int, error) error
+	Redirect(int, string, ...interface{}) error
+	Data() map[string]interface{}
+	Flash() *Flash
+	File(string) (binding.File, error)
 }
 ```
 
@@ -51,7 +51,8 @@ Any values that are "set" on the context will automatically be available to the 
 ```go
 func Hello(c buffalo.Context) error {
   c.Set("name", "Mark")
-  return c.Render(200, render.String("Hi <%= name %>"))
+
+  return c.Render(http.StatusOK, render.String("Hi <%= name %>"))
 }
 ```
 
@@ -105,7 +106,8 @@ func HomeHandler(c buffalo.Context) error {
       fmt.Println(k, v)
     }
   }
-  return c.Render(200, r.HTML("index.html"))
+
+  return c.Render(http.StatusOK, r.HTML("index.html"))
 }
 ```
 

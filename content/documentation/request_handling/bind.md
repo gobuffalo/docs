@@ -18,7 +18,7 @@ For more information on request binding in Buffalo, see the godoc for [github.co
 
 The `Bind` function works by looking at the `Content-Type` or `Accept` header of a request and looking for a mapped implementation of the [`binding.Binder`](https://godoc.org/github.com/gobuffalo/buffalo/binding#Binder) interface.
 
-##### Mapped Content Types (HTML)
+#### Mapped Content Types (HTML)
 
 * `application/html`
 * `text/html`
@@ -26,13 +26,13 @@ The `Bind` function works by looking at the `Content-Type` or `Accept` header of
 * `multipart/form-data`
 * `html`
 
-##### Mapped Content Types (JSON)
+#### Mapped Content Types (JSON)
 
 * `application/json`
 * `text/json`
 * `json`
 
-##### Mapped Content Types (XML)
+#### Mapped Content Types (XML)
 
 * `application/xml`
 * `text/xml`

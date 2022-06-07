@@ -12,24 +12,31 @@ aliases:
 
 Buffalo uses the [github.com/gorilla/mux](http://www.gorillatoolkit.org/pkg/mux) package under the covers, to handle routing within Buffalo applications. With that said, Buffalo wraps the `mux` API with its own. This guide walks you through all you'll need to know about how Buffalo handles routing.
 
-## Creating a new Buffalo App (and router)
+## We need to have the buffalo.App configuration created
 
-The app configuration is located in the `app.go` file.
+The app configuration is located in the `actions/app.go` file.
 
 ```go
-a := buffalo.New(buffalo.Options{
-  Env:         ENV,
-  SessionName: "_coke_session",
-})
+// actions/app.go
+app = buffalo.New(buffalo.Options{
+    Env:         ENV,
+    SessionName: "_coke_session",
+  })
 ```
 
-The default setup should handle most of your needs, but you are free to customize it to fit your use case.
+By default, buffalo requires only 2 options for its app setup:
+
+- `Env`: The enviroment where the application will run. Default value: `development`.
+- `SessionName`: Is the session cookie that is set. Default value: `_buffalo_session`.
+
+You are free to customize it to fit your use case.
 
 You can check the available options list here: [https://godoc.org/github.com/gobuffalo/buffalo#Options](https://godoc.org/github.com/gobuffalo/buffalo#Options)
 
-## Mapping Handlers
 
-All routing in Buffalo results in the calling of a `buffalo.Handler` function. The signature for a `buffalo.Handler` looks like this:
+## Buffalo.Handler
+
+If you already know about **MVC pattern**, `buffalo.Handler` functions manages the Controller part. Its signature looks like this:
 
 ```go
 func (c buffalo.Context) error {
@@ -37,40 +44,95 @@ func (c buffalo.Context) error {
 }
 ```
 
-If you already know about **MVC pattern**, `buffalo.Handler` functions manages the Controller part: this is the place where all the app logic goes. The handler function takes a `buffalo.Context` struct, which contains everything you need about the current request.
+This is the place where all the app logic goes. The handler function takes a `buffalo.Context` param, which contains everything you need about the current request.
 
+
+{{<note>}}
 See the [Context](/documentation/request_handling/context) to understand the `buffalo.Context` interface.
+{{</note>}}
+
+
+
+
+## Mapping Handlers
+
+To map a `buffalo.Handler`, you'll need to associate it with an specific path with an HTTP method.
 
 ##### Supported HTTP Methods
 
-Buffalo supports the following HTTP methods out of the box:
+Buffalo supports the following HTTP methods:
 
-* GET
-* POST
-* PUT
-* PATCH
-* DELETE
-* OPTIONS
-* HEAD
+{{< codetabs >}}
+{{< tab "GET" >}}
+```go
+app.GET("/your/path", buffalo.Handler)
+```
+{{< /tab >}}
+{{< tab "POST" >}}
+```go
+app.POST("/your/path", buffalo.Handler)
+```
+{{< /tab >}}
+{{< tab "PUT" >}}
+```go
+app.PUT("/your/path", buffalo.Handler)
+```
+{{< /tab >}}
+{{< tab "PATCH" >}}
+```go
+app.PATCH("/your/path", buffalo.Handler)
+```
+{{< /tab >}}
+{{< tab "DELETE" >}}
+```go
+app.DELETE("/your/path", buffalo.Handler)
+```
+{{< /tab >}}
+{{< tab "OPTIONS" >}}
+```go
+app.OPTIONS("/your/path", buffalo.Handler)
+```
+{{< /tab >}}
+{{< tab "HEAD" >}}
+```go
+app.HEAD("/your/path", buffalo.Handler)
+```
+{{< /tab >}}
+{{< /codetabs >}}
 
 You can also match all HTTP methods using `ANY`.
 
-Mapping a `buffalo.Handler` to an HTTP method takes the form of:
+As default, Buffalo sets a root path inside bufalo.App setup:
 
 ```go
-a.GET("/some/path", SomeHandler)
-a.POST("/some/path", func (c buffalo.Context) error {
+// actions/app.go
+func App() *buffalo.App {
+  // ...
+  app.GET("/", HomeHandler)
+  // ...
+}
+```
+
+Mapping multiple `buffalo.Handlers` to HTTP methods take the form of:
+
+```go
+// actions/app.go
+app.GET("/", HomeHandler)
+app.GET("/some/path", SomeHandler)
+app.POST("/another/path", func (c buffalo.Context) error {
   // do some work
 })
 // etc...
 ```
 
-As you can see, you can use inline handlers if you want. For more readability though, it's often better to separate your handlers into multiple files. If you have many handlers managing users stuff, you can group them into a `users.go` file in the [`actions`](/documentation/getting_started/directory-structure#actions) folder, for instance.
-
+As you can see, you can use inline buffalo.Handlers if you want.
+For more readability though, it's often better to separate your handlers into multiple files. For example, if you have many handlers managing users stuff, you can group them into a `users.go` file in the [`actions`](/documentation/getting_started/directory-structure#actions) folder, for instance.
 
 ## Named Routes
 
-By default, Buffalo will name your routes for you in the form of `pathnamePath`. For example `a.GET("/coke", CokeHandler)` will result in a route named `cokePath`.
+By default, Buffalo will name your routes for you in the form of `<pathName>Path`.
+
+For example: `a.GET("/coke", CokeHandler)` will result in a route named `cokePath`.
 
 ```go
 a.GET("/coke", CokeHandler) // cokePath()
@@ -82,47 +144,100 @@ These names become the name of the route helpers in your templates.
 <a href="<%= cokePath() %>">Coke</a>
 ```
 
-You can inspect all of your paths by running `buffalo routes` from the command line.
+## Custom Named Routes
 
-```plain
-$ buffalo routes
+Buffalo also provides you a way to set a custom name for your route, The [`buffalo.RouteInfo#Name`](https://godoc.org/github.com/gobuffalo/buffalo#RouteInfo.Name) method allows you to set a custom name for route helpers.
+To customize your route name, just use the Name method after mapping the HTTP Method.
 
-METHOD | HOST                   | PATH                       | ALIASES | NAME           | HANDLER
------- | ----                   | ----                       | ------- | ----           | -------
-GET    | http://127.0.0.1:3000  | /                          |         | rootPath       | github.com/markbates/coke/actions.HomeHandler
-GET    | http://127.0.0.1:3000  | /widgets/                  |         | widgetsPath    | github.com/markbates/coke/actions.WidgetsResource.List
-POST   | http://127.0.0.1:3000  | /widgets/                  |         | widgetsPath    | github.com/markbates/coke/actions.WidgetsResource.Create
-GET    | http://127.0.0.1:3000  | /widgets/new/              |         | newWidgetsPath | github.com/markbates/coke/actions.WidgetsResource.New
-GET    | http://127.0.0.1:3000  | /widgets/{widget_id}/      |         | widgetPath     | github.com/markbates/coke/actions.WidgetsResource.Show
-PUT    | http://127.0.0.1:3000  | /widgets/{widget_id}/      |         | widgetPath     | github.com/markbates/coke/actions.WidgetsResource.Update
-DELETE | http://127.0.0.1:3000  | /widgets/{widget_id}/      |         | widgetPath     | github.com/markbates/coke/actions.WidgetsResource.Destroy
-GET    | http://127.0.0.1:3000  | /widgets/{widget_id}/edit/ |         | editWidgetPath | github.com/markbates/coke/actions.WidgetsResource.Edit
+```go
+app.GET("/coke", CokeHandler).Name("customCoke") // customCokePath()
 ```
 
----
+This route is now called `customCokePath` and you can reference it as such in your templates.
 
-**IMPORTANT:** Because route helper names are calculated using the `path`, (`/widgets/new` -> `newWidgetsPath`), if the path changes, then the route helper name **also** changes.
+
+```html
+<a href="<%= customCokePath() %>">Coke</a>
+```
+
+## Route list
+
+You can inspect all of your paths by running `buffalo routes` from the command line.
+
+```bash
+$ buffalo routes
+
+METHOD | HOST                  | PATH                    | ALIASES | NAME                 | HANDLER
+------ | ----                  | ----                    | ------- | ----                 | -------
+GET    | http://127.0.0.1:3000 | /                       |         | rootPath             | coke/actions.HomeHandler
+GET    | http://127.0.0.1:3000 | /some/path/             |         | somePath             | coke/actions.SomeHandler
+POST   | http://127.0.0.1:3000 | /another/path/          |         | anotherPath          | coke/actions.App.func1
+GET    | http://127.0.0.1:3000 | /coke/                  |         | customCokePath       | coke/actions.CokeHandler
+```
+
+
+{{<note>}}
+**IMPORTANT:** Because route helper names are calculated using the **`path`** pe. **`/widgets/new -> newWidgetsPath`**; if path changes, then the route helper name **also** changes.
+{{</note>}}
+
+Example:
+
+Mapping `WidgetResource` in `/widgets` path:
+
+```go
+app.Resource("/widgets", WidgetsResource{})
+```
+
+You will get the following route path names:
+
+```bash
+$ buffalo routes
+
+METHOD | HOST                  | PATH                       | ALIASES | NAME                 | HANDLER
+------ | ----                  | ----                       | ------- | ----                 | -------
+GET    | http://127.0.0.1:3000 | /                          |         | rootPath             | coke/actions.HomeHandler
+GET    | http://127.0.0.1:3000 | /some/path/                |         | somePath             | coke/actions.SomeHandler
+POST   | http://127.0.0.1:3000 | /another/path/             |         | anotherPath          | coke/actions.App.func1
+GET    | http://127.0.0.1:3000 | /coke/                     |         | customCokePath       | coke/actions.CokeHandler
+
+GET    | http://127.0.0.1:3000 | /widgets/                  |         | widgetsPath    | coke/actions.WidgetResource.List
+POST   | http://127.0.0.1:3000 | /widgets/                  |         | widgetsPath    | coke/actions.WidgetResource.Create
+GET    | http://127.0.0.1:3000 | /widgets/new/              |         | newWidgetsPath | coke/actions.WidgetResource.New
+GET    | http://127.0.0.1:3000 | /widgets/{widget_id}/      |         | widgetPath     | coke/actions.WidgetResource.Show
+PUT    | http://127.0.0.1:3000 | /widgets/{widget_id}/      |         | widgetPath     | coke/actions.WidgetResource.Update
+DELETE | http://127.0.0.1:3000 | /widgets/{widget_id}/      |         | widgetPath     | coke/actions.WidgetResource.Destroy
+GET    | http://127.0.0.1:3000 | /widgets/{widget_id}/edit/ |         | editWidgetPath | coke/actions.WidgetResource.Edit
+```
+
+But, if you rename the route path to `/fooz`:
 
 ```go
 app.Resource("/fooz", WidgetsResource{})
 ```
 
+The route names will be renamed to:
+
 ```bash
 $ buffalo routes
 
-METHOD | HOST                   | PATH                    | ALIASES | NAME         | HANDLER
------- | ----                   | ----                    | ------- | ----         | -------
-GET    | http://127.0.0.1:3000  | /                       |         | rootPath     | github.com/markbates/coke/actions.HomeHandler
-GET    | http://127.0.0.1:3000  | /fooz/                  |         | foozPath     | github.com/markbates/coke/actions.WidgetsResource.List
-POST   | http://127.0.0.1:3000  | /fooz/                  |         | foozPath     | github.com/markbates/coke/actions.WidgetsResource.Create
-GET    | http://127.0.0.1:3000  | /fooz/new/              |         | newFoozPath  | github.com/markbates/coke/actions.WidgetsResource.New
-GET    | http://127.0.0.1:3000  | /fooz/{widget_id}/      |         | foozPath     | github.com/markbates/coke/actions.WidgetsResource.Show
-PUT    | http://127.0.0.1:3000  | /fooz/{widget_id}/      |         | foozPath     | github.com/markbates/coke/actions.WidgetsResource.Update
-DELETE | http://127.0.0.1:3000  | /fooz/{widget_id}/      |         | foozPath     | github.com/markbates/coke/actions.WidgetsResource.Destroy
-GET    | http://127.0.0.1:3000  | /fooz/{widget_id}/edit/ |         | editFoozPath | github.com/markbates/coke/actions.WidgetsResource.Edit
+METHOD | HOST                  | PATH                    | ALIASES | NAME                 | HANDLER
+------ | ----                  | ----                    | ------- | ----                 | -------
+GET    | http://127.0.0.1:3000 | /                       |         | rootPath             | coke/actions.HomeHandler
+GET    | http://127.0.0.1:3000 | /some/path/             |         | somePath             | coke/actions.SomeHandler
+POST   | http://127.0.0.1:3000 | /another/path/          |         | anotherPath          | coke/actions.App.func1
+GET    | http://127.0.0.1:3000 | /coke/                  |         | customCokePath       | coke/actions.CokeHandler
+
+GET    | http://127.0.0.1:3000 | /fooz/                  |         | foozPath             | coke/actions.WidgetResource.List
+POST   | http://127.0.0.1:3000 | /fooz/                  |         | foozPath             | coke/actions.WidgetResource.Create
+GET    | http://127.0.0.1:3000 | /fooz/new/              |         | newFoozPath          | coke/actions.WidgetResource.New
+GET    | http://127.0.0.1:3000 | /fooz/{widget_id}/      |         | foozWidgetIDPath     | coke/actions.WidgetResource.Show
+PUT    | http://127.0.0.1:3000 | /fooz/{widget_id}/      |         | foozWidgetIDPath     | coke/actions.WidgetResource.Update
+DELETE | http://127.0.0.1:3000 | /fooz/{widget_id}/      |         | foozWidgetIDPath     | coke/actions.WidgetResource.Destroy
+GET    | http://127.0.0.1:3000 | /fooz/{widget_id}/edit/ |         | editFoozWidgetIDPath | coke/actions.WidgetResource.Edit
 ```
 
 See [`Custom Named Routes`](#custom-named-routes) for details on how to change the generated name.
+
 
 ## Using Route Helpers in Templates
 
@@ -135,7 +250,7 @@ Route helpers can be used directly in templates using the name of the helper:
 Routes that require named parameters, must be fed a map of those parameters.
 
 ```erb
-<%= editWidgetPath({widget_id: 1}) %> // /widgets/1/edit
+<%= editWidgetPath({widget_id: 1}) %> --> /widgets/1/edit
 ```
 
 
@@ -191,9 +306,9 @@ You can also use route names when redirecting to another url.
 
 ```go
 func MyHandler(c buffalo.Context) error {
-  return c.Redirect(307, "widgetsPath()")
+  return c.Redirect(http.StatusSeeOther, "widgetsPath()")
   // Or with parameters
-  return c.Redirect(307, "widgetPath()", render.Data{"widget_id": "1"})
+  return c.Redirect(http.StatusSeeOther, "widgetPath()", render.Data{"widget_id": "1"})
 }
 ```
 
@@ -220,20 +335,6 @@ func MyHandler(c buffalo.Context) error {
 }
 ```
 
-
-## Custom Named Routes
-
-The [`buffalo.RouteInfo#Name`](https://godoc.org/github.com/gobuffalo/buffalo#RouteInfo.Name) function allows you to set a custom name for route helpers.
-
-```go
-a.GET("/coke", CokeHandler).Name("customPath")
-```
-
-This route is now called `customPath` and you can reference it as such in your templates.
-
-```erb
-<a href="<%= customPath() %>">Coke</a>
-```
 
 ## Parameters
 

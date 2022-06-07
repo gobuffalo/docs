@@ -39,11 +39,10 @@ Since writing actions boilerplate is quite redundant, Buffalo provides generator
 
 ```bash
 $ buffalo g action --help
-
-Generates new action(s)
+Generate new action(s)
 
 Usage:
-  buffalo generate action [name] [handler name...] [flags] 
+  buffalo generate action [name] [handler name...] [flags]
 
 Aliases:
   action, a, actions
@@ -54,18 +53,36 @@ Flags:
   -m, --method string   change the HTTP method for the generate action(s) (default "GET")
       --skip-template   skip generation of templates for action(s)
   -v, --verbose         verbosely run the generator
-
 ```
+
+To generate actions for `users` just type:
 
 ```bash
 $ buffalo g a users show index create
+```
 
---> templates/users/show.html
---> templates/users/index.html
---> templates/users/create.html
---> actions/users.go
---> actions/users_test.go
---> goimports -w .
+This will generate the following files:
+
+```erb
+├── actions/
+│	├── users_test.go
+│	└── users.go
+│
+└── templates/
+	└── users/
+		├── create.plush.html
+		├── index.plush.html
+		└── show.plush.html
+```
+
+Besides, Buffalo will register the user routes into `actions/app.go` file:
+
+```go
+// actions/app.go
+
+app.GET("/users/show", UsersShow)
+app.GET("/users/index", UsersIndex)
+app.GET("/users/create", UsersCreate)
 ```
 
 In some cases you will need to generate an action with an HTTP method different than `GET`, for that case you can use the `--method` flag, like in the following example:

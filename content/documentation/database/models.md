@@ -81,9 +81,12 @@ Usage:
 Aliases:
   model, m
 
-
 Flags:
+  -h, --help                    help for model
+      --migration-type string   sets the type of migration files for model (sql or fizz) (default "fizz")
+      --models-path string      the path the model will be created in (default "models")
   -s, --skip-migration   Skip creating a new fizz migration for this model.
+      --struct-tag string       sets the struct tags for model (xml/json/jsonapi) (default "json")
 
 Global Flags:
   -c, --config string   The configuration file you would like to use.

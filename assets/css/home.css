@@ -110,7 +110,7 @@ table code {
 }
 
 .content ul li {
-    @apply ml-6;
+    @apply ml-6 mb-1.5;
 }
 
 .content a {

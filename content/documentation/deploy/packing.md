@@ -57,6 +57,7 @@ Aliases:
   build, b, bill, install
 
 Flags:
+    --build-flags strings        Additional comma-separated build flags to feed to go build
     --clean-assets               will delete public/assets before calling webpack
     --dry-run                    runs the build 'dry'
     --environment string         set the environment for the binary (default "development")

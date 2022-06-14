@@ -126,21 +126,6 @@ When looping through `slices`, the block being looped through will have access t
 The `for` statement takes 1 or 2 arguments. When using the two arguments version, the first argument is the "index" of the loop and the second argument is the value from the slice.
 
 {{<codetabs>}}
-
-{{<tab "Using 1 Argument">}}
-When using the one argument version the index is omitted and just the value is returned:
-
-```erb
-<ul>
-  <%= for (name) in names { %>
-    <li><%= name %></li>
-  <% } %>
-</ul>
-```
-{{</tab>}}
-{{</codetabs>}}
-
-{{<codetabs>}}
 {{<tab "actions/main.go">}}
 ```go
 func MyHandler(c buffalo.Context) error {

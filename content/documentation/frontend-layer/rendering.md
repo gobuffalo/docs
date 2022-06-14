@@ -9,12 +9,13 @@ aliases:
 # Rendering
 
 
-The [https://github.com/gobuffalo/buffalo/render](https://github.com/gobuffalo/buffalo/tree/master/render) [[godoc]](https://godoc.org/github.com/gobuffalo/buffalo/render) package implements that interface, and has a collection of useful render types already defined. It is recommended that you use this package, but feel free and write your own renderers!
+The [https://github.com/gobuffalo/buffalo/render](https://github.com/gobuffalo/buffalo/tree/main/render) [[godoc]](https://pkg.go.dev/github.com/gobuffalo/buffalo/render) package implements that interface, and has a collection of useful render types already defined. It is recommended that you use this package, but feel free and write your own renderers!
 
-<p>
-<em>This document only applies when using <a href="https://github.com/gobuffalo/buffalo/tree/master/render" rel="nofollow">https://github.com/gobuffalo/buffalo/render</a>.</em><br>
-<em>Please see <a href="https://github.com/gobuffalo/plush" target="_blank">github.com/gobuffalo/plush</a> for more details on the underlying templating package.</em>
-</p
+{{<note>}}
+This document only applies when using [https://github.com/gobuffalo/buffalo/tree/main/render](https://github.com/gobuffalo/buffalo/tree/main/render).
+Please see [github.com/gobuffalo/plush](https://github.com/gobuffalo/plush) for more details on the underlying templating package.
+{{</note>}}
+
 
 ## Render Auto
 
@@ -26,7 +27,7 @@ In many cases, you'll have to provide the same contents in different formats: JS
 func Beatles(c buffalo.Context) error {
   members := models.Members{}
   // ...
-  return c.Render(200, r.Auto(c, members))
+  return c.Render(http.StatusOK, r.Auto(c, members))
 }
 ```
 
@@ -34,29 +35,76 @@ func Beatles(c buffalo.Context) error {
 
 ## JSON and XML
 
-When rendering JSON, or XML, using the [`r.JSON`](https://godoc.org/github.com/gobuffalo/buffalo/render#JSON) or [`r.XML`](https://godoc.org/github.com/gobuffalo/buffalo/render#XML), you pass the value that you would like to be marshaled and the appropriate marshaler will encode the value you passed and write it to the response with the correct content/type.
+When rendering JSON, or XML, using the [`render.JSON`](https://pkg.go.dev/github.com/gobuffalo/buffalo/render#JSON) or [`render.XML`](https://pkg.go.dev/github.com/gobuffalo/buffalo/render#XML), you pass the value that you would like to be marshaled and the appropriate marshaler will encode the value you passed and write it to the response with the correct content/type.
 
-**NOTE**: If you already have a string that contains JSON or XML do **NOT** use these methods as they will attempt to marshal the string into JSON or XML causing strange responses.
-What you could do instead is write a custom render function as explained in the [Custom Rendering](#custom-rendering) section.
+{{<note>}}
+**NOTE:** If you already have a string that contains JSON or XML, do **NOT** use these methods as they will attempt to marshal the string into JSON or XML causing strange responses.
+What you could do instead is write a **custom render** function as explained in the [Custom Rendering](#custom-rendering) section.
+{{</note>}}
+
+```go
+// models/user.go
+
+type User struct {
+	FirstName string
+	LastName  string
+	Gender    string
+}
+```
+{{<codetabs>}}
+{{<tab "JSON">}}
 ```go
 func MyHandler(c buffalo.Context) error {
-  return c.Render(200, r.JSON(User{}))
+  user := models.User{
+		FirstName: "John",
+		LastName:  "Smith",
+		Gender:    "Male",
+	}
+
+  return c.Render(http.StatusOK, r.JSON(user))
 }
 ```
 
+```json
+// output
+{
+  "FirstName": "John",
+  "LastName": "Smith",
+  "Gender": "Male"
+}
+```
+{{</tab>}}
+{{<tab "XML">}}
 ```go
 func MyHandler(c buffalo.Context) error {
-  return c.Render(200, r.XML(User{}))
+  user := models.User{
+		FirstName: "John",
+		LastName:  "Smith",
+		Gender:    "Male",
+	}
+
+  return c.Render(http.StatusOK, r.XML(user))
 }
 ```
 
+```xml
+<!-- output -->
+<User>
+  <FirstName>John</FirstName>
+  <LastName>Smith</LastName>
+  <Gender>Male</Gender>
+</User>
+```
+{{</tab>}}
+{{</codetabs>}}
 
 ## Markdown
 
-Files passed into the `render.HTML` or `render.Template` functions, that have an extension of `.md`, will be converted from Markdown (using GitHub flavored Markdown) to HTML before being run through the templating engine. This makes for incredibly easy templating for simpler pages.
+Files passed into the [`render.HTML`](https://pkg.go.dev/github.com/gobuffalo/buffalo/render#Engine.HTML) or [`render.Template`](https://pkg.go.dev/github.com/gobuffalo/buffalo/render#Engine.Template) methods, that have an extension of `.plush.md`, will be converted from Markdown (using GitHub flavored Markdown) to HTML before being run through the templating engine. This makes for incredibly easy templating for simpler pages.
 
 ```md
-// beatles.md
+<!-- beatles.plush.md -->
+
 # The Beatles
 
 <%= for (name) in names { %>
@@ -66,21 +114,23 @@ Files passed into the `render.HTML` or `render.Template` functions, that have an
 
 ```go
 // actions/beatles.go
+
 func Beatles(c buffalo.Context) error {
   c.Set("names", []string{"John", "Paul", "George", "Ringo"})
-  return c.Render(200, r.HTML("beatles.md"))
+
+  return c.Render(http.StatusOK, r.HTML("beatles.plush.md"))
 }
 ```
 
 ```html
-// output
+<!-- output -->
 <h1>The Beatles</h1>
 
 <ul>
-  <li>John</li>
-  <li>Paul</li>
-  <li>George</li>
-  <li>Ringo</li>
+  <li><p>John</p></li>
+  <li><p>Paul</p></li>
+  <li><p>George</p></li>
+  <li><p>Ringo</p></li>
 </ul>
 ```
 
@@ -94,7 +144,7 @@ This means inside of an action you can do the following:
 
 ```go
 func HomeHandler(c buffalo.Context) error {
-  return c.Render(200, r.JavaScript("index.js"))
+  return c.Render(http.StatusOK, r.JavaScript("index.js"))
 }
 ```
 
@@ -111,27 +161,46 @@ $("#new-goal-form").replaceWith("<%= partial("goals/new.html") %>");
 
 {{< since "0.10.2" >}}
 
-You can use HTML, Javascript and Markdown renderers without specifying the file extension:
+You can use `HTML`, `Javascript` and `Markdown` renderers without specifying the file extension:
 
 ```go
 // actions/beatles.go
 func Beatles(c buffalo.Context) error {
   c.Set("names", []string{"John", "Paul", "George", "Ringo"})
   // Render beatles.html
-  return c.Render(200, r.HTML("beatles"))
+  return c.Render(http.StatusOK, r.HTML("beatles"))
 }
 ```
 
+{{<note>}}
 This works with [partials](/documentation/frontend-layer/partials) too.
+{{</note>}}
+
+## Download files
+
+The [`r.Download`](https://pkg.go.dev/github.com/gobuffalo/buffalo/render#Engine.Download) method allows you to download files in your application easily.
+
+```go
+
+func DownloadHandler(c buffalo.Context) error {
+	// ...
+	f, err := os.Open("your/path/file_name.extension")
+	if err != nil {
+		return err
+	}
+
+	return c.Render(http.StatusOK, r.Download(c, "file_name.extension", f))
+}
+```
 
 
 ## Custom Rendering
 
-The [`r.Func`](https://godoc.org/github.com/gobuffalo/buffalo/render#Func) method allows you to pass in a content type and a function to render your data to the provided `io.Writer`, which is commonly, the HTTP response, in particular, a [`*buffalo.Response`](https://godoc.org/github.com/gobuffalo/buffalo#Response).
+For another type of rendering, the [`r.Func`](https://godoc.org/github.com/gobuffalo/buffalo/render#Func) method allows you to pass in a content type and a function to render your data to the provided `io.Writer`, which is commonly, the HTTP response, in particular, a [`*buffalo.Response`](https://godoc.org/github.com/gobuffalo/buffalo#Response).
 
 ```go
 func MyHandler(c buffalo.Context) error {
-  return c.Render(200, r.Func("application/csv", csvWriter))
+  return c.Render(http.StatusOK, r.Func("application/csv", csvWriter))
 }
 
 func csvWriter(w io.Writer, d render.Data) error {
@@ -148,7 +217,7 @@ For smaller, or one off situations, using an anonymous function can be even easi
 In this example you can see how to use an anonymous function to render a string that already contains JSON.
 ```go
 var myJSONString string
-return c.Render(200, r.Func("application/json", func(w io.Writer, d render.Data) error {
+return c.Render(http.StatusOK, r.Func("application/json", func(w io.Writer, d render.Data) error {
   _, err := w.Write([]byte(myJSONString))
   return err
 }))

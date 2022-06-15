@@ -144,25 +144,29 @@ You can check if your installation is working, by executing the `buffalo` comman
 
 ```sh
 $ buffalo
-Helps you build your Buffalo applications that much easier!
+Build Buffalo applications with ease
 
 Usage:
   buffalo [command]
 
 Available Commands:
-  build       Builds a Buffalo binary, including bundling of assets (packr & webpack)
-  db          A tasty treat for all your database needs
-  destroy     Allows to destroy generated code.
-  dev         Runs your Buffalo app in 'development' mode
-  generate    A collection of generators to make life easier
+  build       Build the application binary, including bundling of webpack assets
+  completion  Generate the autocompletion script for the specified shell
+  db          [PLUGIN] [DEPRECATED] please use `buffalo pop` instead.
+  destroy     Destroy generated components
+  dev         Run the Buffalo app in 'development' mode
+  fix         Attempt to fix a Buffalo applications API to match version v0.18.6
+  generate    Generate application components
   help        Help about any command
-  info        Prints off diagnostic information useful for debugging.
+  info        Print diagnostic information (useful for debugging)
   new         Creates a new Buffalo application
-  setup       Setups a newly created, or recently checked out application.
-  task        Runs your grift tasks
-  test        Runs the tests for your Buffalo app
-  update      will attempt to upgrade a Buffalo application to version {{< latestclirelease >}}
-  version     Print the version number of buffalo
+  plugins     tools for working with buffalo plugins
+  pop         [PLUGIN] A tasty treat for all your database needs
+  routes      Print all defined routes
+  setup       Setup a newly created, or recently checked out application.
+  task        Run grift tasks
+  test        Run the tests for the Buffalo app. Use --force-migrations to skip schema load.
+  version     Print the version information
 
 Flags:
   -h, --help   help for buffalo

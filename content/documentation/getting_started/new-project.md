@@ -159,7 +159,7 @@ go: finding module for package github.com/markbates/grift/grift
 go: finding module for package github.com/gobuffalo/pop/v6
 go: finding module for package github.com/gobuffalo/suite/v4
 go: found github.com/gobuffalo/buffalo in github.com/gobuffalo/buffalo v0.18.7
-go: found github.com/gobuffalo/buffalo-pop/v3/pop/popmw in github.com/gobuffalo/buffalo-pop/v3 v3.0.3
+go: found github.com/gobuffalo/buffalo-pop/v3/pop/popmw in github.com/gobuffalo/buffalo-pop/v3 v3.0.4
 go: found github.com/gobuffalo/buffalo/render in github.com/gobuffalo/buffalo v0.18.7
 go: found github.com/gobuffalo/envy in github.com/gobuffalo/envy v1.10.1
 go: found github.com/gobuffalo/mw-csrf in github.com/gobuffalo/mw-csrf v1.0.0
@@ -168,7 +168,7 @@ go: found github.com/gobuffalo/mw-i18n/v2 in github.com/gobuffalo/mw-i18n/v2 v2.
 go: found github.com/gobuffalo/mw-paramlogger in github.com/gobuffalo/mw-paramlogger v1.0.0
 go: found github.com/unrolled/secure in github.com/unrolled/secure v1.10.0
 go: found github.com/markbates/grift/grift in github.com/markbates/grift v1.5.0
-go: found github.com/gobuffalo/pop/v6 in github.com/gobuffalo/pop/v6 v6.0.3
+go: found github.com/gobuffalo/pop/v6 in github.com/gobuffalo/pop/v6 v6.0.4
 go: found github.com/gobuffalo/suite/v4 in github.com/gobuffalo/suite/v4 v4.0.2
 DEBU[2022-05-25T11:06:45-05:00] Exec: go mod download
 DEBU[2022-05-25T11:06:46-05:00] Step: 218a906c

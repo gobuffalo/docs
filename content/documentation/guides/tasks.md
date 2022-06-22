@@ -58,6 +58,7 @@ $ buffalo task list
 
 Available grifts
 ================
+buffalo task db:seed       # Seeds a database
 buffalo task middleware    # Prints out your middleware stack
 buffalo task routes        # Print out all defined routes
 buffalo task secret        # Generate a cryptographically secure secret key

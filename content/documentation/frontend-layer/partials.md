@@ -8,116 +8,149 @@ aliases:
 
 # Partials
 
-<p>
-<em>This document only applies when using <a href="https://github.com/gobuffalo/buffalo/tree/master/render" rel="nofollow">https://github.com/gobuffalo/buffalo/render</a>.</em><br>
-<em>Please see <a href="https://github.com/gobuffalo/plush" target="_blank">github.com/gobuffalo/plush</a> for more details on the underlying templating package.</em>
-</p
 
-## Naming
+{{<note>}}
+This document only applies when using [https://github.com/gobuffalo/buffalo/tree/main/render](https://github.com/gobuffalo/buffalo/tree/main/render).
+Please see [github.com/gobuffalo/plush](https://github.com/gobuffalo/plush) for more details on the underlying templating package.
+{{</note>}}
 
-All partial file names must start with an `_`. For example: `_form.html`. This helps to differentiate partials from other view templates in your application.
 
-```erb
-// templates/users/new.html
+## Usage
+
+You can call your partials using `partial` plush helper:
+
+{{<codetabs>}}
+{{<tab "templates/users/form.plush.html">}}
+```html
+<form action="/users/" method="POST">
+<!-- form content here  -->
+<form>
+```
+{{</tab>}}
+{{<tab "templates/users/new.plush.html">}}
+```html
 <h1>Create New User</h1>
 
 <%= partial("users/form.html") %>
 ```
-
+{{</tab>}}
+{{<tab "Output">}}
 ```html
-// templates/users/_form.html
-<form action="/users">
-<!-- form stuff here  -->
-<form>
-```
-
-```html
-// output
 <h1>Create New User</h1>
 
-<form action="/users">
-<!-- form stuff here  -->
+<form action="/users/" method="POST">
+<!-- form content here  -->
 <form>
 ```
-
+{{</tab>}}
+{{</codetabs>}}
 
 ## Context
 
 All [rendering context](/documentation/frontend-layer/rendering) from the parent template will automatically pass through to the partial, and any partials that partial may call. (see also [Context](/documentation/request_handling/context))
 
 
+
+{{<codetabs>}}
+{{<tab "actions/users.go">}}
 ```go
-// actions/users.go
 func UsersEdit(c buffalo.Context) error {
-  // do some work to find the user
-  c.Set("user", user)
-  return c.Render(200, render.HTML("users/edit.html"))
+	user := User{
+		Name: "John Smith",
+	}
+	// ...
+	c.Set("user", user)
+	return c.Render(http.StatusOK, render.HTML("users/edit.plush.html"))
 }
 ```
-
-```erb
-// templates/users/edit.hml
-<h1>Edit <%= user.Name %> (<%= user.ID %>)</h1>
-
-<%= partial("users/form.html") %>
-```
-
+{{</tab>}}
+{{<tab "templates/users/edit.plush.html">}}
 ```html
-// templates/users/_form.html
-<form action="/users/<%= user.ID %>">
-<!-- form stuff here  -->
+<h1>User to edit: <strong><%= user.Name %></strong></h1>
+
+<%= partial("users/form.plush.html") %>
+```
+{{</tab>}}
+{{<tab "templates/users/form.plush.html">}}
+```html
+<form action="/users/<%= user.ID %>/">
+<!-- form content here  -->
 </form>
 ```
-
+{{</tab>}}
+{{<tab "Output">}}
 ```html
-// output
-<h1>Edit Mark Bates (1)</h1>
+<h1>User to edit: <strong>John Smith</strong></h1>
 
-<form action="/users/1">
-<!-- form stuff here  -->
+<form action="/users/<%= user.ID %>/">
+<!-- form content here  -->
 </form>
 ```
+{{</tab>}}
+{{</codetabs>}}
+
 
 
 ## Local Context
 
-In addition to have the [context](/documentation/request_handling/context) of the parent template, partials can also be sent additional information as "local" variables.
+In addition to have the global [context](/documentation/request_handling/context), you can set additional variable only for partials as "local" variables.
 
+{{<codetabs>}}
+{{<tab "actions/colors.go">}}
 ```go
-// actions/users.go
-func UsersIndex(c buffalo.Context) error {
-  c.Set("users", []string{"John Lennon", "Paul McCartney", "George Harrison", "Ringo Starr"})
-  return c.Render(200, r.HTML("users/index.html"))
+func ColorsHandler(c buffalo.Context) error {
+  colors := map[string]interface{}{
+		"White":  "#FFFFFF",
+		"Maroon": "#800000",
+		"Red":    "#FF0000",
+		"Purple": "#800080",
+	}
+
+	c.Set("colors", colors)
+	return c.Render(http.StatusOK, r.HTML("colors/index.plush.html"))
 }
 ```
-
-```erb
-// templates/users/index.html
-<h1>All Users</h1>
-
-<ul>
-  <%= for (u) in users { %>
-    <%= partial("users/user.html", {user: u}) %>
-  <% } %>
-</ul>
-```
-
-```erb
-// templates/users/_user.html
-<li><%= user.Name %></li>
-```
-
+{{</tab>}}
+{{<tab "templates/colors/index.plush.html">}}
 ```html
-// output
-<h1>All Users</h1>
-
-<ul>
-  <li>John Lennon</li>
-  <li>Paul McCartney</li>
-  <li>George Harrison</li>
-  <li>Ringo Starr</li>
-</ul>
+<div class="list">
+  <%= for (name, code) in colors { %>
+      <%= partial("colors/details.plush.html", {colorName: name, hexCode: code}) %>
+  <% } %>
+</div>
 ```
+{{</tab>}}
+{{<tab "templates/colors/details.plush.html">}}
+```erb
+<div>
+  <span>Color: <%= colorName %></span>
+  <span>Hex Code: <strong><%= hexCode %></strong></span>
+</div>
+```
+{{</tab>}}
+{{<tab "Output">}}
+```html
+<div class="list">
+  <div>
+    <span>Color: White</span>
+    <span>Hex Code: <strong>#FFFFFF</strong></span>
+  </div>
+  <div>
+    <span>Color: Maroon</span>
+    <span>Hex Code: <strong>#800000</strong></span>
+  </div>
+  <div>
+    <span>Color: Red</span>
+    <span>Hex Code: <strong>#FF0000</strong></span>
+  </div>
+  <div>
+    <span>Color: Purple</span>
+    <span>Hex Code: <strong>#800080</strong></span>
+  </div>
+</div>
+```
+{{</tab>}}
+{{</codetabs>}}
 
 ## Helpers
 

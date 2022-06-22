@@ -8,30 +8,31 @@ aliases:
 
 # Layouts
 
-<p>
-<em>This document only applies when using <a href="https://github.com/gobuffalo/buffalo/tree/master/render" rel="nofollow">https://github.com/gobuffalo/buffalo/render</a>.</em><br>
-<em>Please see <a href="https://github.com/gobuffalo/plush" target="_blank">github.com/gobuffalo/plush</a> for more details on the underlying templating package.</em>
-</p
+{{<note>}}
+This document only applies when using [https://github.com/gobuffalo/buffalo/tree/main/render](https://github.com/gobuffalo/buffalo/tree/main/render).
+Please see [github.com/gobuffalo/plush](https://github.com/gobuffalo/plush) for more details on the underlying templating package.
+{{</note>}}
 
 ## Using a Standard Layout
 
 It is quite common to want to use the same layout across most, if not all of an application. When creating a new `render.Engine` the `HTMLLayout` property can be set to a file that will automatically be used by the `render.HTML` function.
 
+{{<codetabs>}}
+{{<tab "actions/render.go">}}
 ```go
-// actions/render.go
 var r *render.Engine
 
 func init() {
   r = render.New(render.Options{
     // ...
-    HTMLLayout:     "application.html",
+    HTMLLayout: "application.plush.html",
     // ...
   })
 }
 ```
-
-```erb
-// templates/application.html
+{{</tab>}}
+{{<tab "templates/application.plush.html">}}
+```html
 <html>
   <head>
     <title>My App</title>
@@ -43,23 +44,21 @@ func init() {
   </body>
 </html>
 ```
-
-```erb
-// templates/hello.html
+{{</tab>}}
+{{<tab "templates/hello.plush.html">}}
+```html
 <h1>Hello!!</h1>
 ```
-
+{{</tab>}}
+{{<tab "actions/hello.go">}}
 ```go
-// actions/hello.go
-package actions
-
 func Hello(c buffalo.Context) error {
-  return c.Render(200, r.HTML("hello.html"))
+  return c.Render(http.StatusOK, r.HTML("hello.html"))
 }
 ```
-
-```erb
-// output
+{{</tab>}}
+{{<tab "Output">}}
+```html
 <html>
   <head>
     <title>My App</title>
@@ -71,27 +70,33 @@ func Hello(c buffalo.Context) error {
   </body>
 </html>
 ```
-
+{{</tab>}}
+{{</codetabs>}}
 
 ## Using a Custom Layout
 
-Sometimes, on certain requests, a different layout is needed. This alternate layout can be passed in as the second parameter to `render.HTML`. Custom layouts do **NOT** work with `render.Auto`.
+Sometimes, on certain requests, a different layout is needed. This alternate layout can be passed in as the second parameter to `render.HTML`.
 
+{{<note>}}
+Custom layouts do **NOT** work with **`render.Auto`**.
+{{</note>}}
+
+{{<codetabs>}}
+{{<tab "actions/render.go">}}
 ```go
-// actions/render.go
 var r *render.Engine
 
 func init() {
   r = render.New(render.Options{
     // ...
-    HTMLLayout:     "application.html",
+    HTMLLayout: "application.plush.html", // You can realize that render continues using the application.plush.html
     // ...
   })
 }
 ```
-
-```erb
-// templates/custom.html
+{{</tab>}}
+{{<tab "templates/custom.plush.html">}}
+```html
 <html>
   <head>
     <title>My Custom Layout</title>
@@ -103,23 +108,21 @@ func init() {
   </body>
 </html>
 ```
-
+{{</tab>}}
+{{<tab "templates/hello.plush.html">}}
 ```html
-// templates/hello.html
 <h1>Hello!!</h1>
 ```
-
+{{</tab>}}
+{{<tab "actions/hello.go">}}
 ```go
-// actions/hello.go
-package actions
-
 func Hello(c buffalo.Context) error {
-  return c.Render(200, r.HTML("hello.html", "custom.html"))
+  return c.Render(http.StatusOK, r.HTML("hello.plush.html", "custom.plush.html"))
 }
 ```
-
+{{</tab>}}
+{{<tab "Output">}}
 ```html
-// output
 <html>
   <head>
     <title>My Custom Layout</title>
@@ -131,3 +134,5 @@ func Hello(c buffalo.Context) error {
   </body>
 </html>
 ```
+{{</tab>}}
+{{</codetabs>}}

@@ -117,7 +117,7 @@ func MyHandler(c buffalo.Context) error {
 {{</tab>}}
 {{</codetabs>}}
 
-### Iterating
+## Iterating
 
 #### Through Slices
 

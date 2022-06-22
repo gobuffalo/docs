@@ -17,9 +17,8 @@ Please see [github.com/gobuffalo/plush](https://github.com/gobuffalo/plush) for 
 
 It is quite common to want to use the same layout across most, if not all of an application. When creating a new `render.Engine` the `HTMLLayout` property can be set to a file that will automatically be used by the `render.HTML` function.
 
-{{<codetabs>}}
-{{<tab "actions/render.go">}}
 ```go
+// actions/render.go
 var r *render.Engine
 
 func init() {
@@ -30,9 +29,9 @@ func init() {
   })
 }
 ```
-{{</tab>}}
-{{<tab "templates/application.plush.html">}}
+
 ```html
+<!-- templates/application.plush.html -->
 <html>
   <head>
     <title>My App</title>
@@ -44,21 +43,23 @@ func init() {
   </body>
 </html>
 ```
-{{</tab>}}
-{{<tab "templates/hello.plush.html">}}
+
 ```html
+<!-- templates/hello.plush.html -->
+
 <h1>Hello!!</h1>
 ```
-{{</tab>}}
-{{<tab "actions/hello.go">}}
+
 ```go
+// actions/hello.go
+
 func Hello(c buffalo.Context) error {
   return c.Render(http.StatusOK, r.HTML("hello.html"))
 }
 ```
-{{</tab>}}
-{{<tab "Output">}}
+
 ```html
+<!-- Output -->
 <html>
   <head>
     <title>My App</title>
@@ -70,8 +71,6 @@ func Hello(c buffalo.Context) error {
   </body>
 </html>
 ```
-{{</tab>}}
-{{</codetabs>}}
 
 ## Using a Custom Layout
 
@@ -81,9 +80,8 @@ Sometimes, on certain requests, a different layout is needed. This alternate lay
 Custom layouts do **NOT** work with **`render.Auto`**.
 {{</note>}}
 
-{{<codetabs>}}
-{{<tab "actions/render.go">}}
 ```go
+// actions/render.go
 var r *render.Engine
 
 func init() {
@@ -94,9 +92,9 @@ func init() {
   })
 }
 ```
-{{</tab>}}
-{{<tab "templates/custom.plush.html">}}
+
 ```html
+<!-- templates/custom.plush.html -->
 <html>
   <head>
     <title>My Custom Layout</title>
@@ -108,21 +106,21 @@ func init() {
   </body>
 </html>
 ```
-{{</tab>}}
-{{<tab "templates/hello.plush.html">}}
+
 ```html
+<!-- templates/hello.plush.html -->
 <h1>Hello!!</h1>
 ```
-{{</tab>}}
-{{<tab "actions/hello.go">}}
+
 ```go
+// actions/hello.go
 func Hello(c buffalo.Context) error {
   return c.Render(http.StatusOK, r.HTML("hello.plush.html", "custom.plush.html"))
 }
 ```
-{{</tab>}}
-{{<tab "Output">}}
+
 ```html
+<!-- Output -->
 <html>
   <head>
     <title>My Custom Layout</title>
@@ -134,5 +132,3 @@ func Hello(c buffalo.Context) error {
   </body>
 </html>
 ```
-{{</tab>}}
-{{</codetabs>}}

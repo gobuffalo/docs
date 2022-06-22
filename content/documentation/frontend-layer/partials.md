@@ -19,28 +19,31 @@ Please see [github.com/gobuffalo/plush](https://github.com/gobuffalo/plush) for 
 
 You can call your partials using `partial` plush helper:
 
+{{<codetabs>}}
+{{<tab "templates/users/form.plush.html">}}
 ```html
-<!-- templates/users/form.plush.html -->
 <form action="/users/" method="POST">
-  <!-- form content here  -->
+<!-- form content here  -->
 <form>
 ```
-
+{{</tab>}}
+{{<tab "templates/users/new.plush.html">}}
 ```html
-<!-- templates/users/new.plush.html -->
 <h1>Create New User</h1>
 
 <%= partial("users/form.html") %>
 ```
-
+{{</tab>}}
+{{<tab "Output">}}
 ```html
-<!-- Output -->
 <h1>Create New User</h1>
 
 <form action="/users/" method="POST">
-  <!-- form content here  -->
+<!-- form content here  -->
 <form>
 ```
+{{</tab>}}
+{{</codetabs>}}
 
 ## Context
 
@@ -48,8 +51,9 @@ All [rendering context](/documentation/frontend-layer/rendering) from the parent
 
 
 
+{{<codetabs>}}
+{{<tab "actions/users.go">}}
 ```go
-// actions/users.go
 func UsersEdit(c buffalo.Context) error {
 	user := User{
 		Name: "John Smith",
@@ -59,36 +63,41 @@ func UsersEdit(c buffalo.Context) error {
 	return c.Render(http.StatusOK, render.HTML("users/edit.plush.html"))
 }
 ```
-
+{{</tab>}}
+{{<tab "templates/users/edit.plush.html">}}
 ```html
-<!-- templates/users/edit.plush.html -->
 <h1>User to edit: <strong><%= user.Name %></strong></h1>
 
 <%= partial("users/form.plush.html") %>
 ```
-
+{{</tab>}}
+{{<tab "templates/users/form.plush.html">}}
 ```html
-<!-- templates/users/form.plush.html -->
 <form action="/users/<%= user.ID %>/">
-  <!-- form content here  -->
+<!-- form content here  -->
 </form>
 ```
-
+{{</tab>}}
+{{<tab "Output">}}
 ```html
-<!-- Output -->
 <h1>User to edit: <strong>John Smith</strong></h1>
 
 <form action="/users/<%= user.ID %>/">
-  <!-- form content here  -->
+<!-- form content here  -->
 </form>
 ```
+{{</tab>}}
+{{</codetabs>}}
+
+
 
 ## Local Context
 
 In addition to have the global [context](/documentation/request_handling/context), you can set additional variable only for partials as "local" variables.
 
+{{<codetabs>}}
+{{<tab "actions/colors.go">}}
 ```go
-// actions/colors.go
 func ColorsHandler(c buffalo.Context) error {
   colors := map[string]interface{}{
 		"White":  "#FFFFFF",
@@ -101,26 +110,26 @@ func ColorsHandler(c buffalo.Context) error {
 	return c.Render(http.StatusOK, r.HTML("colors/index.plush.html"))
 }
 ```
-
+{{</tab>}}
+{{<tab "templates/colors/index.plush.html">}}
 ```html
-<!-- templates/colors/index.plush.html -->
 <div class="list">
   <%= for (name, code) in colors { %>
       <%= partial("colors/details.plush.html", {colorName: name, hexCode: code}) %>
   <% } %>
 </div>
 ```
-
-```html
-<!-- templates/colors/details.plush.html -->
+{{</tab>}}
+{{<tab "templates/colors/details.plush.html">}}
+```erb
 <div>
   <span>Color: <%= colorName %></span>
   <span>Hex Code: <strong><%= hexCode %></strong></span>
 </div>
 ```
-
+{{</tab>}}
+{{<tab "Output">}}
 ```html
-<!-- Output -->
 <div class="list">
   <div>
     <span>Color: White</span>
@@ -140,6 +149,8 @@ func ColorsHandler(c buffalo.Context) error {
   </div>
 </div>
 ```
+{{</tab>}}
+{{</codetabs>}}
 
 ## Helpers
 

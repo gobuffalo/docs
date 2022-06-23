@@ -40,7 +40,6 @@ Further info about this command can be found by using the `--help` flag:
 
 ```bash
 $ soda g migration --help
-
 Generates Up/Down migrations for your database using fizz.
 
 Usage:
@@ -84,7 +83,6 @@ Further info about this command can be found by using the `--help` flag:
 
 ```bash
 $ soda g sql --help
-
 Generates Up/Down migrations for your database using SQL.
 
 Usage:
@@ -130,7 +128,6 @@ More information about the migration command be found by running:
 
 ```bash
 $ soda migrate --help
-
 Runs migrations against your database.
 
 Usage:

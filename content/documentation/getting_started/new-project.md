@@ -203,7 +203,7 @@ The default setup is great, but maybe it doesn't fit you. Buffalo provides sever
 You can get the available flags list using the `help` command:
 
 ```bash
-$ buffalo help new
+$ buffalo new --help
 Creates a new Buffalo application
 
 Usage:

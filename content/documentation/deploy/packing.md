@@ -44,7 +44,7 @@ When the build finishes, you have a fresh baked binary in the `bin` folder. It w
 To get the list of available options, use the help command:
 
 ```bash
-$ buffalo help build
+$ buffalo build --help
 ```
 
 ```bash

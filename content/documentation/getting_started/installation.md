@@ -174,7 +174,7 @@ Flags:
 Use "buffalo [command] --help" for more information about a command.
 ```
 
-If you have a similar output, your Buffalo toolbox is ready to work!
+If you have this output, your Buffalo toolbox is ready to work!
 
 ## Next Steps
 

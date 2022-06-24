@@ -32,6 +32,6 @@ Guías sobre cómo implementar tu aplicación en Buffalo.
 
 ## Community
 
-La comunidad de Buffalo es una comunidad vibrante y en crecimiento de desarrolladores y usuarios. Hay una conversación en curso sobre consejos y trucos, nuevas características e ideas que tiene lugar en el [Gophers Slack #buffalo channel](https://gophers.slack.com/messages/buffalo/).
+La comunidad de Buffalo es una comunidad vibrante y en crecimiento de desarrolladores y usuarios. Hay una conversación en curso sobre consejos y trucos, nuevas características e ideas que tiene lugar en [Gophers Slack #buffalo channel](https://gophers.slack.com/messages/buffalo/).
 
-Además de la documentación, también puedes ponerse en contacto con nosotros en nuestras cuentas de [GitHub](https://github.com/gobuffalo/buffalo) o [Twitter](https://twitter.com/gobuffalo).
+Además de la documentación, también puedes ponerte en contacto con nosotros en nuestras cuentas de [GitHub](https://github.com/gobuffalo/buffalo) o [Twitter](https://twitter.com/gobuffalo).

@@ -2,7 +2,7 @@
 name: Solución de problemas
 icon: "images/troubleshoot.svg"
 aliases:
-  - /en/docs/troubleshooting
+  - /es/docs/troubleshooting
 ---
 
 # Solución de problemas

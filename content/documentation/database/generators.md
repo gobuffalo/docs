@@ -9,9 +9,10 @@ aliases:
 
 ```bash
 $ buffalo pop g --help
+Generates config, model, and migrations files.
 
 Usage:
-  buffalo pop generate [command]
+  buffalo-pop pop generate [command]
 
 Aliases:
   generate, g
@@ -23,6 +24,9 @@ Available Commands:
   model       Generates a model for your database
   sql         Generates Up/Down migrations for your database using SQL.
 
+Flags:
+  -h, --help   help for generate
+  
 Global Flags:
   -c, --config string   The configuration file you would like to use.
   -d, --debug           Use debug/verbose mode

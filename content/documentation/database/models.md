@@ -72,7 +72,6 @@ Writing the files by hand is not the most efficient way to work. Soda (and Buffa
 
 ```bash
 $ soda g model --help
-
 Generates a model for your database
 
 Usage:

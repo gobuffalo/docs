@@ -149,3 +149,15 @@ table code {
 .codetab .tabs-container .button.active {
     @apply border-2 border-blue-500;
 }
+
+.faq .content {
+    @apply px-3 py-2 leading-6 text-lg font-light break-normal;
+}
+
+.faq .title code {
+    @apply bg-gray-200 p-1 rounded-md;
+}
+
+.faq .content code {
+    @apply bg-gray-200 py-0.5 rounded-md text-base;
+}

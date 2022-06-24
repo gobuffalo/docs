@@ -15,7 +15,7 @@ Démarrez avec Buffalo, apprenez les bases et soyez opérationnel avec le framew
 
 {{< grid "grid-cols-1 md:grid-cols-3 gap-x-3" >}}
 
-{{< card "card bg-blue-100 mb-4" "Database" "documentation/database/buffalo-integration">}}
+{{< card "card bg-blue-100 mb-4" "Database" "documentation/database/buffalo-integration" "Lis">}}
 La couche de persistance du framework Buffalo.
 {{< /card >}}
 

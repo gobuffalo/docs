@@ -1,4 +1,6 @@
-<h2 id="{{.Get 1}}">{{.Get 0 | markdownify}}</h2>
-<div class="bg-gray-50 mb-5">
-    {{ .Inner | markdownify}}
+<div class="faq">
+    <h2 id="{{.Get 1}}" class="title">{{.Get 0 | markdownify}}</h2>
+    <div class="content bg-gray-50 mb-5">
+        {{ .Inner | markdownify}}
+    </div>
 </div>

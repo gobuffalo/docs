@@ -273,4 +273,4 @@ Tu puedes tambien mirar el capitulo de [Env Variables](/documentation/getting_st
 
 ## Siguiente Paso
 
-* [Estructura de Directorios](/documentation/getting_started/directory-structure) - Aprende mas acerca de la estructura de Buffalo.
+* [Estructura de Directorios](/es/documentation/getting_started/directory-structure) - Aprende mas acerca de la estructura de Buffalo.

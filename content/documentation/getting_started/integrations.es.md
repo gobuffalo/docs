@@ -34,4 +34,4 @@ Si tu usas `Visual Studio Code` como tu editor de Codigo, puedes usar esta exten
 
 ## Siguiente Paso
 
-* [Generando Un Nuevo Proyecto](/documentation/getting_started/new-project) - Crea tu primer proyecto de Buffalo!
+* [Generando Un Nuevo Proyecto](/es/documentation/getting_started/new-project) - Crea tu primer proyecto de Buffalo!

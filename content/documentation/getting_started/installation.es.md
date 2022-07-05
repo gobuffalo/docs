@@ -177,4 +177,4 @@ Si tu tienes un resultado similar, tu instalacion de Buffalo esta funcionando.
 
 ## Siguiente paso
 
-* [Genera un nuevo proyecto](/documentation/getting_started/new-project) - Create tu primero proyecto de Buffalo!
+* [Genera un nuevo proyecto](/es/documentation/getting_started/new-project) - Create tu primero proyecto de Buffalo!

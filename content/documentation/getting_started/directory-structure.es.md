@@ -145,5 +145,5 @@ Este archivo contiene la configuracion de la base de datos para [pop/soda](https
 
 ## Siguiente Paso
 
-* [Configuración](/documentation/getting_started/configuration) -  Maneja la configuracion de tu app.
-* [Integracion de Herramientas](/documentation/getting_started/integrations) - Trabaja con Buffalo usando herramientas existentes.
+* [Configuración](/es/documentation/getting_started/configuration) -  Maneja la configuracion de tu app.
+* [Integracion de Herramientas](/es/documentation/getting_started/integrations) - Trabaja con Buffalo usando herramientas existentes.

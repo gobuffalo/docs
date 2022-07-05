@@ -13,6 +13,7 @@ weight: 2
 aliases:
   - /docs/getting-started/new-project
   - /en/docs/getting-started/new-project
+  - /es/docs/getting-started/new-project
 ---
 
 # Generando un Nuevo Proyecto

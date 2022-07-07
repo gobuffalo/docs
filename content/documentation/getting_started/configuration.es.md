@@ -14,6 +14,7 @@ aliases:
   - /documentation/getting_started/config-vars
   - /docs/getting-started/config-vars
   - /en/docs/getting-started/config-vars
+  - /es/docs/getting-started/config-vars
 ---
 
 # Configuracion
@@ -74,4 +75,4 @@ Las aplicaciones generadas (**con buffalo >= 0.10.3**) van a crear un archivo `.
 
 ## Siguiente Paso
 
-* [Integracion de Herramientas](/documentation/getting_started/integrations) - Trabajar con Buffalo, usando herramientas existentes.
+* [Integracion de Herramientas](/es/documentation/getting_started/integrations) - Trabajar con Buffalo, usando herramientas existentes.

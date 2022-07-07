@@ -13,6 +13,7 @@ weight: 3
 aliases:
   - /docs/getting-started/directory-structure
   - /en/docs/getting-started/directory-structure
+  - /es/docs/getting-started/directory-structure
 ---
 
 # Estructura de Directorio

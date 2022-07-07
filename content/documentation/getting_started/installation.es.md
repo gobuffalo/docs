@@ -15,6 +15,7 @@ weight: 1
 aliases:
   - /docs/getting-started/installation
   - /en/docs/getting-started/installation
+  - /es/docs/getting-started/installation
 ---
 
 # Instalar Buffalo

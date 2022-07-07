@@ -14,6 +14,7 @@ weight: 9
 aliases:
   - /docs/getting-started/integrations
   - /en/docs/getting-started/integrations
+  - /es/docs/getting-started/integrations
 ---
 
 # Integración de Herramientas

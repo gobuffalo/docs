@@ -49,11 +49,11 @@ With in person, on site, training a prominent member of the Go community travels
 
 Need help with a current project? The [Gopher Guides](https://www.gopherguides.com) experts can help. Here are just some of their specialties:
 
-Systems Development
-Web API (include Buffalo)
-gRPC
-Networking Systems
-Third Party Integration's
-Payment Processing
+* Systems Development
+* Web API (include Buffalo)
+* gRPC
+* Networking Systems
+* Third Party Integration's
+* Payment Processing
 
 [Learn More](https://www.gopherguides.com/consulting/)

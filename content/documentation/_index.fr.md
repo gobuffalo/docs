@@ -9,21 +9,21 @@ aliases:
 
 Bienvenue dans la documentation Buffalo. Vous trouverez ici une collection d'informations utiles pour démarrer avec Buffalo dans le but de vous aider à tirer le meilleur parti du framework Buffalo et de ses fonctionnalités.
 
-{{< card "card bg-blue-100 mb-4 mt-6 hover:border hover:border-blue-500" "Getting Started" "documentation/getting_started/installation" >}}
+{{< card "card bg-blue-100 mb-4 mt-6 hover:border hover:border-blue-500" "Getting Started" "documentation/getting_started/installation" "Lis">}}
 Démarrez avec Buffalo, apprenez les bases et soyez opérationnel avec le framework.
 {{< /card >}}
 
 {{< grid "grid-cols-1 md:grid-cols-3 gap-x-3" >}}
 
-{{< card "card bg-blue-100 mb-4" "Database" "documentation/database/buffalo-integration">}}
+{{< card "card bg-blue-100 mb-4" "Database" "documentation/database/buffalo-integration" "Lis">}}
 La couche de persistance du framework Buffalo.
 {{< /card >}}
 
-{{< card "card bg-blue-100 mb-4" "Request" "documentation/request_handling/routing">}}
+{{< card "card bg-blue-100 mb-4" "Request" "documentation/request_handling/routing" "Lis">}}
 Request handling and routing. The core of the framework.
 {{< /card >}}
 
-{{< card "card bg-blue-100 mb-4" "Deployment" "documentation/deploy/packing">}}
+{{< card "card bg-blue-100 mb-4" "Deployment" "documentation/deploy/packing" "Lis">}}
 Traitement et routage des demandes. Le cœur du cadre.
 {{< /card >}}
 

@@ -8,18 +8,20 @@ aliases:
 # Troubleshooting
 
 {{< faq "App Crashes with `securecookie: hash key is not set`" "securecookie-hash-key-not-set">}}
-After a recent change in the [github.com/gorilla/sessions](http://www.gorillatoolkit.org/pkg/sessions) Buffalo applications will fail to start with the error `securecookie: hash key is not set`. To fix this you must set an environment variable named `SESSION_SECRET`.
+After a recent change in the [github.com/gorilla/sessions](http://www.gorillatoolkit.org/pkg/sessions) Buffalo applications will fail to start with the error `securecookie: hash key is not set`.
 
-For information see [https://github.com/gobuffalo/buffalo/issues/1067](https://github.com/gobuffalo/buffalo/issues/1067)
+To fix this you must set an environment variable named `SESSION_SECRET`.
+
+For information see [github.com/gobuffalo/buffalo/issues/1067](https://github.com/gobuffalo/buffalo/issues/1067)
 {{< /faq >}}
       
 {{< faq "Command line is slow" "slow-commands">}}
-If executing `buffalo --help` or any other command from the terminal takes longer than expected set `export BUFFALO_PLUGIN_PATH=$GOPATH/bin` in your shell config (e.g. .bash_profile).
+If executing `buffalo --help` or any other command from the terminal takes longer than expected, set `export BUFFALO_PLUGIN_PATH=$GOPATH/bin` in your shell config (e.g. .bash_profile).
 {{< /faq >}}
 
 
 {{< faq "Can't find `buffalo` binary." "binary-not-found">}}
-If you can't find the `buffalo` binary after a successful installation, this is problably caused because `$GOPATH/bin`, or `%GOPATH\bin` (Windows), isn't in your `$PATH` variable. When a Go binary is installed it is placed in `$GOPATH/bin`. Adding this to your global `$PATH` will allow you to find **any** Go binary everywhere in your system. See [https://golang.org/doc/code.html#GOPATH](https://golang.org/doc/code.html#GOPATH) for more details.
+If you can't find the `buffalo` binary after a successful installation, this is problably caused because `$GOPATH/bin`, or `%GOPATH\bin` (Windows), isn't in your `$PATH` variable. When a Go binary is installed it is placed in `$GOPATH/bin`. Adding this to your global `$PATH` will allow you to find **any** Go binary everywhere in your system. See [golang.org/doc/code.html#GOPATH](https://golang.org/doc/code.html#GOPATH) for more details.
 {{< /faq >}}
 
 {{< faq "`buffalo new` fails to generate a complete project." "failed-to-gen">}}
@@ -29,25 +31,30 @@ This happens because the `buffalo new` command cannot find the templates it need
 There are a couple of things that could cause this issue.
 
 * Using multiple `$GOPATH`s. This can happen when you install Buffalo to one `$GOPATH` and then create a new, temporary, `$GOPATH` and try to create a new application there. Because the templates are in the first, original `$GOPATH`, the installer does not find them, and subsequently generates an incomplete application. To fix this, use just one `$GOPATH`.
+
 * Using a single `$GOPATH`. If you aren't using multiple `$GOPATH`s and are still seeing this issue, it is most likely caused by a bad installation. Run `$ go get -u -v github.com/gobuffalo/buffalo/buffalo` again, and it should, hopefully, repair the installation for you.
 
-The original ticket for this issue can be found at [https://github.com/gobuffalo/buffalo/issues/629](https://github.com/gobuffalo/buffalo/issues/629).
+The original ticket for this issue can be found at [github.com/gobuffalo/buffalo/issues/629](https://github.com/gobuffalo/buffalo/issues/629).
 {{< /faq >}}
 
 {{< faq "`buffalo new` fails with NPM permissions issues." "npm-permissions">}}
-This is caused by incorrectly setup Node/NPM installation. See <a href="https://docs.npmjs.com/getting-started/fixing-npm-permissions" target="_blank">docs.npmjs.com/getting-started/fixing-npm-permissions</a> for information on how to fix this issue.
+This is caused by incorrectly setup Node/NPM installation.
+
+See [docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally) for information on how to fix this issue.
 {{< /faq >}}
 
 
 {{< faq "`buffalo dev` auto rebuild doesn't work with NFS." "nfs-rebuild">}}
-This is caused by the `fsnotify` package not supporting NFS. See <a href="https://github.com/gobuffalo/buffalo/issues/620" target="_blank">github.com/gobuffalo/buffalo/issues/620</a> for more details and a workaround.
+This is caused by the `fsnotify` package not supporting NFS.
+
+See [github.com/gobuffalo/buffalo/issues/620](https://github.com/gobuffalo/buffalo/issues/620) for more details and a workaround.
 {{< /faq >}}
 
 {{< faq "`buffalo new` fails with `import path does not begin with hostname`" "import-begins-hostname">}}
 This is caused by a mismatched `$GOPATH` and file system.
 
 
-```
+```text
 GOPATH: /Users/foobar/Documents/Programming/Go
 ACTUAL: /Users/foobar/Documents/programming/go
 ```

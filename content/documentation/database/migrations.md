@@ -29,9 +29,9 @@ $ soda generate fizz name_of_migration
 
 Running this command will generate the **empty** following files:
 
-```text
-./migrations/20160815134952_name_of_migration.up.fizz
-./migrations/20160815134952_name_of_migration.down.fizz
+```bash
+./migrations/20220706213354_name_of_migration.up.fizz
+./migrations/20220706213354_name_of_migration.down.fizz
 ```
 
 The generated files are `fizz` files. Pop uses [Fizz](https://github.com/gobuffalo/fizz/blob/master/README.md) to generate migrations that are both easy to work with and work across multiple types of databases.
@@ -74,9 +74,9 @@ $ soda generate sql name_of_migration
 
 Running this command will generate the following files:
 
-```text
-./migrations/20160815134952_name_of_migration.up.sql
-./migrations/20160815134952_name_of_migration.down.sql
+```bash
+./migrations/20220706213354_name_of_migration.up.sql
+./migrations/20220706213354_name_of_migration.down.sql
 ```
 
 Further info about this command can be found by using the `--help` flag:

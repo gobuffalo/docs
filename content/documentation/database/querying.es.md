@@ -1,79 +1,91 @@
 ---
-name: "Querying"
-seoDescription: "Querying a Database with Pop"
+name: Consultas
+seoDescription: "Consulta en una base de datos con Pop"
 seoKeywords: ["buffalo", "go", "golang", "database", "querying", "pop", "finders"]
 weight: 21
 aliases:
   - /docs/db/querying
-  - /en/docs/db/querying
+  - /es/docs/db/querying
 ---
-# Querying
+# Consultas
 
-In this chapter, you'll learn how to retrieve data from your database using Pop.
+en este capítulo, aprenderás cómo recuperar datos de tu base de datos usando Pop.
 
-### Find By ID
+### Encontrar por ID
 
 ```go
 user := User{}
-err := models.DB.Find(&user, id)
+err := tx.Find(&user, id)
 ```
 
-### Find All
+### Encontrar todos
 
 ```go
 users := []User{}
-err := models.DB.All(&users)
-err = models.DB.Where("id in (?)", 1, 2, 3).All(&users)
+err := tx.All(&users)
 ```
 
-### Find All with Order
-
 ```go
-// To retrieve records from the database in a specific order, you can use the Order method
 users := []User{}
-err := models.DB.Order("id desc").All(&users)
+err := tx.Where("id in (?)", 1, 2, 3).All(&users)
 ```
 
-### Find Last
+### Encontrar todos con orden
 
 ```go
-// Last() orders by created_at
+users := []User{}
+// Para recuperar registros de la base de datos en un orden especifico, puedes usar el metodo `Order`
+err := tx.Order("id desc").All(&users)
+```
+
+#### Encontrar el último
+
+```go
 user := models.User{}
+// El metodo `Last` ordena por la columna `created_at`
 err := tx.Last(&user)
 ```
 
-### Find Where
+### Encontrar donde
 
 ```go
 users := []models.User{}
-query := models.DB.Where("id = 1").Where("name = 'Mark'")
+query := tx.Where("id = 1").Where("name = 'Mark'")
 err := query.All(&users)
+```
 
+```go
+users := []models.User{}
 err = tx.Where("id in (?)", 1, 2, 3).All(&users)
 ```
 
-### Using `in` Queries
+### Cláusula `in`
 
 ```go
-err = models.DB.Where("id in (?)", 1, 2, 3).All(&users)
-err = models.DB.Where("id in (?)", 1, 2, 3).Where("foo = ?", "bar").All(&users)
+users := []models.User{}
+err := tx.Where("id in (?)", 1, 2, 3).All(&users)
 ```
 
-{{<warning>}}
-Unfortunately, for a variety of reasons you can't use an `and` query in the same `Where` call as an `in` query.
-{{</warning>}}
-
 ```go
-// does not work:
-err := tx.Where("id in (?) and foo = ?", 1, 2, 3, "bar").All(&users)
-
-// works:
+users := []models.User{}
 err := tx.Where("id in (?)", 1, 2, 3).Where("foo = ?", "bar").All(&users)
 ```
 
-### Select specific columns
+{{<warning>}}
+Desafortunadamente, por una variedad de razones, no puedes usar el condicional `and` en la misma llamada `Where` que contenga una consulta `in`.
+{{</warning>}}
 
-`Select` allows you to load specific columns from a table. Useful when you don't want all columns from a table to be loaded in a query.
+```go
+// no funciona:
+err := tx.Where("id in (?) and foo = ?", 1, 2, 3, "bar").All(&users)
+
+// funciona:
+err := tx.Where("id in (?)", 1, 2, 3).Where("foo = ?", "bar").All(&users)
+```
+
+### Seleccionar columnas específicas
+
+`Select` te permite cargar columnas específicas de una tabla. Útil cuando no deseas que todas las columnas de una tabla se carguen en la consulta.
 
 ```go
 err = tx.Select("name").All(&users)
@@ -86,7 +98,7 @@ err = tx.Select("age", "name").All(&users)
 // SELECT age, name FROM users
 ```
 
-### Join Query
+### Cláusula `Join`
 
 ```go
 // page: page number
@@ -103,26 +115,23 @@ q.Paginate(page, perPage)
 err := q.All(&roles)
 ```
 
-### Count records
+### Contar registros
 
 ```go
-query := tx.Q()
 count, err := query.Count(&models.User{})
 ```
 
 ```go
-query := tx.Q()
 count, err := query.Where("name = ?", "John").Count(&models.User{})
 ```
 
 ```go
-query := tx.Q()
 count, err := query.CountByField(&models.User{}, "first_name")
-// Equals to
+// Es igual a
 count, err := query.Count(&models.User{},, "first_name")
 ```
 
-### Pop to SQL
+### Pop a SQL
 
 ```go
 q := tx.Q()
@@ -140,7 +149,7 @@ sql, args := tx.Q().ToSQL(popModel, cols...)
 {{<codetabs>}}
 {{<tab "sql">}}
 ```sql
--- The original query is in one line
+-- La consulta original está en una linea
 SELECT
     user_roles.*,
     roles.name as role_name,

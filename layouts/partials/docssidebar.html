@@ -1,5 +1,4 @@
 {{ $currentPage := . | relLangURL }}
-{{ .Scratch.Set "currentPage" $currentPage }}
 <div class="min-w-max">
     <ul class="mb-5">
         {{ with .Site.GetPage "section" "documentation" }}

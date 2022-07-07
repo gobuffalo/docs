@@ -60,14 +60,16 @@ For example for PostgreSQL you could pass `jsonb` and it will be supported, howe
 
 #### Supported Options:
 
-* `primary` - Whether the column is the primary key. To have a composite key look [below](#composite-primary-keys). `example: {"primary": true}`
-* `size` - The size of the column. For example if you wanted a `varchar(50)` in Postgres you would do: `t.Column("column_name", "string", {"size": 50})`. The default value for a string column is 255 (or 191 for MariaDB).
-* `scale`, `precision` - The scale and the precision for a float column. `example: {"scale": 4, "precision": 2}`
-* `null` - By default columns are not allowed to be `null`.
-* `default` - The default value you want for this column. By default this is `null`.
-* `default_raw` - The default value defined as a database function.
-* `after` - (MySQL Only) Add a column after another column in the table. `example: {"after":"created_at"}`
-* `first` - (MySQL Only) Add a column to the first position in the table. `example: {"first": true}`
+| Option               | Description                                                                                          | Example                                                    |
+|:---------------------|:-----------------------------------------------------------------------------------------------------|:-----------------------------------------------------------|
+| `primary`            | Whether the column is the primary key. To have a composite key look [below](#composite-primary-keys) | `{"primary": true}`                                        |
+| `size`               | The size of the column. The default value for a string column is 255 (or 191 for MariaDB)            | `{"size": 50}`                                             |
+| `scale`, `precision` | The scale and the precision for a float column                                                       | `{"scale": 4, "precision": 2} `                            |
+| `null`               | By default columns are not allowed to be `null`                                                      | `{"null": true}`                                           |
+| `default`            | The default value you want for this column. By default this is `null`                                | `{"default": 0}` `{"default": false}` `{"default": "foo"}` |
+| `default_raw`        | The default value defined as a database function                                                     | `{"default_raw": "uuid_generate_v1()"}`                    |
+| `after`              | (**MySQL Only**) Add a column after another column in the table                                      | `{"after": "created_at"}`                                  |
+| `first`              | (**MySQL Only**) Add a column to the first position in the table                                     | `{"first": true}`                                          |
 
 #### Disable Auto Timestamps
 
@@ -196,7 +198,9 @@ add_foreign_key("table_name", "field", {"ref_table_name": ["ref_column"]}, {
 * `on_delete` - `CASCADE`, `SET NULL`, ...
 * `on_update`
 
+{{<warning>}}
 **Note:** `on_update` and `on_delete` are not supported on CockroachDB yet.
+{{</warning>}}
 
 ## Drop a Foreign Key
 

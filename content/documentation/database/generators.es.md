@@ -1,14 +1,15 @@
 ---
-name: Generators
+name: Generadores
 weight: 11
 aliases:
   - /docs/db/generators
-  - /en/docs/db/generators
+  - /es/docs/db/generators
 ---
-# Generators
+# Generadores
 
 ```bash
 $ buffalo pop g --help
+
 Generates config, model, and migrations files.
 
 Usage:
@@ -36,6 +37,6 @@ Use "buffalo-pop pop generate [command] --help" for more information about a com
 ```
 
 
-## Migrations
+## Migraciones
 
-For information on generating migrations see [Migrations](/documentation/database/migrations).
+Para obtener información sobre la generación de migraciones, consulta [Migraciones](/es/documentation/database/migrations).

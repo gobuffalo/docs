@@ -301,12 +301,12 @@ type User struct {
 If you use fizz migrations, make sure to define these fields by yourself, and disable the default datetime timestamps:
 
 ```go
-create_table(“users”) {
+create_table("users") {
   t.Column("id", "int", {primary: true})
-  t.Column(“created_at”, “int”)
-  t.Column(“updated_at”, “int”)
-  t.Column(“first_name”, “string”)
-  t.Column(“last_name”, “string”)
+  t.Column("created_at", "int")
+  t.Column("updated_at", "int")
+  t.Column("first_name", "string")
+  t.Column("last_name", "string")
   t.DisableTimestamps()
 }
 ```
@@ -356,13 +356,13 @@ LEFT JOIN providers p ON p.id = s.provider_id;
 
 Since the view is considered as a table by Pop, let's finish by declaring a new model:
 
-```sql
-type Soda struct {
-	ID                   uuid.UUID    `db:"id" rw:"r"`
-	CreatedAt            time.Time    `db:"created_at" rw:"r"`
-	UpdatedAt            time.Time    `db:"updated_at" rw:"r"`
-	Label                string       `db:"label" rw:"r"`
-	ProviderLabel        string       `db:"provider_label" rw:"r"`
+```go
+type SodasWithProvider struct {
+	ID            uuid.UUID `db:"id" rw:"r"`
+	CreatedAt     time.Time `db:"created_at" rw:"r"`
+	UpdatedAt     time.Time `db:"updated_at" rw:"r"`
+	Label         string    `db:"label" rw:"r"`
+	ProviderLabel string    `db:"provider_label" rw:"r"`
 }
 ```
 

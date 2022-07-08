@@ -43,7 +43,7 @@ type Resource interface {
 ```
 
 
-## Using Resources
+## Uso de Recursos
 
 Luego de implementar los métodos necesarios de la interfaz [`github.com/gobuffalo/buffalo#Resource`](https://godoc.org/github.com/gobuffalo/buffalo#Resource), el recurso puede ser mapeado en la aplicación utilizando el método [`github.com/gobuffalo/buffalo#App.Resource`](https://godoc.org/github.com/gobuffalo/buffalo#App.Resource).
 

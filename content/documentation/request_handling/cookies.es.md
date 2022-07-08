@@ -14,7 +14,7 @@ Una cookie HTTP es un pequeño dato que un servidor envía al navegador web del 
 
 Las cookies (HTTP) se utilizan comúnmente para guardar el estado de los usuarios (como por ejemplo, si el usuario se ha conectado). Ver [https://golang.org/pkg/net/http/#Cookie](https://golang.org/pkg/net/http/#Cookie) para más información sobre las cookies en Go.
 
-## Setting a Cookie
+## Definiendo una Cookie
 
 ```go
 func MyHandler(c buffalo.Context) error {

@@ -46,7 +46,7 @@ La función `Websocket() (*websocket.Conn, error)` fue eliminada de `buffalo.Con
 
 Como parte de la interfaz del contexto, hay una función `Render` que toma un tipo de `render.Renderer`. Revisa [rendering](/documentation/frontend-layer/rendering) para mayor información.
 
-Cualquier valor que sea "Seteado" en el contexto estará automáticamente disponible para el `render.Renderer` que se pasa a la función `Render`.
+Cualquier valor que sea definido en el contexto estará automáticamente disponible para el `render.Renderer` que se pasa a la función `Render`.
 
 ```go
 func Hello(c buffalo.Context) error {
@@ -95,7 +95,7 @@ func App() *buffalo.App {
 
 ## Recorriendo los Parámetros
 
-El método `buffalo.Context#Params` devuelve [`buffalo.ParamValues`](https://godoc.org/github.com/gobuffalo/buffalo#ParamValues) que es una interfaz alrededor de url.Values. Se puede hacer un casting a este tipo en un manejador para recorrer los valores de los parámetros.
+El método `buffalo.Context#Params` devuelve [`buffalo.ParamValues`](https://godoc.org/github.com/gobuffalo/buffalo#ParamValues) que es una interfaz alrededor de url.Values. Se puede hacer un casting a este tipo en el handler para recorrer los valores de los parámetros.
 
 ```go
 import "net/url"
@@ -113,7 +113,7 @@ func HomeHandler(c buffalo.Context) error {
 
 ## Qué hay en el contexto
 
-Buffalo añade al contexto de cada solicitud un montón de información que podría ser útil en tu aplicación, como la `current_route` o la `session`. A continuación se muestra una lista de lo que Buffalo añade al contexto de cada solicitud al que puede acceder desde las acciones o plantillas.
+Buffalo añade al contexto de cada solicitud un montón de información que podría ser útil en tu aplicación, como la `current_route` o la `session`. A continuación se muestra una lista de lo que Buffalo añade al contexto de cada solicitud al que puedes acceder desde las acciones o plantillas.
 
 | Llave             | Tipo                                                                                 | Uso                                                                                                                                   |
 | ---             | ---                                                                                  | ---                                                                                                                                     |

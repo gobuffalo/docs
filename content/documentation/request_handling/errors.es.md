@@ -48,7 +48,7 @@ En modo "development " (`GO_ENV=development`), Buffalo generará algunas página
   <figcaption>An example of a `500` error in development mode.</figcaption>
 </figure>
 
-Si utiliza un tipo de contenido JSON o XML, el error se devuelve en el tipo apropiado:
+Si utilizas un tipo de contenido JSON o XML, el error se devuelve en el tipo apropiado:
 
 ```json
 {
@@ -96,5 +96,5 @@ func MyHandler(c buffalo.Context) error {
 GET /oops -> [422] Oops!! There was an error: Oh no!
 ```
 
-En el ejemplo anterior, cualquier error de su aplicación que devuelva un estado de `422` será capturado por el handler personalizado y será tratado en base a ello.
+En el ejemplo anterior, cualquier error de tu aplicación que devuelva un estado de `422` será capturado por el handler personalizado y será tratado en base a ello.
 

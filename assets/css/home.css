@@ -93,7 +93,7 @@ ol {
 }
 
 .content pre {
-    @apply p-3 overflow-scroll;
+    @apply p-3 overflow-scroll rounded-md;
 }
 
 .content p code, li code {
@@ -122,11 +122,11 @@ table code {
 }
 
 .content table {
-    @apply w-full mb-3;
+    @apply w-full mb-3 rounded-md;
 }
 
 .content thead th {
-    @apply font-bold bg-gray-300 p-2 mr-2;
+    @apply font-bold bg-gray-300 p-2 mr-2 rounded-md;
 }
 
 .content tbody td {

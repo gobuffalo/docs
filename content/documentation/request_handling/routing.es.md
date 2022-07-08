@@ -31,7 +31,7 @@ Por defecto, Buffalo sólo requiere 2 parámetros para la configuración de su a
 
 Puedes personalizarlo para adaptarlo a tu caso de uso.
 
-Puede consultar la lista de opciones disponibles aquí: [https://godoc.org/github.com/gobuffalo/buffalo#Options](https://godoc.org/github.com/gobuffalo/buffalo#Options)
+Puedes consultar la lista de opciones disponibles aquí: [https://godoc.org/github.com/gobuffalo/buffalo#Options](https://godoc.org/github.com/gobuffalo/buffalo#Options)
 
 
 ## Buffalo.Handler
@@ -100,7 +100,7 @@ app.HEAD("/your/path", buffalo.Handler)
 {{< /tab >}}
 {{< /codetabs >}}
 
-También puede hacer coincidir todos los métodos HTTP utilizando `ANY`.
+También puedes hacer coincidir todos los métodos HTTP utilizando `ANY`.
 
 Por defecto, Buffalo establece una ruta raíz dentro de la configuración de bufalo.App:
 
@@ -130,7 +130,7 @@ Sin embargo, para una mayor legibilidad, a menudo es mejor separar los handlers 
 
 ## Denominanción de Rutas
 
-Por defecto, Buffalo nombrará sus rutas por usted en la forma de `<nombre de la ruta>Path`.
+Por defecto, Buffalo nombrará las rutas por ti en la forma de `<nombre de la ruta>Path`.
 
 Por ejemplo: `a.GET("/coke", CokeHandler)` dará como resultado una ruta llamada `cokePath`.
 
@@ -146,8 +146,8 @@ Estos nombres se convierten en el nombre de los helpers de ruta en tus plantilla
 
 ## Denominación de Rutas Personalizadas
 
-Buffalo también proporciona una forma de establecer un nombre personalizado para su ruta, El método [`buffalo.RouteInfo#Name`](https://godoc.org/github.com/gobuffalo/buffalo#RouteInfo.Name) te permite establecer un nombre personalizado para los helpers de la ruta.
-Para personalizar el nombre de su ruta, sólo tiene que utilizar el método Name después de asignar el método HTTP.
+Buffalo también proporciona una forma de establecer un nombre personalizado para tu ruta, El método [`buffalo.RouteInfo#Name`](https://godoc.org/github.com/gobuffalo/buffalo#RouteInfo.Name) te permite establecer un nombre personalizado para los helpers de la ruta.
+Para personalizar el nombre de tu ruta, sólo tienes que utilizar el método Name después de asignar el método HTTP.
 
 ```go
 app.GET("/coke", CokeHandler).Name("customCoke") // customCokePath()
@@ -236,7 +236,7 @@ DELETE | http://127.0.0.1:3000 | /fooz/{widget_id}/      |         | foozWidgetI
 GET    | http://127.0.0.1:3000 | /fooz/{widget_id}/edit/ |         | editFoozWidgetIDPath | coke/actions.WidgetResource.Edit
 ```
 
-Vea [`Denominación de Rutas Personalizadas`](#denominación-de-rutas-personalizadas) para más detalles sobre cómo cambiar el nombre generado.
+Revisa [`Denominación de Rutas Personalizadas`](#denominación-de-rutas-personalizadas) para más detalles sobre cómo cambiar el nombre generado.
 
 
 ## Uso de los Helpers de ruta en las plantillas
@@ -345,7 +345,7 @@ a.GET("/users", func (c buffalo.Context) error {
 })
 ```
 
-Given the above code sample, if we make a request with `GET /users?name=ringo`, the response should be `200: ringo`.
+Dado el ejemplo de código anterior, si hacemos una petición con `GET /users?name=ringo`, la respuesta debería ser `200: ringo`.
 
 ## Parámetros con nombre
 
@@ -357,7 +357,7 @@ a.GET("/users/{name}", func (c buffalo.Context) error {
 })
 ```
 
-Dado el ejemplo de código anterior, si hacemos una petición con `GET /users?name=ringo`, la respuesta debería ser `200: ringo`.
+Dado el ejemplo de código anterior, si hacemos una petición con `GET /users/ringo`, la respuesta debería ser `200: ringo`.
 
 ```go
 a.GET("/users/new", func (c buffalo.Context) error {
@@ -458,4 +458,4 @@ func muxer() http.Handler {
 a.Mount("/admin", muxer())
 ```
 
-Dado que Buffalo `App` implementa la interfaz `http.Handler`, también puede montar otra aplicación de Buffalo y construir aplicaciones modulares.
+Dado que Buffalo `App` implementa la interfaz `http.Handler`, también puedes montar otra aplicación de Buffalo y construir aplicaciones modulares.

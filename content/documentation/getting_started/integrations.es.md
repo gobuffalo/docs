@@ -31,7 +31,7 @@ Si tu usas la terminal con `bash`, puedes tratar de usar este script, creado por
 
 ## Extension de Go para Visual Studio Code
 
-Si tu usas `Visual Studio Code` como tu editor de Codigo, puedes usar esta extension: [Go](https://code.visualstudio.com/docs/languages/go).
+Si tu usas `Visual Studio Code` como tu editor de Código, puedes usar esta extension: [Go](https://code.visualstudio.com/docs/languages/go).
 
 ## Siguiente Paso
 

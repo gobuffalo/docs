@@ -1,6 +1,6 @@
 ---
 name: Configuración
-seoDescription: "Maneja la configuracion con Buffalo"
+seoDescription: "Maneja la configuración con Buffalo"
 seoKeywords:
   - "buffalo"
   - "go"
@@ -17,11 +17,11 @@ aliases:
   - /es/docs/getting-started/config-vars
 ---
 
-# Configuracion
+# Configuración
 
-En este capitulo, tu vas a aprender como manejar la configuracion de tu proyecto con Buffalo.
+En este capitulo, tu vas a aprender como manejar la configuración de tu proyecto con Buffalo.
 
-Las variables de entorno son un buen camino para separar entornos con diferentes valores o secretos, de la base del codigo de tu aplicación. ([como describe en la aplicación de los Doce factores](https://12factor.net/config)). Eso puede ayudar a definir el comportamiento quese basa en el contexto de la aplicación (Como requerir SSL en producción) y aislas secretos de tu codigo. De esta manera, todos los desarroladores no tienen que conocer las llaves de producción para servicios sensibles como la API de un Banco y pueden utilizar las llaves de la API en sandbox.
+Las variables de entorno son un buen camino para separar entornos con diferentes valores o secretos, de la base del código de tu aplicación. ([como describe en la aplicación de los Doce factores](https://12factor.net/config)). Eso puede ayudar a definir el comportamiento quese basa en el contexto de la aplicación (Como requerir SSL en producción) y aislas secretos de tu código. De esta manera, todos los desarroladores no tienen que conocer las llaves de producción para servicios sensibles como la API de un Banco y pueden utilizar las llaves de la API en sandbox.
 
 ## Variables de entorno Permitidas
 
@@ -38,7 +38,7 @@ Las siguientes variables son usadas por Buffalo:
 | `HOST`                   | `http://127.0.0.1:$PORT`     | La "URL" de la aplicación (i.e. Lo que escriben los usuarios).     |
 | `SESSION_SECRET`         | `""`                         | Utilizada para asegurar las sesiones.                              |
 
-## Configuracion Personalizada
+## Configuración Personalizada
 
 Tu puedes proporcionar tus propias variables y recuperarlas desde su aplicación. El paquete [envy](https://github.com/gobuffalo/envy) hace esto facil!
 

@@ -52,7 +52,7 @@ $ go install github.com/gobuffalo/pop/v6/soda@latest
 ```bash
 $ go install -tags sqlite github.com/gobuffalo/pop/v6/soda@latest
 ```
-Si no estas compilando tu codigo con `buffalo build`, tendras que pasar tambien `-tag sqlite` a `go build` al construir tu programa.
+Si no estas compilando tu código con `buffalo build`, tendras que pasar tambien `-tags sqlite` a `go build` al construir tu programa.
 
 ## Creando bases de datos
 

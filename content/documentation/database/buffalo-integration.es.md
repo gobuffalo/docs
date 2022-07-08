@@ -53,7 +53,7 @@ func App() *buffalo.App {
 `popmw.Transaction(models.DB)` usa la conexión de la base de datos configurada para crear un nuevo middleware `Transaction`. Este middleware hace lo siguiente:
 
 * Registra la duración total gastada durante la solicitud de realizar llamadas a la base de datos.
-* envuelve **cada petición HTTP** en una transacción de base de datos.
+* Envuelve **cada petición HTTP** en una transacción de base de datos.
 * Hace commit **si no hay ningun error** ejecutando los middlewares y la accion; **y el estado de la respuesta es un 2xx o 3xx**
 * De lo contrario, hace `Rollback`.
 

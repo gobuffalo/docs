@@ -72,7 +72,7 @@ Este directorio maneja la parte de **Controlador** del patron MVC. Eso contiene 
 ### Assets
 
 {{< note >}}
-Este directorio es opcional. Si tu no necesitas usar una configuracion para el frontend (Solo API, por ejemplo), puedes quitarlo sin problemas.
+Este directorio es opcional. Si tu no necesitas usar una configuración para el frontend (Solo API, por ejemplo), puedes quitarlo sin problemas.
 
 {{< /note >}}
 
@@ -123,7 +123,7 @@ Este directorio contiene asset publico (Compilado/Comprimido). Si tu usas webpac
 ### Templates
 
 {{< note >}}
-Este directorio es opcional. Si tu no necesitas usar una configuracion de frontend (Solo API, por ejemplo), puedes quitarlo sin problemas.
+Este directorio es opcional. Si tu no necesitas usar una configuración de frontend (Solo API, por ejemplo), puedes quitarlo sin problemas.
 {{< /note >}}
 
 Este directorio maneja la **Vista** de el patron MVC. Eso contiene los templates de el proyecto, usado para renderizar las vistas.
@@ -142,9 +142,9 @@ Este directorio es usado por el comando `buffalo dev` para reconstruir tu proyec
 Este archivo es opcional. Si tu no necesitas una base de datos, o si tu quieres manejar la base de datos sin pop/soda puedes removerlo.
 {{< /note >}}
 
-Este archivo contiene la configuracion de la base de datos para [pop/soda](https://github.com/gobuffalo/pop).
+Este archivo contiene la configuración de la base de datos para [pop/soda](https://github.com/gobuffalo/pop).
 
 ## Siguiente Paso
 
-* [Configuración](/es/documentation/getting_started/configuration) -  Maneja la configuracion de tu app.
+* [Configuración](/es/documentation/getting_started/configuration) -  Maneja la configuración de tu app.
 * [Integracion de Herramientas](/es/documentation/getting_started/integrations) - Trabaja con Buffalo usando herramientas existentes.

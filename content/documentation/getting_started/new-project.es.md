@@ -31,7 +31,7 @@ $ buffalo new coke
 ```
 
 Esto generará aplicacion de Buffalo llamada **Coke**, lista para funcionar:
-* El **Diseño del framework de Buffalo** y su configuracion por defecto ([pop/soda](https://github.com/gobuffalo/pop) con soporte a PostgreSQL).
+* El **Diseño del framework de Buffalo** y su configuración por defecto ([pop/soda](https://github.com/gobuffalo/pop) con soporte a PostgreSQL).
 * Toda las **Dependencias de Go** necesarias para correr la aplicación.
 * **Dependencias del lado Frontend** y la configuración con [webpack](https://webpack.js.org/).
 * Y un **Repositorio de Git** inicial.
@@ -228,9 +228,9 @@ Flags:
 
 Tu puede elegir generar una aplicacion API, saltando el material frontend. ¿Tal vez tu quieres configurar un CI para construir tu aplicación en tu sistema favorito? ¿O incluso usar tu propio paquete para manejar la base de datos? ¡Solo usa la bandera!
 
-## Sobreescribir Configuracion por Defecto
+## Sobreescribir Configuración por Defecto
 
-Por defecto el comando `buffalo new` va a mirar el archivo de configuracion `$HOME/.buffalo.yml` y si existe tratará de cargarlo. Tu puedes sobreescribir las banderas encontrandolas en ese archivo pasando lo correcto en la linea de comandos o utilizar la bandera  `--config` para especificar un archivo YAML diferente. Si la bandera `--skip-config` es usado. El comando `buffalo new` no va a cargar ningun archivo de configuracion y solo va a usar las banderas pasadas por la linea de comandos.
+Por defecto el comando `buffalo new` va a mirar el archivo de configuración `$HOME/.buffalo.yml` y si existe tratará de cargarlo. Tu puedes sobreescribir las banderas encontrandolas en ese archivo pasando lo correcto en la linea de comandos o utilizar la bandera  `--config` para especificar un archivo YAML diferente. Si la bandera `--skip-config` es usado. El comando `buffalo new` no va a cargar ningun archivo de configuración y solo va a usar las banderas pasadas por la linea de comandos.
 
 Un ejemplo de `.buffalo.yml` puede ser:
 
@@ -244,10 +244,10 @@ with-dep: true
 ## Corriendo Tu Aplicacion en Desarrollo
 
 {{< note >}}
-Antes de comenzar con buffalo por primera vez, por favor dirijase a documentacion de [Base de datos](/documentation/database/pop) y lea un poco sobre la configuracion de tus bases de datos.
+Antes de comenzar con buffalo por primera vez, por favor dirijase a documentacion de [Base de datos](/documentation/database/pop) y lea un poco sobre la configuración de tus bases de datos.
 {{< /note >}}
 
-Una de las desventajas de usar Go en desarrollo es la falta de “recarga” de codigo. Esto quiere decir que a medida que cambias tu codigo **tu necesitas parar manualmente** tu aplicacion, reconstruirla y luego reiniciarla. Buffalo encuentra esto muy molesto y quiere hacer la vida mas facil para ti.
+Una de las desventajas de usar Go en desarrollo es la falta de “recarga” de código. Esto quiere decir que a medida que cambias tu código **tu necesitas parar manualmente** tu aplicacion, reconstruirla y luego reiniciarla. Buffalo encuentra esto muy molesto y quiere hacer la vida mas facil para ti.
 
 ```bash
 $ buffalo dev
@@ -270,7 +270,7 @@ Algunas veces tu vas a tener una aplicación en un puerto 3000. Tu puedes config
 $ PORT=3001 buffalo dev 
 ```
 
-Tu puedes tambien mirar el capitulo de [Env Variables](/documentation/getting_started/configuration) para mas information de la configuracion de Buffalo.
+Tu puedes tambien mirar el capitulo de [Env Variables](/documentation/getting_started/configuration) para mas information de la configuración de Buffalo.
 
 ## Siguiente Paso
 

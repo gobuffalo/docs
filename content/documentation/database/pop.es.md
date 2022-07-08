@@ -42,5 +42,5 @@ $ go get github.com/gobuffalo/pop/...
 
 ## Siguientes pasos
 
-* [CLI Soda](/es/documentation/database/soda) - Instala el CLI de the Soda.
+* [CLI Soda](/es/documentation/database/soda) - Instala el CLI de Soda.
 * [Configuración](/es/documentation/database/configuration) - Configura tu conexión de la base de datos.

@@ -10,7 +10,7 @@ aliases:
 
 # Configuración de la base de datos
 
-La configuración de `pop` se gestiona mediante un archivo `database.yml`, ubicado en la raíz de tu proyecto. Este archivo se genera para ti si usas Buffalo, si eligee usar `pop`, y contiene una configuración básica para la base de datos que seleccionaste en la generación con el flag `--db-type`. PostgreSQL se considera como predeterminado.
+La configuración de `pop` se gestiona mediante un archivo `database.yml`, ubicado en la raíz de tu proyecto. Este archivo se genera para ti si usas Buffalo, si eliges usar `pop`, y contiene una configuración básica para la base de datos que seleccionaste en la generación con el flag `--db-type`. PostgreSQL se considera como predeterminado.
 
 Aquí hay un ejemplo configuración generada para una nueva aplicación basada en PostgreSQL:
 
@@ -34,7 +34,7 @@ Puedes ver 3 conexiones definidas:
 
 * `development` Es usada cuando tu app se ejecura en modo `dev`.
 * `test` sirve para ejecutar test de intergración.
-* `production` es la configuracion que usarás en la version final de la pp, en el servidor.
+* `production` es la configuración que usarás en la version final de la pp, en el servidor.
 
 Por supuesto, puedes configurar cualquier nueva conexión que desees, pero Buffalo no los eligirá por defecto.
 
@@ -84,7 +84,7 @@ envOr "TEST_DATABASE_URL" "postgres://postgres:postgres@127.0.0.1:5432/myapp_tes
 
 Intenta obtener el valor de `TEST_DATABASE_URL` del entorno y el valor por defecto es `postgres://postgres:postgres@127.0.0.1:5432/myapp_test`.
 
-Esta forma, puedes proporcionar un valor por defecto para fines de desarrollo, y permitir reconfigurar la configuracion de la base de datos desde una variable de entorno!
+Esta forma, puedes proporcionar un valor por defecto para fines de desarrollo, y permitir reconfigurar la configuración de la base de datos desde una variable de entorno!
 
 {{<warning>}}
 El parámetro `url` para una conexión va a sobreescribir cualquier otro parámetro de conexión. Asegúrate de establecer todas la configuraciones que desses para la cadena URL.

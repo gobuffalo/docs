@@ -122,11 +122,11 @@ table code {
 }
 
 .content table {
-    @apply w-full mb-3 rounded-md;
+    @apply w-full mb-3;
 }
 
 .content thead th {
-    @apply font-bold bg-gray-300 p-2 mr-2 rounded-md;
+    @apply font-bold bg-gray-300 p-2 mr-2;
 }
 
 .content tbody td {

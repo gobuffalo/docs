@@ -10,7 +10,7 @@ aliases:
 
 # Enrutamiento
 
-Buffalo utiliza el paquete [github.com/gorilla/mux](http://www.gorillatoolkit.org/pkg/mux) para manejar el enrutamiento dentro de las aplicaciones de Buffalo. Dicho esto, Buffalo envuelve la API `mux` con la suya propia. Esta guía le ayudará a conocer todo lo que necesita saber sobre cómo Buffalo maneja el enrutamiento.
+Buffalo utiliza el paquete [github.com/gorilla/mux](http://www.gorillatoolkit.org/pkg/mux) para manejar el enrutamiento dentro de las aplicaciones de Buffalo. Dicho esto, Buffalo envuelve la API `mux` con la suya propia. Esta guía te ayudará a conocer todo lo que necesita saber sobre cómo Buffalo maneja el enrutamiento.
 
 ## Necesitamos tener la configuración de buffalo.App creada
 
@@ -146,7 +146,7 @@ Estos nombres se convierten en el nombre de los helpers de ruta en tus plantilla
 
 ## Denominación de Rutas Personalizadas
 
-Buffalo también le proporciona una forma de establecer un nombre personalizado para su ruta, El método [`buffalo.RouteInfo#Name`](https://godoc.org/github.com/gobuffalo/buffalo#RouteInfo.Name) le permite establecer un nombre personalizado para los helpers de la ruta.
+Buffalo también proporciona una forma de establecer un nombre personalizado para su ruta, El método [`buffalo.RouteInfo#Name`](https://godoc.org/github.com/gobuffalo/buffalo#RouteInfo.Name) te permite establecer un nombre personalizado para los helpers de la ruta.
 Para personalizar el nombre de su ruta, sólo tiene que utilizar el método Name después de asignar el método HTTP.
 
 ```go

@@ -10,9 +10,9 @@ aliases:
 
 # Vinculación de Peticiones
 
-La interfaz `buffalo.Context` tiene un método llamado `Bind`. Este método permite la vinculación de una petición, como un formulario o un cuerpo JSON, para ser mapeado a una estructura para facilitar el manejo del formulario.
+La interfaz `buffalo.Context` tiene un método llamado `Bind`. Este método permite la vinculación de una petición, como un formulario o un cuerpo JSON, para ser mapeado a un struct para facilitar el manejo del formulario.
 
-Para más información sobre la vinculación de peticiones en Buffalo, consulte el godoc de [github.com/gobuffalo/buffalo/binding](https://godoc.org/github.com/gobuffalo/buffalo/binding)
+Para más información sobre la vinculación de peticiones en Buffalo, consulta el godoc de [github.com/gobuffalo/buffalo/binding](https://godoc.org/github.com/gobuffalo/buffalo/binding)
 
 ## Cómo funciona?
 
@@ -40,9 +40,9 @@ La función `Bind` funciona mirando a los headers `Content-Type` o al `Accept` d
 
 ## Vinculación HTML/Form
 
-La vinculación de formularios HTML, por defecto, utiliza el paquete [github.com/monoculum/formam](https://github.com/monoculum/formam) para vincular los formularios HTML a una estructura.
+La vinculación de formularios HTML, por defecto, utiliza el paquete [github.com/monoculum/formam](https://github.com/monoculum/formam) para vincular los formularios HTML a un struct.
 
-Tome la siguiente estructura `User` y el formulario HTML que sigue.
+Toma el siguiente struct `User` y el formulario HTML que sigue.
 
 ```go
 type User struct {
@@ -76,18 +76,18 @@ func MyAction(c buffalo.Context) error {
 }
 ```
 
-El mapeo por defecto entre el formulario y el struct es el nombre del atributo en la estructura, y debe coincidir con el atributo "name" del campo del formulario. Observe que el campo `Email` en los ejemplos coincide tanto con el atributo del struct como con el atributo `name` del campo del formulario.
+El mapeo por defecto entre el formulario y el struct es el nombre del atributo en el struct, y debe coincidir con el atributo "name" del campo del formulario. Observe que el campo `Email` en los ejemplos coincide tanto con el atributo del struct como con el atributo `name` del campo del formulario.
 
-Usando las etiquetas `form` en los structs, podemos asignar los campos del formulario HTML a la estructura `User`, incluyendo el ignorar la `Contraseña` usando un `-`.
+Usando las etiquetas `form` en los structs, podemos asignar los campos del formulario HTML al struct `User`, incluyendo el ignorar la `Contraseña` usando un `-`.
 
-Por favor, consulte [github.com/monoculum/formam](https://github.com/monoculum/formam) para obtener más información sobre la etiqueta `form` en los structs.
+Consulta [github.com/monoculum/formam](https://github.com/monoculum/formam) para obtener más información sobre la etiqueta `form` en los structs.
 
 ## Vinculación JSON y XML
 
 
 La vinculación de peticiones JSON y XML, por defecto, utiliza los paquetes `encoding/json` y `encoding/xml` de la biblioteca estándar.
 
-Tome el siguiente struct `User` y el JSON de abajo. (XML funciona exactamente igual, pero en lugar de las etiquetas struct `json`, sustituye `xml` en su lugar).
+Toma el siguiente struct `User` y el JSON de abajo. (XML funciona exactamente igual, pero en lugar de las etiquetas struct `json`, sustituye `xml` en su lugar).
 
 ```go
 type User struct {
@@ -122,7 +122,7 @@ func MyAction(c buffalo.Context) error {
 
 Usando las etiquetas de struct `json` o `xml` podemos mapear los campos de un JSON al struct `User`, incluyendo el ignorar la `Contraseña` usando un `-`.
 
-Consulte la documentación de la biblioteca estándar para obtener más información sobre las etiquetas de struct `json` y `xml`.
+Consulta la documentación de la biblioteca estándar para obtener más información sobre las etiquetas de struct `json` y `xml`.
 
 ## Registrando un Binder personalizado
 

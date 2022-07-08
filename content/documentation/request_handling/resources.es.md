@@ -800,7 +800,7 @@ Puedes eliminar los archivos generados por este generador ejecutando:
 $ buffalo destroy resource users
 ```
 
-Este comando le preguntará qué archivos quiere eliminar, puede responder a cada una de las preguntas con `y/n` o puede pasar el flag `-y` al comando de la siguiente manera:
+Este comando te preguntará qué archivos quiere eliminar, puede responder a cada una de las preguntas con `y/n` o puede pasar el flag `-y` al comando de la siguiente manera:
 
 ```bash
 $ buffalo destroy resource users -y

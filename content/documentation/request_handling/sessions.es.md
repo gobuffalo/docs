@@ -10,7 +10,7 @@ aliases:
 
 # Sesiones
 
-Una sesión HTTP es un almacenamiento de datos no persistente, que se destruye al cerrar el navegador (en la configuración por defecto del navegador). Puede utilizarse para almacenar mensajes flash, o cualquier dato temporal específico del usuario. Utilice [cookies](/es/documentación/request_handling/cookies) en su lugar si necesita un almacenamiento más persistente del lado del cliente.
+Una sesión HTTP es un almacenamiento de datos no persistente, que se destruye al cerrar el navegador (en la configuración por defecto del navegador). Puede utilizarse para almacenar mensajes flash, o cualquier dato temporal específico del usuario. Utiliza [cookies](/es/documentación/request_handling/cookies) en su lugar si necesitas un almacenamiento más persistente del lado del cliente.
 
 La sesión está disponible directamente desde el `buffalo.Context` dentro de un handler.
 
@@ -58,7 +58,7 @@ app = buffalo.New(buffalo.Options{
 
 La variable ENV `SESSION_SECRET` debe ser establecida antes de ejecutar la aplicación. Si no se establece, verá una advertencia en sus registros de que su sesión no está asegurada.
 
-Para más información sobre esto, consulte la documentación de [`buffalo.Options`](https://godoc.org/github.com/gobuffalo/buffalo#Options).
+Para más información sobre esto, consulta la documentación de [`buffalo.Options`](https://godoc.org/github.com/gobuffalo/buffalo#Options).
 
 
 

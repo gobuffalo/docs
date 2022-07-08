@@ -30,7 +30,7 @@ func MyHandler(c buffalo.Context) error {
 }
 ```
 
-Si necesitas personalizar el mensaje de error o el código HTTP, utilice el método {{< doclink href="github.com/gobuffalo/buffalo#DefaultContext.Error" message="Error" >}}:
+Si necesitas personalizar el mensaje de error o el código HTTP, utiliza el método {{< doclink href="github.com/gobuffalo/buffalo#DefaultContext.Error" message="Error" >}}:
 ```go
 func MyHandler(c buffalo.Context) error {
   // Use the Error function on the context.

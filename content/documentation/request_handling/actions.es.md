@@ -103,7 +103,7 @@ Este es el comportamiento por defecto para las aplicaciones generadas con el fla
 
 ## Eliminando Acciones
 
-Puede eliminar los archivos generados por este generador ejecutando:
+Puedes eliminar los archivos generados por este generador ejecutando:
 
 ```bash
 $ buffalo destroy action users

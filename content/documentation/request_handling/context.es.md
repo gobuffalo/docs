@@ -40,7 +40,7 @@ type Context interface {
 }
 ```
 
-La función `Websocket() (*websocket.Conn, error)` fue eliminada de `buffalo.Context` en la versión `v0.12.0`. Utilice el paquete [http://www.gorillatoolkit.org/pkg/websocket](http://www.gorillatoolkit.org/pkg/websocket) en su lugar.
+La función `Websocket() (*websocket.Conn, error)` fue eliminada de `buffalo.Context` en la versión `v0.12.0`. Utiliza el paquete [http://www.gorillatoolkit.org/pkg/websocket](http://www.gorillatoolkit.org/pkg/websocket) en su lugar.
 
 ## Contexto y renderizado
 
@@ -129,4 +129,4 @@ Buffalo añade al contexto de cada solicitud un montón de información que podr
 | `request`       | [`*http.Request`](https://godoc.org/net/http#Request)                                | La petición actual.                                                                                                               |
 | `tx`            | [`*pop.Connection`](https://godoc.org/github.com/gobuffalo/pop#Connection)          | Sólo se establece si se utiliza el middleware `github.com/gobuffalo/buffalo/middleware.PopTransaction` (activado por defecto).                              |
 
-Consulte [Helpers](/documentation/frontend-layer/helpers#builtin-helpers) para obtener una lista de las funciones de ayuda integradas disponibles dentro de las plantillas.
+Consulta [Helpers](/documentation/frontend-layer/helpers#builtin-helpers) para obtener una lista de las funciones de ayuda integradas disponibles dentro de las plantillas.

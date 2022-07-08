@@ -41,7 +41,7 @@ func MyHandler(c buffalo.Context) error {
 
 ## Manejo de errores por defecto (Development)
 
-En modo "development " (`GO_ENV=development`), Buffalo generará algunas páginas de errores útiles para usted.
+En modo "development " (`GO_ENV=development`), Buffalo generará algunas páginas de errores útiles para ti.
 
 <figure>
   <img src="/assets/images/500_example.png" title="screenshot">
@@ -69,7 +69,7 @@ En el modo " production" (`GO_ENV=production`), Buffalo no generará páginas qu
 
 ## Manejo de personalizado errores
 
-Aunque Buffalo gestiona los errores por usted de forma inmediata, puede ser útil gestionar los errores de forma personalizada. Para ello, Buffalo permite asignar códigos de estado HTTP a handlers específicos. Esto significa que el error puede ser tratado de forma personalizada.
+Aunque Buffalo gestiona los errores por ti de forma inmediata, puede ser útil gestionar los errores de forma personalizada. Para ello, Buffalo permite asignar códigos de estado HTTP a handlers específicos. Esto significa que el error puede ser tratado de forma personalizada.
 
 ```go
 app = buffalo.New(buffalo.Options{

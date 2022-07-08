@@ -113,7 +113,7 @@ func HomeHandler(c buffalo.Context) error {
 
 ## Qué hay en el contexto
 
-Buffalo añade al contexto de cada solicitud un montón de información que podría ser útil en su aplicación, como la `current_route` o la `session`. A continuación se muestra una lista de lo que Buffalo añade al contexto de cada solicitud al que puede acceder desde las acciones o plantillas.
+Buffalo añade al contexto de cada solicitud un montón de información que podría ser útil en tu aplicación, como la `current_route` o la `session`. A continuación se muestra una lista de lo que Buffalo añade al contexto de cada solicitud al que puede acceder desde las acciones o plantillas.
 
 | Llave             | Tipo                                                                                 | Uso                                                                                                                                   |
 | ---             | ---                                                                                  | ---                                                                                                                                     |

@@ -272,7 +272,7 @@ GET /api/users -> AuthorizeAPIMiddleware -> UsersHandler
 
 ## Listando middlewares de una aplicación
 
-Para obtener una lista completa de los middleware que utiliza su aplicación, desglosada por grupos, se debe ejecutar el comando `buffalo task middleware`.
+Para obtener una lista completa de los middleware que utiliza tu aplicación, desglosada por grupos, se debe ejecutar el comando `buffalo task middleware`.
 
 {{<codetabs>}}
 {{<tab "actions/app.go">}}

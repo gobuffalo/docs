@@ -56,7 +56,7 @@ app = buffalo.New(buffalo.Options{
 })
 ```
 
-La variable ENV `SESSION_SECRET` debe ser establecida antes de ejecutar la aplicación. Si no se establece, verá una advertencia en sus registros de que su sesión no está asegurada.
+La variable ENV `SESSION_SECRET` debe ser establecida antes de ejecutar la aplicación. Si no se establece, verá una advertencia en sus registros de que tu sesión no está asegurada.
 
 Para más información sobre esto, consulta la documentación de [`buffalo.Options`](https://godoc.org/github.com/gobuffalo/buffalo#Options).
 

@@ -117,5 +117,5 @@ $ buffalo d a users
 
 ## Siguientes Pasos
 
-* [Recursos](/documentation/request_handling/resources) - Definir paquetes de acciones tipo CRUD.
-* [Contexto](/documentation/request_handling/context) - Más información sobre Buffalo Context.
+* [Recursos](/es/documentation/request_handling/resources) - Definir paquetes de acciones tipo CRUD.
+* [Contexto](/es/documentation/request_handling/context) - Más información sobre Buffalo Context.

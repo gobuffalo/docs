@@ -12,7 +12,7 @@ Si estas buscando soporte, [entrenamiento](https://www.gopherguides.com/in-perso
 
 ## Auditoria en proyectos de Buffalo
 
-Ya sea que estés empezando con tu primer proyecto de Buffalo o preparandote para lanzarlo, tienes a [Gopher Guides](https://www.gopherguides.com) para que audite tu codigo y asegures que tenga exito. Estas son solo algunas cosas que te ofrece la auditoría:
+Ya sea que estés empezando con tu primer proyecto de Buffalo o preparandote para lanzarlo, tienes a [Gopher Guides](https://www.gopherguides.com) para que audite tu código y asegures que tenga exito. Estas son solo algunas cosas que te ofrece la auditoría:
 
 * Actualiar a la ultima version (si lo deseas)
 * Pruebas de auditoría

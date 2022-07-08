@@ -20,7 +20,7 @@ aliases:
 
 # Instalar Buffalo
 
-En este capítulo, aprenderá a instalar Buffalo, ya sea con binarios preconstruidos o desde el codigo fuente.
+En este capítulo, aprenderá a instalar Buffalo, ya sea con binarios preconstruidos o desde el código fuente.
 
 Buffalo proporciona **dos componentes principales**:
 * La herramienta `buffalo`, es una herramienta potente para ayudarle a desarrollar en una manera rápida y eficiente.

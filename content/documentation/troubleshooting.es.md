@@ -16,7 +16,7 @@ Para más información: [github.com/gobuffalo/buffalo/issues/1067](https://githu
 {{< /faq >}}
 
 {{< faq "Linea de comandos lenta" "slow-commands">}}
-Si al ejecutar `buffalo --help` o cualquier otro comando en la terminal toma mas tiempo de lo esperado, define `export BUFFALO_PLUGIN_PATH=$GOPATH/bin` en la configuracion de tu terminal (p.e. `.bash_profile`).
+Si al ejecutar `buffalo --help` o cualquier otro comando en la terminal toma mas tiempo de lo esperado, define `export BUFFALO_PLUGIN_PATH=$GOPATH/bin` en la configuración de tu terminal (p.e. `.bash_profile`).
 {{< /faq >}}
 
 {{< faq "No de encuentra el binario de `buffalo`" "binary-not-found">}}

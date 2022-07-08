@@ -6,6 +6,10 @@ html {
     scroll-padding-top: 94px;
 }
 
+ol {
+    @apply pl-4 list-decimal;
+}
+
 .container {
     width: 100%;
     max-width: 1500px;

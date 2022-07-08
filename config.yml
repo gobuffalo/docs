@@ -80,7 +80,7 @@ languages:
       support: "Soporte"
       troubleshooting: "Solución de problemas"
       searchButtonText: "Buscar..."
-      searchPlaceholder: "Buscarn en la documentación de Buffalo"
+      searchPlaceholder: "Buscar en la documentación de Buffalo"
       noResultsCopy: "No pudimos encontrar guías o documentos con ese término. Inténtalo de nuevo. También puede visitar el sitio de documentación y navegar para obtener más detalles."
       fromOurBlog: "En nuestro Blog"
       learnMore: "Aprender Mas"
@@ -88,7 +88,7 @@ languages:
     menu:
       top:
         - name: Documentación
-          url: /documentation/
+          url: /es/documentation/
           weight: 3
         - name: Blog
           url: 'https://blog.gobuffalo.io'

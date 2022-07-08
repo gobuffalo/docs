@@ -1,25 +1,26 @@
 ---
-name: One to one associations
-seoDescription: "Pop one to one associations"
+name: Asociaciones Uno a Uno
+seoDescription: "Asociaciones uno a uno en Pop"
 seoKeywords: ["orm", "buffalo", "go", "golang", "pop", "one to one", "associations"]
 weight: 52
 aliases:
   - /documentation/database/onetoone
   - /docs/db/relations/onetoone
-  - /en/docs/db/relations/onetoone
+  - /es/docs/db/relations/onetoone
 ---
 
-# One to One Associations
+# Asociaciones Uno a Uno
 
-In this chapter, you'll learn how to write a one to one [association](/documentation/database/relations/) in Pop.
+En este capítulo, aprenderás a como escribir una [asociación](/es/documentation/database/relations/) uno a uno en Pop.
 
 ## Tags
 
-One to one associations work using a pair of tags:
-* `belongs_to` for the model with the foreign key.
-* `has_one` for the model without the foreign key.
+Las asociaciones Uno a Uno usan un par de tags:
 
-## Example
+* `belongs_to` para el modelo con una llave foránea.
+* `has_one` para un modelo sin llave foránea.
+
+## Ejemplo
 
 ```go
 // Models
@@ -37,8 +38,8 @@ type Body struct {
 ```
 
 ```go
-// Eager creation:
-// Create a body with its head.
+// Creación con Eager:
+// Crear un `Body` con su `Head`.
 b := &models.Body{
     Head: models.Head{},
 }
@@ -49,7 +50,7 @@ if err := tx.Eager().Create(b); err != nil {
 ```
 
 ```go
-// Eager fetch all bodies with their head.
+// Buscar todos los `Bodies` con sus `Head` usando Eager.
 bodies = &models.Bodies{}
 
 if err := c.Eager().All(bodies); err != nil {
@@ -60,6 +61,6 @@ if err := c.Eager().All(bodies); err != nil {
 log.Printf("eager fetch: %v", bodies)
 ```
 
-## Related Content
+## Contenido Relacionado
 
-* [Associations with Pop: 1 to 1](https://blog.gobuffalo.io/associations-with-pop-1-to-1-592f02e2bdd8) - An article about 1 to 1 associations in Pop.
+* [Associations with Pop: 1 to 1](https://blog.gobuffalo.io/associations-with-pop-1-to-1-592f02e2bdd8) - Un artículo sobre asociaciones 1 a 1 en Pop.

@@ -65,7 +65,7 @@ Si utilizas un tipo de contenido JSON o XML, el error se devuelve en el tipo apr
 </response>
 ```
 
-En el modo " production" (`GO_ENV=production`), Buffalo no generará páginas que tengan información de estilo para desarrolladores, porque esto daría información valiosa a los hackers. En su lugar, las páginas son más sencillas.
+En el modo "production" (`GO_ENV=production`), Buffalo no generará páginas que tengan información de estilo para desarrolladores, porque esto daría información valiosa a los hackers. En su lugar, las páginas son más sencillas.
 
 ## Manejo de personalizado errores
 

@@ -28,6 +28,7 @@ languages:
       fromOurBlog: "From our blog"
       learnMore: "Learn more"
       readMore: "Read more"
+      since: "Since"
     menu:
       top:
         - name: Documentation
@@ -57,6 +58,7 @@ languages:
       fromOurBlog: "De notre blog"
       learnMore: "Apprendre encore plus"
       readMore: "Lire la suite"
+      since: "Depuis"
     menu:
       top:
         - name: Documentation
@@ -83,8 +85,9 @@ languages:
       searchPlaceholder: "Buscar en la documentación de Buffalo"
       noResultsCopy: "No pudimos encontrar guías o documentos con ese término. Inténtalo de nuevo. También puede visitar el sitio de documentación y navegar para obtener más detalles."
       fromOurBlog: "En nuestro Blog"
-      learnMore: "Aprender Mas"
+      learnMore: "Aprender Más"
       readMore: "Leer más"
+      since: "Desde"
     menu:
       top:
         - name: Documentación

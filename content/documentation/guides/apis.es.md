@@ -1,26 +1,26 @@
 ---
-name: API Applications
+name: Aplicaciones API
 weight: 10
 aliases:
   - /docs/apis
-  - /en/docs/apis
+  - /es/docs/apis
 ---
 
-# API Applications
+# Aplicaciones API
 
-Applications that only serve API end-points, typically JSON, are very different from those that serve HTML, JavaScript, and CSS. In this guide, you'll learn how to build an API-only app, using Buffalo.
+Las aplicaciones que solo sirven end-points de API, normalmente JSON, son muy diferentes de las que sirven HTML, JavaScript y CSS. En esta guía, aprenderás a crear una aplicación solo de API con Buffalo.
 
-## Creating a New API Application
+## Creando una nueva aplicacion API
 
-When creating a new Buffalo application using the `buffalo new` command, the optional `--api` flag will generate an application that is better suited to serving APIs than a stock Buffalo application.
+Cuando creamos una nueva aplicacion de Buffalo usando el comando `buffalo new`, el flag opcional `--api` generará una aplicación que se adapta mejor para API que para una aplicación por defecto de Buffalo.
 
 ```bash
 $ buffalo new coke --api
 ```
 
-### Slimmed Project Layout
+### Estructura simplificada del proyecto
 
-Applications generated with the `--api` flag don't contain any front systems. This means there is no templating, stylesheets, etc...
+Las aplicaciones creadas con el flag `--api` no contiene ningun sistema frontal. Es decir, que no hay plantillas, hojas de estilo, etc...
 
 {{<codetabs>}}
 {{<tab "API">}}
@@ -97,9 +97,9 @@ $ buffalo new coke
 {{</tab>}}
 {{</codetabs>}}
 
-### Tuned `actions/app.go actions/render.go` Files
+### Archivos `actions/app.go actions/render.go` ajustados
 
-API applications have `actions/app.go` and `actions/render.go` files that are a good starting point for API applications.
+Las aplicaciones API tienen los archivos `actions/app.go` and `actions/render.go`, que son un buen punto de inicio para estas.
 
 {{<codetabs>}}
 {{<tab "API">}}

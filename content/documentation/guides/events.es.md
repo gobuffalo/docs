@@ -45,7 +45,7 @@ Este patrón de nomenclatura facilita a los usuarios filtrar solo aquellos event
 
 ---
 
-Hay varias maneras de emitir un {{< doclink message="events#Event" href="github.com/gobuffalo/events#Event" >}} en tu código de Go. LAs funciones {{< doclink message="events#EmitError" href="github.com/gobuffalo/events#EmitError" >}} y {{< doclink message="events#EmitPayload" href="github.com/gobuffalo/events#EmitPayload" >}} aceptan un argumento de tipo `payload interface{}`. Se recomienda usar {{< doclink message="events#Payload" href="github.com/gobuffalo/events#Payload" >}} para datos de entrada; cualquier otro tipo pasado será convertido a {{< doclink message="events#Payload" href="github.com/gobuffalo/events#Payload" >}} con el argumento establecido en los datos de entrada con la llave `data`.
+Hay varias maneras de emitir un {{< doclink message="events#Event" href="github.com/gobuffalo/events#Event" >}} en tu código de Go. Las funciones {{< doclink message="events#EmitError" href="github.com/gobuffalo/events#EmitError" >}} y {{< doclink message="events#EmitPayload" href="github.com/gobuffalo/events#EmitPayload" >}} aceptan un argumento de tipo `payload interface{}`. Se recomienda usar {{< doclink message="events#Payload" href="github.com/gobuffalo/events#Payload" >}} para datos de entrada; cualquier otro tipo pasado será convertido a {{< doclink message="events#Payload" href="github.com/gobuffalo/events#Payload" >}} con el argumento establecido en los datos de entrada con la llave `data`.
 
 * {{< doclink message="events#Emit" href="github.com/gobuffalo/events#Emit" >}}
 

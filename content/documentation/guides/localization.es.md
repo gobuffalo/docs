@@ -105,7 +105,7 @@ Primero, crea una versión para la configuración regional por defecto, sin un s
 <p>This is my default language page.</p>
 ```
 
-Then, create a new suffixed version for each language you want to support:
+Luego, crea una version con sufijo para cada lenguaje que deseeas admitir:
 
 **page.en-us.html**:
 ```html

@@ -1,0 +1,20 @@
+{
+	"name": "GoBuffalo: docs",
+	"dockerComposeFile": [
+		"../docker-compose.yml"
+	],
+	"service": "server",
+	"runServices": [
+		"server"
+	],
+	"workspaceFolder": "/src",
+	"forwardPorts": [
+		1313
+	],
+	"portsAttributes": {
+		"1313": {
+			"label": "GoHugo",
+			"onAutoForward": "notify"
+		}
+	}
+}

@@ -9,6 +9,17 @@ aliases:
 
 If you are looking for support, [training](https://www.gopherguides.com/in-person-training/), or [consulting](https://www.gopherguides.com/consulting/) for your Buffalo project, the [Gopher Guides](https://www.gopherguides.com) (founded by Mark Bates - founder of Buffalo) are the official trainers and consultants for the Buffalo ecosystem.
 
+## Community {#community}
+
+The `#buffalo` Slack channel on [gophers.slack.com](https://gophers.slack.com/messages/buffalo/) is great place to ask for help from a variety of Buffalo developers and Gophers.
+
+In order to access the Gophers Slack, and the `#buffalo` channel, you first need to get an invitation. This can be done by going to [https://invite.slack.golangbridge.org/](https://invite.slack.golangbridge.org/) and requesting an invitation.
+
+Once you're in Slack, please join the `#buffalo` channel and say "Hello"! We'd love to hear from you.
+
+Besides the documentation itself, you can also get in touch with us on our [GitHub](https://github.com/gobuffalo/buffalo) or [Twitter](https://twitter.com/gobuffalo) accounts.
+
+
 ## Buffalo Project Audit
 
 Whether you are starting your first Buffalo project, or getting ready to launch one, have the [Gopher Guides](https://www.gopherguides.com) audit the code to make sure you are successful. Here are just some of the things an audit gets you:

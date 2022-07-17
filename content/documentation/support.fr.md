@@ -9,6 +9,16 @@ aliases:
 
 Si vous recherchez de l'aide, une [formation](https://www.gopherguides.com/in-person-training/) ou une [consultation](https://www.gopherguides.com/consulting/) pour votre Buffalo projet, les [Gopher Guides](https://www.gopherguides.com) (fondé par Mark Bates - fondateur de Buffalo) sont les formateurs et consultants officiels de l'écosystème Buffalo.
 
+## Communauté {#community}
+
+Les canaux Slack `#buffalo_fr` et `#buffalo` (en anglais) sur [gophers.slack.com](https://gophers.slack.com/messages/buffalo/) sont de bon endroits pour demander de l'aide : de nombreux développeurs Buffalo et autres Gophers s'y trouvent.
+
+Pour pouvoir accéder au Slack Gophers, ainsi qu'aux canaux `#buffalo_fr` et `#buffalo`, vous devez d'abord obtenir une invitation. Pour se faire, rendez-vous sur [https://gophersinvite.herokuapp.com](https://gophersinvite.herokuapp.com) et demandez une invitation.
+
+Une fois sur Slack, rejoignez le canal `#buffalo_fr` et dîtes bonjour. Nous vous attendons !
+
+Outre la documentation elle-même, vous pouvez également nous contacter sur nos comptes [GitHub](https://github.com/gobuffalo/buffalo) ou [Twitter](https://twitter.com/gobuffalo).
+
 ## Audit du projet Buffalo
 
 Que vous lanciez votre premier projet Buffalo ou que vous vous prépariez à en lancer un, demandez aux [Gopher Guides](https://www.gopherguides.com) d'auditer le code pour vous assurer que vous réussissez. Voici quelques-unes des choses qu'un audit vous apporte :

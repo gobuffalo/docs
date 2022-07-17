@@ -1,0 +1,9 @@
+services:
+  server:
+    build: .
+    command: server
+    volumes:
+      - ".:/src"
+      - "/src/node_modules"
+    ports:
+      - "1313:1313"

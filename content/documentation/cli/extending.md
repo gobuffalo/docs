@@ -40,7 +40,7 @@ func main() {
 ```
 
 ## Extending for the user
-Another use case for extending the CLI is using custom plugins to initialize Buffalo applications, to do this one could override the CLI at the user level by adding a `.buffalo/cmd/` folder in the user `$HOME` root. When the Buffalo CLI finds this file it will attempt to run it instead of the default plugins.
+Another use case for extending the CLI is using custom plugins to initialize Buffalo applications, to do this one could override the CLI at the user level by adding a `.buffalo/cmd/main.go` in the user `$HOME` root. When the Buffalo CLI finds this file it will attempt to run it instead of the default plugins.
 
 Like with the project specific plugins, the user can override the CLI with custom plugins. One important thing to note is that the project specific CLI will take precedence over the user specific CLI.
 

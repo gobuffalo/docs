@@ -30,6 +30,11 @@ A typical `cmd/buffalo/main.go` file would look like this:
 ```go
 package main
 
+import(
+  "github.com/gobuffalo/cli/cmd/cli"
+  "my/module/cmd/my"
+)
+
 func main() {
   a := cli.NewWithDefaults()
   a.Add(&my.Plugin{})
@@ -44,5 +49,8 @@ Another use case for extending the CLI is using custom plugins to initialize Buf
 
 Like with the project specific plugins, the user can override the CLI with custom plugins. One important thing to note is that the project specific CLI will take precedence over the user specific CLI.
 
+## Next
+
+You might have noticed `my.Plugin{}` being passed to the CLI and wonder what that means. To get more details on how to write your own plugins take a look a the documentation for [writing plugins](/documentation/cli/plugins).
 
 

@@ -10,4 +10,4 @@ aliases:
 
 # Writing Custom Plugins
 
-As the [Extending buffalo](/documentation/cli/extending) shows the Buffalo CLI can be extended by adding/removing plugins.
+As the [Extending buffalo](/documentation/cli/extending) shows the Buffalo CLI can be extended by adding/removing plugins. On this section you will 

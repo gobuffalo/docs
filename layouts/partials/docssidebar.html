@@ -20,7 +20,7 @@
 
     {{ $site := .Site }}
     {{ $enSite := .Sites.First }}
-    {{ $sections := slice "getting_started" "request_handling" "frontend-layer" "database" "guides" "deploy" }}
+    {{ $sections := slice "getting_started" "cli" "request_handling" "frontend-layer" "database" "guides" "deploy"  }}
     {{ range $sect := $sections }}
         {{ with $site.GetPage "section" . }}
             {{ .Scratch.Set "currentPage" $currentPage }}

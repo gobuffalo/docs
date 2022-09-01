@@ -151,7 +151,7 @@ type User struct {
 
 Now the columns names are expected to be `id`, `email`, and `password`.
 
-This is very similar to how [form binding](/docs/bind) works.
+This is very similar to how [form binding](/documentation/request_handling/bind) works.
 
 Any types can be used that adhere to the [Scanner](https://golang.org/pkg/database/sql/#Scanner) and [Valuer](https://golang.org/pkg/database/sql/driver/#Valuer) interfaces, however, so that you don't have to write these yourself it is recommended you stick with the following types:
 

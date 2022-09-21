@@ -1,12 +1,12 @@
 ---
-Name: "Layouts"
+Name: "Diseños"
 weight: 3
 aliases:
   - /docs/layouts
-  - /en/docs/layouts
+  - /es/docs/layouts
 ---
 
-# Layouts
+# Diseño
 
 {{<note>}}
 Este documento solo aplica cuando se usa [github.com/gobuffalo/buffalo/render](https://github.com/gobuffalo/buffalo/tree/main/render).
@@ -14,9 +14,9 @@ Este documento solo aplica cuando se usa [github.com/gobuffalo/buffalo/render](h
 Consulta [github.com/gobuffalo/plush](https://github.com/gobuffalo/plush) para más detalles sobre el paquete de plantillas.
 {{</note>}}
 
-## Using a Standard Layout
+## Usando un diseño estándar
 
-It is quite common to want to use the same layout across most, if not all of an application. When creating a new `render.Engine` the `HTMLLayout` property can be set to a file that will automatically be used by the `render.HTML` function.
+Es bastante común querer usar el mismo diseño en la mayoria, si no en toda la aplicación. Al crear un nuevo `render.Engine` the se puede establecer la propiedad `HTMLLayout` a un archivo que será usado automáticamente por la función `render.HTML`.
 
 {{<codetabs>}}
 {{<tab "actions/render.go">}}
@@ -74,12 +74,12 @@ func Hello(c buffalo.Context) error {
 {{</tab>}}
 {{</codetabs>}}
 
-## Using a Custom Layout
+## Usando un diseño personalizado
 
-Sometimes, on certain requests, a different layout is needed. This alternate layout can be passed in as the second parameter to `render.HTML`.
+A veces, en ciertas peticiones, se necesita un diseño diferente. Este diseó alternativo se puede pasar como segundo parámetro al `render.HTML`.
 
 {{<note>}}
-Custom layouts do **NOT** work with **`render.Auto`**.
+Los diseños personalizados **NO** funcionan con **`render.Auto`**.
 {{</note>}}
 
 {{<codetabs>}}

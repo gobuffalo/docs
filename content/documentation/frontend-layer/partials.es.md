@@ -1,38 +1,36 @@
 ---
-Name: "Partials"
+Name: "Parciales"
 weight: 4
 aliases:
   - /docs/partials
-  - /en/docs/partials
+  - /es/docs/partials
 ---
 
-# Partials
-
+# Parciales
 
 {{<note>}}
-This document only applies when using [https://github.com/gobuffalo/buffalo/tree/main/render](https://github.com/gobuffalo/buffalo/tree/main/render).
+Este documento solo aplica cuando se usa [github.com/gobuffalo/buffalo/render](https://github.com/gobuffalo/buffalo/tree/main/render).
 
-Please see [github.com/gobuffalo/plush](https://github.com/gobuffalo/plush) for more details on the underlying templating package.
+Consulta [github.com/gobuffalo/plush](https://github.com/gobuffalo/plush) para más detalles sobre el paquete de plantillas.
 {{</note>}}
 
+## Uso
 
-## Usage
-
-You can call your partials using `partial` plush helper:
+Puedes llamar tus parciales usando el helper de plush `partial`:
 
 {{<codetabs>}}
-{{<tab "templates/users/form.plush.html">}}
-```html
-<form action="/users/" method="POST">
-<!-- form content here  -->
-<form>
-```
-{{</tab>}}
 {{<tab "templates/users/new.plush.html">}}
 ```html
 <h1>Create New User</h1>
 
 <%= partial("users/form.html") %>
+```
+{{</tab>}}
+{{<tab "templates/users/form.plush.html">}}
+```html
+<form action="/users/" method="POST">
+<!-- form content here  -->
+<form>
 ```
 {{</tab>}}
 {{<tab "Output">}}
@@ -46,11 +44,9 @@ You can call your partials using `partial` plush helper:
 {{</tab>}}
 {{</codetabs>}}
 
-## Context
+## Contexto
 
-All [rendering context](/documentation/frontend-layer/rendering) from the parent template will automatically pass through to the partial, and any partials that partial may call. (see also [Context](/documentation/request_handling/context))
-
-
+Todo el [contexto de renderizado](/documentation/frontend-layer/rendering) de la plantilla padre se pasará automáticamente a través del parcial, y a cualquier parcial que puedas llamar. (Ve también [Context](/documentation/request_handling/context))
 
 {{<codetabs>}}
 {{<tab "actions/users.go">}}
@@ -92,9 +88,9 @@ func UsersEdit(c buffalo.Context) error {
 
 
 
-## Local Context
+## Contexto local
 
-In addition to have the global [context](/documentation/request_handling/context), you can set additional variable only for partials as "local" variables.
+Además de tener el [context](/documentation/request_handling/context) global, puedes establecer variables adicionales sólo para los parciales como variables "locales".
 
 {{<codetabs>}}
 {{<tab "actions/colors.go">}}
@@ -155,4 +151,4 @@ func ColorsHandler(c buffalo.Context) error {
 
 ## Helpers
 
-Partials are not much different from standard [templates](/documentation/frontend-layer/templating) in Buffalo. They include all of the same [helpers](/documentation/frontend-layer/helpers) as well.
+Las parciales no son muy diferentes de las [plantillas](/documentación/capa frontal/plantillas) estándar en Buffalo. También incluyen todos los mismos [helpers](/documentation/frontend-layer/helpers) también.

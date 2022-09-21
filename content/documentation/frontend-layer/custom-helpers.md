@@ -8,10 +8,11 @@ aliases:
 
 # Custom Helpers
 
-<p>
-  <em>This document only applies when using <a href="https://github.com/gobuffalo/buffalo/tree/master/render" rel="nofollow">https://github.com/gobuffalo/buffalo/render</a>.</em><br>
-  <em>Please see <a href="https://github.com/gobuffalo/plush" target="_blank">github.com/gobuffalo/plush</a> for more details on the underlying templating package.</em>
-</p
+{{<note>}}
+This document only applies when using [https://github.com/gobuffalo/buffalo/tree/main/render](https://github.com/gobuffalo/buffalo/tree/main/render).
+
+Please see [github.com/gobuffalo/plush](https://github.com/gobuffalo/plush) for more details on the underlying templating package.
+{{</note>}}
 
 No templating package would be complete without allowing for you to build your own, custom, helper functions.
 

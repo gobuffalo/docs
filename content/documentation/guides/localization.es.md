@@ -175,9 +175,9 @@ func SwitchLanguage(c buffalo.Context) error {
 
 {{< since "0.10.2" >}}
 
-Muchos generadores de Buffalo usan [markbates/inflect](https://github.com/markbates/inflect) para generar una versión normalizada de un nombre. Por ejemplo, cuando desees generar un nuevo modelo, el nombre que le das a la línea de comando se normaliza en plural, mayúsculas, etc.
+Muchos generadores de Buffalo usan [gobuffalo/flect](https://github.com/gobuffalo/flect) para generar una versión normalizada de un nombre. Por ejemplo, cuando desees generar un nuevo modelo, el nombre que le das a la línea de comando se normaliza en plural, mayúsculas, etc.
 
-A veces, las reglas utilizadas por **inflect** no son correctas (en este caso, sientete libre de abrir un PR en el repo!). A veces, una regla no es correcta para tu caso de uso, pero sigue siendo correcta en una regla general. En este caso, puedes proporcionar reglas personalizadas usando el archivo `inflections.json` en la raíz de tu proyecto.
+A veces, las reglas utilizadas por **flect** no son correctas (en este caso, sientete libre de abrir un PR en el repo!). A veces, una regla no es correcta para tu caso de uso, pero sigue siendo correcta en una regla general. En este caso, puedes proporcionar reglas personalizadas usando el archivo `inflections.json` en la raíz de tu proyecto.
 
 **inflections.json:**
 ```json

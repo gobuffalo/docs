@@ -190,11 +190,11 @@ import (
   "time"
 
   "github.com/gobuffalo/buffalo/binding"
-  "github.com/gobuffalo/pop"
-  "github.com/markbates/validate"
-  "github.com/markbates/validate/validators"
+  "github.com/gobuffalo/pop/v6"
+  "github.com/gobuffalo/validate/v3"
+  "github.com/gobuffalo/validate/v3/validators"
   "github.com/pkg/errors"
-  "github.com/satori/go.uuid"
+  "github.com/gofrs/uuid"
 )
 
 type Widget struct {

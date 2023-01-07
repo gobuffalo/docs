@@ -1,9 +1,9 @@
 ---
-Name: "Templating"
+Name: "Plantillas"
 weight: 2
 aliases:
-  - /docs/templating
-  - /en/docs/templating
+  - /docs/plantillas
+  - /es/docs/plantillas
 ---
 
 # Templating
@@ -11,22 +11,21 @@ aliases:
 {{<note>}}
 Este documento solo aplica cuando se usa [github.com/gobuffalo/buffalo/render](https://github.com/gobuffalo/buffalo/tree/main/render).
 
-Consulta [github.com/gobuffalo/plush](https://github.com/gobuffalo/plush) para más detalles sobre el paquete de plantillas.
+Consulta [github.com/gobuffalo/plush](https://github.com/gobuffalo/plush) para mas detalles sobre el paquete de plantillas.
 {{</note>}}
 
+Buffalo utiliza por defecto [plush](https://github.com/gobuffalo/plush) as its template engine.
 
-Buffalo defaults to using [plush](https://github.com/gobuffalo/plush) as its template engine.
-
-## Introduction to Plush
+## Introducción a Plush
 {{< vimeo 207200621>}}
 
-## Plush - Tips, Tricks and Testing
+## Plush - Consejos, trucos y pruebas
 
 {{< vimeo 267643588>}}
 
-## General Usage
+## Uso general
 
-Plush allows you to capture the `context` variables to use anywhere in your templates.
+Plush te permite capturar las variables de `contexto` para usarlas en cualquier lugar en tus plantillas.
 
 {{<codetabs>}}
 {{<tab "actions/index.go">}}
@@ -49,9 +48,9 @@ func myHandler(c buffalo.Context) error {
 {{</tab>}}
 {{</codetabs>}}
 
-## Plush Examples
+## Plush Ejemplos
 
-#### Conditional Statements
+#### Condicionales
 
 {{<codetabs>}}
 {{<tab "IF">}}
@@ -118,13 +117,13 @@ func MyHandler(c buffalo.Context) error {
 {{</tab>}}
 {{</codetabs>}}
 
-### Iterating
+### Iteraciones
 
-#### Through Slices
+#### A través de Slices
 
-When looping through `slices`, the block being looped through will have access to the "global" context.
+Cuando recorremos a través de `slices`, el bloque en el que se realiza el bucle tendrá acceso al contexto "global".
 
-The `for` statement takes 1 or 2 arguments. When using the two arguments version, the first argument is the "index" of the loop and the second argument is the value from the slice.
+La sentencia `for` toma 1 o 2 argumentos. Cuando se usa la versión de 2 argumentos, el primer argumento es el "indice" del bucle y el segundo argumento es el valor del elemento del slice.
 
 {{<codetabs>}}
 {{<tab "actions/main.go">}}
@@ -177,11 +176,11 @@ func MyHandler(c buffalo.Context) error {
 {{</tab>}}
 {{</codetabs>}}
 
-#### Through Maps
+#### A través de Mapas
 
-Looping through `maps` using the `each` helper is also supported, and follows very similar guidelines to looping through `arrays`.
+El buble a través de `mapas` usando el helper `each` tambien está soportado, y sigue directrices similares al bucle a través de `slices`.
 
-When using the two argument version, the first argument is the key of the map and the second argument is the value from the map:
+Cuando se usa la version de 2 argumentos, el primer argumento es la llave del `mapa` y el segundo argumento es el valor del elemento en el `mapa`.
 
 {{<codetabs>}}
 {{<tab "actions/main.go">}}
@@ -242,5 +241,5 @@ func ColorsHandler(c buffalo.Context) error {
 {{</codetabs>}}
 
 {{<note>}}
-You can see more examples in [plush repository](https://github.com/gobuffalo/plush).
+Puedes ver más ejemplos en el [repositorio plush](https://github.com/gobuffalo/plush).
 {{</note>}}

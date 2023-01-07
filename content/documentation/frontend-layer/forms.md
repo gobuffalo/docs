@@ -498,6 +498,15 @@ Yes! You most definitely can create and use your own form! The forms provided fr
   <input type="hidden" name="_method" value="PUT" />
 ...
 ```
+#### Can I use CSRF token if I disable SSL?
+
+The CSRF token is a secret value that is handled securely to remain valid during cookie-based sessions.
+
+In development environment you can run smoothly under `http`.
+
+If you disable SSL (`https`) and post a form in production environment, you will get the message `CSRF token invalid`.
+
+More details: [PR #1851](https://github.com/gobuffalo/buffalo/pull/1851)
 
 #### How Do I Handle CSRF Tokens If I Use My Own Form?
 

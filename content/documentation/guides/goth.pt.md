@@ -23,7 +23,7 @@ Buffalo had a native support for Goth until version `v0.9.4`. Since then, it was
 To install the `buffalo-goth` plugin, run the following command:
 
 ```bash
-$ go get -u github.com/gobuffalo/buffalo-goth
+$ buffalo plugins install github.com/gobuffalo/buffalo-goth
 ```
 
 ## Generator

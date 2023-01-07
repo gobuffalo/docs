@@ -86,7 +86,7 @@ This folder contains the `main.go` file which bootstraps your app and starts it.
 This directory is optional. If you don't need to use [tasks](/documentation/guides/tasks), you can remove it.
 {{< /note >}}
 
-This directory contains the [tasks](/documentation/guides/tasks) powered by [grift](https://github.com/markbates/grift).
+This directory contains the [tasks](/documentation/guides/tasks) powered by [grift](https://github.com/gobuffalo/grift).
 
 ### locales
 

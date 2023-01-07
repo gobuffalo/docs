@@ -45,6 +45,7 @@ The following Worker implementations are provided by Buffalo users (no official 
 | Name | Author | Description |
 |:------|:--------|:-------------|
 | [AMQP worker adapter](https://github.com/stanislas-m/amqp-work-adapter) | [@stanislas-m](https://github.com/stanislas-m) | A Worker implementation to use with AMQP-compatible brokers (such as [RabbitMQ](https://www.rabbitmq.com/)). |
+| [Faktory worker adapter](https://github.com/frankywahl/fwa) | [@frankywahl](https://github.com/frankywahl) | A Worker implementation to use with [Faktory](https://contribsys.com/faktory/). |
 
 ## The Job type
 

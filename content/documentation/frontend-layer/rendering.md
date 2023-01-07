@@ -8,14 +8,13 @@ aliases:
 
 # Rendering
 
-
 The [https://github.com/gobuffalo/buffalo/render](https://github.com/gobuffalo/buffalo/tree/main/render) [[godoc]](https://pkg.go.dev/github.com/gobuffalo/buffalo/render) package implements that interface, and has a collection of useful render types already defined. It is recommended that you use this package, but feel free and write your own renderers!
 
 {{<note>}}
 This document only applies when using [https://github.com/gobuffalo/buffalo/tree/main/render](https://github.com/gobuffalo/buffalo/tree/main/render).
+
 Please see [github.com/gobuffalo/plush](https://github.com/gobuffalo/plush) for more details on the underlying templating package.
 {{</note>}}
-
 
 ## Render Auto
 
@@ -51,6 +50,7 @@ type User struct {
 	Gender    string
 }
 ```
+
 {{<codetabs>}}
 {{<tab "JSON">}}
 ```go
@@ -64,7 +64,6 @@ func MyHandler(c buffalo.Context) error {
   return c.Render(http.StatusOK, r.JSON(user))
 }
 ```
-
 ```json
 // output
 {
@@ -134,7 +133,6 @@ func Beatles(c buffalo.Context) error {
 </ul>
 ```
 
-
 ## JavaScript
 {{< since "0.10.0" >}}
 
@@ -155,7 +153,6 @@ The new JavaScript renderer also has it’s own implementation of the `partial` 
 ```javascript
 $("#new-goal-form").replaceWith("<%= partial("goals/new.html") %>");
 ```
-
 
 ## Automatic Extensions
 
@@ -181,7 +178,6 @@ This works with [partials](/documentation/frontend-layer/partials) too.
 The [`r.Download`](https://pkg.go.dev/github.com/gobuffalo/buffalo/render#Engine.Download) method allows you to download files in your application easily.
 
 ```go
-
 func DownloadHandler(c buffalo.Context) error {
 	// ...
 	f, err := os.Open("your/path/file_name.extension")
@@ -192,7 +188,6 @@ func DownloadHandler(c buffalo.Context) error {
 	return c.Render(http.StatusOK, r.Download(c, "file_name.extension", f))
 }
 ```
-
 
 ## Custom Rendering
 
@@ -211,10 +206,11 @@ func csvWriter(w io.Writer, d render.Data) error {
   cw.Flush()
   return nil
 }
-```
+``` 
 
 For smaller, or one off situations, using an anonymous function can be even easier.
 In this example you can see how to use an anonymous function to render a string that already contains JSON.
+
 ```go
 var myJSONString string
 return c.Render(http.StatusOK, r.Func("application/json", func(w io.Writer, d render.Data) error {
@@ -242,5 +238,3 @@ type Data map[string]interface{}
 ```
 
 The [https://github.com/gobuffalo/buffalo/render](https://github.com/gobuffalo/buffalo/tree/master/render) [[godoc]](https://godoc.org/github.com/gobuffalo/buffalo/render) package implements that interface, and has a collection of useful render types already defined. It is recommended that you use this package, but feel free and write your own renderers!
-
-

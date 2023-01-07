@@ -60,7 +60,7 @@ Cuando ejecutamos un test que es parte de una suite de prueba, lo siguiente est�
 * La base de datos, `as.DB` (si se está usando Pop).
 * La sesión, `as.Session`.
 * Las afirmaciones de pruebas [`github.com/stretchr/testify/require`](https://github.com/stretchr/testify).
-* La librería de pruebas de HTTP [`github.com/markbates/willie`](https://github.com/markbates/willie).
+* La librería de pruebas de HTTP [`github.com/gobuffalo/httptest`](https://github.com/gobuffalo/httptest).
 
 ## Ejemplo de Prueba
 

@@ -61,7 +61,7 @@ the test:
 * The database, `as.DB` (if using Pop).
 * The session, as `as.Session`.
 * The [`github.com/stretchr/testify/require`](https://github.com/stretchr/testify) test assertions.
-* The [`github.com/markbates/willie`](https://github.com/markbates/willie) HTTP testing library.
+* The [`github.com/gobuffalo/httptest`](https://github.com/gobuffalo/httptest) HTTP testing library.
 
 ## Test Example
 

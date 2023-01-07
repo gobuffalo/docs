@@ -172,9 +172,9 @@ func SwitchLanguage(c buffalo.Context) error {
 ## Customize Generated Names
 {{< since "0.10.2" >}}
 
-Many Buffalo generators use [markbates/inflect](https://github.com/markbates/inflect) to generate a normalized version of a name. For example, when you want to generate a new model, the name you give to the command line is normalized in plural, capitalized, and so on forms.
+Many Buffalo generators use [gobuffalo/flect](https://github.com/gobuffalo/flect) to generate a normalized version of a name. For example, when you want to generate a new model, the name you give to the command line is normalized in plural, capitalized, and so on forms.
 
-Sometimes, the rules used by **inflect** are not correct (in this case, feel free to open a PR on the repo!). Sometimes a rule is not correct for your use case, but it's still correct in a general rule. In this case, you can provide custom rules using the `inflections.json` file at the root of your project.
+Sometimes, the rules used by **flect** are not correct (in this case, feel free to open a PR on the repo!). Sometimes a rule is not correct for your use case, but it's still correct in a general rule. In this case, you can provide custom rules using the `inflections.json` file at the root of your project.
 
 **inflections.json:**
 ```json

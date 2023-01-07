@@ -96,3 +96,33 @@ languages:
         - name: Blog
           url: 'https://blog.gobuffalo.io'
           weight: 5
+  pt:
+    languageName: Português
+    languageCode: pt-pt
+    title: 🇵🇹 PT
+    weight: 4
+    params:
+      copyRight: Copyright © 2022 Buffalo. Todos direitos reservados.
+      logoCredits: >-
+        Gopher Buffalo desenhado por [Ashley
+        McNamara](https://twitter.com/ashleymcnamara) — Gopher Original desenhado
+        por Renee French
+      documentation: "Documentação"
+      tutorials: "Aulas Individuais"
+      support: "Apoiar"
+      troubleshooting: "Resolução de problemas"
+      searchButtonText: "Pesquisar..."
+      searchPlaceholder: "Pesquisar a documentação do Buffalo"
+      noResultsCopy: "Nós não conseguimos encontrar quaisquer guias ou documentos com este termo. Por favor tente novamente. Tu podes também visitar o sítio da nossa documentação e navegar para obter mais detalhes."
+      fromOurBlog: "A partir do nosso blogue"
+      learnMore: "Aprenda mais"
+      readMore: "Leia mais"
+      since: "Desde"
+    menu:
+      top:
+        - name: Documentação
+          url: /pt/documentation/
+          weight: 3
+        - name: Blogue
+          url: 'https://blog.gobuffalo.io'
+          weight: 5

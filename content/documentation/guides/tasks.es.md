@@ -9,7 +9,7 @@ aliases:
 ---
 # Tareas
 
-Las tareas son pequeños scripts que a menudo se necesitan al escribir una aplicación. Estos tasks pueden ser similares a la inicialización de una base de datos, analizar un archivo de registro, o incluso el lanzamiento de un script. Buffalo usa la librería [grift](https://github.com/markbates/grift) para simplificar la escritura de estas tareas.
+Las tareas son pequeños scripts que a menudo se necesitan al escribir una aplicación. Estos tasks pueden ser similares a la inicialización de una base de datos, analizar un archivo de registro, o incluso el lanzamiento de un script. Buffalo usa la librería [grift](https://github.com/gobuffalo/grift) para simplificar la escritura de estas tareas.
 
 {{< vimeo 213096302>}}
 
@@ -37,7 +37,7 @@ $ buffalo g task foo:bar
 package grifts
 
 import (
-	. "github.com/markbates/grift/grift"
+	. "github.com/gobuffalo/grift/grift"
 )
 
 var _ = Namespace("foo", func() {

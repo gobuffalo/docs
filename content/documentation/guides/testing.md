@@ -102,6 +102,17 @@ type Widget struct {
 }
 ```
 
+The following are the basic variable types that can be represented in a TOML fixture:
+
+* String: Enclosed in double quotes (e.g. "string value")
+* Integer: No quotes needed (e.g. 42)
+* Float: No quotes needed, with a decimal point (e.g. 3.14)
+* Boolean: true or false (no quotes needed)
+* Date: In the format "YYYY-MM-DD" (e.g. "2022-01-01")
+* Datetime: In the format "YYYY-MM-DDThh:mm:ss" (e.g. "2022-01-01T12:00:00")
+* Array: Enclosed in square brackets, with values separated by commas (e.g. [1, 2, 3])
+* Table: Enclosed in curly braces, with key-value pairs separated by commas (e.g. {key1 = "value1", key2 = 2})
+
 We can create a fixture file like this:
 
 ```toml

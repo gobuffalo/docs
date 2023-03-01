@@ -13,7 +13,7 @@ languages:
     title: 🇬🇧 EN
     weight: 1
     params:
-      copyRight: Copyright © 2022 Buffalo. All rights reserved.
+      copyRight: All rights reserved.
       logoCredits: >-
         Buffalo Gopher designed by [Ashley
         McNamara](https://twitter.com/ashleymcnamara) — Original Gopher designed
@@ -43,7 +43,7 @@ languages:
     title: 🇫🇷 FR
     weight: 2
     params:
-      copyRight: Copyright © 2022 Buffalo. Tous droits réservés.
+      copyRight: Tous droits réservés.
       logoCredits: >-
         Gopher Buffalo conçu par [Ashley
         McNamara](https://twitter.com/ashleymcnamara) — Gopher originel conçu
@@ -73,7 +73,7 @@ languages:
     title: 🇪🇸 ES
     weight: 3
     params:
-      copyRight: Copyright © 2022 Buffalo. Todos los derechos reservados.
+      copyRight: Todos los derechos reservados.
       logoCredits: >-
         El Roedor de Buffalo fué diseñado por [Ashley
         McNamara](https://twitter.com/ashleymcnamara) — El roedor original de Go fué diseñado por Renee French
@@ -100,9 +100,9 @@ languages:
     languageName: Português
     languageCode: pt-pt
     title: 🇵🇹 PT
-    weight: 4
+    weight: 
     params:
-      copyRight: Copyright © 2022 Buffalo. Todos direitos reservados.
+      copyRight: Todos direitos reservados.
       logoCredits: >-
         Gopher Buffalo desenhado por [Ashley
         McNamara](https://twitter.com/ashleymcnamara) — Gopher Original desenhado

@@ -100,7 +100,7 @@ languages:
     languageName: Português
     languageCode: pt-pt
     title: 🇵🇹 PT
-    weight: 
+    weight: 4
     params:
       copyRight: Todos direitos reservados.
       logoCredits: >-

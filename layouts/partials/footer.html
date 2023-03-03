@@ -2,7 +2,7 @@
     <div class="container px-10 flex py-5 gap-3">
         <div class="text-white text-xs sm:text-base">
             <p>
-                <strong>{{.Site.Params.Copyright }}</strong>
+                <strong>Copyright &copy; 2016-{{now.Format "2006"}} Buffalo. {{.Site.Params.Copyright }}</strong>
             </p>
             <p>
                 {{.Site.Params.LogoCredits | markdownify }}

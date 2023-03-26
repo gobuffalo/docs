@@ -34,4 +34,4 @@ Guides on how to deploy your Buffalo application.
 
 The Buffalo community is a vibrant and growing community of developers and users. There is an ongoing conversation about tips and tricks, new features and ideas which takes place in the [Gophers Slack #buffalo channel](https://gophers.slack.com/messages/buffalo/).
 
-Besides the documentation itself, you can also get in touch with us on our [GitHub](https://github.com/gobuffalo/buffalo) or [Twitter](https://twitter.com/gobuffalo) accounts.
+Besides the documentation itself, you can also get in touch with us on our [GitHub](https://github.com/gobuffalo/buffalo) or [Twitter](https://twitter.com/gobuffalo_io) accounts.

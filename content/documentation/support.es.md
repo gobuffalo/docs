@@ -17,7 +17,7 @@ In order to access the Gophers Slack, and the `#buffalo` channel, you first need
 
 Once you're in Slack, please join the `#buffalo` channel and say "Hello"! We'd love to hear from you.
 
-Además de la documentación, también puedes ponerte en contacto con nosotros en nuestras cuentas de [GitHub](https://github.com/gobuffalo/buffalo) o [Twitter](https://twitter.com/gobuffalo).
+Además de la documentación, también puedes ponerte en contacto con nosotros en nuestras cuentas de [GitHub](https://github.com/gobuffalo/buffalo) o [Twitter](https://twitter.com/gobuffalo_io).
 
 ## Auditoria en proyectos de Buffalo
 

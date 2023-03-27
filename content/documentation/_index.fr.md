@@ -33,4 +33,4 @@ Traitement et routage des demandes. Le cœur du cadre.
 
 La communauté Buffalo est une communauté dynamique et croissante de développeurs et d'utilisateurs. Il y a une conversation en cours sur les trucs et astuces, les nouvelles fonctionnalités et les idées qui ont lieu dans le [Gophers Slack #buffalo channel](https://gophers.slack.com/messages/buffalo/).
 
-Outre la documentation elle-même, vous pouvez également nous contacter sur nos comptes [GitHub](https://github.com/gobuffalo/buffalo) ou [Twitter](https://twitter.com/gobuffalo).
+Outre la documentation elle-même, vous pouvez également nous contacter sur nos comptes [GitHub](https://github.com/gobuffalo/buffalo) ou [Twitter](https://twitter.com/gobuffalo_io).

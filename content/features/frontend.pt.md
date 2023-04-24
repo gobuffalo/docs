@@ -4,4 +4,4 @@ title: Frontend Pipeline
 icon: "images/landing_icons/frontend.svg"
 ---
 
-Use the Webpack-generated configuration to build your frontend assets, so you can optimize both backend and frontend.
+Use a configuração gerada pelo Webpack para criar suas builds de front-end, para que você possa otimizar seu projeto.

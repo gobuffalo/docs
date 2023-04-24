@@ -4,6 +4,6 @@ title: Testing
 icon: "images/landing_icons/testing.svg"
 ---
 
-Since testing can be a boring task, Buffalo helps you to define test suites. Action, resource, model generators create test templates for the code you just generated.
+Como testar pode ser uma tarefa chata, o Buffalo ajuda você a definir conjuntos de testes. Ação, recursos, e modelos que criam testes para o código que você acabou de gerar.
 
-You can run them all using a simple command from the toolbox.
+Você pode executá-los todos usando um simples comando do toolbox.

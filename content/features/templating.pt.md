@@ -4,6 +4,6 @@ title: Templating
 icon: "images/landing_icons/templating.svg"
 ---
 
-Write your templates with Plush, using a Rails-like syntax. Extend its features using custom helpers.
+Escreva seus templates com Plush, usando uma sintaxe parecida com Rails. Amplie seus projetos com recursos auxiliares personalizados.
 
-If you don't like it, you can use html/template or even bring your own!
+Se você não gostar, você pode usar html/template ou até mesmo trazer o seu próprio!

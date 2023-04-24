@@ -3,6 +3,6 @@ type: feature
 title: Background Workers
 icon: "images/landing_icons/task.svg"
 ---
-If you're familiar with Rake tasks from Ruby, you'll be right at home using Grift. Seeding a database, running a cleaning job are now at hand!
+Se você estiver familiarizado com as tarefas Rake do Ruby, você se sentirá em casa usando o Grift. A comunicação com banco de dados, a execução de um tarefas de forma clara !
 
-Running background tasks are easy too, using the Background Workers.
+A execução de tarefas em segundo plano também é fácil, usando os Workers em segundo plano.

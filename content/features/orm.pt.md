@@ -3,5 +3,6 @@ type: feature
 title: ORM
 icon: "images/landing_icons/models.svg"
 ---
-Deep integration with pop provides a simple way to handle database and common related tasks.
-Supported databases: MySQL/MariaDB, PostgreSQL, CockroachDB, SQLite.
+A integração profunda com o pop fornece uma maneira simples de lidar com banco de dados e tarefas relacionadas comuns.
+
+Bancos de dados compatíveis: MySQL/MariaDB, PostgreSQL, CockroachDB, SQLite.

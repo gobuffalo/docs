@@ -49,7 +49,7 @@ import (
 	"time"
 
 	"github.com/gobuffalo/pop/nulls"
-	"github.com/gobuffalo/uuid"
+	"github.com/gofrs/uuid"
 )
 
 type Soda struct {

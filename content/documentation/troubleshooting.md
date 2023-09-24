@@ -21,7 +21,7 @@ If executing `buffalo --help` or any other command from the terminal takes longe
 
 
 {{< faq "Can't find `buffalo` binary." "binary-not-found">}}
-If you can't find the `buffalo` binary after a successful installation, this is problably caused because `$GOPATH/bin`, or `%GOPATH\bin` (Windows), isn't in your `$PATH` variable. When a Go binary is installed it is placed in `$GOPATH/bin`. Adding this to your global `$PATH` will allow you to find **any** Go binary everywhere in your system. See [golang.org/doc/code.html#GOPATH](https://golang.org/doc/code.html#GOPATH) for more details.
+If you can't find the `buffalo` binary after a successful installation, this is probably caused because `$GOPATH/bin`, or `%GOPATH\bin` (Windows), isn't in your `$PATH` variable. When a Go binary is installed it is placed in `$GOPATH/bin`. Adding this to your global `$PATH` will allow you to find **any** Go binary everywhere in your system. See [golang.org/doc/code.html#GOPATH](https://golang.org/doc/code.html#GOPATH) for more details.
 {{< /faq >}}
 
 {{< faq "`buffalo new` fails to generate a complete project." "failed-to-gen">}}

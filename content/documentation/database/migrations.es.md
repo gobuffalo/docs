@@ -184,7 +184,7 @@ development:
 
 ## Migraciones una vez desplegadas
 
-{{< note "Esta sección es solo para usuarios de Buffalo.">}}
+{{< note "Esta sección es solo para usuarios de Buffalo." />}}
 
 Cuando cionstruyes tu aplicaión, las migraciones se almacenan dentro de tu binario. Tu binario tiene un comando `migrate` escondido que realiza las migraciones, tal como lo hace cuando usa `buffalo pop migrate`:
 
